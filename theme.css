@@ -1,0 +1,18 @@
+body {
+  max-width: 50em;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-family: Lato, Helvetica, Arial, Verdana, sans-serif;
+  line-height: 1.5em;
+  text-align: justify;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+#disqus_thread {
+  margin-top: 5em;
+}
