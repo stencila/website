@@ -1,40 +1,55 @@
 const fs = require('fs')
+const spawn = require('child_process').spawnSync
+
 const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
-  {
-    name: 'blog-redux',
-  }
+  'blog-reincarnate',
+  'humane-sheets',
+  'underneath-sheets',
+  'introducing-sheets'
 ]
 
 // Iterate over posts...
 let postsDiv = ''
 for (let post of posts) {
-  let dir = post.name
 
   // Create a `Document` for the post
   let doc = new stencila.Document()
-  doc.read(dir + '/post.md')
+  doc.read(post + '/post.md')
 
+  // As a temporary kludge extract the documnet's meta-data as JSON using a special
+  // Pandoc template. Ultimately this will be incorporated directly into Stencila.
+  // See http://pandoc.org/MANUAL.html#templates
+  let json = spawn('pandoc', ['--template', 'meta.txt', post + '/post.md'], {
+    encoding: 'utf8'
+  }).stdout
+  let meta = JSON.parse(json)
+  
   // Convert post to HTML
   let content = doc.html;
   // Set url and id for Disqus comments
-  let url = 'http://blog.stenci.la/${post.name}'
-  let identifier = 'blog-post-%{post.name}'
+  let url = 'http://blog.stenci.la/${post}'
+  let identifier = 'blog-post-%{post}'
 
   // Write post HTML  file
-  fs.writeFile(
-    dir + '/index.html',
+  fs.writeFile(post + '/index.html',
     `<!DOCTYPE html>
     <html>
       <head>
+        <title>${meta.title}</title>
         <meta charset="utf-8">
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body>
+      <body class="post">
+        <div id="header">
+          <div id="title">${meta.title}</div>
+          <div class="author">${meta.author}</div>
+          <div id="date">${meta.date || ''}</div>
+        </div>
         <div id="content">${content}</div>
         <div id="disqus_thread"></div>
         <script>
@@ -55,13 +70,16 @@ for (let post of posts) {
 
   // Generate summary for main page
   postsDiv += `<div class="post">
-  <a href="${post.name}">${doc.title || post.name}</a>
-</div>`
+  <div class="title"><a href="${post}">${meta.title}</a></div>
+  <div class="abstract">${meta.abstract || ''}</div>
+  <div class="author">${meta.author}</div>
+</div>\n`
+
+  
 }
 
 // Main index page
-fs.writeFile(
-  'index.html',
+fs.writeFile('index.html',
   `<!DOCTYPE html>
   <html>
     <head>
@@ -70,8 +88,10 @@ fs.writeFile(
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <link rel="stylesheet" type="text/css" href="theme.css">
     </head>
-    <body>
-      <div class="header"></div>
+    <body class="index">
+      <div class="header">
+        <img src="logo-name.svg">
+      </div>
       <div class="posts">${postsDiv}</div>
       <div class="footer"></div>
     </body>

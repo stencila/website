@@ -2,16 +2,142 @@ body {
   max-width: 50em;
   margin-left: auto;
   margin-right: auto;
+  padding: 0.75em;
 
   font-family: Lato, Helvetica, Arial, Verdana, sans-serif;
-  line-height: 1.5em;
-  text-align: justify;
   color: #333;
+  font-size: 1.1rem;
+  line-height: 150%;
+}
+
+@media only screen and (max-device-width: 480px) {
+  body {
+    font-size: 1rem;
+  }
+}
+
+
+.index .header {
+  margin-bottom: 4em;
+}
+
+.index .header img {
+  display: block;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.index .post {
+  margin: 3em 0;
+}
+
+.index .post .title {
+  font-size: 1.3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.index .post .author {
+  display: inline;
+  color: #666;
+}
+
+.index .post .date {
+  display: inline;
+  color: #666;
+  float: right;
+}
+
+.index .post:after {
+  content: '.';
+  visibility: hidden;
+  display: block;
+  height: 0;
+  clear: both;
+}
+
+
+#header {
+  margin: 0 0 3em 0;
+}
+
+#title {
+  margin-bottom: 1em;
+  font-size: 2em;
+  color: #555;
+  line-height: 100%;
+}
+
+.author {
+  font-style: italic;
+  margin: 1em 0;
+}
+
+#date {
+  color: #888;
+}
+
+#content {
+  text-align: justify;
 }
 
 a {
   text-decoration: none;
+  color: #5081da;
 }
+
+.figure > img {
+    max-width: 90%;
+    display: block;
+    margin: 0 auto;
+}
+
+code {
+  padding: 1px;
+  background: hsl(0, 0%, 93%);
+  border-bottom: 1px solid hsl(0, 0%, 90%);
+  font-family: mono;
+}
+
+pre {
+  margin: 1em 0;
+  padding: 1em;
+  background: #222;
+  border-radius: 3px;
+
+  font-family: mono;
+  font-size: .9em;
+  color: #ccc;
+  overflow: auto;
+}
+pre>code {
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+h1 {
+  font-size: 1.3em;
+}
+
+h2 {
+  font-size: 1.2em;
+  margin-left: 1rem;
+}
+
+h3 {
+  font-size: 1.1em;
+  margin-left: 2rem;
+}
+
+blockquote {
+  margin: 1em 0;
+  border-left: 4px solid #999;
+  border-right: 4px solid #999;
+  padding: 0 1em;
+  color: #666;
+}
+
 
 #disqus_thread {
   margin-top: 5em;
