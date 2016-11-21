@@ -7,4 +7,5 @@ To publish a new post, create a subdirectory with a `post.md` Markdown file and 
 ```sh
 node build.js
 git commit -a -m "New post"
+git push
 ```
