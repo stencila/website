@@ -1,20 +1,24 @@
 <!DOCTYPE html>
     <html>
       <head>
+        <title>Stencila blog reborn (again!)</title>
         <meta charset="utf-8">
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body>
-        <div id="content"><h1 id="stencila-blog-reborn-again">Stencila blog reborn (again!)</h1>
-<p>Welcome to the new incarnation of the Stencila blog.</p>
-<p>It&apos;s a work in progress :)</p></div>
+      <body class="post">
+        <div id="header">
+          <div id="title">Stencila blog reborn (again!)</div>
+          <div class="author">Nokome Bentley</div>
+          <div id="date">21 November 2016</div>
+        </div>
+        <div id="content"><p>Welcome to the new incarnation of the Stencila blog.</p></div>
         <div id="disqus_thread"></div>
         <script>
           var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/${post.name}';
-            this.page.identifier = 'blog-post-%{post.name}';
+            this.page.url = 'http://blog.stenci.la/${post}';
+            this.page.identifier = 'blog-post-%{post}';
           };
           (function() {
           var d = document, s = d.createElement('script');
