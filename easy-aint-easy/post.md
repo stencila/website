@@ -1,9 +1,12 @@
 ---
-title: Easy ain't easy. But it's getting easier. But it's not enough.
+title: Easy ain't easy but it's getting easier.
 author: Nokome Bentley
 date: 24 November 2016
-abstract:
+abstract: |
+	How do we make it easy for researchers to use tools for reproducible research?
 ---
+
+# It isn't easy being easy
 
 I recently had a conversation about how difficult it can be to make things easy. Specifically, how do we make it easy for researchers to use tools for reproducible research. 
 
@@ -13,7 +16,8 @@ Well, maybe it isn't difficult. Maybe it just takes time. Time for us to develop
 
 Jeff Raskin, a pioneer of human-computer interactions noted that ["intuitive equals familiar"](http://www.asktog.com/papers/raskinintuit.html). To coders, code is intuitive; to everyone else, it's not. So when coders develop the Next Big Thing ™ they're pretty happy playing with it deep down in their codey world. 
 
-# Layer upon layer
+
+# Easy is getting easier
 
 Fortunately, it doesn't take too long before non-code interfaces emerge at the surface. Take for example, [Git](https://git-scm.com/), the system for version control created by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds). It's possibly one of the most important pieces of software to have emerged in the last decade, and probably one of the [scariest to use](http://ohshitgit.com/). The most fundamental of all of Git's functions, is to create a [commit](https://git-scm.com/docs/git-commit) and share it with your collaborators. Most coders will do that by writing some commands in a terminal console:
 
@@ -32,7 +36,7 @@ When you press that "Commit changes" button, exactly the same thing happens as w
 
 It's also getting easier to create these easy interfaces. Open source frameworks like [React](https://facebook.github.io/react/) and [Polymer](https://www.polymer-project.org/1.0/) dramatically reduce the time and resources required to build them. Today, more than ever, building these interfaces is about putting these types of building blocks together the right way.
 
-Easy is getting easier. But it still desn't just happen. Instead it has become less of a technical problem and more of a design problem. It now requires [less input from developers and more input from stakeholders](https://www.adamhyde.net/collaborative-product-design-v0-9-ch1-intro/).
+Easy is getting easier. But it still doesn't just happen. Instead, it has become less of a technical problem and more of a design problem. It now requires [less input from developers and more input from stakeholders](https://www.adamhyde.net/collaborative-product-design-v0-9-ch1-intro/).
 
 
 # Easy isn't enough
