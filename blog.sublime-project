@@ -4,5 +4,16 @@
 		{
 			"path": "."
 		}
+	],
+	"build_systems":
+	[
+		{
+			"name": "Build the blog",
+			"cmd":
+			[
+				"node", "build.js"
+			],
+			"working_dir": "."
+		},
 	]
 }
