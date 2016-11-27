@@ -8,7 +8,7 @@ abstract: |
 
 # It isn't easy being easy
 
-I recently had a conversation about how difficult it can be to make things easy. Specifically, how do we make it easy for researchers to use tools for reproducible research. 
+I recently had a conversation about how difficult it can be to make things easy. Specifically, how do we make it easy for researchers to use tools for reproducible research?
 
 Making software interfaces "user friendly", "frictionless" and with a low "cognitive load" has been a focus since before _software_ was a word. So why is it so difficult? 
 
@@ -19,7 +19,7 @@ Jeff Raskin, a pioneer of human-computer interactions noted that ["intuitive equ
 
 # Easy is getting easier
 
-Fortunately, it doesn't take too long before non-code interfaces emerge at the surface. Take for example, [Git](https://git-scm.com/), the system for version control created by [Linus Torvalds](https://en.wikipedia.org/wiki/Linus_Torvalds). It's possibly one of the most important pieces of software to have emerged in the last decade, and probably one of the [scariest to use](http://ohshitgit.com/). The most fundamental of all of Git's functions, is to create a [commit](https://git-scm.com/docs/git-commit) and share it with your collaborators. Most coders will do that by writing some commands in a terminal console:
+Fortunately, it doesn't take too long before non-code interfaces emerge at the surface. Take for example, [Git](https://git-scm.com/), the system for version control. It's possibly one of the most important pieces of software to have emerged in the last decade, and probably one of the [scariest to use](http://ohshitgit.com/). The most fundamental of all of Git's functions, is to create a "commit" (a checkpoint that, if need be, you can roll back to) and share it with your collaborators. Most coders will do that by writing some commands in a terminal console:
 
 ```
 git add README.md
@@ -36,7 +36,7 @@ When you press that "Commit changes" button, exactly the same thing happens as w
 
 It's also getting easier to create these easy interfaces. Open source frameworks like [React](https://facebook.github.io/react/) and [Polymer](https://www.polymer-project.org/1.0/) dramatically reduce the time and resources required to build them. Today, more than ever, building these interfaces is about putting these types of building blocks together the right way.
 
-Easy is getting easier. But it still doesn't just happen. Instead, it has become less of a technical problem and more of a design problem. It now requires [less input from developers and more input from stakeholders](https://www.adamhyde.net/collaborative-product-design-v0-9-ch1-intro/).
+Easy is getting easier. But it still doesn't just happen. Instead, it has become less of a technical problem and more of a design problem. It now requires [less input from developers and more input from stakeholders](https://www.adamhyde.net/collaborative-product-design-v0-9-ch1-intro/). Getting users to design interfaces themselves (instead of creating hypothetical "user stories") can lead to greater understanding, familiarity, and thus intuitiveness, in the end product.
 
 
 # Easy isn't enough
