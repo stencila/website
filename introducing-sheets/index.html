@@ -7,13 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body class="post">
+      <body>
         <div id="header">
-          <div id="title">Spreadsheets are dead, long live reactive programming environments!</div>
-          <div class="author">Nokome Bentley in collaboration with Oliver Buchtala and Micheal Aufreiter</div>
-          <div id="date">15 March 2016</div>
+          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
         </div>
-        <div id="content"><h1 id="birth-...">Birth ...</h1>
+        <div class="post">
+          <div id="meta">
+            <div id="title">Spreadsheets are dead, long live reactive programming environments!</div>
+            <div class="author">Nokome Bentley in collaboration with Oliver Buchtala and Micheal Aufreiter</div>
+            <div id="date">15 March 2016</div>
+          </div>
+          <div id="content"><h1 id="birth-...">Birth ...</h1>
 <p>In 1979, Dan Bricklin and Bob Frankston created VisiCalc the world&apos;s first spreadsheet software. VisiCalc was an immediate success, became the Apple II&apos;s &quot;killer app&quot; and was credited by Steve Jobs with propelling the first explosion
     in personal computing. Ted Nelson, an internet pioneer, described the paradigm shift that the spreadsheet interface created,</p>
 <blockquote>
@@ -148,18 +152,19 @@ E2  = plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=1,cex=2)</code></pre>
     On the Reinhart-Rogoff affair: <a href="https://www.washingtonpost.com/news/wonk/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/">&quot;Is the evidence for austerity based on an Excel spreadsheet error?&quot;&quot;</a>    and <a href="https://cunymathblog.commons.gc.cuny.edu/2013/05/06/sloppy-math-and-the-austerity-debate/">&quot;Sloppy math and the austerity debate&quot;</a>.</p>
 <p>Felienne Hermans&apos; talk <a href="http://www.slideshare.net/Felienne/spreadsheets-are-code-online">&quot;Spreadsheets are code&quot;</a> on applying software engineering methods to spreadsheets and Nathan Brixius on the <a href="https://nathanbrixius.wordpress.com/2015/07/27/spreadsheets-are-alive-spreadsheets-are-dead/">need to combine the befits of spreadsheets and programming</a>.
     <a href="http://manns.github.io/pyspread/">Pyspread</a> a desktop spreadsheet program that uses Python expressions in cells.</p></div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/${post}';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = 'http://blog.stenci.la/${post}';
+              this.page.identifier = 'blog-post-%{post}';
+            };
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//stencila.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+        </div>
       </body>
     </html>

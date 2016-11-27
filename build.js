@@ -5,6 +5,7 @@ const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
+  'easy-aint-easy',
   'blog-reincarnate',
   'humane-sheets',
   'underneath-sheets',
@@ -44,26 +45,31 @@ for (let post of posts) {
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body class="post">
+      <body>
         <div id="header">
-          <div id="title">${meta.title}</div>
-          <div class="author">${meta.author}</div>
-          <div id="date">${meta.date || ''}</div>
+          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
         </div>
-        <div id="content">${content}</div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = '${url}';
-            this.page.identifier = '${identifier}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+        <div class="post">
+          <div id="meta">
+            <div id="title">${meta.title}</div>
+            <div class="author">${meta.author}</div>
+            <div id="date">${meta.date || ''}</div>
+          </div>
+          <div id="content">${content}</div>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = '${url}';
+              this.page.identifier = '${identifier}';
+            };
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//stencila.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+        </div>
       </body>
     </html>`
   )

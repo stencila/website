@@ -7,13 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body class="post">
+      <body>
         <div id="header">
-          <div id="title">Stencila blog reincarnated</div>
-          <div class="author">Nokome Bentley</div>
-          <div id="date">21 November 2016</div>
+          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
         </div>
-        <div id="content"><p>Welcome to the new incarnation of the Stencila blog!</p>
+        <div class="post">
+          <div id="meta">
+            <div id="title">Stencila blog reincarnated</div>
+            <div class="author">Nokome Bentley</div>
+            <div id="date">21 November 2016</div>
+          </div>
+          <div id="content"><p>Welcome to the new incarnation of the Stencila blog!</p>
 <p>The previous version of the blog was published on the Stencila <a href="https://stenci.la">hub</a>. Over there, each blog post is a document, written using our markup language <a href="https://github.com/stencila/stencila/releases/tag/0.6">Cila</a> and
     with it&apos;s own Git repository. We were trying to do our best to pull ourselves up by the boot straps and eat our own dog food!</p>
 <p>But dog food can be hard to eat. Particularly when you have just finished the strenuous task of pulling yourself up by your own boot straps (try it!). It was easy enough to author blog posts. But there was some friction in publishing posts, mainly because
@@ -25,18 +29,19 @@
     <img src="screenshot.png">
 
 </div></div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/${post}';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = 'http://blog.stenci.la/${post}';
+              this.page.identifier = 'blog-post-%{post}';
+            };
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//stencila.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+        </div>
       </body>
     </html>

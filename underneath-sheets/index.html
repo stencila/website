@@ -7,13 +7,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
       </head>
-      <body class="post">
+      <body>
         <div id="header">
-          <div id="title">Getting under Stencila sheets</div>
-          <div class="author">Nokome Bentley</div>
-          <div id="date">17 March 2016</div>
+          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
         </div>
-        <div id="content"><p>This is a follow up post to the <a href="https://blog.stenci.la/introducing-sheets">introduction to Stencila sheets</a>. I&apos;m going to go into more technical details to explain how they work and some of the things you can do with them.</p>
+        <div class="post">
+          <div id="meta">
+            <div id="title">Getting under Stencila sheets</div>
+            <div class="author">Nokome Bentley</div>
+            <div id="date">17 March 2016</div>
+          </div>
+          <div id="content"><p>This is a follow up post to the <a href="https://blog.stenci.la/introducing-sheets">introduction to Stencila sheets</a>. I&apos;m going to go into more technical details to explain how they work and some of the things you can do with them.</p>
 <h1 id="getting-started">Getting started</h1>
 <p>Stencila sheets are designed to be used on your own computer or in the cloud (i.e. &quot;someone else&apos;s computer&quot;). In this post I&apos;m going to use a local R session to create and play around with a simple sheet. But the same sheet is published
     at https://stenci.la/nokome/examples/simple-sheet and you can play with it over there (a Docker container will host the R session on our servers which will open up and serve the sheet just like I&apos;m about to do locally).</p>
@@ -168,18 +172,19 @@ Server: Stencila embedded
 <h1 id="under-construction">Under construction</h1>
 <p>Stencila sheets are young and under a lot of development. We&apos;re an open source project and keen to get suggestions, feedback, and contributions. Feel free to add an issue, or comment on an existing one, over at the repo on Github https://github.com/stencila/stencila.
     Or drop by and chat with use in <a href="https://gitter.im/stencila/stencila">our Gitter chat room</a></p></div>
-        <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/${post}';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <div id="disqus_thread"></div>
+          <script>
+            var disqus_config = function () {
+              this.page.url = 'http://blog.stenci.la/${post}';
+              this.page.identifier = 'blog-post-%{post}';
+            };
+            (function() {
+            var d = document, s = d.createElement('script');
+            s.src = '//stencila.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+            })();
+          </script>
+        </div>
       </body>
     </html>
