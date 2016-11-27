@@ -18,8 +18,8 @@
    inkscape:version="0.91 r13725"
    sodipodi:docname="grid-n-code.svg"
    inkscape:export-filename="/home/nokome/stencila/source/blog/humane-sheets/grid-n-code.png"
-   inkscape:export-xdpi="78.75"
-   inkscape:export-ydpi="78.75">
+   inkscape:export-xdpi="126.12747"
+   inkscape:export-ydpi="126.12747">
   <defs
      id="defs4" />
   <sodipodi:namedview
@@ -30,7 +30,7 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="0.65047619"
-     inkscape:cx="139.66853"
+     inkscape:cx="-119.37247"
      inkscape:cy="-11.883442"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
