@@ -19,18 +19,18 @@ body {
   margin-right: auto;
 }
 
-.index .header {
-  margin-bottom: 4em;
-}
-
 .index .header img {
   display: block;
   max-width: 80%;
-  margin: 0 auto;
+  margin: 3em auto 1em auto;
+}
+
+.index .posts {
+  padding: 0.5em;
 }
 
 .index .post {
-  margin: 3em 0;
+  margin: 1em 0;
 }
 
 .index .post .title {
@@ -48,6 +48,11 @@ body {
   display: inline;
   color: #666;
   float: right;
+}
+
+.index .post .abstract {
+  text-align: justify;
+  line-height: 130%;
 }
 
 .index .post:after {
