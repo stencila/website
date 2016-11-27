@@ -10,7 +10,9 @@ abstract: |
 
 A spreadsheet's primary user interface is the familiar two dimensional grid of cells. By entering formulas into those cells, humans get to tell the computer what calculations to do on what data. The spreadsheet's grid is it's programming interface. It's a particular kind of programming interface - a live, reactive one - but it's still a programming interface.
 
-Spreadsheets have another interface - the spreadsheet file - but it's been mostly designed for computers, not humans. In contrast, Stencila Sheets use a file format that is intended to be human friendly. In a [previous post](https://stenci.la/stencila/blog/introducing-sheets/) I outlined some of the advantages of a plain text format for spreadsheets. These include making spreadsheets more transparent (you can see all of it's source code in one file) and diff-able (you can use them with a version control system like git). 
+Spreadsheets have another interface - the spreadsheet file - but it's been mostly designed for computers, not humans. In contrast, Stencila Sheets use a file format that is intended to be human friendly. In a [previous post](http://blog.stenci.la/introducing-sheets/) I outlined some of the advantages of a plain text format for spreadsheets. These include making spreadsheets more transparent (you can see all of it's source code in one file) and diff-able (you can use them with a version control system like git). 
+
+![](grid-n-code.png)
 
 But maybe the biggest advantage of having a plain-text, designed-for-humans format is "social" - it allows different types of users to collaborate on the same spreadsheet using the interface they are most accustomed to. "Coders", people who are used to writing code in an editor like vim and using version control tools like git, can edit spreadsheets used by "clickers", people who would prefer to stay in the grid-based spreadsheet interface. Providing multiple programming interfaces to the same underlying execution engine enhances transparency and reproducibility through accessibility.
 
