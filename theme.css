@@ -117,10 +117,21 @@ a {
   color: #5081da;
 }
 
-.figure > img {
-    max-width: 90%;
-    display: block;
-    margin: 0 auto;
+figure {
+  margin: 3em 0;
+}
+
+figure > img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+
+figcaption {
+  margin-top: 1em;
+  font-weight: bold;
+  font-size: 95%;
+  color: #777;
 }
 
 code {

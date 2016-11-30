@@ -5,6 +5,7 @@ const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
+  'geheimhaven',
   'easy-aint-easy',
   'blog-reincarnate',
   'humane-sheets',
