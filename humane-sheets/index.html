@@ -22,10 +22,10 @@
     interface. It&apos;s a particular kind of programming interface - a live, reactive one - but it&apos;s still a programming interface.</p>
 <p>Spreadsheets have another interface - the spreadsheet file - but it&apos;s been mostly designed for computers, not humans. In contrast, Stencila Sheets use a file format that is intended to be human friendly. In a <a href="http://blog.stenci.la/introducing-sheets/">previous post</a>    I outlined some of the advantages of a plain text format for spreadsheets. These include making spreadsheets more transparent (you can see all of it&apos;s source code in one file) and diff-able (you can use them with a version control system like
     git).</p>
-<div class="figure">
+<figure>
     <img src="grid-n-code.png">
 
-</div>
+</figure>
 <p>But maybe the biggest advantage of having a plain-text, designed-for-humans format is &quot;social&quot; - it allows different types of users to collaborate on the same spreadsheet using the interface they are most accustomed to. &quot;Coders&quot;, people
     who are used to writing code in an editor like vim and using version control tools like git, can edit spreadsheets used by &quot;clickers&quot;, people who would prefer to stay in the grid-based spreadsheet interface. Providing multiple programming
     interfaces to the same underlying execution engine enhances transparency and reproducibility through accessibility.</p>
@@ -34,10 +34,10 @@
 <h1 id="other-formats">Other formats</h1>
 <p>Before diving into a new spreadsheet file format it&apos;s worth considering the alternatives already out there. Microsoft Excel&apos;s format, the &quot;Office Open XML Spreadsheet&quot; or XLSX, is the dominant spreadsheet file format today. Let&apos;s
     look at that format for a very simple spreadsheet with three numbers and a formula that adds them all up:</p>
-<div class="figure">
+<figure>
     <img src="screenshot.png">
 
-</div>
+</figure>
 <p>When you save that spreadsheet as an <code>.xlsx</code> file what you get is actually a zip archive containing seven XML files:</p>
 <pre><code>.
 &#x251C;&#x2500;&#x2500; [Content_Types].xml

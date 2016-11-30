@@ -34,10 +34,10 @@
     familiar spreadsheet grid interface built using the <a href="http://substance.io">Substance</a> content editing library. That interface is connected to that embedded server by a Websocket and any changes that we make to the cells gets executed in
     the R session.</p>
 <p>For this article, I&apos;m going to keep this sheet really simple, just to make some of the following output as concise as possible. So, after a few edits, here my sheet with some data, some calculations and a plot:</p>
-<div class="figure">
+<figure>
     <img src="screenshot-initial.png">
 
-</div>
+</figure>
 <h1 id="diving-into-context">Diving into context</h1>
 <p>As explained in the introductory posts, in a Stencila sheet, the cell formulas are evaluated in the host language, in this case, R, and assigned to a variable with the cell id. So, when I entered <code>34</code> into cell B2, it was equivalent to writing
     <code>B2 &lt;- 34</code> in the R console. We can see this in action by going back to the R session and examining the sheet&apos;s context:</p>
@@ -60,18 +60,18 @@
 <p>Cells don&apos;t have to hold just fundamental types like numbers and strings. For example, in cell D2 I entered <code>= plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=16,cex=2)</code> which produced the plot in the top-right. Cell formulas can be evaluated to
     any type of object - what gets shown is the cell is the a string representation of that object. So, for example, if I enter <code>fit = lm(log(B2:B4)~log(A2:A4))</code> into A15, we get a string representation of the fitted linear model (the result
     of the <code>lm</code> function in R):</p>
-<div class="figure">
+<figure>
     <img src="screenshot-lm.png">
 
-</div>
+</figure>
 <p>I named the cell <code>fit</code>, so now in the R session there are two variables representing this cell <code>A15</code> and the name, or alias, <code>fit</code>. That allows me to conveniently extract the estimated coefficients from that model in cell
     B25 <code>= exp(fit$coef[1])</code>.</p>
 <h1 id="testing-testing-1-2-3">Testing, testing, 1, 2, 3</h1>
 <p>Stencila sheets allow you to define &quot;test&quot; cells: cells that define test assertions. Test cells are distinguished by a leading <code>?</code>. For example, by setting A7 to <code>? A6&gt;1 &amp;&amp; A6&lt;3</code> and B7 to <code>? B6&gt;20 &amp;&amp; B6&lt;150</code>    we define two tests that check that the mean height and weight are in plausible ranges. These show a cross if the test has failed:</p>
-<div class="figure">
+<figure>
     <img src="screenshot-tests.png">
 
-</div>
+</figure>
 <p>We can also get test statistics, including the coverage of cells with formula (i.e. excluding simple data cells)</p>
 <pre><code>&gt; sheet$test()</code></pre>
 <pre><code>&gt; library(rjson)
@@ -121,10 +121,10 @@ B26 = exp(fit$coef[2])
 E2  = plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=16,cex=2)</code></pre>
 <p>So, if you don&apos;t want to launch the browser based interface you can edit it in your favorite text editor and update the sheet from within a console. And because it&apos;s just plain text, <code>sheet.tsv</code> can easily be diffed using tools like
     <code>git</code> to see what changes have been made to that source code file:</p>
-<div class="figure">
+<figure>
     <img src="screenshot-diff.png">
 
-</div>
+</figure>
 <p>We can also export the sheet as an R script, allowing it to be run in an R console or other R user interface. This uses the sheet&apos;s internal dependency graph to export each cell in the correct order. Obviously, this isn&apos;t going to be very useful
     for large spreadsheets, particularly those that have a lot of data. But we think that there are ways that we can improve on that (see &quot;cell mapping&quot; below).</p>
 <pre><code>&gt; sheet$export(&apos;sheet.r&apos;)</code></pre>
@@ -146,10 +146,10 @@ A1 &lt;- &quot;Height (cm)&quot;
 E2 &lt;- plot(c(A2,A3,A4),c(B2,B3,B4),xlab=A1,ylab=B1,pch=16,cex=2)</code></pre>
 <p>You can also visualize the dependencies between cells using the dependency graph (this will currently only work id you have Graphviz <code>dot</code> installed):</p>
 <pre><code>&gt; sheet$graphviz()</code></pre>
-<div class="figure">
+<figure>
     <img src="graph.png">
 
-</div>
+</figure>
 <p>And because the sheet is being served up by the embedded server from within the R session it can also be accessed via a JSON web API:</p>
 <pre><code>http localhost:7373/nokome/examples/simple-sheet@cell id=B26</code></pre>
 <pre><code>HTTP/1.1 200 OK
