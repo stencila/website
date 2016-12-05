@@ -193,4 +193,4 @@ Or, we can click on the link to the R peer, get the interface for the host resid
 
 That's a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something missing in the package for you favorite language, you can always run a host from a different language and pull resources from there. Right now we have a *very* simple peer discovery mechanism which only works locally. But the plan is to extend that so that peers will be able to reside on different machines.
 
-In the next development update, I'll show how we can combine the _document_ and _session_ components into a dynamic, data driven document.
+That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I'll show how we can do something interesting with those building blocks by combining the _document_ and _session_ components into a dynamic, data driven document.
