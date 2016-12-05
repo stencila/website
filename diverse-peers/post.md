@@ -6,7 +6,7 @@ abstract: |
 	How Stencila packages act as a network of diverse peers with differing capabilities and calling on each other to provide resources.
 ---
 
-In my [last post](http://blog.stenci.la/geheimhaven) I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform's architecture was monolithic because it was based on a foundational C++ implementation which was then exposed to various host languages, like R and Python, using wrappers. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.g. complex builds, intimidating for contributors). In the new approach, the various packages that make up the Stencila platform have been decoupled from each other and there is more of a focus on a standard set of APIs and communication protocols, rather than a single implementation. In this development update I'm going to give you a taste of what that actually looks like.
+In my [last post](http://blog.stenci.la/geheimhaven) I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform's architecture was monolithic because it was based on a foundational C++ implementation which was then exposed to various host languages like R and Python. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.g. complex builds, intimidating for contributors). In the new approach, the various packages that make up the Stencila platform have been decoupled from each other and there is more of a focus on a standard set of APIs and communication protocols, rather than a single implementation. In this development update I'm going to give you a taste of what that actually looks like.
 
 The core repository for Stencila was [`stencila/stencila`](http://github.com/stencila/stencila). That repo is still there, but now, instead of being the place where all the code resides, it's an umbrella repo which points to the other repos in the platform and will hold overarching documentation. Previously, the monolithc `stencila/stencila` repo had a mix of C++ code for the foundations, R and Python code for wrapper packages for those languages, and Javascript and CSS for web based interfaces. This could be confusing and for some intimidating - if you're a Python coder you want the Python package to look like a Python package with `setup.py` and all the other things you are used to seeing. Ditto if your a R or Node.js coder. Ditto if your a developer of browser based user interfaces.
 
@@ -16,7 +16,7 @@ So, now there are three separate repos for the R, Python and Node.js packages:
 - [`stencila/py`](http://github.com/stencila/py)
 - [`stencila/node`](http://github.com/stencila/node)
 
-These will be your entry point to the platform if you're used to writing code in those languages. As I'll show you, when you use these packages you're not limited to code - each of these package has a Stencila 'host' which will serve up the browser based user interfaces. Those live in their own repo:
+These will be your entry point to the platform if you're used to writing code in those languages. As I'll show you, when you use these packages you're not limited to using the command line - each of these package has a Stencila 'host' which will serve up the browser based user interfaces. Those live in their own repo:
 
 - [`stencila/web`](http://github.com/stencila/web)
 
@@ -26,7 +26,7 @@ They are also provided by the desktop application which is based on Github's [El
 
 In this post I'm going to illustrate how `stencila/r`, `stencila/py` and `stencila/node` can behave as a network of diverse peers. Peers in that each package is both a supplier and consumer of resources. Diverse in that each package bring different types of resources to the network.
 
-So, lets start off with Node.js package. All the packages are in initial stages of development but the Node.js package has had more work done on it at this stage - mainly because it provides an easy pathway to desktop deployment via Electron. 
+So, lets start off with Node.js package. All the packages are in initial stages of development but the Node.js package has had more work done on it at this stage (mainly because it provides an easy pathway to desktop deployment via Electron). 
 
 You can install the package using NPM,
 
@@ -191,6 +191,8 @@ Or, we can click on the link to the R peer, get the interface for the host resid
 
 ![Screenshot of the browser-based interface for the R host](screenshot-3.png)
 
-That's a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something missing in the package for you favorite language, you can always run a host from a different language and pull resources from there. Right now we have a *very* simple peer discovery mechanism which only works locally. But the plan is to extend that so that peers will be able to reside on different machines.
+That's a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something missing in the package for you favorite language, you can always run a host from a different language and pull resources from there. 
+
+We've moved from a traditional client-server architecture and instead each Stencila package acts as both a client and a server - both a consumer and provider of resources. Right now we have a *very* simple peer discovery mechanism which only works locally. But the plan is to extend that so that peers will be able to reside on different machines.
 
 That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I'll show how we can do something interesting with those building blocks by combining the _document_ and _session_ components into a dynamic, data driven document.
