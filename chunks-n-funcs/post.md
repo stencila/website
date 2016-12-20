@@ -7,7 +7,7 @@ abstract: |
 ---
 
 
-Recently, I've written about [breaking up Stencila](http://blog.stenci.la/geheimhaven/) into several packages that can act as a [network of diverse peers](http://blog.stenci.la/diverse-peers/). Each of those packages bring it's own capabilities to the network, most notably as execution contexts for a one or more languages. We call those execution contexts *Sessions* (in the past we've called them *Contexts* and I'm thinking that may be a better name to revert to!). They're analogous to Jupyter's [*Kernels*](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages), allowing you to execute a snippet of code in your favorite programming language, and then insert the resulting content into your Document or Sheet.
+Recently, I've written about [breaking up Stencila](http://blog.stenci.la/geheimhaven/) into several packages that can act as a [network of diverse peers](http://blog.stenci.la/diverse-peers/). Each of those packages bring its own capabilities to the network, most notably as execution contexts for a one or more languages. We call those execution contexts *Sessions* (in the past we've called them *Contexts* and I'm thinking that may be a better name to revert to!). They're analogous to Jupyter's [*Kernels*](https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages), allowing you to execute a snippet of code in your favorite programming language, and then insert the resulting content into your Document or Sheet.
 
 I've been implementing several Session classes over the last few weeks. The [R package](https://github.com/stencila/r) has a [RSession](https://github.com/stencila/r/blob/master/R/r-session.R) for executing R code and a [SqliteSession](https://github.com/stencila/r/blob/master/R/sqlite-session.R) for executing SQL code within an SQLite database. The [Python package](https://github.com/stencila/py) has a [PySession](https://github.com/stencila/py/blob/master/stencila/py_session.py) and the [Node.js package](https://github.com/stencila/node) has a [JavascriptSession](https://github.com/stencila/node/blob/master/src/js-session/JavascriptSession.js) and a [BashSession](https://github.com/stencila/node/blob/master/src/bash-session/BashSession.js).
 
@@ -170,9 +170,9 @@ But, instead we could declare the data as an output variable of the execute dire
 
 ```
 
-As in Beaker Notebooks, there is no need to do any explicit data conversion. But in addition, by moving the declaration of the variable out of the code chunk, the document is able to "know" the dependency between chunks. It knows that if I refresh the first execute directive, or change it's SQL code, that the second execute directive in R will also have to be refreshed.
+As in Beaker Notebooks, there is no need to do any explicit data conversion. But in addition, by moving the declaration of the variable out of the code chunk, the document is able to "know" the dependency between chunks. It knows that if I refresh the first execute directive, or change its SQL code, that the second execute directive in R will also have to be refreshed.
 
-What about user interactivity? We include that idea by using the HTML `input` tag to define a document variable. When a user changes the input (e.g. entering a new number, or sliding a slider), the document variable is changed, which in turn triggers any execute directive that depend upon that variable. In this example, the document variable `breaks` is declared as a number. When it's value is changed, the R chunk generates a new histogram having the desired number of breaks:
+What about user interactivity? We include that idea by using the HTML `input` tag to define a document variable. When a user changes the input (e.g. entering a new number, or sliding a slider), the document variable is changed, which in turn triggers any execute directive that depend upon that variable. In this example, the document variable `breaks` is declared as a number. When its value is changed, the R chunk generates a new histogram having the desired number of breaks:
 
 ```html
 <input name="breaks" type="number">
