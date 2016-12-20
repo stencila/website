@@ -32,6 +32,9 @@ for (let post of posts) {
   
   // Convert post to HTML
   let content = doc.html;
+  // A hack for Prism highlighing to work
+  content = content.replace(/<pre class="(\w+)"><code>/g, '<pre class="language-$1"><code>')
+  
   // Set url and id for Disqus comments
   let url = 'http://blog.stenci.la/${post}'
   let identifier = 'blog-post-%{post}'
@@ -46,6 +49,7 @@ for (let post of posts) {
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
       </head>
       <body>
         <div id="header">
@@ -58,6 +62,7 @@ for (let post of posts) {
             <div id="date">${meta.date || ''}</div>
           </div>
           <div id="content">${content}</div>
+          <script src="../external/prism.js"></script>
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {
