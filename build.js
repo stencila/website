@@ -5,6 +5,7 @@ const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
+  'chunks-n-funcs',
   'diverse-peers',
   'geheimhaven',
   'easy-aint-easy',
@@ -20,7 +21,7 @@ for (let post of posts) {
 
   // Create a `Document` for the post
   let doc = new stencila.Document()
-  doc.read(post + '/post.md')
+  doc.read(post + '/post.md', 'gfmd')
 
   // As a temporary kludge extract the documnet's meta-data as JSON using a special
   // Pandoc template. Ultimately this will be incorporated directly into Stencila.

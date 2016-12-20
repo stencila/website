@@ -6,6 +6,7 @@
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
       </head>
       <body>
         <div id="header">
@@ -44,9 +45,9 @@
     that each package bring different types of resources to the network.</p>
 <p>So, lets start off with Node.js package. All the packages are in initial stages of development but the Node.js package has had more work done on it at this stage (mainly because it provides an easy pathway to desktop deployment via Electron).</p>
 <p>You can install the package using NPM,</p>
-<pre class="sh"><code>$ npm install stencila/node -g</code></pre>
+<pre class="language-sh"><code>$ npm install stencila/node -g</code></pre>
 <p>Then start Node, import the package and get the host in that package to start serving,</p>
-<pre class="js"><code>// Import the Stencila package
+<pre class="language-js"><code>// Import the Stencila package
 &gt; const stencila = require(&apos;stencila&apos;)
 
 // The package has a host object
@@ -55,7 +56,7 @@
 // Serve the host so it is available to other hosts as a peer
 &gt; host.serve()</code></pre>
 <p>That starts an embedded HTTP server listening on port 2000 at localhost. You can check that it&apos;s running using Curl, or my favorite tool for the job, httpie,</p>
-<pre class="sh"><code>$ http --json :2000
+<pre class="language-sh"><code>$ http --json :2000
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 583
@@ -91,30 +92,30 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
     &quot;url&quot;: &quot;http://127.0.0.1:2000&quot;
 }</code></pre>
 <p>Because this is the only Stencila host, it&apos;s list of peers is empty,</p>
-<pre class="js"><code>&gt; host.peers
+<pre class="language-js"><code>&gt; host.peers
 []</code></pre>
 <p>So, let&apos;s start Stencila hosts in both R and Python.</p>
 <p>You can install the R package from within R using <code>devtools</code>,</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install the Stencila package</span>
-&gt;<span class="st"> </span>devtools::<span class="kw">install_github</span>(<span class="st">&quot;stencila/r&quot;</span>)
+<pre class="language-r"><code># Install the Stencila package
+&gt; devtools::install_github(&quot;stencila/r&quot;)
 
-<span class="co"># Import it</span>
-&gt;<span class="st"> </span><span class="kw">library</span>(stencila)
+# Import it
+&gt; library(stencila)
 
-<span class="co"># Serve the host so it is available to other hosts as a peer</span>
-&gt;<span class="st"> </span>host$<span class="kw">serve</span>()
-[<span class="dv">1</span>] <span class="st">&quot;http://127.0.0.1:2010&quot;</span></code></pre></div>
+# Serve the host so it is available to other hosts as a peer
+&gt; host$serve()
+[1] &quot;http://127.0.0.1:2010&quot;</code></pre>
 <p>Let&apos;s also get a Python host going by installing the Python package using PIP,</p>
-<pre class="sh"><code>pip install --user https://github.com/stencila/py/archive/master.zip</code></pre>
+<pre class="language-sh"><code>pip install --user https://github.com/stencila/py/archive/master.zip</code></pre>
 <p>and then serving it from within Python,</p>
-<pre class="py"><code># Import the Stencila package
+<pre class="language-py"><code># Import the Stencila package
 &gt;&gt;&gt; from stencila import host
 
 # Serve the host
 &gt;&gt;&gt; host.serve()
 &apos;http://127.0.0.1:2020&apos;</code></pre>
 <p>Let&apos;s now go back to the Node.js host and see what it&apos;s <code>peers</code> property looks like now,</p>
-<pre class="js"><code>// Discover peers on localhost
+<pre class="language-js"><code>// Discover peers on localhost
 &gt; host.discover()
 
 // Get list of peers
@@ -137,7 +138,7 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 <p>So, the Stencila host in the Node.js now recognizes the hosts in R and Python as it&apos;s peers and can request resources from them. In Stencila we call these resources <em>components</em>. Components include <em>documents</em>, <em>sheets</em>, and
     <em>sessions</em> and hosts have an <code>open</code> method that can be called to get a component and load it into memory. If a host does not know how to open a particular component then it will ask it&apos;s peers to open it on it&apos;s behalf.
     To illustrate this we&apos;ll open and R session from within Node.js,</p>
-<pre class="js"><code>// Open a R session from within Node.js
+<pre class="language-js"><code>// Open a R session from within Node.js
 // (behind the scenes the R session is actually created by the R host)
 &gt; let r
 &gt; host.open(&apos;new://r-session&apos;).then(session =&gt; r = session)
@@ -154,26 +155,18 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 <p>You don&apos;t need to do all this at the command line. Instead you can use the browser-based user interfaces. The easiest way to do that is to launch a browser window using the <code>view</code> method:</p>
 <pre><code>host.view()</code></pre>
 <p>That will open a browser window at the URL that the host is serving on. It shows a list of components that this host is currently hosting (currently just that R session we created above) as well as list of it&apos;s peers:</p>
-<figure>
-    <img src="screenshot-1.png" alt="Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers">
-    <figcaption>Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers</figcaption>
-</figure>
+<p><img src="screenshot-1.png" alt="Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers"></p>
 <p>Each Stencila component has a browser-based interface, so if we click on that link to the R session, we get an interactive command line where we can do something like plot those random series <code>x</code> and <code>y</code> which we previously generated
     within the session:</p>
-<figure>
-    <img src="screenshot-2.png" alt="Screenshot of the browser-based interface for the R session">
-    <figcaption>Screenshot of the browser-based interface for the R session</figcaption>
-</figure>
+<p><img src="screenshot-2.png" alt="Screenshot of the browser-based interface for the R session"></p>
 <p>Or, we can click on the link to the R peer, get the interface for the host residing in R, and ask for components that the Node.js host knows about, like <em>documents</em> and <em>Javascript session</em> from there:</p>
-<figure>
-    <img src="screenshot-3.png" alt="Screenshot of the browser-based interface for the R host">
-    <figcaption>Screenshot of the browser-based interface for the R host</figcaption>
-</figure>
+<p><img src="screenshot-3.png" alt="Screenshot of the browser-based interface for the R host"></p>
 <p>That&apos;s a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something
     missing in the package for you favorite language, you can always run a host from a different language and pull resources from there.</p>
 <p>We&apos;ve moved from a traditional client-server architecture and instead each Stencila package acts as both a client and a server - both a consumer and provider of resources. Right now we have a <em>very</em> simple peer discovery mechanism which only
     works locally. But the plan is to extend that so that peers will be able to reside on different machines.</p>
 <p>That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I&apos;ll show how we can do something interesting with those building blocks by combining the <em>document</em> and <em>session</em>    components into a dynamic, data driven document.</p></div>
+          <script src="../external/prism.js"></script>
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {

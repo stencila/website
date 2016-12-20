@@ -6,6 +6,7 @@
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
       </head>
       <body>
         <div id="header">
@@ -29,19 +30,13 @@
 <p>By the middle of this year, Stencila was getting close to what I imagined it might look like when I started out. I had implemented a new markup language for reproducible documents (called Cila), built a rendering engine which was &quot;non-destructive&quot;
     (thereby allowing for a document to both edited by humans and rendered against data by computers), wrapped those C++ implementations into packages for R, Python and Node.js, and with the help of Substance, developed a visual editor for reproducible
     documents.</p>
-<figure>
-    <img src="screenshot.png" alt="Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom">
-    <figcaption>Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom</figcaption>
-</figure>
+<p><img src="screenshot.png" alt="Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom"></p>
 <p>But all was not well.</p>
 <h1 id="of-islands-causeways-and-bridges">Of islands, causeways and bridges</h1>
 <p>In <a href="https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark"><em>Raiders of the Lost Ark</em></a>, Indiana Jones finds himself on U-boat heading towards <a href="http://indianajones.wikia.com/wiki/Geheimhaven">Geheimhaven</a>, a barren, rocky island
     somewhere in the Agean Sea. It&apos;s a long way from anywhere, has steep rocky sides and doesn&apos;t have any apparent redeeming features. It is not until Indiana gets to the island that he discovers there is a sophisticated Nazi supply base tunneled
     into it.</p>
-<figure>
-    <img src="geheimhaven.jpg" alt="The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in Raiders of the Lost Arc">
-    <figcaption>The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in <em>Raiders of the Lost Arc</em></figcaption>
-</figure>
+<p><img src="geheimhaven.jpg" alt="The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in Raiders of the Lost Arc"></p>
 <p>In my enthusiasm to create a better platform for reproducible research I had created an island like Geheimhaven. If you swam over to my island, I&apos;d be able to show you around, show you all the sophisticated things I had done. You would see how much
     better it was. But from the mainland it didn&apos;t look particularly appealing, and certainly not worth the swim!</p>
 <p>I could show you our nice WYSIWYG interfaces and truly programmable documents. But from a distance they look pretty similar to what is already offered by established projects like Jupyter.</p>
@@ -53,16 +48,14 @@
     we&apos;re making use of tools like <a href="http://pandoc.org/">Pandoc</a> to make sure Stencila first integrates well with existing formats like RMarkdown, Latex and Word. See the <a href="https://github.com/stencila/stencila#readme">umbrella repository on Github</a>    for more.</p>
 <p>So the former monolithic island has been broken into an archipelago. An archipelago of islands that are connected by causeways and bridges to each other (each of the Stencila packages acts as both a client and a server and can make use of capabilities
     of the others) and to the mainland (there is now much better integration with &quot;mainstream&quot; formats and tools).</p>
-<figure>
-    <img src="atlanterhavsveien.jpg" alt="The Atlanterhavsveien, the &quot;Atlantic Road&quot;, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland">
-    <figcaption>The Atlanterhavsveien, the <a href="https://en.wikipedia.org/wiki/Atlantic_Ocean_Road">&quot;Atlantic Road&quot;</a>, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland</figcaption>
-</figure>
+<p><img src="atlanterhavsveien.jpg" alt="The Atlanterhavsveien, the &quot;Atlantic Road&quot;, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland"></p>
 <h1 id="the-future">The future</h1>
 <p>There are some exciting side effects of the decoupling of the Stencila architecture.</p>
 <p>By decoupling document rendering from the execution engines we are now able to have polyglot documents, documents that embed more than one language. For example, you could have a document that extracts data from a database using SQL, analyses the data
     using R and then displays it interactively using Javascript.</p>
 <p>Decoupling also opens the door to distributed computing, for example, executing compute intensive code chunks on more powerful remote machine which are close to where your data resides.</p>
 <p>More details on all of this in future development updates.</p></div>
+          <script src="../external/prism.js"></script>
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {

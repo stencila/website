@@ -6,6 +6,7 @@
         <meta name="generator" content="stencila-node-0.1.0">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="../theme.css">
+        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
       </head>
       <body>
         <div id="header">
@@ -24,10 +25,7 @@
     <p>VisiCalc represented a new idea of a way to use a computer and a new way of thinking about the world. Where conventional programming was thought of as a sequence of steps, this new thing was no longer sequential in effect: When you made a change in
         one place, all other things changed instantly and automatically.</p>
 </blockquote>
-<figure>
-    <img src="visicalc.png">
-
-</figure>
+<p><img src="visicalc.png"></p>
 <p>Visicalc on the Apple II. Photo: <a href="https://en.wikipedia.org/wiki/File:Visicalc.png">Wikipedia</a></p>
 <p>Five years later, in a high school on the other side of the world, VisiCalc was the first computer program I ever used. VisiCalc was soon superseded by Lotus 1-2-3 which in turn was usurped by Microsoft Excel, but whatever the software, the spreadsheet
     paradigm was well and truly established. Like many other scientists, Excel became an integral part of my data analysis and modeling toolbox. <code>VLOOKUP</code> and conditional cell formatting became my friends and by the mid 1990s I was programming
@@ -76,10 +74,7 @@
     morning session, myself, Oliver Buchtala and Micheal Aufreiter from Substance, hacked out the first version of Stencila sheets. Urged on by our friends at Coko we&apos;ve been refining them over the last few months to a demo-able state. It&apos;s
     now time to get some user feedback!</p>
 <p>On the surface, Stencila sheets look like any other spreadsheet software. Here&apos;s screenshot taken in my web browser of a very simple sheet (you can play with it yourself at <a href="https://stenci.la/nokome/examples/simple-sheet" class="uri">https://stenci.la/nokome/examples/simple-sheet</a>):</p>
-<figure>
-    <img src="screenshot-initial.png">
-
-</figure>
+<p><img src="screenshot-initial.png"></p>
 <h2 id="sheets-are-code-reactive-programming">Sheets are code + reactive programming</h2>
 <p>So, what&apos;s the point? How is this any different to Excel or Google Sheets? Well, in conventional spreadsheets, formulas like <code>= AVERAGE(B2:B4)</code> use a syntax that is evaluated by the spreadsheet software itself. In a Stencila sheet, the
     cell formulas are evaluated with a host language, in this case, the statistical language R, and assigned to a variable with the cell id. So, when I entered <code>34</code> into cell B2, it was equivalent to writing <code>B2 &lt;- 34</code> in an R
@@ -89,10 +84,7 @@
 <p>Isn&apos;t this just executing code in cells instead of lines? No, sheets maintain the innovation of VisiCac - live, reactive programming - what makes spreadsheets so, well, intuitive. When you make a change in a cell, all the cells that depended on it
     change too. Even the cells for the complicated objects like that R linear model in A16. Stencila sheets does this by analyzing the dependencies of each cell expression and maintains a dependency graph so that the right cells get updated in the right
     order.</p>
-<figure>
-    <img src="screencast.gif">
-
-</figure>
+<p><img src="screencast.gif"></p>
 <p>The user interface for sheets is still pretty rudimentary and we still need to implement many of the user interactions that a spreadsheet needs (e.g creating cell ranges using the mouse instead of having to type them in). Instead, we&apos;ve focused our
     attention on trying to address some of the shortcomings, described above, of traditional spreadsheet software.</p>
 <h2 id="sheets-are-more-testable">Sheets are more testable</h2>
@@ -152,6 +144,7 @@ E2  = plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=1,cex=2)</code></pre>
     On the Reinhart-Rogoff affair: <a href="https://www.washingtonpost.com/news/wonk/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/">&quot;Is the evidence for austerity based on an Excel spreadsheet error?&quot;&quot;</a>    and <a href="https://cunymathblog.commons.gc.cuny.edu/2013/05/06/sloppy-math-and-the-austerity-debate/">&quot;Sloppy math and the austerity debate&quot;</a>.</p>
 <p>Felienne Hermans&apos; talk <a href="http://www.slideshare.net/Felienne/spreadsheets-are-code-online">&quot;Spreadsheets are code&quot;</a> on applying software engineering methods to spreadsheets and Nathan Brixius on the <a href="https://nathanbrixius.wordpress.com/2015/07/27/spreadsheets-are-alive-spreadsheets-are-dead/">need to combine the befits of spreadsheets and programming</a>.
     <a href="http://manns.github.io/pyspread/">Pyspread</a> a desktop spreadsheet program that uses Python expressions in cells.</p></div>
+          <script src="../external/prism.js"></script>
           <div id="disqus_thread"></div>
           <script>
             var disqus_config = function () {
