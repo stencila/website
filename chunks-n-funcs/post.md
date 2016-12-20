@@ -158,7 +158,7 @@ But, instead we could declare the data as an output variable of the execute dire
 
 ```html
 <pre data-execute="sqlite('sales-data.db3')" data-output="sales_by_region">
-	SELECT region, sum(sales) AS total GROUP BY region
+	SELECT region, sum(sales) AS total FROM sales GROUP BY region
 </pre>
 
 <pre data-execute="r" data-input="sales_by_region">

@@ -130,7 +130,7 @@ head(cars)
 <p>But, instead we could declare the data as an output variable of the execute directive and then use it as an input into another execute directive. Here for example, within a <code>SqliteSession</code> we calculate the total sales by region, assign it to
     the document variable <code>sales_by_region</code> and then use that data as an input into some R code to plot the data,</p>
 <pre class="language-html"><code>&lt;pre data-execute=&quot;sqlite(&apos;sales-data.db3&apos;)&quot; data-output=&quot;sales_by_region&quot;&gt;
-    SELECT region, sum(sales) AS total GROUP BY region
+    SELECT region, sum(sales) AS total FROM sales GROUP BY region
 &lt;/pre&gt;
 
 &lt;pre data-execute=&quot;r&quot; data-input=&quot;sales_by_region&quot;&gt;
