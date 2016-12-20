@@ -148,8 +148,8 @@ pre {
   border-radius: 3px;
 
   font-family: mono;
-  font-size: .9em;
-  color: #ccc;
+  font-size: .85em;
+  color: #eee;
   overflow: auto;
 }
 pre>code {
