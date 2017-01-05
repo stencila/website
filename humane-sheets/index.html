@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>A spreadsheet file format for humans</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+      <html>
+        <head>
+          <title>A spreadsheet file format for humans</title>
+<meta name="id" content="0aeca8b7f212887b1e85df87c4cc0343ea57cce185a0d7b8386c64f652555cf0">
+<meta name="address" content="name://flashy-document">
+<meta name="url" content="null/*flashy-document">
+<meta name="generator" content="stencila-node-0.1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+        </head>
+        <body>
+          <style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">A spreadsheet file format for humans</div>
-            <div class="author">Nokome Bentley</div>
-            <div id="date">24 April 2016</div>
-          </div>
-          <div id="content"><h1 id="why">Why?</h1>
+      </div>
+      
+          <main id="data" data-format="html">
+            <div class="content"><h1 id="title">A spreadsheet file format for humans</h1>
+<p class="author">Nokome Bentley</p>
+<p id="date">24 April 2016</p>
+<div id="summary">
+    <p>Spreadsheets are reactive programming environments that are usually only interacted with via a visual grid interface. For most other programming environments, the primary interface is a text file format specifically designed for humans. In contrast,
+        spreadsheet file formats have been designed for machines, not humans. This post proposes a human friendly format for spreadsheets that can be used as an alternative interface for viewing and editing spreadsheets.</p>
+</div>
+<h1 id="why">Why?</h1>
 <p>A spreadsheet&apos;s primary user interface is the familiar two dimensional grid of cells. By entering formulas into those cells, humans get to tell the computer what calculations to do on what data. The spreadsheet&apos;s grid is it&apos;s programming
     interface. It&apos;s a particular kind of programming interface - a live, reactive one - but it&apos;s still a programming interface.</p>
 <p>Spreadsheets have another interface - the spreadsheet file - but it&apos;s been mostly designed for computers, not humans. In contrast, Stencila Sheets use a file format that is intended to be human friendly. In a <a href="http://blog.stenci.la/introducing-sheets/">previous post</a>    I outlined some of the advantages of a plain text format for spreadsheets. These include making spreadsheets more transparent (you can see all of it&apos;s source code in one file) and diff-able (you can use them with a version control system like
@@ -246,20 +280,21 @@ E2  image_file  out/E2-386cb1960d9e10e545bf74f6772f9f35.png</code></pre>
 <p>Joel Dueck previously suggested some changes to the file format: <a href="https://thoughtstreams.io/joeld/problems-with-excel/" class="uri">https://thoughtstreams.io/joeld/problems-with-excel/</a> . I haven&apos;t fully followed his suggestions here but
     I was influenced by them and really appreciate him taking the time to think about it and put those thoughts down. If anyone thinks I should take more notice of his suggestions, please let me know!</p>
 <p>Thanks to Ern&#x151; Zalka for the suggestion of &quot;clone&quot; cells <a href="https://github.com/stencila/stencila/issues/170" class="uri">https://github.com/stencila/stencila/issues/170</a> and to Roland Kaufmann for pointing out the SYLK format.</p></div>
-          <script src="../external/prism.js"></script>
+            <div class="sessions"></div>
+          </main>
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = 'http://blog.stenci.la/${post}';
-              this.page.identifier = 'blog-post-%{post}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/humane-sheets';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+          <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
+        </body>
+      </html>

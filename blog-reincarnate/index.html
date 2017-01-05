@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Stencila blog reincarnated</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+      <html>
+        <head>
+          <title>Stencila blog reincarnated</title>
+<meta name="id" content="20a16afcadc05eda81859b6c2cf5c0ab1db14cad75b7ff3476e5517305a3abc0">
+<meta name="address" content="name://callous-document">
+<meta name="url" content="null/*callous-document">
+<meta name="generator" content="stencila-node-0.1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+        </head>
+        <body>
+          <style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">Stencila blog reincarnated</div>
-            <div class="author">Nokome Bentley</div>
-            <div id="date">21 November 2016</div>
-          </div>
-          <div id="content"><p>Welcome to the new incarnation of the Stencila blog!</p>
+      </div>
+      
+          <main id="data" data-format="html">
+            <div class="content"><h1 id="title">Stencila blog reincarnated</h1>
+<p class="author">Nokome Bentley</p>
+<p id="date">21 November 2016</p>
+<div id="summary">
+    <p>Your own dog food can be hard to swallow sometimes. Particularly when you have just finished the strenuous task of pulling yourself up by your own boot straps. Our new blog uses Markdown and is published on Github pages. We&apos;re still eating our
+        own dog food by using our Node.js package and by using our new document editor to author posts. But we&apos;re hoping that with this new approach there will be less friction in getting posts written and on to the web.</p>
+</div>
+<p>Welcome to the new incarnation of the Stencila blog!</p>
 <p>The previous version of the blog was published on the Stencila <a href="https://stenci.la">hub</a>. Over there, each blog post is a document, written using our markup language <a href="https://github.com/stencila/stencila/releases/tag/0.6">Cila</a> and
     with it&apos;s own Git repository. We were trying to do our best to pull ourselves up by the boot straps and eat our own dog food!</p>
 <p>But dog food can be hard to eat. Particularly when you have just finished the strenuous task of pulling yourself up by your own boot straps (try it!). It was easy enough to author blog posts. But there was some friction in publishing posts, mainly because
@@ -27,20 +61,21 @@
     all open source and available as a Git <a href="https://github.com/stencila/blog">repository</a>.</p>
 <p>Stay tuned for more...</p>
 <p><img src="screenshot.png"></p></div>
-          <script src="../external/prism.js"></script>
+            <div class="sessions"></div>
+          </main>
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = 'http://blog.stenci.la/${post}';
-              this.page.identifier = 'blog-post-%{post}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/blog-reincarnate';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+          <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
+        </body>
+      </html>

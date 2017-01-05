@@ -1,24 +1,58 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>On chunks, cells, beakers and functions : models for data driven content</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+      <html>
+        <head>
+          <title>On chunks, cells, beakers and functions : models for data driven content</title>
+<meta name="id" content="01e8783e38031f520bf539fbe2c6cba7fd6e982170c4804a5b4d0bcbd2d0e737">
+<meta name="address" content="name://lyrical-document">
+<meta name="url" content="null/*lyrical-document">
+<meta name="generator" content="stencila-node-0.1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+        </head>
+        <body>
+          <style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">On chunks, cells, beakers and functions : models for data driven content</div>
-            <div class="author">Nokome Bentley</div>
-            <div id="date">20 December 2016</div>
-          </div>
-          <div id="content"><p>Recently, I&apos;ve written about <a href="http://blog.stenci.la/geheimhaven/">breaking up Stencila</a> into several packages that can act as a <a href="http://blog.stenci.la/diverse-peers/">network of diverse peers</a>. Each of those packages bring it&apos;s
+      </div>
+      
+          <main id="data" data-format="html">
+            <div class="content"><h1 id="title">On chunks, cells, beakers and functions : models for data driven content</h1>
+<p class="author">Nokome Bentley</p>
+<p id="date">20 December 2016</p>
+<div id="summary">
+    <p>In this post, I&apos;m going to look at the models for data driven content used in popular tools for reproducible documents, RMarkdown and Jupyter. We&apos;ll then look at how to extend those models to documents that generate content in more than
+        one execution context. I&apos;ll then wrap up with an explanation of the model that I&apos;ve arrived at as being the best fit for Stencila.</p>
+</div>
+<p>Recently, I&apos;ve written about <a href="http://blog.stenci.la/geheimhaven/">breaking up Stencila</a> into several packages that can act as a <a href="http://blog.stenci.la/diverse-peers/">network of diverse peers</a>. Each of those packages bring its
     own capabilities to the network, most notably as execution contexts for a one or more languages. We call those execution contexts <em>Sessions</em> (in the past we&apos;ve called them <em>Contexts</em> and I&apos;m thinking that may be a better name
     to revert to!). They&apos;re analogous to Jupyter&apos;s <a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages"><em>Kernels</em></a>, allowing you to execute a snippet of code in your favorite programming language, and
     then insert the resulting content into your Document or Sheet.</p>
@@ -52,7 +86,7 @@ plot(cars)
 <p>So, the code chunk model in RMarkdown closely mimics the behavior of the read-evaluate-print-loop of a R console: what gets printed out gets inserted as content into the document.</p>
 <h1 id="cells">Cells</h1>
 <p>The model for code execution in Jupyter Notebooks is <a href="https://nbformat.readthedocs.io/en/latest/format_description.html#code-cells">&quot;code cells&quot;</a>. Code cells are similar to RMarkdown&apos;s chunks but are represented in JSON:</p>
-<pre class="language-json"><code>{
+<pre class="json"><code>{
   &quot;cell_type&quot; : &quot;code&quot;,
   &quot;execution_count&quot;: 1,
   &quot;metadata&quot; : {
@@ -77,9 +111,9 @@ plot(cars)
 <p><a href="http://beakernotebook.com/">Beaker Notebooks</a> are very similar to Jupyter notebooks except that they are polygplot. A key challenge in creating polyglot notebooks is the transfer of data between languages. Beaker approach this using the model
     of a laboratory beaker. The <code>beaker</code> is a notebook namespace - a collection of variables and their values that are stored within the notebook. You put data into the <code>beaker</code> using either the <code>set</code> method or a setter
     (depending upon the language) within a code cell e.g. in R</p>
-<pre class="language-r"><code>beaker::set(&apos;car_summary&apos;, summary(cars))</code></pre>
+<pre class="r"><code>beaker::set(&apos;car_summary&apos;, summary(cars))</code></pre>
 <p>Then later in the notebook you can take the same data out of the beaker using the <code>get</code> method or a getter e.g. in Python</p>
-<pre class="language-py"><code>beaker.car_summary</code></pre>
+<pre class="py"><code>beaker.car_summary</code></pre>
 <p>This transfer of data between languages is done via <a href="https://pub.beakernotebook.com/publications/04ced174-fba9-11e5-b8c1-df4d629d60e2">&quot;autotranslation&quot;</a> of data types including primitives (e.g. integers, floats, booleans, strings)
     and tabular data (e.g. data frames). It&apos;s an elegant approach that removes the cognitive overhead when trying to work with multiple languages withing one document.</p>
 <h1 id="variables-and-functions">Variables and Functions</h1>
@@ -94,12 +128,12 @@ plot(cars)
     canonical format. You can author them using a Google Docs-like WYSIWYG interface or using a markup language like Markdown or Latex. You never have to touch HTML. But internally they&apos;re HTML documents and until those other authoring interfaces
     are more polished, it&apos;s easier to show you what they look like using HTML.</p>
 <p>In Stencila Documents the equivalent of a code chunk or code cell is call an &quot;execute directive&quot; and it&apos;s represented in HTML like this,</p>
-<pre class="language-html"><code>&lt;pre data-execute=&quot;r&quot;&gt;
+<pre class="html"><code>&lt;pre data-execute=&quot;r&quot;&gt;
 head(cars)
 &lt;/pre&gt;</code></pre>
 <p>That directive gets refreshed by calling the <code>execute</code> method (via a HTTP-JSON API) of an R session: <code>execute(&quot;head(cars)&quot;)</code>. The execute method returns a language independent representation of the last values in the code.
     The code <code>head(cars)</code> evaluates to an R data frame and the session automatically converts that to a JSON &quot;data package&quot;:</p>
-<pre class="language-json"><code>{
+<pre class="json"><code>{
     &quot;errors&quot;: null, 
     &quot;output&quot;: {
         &quot;format&quot;: &quot;csv&quot;, 
@@ -109,7 +143,7 @@ head(cars)
 }</code></pre>
 <p>Note that what we&apos;re doing here is quite different to RMarkdown and Jupyter - instead of returning some representation of the data we&apos;re actually returning <em>the</em> data. In this case, that data will get converted into a HTML representation
     and inserted into the document,</p>
-<pre class="language-html"><code>&lt;pre data-execute=&quot;r&quot;&gt;
+<pre class="html"><code>&lt;pre data-execute=&quot;r&quot;&gt;
 head(cars)
 &lt;/pre&gt;
 &lt;output&gt;
@@ -129,7 +163,7 @@ head(cars)
 &lt;output&gt;</code></pre>
 <p>But, instead we could declare the data as an output variable of the execute directive and then use it as an input into another execute directive. Here for example, within a <code>SqliteSession</code> we calculate the total sales by region, assign it to
     the document variable <code>sales_by_region</code> and then use that data as an input into some R code to plot the data,</p>
-<pre class="language-html"><code>&lt;pre data-execute=&quot;sqlite(&apos;sales-data.db3&apos;)&quot; data-output=&quot;sales_by_region&quot;&gt;
+<pre class="html"><code>&lt;pre data-execute=&quot;sqlite(&apos;sales-data.db3&apos;)&quot; data-output=&quot;sales_by_region&quot;&gt;
     SELECT region, sum(sales) AS total FROM sales GROUP BY region
 &lt;/pre&gt;
 
@@ -141,11 +175,10 @@ head(cars)
 &lt;/output&gt;
 </code></pre>
 <p>As in Beaker Notebooks, there is no need to do any explicit data conversion. But in addition, by moving the declaration of the variable out of the code chunk, the document is able to &quot;know&quot; the dependency between chunks. It knows that if I refresh
-    the first execute directive, or change it&apos;s SQL code, that the second execute directive in R will also have to be refreshed.</p>
+    the first execute directive, or change its SQL code, that the second execute directive in R will also have to be refreshed.</p>
 <p>What about user interactivity? We include that idea by using the HTML <code>input</code> tag to define a document variable. When a user changes the input (e.g. entering a new number, or sliding a slider), the document variable is changed, which in turn
-    triggers any execute directive that depend upon that variable. In this example, the document variable <code>breaks</code> is declared as a number. When it&apos;s value is changed, the R chunk generates a new histogram having the desired number of
-    breaks:</p>
-<pre class="language-html"><code>&lt;input name=&quot;breaks&quot; type=&quot;number&quot;&gt;
+    triggers any execute directive that depend upon that variable. In this example, the document variable <code>breaks</code> is declared as a number. When its value is changed, the R chunk generates a new histogram having the desired number of breaks:</p>
+<pre class="html"><code>&lt;input name=&quot;breaks&quot; type=&quot;number&quot;&gt;
 &lt;pre data-execute=&quot;r&quot; data-input=&quot;breaks&quot;&gt;
     hist(faithful$eruptions, breaks=breaks)
 &lt;/pre&gt;
@@ -155,20 +188,21 @@ head(cars)
 <p>This model at is actually very similar to the familiar concepts of variables and functions in most high-level languages. Here, document variables can be declared using <code>&lt;input&gt;</code> elements and execute directives are like function calls
     optionally taking inputs and returning outputs which can be assigned to a new, or existing variable.</p>
 <p>There are some interesting follow-ons from moving to this model. But that&apos;s for another post. As always, comments are much appreciated!</p></div>
-          <script src="../external/prism.js"></script>
+            <div class="sessions"></div>
+          </main>
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = 'http://blog.stenci.la/${post}';
-              this.page.identifier = 'blog-post-%{post}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/chunks-n-funcs';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+          <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
+        </body>
+      </html>

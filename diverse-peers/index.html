@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Diverse peers</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+      <html>
+        <head>
+          <title>Diverse peers</title>
+<meta name="id" content="86b6147febf8c6ddc44fe5ab5692d2f384e0a6fc388d0b53678a536c42ab9db3">
+<meta name="address" content="name://amazing-document">
+<meta name="url" content="null/*amazing-document">
+<meta name="generator" content="stencila-node-0.1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+        </head>
+        <body>
+          <style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">Diverse peers</div>
-            <div class="author">Nokome Bentley</div>
-            <div id="date">5 December 2016</div>
-          </div>
-          <div id="content"><p>In my <a href="http://blog.stenci.la/geheimhaven">last post</a> I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform&apos;s architecture was monolithic because it
+      </div>
+      
+          <main id="data" data-format="html">
+            <div class="content"><h1 id="title">Diverse peers</h1>
+<p class="author">Nokome Bentley</p>
+<p id="date">5 December 2016</p>
+<div id="summary">
+    <p>How Stencila packages act as a network of diverse peers with differing capabilities and calling on each other to provide resources.</p>
+</div>
+<p>In my <a href="http://blog.stenci.la/geheimhaven">last post</a> I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform&apos;s architecture was monolithic because it
     was based on a foundational C++ implementation which was then exposed to various host languages like R and Python. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.g. complex builds,
     intimidating for contributors). In the new approach, the various packages that make up the Stencila platform have been decoupled from each other and there is more of a focus on a standard set of APIs and communication protocols, rather than a single
     implementation. In this development update I&apos;m going to give you a taste of what that actually looks like.</p>
@@ -45,9 +78,9 @@
     that each package bring different types of resources to the network.</p>
 <p>So, lets start off with Node.js package. All the packages are in initial stages of development but the Node.js package has had more work done on it at this stage (mainly because it provides an easy pathway to desktop deployment via Electron).</p>
 <p>You can install the package using NPM,</p>
-<pre class="language-sh"><code>$ npm install stencila/node -g</code></pre>
+<pre class="sh"><code>$ npm install stencila/node -g</code></pre>
 <p>Then start Node, import the package and get the host in that package to start serving,</p>
-<pre class="language-js"><code>// Import the Stencila package
+<pre class="js"><code>// Import the Stencila package
 &gt; const stencila = require(&apos;stencila&apos;)
 
 // The package has a host object
@@ -56,7 +89,7 @@
 // Serve the host so it is available to other hosts as a peer
 &gt; host.serve()</code></pre>
 <p>That starts an embedded HTTP server listening on port 2000 at localhost. You can check that it&apos;s running using Curl, or my favorite tool for the job, httpie,</p>
-<pre class="language-sh"><code>$ http --json :2000
+<pre class="sh"><code>$ http --json :2000
 HTTP/1.1 200 OK
 Connection: keep-alive
 Content-Length: 583
@@ -92,11 +125,11 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
     &quot;url&quot;: &quot;http://127.0.0.1:2000&quot;
 }</code></pre>
 <p>Because this is the only Stencila host, it&apos;s list of peers is empty,</p>
-<pre class="language-js"><code>&gt; host.peers
+<pre class="js"><code>&gt; host.peers
 []</code></pre>
 <p>So, let&apos;s start Stencila hosts in both R and Python.</p>
 <p>You can install the R package from within R using <code>devtools</code>,</p>
-<pre class="language-r"><code># Install the Stencila package
+<pre class="r"><code># Install the Stencila package
 &gt; devtools::install_github(&quot;stencila/r&quot;)
 
 # Import it
@@ -106,16 +139,16 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 &gt; host$serve()
 [1] &quot;http://127.0.0.1:2010&quot;</code></pre>
 <p>Let&apos;s also get a Python host going by installing the Python package using PIP,</p>
-<pre class="language-sh"><code>pip install --user https://github.com/stencila/py/archive/master.zip</code></pre>
+<pre class="sh"><code>pip install --user https://github.com/stencila/py/archive/master.zip</code></pre>
 <p>and then serving it from within Python,</p>
-<pre class="language-py"><code># Import the Stencila package
+<pre class="py"><code># Import the Stencila package
 &gt;&gt;&gt; from stencila import host
 
 # Serve the host
 &gt;&gt;&gt; host.serve()
 &apos;http://127.0.0.1:2020&apos;</code></pre>
 <p>Let&apos;s now go back to the Node.js host and see what it&apos;s <code>peers</code> property looks like now,</p>
-<pre class="language-js"><code>// Discover peers on localhost
+<pre class="js"><code>// Discover peers on localhost
 &gt; host.discover()
 
 // Get list of peers
@@ -138,7 +171,7 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 <p>So, the Stencila host in the Node.js now recognizes the hosts in R and Python as it&apos;s peers and can request resources from them. In Stencila we call these resources <em>components</em>. Components include <em>documents</em>, <em>sheets</em>, and
     <em>sessions</em> and hosts have an <code>open</code> method that can be called to get a component and load it into memory. If a host does not know how to open a particular component then it will ask it&apos;s peers to open it on it&apos;s behalf.
     To illustrate this we&apos;ll open and R session from within Node.js,</p>
-<pre class="language-js"><code>// Open a R session from within Node.js
+<pre class="js"><code>// Open a R session from within Node.js
 // (behind the scenes the R session is actually created by the R host)
 &gt; let r
 &gt; host.open(&apos;new://r-session&apos;).then(session =&gt; r = session)
@@ -166,20 +199,21 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 <p>We&apos;ve moved from a traditional client-server architecture and instead each Stencila package acts as both a client and a server - both a consumer and provider of resources. Right now we have a <em>very</em> simple peer discovery mechanism which only
     works locally. But the plan is to extend that so that peers will be able to reside on different machines.</p>
 <p>That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I&apos;ll show how we can do something interesting with those building blocks by combining the <em>document</em> and <em>session</em>    components into a dynamic, data driven document.</p></div>
-          <script src="../external/prism.js"></script>
+            <div class="sessions"></div>
+          </main>
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = 'http://blog.stenci.la/${post}';
-              this.page.identifier = 'blog-post-%{post}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/diverse-peers';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+          <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
+        </body>
+      </html>

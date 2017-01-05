@@ -1,24 +1,57 @@
 <!DOCTYPE html>
-    <html>
-      <head>
-        <title>Getting under Stencila sheets</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+      <html>
+        <head>
+          <title>Getting under Stencila sheets</title>
+<meta name="id" content="2ee7402767cddb1e377cdd8b2fd89861483bbb70b5ca9e98faeea0918bf1f943">
+<meta name="address" content="name://bouncy-document">
+<meta name="url" content="null/*bouncy-document">
+<meta name="generator" content="stencila-node-0.1.0"><meta name="viewport" content="width=device-width, initial-scale=1">
+          <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+        </head>
+        <body>
+          <style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">Getting under Stencila sheets</div>
-            <div class="author">Nokome Bentley</div>
-            <div id="date">17 March 2016</div>
-          </div>
-          <div id="content"><p>This is a follow up post to the <a href="https://blog.stenci.la/introducing-sheets">introduction to Stencila sheets</a>. I&apos;m going to go into more technical details to explain how they work and some of the things you can do with them.</p>
+      </div>
+      
+          <main id="data" data-format="html">
+            <div class="content"><h1 id="title">Getting under Stencila sheets</h1>
+<p class="author">Nokome Bentley</p>
+<p id="date">17 March 2016</p>
+<div id="summary">
+    <p>A follow up post to the <a href="https://blog.stenci.la/introducing-sheets">introduction to Stencila sheets</a>. More technical details on how they work and why they are different from traditional spreadsheets.</p>
+</div>
+<p>This is a follow up post to the <a href="https://blog.stenci.la/introducing-sheets">introduction to Stencila sheets</a>. I&apos;m going to go into more technical details to explain how they work and some of the things you can do with them.</p>
 <h1 id="getting-started">Getting started</h1>
 <p>Stencila sheets are designed to be used on your own computer or in the cloud (i.e. &quot;someone else&apos;s computer&quot;). In this post I&apos;m going to use a local R session to create and play around with a simple sheet. But the same sheet is published
     at <a href="https://stenci.la/nokome/examples/simple-sheet" class="uri">https://stenci.la/nokome/examples/simple-sheet</a> and you can play with it over there (a Docker container will host the R session on our servers which will open up and serve
@@ -157,22 +190,24 @@ Server: Stencila embedded
     &quot;value&quot;: &quot;7.8224418599574&quot;
 }</code></pre>
 <h1 id="under-construction">Under construction</h1>
-<p>Stencila sheets are young and under a lot of development. We&apos;re an open source project and keen to get suggestions, feedback, and contributions. Feel free to add an issue, or comment on an existing one, over at the repo on Github <a href="https://github.com/stencila/stencila"
+<p>Stencila sheets are young and under a lot of development. We&apos;re an open source project and keen to get suggestions, feedback, and contributions. Feel free to add an issue, or comment on an existing one, over at the repo on Github
+    <a href="https://github.com/stencila/stencila"
         class="uri">https://github.com/stencila/stencila</a>. Or drop by and chat with use in <a href="https://gitter.im/stencila/stencila">our Gitter chat room</a></p></div>
-          <script src="../external/prism.js"></script>
+            <div class="sessions"></div>
+          </main>
           <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = 'http://blog.stenci.la/${post}';
-              this.page.identifier = 'blog-post-%{post}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/underneath-sheets';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>
+          <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
+        </body>
+      </html>

@@ -23,70 +23,68 @@ for (let post of posts) {
   let doc = new stencila.Document()
   doc.read(post + '/post.md', 'gfmd')
 
-  // As a temporary kludge extract the documnet's meta-data as JSON using a special
-  // Pandoc template. Ultimately this will be incorporated directly into Stencila.
-  // See http://pandoc.org/MANUAL.html#templates
-  let json = spawn('pandoc', ['--template', 'meta.txt', post + '/post.md'], {
-    encoding: 'utf8'
-  }).stdout
-  let meta = JSON.parse(json)
-  
-  // Convert post to HTML
-  let content = doc.html;
-  // A hack for Prism highlighing to work
-  content = content.replace(/<pre class="(\w+)"><code>/g, '<pre class="language-$1"><code>')
-  
-  // Set url and id for Disqus comments
-  let url = 'http://blog.stenci.la/${post}'
-  let identifier = 'blog-post-%{post}'
-
-  // Write post HTML  file
-  fs.writeFile(post + '/index.html',
-    `<!DOCTYPE html>
-    <html>
-      <head>
-        <title>${meta.title}</title>
-        <meta charset="utf-8">
-        <meta name="generator" content="stencila-node-0.1.0">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="../theme.css">
-        <link rel="stylesheet" type="text/css" href="../external/prism.css" />
-      </head>
-      <body>
-        <div id="header">
-          <div><a href="http://blog.stenci.la"><img src="../logo-name.svg"></a></div>
+  // Write post HTML page
+  fs.writeFile(post + '/index.html', doc.page({
+    'header': 
+      `<style>
+        body {
+          margin: 0
+        }
+        #header {
+          position: relative;
+          z-index: 100000;
+          padding: 0.5em 0 0 0.3em;
+          border-bottom: 1px solid #EEE;
+          margin-bottom: 1em;
+          background: white;
+          opacity: 0.97;
+        }
+        #header > div {
+          max-width: 41.5em;
+          margin-left: auto;
+          margin-right: auto;
+        }
+        #header img {
+          width: 9em;
+        }
+        .sc-visual-editor .se-scrollable .se-content {
+          margin-top: 3em;
+          max-width: 40em;
+        }
+        #disqus_thread {
+          margin-top: 5em;
+        }
+      </style>
+      <div id="header">
+        <div>
+          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
         </div>
-        <div class="post">
-          <div id="meta">
-            <div id="title">${meta.title}</div>
-            <div class="author">${meta.author}</div>
-            <div id="date">${meta.date || ''}</div>
-          </div>
-          <div id="content">${content}</div>
-          <script src="../external/prism.js"></script>
-          <div id="disqus_thread"></div>
-          <script>
-            var disqus_config = function () {
-              this.page.url = '${url}';
-              this.page.identifier = '${identifier}';
-            };
-            (function() {
-            var d = document, s = d.createElement('script');
-            s.src = '//stencila.disqus.com/embed.js';
-            s.setAttribute('data-timestamp', +new Date());
-            (d.head || d.body).appendChild(s);
-            })();
-          </script>
-        </div>
-      </body>
-    </html>`
-  )
+      </div>
+      `,
+    'footer': 
+        `<div id="disqus_thread"></div>
+        <script>
+          var disqus_config = function () {
+            this.page.url = 'http://blog.stenci.la/${post}';
+            this.page.identifier = 'blog-post-%{post}';
+          };
+          (function() {
+          var d = document, s = d.createElement('script');
+          s.src = '//stencila.disqus.com/embed.js';
+          s.setAttribute('data-timestamp', +new Date());
+          (d.head || d.body).appendChild(s);
+          })();
+        </script>`
+  }))
 
   // Generate summary for main page
   postsDiv += `<div class="post">
-  <div class="title"><a href="${post}">${meta.title}</a></div>
-  <div class="abstract">${meta.abstract || ''}</div>
-  <div class="author">${meta.author}</div>
+  <div class="title"><a href="${post}">${doc.title}</a></div>
+  <div>
+    <div class="author">${doc.authors.join(', ')}</div>
+    <div class="date">${doc.date}</div>
+  </div>
+  <div class="summary">${doc.summary || ''}</div>
 </div>\n`
 
   
