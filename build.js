@@ -28,7 +28,8 @@ for (let post of posts) {
     header: 
       `<style>
         body {
-          margin: 0
+          margin: 0;
+          padding: 0.5em;
         }
         #header {
           position: relative;
@@ -52,7 +53,10 @@ for (let post of posts) {
           max-width: 40em;
         }
         #disqus_thread {
-          margin-top: 5em;
+          max-width: 40em;
+          margin-top: 6em;
+          margin-left: auto;
+          margin-right: auto;
         }
       </style>
       <div id="header">
