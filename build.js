@@ -21,11 +21,11 @@ for (let post of posts) {
 
   // Create a `Document` for the post
   let doc = new stencila.Document()
-  doc.read(post + '/post.md', 'gfmd')
+  doc.read(post + '/post.md')
 
   // Write post HTML page
   fs.writeFile(post + '/index.html', doc.page({
-    'header': 
+    header: 
       `<style>
         body {
           margin: 0
@@ -47,7 +47,7 @@ for (let post of posts) {
         #header img {
           width: 9em;
         }
-        .sc-visual-editor .se-scrollable .se-content {
+        #data .content {
           margin-top: 3em;
           max-width: 40em;
         }
@@ -61,7 +61,7 @@ for (let post of posts) {
         </div>
       </div>
       `,
-    'footer': 
+    footer: 
         `<div id="disqus_thread"></div>
         <script>
           var disqus_config = function () {
@@ -74,7 +74,8 @@ for (let post of posts) {
           s.setAttribute('data-timestamp', +new Date());
           (d.head || d.body).appendChild(s);
           })();
-        </script>`
+        </script>`,
+    static: '1'
   }))
 
   // Generate summary for main page
