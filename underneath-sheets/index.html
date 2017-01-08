@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Getting under Stencila sheets</title>
-<meta name="id" content="0d99bfd0aca6a884139b725580c8c304dd8c2b9b3a14d5ecf3f7e313719ecfd0">
-<meta name="address" content="name://sore-document">
-<meta name="url" content="null/*sore-document">
-<meta name="static" content="1">
+<meta name="id" content="fe573a51367acafb9a15f42c95c86dca7e76148b8b7bc4c68931cbd81f9428c7">
+<meta name="address" content="name://kaput-document">
+<meta name="url" content="null/*kaput-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Getting under Stencila sheets</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">17 March 2016</p>
@@ -70,7 +78,7 @@
 <p>What happened here is the Stencila package has started up its embedded HTTP/Websocket server and then asked the operating system&apos;s default browser to open <code>http://localhost:7373/nokome/examples/simple-sheet</code>. In the browser, we have the familiar spreadsheet grid interface built using the <a href="http://substance.io">Substance</a> content editing library. That interface is connected to that embedded server by a Websocket and any changes that we make to the cells gets executed in the R session.</p>
 <p>For this article, I&apos;m going to keep this sheet really simple, just to make some of the following output as concise as possible. So, after a few edits, here my sheet with some data, some calculations and a plot:</p>
 <figure>
-  <img src="screenshot-initial.png">
+  <img src="screenshot-initial.png?raw">
 
 </figure>
 <h1 id="diving-into-context">Diving into context</h1>
@@ -93,14 +101,14 @@
 <h1 id="not-just-for-numbers">Not just for numbers</h1>
 <p>Cells don&apos;t have to hold just fundamental types like numbers and strings. For example, in cell D2 I entered <code>= plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=16,cex=2)</code> which produced the plot in the top-right. Cell formulas can be evaluated to any type of object - what gets shown is the cell is the a string representation of that object. So, for example, if I enter <code>fit = lm(log(B2:B4)~log(A2:A4))</code> into A15, we get a string representation of the fitted linear model (the result of the <code>lm</code> function in R):</p>
 <figure>
-  <img src="screenshot-lm.png">
+  <img src="screenshot-lm.png?raw">
 
 </figure>
 <p>I named the cell <code>fit</code>, so now in the R session there are two variables representing this cell <code>A15</code> and the name, or alias, <code>fit</code>. That allows me to conveniently extract the estimated coefficients from that model in cell B25 <code>= exp(fit$coef[1])</code>.</p>
 <h1 id="testing-testing-1-2-3">Testing, testing, 1, 2, 3</h1>
 <p>Stencila sheets allow you to define &quot;test&quot; cells: cells that define test assertions. Test cells are distinguished by a leading <code>?</code>. For example, by setting A7 to <code>? A6&gt;1 &amp;&amp; A6&lt;3</code> and B7 to <code>? B6&gt;20 &amp;&amp; B6&lt;150</code> we define two tests that check that the mean height and weight are in plausible ranges. These show a cross if the test has failed:</p>
 <figure>
-  <img src="screenshot-tests.png">
+  <img src="screenshot-tests.png?raw">
 
 </figure>
 <p>We can also get test statistics, including the coverage of cells with formula (i.e. excluding simple data cells)</p>
@@ -151,7 +159,7 @@ B26 = exp(fit$coef[2])
 E2  = plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=16,cex=2)</code></pre>
 <p>So, if you don&apos;t want to launch the browser based interface you can edit it in your favorite text editor and update the sheet from within a console. And because it&apos;s just plain text, <code>sheet.tsv</code> can easily be diffed using tools like <code>git</code> to see what changes have been made to that source code file:</p>
 <figure>
-  <img src="screenshot-diff.png">
+  <img src="screenshot-diff.png?raw">
 
 </figure>
 <p>We can also export the sheet as an R script, allowing it to be run in an R console or other R user interface. This uses the sheet&apos;s internal dependency graph to export each cell in the correct order. Obviously, this isn&apos;t going to be very useful for large spreadsheets, particularly those that have a lot of data. But we think that there are ways that we can improve on that (see &quot;cell mapping&quot; below).</p>
@@ -175,7 +183,7 @@ E2 &lt;- plot(c(A2,A3,A4),c(B2,B3,B4),xlab=A1,ylab=B1,pch=16,cex=2)</code></pre>
 <p>You can also visualize the dependencies between cells using the dependency graph (this will currently only work id you have Graphviz <code>dot</code> installed):</p>
 <pre><code>&gt; sheet$graphviz()</code></pre>
 <figure>
-  <img src="graph.png">
+  <img src="graph.png?raw">
 
 </figure>
 <p>And because the sheet is being served up by the embedded server from within the R session it can also be accessed via a JSON web API:</p>
@@ -200,20 +208,11 @@ Server: Stencila embedded
 <h1 id="under-construction">Under construction</h1>
 <p>Stencila sheets are young and under a lot of development. We&apos;re an open source project and keen to get suggestions, feedback, and contributions. Feel free to add an issue, or comment on an existing one, over at the repo on Github <a href="https://github.com/stencila/stencila" class="uri">https://github.com/stencila/stencila</a>. Or drop by and chat with use in <a href="https://gitter.im/stencila/stencila">our Gitter chat room</a></p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/underneath-sheets';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

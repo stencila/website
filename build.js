@@ -25,14 +25,18 @@ for (let post of posts) {
 
   // Write post HTML page
   fs.writeFile(post + '/index.html', doc.page({
+    edit: '0',
+    naked: '1',
     header: 
       `<style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -40,17 +44,21 @@ for (let post of posts) {
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -59,12 +67,11 @@ for (let post of posts) {
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       `,
+    /*
     footer: 
         `<div id="disqus_thread"></div>
         <script>
@@ -79,7 +86,7 @@ for (let post of posts) {
           (d.head || d.body).appendChild(s);
           })();
         </script>`,
-    static: '1'
+    */
   }))
 
   // Generate summary for main page

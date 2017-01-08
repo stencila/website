@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Spreadsheets are dead, long live reactive programming environments!</title>
-<meta name="id" content="a05e222d3e47e4f2be48cc0a80256875995533110af4823cfb533cbf7d05ef1d">
-<meta name="address" content="name://excited-document">
-<meta name="url" content="null/*excited-document">
-<meta name="static" content="1">
+<meta name="id" content="577e09564bc3e0d159bf9a11265107d850348f0ef40dfb19639ee50936c65115">
+<meta name="address" content="name://mature-document">
+<meta name="url" content="null/*mature-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Spreadsheets are dead, long live reactive programming environments!</h1>
 <p class="author">Nokome Bentley in collaboration with Oliver Buchtala and Micheal Aufreiter</p>
 <p id="date">15 March 2016</p>
@@ -62,7 +70,7 @@
   <p>VisiCalc represented a new idea of a way to use a computer and a new way of thinking about the world. Where conventional programming was thought of as a sequence of steps, this new thing was no longer sequential in effect: When you made a change in one place, all other things changed instantly and automatically.</p>
 </blockquote>
 <figure>
-  <img src="visicalc.png">
+  <img src="visicalc.png?raw">
 
 </figure>
 <p>Visicalc on the Apple II. Photo: <a href="https://en.wikipedia.org/wiki/File:Visicalc.png">Wikipedia</a></p>
@@ -91,7 +99,7 @@
 <p>I realized that, using the foundations already developed for stencils and the Substance editing library, we could merge the spreadsheet interface with the idea of documents that embedded code. So, a few days after the Coko meet, in a jetlag induced early morning session, myself, Oliver Buchtala and Micheal Aufreiter from Substance, hacked out the first version of Stencila sheets. Urged on by our friends at Coko we&apos;ve been refining them over the last few months to a demo-able state. It&apos;s now time to get some user feedback!</p>
 <p>On the surface, Stencila sheets look like any other spreadsheet software. Here&apos;s screenshot taken in my web browser of a very simple sheet (you can play with it yourself at <a href="https://stenci.la/nokome/examples/simple-sheet" class="uri">https://stenci.la/nokome/examples/simple-sheet</a>):</p>
 <figure>
-  <img src="screenshot-initial.png">
+  <img src="screenshot-initial.png?raw">
 
 </figure>
 <h2 id="sheets-are-code-reactive-programming">Sheets are code + reactive programming</h2>
@@ -99,7 +107,7 @@
 <p>Cells don&apos;t have to hold just fundamental types like numbers and strings. Cell expressions can be evaluated to any type of object in the host language. For example, if I enter <code>fit = lm(log(B2:B4)~log(A2:A4))</code> into A16, we get a string representation of the fitted linear model (the result of the <code>lm</code> function in R). In cell D2 I entered <code>= plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=16,cex=2)</code> which produced the image in the top-right.</p>
 <p>Isn&apos;t this just executing code in cells instead of lines? No, sheets maintain the innovation of VisiCac - live, reactive programming - what makes spreadsheets so, well, intuitive. When you make a change in a cell, all the cells that depended on it change too. Even the cells for the complicated objects like that R linear model in A16. Stencila sheets does this by analyzing the dependencies of each cell expression and maintains a dependency graph so that the right cells get updated in the right order.</p>
 <figure>
-  <img src="screencast.gif">
+  <img src="screencast.gif?raw">
 
 </figure>
 <p>The user interface for sheets is still pretty rudimentary and we still need to implement many of the user interactions that a spreadsheet needs (e.g creating cell ranges using the mouse instead of having to type them in). Instead, we&apos;ve focused our attention on trying to address some of the shortcomings, described above, of traditional spreadsheet software.</p>
@@ -143,20 +151,11 @@ E2  = plot(A2:A4,B2:B4,xlab=A1,ylab=B1,pch=1,cex=2)</code></pre>
 <p>Daniel Lemire&apos;s <a href="http://lemire.me/blog/2014/05/23/you-shouldnt-use-a-spreadsheet-for-important-work-i-mean-it/">&quot;You shouldn&#x2019;t use a spreadsheet for important work (I mean it)&quot;</a>, and the ensuing <a href="https://news.ycombinator.com/item?id=7803830">discussions on Hacker News</a>. On the Reinhart-Rogoff affair: <a href="https://www.washingtonpost.com/news/wonk/wp/2013/04/16/is-the-best-evidence-for-austerity-based-on-an-excel-spreadsheet-error/">&quot;Is the evidence for austerity based on an Excel spreadsheet error?&quot;&quot;</a> and <a href="https://cunymathblog.commons.gc.cuny.edu/2013/05/06/sloppy-math-and-the-austerity-debate/">&quot;Sloppy math and the austerity debate&quot;</a>.</p>
 <p>Felienne Hermans&apos; talk <a href="http://www.slideshare.net/Felienne/spreadsheets-are-code-online">&quot;Spreadsheets are code&quot;</a> on applying software engineering methods to spreadsheets and Nathan Brixius on the <a href="https://nathanbrixius.wordpress.com/2015/07/27/spreadsheets-are-alive-spreadsheets-are-dead/">need to combine the befits of spreadsheets and programming</a>. <a href="http://manns.github.io/pyspread/">Pyspread</a> a desktop spreadsheet program that uses Python expressions in cells.</p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/introducing-sheets';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

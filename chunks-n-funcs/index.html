@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>On chunks, cells, beakers and functions : models for data driven content</title>
-<meta name="id" content="247e2cce30d056c92a2b220d1fd5e766812cd061c7b56ab92122196b16bbab0c">
-<meta name="address" content="name://cheap-document">
-<meta name="url" content="null/*cheap-document">
-<meta name="static" content="1">
+<meta name="id" content="57e5a58948b156275bc9dd169b95dda41c838a13efe157a8a83b9250039ab7c0">
+<meta name="address" content="name://precious-document">
+<meta name="url" content="null/*precious-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">On chunks, cells, beakers and functions : models for data driven content</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">20 December 2016</p>
@@ -68,7 +76,7 @@ head(cars)
 ```</code></pre>
 <p>You get something which looks very similar to the output you would get on the R command line as a HTML <code>&lt;pre&gt;</code> element,</p>
 <figure>
-  <img src="rmarkdown-chunk-head.png">
+  <img src="rmarkdown-chunk-head.png?raw">
 
 </figure>
 <p>To get a nicer looking table you have to use the <code>kable</code> function of the <code>knitr</code> package to generate a Markdown table from the data and then specify the <code>results=&apos;asis&apos;</code> option to ensure that Markdown is inserted into the document, ummm, as is,</p>
@@ -77,7 +85,7 @@ knitr::kable(head(cars))
 ```</code></pre>
 <p>The Markdown in turn is then converted into a HTML <code>&lt;table&gt;</code> element,</p>
 <figure>
-  <img src="rmarkdown-chunk-kable.png">
+  <img src="rmarkdown-chunk-kable.png?raw">
 
 </figure>
 <p>If you used the <a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/plot.html"><code>plot</code></a> function in a chunk,</p>
@@ -86,7 +94,7 @@ plot(cars)
 ```</code></pre>
 <p>Then, similarly to as if you entered it in the console, the rendering engine detects that a graphic has been generated and inserts a HTML <code>&lt;img&gt;</code> element:</p>
 <figure>
-  <img src="rmarkdown-chunk-plot.png">
+  <img src="rmarkdown-chunk-plot.png?raw">
 
 </figure>
 <p>So, the code chunk model in RMarkdown closely mimics the behavior of the read-evaluate-print-loop of a R console: what gets printed out gets inserted as content into the document.</p>
@@ -96,8 +104,8 @@ plot(cars)
   &quot;cell_type&quot; : &quot;code&quot;,
   &quot;execution_count&quot;: 1,
   &quot;metadata&quot; : {
-      &quot;collapsed&quot; : True,
-      &quot;autoscroll&quot;: False,
+      &quot;collapsed&quot; : true,
+      &quot;autoscroll&quot;: false,
   },
   &quot;source&quot; : &quot;[some code]&quot;,
   &quot;outputs&quot;: [{
@@ -107,7 +115,7 @@ plot(cars)
 }</code></pre>
 <p>Jupyter&apos;s code cells explicitly allow for different types of content. The <code>output_type</code> can be <code>stream</code> (for standard output and error streams, <code>stdout</code> and <code>stderr</code>) and <code>display_data</code> for &quot;mime-bundles&quot; of data driven content (e.g. <code>text/plain</code>, <code>image/png</code>). The nice thing about that is that if a code cell returns some tabular data then Jupyter automatically converts it to a HTML table so you don&apos;t have to use conversion functions like <code>kable</code>,</p>
 <figure>
-  <img src="jupyter-head.png">
+  <img src="jupyter-head.png?raw">
 
 </figure>
 <p>So, Jupyter&apos;s code cell model is similar to RMarkdown in that it mimics the read-evaluate-print-loop of a console but extends that with some automagic MIME-based conversion of resulting content.</p>
@@ -155,7 +163,7 @@ head(cars)
             ...
         &lt;/tbody&gt;
     &lt;/table&gt;
-&lt;output&gt;</code></pre>
+&lt;/output&gt;</code></pre>
 <p>But, instead we could declare the data as an output variable of the execute directive and then use it as an input into another execute directive. Here for example, within a <code>SqliteSession</code> we calculate the total sales by region, assign it to the document variable <code>sales_by_region</code> and then use that data as an input into some R code to plot the data,</p>
 <pre class="html"><code>&lt;pre data-execute=&quot;sqlite(&apos;sales-data.db3&apos;)&quot; data-output=&quot;sales_by_region&quot;&gt;
     SELECT region, sum(sales) AS total FROM sales GROUP BY region
@@ -180,20 +188,11 @@ head(cars)
 <p>This model at is actually very similar to the familiar concepts of variables and functions in most high-level languages. Here, document variables can be declared using <code>&lt;input&gt;</code> elements and execute directives are like function calls optionally taking inputs and returning outputs which can be assigned to a new, or existing variable.</p>
 <p>There are some interesting follow-ons from moving to this model. But that&apos;s for another post. As always, comments are much appreciated!</p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/chunks-n-funcs';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

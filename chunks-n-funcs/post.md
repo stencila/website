@@ -61,8 +61,8 @@ The model for code execution in Jupyter Notebooks is ["code cells"](https://nbfo
   "cell_type" : "code",
   "execution_count": 1,
   "metadata" : {
-      "collapsed" : True,
-      "autoscroll": False,
+      "collapsed" : true,
+      "autoscroll": false,
   },
   "source" : "[some code]",
   "outputs": [{
@@ -150,7 +150,7 @@ head(cars)
 			...
 		</tbody>
 	</table>
-<output>
+</output>
 ```
 
 But, instead we could declare the data as an output variable of the execute directive and then use it as an input into another execute directive. Here for example, within a `SqliteSession` we calculate the total sales by region, assign it to the document variable `sales_by_region` and then use that data as an input into some R code to plot the data,

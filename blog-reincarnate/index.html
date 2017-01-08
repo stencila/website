@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Stencila blog reincarnated</title>
-<meta name="id" content="083ff1851bff9c47abd31f243e5546185db70b1b5ed0f2cf404395bbcfc68457">
-<meta name="address" content="name://volatile-document">
-<meta name="url" content="null/*volatile-document">
-<meta name="static" content="1">
+<meta name="id" content="584048bd762cf111447ee38f26f219b717e3d41d7acdfc1f0072df312d6b9413">
+<meta name="address" content="name://belligerent-document">
+<meta name="url" content="null/*belligerent-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Stencila blog reincarnated</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">21 November 2016</p>
@@ -62,24 +70,15 @@
 <p>So, our new blog uses <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and is published on <a href="https://pages.github.com/">Github pages</a>. We&apos;re still eating our own dog food by using our <a href="https://github.com/stencila/node">Node.js package</a> to convert Markdown to HTML and by using our new document editor to author posts (screenshot below). But we&apos;re hoping that with this new approach there will be less friction in getting posts written and on to the web. And of course it&apos;s all open source and available as a Git <a href="https://github.com/stencila/blog">repository</a>.</p>
 <p>Stay tuned for more...</p>
 <figure>
-  <img src="screenshot.png">
+  <img src="screenshot.png?raw">
 
 </figure></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/blog-reincarnate';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

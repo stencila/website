@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Easy ain't easy but it's getting easier.</title>
-<meta name="id" content="d7c7b9d7c0f36dd7655e247de71db50d35cbe5f16cc573efc2e44b424cdc92b9">
-<meta name="address" content="name://scrawny-document">
-<meta name="url" content="null/*scrawny-document">
-<meta name="static" content="1">
+<meta name="id" content="59d7f7d7fde83a92f3dc20e836c868b5075a8c9b296261c53944ad47d0c2fc87">
+<meta name="address" content="name://wasteful-document">
+<meta name="url" content="null/*wasteful-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Easy ain&apos;t easy but it&apos;s getting easier.</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">24 November 2016</p>
@@ -68,7 +76,7 @@ git commit -m &quot;Update&quot;
 git push</code></pre>
 <p>That&apos;s pretty easy - if you&apos;re a coder familiar with the command line. But if your not, then it can be a little intimidating, and it&apos;s certainly not intuitive. So, to make using Git easier, companies like <a href="https://github.com/">Github</a> and <a href="https://about.gitlab.com/">Gitlab</a> have wrapped it in a &quot;usability layer&quot; - a translation between those code commands and something that, for most of us, is more familiar and requires less thought:</p>
 <figure>
-  <img src="screenshot.png">
+  <img src="screenshot.png?raw">
 
 </figure>
 <p>When you press that &quot;Commit changes&quot; button, exactly the same thing happens as when you enter those three lines at the console. And in both cases, working away in the background is a <strong>lot</strong> of code representing a <strong>lot</strong> of accumulated intellect, experimentation, experience and hard work. It is just one example of how really complicated computation can eventually get represented in easy to use interfaces.</p>
@@ -80,20 +88,11 @@ git push</code></pre>
 <p>At first thought, realigning incentives also seems like a difficult thing to do.</p>
 <p>And then you look around. At the seismic shifts in social attitudes to sharing. At Facebook and Twitter. At the <a href="http://www.ascb.org/2016/11/07/on-publishing-and-the-sneetches-a-wake-up-call-november-december-2016-newsletter">growing anger</a> at <a href="https://www.theguardian.com/technology/2012/apr/22/academic-publishing-monopoly-challenged">monopolistic academic publishers</a>. And then you think, realigning incentives might just be getting easier too!</p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/easy-aint-easy';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Monolithic island to connected archipelago</title>
-<meta name="id" content="a878c7cab8c3b2f27eb52292fc7900e99de325bbb31f923e9e3d0b526d37383e">
-<meta name="address" content="name://feigned-document">
-<meta name="url" content="null/*feigned-document">
-<meta name="static" content="1">
+<meta name="id" content="9045d9a85aa5183fc3062d049ddb4c5c5c7e77026ad3ef0e43f32918e7be4707">
+<meta name="address" content="name://long-document">
+<meta name="url" content="null/*long-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Monolithic island to connected archipelago</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">30 November 2016</p>
@@ -64,14 +72,14 @@
 <p>A year ago, I stumbled upon the awesome <a href="http://substance.io">Substance</a> library. Its creators, Michael and Oliver, have been enthusiastic and supportive collaborators since and have helped me put the WYSIWYG into WYSIWYG interfaces.</p>
 <p>By the middle of this year, Stencila was getting close to what I imagined it might look like when I started out. I had implemented a new markup language for reproducible documents (called Cila), built a rendering engine which was &quot;non-destructive&quot; (thereby allowing for a document to both edited by humans and rendered against data by computers), wrapped those C++ implementations into packages for R, Python and Node.js, and with the help of Substance, developed a visual editor for reproducible documents.</p>
 <figure>
-  <img src="screenshot.png" alt="Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom">
+  <img src="screenshot.png?raw" alt="Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom">
   <figcaption>Screenshots of a Stencila Document circa June 2016: visual editing interface on top, Cila markup on bottom</figcaption>
 </figure>
 <p>But all was not well.</p>
 <h1 id="of-islands-causeways-and-bridges">Of islands, causeways and bridges</h1>
 <p>In <a href="https://en.wikipedia.org/wiki/Raiders_of_the_Lost_Ark"><em>Raiders of the Lost Ark</em></a>, Indiana Jones finds himself on U-boat heading towards <a href="http://indianajones.wikia.com/wiki/Geheimhaven">Geheimhaven</a>, a barren, rocky island somewhere in the Agean Sea. It&apos;s a long way from anywhere, has steep rocky sides and doesn&apos;t have any apparent redeeming features. It is not until Indiana gets to the island that he discovers there is a sophisticated Nazi supply base tunneled into it.</p>
 <figure>
-  <img src="geheimhaven.jpg" alt="The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in Raiders of the Lost Arc">
+  <img src="geheimhaven.jpg?raw" alt="The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in Raiders of the Lost Arc">
   <figcaption>The foreboding Geheimhaven island, the Nazi&apos;s secret U-boat haven in <em>Raiders of the Lost Arc</em></figcaption>
 </figure>
 <p>In my enthusiasm to create a better platform for reproducible research I had created an island like Geheimhaven. If you swam over to my island, I&apos;d be able to show you around, show you all the sophisticated things I had done. You would see how much better it was. But from the mainland it didn&apos;t look particularly appealing, and certainly not worth the swim!</p>
@@ -81,7 +89,7 @@
 <p>So a few months ago I decided it was time to move to a more decoupled architecture. Instead of one code repository with a core C++ implementation, there is now an ecosystem of software packages with separate native R, Python, Javascript implementations. So if for example you&apos;re a R coder, the <a href="https://github.com/stencila/r">Stencila R package</a> looks like an R package, not something with a whole lot of C++ dependencies. Instead of focusing on creating new, better document formats, we&apos;re making use of tools like <a href="http://pandoc.org/">Pandoc</a> to make sure Stencila first integrates well with existing formats like RMarkdown, Latex and Word. See the <a href="https://github.com/stencila/stencila#readme">umbrella repository on Github</a> for more.</p>
 <p>So the former monolithic island has been broken into an archipelago. An archipelago of islands that are connected by causeways and bridges to each other (each of the Stencila packages acts as both a client and a server and can make use of capabilities of the others) and to the mainland (there is now much better integration with &quot;mainstream&quot; formats and tools).</p>
 <figure>
-  <img src="atlanterhavsveien.jpg" alt="The Atlanterhavsveien, the &quot;Atlantic Road&quot;, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland">
+  <img src="atlanterhavsveien.jpg?raw" alt="The Atlanterhavsveien, the &quot;Atlantic Road&quot;, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland">
   <figcaption>The Atlanterhavsveien, the <a href="https://en.wikipedia.org/wiki/Atlantic_Ocean_Road">&quot;Atlantic Road&quot;</a>, in Norway is a series of causeways and bridges which connect an archipelago of islands to the mainland</figcaption>
 </figure>
 <h1 id="the-future">The future</h1>
@@ -90,20 +98,11 @@
 <p>Decoupling also opens the door to distributed computing, for example, executing compute intensive code chunks on more powerful remote machine which are close to where your data resides.</p>
 <p>More details on all of this in future development updates.</p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/geheimhaven';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>

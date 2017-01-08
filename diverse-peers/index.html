@@ -2,21 +2,25 @@
       <html>
         <head>
           <title>Diverse peers</title>
-<meta name="id" content="b2eb915d2f6a2340f65b635f5f164f8f72d246380dbc825d22632bd55ac9c5c7">
-<meta name="address" content="name://youthful-document">
-<meta name="url" content="null/*youthful-document">
-<meta name="static" content="1">
+<meta name="id" content="2e89875b768710a2428fc86c950e9df3e0424aa4c80752abd2e11087b5f74806">
+<meta name="address" content="name://puffy-document">
+<meta name="url" content="null/*puffy-document">
+<meta name="naked" content="1">
+<meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
         </head>
         <body>
-          <style>
+          <header>
+            <style>
         body {
           margin: 0;
-          padding: 0.5em;
         }
-        #header {
-          position: relative;
+        header {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
           z-index: 100000;
           padding: 0.5em 0 0 0.3em;
           border-bottom: 1px solid #EEE;
@@ -24,17 +28,21 @@
           background: white;
           opacity: 0.97;
         }
-        #header > div {
+        header > div {
           max-width: 41.5em;
           margin-left: auto;
           margin-right: auto;
         }
-        #header img {
+        header img {
           width: 9em;
         }
-        #data .content {
+        #data .content,
+        .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+        }
+        .sc-toolset {
+          display: none;
         }
         #disqus_thread {
           max-width: 40em;
@@ -43,13 +51,13 @@
           margin-right: auto;
         }
       </style>
-      <div id="header">
-        <div>
-          <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
-        </div>
+      <div>
+        <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       
-          <main id="data" data-format="html">
+          </header>
+          <main>
+            <div id="data" data-format="html">
             <div class="content"><h1 id="title">Diverse peers</h1>
 <p class="author">Nokome Bentley</p>
 <p id="date">5 December 2016</p>
@@ -183,37 +191,28 @@ Date: Mon, 05 Dec 2016 04:31:00 GMT
 <pre><code>host.view()</code></pre>
 <p>That will open a browser window at the URL that the host is serving on. It shows a list of components that this host is currently hosting (currently just that R session we created above) as well as list of it&apos;s peers:</p>
 <figure>
-  <img src="screenshot-1.png" alt="Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers">
+  <img src="screenshot-1.png?raw" alt="Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers">
   <figcaption>Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&apos;s peers</figcaption>
 </figure>
 <p>Each Stencila component has a browser-based interface, so if we click on that link to the R session, we get an interactive command line where we can do something like plot those random series <code>x</code> and <code>y</code> which we previously generated within the session:</p>
 <figure>
-  <img src="screenshot-2.png" alt="Screenshot of the browser-based interface for the R session">
+  <img src="screenshot-2.png?raw" alt="Screenshot of the browser-based interface for the R session">
   <figcaption>Screenshot of the browser-based interface for the R session</figcaption>
 </figure>
 <p>Or, we can click on the link to the R peer, get the interface for the host residing in R, and ask for components that the Node.js host knows about, like <em>documents</em> and <em>Javascript session</em> from there:</p>
 <figure>
-  <img src="screenshot-3.png" alt="Screenshot of the browser-based interface for the R host">
+  <img src="screenshot-3.png?raw" alt="Screenshot of the browser-based interface for the R host">
   <figcaption>Screenshot of the browser-based interface for the R host</figcaption>
 </figure>
 <p>That&apos;s a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something missing in the package for you favorite language, you can always run a host from a different language and pull resources from there.</p>
 <p>We&apos;ve moved from a traditional client-server architecture and instead each Stencila package acts as both a client and a server - both a consumer and provider of resources. Right now we have a <em>very</em> simple peer discovery mechanism which only works locally. But the plan is to extend that so that peers will be able to reside on different machines.</p>
 <p>That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I&apos;ll show how we can do something interesting with those building blocks by combining the <em>document</em> and <em>session</em> components into a dynamic, data driven document.</p></div>
             <div class="sessions"></div>
+          </div>
           </main>
-          <div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/diverse-peers';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>
+          <footer>
+            
+          </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
       </html>
