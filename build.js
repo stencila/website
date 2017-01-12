@@ -27,6 +27,8 @@ for (let post of posts) {
   fs.writeFile(post + '/index.html', doc.page({
     edit: '0',
     naked: '1',
+    headExtra: 
+      `<link rel="canonical" href="http://blog.stencila/${post}" />`,
     header: 
       `<style>
         body {
@@ -57,36 +59,13 @@ for (let post of posts) {
           margin-top: 3em;
           max-width: 40em;
         }
-        .sc-toolset {
-          display: none;
-        }
-        #disqus_thread {
-          max-width: 40em;
-          margin-top: 6em;
-          margin-left: auto;
-          margin-right: auto;
-        }
       </style>
       <div>
         <a href="http://blog.stenci.la"><img src="../logo-name.svg"></a>
       </div>
       `,
-    /*
-    footer: 
-        `<div id="disqus_thread"></div>
-        <script>
-          var disqus_config = function () {
-            this.page.url = 'http://blog.stenci.la/${post}';
-            this.page.identifier = 'blog-post-%{post}';
-          };
-          (function() {
-          var d = document, s = d.createElement('script');
-          s.src = '//stencila.disqus.com/embed.js';
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-          })();
-        </script>`,
-    */
+    footer:
+      '<script src="https://hypothes.is/embed.js" async></script>'
   }))
 
   // Generate summary for main page
@@ -98,7 +77,6 @@ for (let post of posts) {
   </div>
   <div class="summary">${doc.summary || ''}</div>
 </div>\n`
-
   
 }
 
