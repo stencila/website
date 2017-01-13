@@ -2,9 +2,9 @@
       <html>
         <head>
           <title>Development update: Javascript execution contexts and Markdown extensions for interactive documents</title>
-<meta name="id" content="d3189b03579d17d9c9b26ddb3260d7e68ad61f33eb2de0fe8c9c7e713fd7f9da">
-<meta name="address" content="name://ashamed-document">
-<meta name="url" content="null/*ashamed-document">
+<meta name="id" content="e49f56c1c29d883a9db1b6d3f02ed400bd0ed6cfcd3c8fec6132937ff405c3ed">
+<meta name="address" content="name://elite-document">
+<meta name="url" content="null/*elite-document">
 <meta name="naked" content="1">
 <meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
@@ -54,7 +54,7 @@
 <p class="author">Nokome Bentley</p>
 <p id="date">13 January 2017</p>
 <div id="summary">
-  <p>A Node.js-like Javascript experience within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be used.</p>
+  <p>On Node.js-like Javascript execution within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be put together in a reactive document.</p>
 </div>
 <h1 id="blog-posts-are-stencila-documents">Blog posts are Stencila Documents</h1>
 <p>First, a reminder that this blog post, like all our other blog posts, is a Stencila Document. That is, it is a document that resides in the memory of your browser, not as a <a href="https://en.wikipedia.org/wiki/Document_Object_Model">DOM tree</a> but as a <a href="http://substance.io">Substance</a>-based data structure. It got there by Javascript from the <a href="https://github.com/stencila/web"><code>stencila/web</code></a> package which parsed <a href="https://github.com/stencila/blog/blob/master/dev-update-2017-01-13/index.html">this HTML</a> (statically hosted on Github pages). That HTML was generated from <a href="https://github.com/stencila/blog/blob/master/dev-update-2017-01-13/post.md">this Markdown</a> using the <a href="https://github.com/stencila/node"><code>stencila/node</code></a> package (which uses Pandoc for Markdown parsing).</p>
@@ -90,17 +90,17 @@ stats.linearRegression(data)</pre>
   <li>if you run Stencila locally, then you&apos;ll be able to run execute directives using other languages e.g. R, Python etc; in the future you&apos;ll be able to do that here as well.</li>
 </ul>
 <h1 id="markdown-extension-for-execute-directives">Markdown extension for execute directives</h1>
-<p>Markdown is one of the formats you can use to write and store a Stencila Document (you can also use HTML or Latex but Markdown is the focus of development for now). Most Markdown parsers don&apos;t support the notion of an executable chunk of code - what we call in Stencila an &quot;execute directive&quot;. So, we&apos;ve got to come up with a Markdown extension to handle them.</p>
-<p>Markdown has code blocks and Github Flavored Markdown has fenced code blocks. For example, you can indicate a block of <em>static</em>, example R code like this:</p>
+<p>Markdown is one of the formats you can use to write and store a Stencila Document (you can also use HTML or Latex, but Markdown is the focus of development for now). Most Markdown parsers don&apos;t support the notion of an executable chunk of code - what we call in Stencila an &quot;execute directive&quot;. So, we&apos;ve got to come up with a Markdown extension to handle them.</p>
+<p>Markdown has indented code blocks. Github Flavored Markdown (GFM) takes this further with fenced code blocks which allow you to specify the language for the code. For example, in GFM you can indicate a block of &quot;static&quot; R code like this:</p>
 <pre><code>```r
 plot(x,y)
 ```</code></pre>
-<p>RMarkdown uses the slightly different, &quot;braced r&quot; format to indicate a &quot;code chunk&quot;, a block of code which will executed, potentially with some options:</p>
+<p>For a block of code which is &quot;dynamic&quot; (i.e it will get executed), RMarkdown uses the slightly different, &quot;braced r&quot; format to indicate a &quot;code chunk&quot;, potentially with some options:</p>
 <pre><code>```{r fig.width=10, echo=FALSE} 
 plot(x,y)
 ```</code></pre>
-<p>For Stencila, because the <a href="http://blog.stenci.la/chunks-n-funcs/">execution model</a> is more similar to the traditional function call of a programming language it feels appropriate to use the traditional function call syntax with parentheses...</p>
-<p>Execute with no input variables (as above but the parentheses indicate this will actually get executed),</p>
+<p>In Stencila, because the <a href="http://blog.stenci.la/chunks-n-funcs/">execution model</a> is more similar to the traditional function call of a programming language, it feels appropriate to use the traditional function call syntax with parentheses...</p>
+<p>Execute with no input variables (as above but the parentheses indicate this will get executed),</p>
 <pre><code>```r()
 plot(x,y)
 ```</code></pre>
@@ -155,8 +155,8 @@ plot(x,y)
 <pre><code>*How many cookies do you eat per day?* [1]{name=cookiesPerDay type=number}.
 Your daily cookie consumption is []{value=cookiesPerDay format=&quot;%s cookies&quot;}.</code></pre>
 <p>And here&apos;s what it looks, and behaves, like (try altering the input),</p>
-<p><em>How many cookies do you eat per day?</em> <input name="cookiesPerDay" type="number" value="1">.<br> Your daily cookie consumption is <output for="cookiesPerDay" data-format="%s cookies"></output>.</p>
-<h1 id="putting-it-together-in-the-ui">Putting it together in the UI</h1>
+<p><em>How many cookies do you eat per day?</em> <input name="cookiesPerDay" type="number" value="1">.<br> Your daily cookie consumption is <output for="cookiesPerDay" data-format="%.1f cookies"></output>.</p>
+<h1 id="putting-it-together-in-a-reactive-document">Putting it together in a reactive document</h1>
 <p>I&apos;ll finish off this update by putting all this together in a very simple demo of this new execution model I&apos;ve been talking about. Here&apos;s some Markdown for a mini-document about cookies and calories inspired by one of Brett Victor&apos;s examples:</p>
 <pre><code>### Calorific impact of alternative cookie consumptions profiles
 
