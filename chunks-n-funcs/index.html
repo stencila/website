@@ -2,13 +2,14 @@
       <html>
         <head>
           <title>On chunks, cells, beakers and functions : models for data driven content</title>
-<meta name="id" content="57e5a58948b156275bc9dd169b95dda41c838a13efe157a8a83b9250039ab7c0">
-<meta name="address" content="name://precious-document">
-<meta name="url" content="null/*precious-document">
+<meta name="id" content="9131817df0efe2547dca8aea6cc284b5ceced7f45260446012e6049cdc85325f">
+<meta name="address" content="name://deeply-document">
+<meta name="url" content="null/*deeply-document">
 <meta name="naked" content="1">
 <meta name="edit" content="0">
 <meta name="generator" content="stencila-node-0.1.1"><meta name="viewport" content="width=device-width, initial-scale=1">
           <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">
+          <link rel="canonical" href="http://blog.stencila/chunks-n-funcs" />
         </head>
         <body>
           <header>
@@ -40,15 +41,6 @@
         .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
-        }
-        .sc-toolset {
-          display: none;
-        }
-        #disqus_thread {
-          max-width: 40em;
-          margin-top: 6em;
-          margin-left: auto;
-          margin-right: auto;
         }
       </style>
       <div>
@@ -121,7 +113,7 @@ plot(cars)
 <p>So, Jupyter&apos;s code cell model is similar to RMarkdown in that it mimics the read-evaluate-print-loop of a console but extends that with some automagic MIME-based conversion of resulting content.</p>
 <h1 id="beakers">Beakers</h1>
 <p>One of the exciting side effects of decoupling Stencila&apos;s architecture is that is allows for polyglot data-driven documents - documents that embed code for more than one language. Why would you want to do that? To use the right tool for the job. For example, you might use SQL to extract some data from a large database, analyze that data using R, and then produce interactive visualizations of the results using D3 in Javascript. There are already ways to glue languages together but polyglot documents potentially provide an easier alternative by stripping away the inter-language scaffolding cruft. That would be beneficial for authors of data-driven documents and for readers wanting to work out how they did the analysis.</p>
-<p><a href="http://beakernotebook.com/">Beaker Notebooks</a> are very similar to Jupyter notebooks except that they are polygplot. A key challenge in creating polyglot notebooks is the transfer of data between languages. Beaker approach this using the model of a laboratory beaker. The <code>beaker</code> is a notebook namespace - a collection of variables and their values that are stored within the notebook. You put data into the <code>beaker</code> using either the <code>set</code> method or a setter (depending upon the language) within a code cell e.g. in R</p>
+<p><a href="http://beakernotebook.com/">Beaker Notebooks</a> are very similar to Jupyter notebooks except that they are polyplot. A key challenge in creating polyglot notebooks is the transfer of data between languages. Beaker approach this using the model of a laboratory beaker. The <code>beaker</code> is a notebook namespace - a collection of variables and their values that are stored within the notebook. You put data into the <code>beaker</code> using either the <code>set</code> method or a setter (depending upon the language) within a code cell e.g. in R</p>
 <pre class="r"><code>beaker::set(&apos;car_summary&apos;, summary(cars))</code></pre>
 <p>Then later in the notebook you can take the same data out of the beaker using the <code>get</code> method or a getter e.g. in Python</p>
 <pre class="py"><code>beaker.car_summary</code></pre>
@@ -191,7 +183,7 @@ head(cars)
           </div>
           </main>
           <footer>
-            
+            <script src="https://hypothes.is/embed.js" async></script>
           </footer>
           <script src="https://unpkg.com/stencila-web/build/document.min.js"></script>
         </body>
