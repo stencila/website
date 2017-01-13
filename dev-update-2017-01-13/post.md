@@ -3,7 +3,7 @@ title: "Development update: Javascript execution contexts and Markdown extension
 author: Nokome Bentley
 date: 13 January 2017
 abstract: |
-	A Node.js-like Javascript experience within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be used.
+	On Node.js-like Javascript execution within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be put together in a reactive document.
 ---
 
 # Blog posts are Stencila Documents
@@ -52,23 +52,23 @@ Some notes:
 
 # Markdown extension for execute directives
 
-Markdown is one of the formats you can use to write and store a Stencila Document (you can also use HTML or Latex but Markdown is the focus of development for now). Most Markdown parsers don't support the notion of an executable chunk of code - what we call in Stencila an "execute directive". So, we've got to come up with a Markdown extension to handle them.
+Markdown is one of the formats you can use to write and store a Stencila Document (you can also use HTML or Latex, but Markdown is the focus of development for now). Most Markdown parsers don't support the notion of an executable chunk of code - what we call in Stencila an "execute directive". So, we've got to come up with a Markdown extension to handle them.
 
-Markdown has code blocks and Github Flavored Markdown has fenced code blocks. For example, you can indicate a block of *static*, example R code like this:
+Markdown has indented code blocks. Github Flavored Markdown (GFM) takes this further with fenced code blocks which allow you to specify the language for the code. For example, in GFM you can indicate a block of "static" R code like this:
 
 	```r
 	plot(x,y)
 	```
 
-RMarkdown uses the slightly different, "braced r" format to indicate a "code chunk", a block of code which will executed, potentially with some options: 
+For a block of code which is "dynamic" (i.e it will get executed), RMarkdown uses the slightly different, "braced r" format to indicate a "code chunk", potentially with some options: 
 
 	```{r fig.width=10, echo=FALSE} 
 	plot(x,y)
 	```
 
-For Stencila, because the [execution model](http://blog.stenci.la/chunks-n-funcs/) is more similar to the traditional function call of a programming language it feels appropriate to use the traditional function call syntax with parentheses...
+In Stencila, because the [execution model](http://blog.stenci.la/chunks-n-funcs/) is more similar to the traditional function call of a programming language, it feels appropriate to use the traditional function call syntax with parentheses...
 
-Execute with no input variables (as above but the parentheses indicate this will actually get executed),
+Execute with no input variables (as above but the parentheses indicate this will get executed),
 
 	```r()
 	plot(x,y)
@@ -186,9 +186,9 @@ The corollary of having `<input>` elements to set document variables is to have 
 And here's what it looks, and behaves, like (try altering the input),
 
 *How many cookies do you eat per day?* [1]{name=cookiesPerDay type=number}.
-Your daily cookie consumption is []{value=cookiesPerDay format="%s cookies"}.
+Your daily cookie consumption is []{value=cookiesPerDay format="%.1f cookies"}.
 
-# Putting it together in the UI
+# Putting it together in a reactive document
 
 I'll finish off this update by putting all this together in a very simple demo of this new execution model I've been talking about. Here's some Markdown for a mini-document about cookies and calories inspired by one of Brett Victor's examples:
 
