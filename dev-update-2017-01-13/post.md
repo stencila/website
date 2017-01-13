@@ -3,7 +3,7 @@ title: "Development update: Javascript execution contexts and Markdown extension
 author: Nokome Bentley
 date: 13 January 2017
 abstract: |
-	A Node.js-like Javscript experience within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be used.
+	A Node.js-like Javascript experience within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be used.
 ---
 
 # Blog posts are Stencila Documents
