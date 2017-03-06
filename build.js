@@ -5,6 +5,7 @@ const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
+  'dev-update-2017-03-06',
   'dev-update-2017-01-13',
   'chunks-n-funcs',
   'diverse-peers',
