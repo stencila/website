@@ -29,8 +29,10 @@ for (let post of posts) {
   fs.writeFile(post + '/index.html', doc.page({
     edit: '0',
     naked: '1',
-    headExtra: 
-      `<link rel="canonical" href="http://blog.stencila/${post}" />`,
+    headExtra: `
+      <link rel="canonical" href="http://blog.stencila/${post}" />
+      <link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web@0.2.0/build/document.min.css">
+    `,
     header: 
       `<style>
         body {
@@ -67,7 +69,7 @@ for (let post of posts) {
       </div>
       `,
     footer:
-      '<script src="https://hypothes.is/embed.js" async></script>'
+      `<script src="https://unpkg.com/stencila-web@0.2.0/build/document.min.js"></script>`
   }))
 
   // Generate summary for main page
