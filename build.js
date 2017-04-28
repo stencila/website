@@ -28,7 +28,7 @@ for (let post of posts) {
   doc.read(post + '/post.md')
 
   // Write post HTML page
-  fs.writeFile(post + '/index.html', doc.page({
+  let html = doc.page({
     edit: '0',
     naked: '1',
     headExtra: `
@@ -73,7 +73,12 @@ for (let post of posts) {
       `,
     footer:
       `<script src="https://unpkg.com/stencila-web@0.2.0/build/document.min.js"></script>`
-  }))
+  })
+    // Replace the replaces CSS and JS
+    .replace('<link rel="stylesheet" type="text/css" href="https://unpkg.com/stencila-web/build/document.min.css">', '')
+    .replace('<script src="https://unpkg.com/stencila-web/build/document.min.js"></script>', '')
+    
+  fs.writeFile(post + '/index.html', html)
 
   // Generate summary for main page
   postsDiv += `<div class="post">
