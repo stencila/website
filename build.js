@@ -5,6 +5,7 @@ const stencila = require('stencila')
 
 // List of posts, most recent first
 let posts = [
+  'sloan-grant',
   'thanks-coko',
   'dev-update-2017-03-06',
   'dev-update-2017-01-13',
@@ -63,6 +64,7 @@ for (let post of posts) {
         .sc-visual-editor .se-scrollable .se-content {
           margin-top: 3em;
           max-width: 40em;
+          font-size: 120%;
         }
       </style>
       <div>
