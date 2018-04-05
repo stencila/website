@@ -60,7 +60,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('copy', function () {
-  gulp.src(['./src/**/*.{css,js,png,svg}'], {base: './src'})
+  gulp.src(['./src/**/*.{css,jpg,js,png,svg}'], {base: './src'})
     .pipe(plumber())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
