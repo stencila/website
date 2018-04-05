@@ -1,6 +1,6 @@
 ---
 extends: blog-post
-title: On chunks, cells, beakers and functions &colon; models for data driven content
+title: "On chunks, cells, beakers and functions: models for data driven content"
 author: Nokome Bentley
 date: 20 December 2016
 abstract: |
