@@ -2,11 +2,47 @@ const del = require('del')
 const gulp = require('gulp')
 const connect = require('gulp-connect')
 const plumber = require('gulp-plumber')
-const nunjucks = require('gulp-nunjucks')
+const nunjucks = require('nunjucks')
 const markdownIt = require('markdown-it')
 const replaceExt = require('replace-ext')
 const through = require('through2')
 const yamlFront = require('yaml-front-matter')
+
+function markdown2nunjucks () {
+  const mdIt = markdownIt()
+  return through.obj(function(file) {
+    const md = file.contents.toString()
+    const front = yamlFront.loadFront(md)
+    let html = ''
+    for (let [name, value] of Object.entries(front)) {
+      switch (name) {
+        case 'extends':
+          html += `{% extends "${value}.html" %}`
+          break
+        case '__content':
+          html += `{% block content %}${mdIt.render(value)}{% endblock %}`
+          break
+      }
+    }
+    file.data = front
+    file.contents = Buffer.from(html)
+    file.path = replaceExt(file.path, '.html');
+    this.push(file)
+  })
+}
+
+function nunjucks2html () {
+  return through.obj(function(file) {
+    const env = new nunjucks.Environment(
+      new nunjucks.FileSystemLoader('html')
+    )
+    const content =file.contents.toString()
+    const context = file.data || {}
+    const html = env.renderString(content, context)
+    file.contents = Buffer.from(html)
+    this.push(file)
+  })
+}
 
 gulp.task('clean', function () {
   return del('./build')
@@ -20,40 +56,18 @@ gulp.task('copy', function () {
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./html/*.html', '!./html/_*.html'])
+  gulp.src(['./site/**/*.html'])
     .pipe(plumber())
-    .pipe(nunjucks.compile())
+    .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
 })
 
 gulp.task('markdown', function () {
-  const mdIt = markdownIt()
-  gulp.src(['./html/*.md'])
+  gulp.src(['./site/**/*.md'])
     .pipe(plumber())
-    .pipe(through.obj(function(file) {
-      const md = file.contents.toString()
-      const front = yamlFront.loadFront(md)
-      let html = ''
-      for (let [name, value] of Object.entries(front)) {
-        switch (name) {
-          case 'extends':
-            html += `{% extends "${value}" %}`
-            break
-
-          case '__content':
-            html += `{% block content %}${mdIt.render(value)}{% endblock %}`
-            break
-
-          default:
-            throw new Error(`Unknown option: ${name}`)
-        }
-      }
-      file.contents = new Buffer(html)
-      file.path = replaceExt(file.path, '.html');
-      this.push(file)
-    }))
-    .pipe(nunjucks.compile())
+    .pipe(markdown2nunjucks())
+    .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
 })
@@ -71,8 +85,8 @@ gulp.task('connect', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['./css/*', './img/*', './js/*'], ['copy'])
-  gulp.watch(['./html/*.html'], ['nunjucks'])
-  gulp.watch(['./html/*.md'], ['markdown'])
+  gulp.watch(['./site/**/*.html'], ['nunjucks'])
+  gulp.watch(['./site/**/*.md'], ['markdown'])
 })
  
 gulp.task('default', ['build', 'connect', 'watch'])
