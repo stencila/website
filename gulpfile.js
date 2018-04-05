@@ -4,6 +4,7 @@ const connect = require('gulp-connect')
 const plumber = require('gulp-plumber')
 const nunjucks = require('nunjucks')
 const markdownIt = require('markdown-it')
+const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
 const yamlFront = require('yaml-front-matter')
@@ -37,10 +38,12 @@ function nunjucks2html () {
   return through.obj(function(file, encoding, callback) {
     console.log('nunjucks2html:', file.path)
     const env = new nunjucks.Environment(
-      new nunjucks.FileSystemLoader('html')
+      new nunjucks.FileSystemLoader('src/html')
     )
-    const content =file.contents.toString()
-    const context = file.data || {}
+    const content = file.contents.toString()
+    const context = Object.assign(file.data || {}, {
+      source: path.relative(__dirname, file.path)
+    })
     const html = env.renderString(content, context)
     file.contents = Buffer.from(html)
     this.push(file)
@@ -53,14 +56,14 @@ gulp.task('clean', function () {
 })
 
 gulp.task('copy', function () {
-  gulp.src(['./css/*', './img/*', './js/*'], {base: '.'})
+  gulp.src(['./src/**/*.{css,js,png,svg}'], {base: './src'})
     .pipe(plumber())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./site/**/*.html'])
+  gulp.src(['./src/**/*.html', '!./src/html/*.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -68,7 +71,7 @@ gulp.task('nunjucks', function () {
 })
 
 gulp.task('markdown', function () {
-  gulp.src(['./site/**/*.md'])
+  gulp.src(['./src/**/*.md'])
     .pipe(plumber())
     .pipe(markdown2nunjucks())
     .pipe(nunjucks2html())
@@ -88,9 +91,9 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['./css/*', './img/*', './js/*'], ['copy'])
-  gulp.watch(['./site/**/*.html', './html/*.html'], ['nunjucks'])
-  gulp.watch(['./site/*.md', './html/*.html'], ['markdown'])
+  gulp.watch(['./src/**/*.{css,js,png,svg}'], ['copy'])
+  gulp.watch(['./src/**/*.html', './src/html/*.html'], ['nunjucks'])
+  gulp.watch(['./src/*.md', './src/html/*.html'], ['markdown'])
 })
  
 gulp.task('default', ['build', 'connect', 'watch'])
