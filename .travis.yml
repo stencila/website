@@ -1,0 +1,22 @@
+language: node_js
+node_js: 8
+
+# Cache node_modules for faster setup
+cache:
+  directories:
+    - node_modules
+
+# Build the site
+script:
+  - npm run build
+
+# Deploy back to Github Pages
+# See https://docs.travis-ci.com/user/deployment/pages/
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  local-dir: build
+  committer-from-gh: true
+  on:
+    branch: source
