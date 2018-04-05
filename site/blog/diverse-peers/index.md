@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: Diverse peers
 author: Nokome Bentley
 date: 5 December 2016
 abstract: |
-	How Stencila packages act as a network of diverse peers with differing capabilities and calling on each other to provide resources.
+  How Stencila packages act as a network of diverse peers with differing capabilities and calling on each other to provide resources.
 ---
 
 In my [last post](http://blog.stenci.la/geheimhaven) I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform's architecture was monolithic because it was based on a foundational C++ implementation which was then exposed to various host languages like R and Python. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.g. complex builds, intimidating for contributors). In the new approach, the various packages that make up the Stencila platform have been decoupled from each other and there is more of a focus on a standard set of APIs and communication protocols, rather than a single implementation. In this development update I'm going to give you a taste of what that actually looks like.

@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: "Development update: Javascript execution contexts and Markdown extensions for interactive documents"
 author: Nokome Bentley
 date: 13 January 2017
 abstract: |
-	On Node.js-like Javascript execution within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be put together in a reactive document.
+  On Node.js-like Javascript execution within documents, Markdown extensions for inputting and outputting document variables, and a little demo of how they can all be put together in a reactive document.
 ---
 
 # Blog posts are Stencila Documents

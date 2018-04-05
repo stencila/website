@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: Monolithic island to connected archipelago
 author: Nokome Bentley
 date: 30 November 2016
 abstract: |
-	Development update. How and why we decoupled Stencila's architecture to take it from a monolithic island to a connected archipelago.
+  Development update. How and why we decoupled Stencila's architecture to take it from a monolithic island to a connected archipelago.
 ---
 
 This is the first in a new series of posts providing updates on Stencila development. We'll be updating you on progress and plans every 1-2 weeks with a short video accompanying each post. But, to begin, some history...

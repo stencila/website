@@ -1,4 +1,5 @@
 ---
+extends: blog-post
 title: Thanks Coko!
 author: Nokome Bentley
 date: 2 April 2017

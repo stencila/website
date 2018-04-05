@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: A spreadsheet file format for humans
 author: Nokome Bentley
 date: 24 April 2016
 abstract: |
-	Spreadsheets are reactive programming environments that are usually only interacted with via a visual grid interface. For most other programming environments, the primary interface is a text file format specifically designed for humans. In contrast, spreadsheet file formats have been designed for machines, not humans. This post proposes a human friendly format for spreadsheets that can be used as an alternative interface for viewing and editing spreadsheets.
+  Spreadsheets are reactive programming environments that are usually only interacted with via a visual grid interface. For most other programming environments, the primary interface is a text file format specifically designed for humans. In contrast, spreadsheet file formats have been designed for machines, not humans. This post proposes a human friendly format for spreadsheets that can be used as an alternative interface for viewing and editing spreadsheets.
 ---
 
 # Why?

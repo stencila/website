@@ -10,7 +10,8 @@ const yamlFront = require('yaml-front-matter')
 
 function markdown2nunjucks () {
   const mdIt = markdownIt()
-  return through.obj(function(file) {
+  return through.obj(function(file, encoding, callback) {
+    console.log('markdown2nunjucks:', file.path)
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
     let html = ''
@@ -20,7 +21,7 @@ function markdown2nunjucks () {
           html += `{% extends "${value}.html" %}`
           break
         case '__content':
-          html += `{% block content %}${mdIt.render(value)}{% endblock %}`
+          html += `{% block content %}{{ super() }}${mdIt.render(value)}{% endblock %}`
           break
       }
     }
@@ -28,11 +29,13 @@ function markdown2nunjucks () {
     file.contents = Buffer.from(html)
     file.path = replaceExt(file.path, '.html');
     this.push(file)
+    callback()
   })
 }
 
 function nunjucks2html () {
-  return through.obj(function(file) {
+  return through.obj(function(file, encoding, callback) {
+    console.log('nunjucks2html:', file.path)
     const env = new nunjucks.Environment(
       new nunjucks.FileSystemLoader('html')
     )
@@ -41,6 +44,7 @@ function nunjucks2html () {
     const html = env.renderString(content, context)
     file.contents = Buffer.from(html)
     this.push(file)
+    callback()
   })
 }
 
@@ -85,8 +89,8 @@ gulp.task('connect', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['./css/*', './img/*', './js/*'], ['copy'])
-  gulp.watch(['./site/**/*.html'], ['nunjucks'])
-  gulp.watch(['./site/**/*.md'], ['markdown'])
+  gulp.watch(['./site/**/*.html', './html/*.html'], ['nunjucks'])
+  gulp.watch(['./site/*.md', './html/*.html'], ['markdown'])
 })
  
 gulp.task('default', ['build', 'connect', 'watch'])

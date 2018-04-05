@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: Spreadsheets are dead, long live reactive programming environments!
 author: Nokome Bentley in collaboration with Oliver Buchtala and Micheal Aufreiter
 date: 15 March 2016
 abstract: |
-	In 1979, Dan Bricklin and Bob Frankston created VisiCalc the world's first spreadsheet software. VisiCalc was an immediate success, became the Apple II's "killer app" and was credited by Steve Jobs with propelling the first explosion in personal computing. Ted Nelson, an internet pioneer, described the paradigm shift that the spreadsheet interface created...
+  In 1979, Dan Bricklin and Bob Frankston created VisiCalc the world's first spreadsheet software. VisiCalc was an immediate success, became the Apple II's "killer app" and was credited by Steve Jobs with propelling the first explosion in personal computing. Ted Nelson, an internet pioneer, described the paradigm shift that the spreadsheet interface created...
 ---
 
 # Birth ...

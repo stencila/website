@@ -1,9 +1,10 @@
 ---
+extends: blog-post
 title: Getting under Stencila sheets
 author: Nokome Bentley
 date: 17 March 2016
 abstract: |
-    A follow up post to the [introduction to Stencila sheets](https://blog.stenci.la/introducing-sheets). More technical details on how they work and why they are different from traditional spreadsheets.
+  A follow up post to the [introduction to Stencila sheets](https://blog.stenci.la/introducing-sheets). More technical details on how they work and why they are different from traditional spreadsheets.
 ---
 
 This is a follow up post to the [introduction to Stencila sheets](https://blog.stenci.la/introducing-sheets). I'm going to go into more technical details to explain how they work and some of the things you can do with them.
