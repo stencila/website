@@ -1,16 +1,19 @@
 language: node_js
 node_js: 8
 
+# Cache node_modules for faster setup
 cache:
   directories:
     - node_modules
 
+# Build the site
 script:
   - npm run build
 
+# Deploy back to Github Pages
+# See https://docs.travis-ci.com/user/deployment/pages/
 deploy:
-  skip_cleanup: true
-  provider: script
-  script: ./deploy.sh
+  provider: pages
+  skip-cleanup: true
   on:
     branch: source
