@@ -46,7 +46,7 @@ function nunjucks2html () {
     env.addFilter('date', nunjucksDateFilter)
     const content = file.contents.toString()
     const context = Object.assign(file.context || {}, {
-      source: path.relative(__dirname, file.path)
+      source: file.source || path.relative(__dirname, file.path)
     })
     const html = env.renderString(content, context)
     file.contents = Buffer.from(html)
@@ -99,6 +99,7 @@ gulp.task('blog-index', function () {
       posts.sort((a, b) => (a.date > b.date) ? -1 : 1)
       all.context = {posts}
       all.contents = fs.readFileSync('./src/blog/index.html')
+      all.source = 'src/blog/index.html'
       callback(null, all)
     }))
     .pipe(nunjucks2html())
