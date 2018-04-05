@@ -1,0 +1,33 @@
+{
+  "name": "stencila-website",
+  "version": "1.0.0",
+  "description": "Stencila's website at https://stenci.la",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stencila/website.git"
+  },
+  "author": "Stencila contributors",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/stencila/website/issues"
+  },
+  "homepage": "https://stenci.la",
+  "dependencies": {},
+  "devDependencies": {
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^5.5.0",
+    "gulp-nunjucks": "^3.1.1",
+    "gulp-plumber": "^1.2.0",
+    "markdown-it": "^8.4.1",
+    "nunjucks": "^3.1.2",
+    "replace-ext": "^1.0.0",
+    "through2": "^2.0.3",
+    "yaml-front-matter": "^4.0.0"
+  }
+}
