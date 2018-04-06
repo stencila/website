@@ -4,6 +4,8 @@ body, button, input, select, textarea {
     font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
+/* Overrides */
+
 .button {
     text-transform: none;
 }
@@ -13,6 +15,21 @@ body, button, input, select, textarea {
     text-transform: none;
 }
 
+.navbar-item:hover,
+.navbar-burger:hover {
+  background: none;
+}
+
+a.navbar-item.is-active,
+a.navbar-item:hover,
+a.navbar-link.is-active,
+a.navbar-link:hover {
+  background: none;
+  color: #2568ef;
+}
+
+/* */
+
 .main {
   display: flex;
   flex-direction: column;
@@ -21,8 +38,9 @@ body, button, input, select, textarea {
 
 .footer {
   flex: 1;
+  background-color: white;
+  border-top: 1px solid #DDD;
 }
-
 
 .blog-post .container {
     max-width: 50em;
