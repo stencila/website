@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+body, button, input, select, textarea {
+    font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
+}
+
+.button {
+    text-transform: none;
+}
+
+.card .card-footer,
+.card .card-footer-item {
+    text-transform: none;
+}
