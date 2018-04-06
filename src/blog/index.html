@@ -6,10 +6,10 @@
 	{% for post in posts %}
 		<div class="columns">
 			<div class="column">
-				<div class="card">
+				<a href="{{ post.href }}"><div class="card">
 					<div class="card-header">
 						<p class="card-header-title">
-							<a href="{{ post.href }}">{{ post.title }}</a>
+							{{ post.title }}
 						</p>
 					</div>
 					<div class="card-content">
@@ -20,7 +20,7 @@
 							{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}
 						</p>
 					</div>
-				</div>
+				</div></a>
 			</div>
 		</div>
 	{% endfor %}
