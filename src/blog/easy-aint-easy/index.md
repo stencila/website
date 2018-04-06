@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/post.html
 title: Easy ain't easy but it's getting easier.
 author: Nokome Bentley
 date: 24 November 2016

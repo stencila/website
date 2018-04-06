@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/post.html
 title: Diverse peers
 author: Nokome Bentley
 date: 5 December 2016

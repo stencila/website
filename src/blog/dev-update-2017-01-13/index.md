@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/post.html
 title: "Development update: Javascript execution contexts and Markdown extensions for interactive documents"
 author: Nokome Bentley
 date: 13 January 2017
