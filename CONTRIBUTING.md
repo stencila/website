@@ -6,11 +6,11 @@ The [`blog`](blog) folder contains blog posts. To create a new blog post:
 
 2. In the folder, create a new Markdown file called `index.md`.
 
-3. Add YAML front matter with `extends: blog/post.html` and `title`, `author`, `date` and `abstract` sections e.g.
+3. Add YAML front matter with `extends: blog/_post.html` and `title`, `author`, `date` and `abstract` sections e.g.
 
 ```
 ---
-extends: blog/post.html
+extends: blog/_post.html
 title: A very interesting subject
 author: Jane Doe and Joe Bloggs
 date: 6 April 2018

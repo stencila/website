@@ -1,5 +1,5 @@
 ---
-extends: blog/post.html
+extends: blog/_post.html
 title: Monolithic island to connected archipelago
 author: Nokome Bentley
 date: 30 November 2016

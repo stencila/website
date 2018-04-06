@@ -1,5 +1,5 @@
 ---
-extends: blog/post.html
+extends: blog/_post.html
 title: A spreadsheet file format for humans
 author: Nokome Bentley
 date: 24 April 2016

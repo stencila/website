@@ -15,7 +15,6 @@ const accumulate = require('vinyl-accumulate')
 function markdown2nunjucks () {
   const mdIt = markdownIt()
   return through.obj(function(file, encoding, callback) {
-    //console.log('markdown2nunjucks:', file.path)
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
     const content = mdIt.render(front.__content)
@@ -29,17 +28,16 @@ function markdown2nunjucks () {
 
 function nunjucks2html () {
   const env = new nunjucks.Environment(
-    new nunjucks.FileSystemLoader('src/html')
+    new nunjucks.FileSystemLoader('src')
   )
   env.addFilter('date', nunjucksDateFilter)
   return through.obj(function(file, encoding, callback) {
-    //console.log('nunjucks2html:', file.path)
     const content = file.contents.toString()
     const section = path.relative(__dirname, path.dirname(file.path)).split('/')[1]
     const context = Object.assign(file.context || {}, {
       source: file.source || path.relative(__dirname, file.path)
     })
-    const html = env.renderString(content, context)
+    const html = env.renderString(content, context) || ''
     file.contents = Buffer.from(html)
     this.push(file)
     callback()
@@ -58,7 +56,7 @@ gulp.task('copy', function () {
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./src/**/*.html', '!./src/html/*.html', '!./src/blog/index.html'])
+  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -74,7 +72,7 @@ gulp.task('markdown', function () {
     .pipe(connect.reload())
 })
 
-gulp.task('blog-index', function () {
+gulp.task('blog/index', function () {
   gulp.src(['./src/blog/**/index.md'])
     .pipe(plumber())
     .pipe(accumulate('./blog/index.html'))
@@ -99,7 +97,7 @@ gulp.task('blog-index', function () {
 })
 
 gulp.task('build', ['clean'], function () {
-  gulp.start(['copy', 'nunjucks', 'markdown', 'blog-index'])
+  gulp.start(['copy', 'nunjucks', 'markdown', 'blog/index'])
 })
 
 gulp.task('connect', function () {
@@ -111,9 +109,9 @@ gulp.task('connect', function () {
 
 gulp.task('watch', function () {
   gulp.watch(['./src/**/*.{css,js,png,svg}'], ['copy'])
-  gulp.watch(['./src/**/*.html', './src/html/*.html'], ['nunjucks'])
-  gulp.watch(['./src/**/*.md', './src/html/*.html'], ['markdown'])
-  gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog-index'])
+  gulp.watch(['./src/**/*.html'], ['nunjucks'])
+  gulp.watch(['./src/**/*.md'], ['markdown'])
+  gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
 })
  
 gulp.task('default', ['build', 'connect', 'watch'])

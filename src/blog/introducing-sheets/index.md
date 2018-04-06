@@ -1,5 +1,5 @@
 ---
-extends: blog/post.html
+extends: blog/_post.html
 title: Spreadsheets are dead, long live reactive programming environments!
 author: Nokome Bentley in collaboration with Oliver Buchtala and Micheal Aufreiter
 date: 15 March 2016
