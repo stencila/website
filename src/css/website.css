@@ -12,3 +12,32 @@ body, button, input, select, textarea {
 .card .card-footer-item {
     text-transform: none;
 }
+
+.main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.footer {
+  flex: 1;
+}
+
+
+.blog-post .container {
+    max-width: 50em;
+}
+
+.blog-post .content img {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#edit-page {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #2568ef;
+    color: white;
+}

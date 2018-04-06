@@ -1,12 +1,11 @@
 {% extends "base.html" %}
 
 {% block main %}
-<main class="section">
-	<div class="container" style="max-width: 45em">
+<main class="section blog-post">
+	<div class="container">
 		<div class="content">
-			<h1 class="title">{{ front.title }}</h1>
-			<h3 class="author">{{ front.author }}</h3>
-			<p class="date">{{ front.date }}</p>
+			<h2 class="title is-2">{{ front.title }}</h2>
+			<h3>{{ front.author }}, {{ front.date }}</h3>
 			{{ body | safe }}
 		</div>
 	</div>
