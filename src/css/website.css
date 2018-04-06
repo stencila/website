@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body, button, input, select, textarea {
-    font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
 
 /* Overrides */
@@ -15,6 +15,11 @@ body, button, input, select, textarea {
     text-transform: none;
 }
 
+.navbar:not(.is-transparent) {
+  box-shadow: none;
+  border-bottom: 1px solid #DDD;
+}
+
 .navbar-item:hover,
 .navbar-burger:hover {
   background: none;
@@ -26,6 +31,16 @@ a.navbar-link.is-active,
 a.navbar-link:hover {
   background: none;
   color: #2568ef;
+}
+
+.container {
+  max-width: 50em;
+}
+
+.content {
+  font-size: 1.3rem;
+  font-weight: 200;
+  font-style: normal;
 }
 
 /* */

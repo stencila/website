@@ -18,8 +18,8 @@ function markdown2nunjucks () {
     //console.log('markdown2nunjucks:', file.path)
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
-    const body = mdIt.render(front.__content)
-    file.context = {front, body}
+    const content = mdIt.render(front.__content)
+    file.context = {front, content}
     file.contents = Buffer.from(`{% extends "${front.extends || 'base.html'}" %}`)
     file.path = replaceExt(file.path, '.html');
     this.push(file)

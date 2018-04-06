@@ -18,11 +18,12 @@
     <main class="main section">
       <div class="container">
         <div class="content">
-          {% block content %}{% endblock %}
+          {{ content | safe }}
         </div>
       </div>
     </main>
     {% endblock %}
     {% block footer %}{% include "footer.html" %}{% endblock %}
   </body>
+  <script type="text/javascript" src="/js/website.js"></script>
 </html>
