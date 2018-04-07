@@ -18,9 +18,11 @@ function markdown2nunjucks () {
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
     const content = mdIt.render(front.__content)
-    file.context = {front, content}
-    file.contents = Buffer.from(`{% extends "${front.extends || 'base.html'}" %}`)
-    file.path = replaceExt(file.path, '.html');
+    const source = path.relative(__dirname, file.path)
+    file.context = {front, content, source}
+    const extend = front.extends || '_base.html'
+    file.contents = Buffer.from(`{% extends "${extend}" %}`)
+    file.path = replaceExt(file.path, '.html')
     this.push(file)
     callback()
   })
@@ -33,10 +35,8 @@ function nunjucks2html () {
   env.addFilter('date', nunjucksDateFilter)
   return through.obj(function(file, encoding, callback) {
     const content = file.contents.toString()
-    const section = path.relative(__dirname, path.dirname(file.path)).split('/')[1]
-    const context = Object.assign(file.context || {}, {
-      source: file.source || path.relative(__dirname, file.path)
-    })
+    const context = file.context || {}
+    if (!context.source) context.source = path.relative(__dirname, file.path)
     const html = env.renderString(content, context) || ''
     file.contents = Buffer.from(html)
     this.push(file)
@@ -127,8 +127,8 @@ gulp.task('watch', function () {
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
   gulp.watch(['./src/img/*'], ['img'])
-  gulp.watch(['./src/**/*.html'], ['nunjucks'])
-  gulp.watch(['./src/**/*.md'], ['markdown'])
+  gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
+  gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
 })
  

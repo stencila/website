@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Starting with Stencila
 
  Stencila Documents are like Microsoft Word or Google Docs documents but built from the ground up to fit with reproducible workflows. They allow you to embed code, in various programming langauges, within the document so that you can rapidly update your tables and figures - and so that others can see how you produced them. Stencila Documents can be stored using plain text formats like Markdown that work well with version control systems like Git. They can also be exported to publishing formats such as HTML (and in the future JATS and PDF).

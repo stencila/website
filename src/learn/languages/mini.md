@@ -1,4 +1,9 @@
+---
+extends: learn/_page.html
+---
+
 # Mini
+
 > This section contains detailed documentation for Stencila built-in
 > language Mini.
 

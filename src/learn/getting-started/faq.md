@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Frequently Asked Questions
 
 **Q** I already use RMarkdown/JupyterNotebook. How can Stencila be useful for me?<br/>

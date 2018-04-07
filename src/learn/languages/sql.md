@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # SQL
 
 Cells and functions can be written using Structured Query Language. SQL is implemented in many alternative database engines

@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Javascript
 
 Cells and functions can be written using Javascript. An execution context for Javascript, `JsContext` is implemented in the [`stencila/stencila`](https://github.com/stencila/stencila) repository so it's already availble to all Stencila documents without the need for external hosts.

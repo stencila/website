@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Installing Stencila
 
 You can run Stencila on Windows, Mac OS and Linux. There are two main ways to deploy Stencila on your machine: Stencila Desktop or Stencila Docker image.

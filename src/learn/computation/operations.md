@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Operations :sparkles:
 
 > :sparkles: Currently, the operations in Stencila are still under development and

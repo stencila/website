@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Python
 
 Stencila allows you use interactive Python code across the whole Stencila suite (articles, notebooks and sheets).

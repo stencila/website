@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Data
 
 Computation is done on _data_. Data values are of different _types_.

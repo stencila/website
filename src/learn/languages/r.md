@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # R
 You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through [function libraries][libraries-contribute]. An execution context for R, `RContext`. Currrently, in order to have `RContext` available, you need to have an R sesssion running either locally or point to a session running in a remote location.
 

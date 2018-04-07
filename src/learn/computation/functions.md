@@ -1,3 +1,7 @@
+---
+extends: learn/_page.html
+---
+
 # Functions
 
 Functions are one of the primary plugin mechanisms for Stencila. Stencila provides a seamless interface for using functions written in different programming languages (R, Python, Javascript and more) for anyone, without the need to write the code in the given language. The developers can make their fuctions available to the users via simple API (Application Programming Interface). The users can discover the available functions through the common documentation and apply them to their data.
