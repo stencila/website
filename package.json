@@ -17,7 +17,9 @@
     "url": "https://github.com/stencila/website/issues"
   },
   "homepage": "https://stenci.la",
-  "dependencies": {},
+  "dependencies": {
+    "docsearch.js": "^2.5.2"
+  },
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",

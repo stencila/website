@@ -5,4 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
     $burger.classList.toggle('is-active');
     $menu.classList.toggle('is-active');
   });
+
+  docsearch({
+    apiKey: '<API_KEY>',
+    indexName: '<INDEX_NAME>',
+    inputSelector: '#search'
+  });
 });

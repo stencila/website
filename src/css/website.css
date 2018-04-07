@@ -51,6 +51,21 @@ a.navbar-link:hover {
   min-height: 100vh;
 }
 
+.navbar-start {
+    margin-left: 3em;
+}
+
+.navbar .input {
+  border: 1px solid #EEE;
+  padding: 0.5em;
+  box-shadow: none;
+}
+
+.navbar .input:active,
+.navbar .input:focus {
+  box-shadow: none;
+}
+
 .footer {
   flex: 1;
   background-color: white;
