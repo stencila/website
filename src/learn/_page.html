@@ -1,16 +1,16 @@
 {% extends "_base.html" %}
 
 {% block main %}
-<main class="main section">
+<main class="main section learn-page">
   <div class="container">
     <div class="columns">
-      <div class="column is-one-third">
-        {% include "learn/_toc.html" %}
-      </div>
       <div class="column">
         <div class="content">
           {{ content | safe }}
         </div>
+      </div>
+      <div class="column is-one-quarter">
+        {% include "learn/_toc.html" %}
       </div>
     </div>
   </div>
