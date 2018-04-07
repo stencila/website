@@ -68,9 +68,9 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
   gulp.src([
-    './src/img/**'
-  ])
-    .pipe(gulp.dest('./build/img'))
+    './src/**/*.{jpg,png}'
+  ], {base: './src'})
+    .pipe(gulp.dest('./build'))
 })
 
 gulp.task('nunjucks', function () {
