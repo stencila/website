@@ -6,6 +6,7 @@ const plumber = require('gulp-plumber')
 const nunjucks = require('nunjucks')
 const nunjucksDateFilter = require('nunjucks-date-filter')
 const markdownIt = require('markdown-it')
+const markdownItEmoji = require('markdown-it-emoji')
 const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
@@ -14,6 +15,7 @@ const accumulate = require('vinyl-accumulate')
 
 function markdown2nunjucks () {
   const mdIt = markdownIt()
+  mdIt.use(markdownItEmoji)
   return through.obj(function(file, encoding, callback) {
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)

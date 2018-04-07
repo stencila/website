@@ -26,6 +26,7 @@
     "gulp-connect": "^5.5.0",
     "gulp-plumber": "^1.2.0",
     "markdown-it": "^8.4.1",
+    "markdown-it-emoji": "^1.4.0",
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
