@@ -87,3 +87,20 @@ main.learn-page .menu {
   padding-left: 2em;
 }
 
+main.learn-page .steps {
+  margin-top: 2em;
+}
+
+main.learn-page .prev,
+main.learn-page .next {
+  font-size: 1.2em;
+}
+
+main.learn-page .prev {
+  float: left;
+}
+
+main.learn-page .next {
+  float: right;
+}
+

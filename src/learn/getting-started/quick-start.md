@@ -1,5 +1,11 @@
 ---
 extends: learn/_page.html
+prev:
+    label: Installation
+    url: /learn/getting-started/installation.html
+next:
+    label: FAQ
+    url: /learn/getting-started/faq.html
 ---
 
 # Starting with Stencila

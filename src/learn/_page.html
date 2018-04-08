@@ -8,6 +8,18 @@
         <div class="content">
           {{ content | safe }}
         </div>
+        <div class="steps">
+          {% if front.prev %}
+          <div class="prev">
+            <a href="{{ front.prev.url }}">◀ {{ front.prev.label }}</a>
+          </div>
+          {% endif %}
+          {% if front.next %}
+          <div class="next">
+            <a href="{{ front.next.url }}">{{ front.next.label }} ▶</a>
+          </div>
+          {% endif %}
+        </div>
       </div>
       <div class="column is-one-quarter">
         {% include "learn/_toc.html" %}

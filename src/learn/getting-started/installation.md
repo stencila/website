@@ -1,5 +1,8 @@
 ---
 extends: learn/_page.html
+next:
+    label: Quick start
+    url: /learn/getting-started/quick-start.html
 ---
 
 # Installing Stencila
@@ -145,3 +148,4 @@ comes with execution contexts for Python, SQL, R and Javascript.
 ```sh
 docker run -p 2100:2000 stencila/alpha
 ```
+
