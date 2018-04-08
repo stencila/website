@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="/img/favicon.png">
     {% block styles %}
-    <link rel="stylesheet" href="/css/materia.min.css">
-    <link rel="stylesheet" href="/css/docsearch.min.css" />
-    <link rel="stylesheet" href="/css/website.css">
-    {% endblock %}
-    {% block scripts %}
+    <link rel="stylesheet" href="/css/materia.min.css"/>
+    <link rel="stylesheet" href="/css/docsearch.min.css"/>
+    <link rel="stylesheet" href="/css/website.css"/>
     {% endblock %}
   </head>
   <body>
@@ -26,6 +24,8 @@
     {% endblock %}
     {% block footer %}{% include "_footer.html" %}{% endblock %}
   </body>
+  {% block scripts %}
   <script type="text/javascript" src="/js/docsearch.min.js"></script>
   <script type="text/javascript" src="/js/website.js"></script>
+  {% endblock %}
 </html>

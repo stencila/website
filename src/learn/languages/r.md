@@ -26,7 +26,7 @@ will still be available.
 
 For example:
 
-```{r}
+```r
 x <- 4
 sqrt(x)
 ```
@@ -36,7 +36,7 @@ The input for this cell is `x`, the output is empty (`null`) and the value is 2 
 If you want to caputure the output and be able to refer back to it in the future you need to
 modify the cell as follows:
 
-```{r}
+```r
 x <- 4
 y <- sqrt(x)
 ```

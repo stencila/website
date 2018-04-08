@@ -18,7 +18,8 @@
   },
   "homepage": "https://stenci.la",
   "dependencies": {
-    "docsearch.js": "^2.5.2"
+    "docsearch.js": "^2.5.2",
+    "prismjs": "^1.13.0"
   },
   "devDependencies": {
     "del": "^3.0.0",

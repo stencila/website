@@ -53,7 +53,8 @@ gulp.task('clean', function () {
 gulp.task('css', function () {
   gulp.src([
     './src/css/**',
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.css'
+    './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
+    './node_modules/prismjs/themes/prism.css'
   ])
     .pipe(gulp.dest('./build/css'))
 })
@@ -61,7 +62,9 @@ gulp.task('css', function () {
 gulp.task('js', function () {
   gulp.src([
     './src/js/**',
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.js'
+    './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
+    './node_modules/prismjs/prism.js',
+    './node_modules/prismjs/components/prism-{r,python,sql}.min.js'
   ])
     .pipe(gulp.dest('./build/js'))
 })

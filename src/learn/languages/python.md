@@ -49,7 +49,7 @@ will still be available.
 
 For example:
 
-```{python}
+```python
 import math
 
 x = 4
@@ -61,7 +61,7 @@ The input for this cell is `x`, the output is empty (`null`) and the value is 2 
 If you want to capture the output and be able to refer back to it in the future you need to
 modify the cell as follows:
 
-```{python}
+```python
 import math
 
 x = 4
@@ -93,7 +93,7 @@ the [Stencila libtemplate](https://github.com/stencila/libtemplate).
 All functions should have tests written in the `tests` folder, following the standard naming. For example, tests for `func1.py` should be named `test_func1.py`.
 You can use Python's `unittest` library.
 
-```
+```python
 import unittest
 from func1 import function_A
 ......
@@ -101,7 +101,7 @@ from func1 import function_A
 
 Then run the tests:
 
-```
+```bash
 $ python test_func1.py
 ```
 

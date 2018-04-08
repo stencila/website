@@ -104,3 +104,12 @@ main.learn-page .next {
   float: right;
 }
 
+/* Override of .number style in materia.css */
+code .token.number {
+  background: none;
+  font-size: 1em;
+  display: inline;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
