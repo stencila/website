@@ -5,26 +5,35 @@ next:
     url: /learn/getting-started/quick-start.html
 ---
 
-# Installing Stencila
+# Installation
 
-You can run Stencila on Windows, Mac OS and Linux. There are two main ways to deploy Stencila on your machine: Stencila Desktop or Stencila Docker image.
+> In this section you will learn how to install various Stencila software, including Stencila Desktop, Stencila language packages, and Stencila Docker images.
 
-If you decide to install Stencila Desktop, then you also need to enable the execution context, you want to run (R, Python, Javascript, SQL and so on). You can do that through installing relevant [Stencila packages](#execution-contexts). If you decide to use the Stencila Docker image, you do not have to install separately the execution contexts. However, you need to have [Docker](https://docs.docker.com/install/) installed on your machine.
+For editing executable documents on your desktop (or laptop!) install:
+
+- [Stencila Desktop](#stencila-desktop)
+
+Stencila Desktop has built in support for executing code using Mini (our small, built-in language), Javascript, and Structured Query Language (SQL). To execute code in other languages, you will need to install one of our language packages:
+
+- [Stencila Python package](#stencila-python-package)
+- [Stencila R package](#stencila-r-package)
+- [Stencila Node.js package](#stencila-node.js-package)
+
+Or, use one of our Docker images which bundle these language packages (plus many other packages that our useful in data-driven research) in one reproducible computing environment:
+
+- [Stencila Docker images](#stencila-docker-images)
 
 
-## Stencila Desktop :sparkles:
+## Stencila Desktop
 
-<p class="tip">Stencila Desktop edition is still in under development. You can install it and run it using the built-in
-[Mini language](languages/mini/README.md) which will allow you do some standard data manipulation. The current Stencila Desktop releases will not work with other
-ececution contexts (R, Python, SQL, Javascript). If you want to try them out, you need to build Stencila Desktop on your
-machine from the source.</p>
+Stencila Desktop is a desktop application for editing executable documents. It's available for Windows, Mac OS and Linux.
 
-The Stencila Desktop is the most straightforward way to work with Stencila Documents. You can run it on Windows, Mac OS and Linux.
+### Windows
 
- * **Download for Windows** <br/>
- Download the `.exe` file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then just double click downloaded file.
+Download the `.exe` file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then just double click the downloaded file to install the application.
 
-* **Download for Mac OS** <br />
+### Mac OS
+
 Download the `.dmg` file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then:
  - double click the `.dmg` to make its content available (the name will show up in the Finder sidebar, at the bottom), a pop-up window will open;
  - drag the application from the `.dmg` window into /Applications to launch install (you may need an administrator password);
@@ -33,119 +42,97 @@ Download the `.dmg` file for the latest [Stencila Desktop release]( https://gith
 
 (Thanks to [patrix](https://apple.stackexchange.com/a/64848) for these instructions.)
 
-* **Download for Linux** <br />
-Download the AppImage\* file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then double click on it and
-click *yes* to "Make executable and run".
+### Linux
 
-To install from command line, navigate to the folder where the AppImage file is located and then:
+Download the AppImage\* file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then double click on it and click *yes* to "Make executable and run". Or, to install from command line, navigate to the folder where the AppImage file is located and then:
 
 ```bash
 $ chmod a+x stencila-desktop-*.AppImage
 $ ./stencila-desktop-*.AppImage
 ```
-   \*[AppImage](http://appimage.org/) is a format for distributing applications for Linux and, on most distributions, will not require the installation of any dependencies.
+\*[AppImage](http://appimage.org/) is a format for distributing applications for Linux and, on most distributions, will not require the installation of any dependencies.
 
-### Execution contexts
 
-**R context**
+## Stencila Python package
 
-If you want to use R code within Stencila Documents working on Stencila Desktop, you need to enable the R Execution Context. It is done though installing the
-[Stencila R package](https://github.com/stencila/r).
-Because it is not yet available on CRAN, you need to install it using the [`devtools`](https://github.com/hadley/devtools) package from our Github repository.
-Launch an R session on your machine and type:
+>! We are currently working on making the Stencila Python package compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
+
+The [Stencila Python package](https://github.com/stencila/py) provides a `PythonContext` for executing Python code and functions from within Stencila documents.
+
+The package is not available via PyPI (Python Package Index) yet, so you need to install it from our Github repository. 
+
+>i You may need to install `pip` first. On Windows, [these instructions](https://dev.to/el_joft/installing-pip-on-windows) may be useful.
+
+Open a terminal session (on Windows, go to "Start" and then in "Search for programmes and files" type `cmd`) and type in:
+
+```bash
+pip install --user https://github.com/stencila/py/archive/master.zip
+```
+
+Then register the package's manifest so that it can be found by the Stencila Desktop and other Stencila packages,
+
+```bash
+python -m stencila register
+```
+
+
+## Stencila R package
+
+>! We are currently working on making the Stencila R package compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
+
+The [Stencila R package](https://github.com/stencila/r) provides a `RContext` for executing Python code and functions from within Stencila documents.
+
+The package is not yet available on CRAN, so you need to install directly from our Github repository using the [`devtools`](https://github.com/hadley/devtools) package.
+
+>i You may need to install `devtools` first using `install.packages("devtools")` from within an R session
+
+Launch a R session on your machine and type:
 
 ```r
 devtools::install_github("stencila/r")
 ```
-Then install the package's manifest so that it can be found by the Stencila Desktop and Stencila packages for other languages,
+
+Then register the package's manifest so that it can be found by the Stencila Desktop and other Stencila packages,
 
 ```r
-stencila:::install()
+stencila:::register()
 ```
 
-Installing Stencila R package will also enable the SQL execution context.
 
-**Python context**
+## Stencila Node.js package
 
-If you want to use Python code within Stencila Documents working on Stencila Desktop, you need to enable the Python Execution Context. It is done though installing the
-[Stencila Python package](https://github.com/stencila/py). Because the Stencila Python package is not available via PyPI (Python Package Index) yet, you need to
-install it using `pip` from our Github repository:
+The [Stencila Node.js package](https://github.com/stencila/node) provides a `NodeContext` and a `SQLiteContext` for executing Javascript and SQL code and functions respectively from within Stencila documents.
 
-* on **Linux** and **Mac OS**, open your terminal and type:
+This package comes bundled with Stencila Desktop so it does not need to be installed separately. But, for completeness, and because you may want to use it from another client application, we include these installation instructions here.
+
+>i You may need to install `npm` first. [On Windows, these instructions](http://blog.teamtreehouse.com/install-node-js-npm-windows) may be useful.
+
+Open a terminal session (on Windows, go to "Start" and then in "Search for programmes and files" type `cmd`) and type in:
 
 ```bash
-pip install --user https://github.com/stencila/py/archive/master.zip
+npm install stencila/node -g
 ```
 
-Then launch a Python session and register the package's manifest so that it can be found by the Stencila Desktop and Stencila packages for other languages,
+>i Although this package is [available on NPM](https://www.npmjs.com/package/stencila-node), we currently recommend installing directly from the `master` branch on Github as per the above instructions
 
-```python
-import stencila
-stencila.install()
-```
-
-* on **Windows**
-You need to enable `pip` on Windows. Please [follow these instructions](https://dev.to/el_joft/installing-pip-on-windows). Open the Windows terminal
-(go to Start and then in "Search for programmes and files" type `cmd`). Then type in:
+Then register the package's manifest so that it can be found by other Stencila packages,
 
 ```bash
-pip install --user https://github.com/stencila/py/archive/master.zip
+stencila-node register
 ```
 
-Then launch a Python session and register the package's manifest so that it can be found by the Stencila Desktop and Stencila packages for other languages,
 
-```python
-import stencila
-stencila.install()
-```
+## Stencila Docker images
 
-Installing Stencila Python package will also enable the SQL execution context.
+>! We are currently working on making Stencila's Docker images compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
 
-**SQL context**
+Docker is a software platform which provides operating-system-level virtualization, also known as "containerization". Stencila has several Docker images available in the [`stencila/images`](https://github.com/stencila/images) repository. Each image contains one or more of the Stencila packages for R, Python and Node.js. This allows you to use one of these images, instead on installing packages locally, in order to execute code from within executable documents.
 
-If you want to use R code within Stencila Documents working on Stencila Desktop, you need to enable the R Execution Context. It is done though installing either
-[Stencila R package](https://github.com/stencila/r) or [Stencila Python package](https://github.com/stencila/py).
+>i Check Docker's [official installation instructions](https://docs.docker.com/install/) for the best way to install Docker for your operating system
 
-If you already installed either of these packages, then you are all set! If you haven't, please see above for the installation instructions.
+Once you have Docker installed, download the desired Docker image using `docker pull <image-name>`. For example, to download the `stencila/core` image:
 
-**Javascript context**
-Stencila Desktop comes with the Javascript Execution Context enabled by default. It is implemented using the Node.js package.
-
-However, if you want to use Javascript within a Stencila document hosted in some other application you'll need to install Stencila Node package.
-
-* on **Linux** and **Mac OS**
 
 ```bash
-npm install stencila-node
+docker pull stencila/core
 ```
-
-Then register the package's manifest so that it can be found by the Stencila Desktop and Stencila packages for other languages,
-
-```bash
-node -e "require('stencila-node').install()"
-```
-
-* on **Windows**
-You need to first install `npm` following [these instructions](http://blog.teamtreehouse.com/install-node-js-npm-windows).
-Open the Windows terminal (go to Start and then in "Search for programmes and files" type `cmd`). Then type in:
-
-```bash
-npm install stencila-node
-```
-
-Then register the package's manifest so that it can be found by the Stencila Desktop and Stencila packages for other languages,
-
-```bash
-node -e "require('stencila-node').install()"
-```
-
-
-## Stencila Docker image
-
-If you have [Docker](https://docs.docker.com/install/) installed, you can use our [stencila/alpha](https://hub.docker.com/r/stencila/alpha/) Docker image. The image
-comes with execution contexts for Python, SQL, R and Javascript.
-
-```sh
-docker run -p 2100:2000 stencila/alpha
-```
-
