@@ -76,6 +76,19 @@ a.navbar-link:hover {
     color: white;
 }
 
+.content h1 {
+  color: #333;
+}
+.content h2 {
+  color: #555;
+}
+.content h3 {
+  color: #777;
+}
+.content h4 {
+  color: #999;
+}
+
 main.blog-post .content img {
   display: block;
   width: 90%;
@@ -118,11 +131,13 @@ blockquote.tip {
   background-color: #e5eeff;
   border-left: 4px solid #337aff;
   position: relative;
+  font-size: 0.85em;
 }
 blockquote.warning {
   background-color: #fff1f1;
   border-left: 4px solid #f66;
   position: relative;
+  font-size: 0.85em;
 }
 
 blockquote.tip:before,
