@@ -18,6 +18,5 @@ deploy:
   github-token: $GITHUB_TOKEN
   local-dir: build
   fqdn: website.stenci.la
-  committer-from-gh: true
   on:
     branch: master
