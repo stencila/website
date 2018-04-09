@@ -7,6 +7,7 @@ const nunjucks = require('nunjucks')
 const nunjucksDateFilter = require('nunjucks-date-filter')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
+const markdownItNamedHeadings = require('markdown-it-named-headings')
 const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
@@ -16,6 +17,7 @@ const accumulate = require('vinyl-accumulate')
 function markdown2nunjucks () {
   const mdIt = markdownIt()
   mdIt.use(markdownItEmoji)
+  mdIt.use(markdownItNamedHeadings)
   return through.obj(function(file, encoding, callback) {
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
@@ -64,7 +66,7 @@ gulp.task('js', function () {
     './src/js/**',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/prismjs/components/prism-{r,python,sql}.min.js'
+    './node_modules/prismjs/components/prism-{bash,r,python,sql}.min.js'
   ])
     .pipe(gulp.dest('./build/js'))
 })
