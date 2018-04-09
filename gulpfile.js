@@ -85,7 +85,7 @@ gulp.task('js', function () {
     './src/js/**',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/prismjs/components/prism-{bash,r,python,sql}.min.js'
+    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js'
   ])
     .pipe(gulp.dest('./build/js'))
 })
