@@ -1,3 +1,4 @@
+const cheerio = require('cheerio')
 const del = require('del')
 const fs = require('fs')
 const gulp = require('gulp')
@@ -42,7 +43,25 @@ function nunjucks2html () {
     const context = file.context || {}
     if (!context.source) context.source = path.relative(__dirname, file.path)
     const html = env.renderString(content, context) || ''
-    file.contents = Buffer.from(html)
+
+    const dom = cheerio.load(html)
+    dom('blockquote').each((index, elem) => {
+      elem = cheerio(elem)
+      let child = elem.children()[0]
+      if (child) {
+        child = cheerio(child)
+        let text = child.html()
+        if (text[0] === '!') {
+          child.html(text.substring(1))
+          elem.addClass('warning')
+        } else if (text[0] === 'i') {
+          child.html(text.substring(1))
+          elem.addClass('tip')
+        }
+      }
+    })
+    file.contents = Buffer.from(dom.html())
+
     this.push(file)
     callback()
   })
