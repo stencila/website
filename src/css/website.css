@@ -117,6 +117,31 @@ main.learn-page .next {
   float: right;
 }
 
+
+
+main.community-page .menu {
+  padding-top: 4em;
+  padding-left: 2em;
+}
+
+main.community-page .steps {
+  margin-top: 2em;
+}
+
+main.community-page .prev,
+main.community-page .next {
+  font-size: 1.2em;
+}
+
+main.community-page .prev {
+  float: left;
+}
+
+main.community-page .next {
+  float: right;
+}
+
+
 /* Override of .number style in materia.css */
 code .token.number {
   background: none;

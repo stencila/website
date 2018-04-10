@@ -1,0 +1,46 @@
+{% extends "_base.html" %}
+
+{% block main %}
+<main class="main section community-page">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <div class="content">
+          {{ content | safe }}
+        </div>
+        <div class="steps">
+          {% if front.prev %}
+          <div class="prev">
+            <a href="{{ front.prev.url }}">◀ {{ front.prev.label }}</a>
+          </div>
+          {% endif %}
+          {% if front.next %}
+          <div class="next">
+            <a href="{{ front.next.url }}">{{ front.next.label }} ▶</a>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+      <div class="column is-one-quarter">
+        {% include "community/_toc.html" %}
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<link rel="stylesheet" href="/css/prism.css"/>
+{% endblock %}
+
+{% block scripts %}
+{{ super() }}
+<script type="text/javascript" src="/js/prism.js"></script>
+<script type="text/javascript" src="/js/prism-bash.min.js"></script>
+<script type="text/javascript" src="/js/prism-json.min.js"></script>
+<script type="text/javascript" src="/js/prism-mini.js"></script>
+<script type="text/javascript" src="/js/prism-python.min.js"></script>
+<script type="text/javascript" src="/js/prism-r.min.js"></script>
+<script type="text/javascript" src="/js/prism-sql.min.js"></script>
+{% endblock %}
