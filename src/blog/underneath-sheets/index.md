@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/_post.html
 title: Getting under Stencila sheets
 author: Nokome Bentley
 date: 17 March 2016

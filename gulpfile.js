@@ -1,3 +1,4 @@
+const cheerio = require('cheerio')
 const del = require('del')
 const fs = require('fs')
 const gulp = require('gulp')
@@ -6,6 +7,8 @@ const plumber = require('gulp-plumber')
 const nunjucks = require('nunjucks')
 const nunjucksDateFilter = require('nunjucks-date-filter')
 const markdownIt = require('markdown-it')
+const markdownItEmoji = require('markdown-it-emoji')
+const markdownItNamedHeadings = require('markdown-it-named-headings')
 const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
@@ -14,40 +17,51 @@ const accumulate = require('vinyl-accumulate')
 
 function markdown2nunjucks () {
   const mdIt = markdownIt()
+  mdIt.use(markdownItEmoji)
+  mdIt.use(markdownItNamedHeadings)
   return through.obj(function(file, encoding, callback) {
-    //console.log('markdown2nunjucks:', file.path)
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
-    const body = mdIt.render(front.__content)
-    let html = ''
-    for (let [name, value] of Object.entries(front)) {
-      switch (name) {
-        case 'extends':
-          html += `{% extends "${value}.html" %}`
-          break
-      }
-    }
-    file.context = {front, body}
-    file.contents = Buffer.from(html)
-    file.path = replaceExt(file.path, '.html');
+    const content = mdIt.render(front.__content)
+    const source = path.relative(__dirname, file.path)
+    file.context = {front, content, source}
+    const extend = front.extends || '_base.html'
+    file.contents = Buffer.from(`{% extends "${extend}" %}`)
+    file.path = replaceExt(file.path, '.html')
     this.push(file)
     callback()
   })
 }
 
 function nunjucks2html () {
+  const env = new nunjucks.Environment(
+    new nunjucks.FileSystemLoader('src')
+  )
+  env.addFilter('date', nunjucksDateFilter)
   return through.obj(function(file, encoding, callback) {
-    //console.log('nunjucks2html:', file.path)
-    const env = new nunjucks.Environment(
-      new nunjucks.FileSystemLoader('src/html')
-    )
-    env.addFilter('date', nunjucksDateFilter)
     const content = file.contents.toString()
-    const context = Object.assign(file.context || {}, {
-      source: file.source || path.relative(__dirname, file.path)
+    const context = file.context || {}
+    if (!context.source) context.source = path.relative(__dirname, file.path)
+    const html = env.renderString(content, context) || ''
+
+    const dom = cheerio.load(html)
+    dom('blockquote').each((index, elem) => {
+      elem = cheerio(elem)
+      let child = elem.children()[0]
+      if (child) {
+        child = cheerio(child)
+        let text = child.html()
+        if (text[0] === '!') {
+          child.html(text.substring(1))
+          elem.addClass('warning')
+        } else if (text[0] === 'i') {
+          child.html(text.substring(1))
+          elem.addClass('tip')
+        }
+      }
     })
-    const html = env.renderString(content, context)
-    file.contents = Buffer.from(html)
+    file.contents = Buffer.from(dom.html())
+
     this.push(file)
     callback()
   })
@@ -57,15 +71,34 @@ gulp.task('clean', function () {
   return del('./build')
 })
 
-gulp.task('copy', function () {
-  gulp.src(['./src/**/*.{css,jpg,js,png,svg}'], {base: './src'})
-    .pipe(plumber())
+gulp.task('css', function () {
+  gulp.src([
+    './src/css/**',
+    './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
+    './node_modules/prismjs/themes/prism.css'
+  ])
+    .pipe(gulp.dest('./build/css'))
+})
+
+gulp.task('js', function () {
+  gulp.src([
+    './src/js/**',
+    './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
+    './node_modules/prismjs/prism.js',
+    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js'
+  ])
+    .pipe(gulp.dest('./build/js'))
+})
+
+gulp.task('img', function () {
+  gulp.src([
+    './src/**/*.{jpg,png}'
+  ], {base: './src'})
     .pipe(gulp.dest('./build'))
-    .pipe(connect.reload())
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./src/**/*.html', '!./src/html/*.html', '!./src/blog/index.html'])
+  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -81,7 +114,7 @@ gulp.task('markdown', function () {
     .pipe(connect.reload())
 })
 
-gulp.task('blog-index', function () {
+gulp.task('blog/index', function () {
   gulp.src(['./src/blog/**/index.md'])
     .pipe(plumber())
     .pipe(accumulate('./blog/index.html'))
@@ -106,7 +139,7 @@ gulp.task('blog-index', function () {
 })
 
 gulp.task('build', ['clean'], function () {
-  gulp.start(['copy', 'nunjucks', 'markdown', 'blog-index'])
+  gulp.start(['css', 'js', 'img', 'nunjucks', 'markdown', 'blog/index'])
 })
 
 gulp.task('connect', function () {
@@ -117,10 +150,12 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['./src/**/*.{css,js,png,svg}'], ['copy'])
-  gulp.watch(['./src/**/*.html', './src/html/*.html'], ['nunjucks'])
-  gulp.watch(['./src/*.md', './src/html/*.html'], ['markdown'])
-  gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog-index'])
+  gulp.watch(['./src/css/*'], ['css'])
+  gulp.watch(['./src/js/*'], ['js'])
+  gulp.watch(['./src/img/*'], ['img'])
+  gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
+  gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
+  gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
 })
  
 gulp.task('default', ['build', 'connect', 'watch'])

@@ -1,8 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body, button, input, select, textarea {
-    font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
+  font-family: "Lato","Helvetica Neue","Helvetica","Arial",sans-serif;
 }
+
+/* Overrides */
 
 .button {
     text-transform: none;
@@ -13,31 +15,136 @@ body, button, input, select, textarea {
     text-transform: none;
 }
 
+.navbar:not(.is-transparent) {
+  box-shadow: none;
+  border-bottom: 1px solid #DDD;
+}
+
+.navbar-item:hover,
+.navbar-burger:hover {
+  background: none;
+}
+
+a.navbar-item.is-active,
+a.navbar-item:hover,
+a.navbar-link.is-active,
+a.navbar-link:hover {
+  background: none;
+  color: #2568ef;
+}
+
+.container {
+  max-width: 60em;
+}
+
+.content {
+  font-size: 1.25rem;
+}
+
+/* */
+
 .main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  min-height: 80vh;
+}
+
+.navbar-start {
+    margin-left: 3em;
+}
+
+.navbar .input {
+  border: 1px solid #EEE;
+  padding: 0.5em;
+  box-shadow: none;
+}
+
+.navbar .input:active,
+.navbar .input:focus {
+  box-shadow: none;
 }
 
 .footer {
   flex: 1;
+  background-color: white;
+  border-top: 1px solid #DDD;
 }
 
-
-.blog-post .container {
-    max-width: 50em;
-}
-
-.blog-post .content img {
-    display: block;
-    width: 90%;
-    margin: 0 auto;
-}
-
-#edit-page {
+.footer #edit-page {
     position: absolute;
     top: 0;
     right: 0;
     background: #2568ef;
     color: white;
+}
+
+main.blog-post .content img {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+}
+
+main.learn-page .menu {
+  padding-top: 4em;
+  padding-left: 2em;
+}
+
+main.learn-page .steps {
+  margin-top: 2em;
+}
+
+main.learn-page .prev,
+main.learn-page .next {
+  font-size: 1.2em;
+}
+
+main.learn-page .prev {
+  float: left;
+}
+
+main.learn-page .next {
+  float: right;
+}
+
+/* Override of .number style in materia.css */
+code .token.number {
+  background: none;
+  font-size: 1em;
+  display: inline;
+  margin: 0;
+  min-width: 0;
+  padding: 0;
+}
+
+blockquote.tip {
+  background-color: #e5eeff;
+  border-left: 4px solid #337aff;
+  position: relative;
+}
+blockquote.warning {
+  background-color: #fff1f1;
+  border-left: 4px solid #f66;
+  position: relative;
+}
+
+blockquote.tip:before,
+blockquote.warning:before {
+  border-radius: 100%;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  left: -12px;
+  line-height: 20px;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  top: 10px;
+}
+
+blockquote.tip:before {
+  background-color: #337aff;
+  content: "i";
+}
+blockquote.warning:before {
+  background-color: #f66;
+  content: "!";
 }

@@ -17,13 +17,19 @@
     "url": "https://github.com/stencila/website/issues"
   },
   "homepage": "https://stenci.la",
-  "dependencies": {},
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "docsearch.js": "^2.5.2",
+    "markdown-it-named-headings": "^1.1.0",
+    "prismjs": "^1.13.0"
+  },
   "devDependencies": {
     "del": "^3.0.0",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
     "gulp-plumber": "^1.2.0",
     "markdown-it": "^8.4.1",
+    "markdown-it-emoji": "^1.4.0",
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",

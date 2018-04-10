@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/_post.html
 title: Thanks Coko!
 author: Nokome Bentley
 date: 2 April 2017

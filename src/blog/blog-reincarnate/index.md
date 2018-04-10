@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/_post.html
 title: Stencila blog reincarnated
 author: Nokome Bentley
 date: 21 November 2016

@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/_post.html
 title: Funding from the Alfred P. Sloan Foundation to develop Stencila Sheets
 author: Nokome Bentley
 date: 28 April 2017

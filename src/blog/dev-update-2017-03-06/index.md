@@ -1,5 +1,5 @@
 ---
-extends: blog-post
+extends: blog/_post.html
 title: "Development update: a fresh start for Stencila Documents"
 author: Michael Aufreiter, Nokome Bentley, Oliver Buchtala
 date: 6 March 2017
