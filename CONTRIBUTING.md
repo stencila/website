@@ -26,15 +26,13 @@ by sending us a pull request. Here is how to do the latter:
 2. Create a new branch where you will write your blog post.
 3. In the [`blog`](blog) create a new **folder** for your post with a meaningful name e.g. `stencila-for-economics` or `stencila-for-phd` (it will be easier to find your blog post through search engines).
 4. In the folder, create a new Markdown file called `index.md`.
-5. Start editing the `index.md` file.
-5. Add [YAML front matter](http://assemble.io/docs/YAML-front-matter.html) to it 
-6. aa
-7.
+5. Start editing the `index.md` file by adding the [YAML front matter](http://assemble.io/docs/YAML-front-matter.html) at the very top,
+like in the example below:
 
 ```
 ---
 extends: blog/_post.html
-title: A very interesting subject
+title: Using Stencila for research in economics
 author: Jane Doe and Joe Bloggs
 date: 6 April 2018
 abstract: A summary of my post
@@ -43,8 +41,14 @@ abstract: A summary of my post
 The start of my post on a very interesting subject...
 ```
 
-4. Write your blog post!
-5. Commit and submit your pull request.
+**Note** Please use a YAML front matter as shown below, providing
+some meta data about your blog post. This allows for correct rendering and
+publishing of your post, attributing the authorship and makes the post
+easy to search within the search engines.
+
+
+6. Write your blog post!
+7. Commit, push the branch to your fork and submit your pull request.
 
 ### Build website locally
 
@@ -57,7 +61,7 @@ Stencila website is build using Markdown and [Nunjucks][nunjucks]. If you want t
 5. Once *npm* has finished installing all required packages, type `npm run`
 6. Open your browser and go to `http://127.0.0.1:8080`
 
-The
+
 
 
 [stencila-site]: http://stenci.la/
