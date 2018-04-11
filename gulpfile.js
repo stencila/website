@@ -9,6 +9,7 @@ const nunjucksDateFilter = require('nunjucks-date-filter')
 const markdownIt = require('markdown-it')
 const markdownItEmoji = require('markdown-it-emoji')
 const markdownItNamedHeadings = require('markdown-it-named-headings')
+const markdownItAttrs = require('markdown-it-attrs');
 const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
@@ -19,6 +20,7 @@ function markdown2nunjucks () {
   const mdIt = markdownIt()
   mdIt.use(markdownItEmoji)
   mdIt.use(markdownItNamedHeadings)
+  mdIt.use(markdownItAttrs)
   return through.obj(function(file, encoding, callback) {
     const md = file.contents.toString()
     const front = yamlFront.loadFront(md)
@@ -157,5 +159,5 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
 })
- 
+
 gulp.task('default', ['build', 'connect', 'watch'])

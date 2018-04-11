@@ -95,6 +95,14 @@ main.blog-post .content img {
   margin: 0 auto;
 }
 
+main.blog-post .content img.profile {
+  display: inline;
+  width: 30%;
+  margin: 0 auto;
+  padding: 1em;
+  float: left;
+}
+
 main.learn-page .menu {
   padding-top: 4em;
   padding-left: 2em;
