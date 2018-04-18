@@ -1,0 +1,107 @@
+{% extends "_base.html" %}
+
+{% block styles %}
+{{ super() }}
+<style type="text/css">
+  #section-2,
+  #section-4,
+  #section-6 {
+    background: #fafafa;
+  }
+  p {
+    color: #4a4a4ab5;
+  }  
+</style>  
+{% endblock %}
+
+{% block main %}
+<section id="section-1" class="hero">
+  <div class="hero-body">
+    <div class="container">
+        <div class="section has-text-centered">
+          <h1 class="title is-2">Welcome to Stencila</h1>
+          <p>
+            Stencila is an open-source software suite for reproducible data-driven research collaboration and publishing. It enables continuum of collaboration bringing together experts with multiple skills and preferences for modes of work: from clicking to coding. You can exchange skills and knowledge without having to switch from your data science tool of choice. Stencila allows collaborators to combine different skills in one document and moves the computational research tools towards users democratizing reproducible data-driven research without oversimplifying it.
+          </p>
+        </div>
+        <div class="">
+          <img src="/img/screenshot-temp.png">
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-2" class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2">Interoperability</h1>
+        <p>
+          Your collaborators use Python in JupyterNotebook whilst you prefer RStudio with RMarkdown? With Stencila you don’t need to worry about the switching between tools. Stencila offers lossless conversion between different reproducible research tools and provides a WYSIWYG interfacesfor collaborators focusing on the textual content. Each collaborator can efficiently use their research skills without the need to learn new interfaces.
+        </p>
+      </div>
+      <div class="column">
+        <img src="/img/screenshot-temp.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="section-3" class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2">Different modes of work</h1>
+        <p>
+          Data-driven research involves various phases with different focus: from code writing, to drafting the contents, revising data analysis to
+final formatting. Stencila fully supports switching between these modes of work within one document making it easy to concentrate on the part
+of your publication as you need it.
+        </p>
+      </div>
+      <div class="column">
+        <img src="/img/screenshot-temp.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="section-4" class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2">Learning continuum</h1>
+        <p>
+          Easy transition from clicking to coding (and back). Stencila Sheets provide a painless way towards learning data manipulation using code within the familiar environment of spreadsheets. This learning continuum between clicking and coding is achieved through close integration with programming languages such as R, Python, SQL and more.  
+Code experts can share their skills by making their data-analysis functions in Stencila Sheets. Simple Stencila API wrappers make this process easy and quick.
+        </p>
+      </div>
+      <div class="column">
+        <img src="/img/screenshot-temp.png">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="section-5" class="section is-medium">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2">Reproducibility continuum</h1>
+        <p>
+          Reproducibility maintained throughout the project lifecycle
+Stencila suite enables full support for a reproducibility continuum across authoring, collaboration, editing, reviewing, publishing and reading.
+Reproducibility carries on from the inception of the project rather than being just an add-on to the parts of the research project.
+Stencila bundles together code, data and text into a format accepted by publishers giving you full control over your publication.
+The reviewers gain easy way to examine the paper through an intuitive interface and eventually, the readers have an ability to reproduce
+ work not limited by their own computational research skillset.
+        </p>
+      </div>
+      <div class="column">
+        <img src="/img/screenshot-temp.png">
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
