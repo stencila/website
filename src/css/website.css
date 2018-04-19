@@ -95,28 +95,6 @@ main.blog-post .content img {
   margin: 0 auto;
 }
 
-main.learn-page .menu {
-  padding-top: 4em;
-  padding-left: 2em;
-}
-
-main.learn-page .steps {
-  margin-top: 2em;
-}
-
-main.learn-page .prev,
-main.learn-page .next {
-  font-size: 1.2em;
-}
-
-main.learn-page .prev {
-  float: left;
-}
-
-main.learn-page .next {
-  float: right;
-}
-
 /* Override of .number style in materia.css */
 code .token.number {
   background: none;

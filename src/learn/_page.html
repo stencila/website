@@ -1,7 +1,7 @@
 {% extends "_base.html" %}
 
 {% block main %}
-<main class="main section learn-page">
+<main class="section">
   <div class="container">
     <div class="columns">
       <div class="column">
@@ -31,6 +31,33 @@
 
 {% block styles %}
 {{ super() }}
+<style type="text/css">
+  main .content {
+    min-height: 60vh;
+  }
+
+  main .menu {
+    padding-top: 4em;
+    padding-left: 2em;
+  }
+
+  main .steps {
+    margin-top: 2em;
+  }
+
+  main .prev,
+  main .next {
+    font-size: 1.2em;
+  }
+
+  main .prev {
+    float: left;
+  }
+
+  main .next {
+    float: right;
+  }
+</style>
 <link rel="stylesheet" href="/css/prism.css"/>
 {% endblock %}
 
