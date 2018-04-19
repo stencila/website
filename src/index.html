@@ -18,7 +18,15 @@
   }
   p {
     color: #4a4a4ab5;
-  }  
+  }
+
+  #funders img,
+  #partners img {
+    display: block;
+    margin: 1em auto;
+    max-height: 70px;
+    max-width: 250px;
+  } 
 </style>  
 {% endblock %}
 
@@ -27,89 +35,59 @@
   <div class="hero-body">
     <div class="container">
         <div class="section has-text-centered">
-          <h1 class="title is-2">Welcome to Stencila</h1>
+          <h1 class="title is-3">An open source office suite for reproducible research</h1>
           <p>
-            Stencila is an open-source software suite for reproducible data-driven research collaboration and publishing. It enables continuum of collaboration bringing together experts with multiple skills and preferences for modes of work: from clicking to coding. You can exchange skills and knowledge without having to switch from your data science tool of choice. Stencila allows collaborators to combine different skills in one document and moves the computational research tools towards users democratizing reproducible data-driven research without oversimplifying it.
+            The calls for research to be transparent and reproducible have never been louder. But today's tools for reproducible research can be intimidating - especially if you're not a coder. We're building software for reproducible research with the intuitive, visual interfaces that you and your colleagues are used to.
           </p>
         </div>
         <div class="">
-          <img src="/img/screenshot-temp.png">
+          <img src="/img/screenshot.png">
         </div>
     </div>
   </div>
 </section>
 
-<section id="section-2" class="section is-medium">
+<section id="funders" class="section">
   <div class="container">
-    <div class="columns">
-     <div class="column">
-        <img src="/img/screenshot-temp.png">
+    <h1 class="title is-4 is-gray has-text-centered">Funders</h1>
+    <figure class="is-flex is-horizontal-center">
+      <img src="/img/sloan.png">
+    </figure>
+  </div>
+</section>
+
+
+<section id="partners" class="section">
+  <div class="container">
+    <h1 class="title is-4 is-gray has-text-centered">Partners</h1>
+    <div class="columns is-multiline is-centered">
+      <div class="column is-narrow">
+        <a href="https://codeforscience.org">
+          <img src="/img/css.png">
+        </a>
       </div>
-      <div class="column">
-        <h1 class="title is-2">Interoperability</h1>
-        <p>
-          Your collaborators use Python in JupyterNotebook whilst you prefer RStudio with RMarkdown? With Stencila you don’t need to worry about the switching between tools. Stencila offers lossless conversion between different reproducible research tools and provides a WYSIWYG interfacesfor collaborators focusing on the textual content. Each collaborator can efficiently use their research skills without the need to learn new interfaces.
-        </p>
+      <div class="column is-narrow">
+        <a href="http://coko.foundation">
+          <img src="/img/coko.jpg">
+        </a>
+      </div>
+      <div class="column is-narrow">
+        <a href="https://datproject.org">
+          <img src="/img/dat.png">
+        </a>
+      </div>
+      <div class="column is-narrow">
+        <a href="https://elifesciences.org/">
+          <img src="/img/elife.png">
+        </a>
+      </div>
+      <div class="column is-narrow">
+        <a href="http://substance.io">
+          <img src="/img/substance.svg">
+        </a>
       </div>
     </div>
   </div>
 </section>
 
-
-<section id="section-3" class="section is-medium">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <h1 class="title is-2">Different modes of work</h1>
-        <p>
-          Data-driven research involves various phases with different focus: from code writing, to drafting the contents, revising data analysis to
-final formatting. Stencila fully supports switching between these modes of work within one document making it easy to concentrate on the part
-of your publication as you need it.
-        </p>
-      </div>
-      <div class="column">
-        <img src="/img/screenshot-temp.png">
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section id="section-4" class="section is-medium">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <img src="/img/screenshot-temp.png">
-      </div>
-      <div class="column">
-        <h1 class="title is-2">Learning continuum</h1>
-        <p>
-          Easy transition from clicking to coding (and back). Stencila Sheets provide a painless way towards learning data manipulation using code within the familiar environment of spreadsheets. This learning continuum between clicking and coding is achieved through close integration with programming languages such as R, Python, SQL and more.  
-Code experts can share their skills by making their data-analysis functions in Stencila Sheets. Simple Stencila API wrappers make this process easy and quick.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="section-5" class="section is-medium">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <h1 class="title is-2">Reproducibility continuum</h1>
-        <p>
-          Reproducibility maintained throughout the project lifecycle
-Stencila suite enables full support for a reproducibility continuum across authoring, collaboration, editing, reviewing, publishing and reading.
-Reproducibility carries on from the inception of the project rather than being just an add-on to the parts of the research project.
-Stencila bundles together code, data and text into a format accepted by publishers giving you full control over your publication.
-The reviewers gain easy way to examine the paper through an intuitive interface and eventually, the readers have an ability to reproduce
- work not limited by their own computational research skillset.
-        </p>
-      </div>
-      <div class="column">
-        <img src="/img/screenshot-temp.png">
-      </div>
-    </div>
-  </div>
-</section>
 {% endblock %}

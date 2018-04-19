@@ -94,7 +94,7 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
   gulp.src([
-    './src/**/*.{jpg,png}'
+    './src/**/*.{jpg,png,svg}'
   ], {base: './src'})
     .pipe(gulp.dest('./build'))
 })
