@@ -16,6 +16,9 @@ Improving the existing contents is very easy!
 6. One of the website maintainers will review your suggestion and, if everything is OK,
 will publish it on the website.
 
+If you want to make more substantive changes please check out [`DESIGN.md`](DESIGN.md)
+which provides an outline of the site and the goals of each area, page and section.
+
 ### Blog posts
 
 We invite guest blog posts from all community members. You can add a blog post
