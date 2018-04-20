@@ -17,6 +17,6 @@ deploy:
   skip-cleanup: true
   github-token: $GITHUB_TOKEN
   local-dir: build
-  fqdn: website.stenci.la
+  fqdn: stenci.la
   on:
     branch: master
