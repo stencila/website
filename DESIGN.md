@@ -58,4 +58,7 @@ The sections in each page will be:
 
 ## Area `/blog`
 
-> Goal: 
+> Goal: Highlight new things in the Stencila universe (features, partnerships, workshops etc) to demonstrate ongoing activity and progress.
+
+- aim to have at least two new posts each month
+- invite blog post contributions from members of the community
