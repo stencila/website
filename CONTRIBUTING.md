@@ -55,16 +55,16 @@ easy to search within the search engines.
 
 ### Build website locally
 
-Stencila website is build using Markdown and [Nunjucks][nunjucks]. If you want to preview locally the changes you want to suggest to Stencila website, here's what you need to do.
+The Stencila website is built using a combination of [Markdown][markdown] (for easy editing of content) and [Nunjucks][nunjucks] (for HTML templating).
+
+If you want to preview your changes locally:
 
 1. Fork the [Stencila website repository][stencila-website-repo].
 2. Clone your work to your machine.
 3. Open the terminal and navigate to the repository you just cloned.
 4. Type `npm install` (Note: You need to have [npm installed](https://www.npmjs.com/get-npm) on your machine.)
-5. Once *npm* has finished installing all required packages, type `npm run`
+5. Once `npm` has finished installing all required packages, type `npm run`
 6. Open your browser and go to `http://127.0.0.1:8080`
-
-
 
 
 [stencila-site]: http://stenci.la/
