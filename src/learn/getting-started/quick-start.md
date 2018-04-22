@@ -16,7 +16,7 @@ use other programming languages (such as R or Python) and get to work with Stenc
 ## Try out Stencila on the Cloud
 
 You can start with Stencila not having to install anything on your machine. All you need is Internet connection and an up-to-date browser
-such as Firefox, Chrome or Internet Explorer. Simply go to Try out [Stencila Alpha](http://builds.stenci.la/stencila/) and select the last build (from the top of the list).
+such as Firefox, Chrome or Internet Explorer. Simply go to  [Stencila Alpha](http://builds.stenci.la/stencila/) and select the last build (from the top of the list).
 
 Start with the `Kitchen sink: a project with everything in it for testing`. It will take you to the example Stencila pack containing a Stencila Document and a Stencila Sheet.
 You can swap between the Document and the Sheet by clicking the tabs at the bottom (see below):
@@ -40,26 +40,21 @@ right bottom corner (see below):
 
 ![Mini functions](/learn/img/mini-functions.png)
 
-## Stencila Desktop
-
-
-
-You can use Stencila for reproducible publishing from the very start. Here's how to do that.
-
-Try out [Stencila Alpha](http://alpha.stenci.la/example.html?archive=kitchen-sink)
-
-
-
 ### Loading data
 
-Tabular data is an essential part of data analysis, so there is a special type called a <code>table.</code> The easiest way to create a table is by using the <code>csv</code> function which parses a string of comma separate text (in the future you'll be able to embed or link to your data more concisely that this! :sparkles: )
+Tabular data is an essential part of data analysis, so there is a special type called a ```table.```
+The easiest way to create a table is by using the ```csv``` function which parses a string of comma separate text
+(in the future you'll be able to embed or link to your data more concisely that this!).
 
 
+## Stencila Desktop
 
-If you are using **Stencila Desktop**, once you launch it, you should be able to see the dashboard screen:
+You can get Stencia installed locally on your machine. This means you will be able to to use it without having to be connected to the Internet.
+To get Stencila to work, you will need an up-to-date browser such as Firefox, Chrome or Internet Explorer.
+
+Once you [installed](/learn/getting-started/installation.html) Stencila Desktop, go ahead and launch it.
+You should be able to see the dashboard screen:
 
 ![Stencila Dashboard](/learn/img/stencila-dashboard.png)
 
 Select `Welcome to Stencila` notebook and you are can now start working in the document.
-
-### Manipulating data
