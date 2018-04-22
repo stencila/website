@@ -62,3 +62,34 @@ The sections in each page will be:
 
 - aim to have at least two new posts each month
 - invite blog post contributions from members of the community
+
+
+## Area `/about`
+
+> Goal: Give visitors a feel for how the project started, the people behind it, our partners and funders.
+
+- include a TOC sidebar with links to sub-areas...
+
+### Sub-area `/about/people`
+
+- include staff, advisory board members, contributors
+- don't group people hierarchically, alphabetically or chronologically, instead list them randomly (e.g. on each build)
+- have a small blurb on each person
+- a call to action for contributors to add their name to the wall.
+- similar examples:
+	- https://buffer.com/about
+	- https://web.hypothes.is/team/
+
+### Sub-area `/about/partners`
+
+- list of partners including a few words on how we partner with them
+
+### Sub-area `/about/funders`
+
+- a list of funders including what they have funded
+
+### Sub-area `/about/giants`
+
+> Goal: Acknowledge the giants who's shoulders we stand upon: open source projects that Stencila uses and integrates with.
+
+- a list of projects and how Stencila uses/integrates with them
