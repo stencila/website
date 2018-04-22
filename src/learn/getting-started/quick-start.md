@@ -21,14 +21,14 @@ such as Firefox, Chrome or Internet Explorer. Simply go to Try out [Stencila Alp
 Start with the `Kitchen sink: a project with everything in it for testing`. It will take you to the example Stencila pack containing a Stencila Document and a Stencila Sheet.
 You can swap between the Document and the Sheet by clicking the tabs at the bottom (see below):
 
-![Kitchen sink](img/kitchen-sink.png)
+![Kitchen sink](/learn/img/kitchen-sink.png)
 
 ### Cells
 
 The *Kitchen sink* example is ready to edit. To edit the text, simply click where you make the changes. You will see the coursor appearing like in a word processor.
 You will also see the embedded code cells.
 
-![Code cell](img/cells.png)
+![Code cell](/learn/img/cells.png)
 
 By default, code cells in Stencila Documents use a built-in simple expression language called [Mini]().
 You can [extend Stencila](installation,md#execution-contexts) with other languages suchas R, Python and SQL. Stencila allows you
@@ -38,7 +38,7 @@ you to use Mini but we will soon enable more programming languages.
 However, Mini still allows for quite extensive data manipulation. You can see the list of functions available by clicking on the small question mark in
 right bottom corner (see below):
 
-![Mini functions](img/mini-functions.png)
+![Mini functions](/learn/img/mini-functions.png)
 
 ## Stencila Desktop
 
@@ -58,7 +58,7 @@ Tabular data is an essential part of data analysis, so there is a special type c
 
 If you are using **Stencila Desktop**, once you launch it, you should be able to see the dashboard screen:
 
-![Stencila Dashboard](img/stencila-dashboard.png)
+![Stencila Dashboard](/learn/img/stencila-dashboard.png)
 
 Select `Welcome to Stencila` notebook and you are can now start working in the document.
 
