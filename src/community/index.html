@@ -1,0 +1,126 @@
+{% extends "_base.html" %} 
+ 
+{% block main %}
+<main class="main">
+  <div class="columns">
+    <div class="column">
+      <section class="hero"> 
+        <div class="hero-body"> 
+          <div class="container"> 
+              <div class="section has-text-centered"> 
+                <h1 class="title is-2">Community</h1> 
+                <p> 
+                  Stencila .....
+                </p> 
+              </div> 
+              <div class="image"> 
+                <img src="/img/placeholder.png"> 
+              </div> 
+          </div> 
+        </div> 
+      </section> 
+       
+      <section id="contribute" class="section is-medium"> 
+        <div class="container"> 
+          <div class="columns"> 
+            <div class="column"> 
+              <h1 class="title is-2">Contribute</h1> 
+              <p> 
+                ....
+              </p> 
+            </div> 
+            <div class="column"> 
+              <img src="/img/placeholder.png"> 
+            </div> 
+          </div> 
+        </div> 
+      </section> 
+       
+      <section id="section-3" class="section is-medium"> 
+        <div class="container"> 
+          <div class="columns"> 
+            <div class="column"> 
+              <img src="/img/placeholder.png"> 
+            </div>
+            <div class="column"> 
+              <h1 class="title is-2">Discuss</h1> 
+              <p> 
+                .....
+              </p> 
+            </div>
+          </div> 
+        </div> 
+      </section> 
+       
+      <section id="section-4" class="section is-medium"> 
+        <div class="container"> 
+          <div class="columns"> 
+            <div class="column"> 
+              <h1 class="title is-2">Share</h1> 
+              <p> 
+                ...
+              </p> 
+            </div> 
+            <div class="column"> 
+              <img src="/img/placeholder.png"> 
+            </div> 
+          </div> 
+        </div> 
+      </section> 
+       
+      <section id="section-5" class="section is-medium"> 
+        <div class="container"> 
+          <div class="columns">
+            <div class="column"> 
+              <img src="/img/placeholder.png"> 
+            </div>
+            <div class="column"> 
+              <h1 class="title is-2">Code of conduct</h1> 
+              <p> 
+               <a href="/community/code-of-conduct.html">Coc</a>
+              </p> 
+            </div>
+          </div> 
+        </div> 
+      </section>
+    </div>
+    <div class="column is-one-quarter">
+      <aside class="menu">
+        <p class="menu-label">
+          Community
+        </p>
+        <ul class="menu-list">
+          <li><a href="#contribute">Contribute</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block styles %} 
+{{ super() }} 
+<style type="text/css"> 
+  #contribute, 
+  #section-4, 
+  #section-6 {
+    background: #fafafa; 
+  }
+  main .menu {
+    padding-top: 4em;
+    padding-left: 2em;
+    position: fixed;
+  }
+  @media(max-width: 1000px) { 
+    #section-1 .columns, 
+    #section-3 .columns, 
+    #section-5 .columns { 
+      flex-direction: column-reverse; 
+      display: flex; 
+    }
+    main .menu {
+      position: relative;
+    } 
+  }
+</style>   
+{% endblock %} 
