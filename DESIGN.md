@@ -23,7 +23,7 @@ The goals and structure of each page in this sub-area are the same (but obviousl
 
 > Goal: A reader wanting to use language X within Stencila documents (e.g. writing code cells, creating new functions) will understand how to do that and know that they can come back to the page as a reference (e.g. for the syntax for functions).
 
-Each page will have plenty of examples for the language and links to references/tutorials for that language. 
+Each page will have plenty of examples for the language and links to references/tutorials for that language.
 
 There is a page for each language supported by Stencila.
 
@@ -93,3 +93,45 @@ The sections in each page will be:
 > Goal: Acknowledge the giants who's shoulders we stand upon: open source projects that Stencila uses and integrates with.
 
 - a list of projects and how Stencila uses/integrates with them
+
+
+## Area `/community`
+
+> Goal: Provide visitors with information how to join Stencila community and highlight different roles that one may take within the community.
+
+#### Page `/community.html`
+
+##### Section `Stencila Community`
+
+> Goal: Provide a short overview of Stecila community and emphasize its value.
+
+##### Section `Use`
+
+
+##### Section `Contribute`
+
+> Goal: Provide clear guidelines and highlight the incentives of contributing to Stencila.
+
+##### Section `Discuss`
+
+Invitation to join discussions (mention topics) and information how to do it:
+- Gitter
+- Stencila forum
+- Twitter
+- GitHub discussions in pull requests and issues
+
+##### Section `Share`
+
+> Goal: Why and how to share Stencila documents / spreadsheets / Google sheets using Stencila plugin etc?
+
+### Sub-area `/community/forum`
+	-  Stencila Community forum
+
+### Sub-area `/community/blog`
+	- Stencila blog
+	- side panel with 5 most popular blog posts
+	- link to "Blog for Stencila" in the side panel
+
+### Sub-area `/community/code-of-conduct`
+	- Stencila Code of conduct
+	- a statement about Stencila's commitment to creating inclusive and diverse community and envoronment
