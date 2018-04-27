@@ -56,12 +56,22 @@ The sections in each page will be:
 	- return type
 
 
+
 ## Area `/blog`
 
 > Goal: Highlight new things in the Stencila universe (features, partnerships, workshops etc) to demonstrate ongoing activity and progress.
 
 - aim to have at least two new posts each month
 - invite blog post contributions from members of the community
+
+- Side panel (TOC) with
+  - 5 most popular blog posts
+  - link to "Blog for Stencila" in the side panel
+
+#### Page `/blog/how-to`
+
+> Goal: Provide blog post writers with guidelines for getting good blog posts written!
+
 
 
 ## Area `/about`
@@ -95,6 +105,7 @@ The sections in each page will be:
 - a list of projects and how Stencila uses/integrates with them
 
 
+
 ## Area `/community`
 
 > Goal: Provide visitors with information how to join Stencila community and highlight different roles that one may take within the community.
@@ -105,12 +116,11 @@ The sections in each page will be:
 
 > Goal: Provide a short overview of Stecila community and emphasize its value.
 
-##### Section `Use`
-
-
 ##### Section `Contribute`
 
 > Goal: Provide clear guidelines and highlight the incentives of contributing to Stencila.
+
+Links to `/contribute` page
 
 ##### Section `Discuss`
 
@@ -125,13 +135,16 @@ Invitation to join discussions (mention topics) and information how to do it:
 > Goal: Why and how to share Stencila documents / spreadsheets / Google sheets using Stencila plugin etc?
 
 ### Sub-area `/community/forum`
-	-  Stencila Community forum
 
-### Sub-area `/community/blog`
-	- Stencila blog
-	- side panel with 5 most popular blog posts
-	- link to "Blog for Stencila" in the side panel
+-  Stencila Community forum
 
 ### Sub-area `/community/code-of-conduct`
-	- Stencila Code of conduct
-	- a statement about Stencila's commitment to creating inclusive and diverse community and envoronment
+
+- Stencila Code of conduct
+- a statement about Stencila's commitment to creating inclusive and diverse community and envoronment
+
+
+## Area `/contribute`
+
+#### Page `/contribute`
+
