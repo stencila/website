@@ -17,6 +17,8 @@ like to help out.
 
 ## Area `/learn`
 
+### Sub-area 
+
 ### Sub-area `/learn/languages`
 
 The goals and structure of each page in this sub-area are the same (but obviously the context differs for each language).
@@ -107,6 +109,7 @@ The sections in each page will be:
 
 ##### Section `Use`
 
+> Goal: Point
 
 ##### Section `Contribute`
 
