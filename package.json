@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "del": "^3.0.0",
+    "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
     "gulp-plumber": "^1.2.0",

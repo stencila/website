@@ -5,6 +5,7 @@ author: Nokome Bentley
 date: 20 December 2016
 abstract: |
   In this post, I'm going to look at the models for data driven content used in popular tools for reproducible documents, RMarkdown and Jupyter. We'll then look at how to extend those models to documents that generate content in more than one execution context. I'll then wrap up with an explanation of the model that I've arrived at as being the best fit for Stencila.
+image: rmarkdown-chunk-plot.png
 ---
 
 
