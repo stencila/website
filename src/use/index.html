@@ -1,0 +1,73 @@
+{% extends "_base.html" %}  
+  
+{% block main %} 
+<main class="main"> 
+  <div class="columns"> 
+    <div class="column">
+      <section id="desktop" class="section is-medium">  
+        <div class="container">  
+          <div class="columns">  
+            <div class="column">  
+              <h1 class="title is-2">Stencila Desktop</h1>  
+              <p>  
+                .... 
+              </p>  
+            </div>  
+            <div class="column">  
+              <img src="/img/placeholder.png">  
+            </div>  
+          </div>  
+        </div>  
+      </section>  
+        
+      <section id="hub" class="section is-medium">  
+        <div class="container">  
+          <div class="columns">  
+            <div class="column">  
+              <img src="/img/placeholder.png">  
+            </div> 
+            <div class="column">  
+              <h1 class="title is-2">Stencila Hub</h1>  
+              <p>  
+                ..... 
+              </p>  
+            </div> 
+          </div>  
+        </div>  
+      </section>  
+    </div>
+
+    <div class="column is-one-quarter"> 
+      <aside class="menu"> 
+        <p class="menu-label"> 
+          Use 
+        </p> 
+        <ul class="menu-list"> 
+          <li><a href="#desktop">Desktop</a></li> 
+          <li><a href="#hub">Hub</a></li>
+        </ul> 
+      </aside> 
+    </div>
+  </div> 
+</div> 
+{% endblock %} 
+ 
+{% block styles %}  
+{{ super() }}  
+<style type="text/css">  
+  main .menu { 
+    padding-top: 4em;
+    padding-left: 2em;
+    position: fixed;
+  } 
+  @media(max-width: 1000px) {  
+    #hub .columns {  
+      flex-direction: column-reverse;  
+      display: flex;  
+    } 
+    main .menu { 
+      position: relative; 
+    }  
+  } 
+</style>    
+{% endblock %} 

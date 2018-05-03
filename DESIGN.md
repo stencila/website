@@ -15,6 +15,16 @@ like to help out.
 
 
 
+## Area `/use`
+
+> Goal: Direct user's to the entry point that best suits them
+
+#### Page `/use/index.html`
+
+A single page describing ways to use Stencila. Initially, just Stencila Desktop with a screenshot and big button to download. Perhaps Stencila Hub "coming soon".
+
+
+
 ## Area `/learn`
 
 ### Sub-area 
