@@ -18,7 +18,7 @@ const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
 
 function markdown2nunjucks () {
-  const mdIt = markdownIt()
+  const mdIt = markdownIt({  html: true })
   mdIt.use(markdownItEmoji)
   mdIt.use(markdownItNamedHeadings)
   mdIt.use(markdownItAttrs)
@@ -131,7 +131,7 @@ gulp.task('blog/index', function () {
         if (!front.image) {
           const images = glob.sync(path.join(path.dirname(file.path),'*.{jpg,png,svg}'))
           if (images.length) {
-            front.image = path.relative(path.dirname(file.path), images[0]) 
+            front.image = path.relative(path.dirname(file.path), images[0])
           }
         }
         posts.push(front)
