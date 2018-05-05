@@ -20,4 +20,4 @@ We are also really pleased to announced that [Code for Science and Society (CSS)
 
 It's very exciting to have the opportunity to take Stencila Sheets from a prototype to a polished product that, hopefully, will change the way that researchers summarise, visualize and share data. Once again, thank you to the Alfred P. Sloan Foundation for giving us that opportunity - the opportunity to make it happen.
 
-![Sloan Foundation logo](img/sloan.png)
+![Sloan Foundation logo](sloan.png)
