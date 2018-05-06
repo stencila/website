@@ -136,3 +136,5 @@ To help us prioritize, **vote for the seven features that you think should be th
 * 6 Test cells
 * 7 Conditional formatting
 * 8 Constraints (see below)
+
+To vote please visit [this post on our community forum](https://community.stenci.la/t/a-feature-list-for-stencila-sheets/57).
