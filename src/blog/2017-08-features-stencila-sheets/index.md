@@ -54,7 +54,7 @@ For all of these "conventional" features, we plan on sticking close to existing 
 The initial idea that sparked Stencila Sheets was to take the model of the computational notebook - code cells embedded within a document - and apply it to the spreadsheet interface. Here's an example of the first prototype of Stencila Sheets with cell expressions written in R:
 
 
-![Stencila Sheets using R in cells](sheets-r.gif)
+![Stencila Sheets using R in cells](sheets-r.gif){style="width: 300px;" }
 
 We have overhauled the architecture of Stencila so that there is greater decoupling between the user interfaces and the code execution contexts. We also have a useful abstraction layer for passing data between execution contexts. These changes now allow us to have Sheets with cells in a variety of languages.
 
@@ -80,9 +80,7 @@ For a discussion of implementation of this, see [this issue](https://github.com/
 
 # 2. Strong typing of cells, columns and rows
 
-One of the biggest problems with most spreadsheet implementations is "weak typing" - cells can contain any *type* of value. This combined with auto-conversion can lead to problems like the recently publicized corrup
-
-![Washington Post on errors in Excel](https://www.washingtonpost.com/rf/image_1484w/2010-2019/Wires/Images/2015-10-06/Getty/Was8970832.jpg?t=20170517)
+One of the biggest problems with most spreadsheet implementations is "weak typing" - cells can contain any *type* of value. This combined with auto-conversion can lead to problems like the recently publicized [corruption of gene data](https://www.washingtonpost.com/news/wonk/wp/2016/08/26/an-alarming-number-of-scientific-papers-contain-excel-errors/?utm_term=.57fd60e354bd).
 
 
 One of the great ideas that [Oliver](https://community.stenci.la/u/oliver) has come up with recently is adding strong typing to Sheets. Users could specify that a column, row, cell range or cell was of a particular type (e.g. `date`, `string`). If data was entered into the cell, or a cell formula returned a value, which did not conform to the specified type the cell would show an error. Cells with specified types could be visually distinguished (e.g. by colour, or small icon in the corner).
@@ -110,7 +108,7 @@ One often cited criticism of spreadsheets is that they are not testable. In our 
 
 These cells would have an expression which represented a test assertion e.g. `= B1 >= 0 && B1 <= 100` to test that the percentage calculated in cell B1 is valid. In our initial prototype we indicated test cells using a `?` mark and a tick or cross for pass/fail:
 
-![Stencila Sheets test cells](sheet-test-cell.png)
+![Stencila Sheets test cells](sheet-test-cell.png){style="width: 300px;" }
 
 We also were able to generate test coverage statistics for the sheet.
 
