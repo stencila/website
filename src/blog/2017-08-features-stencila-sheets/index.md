@@ -1,12 +1,14 @@
 ---
 extends: blog/_post.html
-title:
+title: A feature list for Stencila Sheets
 author: Nokome Bentley
 date: 20 August 2017
 abstract: |
-
-forum_topic:
-image:
+    Stencila Sheets development is under way and we need you to tell us which features are the most important and useful for you.
+    We have listed 8 of those that already been suggested to us and would like to hear from a wider forum about your opinions and
+    preferences. Have your say!
+forum_topic: 57
+image: sheets-r.gif
 ---
 
 [Michael](https://community.stenci.la/u/michael), [Oliver](https://community.stenci.la/u/oliver) and I have been planning the next six months of development and user testing on Stencila Sheets. We're keen to get input from the community on which features should put in, and which we should leave out, and the relative priority for each.
@@ -79,9 +81,9 @@ For a discussion of implementation of this, see [this issue](https://github.com/
 # 2. Strong typing of cells, columns and rows
 
 One of the biggest problems with most spreadsheet implementations is "weak typing" - cells can contain any *type* of value. This combined with auto-conversion can lead to problems like the recently publicized corrup
-<a href="https://www.washingtonpost.com/news/wonk/wp/2016/08/26/an-alarming-number-of-scientific-papers-contain-excel-errors/?utm_term=.57fd60e354bd">
-![]()
-</a>
+
+![Washington Post on errors in Excel](https://www.washingtonpost.com/rf/image_1484w/2010-2019/Wires/Images/2015-10-06/Getty/Was8970832.jpg?t=20170517)
+
 
 One of the great ideas that [Oliver](https://community.stenci.la/u/oliver) has come up with recently is adding strong typing to Sheets. Users could specify that a column, row, cell range or cell was of a particular type (e.g. `date`, `string`). If data was entered into the cell, or a cell formula returned a value, which did not conform to the specified type the cell would show an error. Cells with specified types could be visually distinguished (e.g. by colour, or small icon in the corner).
 
@@ -108,9 +110,7 @@ One often cited criticism of spreadsheets is that they are not testable. In our 
 
 These cells would have an expression which represented a test assertion e.g. `= B1 >= 0 && B1 <= 100` to test that the percentage calculated in cell B1 is valid. In our initial prototype we indicated test cells using a `?` mark and a tick or cross for pass/fail:
 
-![]()
-
-<img src="/uploads/db2240/original/1X/4964499ee9c7c3041264aaef2f4a93bccfd90009.png" width="265" height="213">
+![Stencila Sheets test cells](sheet-test-cell.png)
 
 We also were able to generate test coverage statistics for the sheet.
 
@@ -127,15 +127,6 @@ For more details, see [this GitHub issue](https://github.com/stencila/stencila/i
 Please give us your suggestions! It's your chance to have a say on where Stencila Sheets is heading. Tell us which of these features you think are most important, which are unnecessary, and which need changing.
 
 To help us prioritize, **vote for the seven features that you think should be the highest priority** (leaving two out). And reply to this post to give us your additional thoughts!
-
-<amp-iframe width="600"
-                           height="400"
-                           layout="responsive"
-                           sandbox="allow-scripts allow-same-origin allow-popups"
-                           frameborder="0"
-                           src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJ2eUgeAK6j4ARbn5u_wAGqWA&key=AIzaSyCNCZ0Twm_HFRaZ5i-FuPDYs3rLwm4_848">
-               </amp-iframe>
-
 
 
 * 1a Allowing users to write cell expressions in external languages
