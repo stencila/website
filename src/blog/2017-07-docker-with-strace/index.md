@@ -5,7 +5,7 @@ author: Finlay Thompson
 date: 28 July 2017
 abstract: |
      Docker containers are a useful way to manage dependencies - especially when your application has a lot of them.
-     However, the down side is that those comprehensive images can get quite large. We used the [`strace`](https://strace.io/) tool to
+     However, the down side is that those comprehensive images can get quite large. We used the strace tool to
      shrink Stencila images and make them easier and faster to deploy.
 forum_topic:
 image: strace-logo.png
@@ -16,7 +16,11 @@ The aim of this work was  to shrink the on-disk size of a Docker container as mu
 
 We used the [`strace`](https://strace.io/) tool to discover what is actually used by the code within a document. `strace` is a powerful Linux tool that records all the system calls that a given process makes. The idea is to keep track of all the files that are actually used by the process, and make a new Docker image that only includes those files. That is the theory at least - turns out that there are number of little gotchas along the way, of course.
 
-![Strace logo](strace-logo.png){style="width: 30%;" }
+<figure>
+	<img src="strace-logo.png" style="width: 20%;">
+	<p><i><a href="https://strace.io/">strace</a> mascot by Vitaly Chaykovsky. CC BY-SA 4.0</i><p>
+</figure>
+
 
 ## Planning
 
@@ -95,7 +99,5 @@ This exercise has shown that it is feasible to use strace to reduce the size of 
 - The list of required files can also be used to identify which research outputs are actually effected by specific bugs or vulnerabilities in upstream libraries.
 
 - We are also keen to explore the impact on the docker image size of using specific features. For example, if we add a particular mapping library, how much does it increase the size of the shrinked docker image.
-
-Upcoming changes will be posted here, on the forum.
 
 This work was done by Hamish Mackenzie, with help from Finlay Thompson, and support from Nokome Bentley.
