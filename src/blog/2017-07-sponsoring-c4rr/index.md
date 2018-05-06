@@ -5,11 +5,11 @@ author: Nokome Bentley
 date: 1 July 2017
 abstract: |
       Stencila is proud to be sponsoring the Docker Containers for Reproducible Research Workshop1 (C4RR)!
-      C4RR is organised by the [Software Sustainability Institute] in the UK. The event brings together researchers,
+      C4RR is organised by the Software Sustainability Institute in the UK. The event brings together researchers,
       developers and educators to explore best practices when using containers, not only Docker, and the future of
       research software with containers.
 forum_topic:
-image: stencila-c4rr-tweet.png
+image: c4rr.png
 ---
 
 We are very happy to announce our sponsorship for C4RRR! The topic of containers for Reproducible Research has been a focus for many community
