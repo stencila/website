@@ -88,10 +88,3 @@ Many suggestions for Stencila sheets UI surfaced. Among them are the following:
 # Thanks!
 
 A huge thank you to all the people that attended the workshops. We really appreciate you taking the time to share your ideas with us. Don't hestiate to get in touch if you have ideas, use cases, or potential beta-testing scenarios to discuss! And extra special thanks to Miriam Posner (UCLA), Jamie Afflerbach (NCEAS), John Chodacki & Amy Neeser (UC Berkeley), Asia Mitchell (OHSU), Josh Greenberg (Sloan NYC), Jonathan Cain and Sarah Seymore (University of Oregon) for supporting our effort by organizing events in your cities.
-
-https://community.stenci.la/t/stencila-in-the-big-apple/106
-https://community.stenci.la/t/stencila-at-the-university-of-oregon/107
-https://community.stenci.la/t/stencila-in-portland-oregon/112
-https://community.stenci.la/t/stencila-at-uc-berkeley/113
-https://community.stenci.la/t/stencila-at-ucla/115
-https://community.stenci.la/t/stencila-in-santa-barbara-california/116
