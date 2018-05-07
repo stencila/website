@@ -154,3 +154,17 @@ blockquote.warning:before {
   background-color: #f66;
   content: "!";
 }
+
+.menu {
+  font-weight: 400;
+}
+
+.menu .menu-list a {
+  color: #2568ef;
+  border-left: 3px solid transparent;
+}
+
+.menu .menu-list a:hover {
+  background: transparent;
+  border-left: 3px solid #66ff66;
+}
