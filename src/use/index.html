@@ -1,0 +1,83 @@
+{% extends "_base.html" %}  
+  
+{% block main %} 
+<main class="main"> 
+  <div class="columns"> 
+    <div class="column">
+      <section id="desktop" class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-one-third has-text-centered">
+              <div class="">
+                <h1 class="title is-5">Stencila Desktop</h1>
+                <p>
+                  Use Stencila on your own computer, with your own data, on- or offline. Stencila Desktop is a conventional desktop application allowing you to save and open files to and from your local file system.
+                </p>
+              </div>
+              <div class="">
+                <div style="padding: 1rem; font-size: 0.9rem; color: #b01c1c;">
+                  We're about to release a new version of Stencila Desktop. Can we suggest that you check back here in a few days? Or, <a href="https://github.com/stencila/desktop">help us develop and test</a> the next release :)
+                </div>
+                <a id="desktop-download" class="button is-success" href="https://github.com/stencila/desktop/releases">Download</a>
+                <div style="padding: 1rem; font-size: 0.75rem">
+                  <a id="desktop-download-other" style="display:none" href="https://github.com/stencila/desktop/releases">Download for other platforms</a> 
+                </div>
+              </div>
+            </div>
+            <div class="column">
+              <img src="desktop.svg" style="width: 100%">
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div> 
+</div> 
+{% endblock %} 
+ 
+{% block styles %}  
+{{ super() }}  
+<style type="text/css">  
+  main .menu { 
+    padding-top: 4em;
+    padding-left: 2em;
+    position: fixed;
+  } 
+  @media(max-width: 1000px) {  
+    #hub .columns {  
+      flex-direction: column-reverse;  
+      display: flex;  
+    } 
+    main .menu { 
+      position: relative; 
+    }  
+  } 
+</style>    
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+  // Set desktop download button text and link base on OS
+  var text;
+  var href;
+  if (navigator.appVersion.indexOf('Win') != -1) {
+    text = 'Download the Windows installer';
+    href = 'https://github.com/stencila/desktop/releases/download/v0.27.4/Stencila.Setup.0.27.4.exe';
+  }
+  else if (navigator.appVersion.indexOf('Mac') != -1) {
+    text = 'Download the MacOS installer';
+    href = 'https://github.com/stencila/desktop/releases/download/v0.27.4/Stencila-0.27.4.dmg'
+  }
+  else if (navigator.appVersion.indexOf('Linux') != -1) {
+    text = 'Download the Linux AppImage';
+    href = 'https://github.com/stencila/desktop/releases/download/v0.27.4/stencila-desktop-0.27.4-x86_64.AppImage';
+  }
+  if (text) {
+    var button = document.querySelector('#desktop-download')
+    button.text = text
+    button.href = href
+    var other = document.querySelector('#desktop-download-other')
+    other.setAttribute('style', '')
+  }
+</script>
+{% endblock %}
