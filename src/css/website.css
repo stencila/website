@@ -45,8 +45,20 @@ a.navbar-link:hover {
   min-height: 80vh;
 }
 
-.navbar-start {
-    margin-left: 3em;
+.navbar-brand {
+  margin-right: 3em;
+}
+
+.navbar-start .navbar-item {
+  font-weight: bold;
+}
+
+.navbar-item {
+  border-bottom: 3px solid white;
+}
+
+.navbar-item:hover {
+  border-bottom: 3px solid #66ff66;
 }
 
 .navbar .input {
