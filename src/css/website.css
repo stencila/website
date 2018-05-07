@@ -45,19 +45,23 @@ a.navbar-link:hover {
   min-height: 80vh;
 }
 
-.navbar-brand {
+.navbar-brand .navbar-item {
   margin-right: 3em;
 }
 
-.navbar-start .navbar-item {
+.navbar-brand .navbar-item img {
+  max-height: 2.25rem;
+}
+
+.navbar-menu .navbar-start .navbar-item {
   font-weight: bold;
 }
 
-.navbar-item {
+.navbar-menu .navbar-item {
   border-bottom: 3px solid white;
 }
 
-.navbar-item:hover {
+.navbar-menu .navbar-item:hover {
   border-bottom: 3px solid #66ff66;
 }
 
