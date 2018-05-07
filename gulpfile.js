@@ -1,6 +1,7 @@
 const cheerio = require('cheerio')
 const del = require('del')
 const fs = require('fs')
+const glob = require('glob')
 const gulp = require('gulp')
 const connect = require('gulp-connect')
 const plumber = require('gulp-plumber')
@@ -127,6 +128,12 @@ gulp.task('blog/index', function () {
         const front = yamlFront.loadFront(md)
         front.date = front.date ? new Date(front.date) : Date.now()
         front.href = path.relative(file.base, path.dirname(file.path))
+        if (!front.image) {
+          const images = glob.sync(path.join(path.dirname(file.path),'*.{jpg,png,svg}'))
+          if (images.length) {
+            front.image = path.relative(path.dirname(file.path), images[0]) 
+          }
+        }
         posts.push(front)
       }
       posts.sort((a, b) => (a.date > b.date) ? -1 : 1)

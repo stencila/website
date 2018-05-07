@@ -2,28 +2,35 @@
 
 {% block main %}
 <main class="section">
-	<div class="container" style="max-width: 45em">
+	<div class="container">
+		<div class="columns is-multiline">
 	{% for post in posts %}
-		<div class="columns">
-			<div class="column">
-				<a href="{{ post.href }}"><div class="card">
-					<div class="card-header">
-						<p class="card-header-title">
-							{{ post.title }}
-						</p>
+			<div class="column is-half">
+				<a href="{{ post.href }}">
+					<div class="card" style="padding: 0.25rem">
+						<div class="card-header">
+							<p class="card-header-title">
+								{{ post.title }}
+							</p>
+						</div>
+						<div class="card-content" style="padding: 0.75rem">
+							{{ post.abstract }}
+						</div>
+						<div class="card-image" style="max-height: 300px; overflow: hidden; padding: 0.75rem">
+							<figure class="image">
+      							<img src="{{ post.href }}/{{ post.image }}">
+      						</figure>
+						</div>
+						<div class="card-footer">
+							<p class="card-footer-item" style="justify-content: left;">
+								{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}
+							</p>
+						</div>
 					</div>
-					<div class="card-content">
-						{{ post.abstract }}
-					</div>
-					<div class="card-footer">
-						<p class="card-footer-item" style="justify-content: left;">
-							{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}
-						</p>
-					</div>
-				</div></a>
+				</a>
 			</div>
-		</div>
 	{% endfor %}
+		</div>
 	</div>
 </main>
 {% endblock %}

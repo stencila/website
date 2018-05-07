@@ -8,6 +8,8 @@ abstract: |
     as the Community Advocate. Her role will focus on understanding users’ needs
     to direct Stencila further development, building open source developer community
     and keeping you all updated on what goes on with Stencila.
+forum_topic: 134
+image: aleksandra_centred.jpg
 ---
 
 We have a new addition to our team! Aleksandra Pawlik joined Stencila in April 2018 as our Community Advocate. Her role will focus on understanding users’ needs to direct further Stencila development, building open source developer community and keeping you all updated on what goes on in Stencila.

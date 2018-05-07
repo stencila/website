@@ -44,6 +44,8 @@ abstract: A summary of my post
 The start of my post on a very interesting subject...
 ```
 
+You can optionally add an `image` item (e.g. `image: my-photo.jpg`, a relative path to an image) to the front matter to force the blog index to use a particular image for your post. If you don't specify and image, it will just choose the first image (in alphabetical order, if there are any images in the post's folder.
+
 **Note** Please use a YAML front matter as shown below, providing
 some meta data about your blog post. This allows for correct rendering and
 publishing of your post, attributing the authorship and makes the post

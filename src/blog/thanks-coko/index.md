@@ -4,6 +4,7 @@ title: Thanks Coko!
 author: Nokome Bentley
 date: 2 April 2017
 abstract: A big thank you to our friends at the Collaborative Knowledge Foundation.
+image: coko-meet.jpg
 ---
 
 We're about to announce Stencila's first major round of funding. It's really exciting to at last have the opportunity to give this project the resourcing it needs and to launch into the next phase of this journey. 
