@@ -1,5 +1,6 @@
 ---
 extends: learn/_page.html
+title: Installation
 next_ignore:
     label: Quick start
     url: /learn/getting-started/quick-start.html

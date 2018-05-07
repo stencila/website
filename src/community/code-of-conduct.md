@@ -1,5 +1,6 @@
 ---
 extends: _base.html
+title: Code of Conduct
 ---
 # Code of Conduct
 
