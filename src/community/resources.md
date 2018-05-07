@@ -30,7 +30,12 @@ If you would like to mention Stencila in your talk, please feel free to use the 
 * In ODF Presentation <a href="stencila-slide.odp" download>`odp` format</a>
 * In Microsoft Office Power Point <a href="stencila-slide.pptx" download>`pptx` format</a>
 
+## Stickers!
 
+We are expanding on the [Stencila sticker range](/blog/2018-05-stickers). If you would like some stickers to decorate your laptops,
+[get in touch](mailto:aleksandra@stenci.la)!
+
+![Stencila Stcikers](/blog/2018-05-stickers/stickers-stencila.jpg){style="width: 50%; display: block;"}
 
 ## Presentations about Stencila
 
