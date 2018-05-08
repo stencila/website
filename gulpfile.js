@@ -57,7 +57,7 @@ function markdown2object (file, includeContent = true) {
 }
 
 function markdown2nunjucks () {
-  const mdIt = markdownIt()
+  const mdIt = markdownIt({  html: true })
   mdIt.use(markdownItEmoji)
   mdIt.use(markdownItNamedHeadings)
   mdIt.use(markdownItAttrs)
@@ -132,7 +132,7 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
   gulp.src([
-    './src/**/*.{jpg,png,svg}'
+    './src/**/*.{gif,jpg,png,svg}'
   ], {base: './src'})
     .pipe(gulp.dest('./build'))
 })
@@ -189,7 +189,7 @@ gulp.task('connect', function () {
 gulp.task('watch', function () {
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
-  gulp.watch(['./src/img/*'], ['img'])
+  gulp.watch(['./src/**/*.{gif,jpg,png,svg}'], ['img'])
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
