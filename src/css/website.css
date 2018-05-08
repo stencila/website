@@ -103,13 +103,13 @@ a.navbar-link:hover {
   color: #777;
 }
 .content h4 {
-  color: #999;
+  color: #888;
 }
-
-main.blog-post .content img {
-  display: block;
-  width: 90%;
-  margin: 0 auto;
+.content h5 {
+  color: #aaa;
+}
+.content h6 {
+  color: #bbb;
 }
 
 /* Override of .number style in materia.css */

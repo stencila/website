@@ -1,40 +1,75 @@
 {% extends "_base.html" %}
 
 {% block main %}
-<main class="section blog-post">
-  <div class="container">
-    <div class="content">
-      <h2 class="title is-2">{{ front.title }}</h2>
-      <h3>{{ front.author }}, {{ front.date }}</h3>
-      {{ content | safe }}
+  <main class="section">
+    <div class="container">
+      <article class="content">
+        <h2 class="title is-2">{{ front.title }}</h2>
+        <h3 class="is-3">{{ front.author }}, {{ front.date  | date('D MMMM YYYY') }}</h3>
+        {{ content | safe }}
+      </article>
+      {% if front.suggested %}
+      <div id="suggested">
+        <h2 class="title is-5">Suggested posts</h2>
+        {% for suggested in front.suggested %}
+        <div class="media">
+          <figure class="media-left">
+            <p class="image is-128x128">
+              <img src="{{ suggested.image }}">
+            </p>
+          </figure>
+          <div class="media-content">
+            <div class="content">
+              <h5 class="is-5"><a href="{{ suggested.href }}">{{ suggested.title }}</a></h1>
+              <p style="font-size: 0.9em">
+                {{ suggested.abstract | truncate }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% endif %}
+      <div id='discourse-comments'>
+      </div>
     </div>
-    <div id='discourse-comments'>
-    </div>
-  </div>
-</main>
+  </main>
 {% endblock %}
 
 {% block styles %}
-{{ super() }}
-<style type="text/css">
-  #discourse-comments {
-  	margin-top: 4em;
-  }
-</style>
+  {{ super() }}
+  <style type="text/css">
+    article {
+      margin-bottom: 5em;
+      padding-bottom: 2em;
+      border-bottom: 1px solid #EEE;
+    }
+    article.content img {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
+    #suggested {
+      color: #777;
+    }
+    #discourse-comments {
+      margin-top: 4em;
+    }
+  </style>
 {% endblock %}
 
 {% block scripts %}
-{{ super() }}
-<script type="text/javascript">
-  DiscourseEmbed = {
-    discourseUrl: 'https://community.stenci.la/',
-    discourseEmbedUrl: window.location.href,
-    {% if front.forum_topic %}topicId: {{ front.forum_topic }}{% endif %}
-  };
-  (function() {
-    var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
-    d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
-  })();
-</script>
+  {{ super() }}
+  <script type="text/javascript">
+    DiscourseEmbed = {
+      discourseUrl: 'https://community.stenci.la/',
+      discourseEmbedUrl: window.location.href,
+      {% if front.forum_topic %}topicId: {{ front.forum_topic }}{% endif %}
+    };
+    (function() {
+      var d = document.createElement('script'); d.type = 'text/javascript'; d.async = true;
+      d.src = DiscourseEmbed.discourseUrl + 'javascripts/embed.js';
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(d);
+    })();
+  </script>
 {% endblock %}
