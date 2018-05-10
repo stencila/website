@@ -5,8 +5,8 @@ title: Beta Testing programme
 
 # Beta Testing programme
 
-The Beta Testing programme helps get Stencila ready for general use. Testing focuses on capturing issues that may exist with the software. However,
-we also need you to tell us what improvements you would like to see. Stencila is an open-source community-driven project and the community input
+The Beta Testing programme helps get Stencila ready for general use. Testing focuses on capturing any issues that may exist with the software. But,
+we also need you to tell us what improvements you would like to see! Stencila is an open-source community-driven project and community input
 is crucial for further development.
 
 
@@ -16,7 +16,7 @@ is crucial for further development.
 
 We invite everyone to join our Beta Testing programme. Any level of feedback is valuable and helps improve Stencila.
 We want your experience as Stencila Beta Tester as enjoyable as possible, so we will provide you with short guidance on how to
-proceed. We are of course open to all ideas and are very happy for the Testers to take initiative and test Stencila
+proceed. We are of course open to all ideas and are very happy for Beta Testers to take initiative and test Stencila
 through the new challenges.
 
 If you would like to become a Beta Tester, please [get in touch](mailto:hello@stenci.la)!
@@ -28,7 +28,7 @@ Thank you for your time and help!
 
 Currently we are running Beta Testing for Stencila Desktop.
 
-You need to have access to a computer with internet connection and running one of the tree operating systems that Stencila can run on:
+You need to have access to a computer with internet connection and running one of the three operating systems that Stencila can run on:
 Windows, Mac OS X or Linux. You will need to download and install the version of Stencila Desktop appropriate for your operating system.
 
 At this point you may already have some questions. Do not hesitate and ask them on our [Community Forum](https://community.stenci.la/)
