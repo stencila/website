@@ -17,22 +17,59 @@ const through = require('through2')
 const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
 
+const root = path.join(__dirname, 'src')
+
+function markdown2object (file, includeContent = true) { 
+  const md = file.contents.toString()
+  
+  const front = yamlFront.loadFront(md)
+  front.date = front.date ? new Date(front.date) : Date.now()
+  front.folder = path.join('/', path.relative(root, path.dirname(file.path)))
+  front.href = front.folder
+  if (front.image) {
+    front.image = path.join(front.folder, front.image)
+  } else {
+    const images = glob.sync(path.join(path.dirname(file.path),'*.{gif,jpg,png,svg}'))
+    if (images.length) {
+      front.image = path.join('/', path.relative(root, images[0]) )
+    }
+  }
+  if (front.suggested) {
+    let suggesteds = []
+    for (let suggested of front.suggested) {
+      const otherPath = path.join(path.dirname(file.path), suggested, 'index.md')
+      const otherFile = {
+        base: '',
+        path: otherPath,
+        contents: fs.readFileSync(otherPath, 'utf8')
+      }
+      const otherFront = markdown2object(otherFile, false).front
+      suggesteds.push(otherFront)
+    }
+    front.suggested = suggesteds
+  }
+
+  let content = front.__content
+  delete front.__content
+  
+  if (includeContent) return { front, content}
+  else return { front }
+}
+
 function markdown2nunjucks () {
-  const mdIt = markdownIt( { html:true } )
+  const mdIt = markdownIt({ html: true })
   mdIt.use(markdownItEmoji)
   mdIt.use(markdownItNamedHeadings)
   mdIt.use(markdownItAttrs)
   return through.obj(function(file, encoding, callback) {
-    const md = file.contents.toString()
-    const front = yamlFront.loadFront(md)
-    const content = mdIt.render(front.__content)
+    let {front, content} = markdown2object(file)
+    content =  mdIt.render(content)
     const source = path.relative(__dirname, file.path)
     file.context = {front, content, source}
     const extend = front.extends || '_base.html'
     file.contents = Buffer.from(`{% extends "${extend}" %}`)
     file.path = replaceExt(file.path, '.html')
-    this.push(file)
-    callback()
+    callback(null, file)
   })
 }
 
@@ -95,7 +132,7 @@ gulp.task('js', function () {
 
 gulp.task('img', function () {
   gulp.src([
-    './src/**/*.{jpg,png,svg}'
+    './src/**/*.{gif,jpg,png,svg}'
   ], {base: './src'})
     .pipe(gulp.dest('./build'))
 })
@@ -124,17 +161,8 @@ gulp.task('blog/index', function () {
     .pipe(through.obj(function(all, encoding, callback) {
       let posts = []
       for (let file of all.files) {
-        const md = file.contents.toString()
-        const front = yamlFront.loadFront(md)
-        front.date = front.date ? new Date(front.date) : Date.now()
-        front.href = path.relative(file.base, path.dirname(file.path))
-        if (!front.image) {
-          const images = glob.sync(path.join(path.dirname(file.path),'*.{jpg,png,svg}'))
-          if (images.length) {
-            front.image = path.relative(path.dirname(file.path), images[0])
-          }
-        }
-        posts.push(front)
+        let post = markdown2object(file).front
+        posts.push(post)
       }
       posts.sort((a, b) => (a.date > b.date) ? -1 : 1)
       all.context = {posts}
@@ -161,7 +189,7 @@ gulp.task('connect', function () {
 gulp.task('watch', function () {
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
-  gulp.watch(['./src/img/*'], ['img'])
+  gulp.watch(['./src/**/*.{gif,jpg,png,svg}'], ['img'])
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
