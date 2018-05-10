@@ -57,7 +57,7 @@ function markdown2object (file, includeContent = true) {
 }
 
 function markdown2nunjucks () {
-  const mdIt = markdownIt({  html: true })
+  const mdIt = markdownIt({ html: true })
   mdIt.use(markdownItEmoji)
   mdIt.use(markdownItNamedHeadings)
   mdIt.use(markdownItAttrs)
