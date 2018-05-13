@@ -17,8 +17,8 @@ The plan is to implement initial versions of these features over the coming mont
 
 For background on Stencila Sheets check out last year's blog posts:
 
-- [Spreadsheets are dead, long live reactive programming environments!](http://blog.stenci.la/introducing-sheets/) - an overview and rationale
-- [Getting under Stencila sheets](http://blog.stenci.la/underneath-sheets) - more technical details
+- [Spreadsheets are dead, long live reactive programming environments!](/blog/introducing-sheets/) - an overview and rationale
+- [Getting under Stencila sheets](/blog/underneath-sheets) - more technical details
 
 We'll link to some relevant Github issues below. We'd love any comments either on those specific issues, or right here in this forum topic!
 
