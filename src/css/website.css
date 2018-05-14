@@ -112,8 +112,12 @@ a.navbar-link:hover {
   color: #bbb;
 }
 
-/* Override of .number style in materia.css */
-code .token.number {
+/*
+ Override Materia styles that conflict with Prism syntax
+ highlighting
+*/
+
+code[class*="language-"] .token.number {
   background: none;
   font-size: 1em;
   display: inline;
@@ -121,6 +125,20 @@ code .token.number {
   min-width: 0;
   padding: 0;
 }
+
+code[class*="language-"] .tag {
+  background-color: inherit;
+  font-size: inherit;
+  align-items: inherit;
+  display: inherit;
+  height: inherit;
+  line-height: inherit;
+  padding: 0;
+  white-space: inherit;
+  justify-content: inherit;
+}
+
+/*****************************************************/
 
 blockquote.tip {
   background-color: #e5eeff;

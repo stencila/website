@@ -8,9 +8,10 @@ const plumber = require('gulp-plumber')
 const nunjucks = require('nunjucks')
 const nunjucksDateFilter = require('nunjucks-date-filter')
 const markdownIt = require('markdown-it')
+const markdownItAnchor = require('markdown-it-anchor')
+const markdownItAttrs = require('markdown-it-attrs')
 const markdownItEmoji = require('markdown-it-emoji')
-const markdownItNamedHeadings = require('markdown-it-named-headings')
-const markdownItAttrs = require('markdown-it-attrs');
+const markdownItTOC = require("markdown-it-table-of-contents")
 const path = require('path')
 const replaceExt = require('replace-ext')
 const through = require('through2')
@@ -58,9 +59,10 @@ function markdown2object (file, includeContent = true) {
 
 function markdown2nunjucks () {
   const mdIt = markdownIt({ html: true })
-  mdIt.use(markdownItEmoji)
-  mdIt.use(markdownItNamedHeadings)
+  mdIt.use(markdownItAnchor)
   mdIt.use(markdownItAttrs)
+  mdIt.use(markdownItEmoji)
+  mdIt.use(markdownItTOC)
   return through.obj(function(file, encoding, callback) {
     let {front, content} = markdown2object(file)
     content =  mdIt.render(content)

@@ -15,7 +15,7 @@ We've set some document options that befit a blog post: `edit=0` so you can't ed
 
 # Javascript execution context
 
-The [`stencila/js`](https://github.com/stencila/js) package was established a few weeks ago. It contains code that is shared amongst other Stencila Javascript-based packages: `node` (the package for Node.js) and `web` (the package for web browsers). Currently, the most interesting thing in the package is the `JsSession` class. It's a Javascript execution context which fits the model for data driven content [described here](http://blog.stenci.la/chunks-n-funcs/). It can be used in either Node.js or the browser to execute chunks of Javascript code - basically, it's a fancy `eval`. This week I added some added features to it to allow a Node.js-like experience in the browser:
+The [`stencila/js`](https://github.com/stencila/js) package was established a few weeks ago. It contains code that is shared amongst other Stencila Javascript-based packages: `node` (the package for Node.js) and `web` (the package for web browsers). Currently, the most interesting thing in the package is the `JsSession` class. It's a Javascript execution context which fits the model for data driven content [described here](/blog/chunks-n-funcs/). It can be used in either Node.js or the browser to execute chunks of Javascript code - basically, it's a fancy `eval`. This week I added some added features to it to allow a Node.js-like experience in the browser:
 
 - transpilation to [ES2015](https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015) using [Bublé](https://buble.surge.sh/guide/)
 - a `require` for the browser using [wzrd.in](https://wzrd.in/) the 'browserify-as-a-service' service
@@ -67,7 +67,7 @@ For a block of code which is "dynamic" (i.e it will get executed), RMarkdown use
 	plot(x,y)
 	```
 
-In Stencila, because the [execution model](http://blog.stenci.la/chunks-n-funcs/) is more similar to the traditional function call of a programming language, it feels appropriate to use the traditional function call syntax with parentheses...
+In Stencila, because the [execution model](/blog/chunks-n-funcs/) is more similar to the traditional function call of a programming language, it feels appropriate to use the traditional function call syntax with parentheses...
 
 Execute with no input variables (as above but the parentheses indicate this will get executed),
 
