@@ -1,33 +1,6 @@
 {% extends "_base.html" %}
 {% from "_download.html" import download %}
 
-{% block styles %}
-{{ super() }}
-<style type="text/css">
-  #section-2,
-  #section-4,
-  #section-6 {
-    background: #fafafa;
-  }
-  @media(max-width: 767px) {
-    #section-2 .columns,
-    #section-4 .columns,
-    #section-6 .columns {
-      flex-direction: column-reverse;
-      display: flex;
-    }
-  }
-
-  #funders img,
-  #partners img {
-    display: block;
-    margin: 1em auto;
-    max-height: 70px;
-    max-width: 250px;
-  }
-</style>
-{% endblock %}
-
 {% block main %}
 <section id="section-1" class="hero">
   <div class="hero-body">
@@ -43,26 +16,116 @@
         <div class="image">
           <img src="/use/desktop.svg">
         </div>
-        <div class="section has-text-centered">
+        <div class="has-text-centered" style="margin-top: 2em">
           {{ download("desktop", "0.28.0") }}
         </div>
     </div>
   </div>
 </section>
 
+<section id="features" class="section">
+  <div class="container">
+    <h1 class="title is-3 is-gray has-text-centered">Features</h1>
+
+    <div id="feature-1">
+      <div class="columns">
+        <div class="column">
+          <img src="/img/article-schematic.svg">
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">Connecting coding expertise with research knowledge</h1>
+          <p>
+           Create interactive, fully reproducible documents using a familiar visual authoring interface. Use code cells to produce figures based on data. Combine different skills in one document. Showcase your reproducible data-driven research without oversimplifying it.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-2">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Spreadsheets made robust for research</h1>
+          <p>
+           Leverage the power of data manipulation using R, Python, SQL and more from within the Stencila Sheets interface. Use formulas to do calculations, create figures next to the data and reference them in the manuscript. Make your code for data analysis available within the spreadsheets decreasing their error-proneness and enhancing reproducibility.
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/sheet-schematic.png">
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-3">
+      <div class="columns">
+        <div class="column">
+          <img src="/img/reactive.png">
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">Reactive code evaluation in different languages</h1>
+          <p>
+            In Stencila code evaluates live as you type. Because the execution engine analyses the dependencies between cells, it can perform the minimal update, making computation fast and responsive. This mechanism works with all available languages (e.g. R, Python, Javascript, SQL). You can even mix languages within a document.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-4">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Interoperability with existing tools and workflows</h1>
+          <p>
+            Stencila is complementary to the existing tools. It is not developed to replace but to integrate. Interoperability is at the heart of the project with the goal to support seamless collaboration between users of Jupyter Notebook, RMarkdown and spreadsheet applications.
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/interop.png">
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-5">
+      <div class="columns">
+        <div class="column">
+          <img src="/img/file-formats.png">
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">Support for a variety of popular and standardised file formats</h1>
+          <p>
+            Stencila projects are self-contained archives of documents and assets. Following its interoperability principle Stencila will support other file formats commonly used by researchers such as .ipynb, RMarkdown and more. Stencila is also compatible with JATS - the standard format used by publishers speeding up and easing the publishing process.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-6">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Community-driven development</h1>
+          <p>
+            Stencila development is driven by its users. We consider every user as an integral part of the project. Using their experience and knowledge we can build a truly open set of tools meeting the needs of researchers.
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/nokome-presents-sheets.jpg">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="funders" class="section">
   <div class="container">
-    <h1 class="title is-4 is-gray has-text-centered">Funders</h1>
+    <h1 class="title is-3 is-gray has-text-centered">Funders</h1>
     <figure class="is-flex is-horizontal-center">
       <img src="/img/sloan.png">
     </figure>
   </div>
 </section>
 
-
 <section id="partners" class="section">
   <div class="container">
-    <h1 class="title is-4 is-gray has-text-centered">Partners</h1>
+    <h1 class="title is-3 is-gray has-text-centered">Partners</h1>
     <div class="columns is-multiline is-centered">
       <div class="column is-narrow">
         <a href="https://codeforscience.org">
@@ -93,4 +156,34 @@
   </div>
 </section>
 
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <style type="text/css">
+    #features > .container {
+      max-width: 50em;
+    }
+
+    #features > .container > div {
+      margin: 6em 0;
+    }
+
+    @media(max-width: 767px) {
+      #feature-1 .columns,
+      #feature-3 .columns,
+      #feature-5 .columns {
+        flex-direction: column-reverse;
+        display: flex;
+      }
+    }
+
+    #funders img,
+    #partners img {
+      display: block;
+      margin: 1em auto;
+      max-height: 70px;
+      max-width: 250px;
+    }
+  </style>
 {% endblock %}
