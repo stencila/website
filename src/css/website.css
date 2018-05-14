@@ -9,7 +9,12 @@ body, button, input, select, textarea {
 /* Overrides */
 
 .button {
-    text-transform: none;
+  text-transform: none;
+}
+
+.button.is-primary {
+  background-color: #2568ef;
+  color: #eee;
 }
 
 .card .card-footer,

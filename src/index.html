@@ -1,4 +1,5 @@
 {% extends "_base.html" %}
+{% from "_download.html" import download %}
 
 {% block styles %}
 {{ super() }}
@@ -39,8 +40,11 @@
             Stencila make reproducible research more accessible with the intuitive word processor and spreadsheet interfaces that you and your colleagues are already used to.
           </p>
         </div>
-        <div class="">
+        <div class="image">
           <img src="/use/desktop.svg">
+        </div>
+        <div class="section has-text-centered">
+          {{ download("desktop", "0.28.0") }}
         </div>
     </div>
   </div>
