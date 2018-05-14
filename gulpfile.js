@@ -122,6 +122,13 @@ gulp.task('css', function () {
     .pipe(gulp.dest('./build/css'))
 })
 
+gulp.task('webfonts', function () {
+  gulp.src([
+    './src/webfonts/*.*'
+  ])
+    .pipe(gulp.dest('./build/webfonts'))
+})
+
 gulp.task('js', function () {
   gulp.src([
     './src/js/**',
@@ -178,7 +185,7 @@ gulp.task('blog/index', function () {
 })
 
 gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js', 'img', 'nunjucks', 'markdown', 'blog/index'])
+  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index'])
 })
 
 gulp.task('connect', function () {
@@ -191,6 +198,7 @@ gulp.task('connect', function () {
 gulp.task('watch', function () {
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
+  gulp.watch(['./src/webfonts/*'], ['webfonts'])
   gulp.watch(['./src/**/*.{gif,jpg,png,svg}'], ['img'])
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
