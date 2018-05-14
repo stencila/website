@@ -1,0 +1,134 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Contribute to Stencila
+{% endblock %}
+
+
+{% block styles %}
+{{ super() }}
+<style type="text/css">
+  #develop,
+  #shape
+  #section-6 {
+    background: #fafafa;
+  }
+  @media(max-width: 767px) {
+    #document .columns{
+      flex-direction: column-reverse;
+      display: flex;
+    }
+  }
+
+  #funders img,
+  #partners img {
+    display: block;
+    margin: 1em auto;
+    max-height: 70px;
+    max-width: 250px;
+  }
+</style>
+{% endblock %}
+
+{% block main %}
+<section id="section-1" class="hero">
+  <div class="hero-body">
+    <div class="container">
+        <div class="content has-text-centered">
+          <h1 class="title is-3">Contribute to Stencila</h1>
+          <p>
+            Stencila is an open-source, community-driven project. We encourage
+            and welcome contributions from all community members. There are a number of ways you
+            can contribute.
+          </p>
+        </div>
+        <div class="">
+          <img src="/use/desktop.svg">
+        </div>
+    </div>
+  </div>
+</section>
+
+<section id="develop" class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <h1 class="title is-2">Develop Stencila</h1>
+        <p>
+        </p>
+
+        
+        <p>
+
+          If you are a Javascript developer, you may be interested in helping out with:
+          * [Stencila user interfaces](https://github.com/stencila/stencila)
+          * [Stencila for Node.js](https://github.com/stencila/node)
+          * [Stencila Desktop](https://github.com/stencila/desktop)
+          * [Stencila CLI (Command Line Interface)](https://github.com/stencila/cli)
+
+          If you develop code for data manipulation (in Python, R, and other languages), you may be interested in:
+          * [Core library][libcore-contribute]
+          * [Domain-specific libraries][libraries-contribute]
+
+
+
+          If you are a Python developer, you may be interested in helping out with:
+          * [Stencila for Python](https://github.com/stencila/py)
+          * [Stencila Hub](https://github.com/stencila/hub)
+
+          If you are a R developer, you may be interested in helping out with:
+          * [Stencila for R](https://github.com/stencila/r)
+
+          If you are into cloud computing, Docker and Kubernetes, you may be interested in:
+          * [Stencila Cloud](https://github.com/stencila/cloud)
+
+          If you build Docker containers, contribute to:
+          * [Stencila Images](https://github.com/stencila/images)
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+<section id="document" class="section">
+  <div class="container">
+    <div class="columns">
+      <div class="column">
+        <img src="/img/community-contribute.png">
+      </div>
+      <div class="column">
+        <h1 class="title is-2">Document Stencila</h1>
+        <p>
+
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="shape" class="section">
+  <div class="container">
+    <div class="columns">
+
+      <div class="column">
+        <h1 class="title is-2">Shape Stencila</h1>
+        <p>
+
+        </p>
+      </div>
+
+      <div class="column">
+        <img src="/img/community-contribute.png">
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+{% endblock %}
+-
