@@ -1,31 +1,5 @@
 {% extends "_base.html" %}
-
-{% block styles %}
-{{ super() }}
-<style type="text/css">
-  #section-2,
-  #section-4,
-  #section-6 {
-    background: #fafafa;
-  }
-  @media(max-width: 767px) {
-    #section-2 .columns,
-    #section-4 .columns,
-    #section-6 .columns {
-      flex-direction: column-reverse;
-      display: flex;
-    }
-  }
-
-  #funders img,
-  #partners img {
-    display: block;
-    margin: 1em auto;
-    max-height: 70px;
-    max-width: 250px;
-  }
-</style>
-{% endblock %}
+{% from "_download.html" import download %}
 
 {% block main %}
 <section id="section-1" class="hero">
@@ -39,26 +13,123 @@
             Stencila make reproducible research more accessible with the intuitive word processor and spreadsheet interfaces that you and your colleagues are already used to.
           </p>
         </div>
-        <div class="">
+        <div class="image">
           <img src="/use/desktop.svg">
+        </div>
+        <div class="has-text-centered" style="margin-top: 2em">
+          {{ download("desktop", "0.28.0", "Stencila Desktop Beta") }}
         </div>
     </div>
   </div>
 </section>
 
+<section id="features" class="section">
+  <div class="container">
+    <h1 class="title is-3 is-gray has-text-centered">Features</h1>
+
+    <div id="feature-1">
+      <div class="columns">
+        <div class="column">
+          <div class="image"> 
+            <img src="/img/article-schematic.svg"> 
+          </div>
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">A word processor designed for research content</h1>
+          <p>
+           Create interactive, fully reproducible documents using a familiar visual authoring interface. Use code cells to produce figures based on data - no more copying and pasting static images and tables! Cite figures and references, without having to worry about citation formatting.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-2">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Spreadsheets leveraging the power of open source languages</h1>
+          <p>
+           Leverage the power of data manipulation using languages like R, Python, and SQL from within Stencila Sheets. Use formulas to do calculations, create figures next to the data and reference them in the manuscript.  In an article you can reference data from a spreadsheet and vice versa. If you update the data in one place, all affected documents will update as well. 
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/sheet-schematic.png">
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-3">
+      <div class="columns">
+        <div class="column">
+          <div class="image"> 
+            <img src="/img/bolt.svg" style="height: 10em;"> 
+          </div>
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">Reactive code evaluation in different languages</h1>
+          <p>
+            In Stencila code evaluates live as you type. Because the execution engine analyses the dependencies between cells, it can perform a minimal update, making computation fast and responsive. This mechanism works with all available languages (e.g. R, Python, Javascript, SQL). You can even mix languages within a document.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-4">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Interoperability with existing tools and workflows</h1>
+          <p>
+            Stencila is developed not to replace existing tools, but to complement them. We are working with the communities of existing open source tools to improve interoperability. Stencila also aims to support file formats commonly used by researchers for reproducibility such as Jupyter Notebooks, RMarkdown and more. 
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/interop.png">
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-5">
+      <div class="columns">
+        <div class="column">
+          <img src="/img/file-formats.png">
+        </div>
+        <div class="column is-8">
+          <h1 class="title is-4">Reproducibility from authoring through to publishing</h1>
+          <p>
+            Stencila projects are self-contained archives of documents and assets. We are working with authors and publishers on formats which extend existing publishing standards - allowing your publications to embed code and making the publication process faster.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div id="feature-6">
+      <div class="columns">
+        <div class="column is-8">
+          <h1 class="title is-4">Community-driven development</h1>
+          <p>
+            Stencila development is driven by its users. We consider every user as an integral part of the project. Using their experience and knowledge we can build a truly open set of tools meeting the needs of researchers.
+          </p>
+        </div>
+        <div class="column">
+          <img src="/img/nokome-presents-sheets.jpg">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <section id="funders" class="section">
   <div class="container">
-    <h1 class="title is-4 is-gray has-text-centered">Funders</h1>
+    <h1 class="title is-3 is-gray has-text-centered">Funders</h1>
     <figure class="is-flex is-horizontal-center">
       <img src="/img/sloan.png">
     </figure>
   </div>
 </section>
 
-
 <section id="partners" class="section">
   <div class="container">
-    <h1 class="title is-4 is-gray has-text-centered">Partners</h1>
+    <h1 class="title is-3 is-gray has-text-centered">Partners</h1>
     <div class="columns is-multiline is-centered">
       <div class="column is-narrow">
         <a href="https://codeforscience.org">
@@ -85,8 +156,43 @@
           <img src="/img/substance.svg">
         </a>
       </div>
+      <div class="column is-narrow">
+        <a href="https://opensciencemooc.eu/">
+          <img src="/img/open-science-mooc-logo.png">
+        </a>
+      </div>
     </div>
   </div>
 </section>
 
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <style type="text/css">
+    #features > .container {
+      max-width: 50em;
+    }
+
+    #features > .container > div {
+      margin: 6em 0;
+    }
+
+    @media(max-width: 767px) {
+      #feature-1 .columns,
+      #feature-3 .columns,
+      #feature-5 .columns {
+        flex-direction: column-reverse;
+        display: flex;
+      }
+    }
+
+    #funders img,
+    #partners img {
+      display: block;
+      margin: 1em auto;
+      max-height: 70px;
+      max-width: 250px;
+    }
+  </style>
 {% endblock %}

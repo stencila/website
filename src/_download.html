@@ -1,0 +1,39 @@
+{% macro download(what, version, label = 'Download') %}
+  <div>
+    <a id="download-{{what}}-button" class="button is-primary" href="https://github.com/stencila/{{what}}/releases">
+      <span class="icon">
+        <i class="fas fa-download"></i>
+      </span>
+      <div id="download-{{what}}-details">{{ label }}</div>
+    </a>
+    <div style="padding: 1rem; font-size: 0.75rem">
+      <a id="download-{{what}}-other" style="display:none" href="https://github.com/stencila/{{what}}/releases">
+        {{ label }} for other platforms
+      </a> 
+    </div>
+  </div>
+  <script type="text/javascript">
+    var details;
+    var href;
+    if (navigator.appVersion.indexOf('Win') != -1) {
+      details = '{{ label }}' + ' for Windows';
+      href = 'https://github.com/stencila/{{what}}/releases/download/v{{version}}/Stencila.Setup.{{version}}.exe';
+    }
+    else if (navigator.appVersion.indexOf('Mac') != -1) {
+      details = '{{ label }}' + ' for MacOS';
+      href = 'https://github.com/stencila/{{what}}/releases/download/v{{version}}/Stencila-{{version}}.dmg';
+    }
+    else if (navigator.appVersion.indexOf('Linux') != -1) {
+      details = '{{ label }}' + ' for Linux';
+      href = 'https://github.com/stencila/{{what}}/releases/download/v{{version}}/stencila-{{what}}-{{version}}-x86_64.AppImage';
+    }
+    if (details) {
+      var button = document.querySelector('#download-{{what}}-button')
+      button.href = href
+      var detailsSpan = document.querySelector('#download-{{what}}-details')
+      detailsSpan.innerText = details
+      var other = document.querySelector('#download-{{what}}-other')
+      other.setAttribute('style', '')
+    }
+  </script>
+{% endmacro %}
