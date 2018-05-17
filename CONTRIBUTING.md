@@ -25,7 +25,7 @@ We invite guest blog posts from all community members. You can add a blog post
 either via [emailing us](mailto:hello@stenci.la) the text of your blog or
 by sending us a pull request. Here is how to do the latter:
 
-1. Fork the [Stencila website repository](stencila-website-repo).
+1. Fork the [Stencila website repository](https://github.com/stencila/website).
 2. Create a new branch where you will write your blog post.
 3. In the [`blog`](blog) create a new **folder** for your post with a meaningful name e.g. `stencila-for-economics` or `stencila-for-phd` (it will be easier to find your blog post through search engines).
 4. In the folder, create a new Markdown file called `index.md`.
