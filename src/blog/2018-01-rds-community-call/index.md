@@ -1,6 +1,6 @@
 ---
 extends: blog/_post.html
-title: "Reproducible Document Stack /: development update community call"
+title: "Reproducible Document Stack: development update community call"
 author: Nokome Bentley
 date: 25 January 2018
 abstract: |
