@@ -14,19 +14,32 @@ const markdownItEmoji = require('markdown-it-emoji')
 const markdownItTOC = require("markdown-it-table-of-contents")
 const path = require('path')
 const replaceExt = require('replace-ext')
+const shins = require('shins')
 const through = require('through2')
+const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
+const widdershins = require('widdershins')
 
 const root = path.join(__dirname, 'src')
 
+/**
+ * Parses a markdown file into a Javascript object with the properties
+ * contained in the YAML frontmatter. This is used to get information
+ * on files (e.g. blog posts) without converting them (e.g for getting title and date)
+ */
 function markdown2object (file, includeContent = true) { 
   const md = file.contents.toString()
   
+  // Normalise and augment the page's properties...
+
   const front = yamlFront.loadFront(md)
+
   front.date = front.date ? new Date(front.date) : Date.now()
   front.folder = path.join('/', path.relative(root, path.dirname(file.path)))
   front.href = front.folder
+
+  // The page's "main image"
   if (front.image) {
     front.image = path.join(front.folder, front.image)
   } else {
@@ -35,6 +48,8 @@ function markdown2object (file, includeContent = true) {
       front.image = path.join('/', path.relative(root, images[0]) )
     }
   }
+
+  // The page's "suggested" items
   if (front.suggested) {
     let suggesteds = []
     for (let suggested of front.suggested) {
@@ -57,6 +72,9 @@ function markdown2object (file, includeContent = true) {
   else return { front }
 }
 
+/**
+ * Convert markdown into HTML
+ */
 function markdown2nunjucks () {
   const mdIt = markdownIt({ html: true })
   mdIt.use(markdownItAnchor)
@@ -75,8 +93,12 @@ function markdown2nunjucks () {
   })
 }
 
+/**
+ * Render a Nunjucks HTML template into HTML
+ */
 function nunjucks2html () {
   const env = new nunjucks.Environment(
+    // Tell Nunjucks where to get partials e.g. `_base.html`
     new nunjucks.FileSystemLoader('src')
   )
   env.addFilter('date', nunjucksDateFilter)
@@ -86,6 +108,7 @@ function nunjucks2html () {
     if (!context.source) context.source = path.relative(__dirname, file.path)
     const html = env.renderString(content, context) || ''
 
+    // Custom transformations of HTML
     const dom = cheerio.load(html)
     dom('blockquote').each((index, elem) => {
       elem = cheerio(elem)
@@ -108,6 +131,52 @@ function nunjucks2html () {
     callback()
   })
 }
+
+/**
+ * Convert an OpenAPI 3.0 YAML specification into static Shin HTML
+ * documentation
+ */
+function openapi2shin () {
+  return through.obj(function(file, encoding, callback) {
+    const content = file.contents.toString()
+    const api = yaml.safeLoad(content, {json: true})
+
+    const options = {
+      codeSamples: true,
+      httpsnippet: false,
+      //language_tabs: [],
+      //language_clients: [],
+      //loadedFrom: sourceUrl,
+      //user_templates: './user_templates',
+      templateCallback: function(templateName,stage,data) { return data },
+      theme: 'darkula',
+      search: true,
+      sample: true,
+      discovery: false,
+      includes: [],
+      shallowSchemas: false,
+      summary: false,
+      headings: 2,
+      yaml: false,
+    }
+    widdershins.convert(api, options, function(err, md){
+      const options = {
+        customCss: false,
+        minify: true,
+        inline: true,
+        unsafe: false, // setting to true turns off markdown sanitisatio
+        //source: filename, // used to resolve relative paths for included file
+      }
+      shins.render(md, options, function(err, html) {
+        file.contents = Buffer.from(html)
+        file.path = replaceExt(file.path, '.html')
+        callback(null, file)
+      })
+    })
+  })
+}
+
+// Gulp tasks
 
 gulp.task('clean', function () {
   return del('./build')
@@ -184,8 +253,20 @@ gulp.task('blog/index', function () {
     .pipe(connect.reload())
 })
 
+gulp.task('specs/openapis', function () {
+  gulp.src(['./src/specs/**/*-openapi.yaml'])
+    .pipe(plumber())
+    .pipe(openapi2shin())
+    .pipe(gulp.dest('./build/specs'))
+    .pipe(connect.reload())
+})
+
 gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index'])
+  gulp.start([
+    'css', 'js', 'webfonts', 'img', 
+    'nunjucks', 'markdown', 
+    'blog/index', 'specs/openapis'
+  ])
 })
 
 gulp.task('connect', function () {
@@ -203,6 +284,7 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
+  gulp.watch(['./src/specs/**/*-openapi.yaml'], ['specs/openapis'])
 })
 
 gulp.task('default', ['build', 'connect', 'watch'])

@@ -28,6 +28,7 @@
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
     "gulp-plumber": "^1.2.0",
+    "js-yaml": "^3.11.0",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^1.2.1",
@@ -36,8 +37,10 @@
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
+    "shins": "^2.2.1-5",
     "through2": "^2.0.3",
     "vinyl-accumulate": "^1.4.1",
+    "widdershins": "^3.4.0",
     "yaml-front-matter": "^4.0.0"
   }
 }
