@@ -14,12 +14,10 @@ const markdownItEmoji = require('markdown-it-emoji')
 const markdownItTOC = require("markdown-it-table-of-contents")
 const path = require('path')
 const replaceExt = require('replace-ext')
-const shins = require('shins')
 const through = require('through2')
 const yaml = require('js-yaml')
 const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
-const widdershins = require('widdershins')
 
 const root = path.join(__dirname, 'src')
 
@@ -200,7 +198,8 @@ gulp.task('js', function () {
     './src/js/**',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js'
+    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
+    './node_modules/redoc/bundles/redoc.standalone.js'
   ])
     .pipe(gulp.dest('./build/js'))
 })
