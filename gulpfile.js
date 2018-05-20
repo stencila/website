@@ -140,7 +140,7 @@ function openapi2redoc () {
   const langs = ['Curl', 'Javascript', 'Python', 'R']
   const templates = {}
   for (let lang of langs) {
-    templates[lang] = fs.readFileSync(`./src/specs/code-samples/${lang.toLowerCase()}.txt`, 'utf8')
+    templates[lang] = fs.readFileSync(`./src/specs/request-code-samples/${lang.toLowerCase()}.txt`, 'utf8')
   }
 
   return through.obj(function(file, encoding, callback) {
