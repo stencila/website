@@ -142,14 +142,20 @@ function openapi2shin () {
     const api = yaml.safeLoad(content, {json: true})
 
     const options = {
+      // Generate code samples...
       codeSamples: true,
-      httpsnippet: false,
-      //language_tabs: [],
-      //language_clients: [],
-      //loadedFrom: sourceUrl,
-      //user_templates: './user_templates',
-      templateCallback: function(templateName,stage,data) { return data },
+      // ... lang tabs and their order
+      language_tabs: [
+        { 'shell': 'Curl' },
+        { 'javascript': 'JS' },
+        { 'python': 'Py' },
+        { 'r': 'R' }
+      ],
+      // ... using our templates
+      user_templates: './src/specs/templates',
+      // ... with syntax-highlighter theme
       theme: 'darkula',
+
       search: true,
       sample: true,
       discovery: false,
@@ -158,6 +164,8 @@ function openapi2shin () {
       summary: false,
       headings: 2,
       yaml: false,
+
+      verbose: true
     }
     widdershins.convert(api, options, function(err, md){
       const options = {
