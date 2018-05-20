@@ -133,54 +133,43 @@ function nunjucks2html () {
 }
 
 /**
- * Convert an OpenAPI 3.0 YAML specification into static Shin HTML
- * documentation
+ * Augment an OpenAPI 3.0 YAML specification with non-standard
+ * vendor exntensions (e.g. `x-code-samples` enabled by redoc)
  */
-function openapi2shin () {
+function openapi2redoc () {
+  // List of languages and thh templates to use to generate code samples 
+  // for each of them
+  const langs = ['Curl', 'Javascript', 'Python', 'R']
+  const templates = {}
+  for (let lang of langs) {
+    templates[lang] = fs.readFileSync(`./src/specs/code-samples/${lang.toLowerCase()}.txt`, 'utf8')
+  }
+
   return through.obj(function(file, encoding, callback) {
     const content = file.contents.toString()
     const api = yaml.safeLoad(content, {json: true})
+    const baseUrl = api.servers[0].url
 
-    const options = {
-      // Generate code samples...
-      codeSamples: true,
-      // ... lang tabs and their order
-      language_tabs: [
-        { 'shell': 'Curl' },
-        { 'javascript': 'JS' },
-        { 'python': 'Py' },
-        { 'r': 'R' }
-      ],
-      // ... using our templates
-      user_templates: './src/specs/templates',
-      // ... with syntax-highlighter theme
-      theme: 'darkula',
-
-      search: true,
-      sample: true,
-      discovery: false,
-      includes: [],
-      shallowSchemas: false,
-      summary: false,
-      headings: 2,
-      yaml: false,
-
-      verbose: true
-    }
-    widdershins.convert(api, options, function(err, md){
-      const options = {
-        customCss: false,
-        minify: true,
-        inline: true,
-        unsafe: false, // setting to true turns off markdown sanitisatio
-        //source: filename, // used to resolve relative paths for included file
+    // Add code samples
+    for (let [id, path] of Object.entries(api.paths)) {
+      for (let [method, op] of Object.entries(path)) {
+        const context = Object.assign({
+          url: baseUrl + id,
+          method
+        }, op)
+        let samples = []
+        for (let lang of langs) {
+          const source = nunjucks.renderString(templates[lang], context)
+          samples.push({lang, source})
+        }
+        op['x-code-samples'] = samples
       }
-      shins.render(md, options, function(err, html) {
-        file.contents = Buffer.from(html)
-        file.path = replaceExt(file.path, '.html')
-        callback(null, file)
-      })
-    })
+    }
+
+    const yml = yaml.dump(api)
+    file.contents = Buffer.from(yml)
+    file.path = replaceExt(file.path, '.redoc-yaml')
+    callback(null, file)
   })
 }
 
@@ -261,10 +250,17 @@ gulp.task('blog/index', function () {
     .pipe(connect.reload())
 })
 
-gulp.task('specs/openapis', function () {
-  gulp.src(['./src/specs/**/*-openapi.yaml'])
+gulp.task('specs/openapi', function () {
+  gulp.src(['./src/specs/host.yaml'])
     .pipe(plumber())
-    .pipe(openapi2shin())
+    .pipe(openapi2redoc())
+    .pipe(gulp.dest('./build/specs'))
+    .pipe(connect.reload())
+})
+
+gulp.task('specs/yaml', function () {
+  gulp.src(['./src/specs/*.yaml'])
+    .pipe(plumber())
     .pipe(gulp.dest('./build/specs'))
     .pipe(connect.reload())
 })
@@ -273,7 +269,8 @@ gulp.task('build', ['clean'], function () {
   gulp.start([
     'css', 'js', 'webfonts', 'img', 
     'nunjucks', 'markdown', 
-    'blog/index', 'specs/openapis'
+    'blog/index',
+    'specs/openapi', 'specs/yaml'
   ])
 })
 
@@ -292,7 +289,8 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
-  gulp.watch(['./src/specs/**/*-openapi.yaml'], ['specs/openapis'])
+  gulp.watch(['./src/specs/host.yaml'], ['specs/openapi'])
+  gulp.watch(['./src/specs/*.yaml'], ['specs/yaml'])
 })
 
 gulp.task('default', ['build', 'connect', 'watch'])

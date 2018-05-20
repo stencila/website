@@ -20,7 +20,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "docsearch.js": "^2.5.2",
-    "prismjs": "^1.13.0"
+    "prismjs": "^1.13.0",
+    "redoc": "^2.0.0-alpha.20"
   },
   "devDependencies": {
     "del": "^3.0.0",
@@ -37,10 +38,8 @@
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
-    "shins": "^2.2.1-5",
     "through2": "^2.0.3",
     "vinyl-accumulate": "^1.4.1",
-    "widdershins": "^3.4.0",
     "yaml-front-matter": "^4.0.0"
   }
 }
