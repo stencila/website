@@ -1,19 +1,21 @@
 ---
 extends: blog/_post.html
-title: Stencila presented at Open Neuroscience, Sainsbury Wellcome Centre
+title: Stencila at Open Neuroscience
 author: Aleksandra Pawlik
 date: 27 May 2018
 abstract: |
-    On 25 May, 2018, Nokome Bentley presented Stencila at the Open Neuroscience meeting
-    hosted at Sainsbury Wellcome Centre in London. 
+    Nokome Bentley joined the Open Neuroscience meeting
+    hosted at Sainsbury Wellcome Centre in London to discuss
+    open science workflows.
 forum_topic:
 image: sc-io.png
 ---
 
-We were invited to give a short presentation about Stencila at the [Open Neuroscience meeting](https://kampff-lab.github.io/sc.io/)
-hosted at [Sainsbury Wellcome Centre at the University College London, UK](http://www.ucl.ac.uk/swc).
-As one of the organisers, Gonçalo Lopes of [the Kampff Lab](http://www.kampff-lab.org/) described it:
+We were invited to give a short presentation about Stencila and open science workflows at the [Open Neuroscience meeting](https://kampff-lab.github.io/sc.io/) hosted at [Sainsbury Wellcome Centre at the University College London, UK](http://www.ucl.ac.uk/swc).
 
+![Open Science](sc-io.png){style="width: 80%;" }
+
+One of the organisers, Gonçalo Lopes of [the Kampff Lab](http://www.kampff-lab.org/) described the aims of the event:
 
 > For this event we are bringing together several individual researchers and
 > groups from the London area that want to collaborate and share their science
@@ -33,5 +35,3 @@ Nokome Bentley joined the meeting remotely and discussed the principles behind S
 * alternative, but unified, computing interfaces for alternative types of users;
 * making reproducible research more accessible.
 
-
-![Open Science](sc-io.png){style="width: 80%;" }
