@@ -20,7 +20,8 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "docsearch.js": "^2.5.2",
-    "prismjs": "^1.13.0"
+    "prismjs": "^1.13.0",
+    "redoc": "^2.0.0-alpha.20"
   },
   "devDependencies": {
     "del": "^3.0.0",
@@ -28,6 +29,7 @@
     "gulp": "^3.9.1",
     "gulp-connect": "^5.5.0",
     "gulp-plumber": "^1.2.0",
+    "js-yaml": "^3.11.0",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^1.2.1",

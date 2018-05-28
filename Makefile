@@ -9,3 +9,6 @@ run:
 build:
 	npm run build
 .PHONY: build
+
+clean:
+	rm -rf build
