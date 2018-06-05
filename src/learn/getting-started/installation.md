@@ -60,7 +60,7 @@ $ ./stencila-desktop-*.AppImage
 
 The [Stencila Python package](https://github.com/stencila/py) provides a `PythonContext` for executing Python code and functions from within Stencila documents.
 
-The package is not available via PyPI (Python Package Index) yet, so you need to install it from our Github repository. 
+The package is not available via PyPI (Python Package Index) yet, so you need to install it from our Github repository.
 
 >i You may need to install `pip` first. On Windows, [these instructions](https://dev.to/el_joft/installing-pip-on-windows) may be useful.
 
@@ -69,11 +69,32 @@ Open a terminal session (on Windows, go to "Start" and then in "Search for progr
 ```bash
 pip install --user https://github.com/stencila/py/archive/master.zip
 ```
+**Note** If you have [Anaconda](https://www.anaconda.com/) installed on your system, you should install the package using the following command:
+
+```bash
+pip install https://github.com/stencila/py/archive/master.zip
+```
+
+This will install `stencila` in your Anaconda directory (where it should be), rather than in your local user Python libraries directory.
+If you don't do that (i.e. get the `stencila` package installed in your local user Python libraries), when you try to register `stencila`
+package (see below), you will get an error as your Anaconda Python will search for `stencila` and its dependencies in the Anaconda directory.   
+
 
 Then register the package's manifest so that it can be found by the Stencila Desktop and other Stencila packages,
 
 ```bash
 python -m stencila register
+```
+
+**Note** If the default Python on your machine is Python 2.7 whilst you have Python 3.6 installed and you would like to use it with Stencila, then you need
+to install `stencila` using `pip3` and then register it explicitly using `python3`:
+
+```bash
+pip3 install --user https://github.com/stencila/py/archive/master.zip
+```
+
+```bash
+python3 -m stencila register
 ```
 
 
