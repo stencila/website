@@ -1,0 +1,94 @@
+{% extends "_base.html" %}
+
+{% block main %}
+  <main class="section">
+    <div class="container">
+      <article class="content">
+        <h2 class="title is-2">{{ front.title }}</h2>
+        <h3 class="is-3">{{ front.date  | date('D MMMM YYYY') }}</h3>
+
+
+        {% if front.eventbrite %}
+        <iframe
+          src="https://www.eventbrite.com/tickets-external?eid={{page.eventbrite}}&ref=etckt"
+          frameborder="0"
+          width="100%"
+          height="248px"
+          scrolling="auto">
+        </iframe>
+        {% endif %}
+
+        <h2 id="content">General Information</h2>
+        <p>
+        </p>
+
+        {% if front.address %}
+        <p id="content">
+          <strong>Event location</strong>
+          {{page.address}}.
+        </p>
+        {% endif %}
+
+        {% if front.humandate %}
+        <p id="content">
+          <strong>When:</strong>
+          {{front.humandate}}.
+        </p>
+        {% endif %}
+
+        <h2 id="content">Schedule</h2>
+
+        <h2 id="content">Materials</h2>
+
+
+        <p id="content">
+          <strong>Requirements:
+          All participants are required to abide by our
+          <a href="../code-of-conduct.html">Code of Conduct</a>.
+        </p>
+
+
+
+      </article>
+
+    </div>
+  </main>
+{% endblock %}
+
+{% block styles %}
+  {{ super() }}
+  <style type="text/css">
+    article {
+      margin-bottom: 5em;
+      padding-bottom: 2em;
+      border-bottom: 1px solid #EEE;
+    }
+    article.content img {
+      display: block;
+      width: 90%;
+      margin: 0 auto;
+    }
+    #suggested {
+      color: #777;
+    }
+    #discourse-comments {
+      margin-top: 4em;
+    }
+  </style>
+  <link rel="stylesheet" href="/css/prism.css"/>
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+
+  <script type="text/javascript" src="/js/prism.js"></script>
+  <script type="text/javascript" src="/js/prism-bash.min.js"></script>
+  <script type="text/javascript" src="/js/prism-json.min.js"></script>
+  <script type="text/javascript" src="/js/prism-markdown.min.js"></script>
+  <script type="text/javascript" src="/js/prism-mini.js"></script>
+  <script type="text/javascript" src="/js/prism-python.min.js"></script>
+  <script type="text/javascript" src="/js/prism-r.min.js"></script>
+  <script type="text/javascript" src="/js/prism-sql.min.js"></script>
+
+
+{% endblock %}
