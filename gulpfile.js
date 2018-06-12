@@ -20,9 +20,9 @@ const accumulate = require('vinyl-accumulate')
 
 const root = path.join(__dirname, 'src')
 
-function markdown2object (file, includeContent = true) { 
+function markdown2object (file, includeContent = true) {
   const md = file.contents.toString()
-  
+
   const front = yamlFront.loadFront(md)
   front.date = front.date ? new Date(front.date) : Date.now()
   front.folder = path.join('/', path.relative(root, path.dirname(file.path)))
@@ -52,7 +52,7 @@ function markdown2object (file, includeContent = true) {
 
   let content = front.__content
   delete front.__content
-  
+
   if (includeContent) return { front, content}
   else return { front }
 }
@@ -184,8 +184,34 @@ gulp.task('blog/index', function () {
     .pipe(connect.reload())
 })
 
+
+gulp.task('community/events', function () {
+  gulp.src(['./src/community/events/**.md'])
+    .pipe(plumber())
+    .pipe(accumulate('./community/events.html'))
+    .pipe(through.obj(function(all, encoding, callback) {
+      let events = []
+      for (let file of all.files) {
+        let event_ = markdown2object(file).front
+        events.push(event_)
+      }
+      events.sort((a, b) => (a.date > b.date) ? -1 : 1)
+      all.context = {events}
+      all.contents = fs.readFileSync('./src/community/events.html')
+      all.source = 'src/community/events.html'
+      callback(null, all)
+    }))
+    .pipe(nunjucks2html())
+    .pipe(gulp.dest('./build'))
+    .pipe(connect.reload())
+})
+
+
+
+
+
 gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index'])
+  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
 
 gulp.task('connect', function () {
