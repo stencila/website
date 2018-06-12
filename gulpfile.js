@@ -27,6 +27,7 @@ function markdown2object (file, includeContent = true) {
   front.date = front.date ? new Date(front.date) : Date.now()
   front.folder = path.join('/', path.relative(root, path.dirname(file.path)))
   front.href = front.folder
+  front.html_url = path.join('/', path.relative(root, replaceExt(file.path, '.html')))
   if (front.image) {
     front.image = path.join(front.folder, front.image)
   } else {
@@ -147,7 +148,7 @@ gulp.task('img', function () {
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html'])
+  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -192,8 +193,8 @@ gulp.task('community/events', function () {
     .pipe(through.obj(function(all, encoding, callback) {
       let events = []
       for (let file of all.files) {
-        let event_ = markdown2object(file).front
-        events.push(event_)
+        let eve = markdown2object(file).front
+        events.push(eve)
       }
       events.sort((a, b) => (a.date > b.date) ? -1 : 1)
       all.context = {events}
@@ -229,6 +230,7 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
+  gulp.watch(['./src/community/events.html', './src/community/events/**.md'], ['community/events'])
 })
 
 gulp.task('default', ['build', 'connect', 'watch'])
