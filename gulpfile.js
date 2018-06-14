@@ -196,7 +196,7 @@ gulp.task('community/events', function () {
         let eve = markdown2object(file).front
         events.push(eve)
       }
-      events.sort((a, b) => (a.date > b.date) ? -1 : 1)
+      events.sort((a, b) => (a.date < b.date) ? -1 : 1)
       all.context = {events}
       all.contents = fs.readFileSync('./src/community/events.html')
       all.source = 'src/community/events.html'

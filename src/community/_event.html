@@ -17,34 +17,50 @@
         </iframe>
         {% endif %}
 
-        <h3 id="content">Event Information</h3>
-        <p>
-        </p>
-
         {% if front.address %}
         <p id="content">
           <strong>Event location</strong>
-          {{front.address}}.
+          {{front.address}}
         </p>
         {% endif %}
 
         {% if front.humandate %}
         <p id="content">
           <strong>When:</strong>
-          {{front.humandate}}.
+          {{front.humandate}}, {{front.humantime}}
         </p>
         {% endif %}
 
-        <h3 id="content">Schedule</h3>
+        <h3 id="content">Event Information</h3>
+
+          {{content | safe }}
+
+          <p id="content">
+            All participants are required to abide by our
+              <strong><a href="../code-of-conduct.html">Code of Conduct</a></strong>.
+          </p>
 
         <h3 id="content">Materials</h3>
-
-
         <p id="content">
-          <strong>Requirements:
-          All participants are required to abide by our
-          <a href="../code-of-conduct.html">Code of Conduct</a>.
+          We will be using a combination of materials from  <a href="http://www.datacarpentry.org/lessons/">Data Carpentry</a> and
+          <a href="https://software-carpentry.org/lessons/">Software Carpentry</a>.
         </p>
+
+        <h3 id="content">Setup</h3>
+        <p id="content">
+         This is a fully hands-on workshop. All participants will be working alongside the instructor creating reproducible
+         research documents and writing interactive source code. You will need to bring your own laptop to the workshop
+         (<strong>unless</strong> it has been arranged otherwise with the workshop hosts and the workshop will be run in a local computer lab).
+         <br/><br/>
+         If you are bringing laptop to the workshop, it should be running Mac OS X, Linux or Windows; have internet access and
+         installed an up-to-date browser such as Firefox, Chrome or Internet Explorer.
+        <br/><br/>
+         We will be working on Stencila Cloud instance. However, if you would like to try out Stencila locally, you can install
+         <a href="http://stenci.la/use/">Stencila Desktop</a> on your machine.
+        </p>
+
+
+
 
 
 

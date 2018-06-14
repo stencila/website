@@ -1,11 +1,11 @@
 ---
 extends: community/_event.html
 title: Introduction to data analysis in R using Stencila
-date: 2018-07-24
-location: University of Canterbury    
-address: "Wheki 205 Room, Main Library, University of Canterbury Campus, Christchurch"      
-humandate: "July 24, 2018"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "10.00am - 4.00pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+date: 2018-07-12
+location: University of Auckland   
+address: "The Bioluminescent Superbugs Lab at the University of Auckland"      
+humandate: "July 12-13, 2018"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
+humantime: "Thurs 1.30pm-4.30pm, Fri: 9.30am-12.30pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 collaborative_notes:             # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 eventbrite:           # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
 ---
@@ -20,9 +20,12 @@ Stencila is an open source project funded by a [grant from the Sloan Foundation]
 
 ## Schedule
 
-* 10.00am - 11.00am Introduction to Stencila and Stencila Sheets
-* 11.00am - 12.30pm Using R for data filtering
-* 12.30pm - 13.30pm Break
-* 13.30pm - 15.00pm Data visualisation in R
-* 15.00pm - 15.20pm Break
-* 15.20pm - 16.00pm Q&A
+**Thursday**
+* 1.30pm - 2.30pm Introduction to Stencila and Stencila Sheets
+* 2.30pm - 3.00pm Break
+* 3.30pm - 4.30pm Using R for data filtering
+
+**Friday**
+* 09.30am - 11.15am Data visualisation in R
+* 11.15am - 11.30am Break
+* 11.30am - 12.30pm Wrap up and Q&A

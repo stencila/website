@@ -20,7 +20,7 @@ Events : Stencila
 
                       {% for eve in events %}
                         <li>
-                            <a href="{{ eve.html_url }}">{{ eve.title }}</a>
+                            <a href="{{ eve.html_url }}">{{ eve.title }}</a> {{ eve. location }}; {{ eve.humandate }}
                         </li>
                       {% endfor %}
                     </ul>
