@@ -20,13 +20,14 @@ const accumulate = require('vinyl-accumulate')
 
 const root = path.join(__dirname, 'src')
 
-function markdown2object (file, includeContent = true) { 
+function markdown2object (file, includeContent = true) {
   const md = file.contents.toString()
-  
+
   const front = yamlFront.loadFront(md)
   front.date = front.date ? new Date(front.date) : Date.now()
   front.folder = path.join('/', path.relative(root, path.dirname(file.path)))
   front.href = front.folder
+  front.html_url = path.join('/', path.relative(root, replaceExt(file.path, '.html')))
   if (front.image) {
     front.image = path.join(front.folder, front.image)
   } else {
@@ -52,7 +53,7 @@ function markdown2object (file, includeContent = true) {
 
   let content = front.__content
   delete front.__content
-  
+
   if (includeContent) return { front, content}
   else return { front }
 }
@@ -147,7 +148,7 @@ gulp.task('img', function () {
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html'])
+  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -184,8 +185,34 @@ gulp.task('blog/index', function () {
     .pipe(connect.reload())
 })
 
+
+gulp.task('community/events', function () {
+  gulp.src(['./src/community/events/**.md'])
+    .pipe(plumber())
+    .pipe(accumulate('./community/events.html'))
+    .pipe(through.obj(function(all, encoding, callback) {
+      let events = []
+      for (let file of all.files) {
+        let eve = markdown2object(file).front
+        events.push(eve)
+      }
+      events.sort((a, b) => (a.date < b.date) ? -1 : 1)
+      all.context = {events}
+      all.contents = fs.readFileSync('./src/community/events.html')
+      all.source = 'src/community/events.html'
+      callback(null, all)
+    }))
+    .pipe(nunjucks2html())
+    .pipe(gulp.dest('./build'))
+    .pipe(connect.reload())
+})
+
+
+
+
+
 gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index'])
+  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
 
 gulp.task('connect', function () {
@@ -203,6 +230,7 @@ gulp.task('watch', function () {
   gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
   gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
   gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
+  gulp.watch(['./src/community/events.html', './src/community/events/**.md'], ['community/events'])
 })
 
 gulp.task('default', ['build', 'connect', 'watch'])
