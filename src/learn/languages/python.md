@@ -1,14 +1,60 @@
 ---
 extends: learn/_page.html
+title: Use Python with Stencila
 ---
 
-# Python
+Stencila allows you use interactive Python code  within Stencila articles, notebooks and sheets.
+In order to be able to use Python within Stencila documents you need to
+[enable the execution context](#installation).
 
-Stencila allows you use interactive Python code across the whole Stencila suite (articles, notebooks and sheets).
-In order to be able to use Python within Stencila documents you need to have the
-[Python execution context](getting-started/installation.md#execution-contexts) enabled. You can write Python code
+You can write Python code
 just like you would in any other editor or reproducible notebook. You can install Python packages and import them,
 create and embed plots, and so on.
+
+
+## Installation
+
+>! We are currently working on making the Stencila Python package compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
+
+The [Stencila Python package](https://github.com/stencila/py) provides a `PythonContext` for executing Python code and functions from within Stencila documents.
+
+The package is not available via PyPI (Python Package Index) yet, so you need to install it from our Github repository.
+
+>i You may need to install `pip` first. On Windows, [these instructions](https://dev.to/el_joft/installing-pip-on-windows) may be useful.
+
+Open a terminal session (on Windows, go to "Start" and then in "Search for programmes and files" type `cmd`) and type in:
+
+```bash
+pip install --user https://github.com/stencila/py/archive/master.zip
+```
+**Note** If you have [Anaconda](https://www.anaconda.com/) installed on your system, you should install the package using the following command:
+
+```bash
+pip install https://github.com/stencila/py/archive/master.zip
+```
+
+This will install `stencila` in your Anaconda directory (where it should be), rather than in your local user Python libraries directory.
+If you don't do that (i.e. get the `stencila` package installed in your local user Python libraries), when you try to register `stencila`
+package (see below), you will get an error as your Anaconda Python will search for `stencila` and its dependencies in the Anaconda directory.   
+
+
+Then register the package's manifest so that it can be found by the Stencila Desktop and other Stencila packages,
+
+```bash
+python -m stencila register
+```
+
+**Note** If the default Python on your machine is Python 2.7 whilst you have Python 3.6 installed and you would like to use it with Stencila, then you need
+to install `stencila` using `pip3` and then register it explicitly using `python3`:
+
+```bash
+pip3 install --user https://github.com/stencila/py/archive/master.zip
+```
+
+```bash
+python3 -m stencila register
+```
+
 
 ## Data interchange
 Stencila provides you with ability to use multiple programming languages to write interactive code within

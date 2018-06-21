@@ -1,18 +1,27 @@
 ---
 extends: learn/_page.html
+title: Mini programming language
+next_ignore:
+    label: JavaScript
+    url: /learn/languages/javascript.html
 ---
 
-# Mini
+> This section contains detailed documentation for Stencila built-in language Mini.
 
-> This section contains detailed documentation for Stencila built-in
-> language Mini.
+Stencila comes with its own simple expression language called Mini. We developed it so that When you install Stencila you can immediately
+try it out without having to install and configure additional packages and programming languages.
 
-Stencila comes with its own simple expression language called Mini. Mini is meant to be only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet. It is intended to be easy to write code in and easy to understand.
+Mini is implemented in JavaScript and is only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet.
+It is intended to be easy to write code in and easy to understand.
 
-When you install Stencila you can already write bits of code using Mini.
-Mini is implemented in JavaScript - so it can run straight away in a browser without
-users having to install any additional packages or software. Of course, when you enable other [execution contexts](getting-started/installation.md#execution-contexts),
-you can also use the respective programming languages (R, Python, SQL and so on).
+**Learn about Mini's :**
+
+* [Data types](#data-types)
+* [Functions](#functions)
+* [Calls](#calls)
+* [Operators](#operators)
+
+
 
 
 ## Data types
