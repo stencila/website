@@ -14,14 +14,15 @@ try it out without having to install and configure additional packages and progr
 Mini is implemented in JavaScript and is only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet.
 It is intended to be easy to write code in and easy to understand.
 
+Note that since you can use multiple languages in one Stencila document, you can use these languages to manipulate variables created using Mini.   
+
+
 **Learn about Mini's :**
 
 * [Data types](#data-types)
 * [Functions](#functions)
 * [Calls](#calls)
 * [Operators](#operators)
-
-
 
 
 ## Data types
@@ -40,16 +41,27 @@ Each type can be constructed using literals - Mini will interpret it as relevant
 
 ### Objects
 A more complex built-in data type in Mini is an object. Objects are collections
- of values in which each value has a _key_ . For example:
+ of  _key_ and _value_ pairs. In the example below, the keys are `a` and `b` while values are `1` and `2`:
 
 ```mini
 {a: 1, b: 2}
 ```
-The values and keys can be of different basic Mini types.
+The values and keys can be of different basic Mini types. You can list the keys and values of the object using JavaScript syntax:
+
+```mini
+my_object = {a: 1, b: 2}
+Object.keys(my_object)
+```
+
+You can refer to the values in the object using the keys in the following way:
+
+```mini
+my_object["a"]
+```
 
 ### Tables
 Tables are a special kind of objects in Mini. Having tables as built-in objects in Mini allows
-for better [data and object conversions](computation/data.md) between languages. An example of
+for better [data and object conversions]() between languages. An example of
 a table in Mini:
 
 ```mini
@@ -105,22 +117,26 @@ pi()
 3.14159265359
 ```
 
-> :sparkles: Currently, calling a function like this won't work. That's because Mini expects all functions to be defined externally (see below). Contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
+> :sparkles: Currently, calling a function like this won't work. That's because Mini expects all functions to be defined externally (see below). Execution contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
 
 > :sparkles: Currently, only single expression functions can be defined in Mini. It is likely that multi-expression function bodies will be possible in the future.
 
 
 ### Parameters
 
+Mini functions can be defined with parameters:
+
 ```mini
 function(x, y) x * y
 ```
+
+The parameters can have default values:
 
 ```mini
 function(x, y = 1) x * y
 ```
 
-Repeatable parameters (a.k.a variadic parameters)
+Mini can have repeatable parameters (a.k.a [variadic parameters](http://en.cppreference.com/w/cpp/language/variadic_arguments)).
 
 ```mini
 function(x, y...) x * sum(y)
@@ -130,9 +146,13 @@ function(x, y...) x * sum(y)
 show = function(args...) names(args)
 ```
 
-### Recursion :sparkles:
+### Recursion
 
-Recursive function calls can be useful.... Call themselves. But in Mini, functions do not have access to the global scope - they can only access local variables.
+> :sparkles: Recursive function calls are currently just an idea an are not yet implemented.
+
+You can use recursive function calls in Mini but the syntax will differ to what you may be used to from other programming languages.
+It is because in Mini functions do not have access to the global scope - they can only access local variables. Hence, in recursive calls
+you cannot use the function's name. That is:
 
 ```mini
 factorial = function(n) if(n == 0, 1, n * @(n - 1))
@@ -149,10 +169,6 @@ factorial = lambda(n): 1 if n == 0 else n * factorial(n - 1)
 ```r
 factorial = function(n) if(n == 0) 1 else n * factorial(n - 1)
 ```
-
-> :sparkles: Recursive function calls are currently just an idea an are not yet implemented.
-
-### Lambdas :sparkles:
 
 
 ## Calls
