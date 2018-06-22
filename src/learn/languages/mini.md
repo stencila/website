@@ -21,7 +21,7 @@ Note that since you can use multiple languages in one Stencila document, you can
 
 * [Data types](#data-types)
 * [Functions](#functions)
-* [Calls](#calls)
+* [LibCore](#libcore)
 * [Operators](#operators)
 
 
@@ -95,6 +95,11 @@ In the above example the value of `my_table.col3[2]` would be `C3` as Mini index
 
 ## Functions
 
+> :sparkles: Currently, defining custom functions in Mini, like described below, will not work. We are working on implementing this feature. However,
+> you can use functions that are either built-in in Mini (see below) or have been written as an external Mini library and registered.
+
+> :sparkles: Currently, only single expression functions can be defined in Mini. It is likely that multi-expression function bodies will be possible in the future.
+
 To define a function in Mini you need to use the `function` keyword.  A simple example is
 a function So, our simple function for _pi_ above could be written in Mini using:
 
@@ -117,11 +122,6 @@ pi()
 3.14159265359
 ```
 
-> :sparkles: Currently, calling a function like this won't work. That's because Mini expects all functions to be defined externally (see below). Execution contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
-
-> :sparkles: Currently, only single expression functions can be defined in Mini. It is likely that multi-expression function bodies will be possible in the future.
-
-
 ### Parameters
 
 Mini functions can be defined with parameters:
@@ -139,11 +139,13 @@ function(x, y = 1) x * y
 Mini can have repeatable parameters (a.k.a [variadic parameters](http://en.cppreference.com/w/cpp/language/variadic_arguments)).
 
 ```mini
-function(x, y...) x * sum(y)
+show = function(args...) names(args)
 ```
 
+The repeatable parameters must be listed as the last on the parameters list.
+
 ```mini
-show = function(args...) names(args)
+function(x, y...) x * sum(y)
 ```
 
 ### Recursion
@@ -171,7 +173,7 @@ factorial = function(n) if(n == 0) 1 else n * factorial(n - 1)
 ```
 
 
-## Calls
+### Function calls
 
 Functions are called using parentheses containing arguments: e.g
 
@@ -184,6 +186,17 @@ Named arguments can be used, but only after unnamed arguments. e.g.
 ```mini
 add(1, other=2)
 ```
+
+
+## LibCore
+
+Mini comes with a set of built-in functions which are defined in its standard library, [LibCore](https://github.com/stencila/libcore/tree/master/funcs). You can use
+these functions in Stencila without having to install any additional packages. Calling the functions is done like described above.
+
+
+
+> The reason why you can only use functions that are externally defined in Mini rather than be able to define them on-the-fly is that execution contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
+
 
 ## Operators
 
