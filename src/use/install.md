@@ -41,9 +41,9 @@ $ ./stencila-desktop-*.AppImage
 
 The basic installation of Stencila Desktop  has built in support for executing code using Mini (our small, built-in language) and JavaScript. To execute code in other languages, you will need to install one of our language packages:
 
-- [Stencila Python package](languages/python.html)
-- [Stencila R package](languages/r.html)
-- [SQL (Stencila Node.js package)](languages/sql.html)
+- [Stencila Python package](/learn/languages/python.html)
+- [Stencila R package](/learn/languages/r.html)
+- [SQL (Stencila Node.js package)](/learn/languages/sql.html)
 
 
 ### Stencila Docker images
