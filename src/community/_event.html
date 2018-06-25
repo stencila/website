@@ -40,6 +40,13 @@
               <strong><a href="../code-of-conduct.html">Code of Conduct</a></strong>.
           </p>
 
+          {% if front.registration %}
+          <h3 id="content">Registration</h3>
+          <p id="content">
+            Please register for this event using <a href={{front.registration}}>this short form</a>.
+          </p>
+          {% endif %}
+
         <h3 id="content">Materials</h3>
         <p id="content">
           We will be using a combination of materials from  <a href="http://www.datacarpentry.org/lessons/">Data Carpentry</a> and
@@ -59,7 +66,12 @@
          <a href="http://stenci.la/use/">Stencila Desktop</a> on your machine.
         </p>
 
-
+        {% if front.notes %}
+        <h3 id="content">Notes</h3>
+        <p id="content">
+          We will be using a <a href={{front.notes}}> collaborative note-taking document</a> to share links, bits of code and other information.
+        </p>
+        {% endif %}
 
 
 
