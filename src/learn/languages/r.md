@@ -3,6 +3,8 @@ extends: learn/_page.html
 title: Use R with Stencila
 ---
 
+![Stencila R Context](../img/r-context.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-top: 1em; float: left;" }
+
 Stencila allows you use interactive R code within Stencila articles, notebooks and sheets.
 In order to be able to use R within Stencila documents you need to
 [enable the execution context](#installation).
@@ -11,7 +13,7 @@ You can write R code
 just like you would in any other editor or reproducible notebook. You can install R packages and import them,
 create and embed plots, and so on.
 
-You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through [function libraries][libraries-contribute].
+You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through [function libraries](#functions).
 
 ## Installation
 
@@ -38,7 +40,28 @@ stencila:::register()
 
 ## Data interchange
 
-> :sparkles: Documentation coming. Thank you for your understanding :-)
+Stencila provides you with ability to use multiple programming languages to write interactive code within
+one document, working on the same data. In other words, you can manipulate the same data switching between different programming
+languages. This capability is achieved through `data interchange` feature.
+
+When you pass data between cells Stencila temporarily converts it into its built-in [Mini language](minihtml) data type.
+The table below shows (roughly) how data interchange between Mini and R is implemented. For more details
+see [source code](https://github.com/stencila/r/blob/master/R/type.R).
+
+| Mni     | R                    |
+|:--------|:---------------------|
+| boolean | logical              |
+| integer | integer              |
+| float   | numeric              |
+| string  | character            |
+| array   | R vector             |
+| object  | R list               |
+| object  | R object*            |
+| table   | DataFrame, matrix    |
+| plot    | recordedplot, ggplot |
+
+\*The object fields and methods are saved within the Mini object/array and converted accordingly.
+
 
 ## Cells
 
@@ -79,18 +102,15 @@ The output is now `y` and you can refer back to this variable in any other cell 
 
 
 ## Functions
-You can make almost any R functions for data manipulation available from within Stencila by using our API (which is a simple wrapper). You can either contribute new functions to the Stencila Core Library, existing domain-specific libraries or create a new domain-specific library and add your functions there.
+You can make almost any R functions for data manipulation available from within Stencila by using our API (which is a simple wrapper). You can either contribute
+new functions to the existing domain-specific libraries or create a [new domain-specific library](https://github.com/stencila/libtemplate)
+ and add your functions there.
 
-
-### Implement
-
-
-Create the R function implementation in a `.R` file in the `R` folder e.g. `R/sum.R` for the `sum` function.
+Please modularise your code and put only one function in one  `.R` file  e.g. `R/sum.R` for the `sum` function.
 
 ### Test
 
 To test your function implementation, create a new test file in the `tests/testthat` folder e.g. `tests/testthat/test_sum.R` for the `sum` function.
-
 Install some useful R packages for package development and testing, if you don't already have them,
 
 ```r
@@ -115,16 +135,19 @@ Alternatively, you can run the tests and calculate test coverage using,
 covr::package_coverage()
 ```
 
-### Register :sparkles:
-Once you finished implementing and testing your R function, you need to register it to make it available from within Stencila. You can do it either through RStudio
+### Register
+
+> :sparkles: We are working on getting the function registration to work so not everything described below may already be available.
+
+You need to register your new function to make it available from within Stencila. You can do it either through [RStudio](https://www.rstudio.com/)
 or via Stencila Sheets.
 
 See the demo below how to register functions from RStudio.
 
-![Registering R Functions with Stencila Spreadsheet](img/registering-functions.gif)
+![Registering R Functions with Stencila Spreadsheet](../img/registering-functions.gif)
 
 In order to do
-that select `Register function` from the menu and point to the main directory (for example, `libgenomics`) where the `.py` file with the function is located. Stencila will automatically
+that select `Register function` from the menu and point to the main directory (for example, `libgenomics`) where the `.R` file with the function is located. Stencila will automatically
  create the documentation from the docstring. You can then use the function within Stencila.
 
  If you want to make the function available for someone else using Stencila on a different machine, select `Create function package`, then point
