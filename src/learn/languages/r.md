@@ -1,11 +1,44 @@
 ---
 extends: learn/_page.html
+title: Use R with Stencila
 ---
 
-# R
-You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through [function libraries][libraries-contribute]. An execution context for R, `RContext`. Currrently, in order to have `RContext` available, you need to have an R sesssion running either locally or point to a session running in a remote location.
+Stencila allows you use interactive R code within Stencila articles, notebooks and sheets.
+In order to be able to use R within Stencila documents you need to
+[enable the execution context](#installation).
+
+You can write R code
+just like you would in any other editor or reproducible notebook. You can install R packages and import them,
+create and embed plots, and so on.
+
+You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through [function libraries][libraries-contribute].
+
+## Installation
+
+>! We are currently working on making the Stencila R package compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
+
+The [Stencila R package](https://github.com/stencila/r) provides a `RContext` for executing Python code and functions from within Stencila documents.
+
+The package is not yet available on CRAN, so you need to install directly from our Github repository using the [`devtools`](https://github.com/hadley/devtools) package.
+
+>i You may need to install `devtools` first using `install.packages("devtools")` from within an R session
+
+Launch a R session on your machine and type:
+
+```r
+devtools::install_github("stencila/r")
+```
+
+Then register the package's manifest so that it can be found by the Stencila Desktop and other Stencila packages,
+
+```r
+stencila:::register()
+```
+
 
 ## Data interchange
+
+> :sparkles: Documentation coming. Thank you for your understanding :-)
 
 ## Cells
 

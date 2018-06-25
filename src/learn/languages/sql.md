@@ -1,8 +1,30 @@
 ---
 extends: learn/_page.html
+title: Use SQL with Stencila
 ---
 
-# SQL
+## Installation (Node.js context)
+
+The [Stencila Node.js package](https://github.com/stencila/node) provides a `NodeContext` and a `SQLiteContext` for executing Javascript and SQL code and functions respectively from within Stencila documents.
+
+This package comes bundled with Stencila Desktop so it does not need to be installed separately. But, for completeness, and because you may want to use it from another client application, we include these installation instructions here.
+
+>i You may need to install `npm` first. [On Windows, these instructions](http://blog.teamtreehouse.com/install-node-js-npm-windows) may be useful.
+
+Open a terminal session (on Windows, go to "Start" and then in "Search for programmes and files" type `cmd`) and type in:
+
+```bash
+npm install stencila/node -g
+```
+
+>i Although this package is [available on NPM](https://www.npmjs.com/package/stencila-node), we currently recommend installing directly from the `master` branch on Github as per the above instructions
+
+Then register the package's manifest so that it can be found by other Stencila packages,
+
+```bash
+stencila-node register
+```
+
 
 Cells and functions can be written using Structured Query Language. SQL is implemented in many alternative database engines
 each having slightly different dialects. Currently, Stencila [execution context](computation/contexts.md) is available for

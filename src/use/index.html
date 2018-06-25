@@ -1,9 +1,9 @@
 {% extends "_base.html" %}
 {% from "_download.html" import download %}
 
-{% block main %} 
-<main class="main"> 
-  <div class="columns"> 
+{% block main %}
+<main class="main">
+  <div class="columns">
     <div class="column">
       <section id="desktop" class="section">
         <div class="container">
@@ -18,7 +18,7 @@
               <div class="section">
                 {{ download('desktop', '0.28.2', 'Stencila Desktop Beta') }}
                 <div>
-                  See the <a href="/learn/getting-started/installation.html">installation instructions</a> for connecting Stencila Desktop with alternative programming languages.
+                  See the <a href="install.html"> detailed installation instructions</a> for your operating system.
                 </div>
               </div>
             </div>
@@ -29,26 +29,26 @@
         </div>
       </section>
     </div>
-  </div> 
-</div> 
-{% endblock %} 
- 
-{% block styles %}  
-{{ super() }}  
-<style type="text/css">  
-  main .menu { 
+  </div>
+</div>
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style type="text/css">
+  main .menu {
     padding-top: 4em;
     padding-left: 2em;
     position: fixed;
-  } 
-  @media(max-width: 1000px) {  
-    #hub .columns {  
-      flex-direction: column-reverse;  
-      display: flex;  
-    } 
-    main .menu { 
-      position: relative; 
-    }  
-  } 
-</style>    
+  }
+  @media(max-width: 1000px) {
+    #hub .columns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+    main .menu {
+      position: relative;
+    }
+  }
+</style>
 {% endblock %}

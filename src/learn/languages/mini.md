@@ -1,18 +1,28 @@
 ---
 extends: learn/_page.html
+title: Mini programming language
+next_ignore:
+    label: JavaScript
+    url: /learn/languages/javascript.html
 ---
 
-# Mini
+> This section contains detailed documentation for Stencila built-in language Mini.
 
-> This section contains detailed documentation for Stencila built-in
-> language Mini.
+Stencila comes with its own simple expression language called Mini. We developed it so that When you install Stencila you can immediately
+try it out without having to install and configure additional packages and programming languages.
 
-Stencila comes with its own simple expression language called Mini. Mini is meant to be only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet. It is intended to be easy to write code in and easy to understand.
+Mini is implemented in JavaScript and is only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet.
+It is intended to be easy to write code in and easy to understand.
 
-When you install Stencila you can already write bits of code using Mini.
-Mini is implemented in JavaScript - so it can run straight away in a browser without
-users having to install any additional packages or software. Of course, when you enable other [execution contexts](getting-started/installation.md#execution-contexts),
-you can also use the respective programming languages (R, Python, SQL and so on).
+Note that since you can use multiple languages in one Stencila document, you can use these languages to manipulate variables created using Mini.   
+
+
+**Learn about Mini's :**
+
+* [Data types](#data-types)
+* [Functions](#functions)
+* [LibCore](#libcore)
+* [Operators](#operators)
 
 
 ## Data types
@@ -31,16 +41,27 @@ Each type can be constructed using literals - Mini will interpret it as relevant
 
 ### Objects
 A more complex built-in data type in Mini is an object. Objects are collections
- of values in which each value has a _key_ . For example:
+ of  _key_ and _value_ pairs. In the example below, the keys are `a` and `b` while values are `1` and `2`:
 
 ```mini
 {a: 1, b: 2}
 ```
-The values and keys can be of different basic Mini types.
+The values and keys can be of different basic Mini types. You can list the keys and values of the object using JavaScript syntax:
+
+```mini
+my_object = {a: 1, b: 2}
+Object.keys(my_object)
+```
+
+You can refer to the values in the object using the keys in the following way:
+
+```mini
+my_object["a"]
+```
 
 ### Tables
 Tables are a special kind of objects in Mini. Having tables as built-in objects in Mini allows
-for better [data and object conversions](computation/data.md) between languages. An example of
+for better [data and object conversions]() between languages. An example of
 a table in Mini:
 
 ```mini
@@ -74,6 +95,11 @@ In the above example the value of `my_table.col3[2]` would be `C3` as Mini index
 
 ## Functions
 
+> :sparkles: Currently, defining custom functions in Mini, like described below, will not work. We are working on implementing this feature. However,
+> you can use functions that are either built-in in Mini (see below) or have been written as an external Mini library and registered.
+
+> :sparkles: Currently, only single expression functions can be defined in Mini. It is likely that multi-expression function bodies will be possible in the future.
+
 To define a function in Mini you need to use the `function` keyword.  A simple example is
 a function So, our simple function for _pi_ above could be written in Mini using:
 
@@ -96,34 +122,39 @@ pi()
 3.14159265359
 ```
 
-> :sparkles: Currently, calling a function like this won't work. That's because Mini expects all functions to be defined externally (see below). Contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
-
-> :sparkles: Currently, only single expression functions can be defined in Mini. It is likely that multi-expression function bodies will be possible in the future.
-
-
 ### Parameters
+
+Mini functions can be defined with parameters:
 
 ```mini
 function(x, y) x * y
 ```
 
+The parameters can have default values:
+
 ```mini
 function(x, y = 1) x * y
 ```
 
-Repeatable parameters (a.k.a variadic parameters)
-
-```mini
-function(x, y...) x * sum(y)
-```
+Mini can have repeatable parameters (a.k.a [variadic parameters](http://en.cppreference.com/w/cpp/language/variadic_arguments)).
 
 ```mini
 show = function(args...) names(args)
 ```
 
-### Recursion :sparkles:
+The repeatable parameters must be listed as the last on the parameters list.
 
-Recursive function calls can be useful.... Call themselves. But in Mini, functions do not have access to the global scope - they can only access local variables.
+```mini
+function(x, y...) x * sum(y)
+```
+
+### Recursion
+
+> :sparkles: Recursive function calls are currently just an idea an are not yet implemented.
+
+You can use recursive function calls in Mini but the syntax will differ to what you may be used to from other programming languages.
+It is because in Mini functions do not have access to the global scope - they can only access local variables. Hence, in recursive calls
+you cannot use the function's name. That is:
 
 ```mini
 factorial = function(n) if(n == 0, 1, n * @(n - 1))
@@ -141,12 +172,8 @@ factorial = lambda(n): 1 if n == 0 else n * factorial(n - 1)
 factorial = function(n) if(n == 0) 1 else n * factorial(n - 1)
 ```
 
-> :sparkles: Recursive function calls are currently just an idea an are not yet implemented.
 
-### Lambdas :sparkles:
-
-
-## Calls
+### Function calls
 
 Functions are called using parentheses containing arguments: e.g
 
@@ -159,6 +186,17 @@ Named arguments can be used, but only after unnamed arguments. e.g.
 ```mini
 add(1, other=2)
 ```
+
+
+## LibCore
+
+Mini comes with a set of built-in functions which are defined in its standard library, [LibCore](https://github.com/stencila/libcore/tree/master/funcs). You can use
+these functions in Stencila without having to install any additional packages. Calling the functions is done like described above.
+
+
+
+> The reason why you can only use functions that are externally defined in Mini rather than be able to define them on-the-fly is that execution contexts have a `callFunction()` method which takes the name of pre-registed external function. This method, or another similar one, needs to be able to accept a `function` object and call it.
+
 
 ## Operators
 
