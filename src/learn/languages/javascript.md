@@ -3,14 +3,12 @@ extends: learn/_page.html
 title: Use JavaScript with Stencila
 ---
 
+Stencila allows you use interactive JavaScript code  within Stencila articles, notebooks and sheets. JavaScript comes with basic Stencila installation so you can
+manipulate and visualise data using JavaScript straight from the start.
 
-Cells and functions can be written using Javascript. An execution context for Javascript, `JsContext` is implemented in the [`stencila/stencila`](https://github.com/stencila/stencila) repository so it's already availble to all Stencila documents without the need for external hosts.
+If you want the code in the code cell be interpreted as JavaScript, you need to select the `JS` context:
 
-
-
-
-## Data interchange
-
+![JavaScript in Stencila Cell](../img/js-context.png){style="align:center; width:100%" }
 
 
 ## Cells
@@ -94,3 +92,6 @@ function sum(...values) {
 }
 sum.pars = ['...values']
 ```
+
+
+## Data interchange

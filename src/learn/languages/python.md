@@ -61,7 +61,7 @@ Stencila provides you with ability to use multiple programming languages to writ
 one document, working on the same data. In other words, you can manipulate the same data switching between different programming
 languages. This capability is achieved through `data interchange` feature.
 
-When you pass data between cells Stencila temporarily converts it into its built-in [Mini language](languages/mini/README.md) data type.
+When you pass data between cells Stencila temporarily converts it into its built-in [Mini language](mini.html) data type.
 The table below shows (roughly) how data interchange between Mini and Python is implemented. For more details
 see [source code](https://github.com/stencila/py/blob/master/stencila/value.py).
 
@@ -75,7 +75,7 @@ see [source code](https://github.com/stencila/py/blob/master/stencila/value.py).
 | object  | Python object*   |
 | table   | pandas.DataFrame |
 
-*The object fields and methods are saved within the Mini object/array and converted accordingly.
+\*The object fields and methods are saved within the Mini object/array and converted accordingly.
 
 
 ## Cells
