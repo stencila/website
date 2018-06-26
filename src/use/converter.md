@@ -36,16 +36,42 @@ You should see the following output message:
 ```
 
 You can override the file format both from and to which the Converter is meant to convert. In order to do that, use the `--from` and `--to` options.
-For example:
+In the example below the output file format will actually be `comma separated values`, even thought the output file name has a Markdown extension (`md`).
 
 ```
-stencila convert hospital.xlsx --to rmd hospital.md
+stencila convert hospital.xlsx --to csv hospital.md
+```
+
+If you don't specify the output for the Converter, it will display on the screen (standard output) the input file converted to the intermittent internal Stencila JSON format.
+
+```
+stencila convert hospital.xls
+```
+
+```{json}
+{
+  "type": "Document",
+  "front": {
+    "name": {
+      "type": "String",
+      "data": "patient"
+    }
+  },
+  "body": [
+    {
+      "type": "Table",
+      "rows": [
+        [
+          [],
+          [
+            {
+              "type": "String",
+              "data": "Day 1"
+            }
+          ],
 ```
 
 To get more help on using the Converter type `stencila convert -h`:
-
-![Stencila CLI](/learn/img/convert-help.png)
-
 
 ### Convert spreadsheets
 
@@ -65,7 +91,22 @@ Note that conversion from `xlsx` format to `md` retains some metadata from the o
 ![Stencila CLI](/learn/img/converter-xlsx.png)
 
 
+### Convert projects
 
+You can convert a whole folder into a supported by Stencila `DAR` project which will contain all your articles and spreadsheets ready to work with in Stencila.
+You need to specify the output format to have the `dar` extension:
+
+```
+stencila convert path-to-folder path-to-project.dar
+```  
+
+Or you can do it using `--to` flag:
+
+```
+stencila convert path-to-folder --to dar path-to-project
+```
+
+Note that if you use `--to` flag and you don't spefify the `dar` extension in the output project name, the Converter will still complete the conversion. 
 
 ## Supported formats
 Stencila Converters recognize the file extensions and use the relevant converters. Below is the list of currently recognized file extensions:
