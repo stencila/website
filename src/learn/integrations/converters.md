@@ -25,30 +25,30 @@ The installation requires two steps:
 The basic use of the Converter is fairly simple. Open the terminal and type `stencila convert path-to-input-file path-to-output-file`, replacing
 `path-to-input-file` and `path-to-output-file` with actual paths. So for example:
 
-```
+```bash
 stencila convert Stencila/examples/hello-world/hello-world/hello-world.md Stencila/examples/hello-world/hello-world.docx
 ```
 
 You should see the following output message:
 
-```
+```bash
 ✓  Success converting "Stencila/examples/hello-world/hello-world/hello-world.md" to "Stencila/examples/hello-world/hello-world.docx"
 ```
 
 You can override the file format both from and to which the Converter is meant to convert. In order to do that, use the `--from` and `--to` options.
-In the example below the output file format will actually be `comma separated values`, even thought the output file name has a Markdown extension (`md`).
+In the example below the output file format will actually be `comma separated values`, even thought the output file name has a different extension (`txt`).
 
-```
-stencila convert hospital.xlsx --to csv hospital.md
+```bash
+stencila convert hospital.xlsx --to csv hospital.txt
 ```
 
 If you don't specify the output for the Converter, it will display on the screen (standard output) the input file converted to the intermittent internal Stencila JSON format.
 
-```
+```bash
 stencila convert hospital.xls
 ```
 
-```{json}
+```json
 {
   "type": "Document",
   "front": {
@@ -77,18 +77,21 @@ To get more help on using the Converter type `stencila convert -h`:
 
 Stencila Converters support spreadsheet conversion.
 
-```
+```bash
 stencila convert hospital.xlsx hospital.md
 ```
+
 Should result in:
 
-```
+```bash
 ✓  Success converting "hospital.xlsx" to "hospital.md"
 ```
 
 Note that conversion from `xlsx` format to `md` retains some metadata from the original spreadsheet:
 
-![Stencila CLI](/learn/img/converter-xlsx.png)
+![](/learn/img/convert-xlsx-screen.png)
+
+![](/learn/img/convert-xlsx-md.png)
 
 
 ### Convert projects
@@ -96,17 +99,18 @@ Note that conversion from `xlsx` format to `md` retains some metadata from the o
 You can convert a whole folder into a supported by Stencila `DAR` project which will contain all your articles and spreadsheets ready to work with in Stencila.
 You need to specify the output format to have the `dar` extension:
 
-```
+```bash
 stencila convert path-to-folder path-to-project.dar
 ```  
 
 Or you can do it using `--to` flag:
 
-```
+```bash
 stencila convert path-to-folder --to dar path-to-project
 ```
 
 Note that if you use `--to` flag and you don't spefify the `dar` extension in the output project name, the Converter will still complete the conversion. 
+
 
 ## Supported formats
 Stencila Converters recognize the file extensions and use the relevant converters. Below is the list of currently recognized file extensions:
@@ -127,9 +131,6 @@ Stencila Converters recognize the file extensions and use the relevant converter
 | Portable Document Format      |               `pdf`                |
 | RMarkdown                     |               `Rmd`                |
 | XMarkdown\*                   |               `Xmd`                |
-| EDF\**                        |         `edf`, `edf.json`          |
-| EDFY\**                       |   `edfy`, `edf.yaml`, `edf.yml`    |
 | Reproducible Document Archive | `sheet.xml`, `sheetml`, `jats.xml` |
 |                               |                                    |
-\* _In XMarkdown you can use any code blocks, e.g. `py`, `js` and so on._ <br/>
-\**_EDF and EDFY are internal Stencila formats._
+\* _In XMarkdown you can use any code blocks, e.g. `py`, `js` and so on._
