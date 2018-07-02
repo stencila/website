@@ -19,7 +19,7 @@ You can write the contents of Stencila cells in R as well as make your existing 
 
 >! We are currently working on making the Stencila R package compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
 
-The [Stencila R package](https://github.com/stencila/r) provides a `RContext` for executing Python code and functions from within Stencila documents.
+The [Stencila R package](https://github.com/stencila/r) provides a `RContext` for executing R code and functions from within Stencila documents.
 
 The package is not yet available on CRAN, so you need to install directly from our Github repository using the [`devtools`](https://github.com/hadley/devtools) package.
 
@@ -48,7 +48,7 @@ When you pass data between cells Stencila temporarily converts it into its built
 The table below shows (roughly) how data interchange between Mini and R is implemented. For more details
 see [source code](https://github.com/stencila/r/blob/master/R/type.R).
 
-| Mni     | R                    |
+| Mini     | R                    |
 |:--------|:---------------------|
 | boolean | logical              |
 | integer | integer              |
