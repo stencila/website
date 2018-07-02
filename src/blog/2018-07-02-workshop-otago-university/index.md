@@ -6,14 +6,14 @@ date: 2 July 2018
 abstract: |
      Last week, on 28th and 29th June, we run the first "Introduction to R using Stencila" workshop. The event was attended by the researchers from the
      University of Otago Medical School at Christchurch, New Zealand. We used Stencila Hub so that the participants did not have to install anything on
-     their machines. Guided by the Data Carpentry materials we taught filtering and visualising data with tidyverse R package.
+     their machines. Guided by the Data Carpentry materials we taught filtering and visualising data with the tidyverse R package.
 forum_topic:
 image: uotago-workshop.jpg
 ---
 
 Last week, on 28th and 29th June, we run the first "Introduction to R using Stencila" workshop. The event was attended by the researchers from the
 University of Otago Medical School at Christchurch, New Zealand. We used Stencila Hub so that the participants did not have to install anything on
-their machines. Guided by the [Data Carpentry materials](http://www.datacarpentry.org/R-ecology-lesson/) we taught filtering and visualising data with `tidyverse` R package.
+their machines. Guided by the [Data Carpentry materials](http://www.datacarpentry.org/R-ecology-lesson/) we taught filtering and visualising data with the popular R package `tidyverse`
 
 ![Workshop at the University of Otago](uotago-workshop.jpg)
 
