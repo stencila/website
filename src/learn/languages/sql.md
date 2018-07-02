@@ -64,36 +64,3 @@ of the SQL statement.
 ```sql
 brown_hair = SELECT * FROM people WHERE hair_color == 'Brown'
 ```
-
-## Functions
-
-Stencila functions can be implemented using SQL. The approach to type checking and dispatching is similar to other languages.
- But instead of using native functions in the implementation language, you generate SQL that is executed within the database.
-
-Lets say you have a table called `data` in a database with columns `height` and `width`. You would like to be able to
-perform computations on that data without having to convert all that data into JSON. For example,
-
-```mini
-people | extend(bmi = (.mass * .mass) / .height) | sort(-.bmi)
-```
-
-Let's try to implement the `extend` function first. For the example call above we want it to generate SQL like this:
-
-```sql
-SELECT *, (mass * mass) / height AS bmi FROM people
-```
-
-```python
-def extend(args):
-  # Get the database table to be extended, by
-  # selecting the argument named `value`, or the first argument
-  value = select(args, ['value', '1'])
-  assert_type(value, 'table')
-  # Get the remaining arguments and execute them
-  others = [execute(arg) for arg in remainder(args, value)]
-
-  # Generate SQL
-  return 'SELECT *, '
-```
-
-> :sparkles: Writing of functions in SQL is not yet implemented
