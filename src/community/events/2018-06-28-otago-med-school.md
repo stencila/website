@@ -14,7 +14,7 @@ This workshop will help you start using R for data analysis. We will use  Stenci
 processor and spreadsheet application. You will be able to use some advanced R functions working in the environment that you are comfortable using.
 This video is a short demonstration of a simple example using R in Stencila Sheets:
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DPz4VA4BRjM?rel=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/yeG9msYKSXg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 Stencila is an open source project funded by a [grant from the Sloan Foundation](http://stenci.la/blog/sloan-grant/). We are building a tool which enables researchers collaborate on data analysis using programming languages but not having to give up their tool of choice. During this workshop we would like to collect more user feedback and hear back from you what features you would find most useful.
 
