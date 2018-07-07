@@ -21,9 +21,9 @@ Stencila is an open source project funded by a [grant from the Sloan Foundation]
 ## Schedule
 
 **Thursday**
-* 1.30pm - 2.30pm Introduction to Stencila and Stencila Sheets
-* 2.30pm - 3.00pm Break
-* 3.30pm - 4.30pm Using R for data filtering
+* 12.30pm - 1.30pm Introduction to Stencila and Stencila Sheets
+* 1.30pm - 2.00pm Break
+* 2.30pm - 3.30pm Using R for data filtering
 
 **Friday**
 * 09.30am - 11.15am Data visualisation in R
