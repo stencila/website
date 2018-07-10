@@ -30,13 +30,13 @@ Note that since you can use multiple languages in one Stencila document, you can
 Mini comes with a set of built-in data types which is similar to most high level programming languages.
 Each type can be constructed using literals - Mini will interpret it as relevant data type.
 
-| Type    |      Literal      | Usage example                                                | Notes                                                                                                   |
-|:--------|:-------------------:|:-------------------------------------------------------------|:--------------------------------------------------------------------------------------------------------|
-| boolean |   true / false    | full = true                                                  |                                                                                                         |
-| float   |    3.141592654    | pi = 3.141592654                                             |                                                                                                         |
-| integer |        42         | x = 42                                                       |                                                                                                         |
-| string  | 'hello' <br /> "hello" | name = "hello"                                               | Strings are sequences of characters. <br/> String literals can use either single <br/> or double quotation marks. |
-| array   |     [1, 2, 3]     | num = [1, 2, 3] <br/> ['hello world', [1, 2], {}] | An array is a sequence <br/> of values. The values in an array <br/> can have different types                   |
+| Type    |        Literal         | Usage example                                     | Notes                                                                                                             |
+|:--------|:----------------------:|:--------------------------------------------------|:------------------------------------------------------------------------------------------------------------------|
+| boolean |      true / false      | full = true                                       |                                                                                                                   |
+| float   |      3.141592654       | pi = 3.141592654                                  |                                                                                                                   |
+| integer |           42           | x = 42                                            |                                                                                                                   |
+| string  | 'hello' <br /> "hello" | name = "hello"                                    | Strings are sequences of characters. <br/> String literals can use either single <br/> or double quotation marks. |
+| array   |       [1, 2, 3]        | num = [1, 2, 3] <br/> ['hello world', [1, 2], {}] | An array is a sequence <br/> of values. The values in an array <br/> can have different types                     |
 
 
 ### Objects

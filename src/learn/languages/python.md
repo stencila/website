@@ -55,57 +55,17 @@ pip3 install --user https://github.com/stencila/py/archive/master.zip
 python3 -m stencila register
 ```
 
+## Code execution
 
-## Data interchange
-Stencila provides you with ability to use multiple programming languages to write interactive code within
-one document, working on the same data. In other words, you can manipulate the same data switching between different programming
-languages. This capability is achieved through `data interchange` feature.
+Stencila keeps track of the code dependecies between the code cells. It supports reactive programming which means that the code and the respective outputs
+will get updated, when you change a piece of code they depend on. It is a similar principle as behind the behavior of spreadsheet applications.
+You can refer to specific outputs from any code cell in any part of your Stencila document. Stencila does all this using its [execution engine]().
 
-When you pass data between cells Stencila temporarily converts it into its built-in [Mini language](mini.html) data type.
-The table below shows (roughly) how data interchange between Mini and Python is implemented. For more details
-see [source code](https://github.com/stencila/py/blob/master/stencila/value.py).
-
-| Mni     | Python           |
-|:--------|:-----------------|
-| boolean | bool             |
-| integer | int              |
-| float   | float            |
-| string  | str              |
-| array   | Python list      |
-| object  | Python object*   |
-| table   | pandas.DataFrame |
-
-\*The object fields and methods are saved within the Mini object/array and converted accordingly.
-
-
-## Cells
-With Stencila you have full control over the sequence in which your code cells are executed. You can run the code in asynchronous order.
-You can refer to specific outputs from the given cell in any part of your Stencila document.
-Stencila does all this using its [execution engine](computation/engine.md).
-
-The engine manages automatic dependencies between the cells which are specific for each language. For cells written in
-Python it is fairly simple.  If you want to capture the output of the cell, create a variable and assign (`=`) the output.
-Note that the variables in Stencila are non-mutable :sparkles: . Whatever is on the right hand of the assignment (`=`)
-will become the cell input.
-
-You can the refer to this cell's input and output in the Stencila document.
-
-If you do not capture the output explicitly, you will not be able to refer to it later on. But the input of the cell
-will still be available.
+What inputs and outputs of a code cell are vary slightly between programming languages that you use in Stencila.  For cells written in Python,
+if you want to capture the output of the cell so that you can refer to it throughout the document, you need to create a variable and assign (`=`) the output. To be more precise, you are capturing the _result of the evaluation of the cell_.
+Note that, the variables in Stencila are non-mutable.
 
 For example:
-
-```python
-import math
-
-x = 4
-math.sqt(x)
-```
-
-The input for this cell is `x`, the output is empty (`null`) and the value is 2 (`math.sqrt(4)`).
-
-If you want to capture the output and be able to refer back to it in the future you need to
-modify the cell as follows:
 
 ```python
 import math
@@ -114,4 +74,37 @@ x = 4
 y = math.sqrt(x)
 ```
 
-The output is now `y` and you can refer back to this variable in any other cell in Stencila.
+Now you can refer to the output of the cell using the variable `y`.
+
+If you do not capture the output explicitly, you will not be able to refer to it later on. For example:
+
+```python
+import math
+
+x = 4
+math.sqt(x)
+```
+
+The result of the `math.sqrt(x)` is `2` but you will not be able to refer to it since it has not been captured explicitly in a variable.
+Summarizing: the output of this cell is not captured and the result of evaluating this cell is `2` (`math.sqrt(4)`).
+
+## Data interchange
+Stencila provides you with ability to use multiple programming languages to write interactive code within
+one document, working on the same data. In other words, you can manipulate the same data switching between different programming
+languages. This capability is achieved through `data interchange` feature.
+
+When you pass data between cells Stencila temporarily converts it into its internal schema representation.
+The table below shows (roughly) how data interchange between the schema and Python is implemented. For more details
+see [source code](https://github.com/stencila/py/blob/master/stencila/value.py).
+
+| Schema representation | Python           |
+|:----------------------|:-----------------|
+| Boolean               | bool             |
+| Integer               | int              |
+| Float                 | float            |
+| String                | str              |
+| Array                 | Python list      |
+| Object                | Python object*   |
+| Table                 | pandas.DataFrame |
+
+\*The object fields and methods are saved within the schema-defined object/array and converted accordingly.
