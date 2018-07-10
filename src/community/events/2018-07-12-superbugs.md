@@ -2,10 +2,10 @@
 extends: community/_event.html
 title: Introduction to data analysis in R using Stencila
 date: 2018-07-12
-location: University of Auckland   
-address: "The Bioluminescent Superbugs Lab at the University of Auckland"      
+location: The Bioluminescent Superbugs Lab, University of Auckland   
+address: "The University of Auckland, Building 503  room 124"      
 humandate: "July 12-13, 2018"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
-humantime: "Thurs 1.30pm-4.30pm, Fri: 9.30am-12.30pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+humantime: "Thurs 12.30pm-3.30pm, Fri: 9.30am-12.30pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 notes: https://docs.google.com/document/d/1ncwX1aJACLY4127kE-XMGW_Aw1Q3x-qw8fGVS3unbwo/edit?usp=sharing         # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document
 registration:  "https://goo.gl/forms/rd4e27lkDrzQv9RL2"         # optional:
 ---
