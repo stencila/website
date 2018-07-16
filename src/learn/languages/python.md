@@ -82,7 +82,7 @@ If you do not capture the output explicitly, you will not be able to refer to it
 import math
 
 x = 4
-math.sqt(x)
+math.sqrt(x)
 ```
 
 The result of the `math.sqrt(x)` is `2` but you will not be able to refer to it since it has not been captured explicitly in a variable.
