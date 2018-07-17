@@ -27,9 +27,8 @@ Thank you for your time and help!
 # What does it involve?
 
 Currently we are running Beta Testing for Stencila Desktop.
-
 You need to have access to a computer with internet connection and running one of the three operating systems that Stencila can run on:
-Windows, Mac OS X or Linux. You will need to download and install the version of Stencila Desktop appropriate for your operating system.
+Windows, Mac OS X or Linux. You will need to [download and install](http://stenci.la/use/install.html) the version of Stencila Desktop appropriate for your operating system.
 
 At this point you may already have some questions. Do not hesitate and ask them on our [Community Forum](https://community.stenci.la/)
  or on our [Gitter chat channel](https://gitter.im/stencila/stencila).
