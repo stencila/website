@@ -8,7 +8,7 @@ using `R` programming language (based on the [Data Carpentry R for Ecology modul
 
 1. Launch Stencila Desktop on your machine (if you are one of our Stencila Hub testers, log into your account).
 2. If you are using Stencila Desktop, make sure that you enabled R execution context on your machine. If you are using Stencila Hub, you don't need to do anything.
-3. Download the <a href="rodents.dar.zip" download>example project</a> and unpack the file (it comes as a `zip`).
+3. Download the <a href="https://github.com/stencila/website/blob/master/src/learn/rodents.dar.zip?raw=true" download>example project</a> and unpack the file (it comes as a `zip`).
 4. The project is in the [`DAR` format](https://github.com/substance/dar) which is one of the formats supported by Stencila. You can open the folder and you should see the following files: <br/>
     * `manifest.xml`
     * `rodents.jats.xml`
