@@ -34,10 +34,10 @@ Windows, Mac OS X or Linux. You will need to download and install the version of
 At this point you may already have some questions. Do not hesitate and ask them on our [Community Forum](https://community.stenci.la/)
  or on our [Gitter chat channel](https://gitter.im/stencila/stencila).
 
-If you notice any errors or you have a suggestion for a new feature, you can either  fill in a short [online form]()
-or submit an [issue via GitHub](https://github.com/stencila/stencila/issues).
+If you notice any errors or you have a suggestion for a new feature, you can either  fill in a short [online form](https://goo.gl/forms/qabURyAG9XgOy6112)
+or submit an [issue via GitHub](https://github.com/stencila/stencila/issues/new).
 
-After the installation, there is a number of things you can test for [details see here]().
+After the installation, you can try Stencila out with our [Quick Start guide](http://stenci.la/learn/quick-start.html).
 
 
 # What's in it for you?
