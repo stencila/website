@@ -23,9 +23,18 @@ The [Stencila R package](https://github.com/stencila/r) provides a `RContext` fo
 
 The package is not yet available on CRAN, so you need to install directly from our Github repository using the [`devtools`](https://github.com/hadley/devtools) package.
 
->i You may need to install `devtools` first using `install.packages("devtools")` from within an R session
+>i You may need to install `devtools` first. Open an R session on your machine and type:
+> ```r
+> install.packages("devtools")
+> ``` 
 
-Launch a R session on your machine and type:
+>i If you don't have the [Bioconductor `graph`](https://www.bioconductor.org/packages/release/bioc/html/graph.html) package, you should install it first:
+> ```r
+> source("https://bioconductor.org/biocLite.R")
+> biocLite("graph")
+> ```
+
+Once you done this, you should be able to install and enable the Stencila R package:
 
 ```r
 devtools::install_github("stencila/r")
