@@ -3,7 +3,7 @@ extends: learn/_page.html
 title: Introduction
 next:
     label: Installation
-    url: /learn/installation.html
+    url: /use/install.html
 ---
 
 Stencila provides a set of open-source software components enabling reproducible research within the tool of your choice. Stencila allows you to write reproducible
