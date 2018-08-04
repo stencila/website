@@ -18,7 +18,7 @@ The installation requires two steps:
   * on Windows, create a folder in `C:/ProgramFiles/stencila` and copy the `stencila.exe` file into it; then open Windows Command Line and add
   the folder to the `PATH`: `setx PATH "$env:path;C:/ProgramFiles/stencila"`
   * on Linux, copy the `stencila` binary file to `/usr/local/bin/`;
-  * on Mac OS X, copy the `stencila` file to the `/Applications` folder.
+  * on Mac OS X, copy the `stencila` file to the ` /usr/local/bin/` folder.
 
 ## Use
 
@@ -71,7 +71,11 @@ stencila convert hospital.xls
           ],
 ```
 
-To get more help on using the Converter type `stencila convert -h`:
+To get more help on using the Converter type `stencila convert -h`.
+
+### Convert to PDF
+
+Conversion to PDF will require `pdflatex` (because this is how [pandoc works](https://pandoc.org/MANUAL.html#creating-a-pdf)). Check the [installation details here](https://www.latex-project.org/get/).
 
 ### Convert spreadsheets
 
@@ -109,7 +113,7 @@ Or you can do it using `--to` flag:
 stencila convert path-to-folder --to dar path-to-project
 ```
 
-Note that if you use `--to` flag and you don't spefify the `dar` extension in the output project name, the Converter will still complete the conversion. 
+Note that if you use `--to` flag and you don't spefify the `dar` extension in the output project name, the Converter will still complete the conversion.
 
 
 ## Supported formats
