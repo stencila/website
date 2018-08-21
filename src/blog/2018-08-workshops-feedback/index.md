@@ -1,30 +1,23 @@
 ---
 extends: blog/_post.html
-title: Feedback from user workshops
-author: Aleksandra Pawlik
+title: Bringing it together - summarising feedback from recent user workshops
+author: Aleksandra Pawlik & Nokome Bentley
 date: 13 August 2018
 abstract: |
-        Between end of June and beginning of August 2018 we run 4 hands-on workshops to collect feedback from the users trying out Stencila in real life tasks.
-        In this blog post we present the summary of the feedback we received and the lessons learnt.
+        Between end of June and beginning of August 2018 we ran 4 hands-on workshops to collect feedback from researchers trying out Stencila on real life tasks.
+        In this blog post we present the summary of the feedback we received and the lessons learned.
 forum_topic:
 image: work-harder.jpg
 ---
 
-Between end of June and beginning of August 2018 we run 4 hands-on workshops to collect feedback from the users trying out Stencila in real life tasks. In this blog post
-we present the summary of the feedback we received and the lessons learnt. It's been incredibly useful for us to get the users' comments. The workshop participants found
-a number of bugs (which was inevitable given that Stencila is still under development) and that in turn allowed us to improve our software as well as prioritize
-the next development steps.
+Between end of June and beginning of August 2018 we ran 4 hands-on workshops to collect feedback from researchers trying out Stencila on real life tasks. In this blog post
+we present the summary of the feedback we received and the lessons learned. It's been incredibly useful for us to get users' comments in this context. The workshop participants found a number of bugs (which was inevitable given that Stencila is still under development) and that in turn allowed us to improve our software as well as prioritize the next development steps.
 
 All workshops were run in a hands-on style. We used [Data Carpentry](https://datacarpentry.org/) and [Software Carpentry](https://software-carpentry.org/) materials
-to teach introduction to data analysis and visualisation in Stencila. For all workshops we used an instance of the [Stencila Hub](https://github.com/stencila/hub). The reasons for that were two-fold. We wanted to make things easy for the participants and save them the overhead of setting up their machines (or the machines
-  in the computer lab at their organisation). Another reason was to test the Stencila Hub "in the wild" with a group of users simultaneously working on the infrastructure
+to teach introduction to data analysis and visualisation in Stencila. For all workshops we used an instance of the [Stencila Hub](https://github.com/stencila/hub). The reasons for that were two-fold. First, we wanted to make things easy for the participants and save them the overhead of setting up their machines (or the machines
+  in the computer lab at their organisation). Second, we wanted to test the Stencila Hub "in the wild" with a group of users simultaneously working on the infrastructure
   and reporting the errors to us live. We scheduled the workshops so that we had about 2 weeks in between them in order to make improvements and fix the most
-  prominent bugs. Hence probably the first group at the [Medical School at the University of Otago](https://stenci.la/blog/2018-07-02-workshop-otago-university) experienced the roughest
-  issues with the Stencila Hub (sorry!). Though the ease of no pre-workshop set up hopefully balanced out the errors popping up.  
-
-### Hub vs Desktop
-
-We asked the participants of all workshops if they would prefer, in the future, to work on the Stencila Hub, Desktop or use both interchangeably.  The vast majority (18) of the attendees  said they would like to use both. Only a few were interested in using exclusively either the local instance (Stencila Desktop) or the Hub. It is a clear indication we need to work on these two components in parallel.
+  prominent bugs. (So the first group of users at the [Medical School at the University of Otago](https://stenci.la/blog/2018-07-02-workshop-otago-university) had to put up with the most issues; sorry!).
 
 There were several themes emerging from the user feedback. Here are some of the most prominent ones.
 
@@ -90,14 +83,14 @@ The positive feedback has been a great boost for us and reassured us that Stenci
 
 ### Reliability
 
-The Stencila Hub and Cloud (where the code is actually executed) had their actual premiere during the workshops. It gave us an excellent opportunity to test their
+The Stencila Hub (where the projects documents live) and Stencila Cloud (where the code is actually executed) had their actual premiere during the workshops. It gave us an excellent opportunity to test their
 reliability and robustness. Indeed we caught many bugs (many thanks to all participants for their understanding and patience!). There have been issues with
 the stability of the connection between the Hub and the Cloud resulting in some session being terminated which would show to the users as inactive code cells.
 The configuration of the Kubernetes Engine running Docker containers for the execution contexts also needed some tweaking.  
 
 ### Saving
 
-Yes, you read that right. We need to improve the *saving* feature in the Hub. It seems like the most basic thing to implement and enable but the Stencila Hub
+Yes, you read that right: we need to improve the *saving* feature in the Hub. It seems like the most basic thing to implement and enable but the Stencila Hub
 enables quite sophisticated saving and versioning ability which makes things a bit more complicated from the backend. Nevertheless, we are working on
 making sure that the users can rest reassured that all their work will be saved (and autosaved, too!) and they will be able easily browse through the history of
 changes.
@@ -115,16 +108,21 @@ Working with four groups of users coming from different backgrounds clearly show
 Whilst the workshop participants appreciated the Stencila Sheets, this interface still requires a lot of work to make it friendly for spreadsheet users and at the
 same time retaining the feature to leverage the power of using programming languages, including domain-specific functions, for data analysis.
 
+### Hub and Desktop
+
+We asked the participants of all workshops if they would prefer, in the future, to work on the Stencila Hub, Stencila Desktop, or use both interchangeably.  The vast majority (18) of the attendees  said they would like to use both. Only a few were interested in using exclusively either the local instance (Stencila Desktop) or the Hub. It is a clear indication we need to work on these two components in parallel.
+
 # Thank you!{style="text-align:center;"}
 
+We are fueled with enthusiasm and motivation from people's kind word e.g.
+
+> Overall I thought this was a really wonderful workshop. I think this tool is very useful and I look forward to using it in the future.
+
 We are very grateful to all participants of the workshops for their feedback, patience and understanding:
+
 * the [Medical School at the University of Otago](https://stenci.la/blog/2018-07-02-workshop-otago-university);
 * the [Bioluminescent Superbugs Lab at the University of Auckland](https://stenci.la/blog/2018-07-20-workshop-superbugs/);
 * the [University of Canterbury](https://stenci.la/blog/2018-07-uni-canterbury/);
 * [SIGNAL ITC Grad School](https://stenci.la/blog/2018-08-signal/).
 
  and everyone who helped organise these events.
-
-We are fueled with a lot of positive energy and motivation - as we received a lot of good words:
-
-> Overall I thought this was a really wonderful workshop. I think this tool is very useful and I look forward to using it in the future.
