@@ -13,6 +13,8 @@ image: work-harder.jpg
 Between end of June and beginning of August 2018 we ran 4 hands-on workshops to collect feedback from researchers trying out Stencila on real life tasks. In this blog post
 we present the summary of the feedback we received and the lessons learned. It's been incredibly useful for us to get users' comments in this context. The workshop participants found a number of bugs (which was inevitable given that Stencila is still under development) and that in turn allowed us to improve our software as well as prioritize the next development steps.
 
+![Workshop at the University of Otago](uotago-workshop.jpg){style="width: 60%; padding-right: 1em; float:left;" }
+
 All workshops were run in a hands-on style. We used [Data Carpentry](https://datacarpentry.org/) and [Software Carpentry](https://software-carpentry.org/) materials
 to teach introduction to data analysis and visualisation in Stencila. For all workshops we used an instance of the [Stencila Hub](https://github.com/stencila/hub). The reasons for that were two-fold. First, we wanted to make things easy for the participants and save them the overhead of setting up their machines (or the machines
   in the computer lab at their organisation). Second, we wanted to test the Stencila Hub "in the wild" with a group of users simultaneously working on the infrastructure
@@ -79,7 +81,16 @@ made them feel at ease.
 > I haven't used R before but I didn't feel freaked out by the interface. I like how the data sits alongside the document being edited.
 
 
-The positive feedback has been a great boost for us and reassured us that Stencila is going the right direction. But there are still many things to improve and fix.  
+
+
+<div style="width: 70%;  float:left;">
+
+<img src="uc-workshop.jpg" alt="Workshop at the University of Canterbury" title="University of Canterbury workshop" >
+<p style="padding-left: 2em;"> <em>Photo: Dr Arindam Basu</em></p>
+
+</div>
+
+The positive feedback has been a great boost for us and reassured us that Stencila is going the right direction. But there are still many things to improve and fix.
 
 ### Reliability
 
