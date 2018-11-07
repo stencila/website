@@ -15,7 +15,7 @@ We are pleased to announce that Stencila has received further funding from the [
 
 Stencila aims to bridge the gap between code-based reproducible research and research that relies on spreadsheets and other point-and-click software. Today’s popular spreadsheet programs lack interoperability, and hinder reproducibility and openness. We are building open source software that will make it easier for researchers comfortable with coding to collaborate with colleagues who are comfortable in more visual user interfaces. Our tools allow researchers to leverage the power of programming languages within familiar word processor and spreadsheet style applications.
 
-![Sloan logo](https://github.com/stencila/website/blob/master/src/img/sloan.png)
+![Sloan logo](sloan.png)
 
 The Alfred P. Sloan Foundation supports original research and education related to science, technology, engineering, mathematics, and economics. With its assets totalling to over $1.65 billion the Foundation funds projects, fellowships, and research institutes both in the US and internationally.
 
