@@ -8,7 +8,7 @@ abstract: |
           The Foundation funded initial development of Stencila in 2017 and their ongoing support has enabled us
           to develop the underlying architecture, implement and user test initial versions, engage with research 
           communities, and develop strategies for long-term sustainability.
-image: https://github.com/stencila/website/blob/master/src/img/sloan.png
+image: sloan.png
 ---
 
 We are pleased to announce that Stencila has received further funding from the [Alfred P. Sloan Foundation](https://sloan.org/). The Foundation funded initial development of Stencila in 2017 and their ongoing support has enabled us to develop the underlying architecture, implement and user test initial versions, engage with research communities, and develop strategies for long-term sustainability.
