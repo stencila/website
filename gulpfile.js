@@ -17,8 +17,16 @@ const replaceExt = require('replace-ext')
 const through = require('through2')
 const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
+const sass = require('gulp-sass')
+const autoprefixer = require('gulp-autoprefixer')
 
 const root = path.join(__dirname, 'src')
+
+const autoprefixerOptions = {
+    remove: false
+}
+
+sass.compiler = require('node-sass')
 
 function markdown2object (file, includeContent = true) {
   const md = file.contents.toString()
@@ -118,7 +126,8 @@ gulp.task('css', function () {
   gulp.src([
     './src/css/**',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
-    './node_modules/prismjs/themes/prism.css'
+    './node_modules/prismjs/themes/prism.css',
+    './style/css/**'
   ])
     .pipe(gulp.dest('./build/css'))
 })
@@ -208,11 +217,15 @@ gulp.task('community/events', function () {
 })
 
 
-
-
+gulp.task('sass', function() {
+    return gulp.src('./src/sass/**/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('./src/css'))
+})
 
 gulp.task('build', ['clean'], function () {
-  gulp.start(['css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
+  gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
 
 gulp.task('connect', function () {
@@ -223,6 +236,8 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
+  gulp.watch(['./style/css/**/*.css'], ['css', 'sass'])
+  gulp.watch(['./src/sass/**/*.sass'], ['css', 'sass'])
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
   gulp.watch(['./src/webfonts/*'], ['webfonts'])
