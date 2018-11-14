@@ -9,14 +9,15 @@
     {% block styles %}
     <link rel="stylesheet" href="/css/stencila.min.css" />
     <link rel="stylesheet" href="/css/stencila-website.css" />
-    <!-- <link rel="stylesheet" href="/css/materia.min.css" />
     <link rel="stylesheet" href="/css/fontawesome-all.min.css" />
+    <!-- <link rel="stylesheet" href="/css/materia.min.css" />
+
     <link rel="stylesheet" href="/css/docsearch.min.css" />
     <link rel="stylesheet" href="/css/website.css" /> -->
     {% endblock %}
 </head>
 
-<body class="has-navbar-fixed-top">
+<body class="has-navbar-fixed-top has-navbar-fixed-top-touch">
     {% block header %}{% include "_header.html" %}{% endblock %}
     {% block main %}
     <main class="main section">
