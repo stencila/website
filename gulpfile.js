@@ -224,6 +224,13 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./src/css'))
 })
 
+gulp.task('stylesass', function() {
+    return gulp.src('./style/sass/**/*.sass')
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
+        .pipe(gulp.dest('./src/css'))
+})
+
 gulp.task('build', ['clean'], function () {
   gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
@@ -236,8 +243,9 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['./style/css/**/*.css'], ['css', 'sass'])
-  gulp.watch(['./src/sass/**/*.sass'], ['css', 'sass'])
+  gulp.watch(['./style/css/**/*.css'], ['stylesass', 'sass', 'css'])
+  gulp.watch(['./style/sass/**/*.sass'], ['stylesass', 'sass', 'css'])
+  gulp.watch(['./src/sass/**/*.sass'], ['stylesass', 'sass', 'css'])
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
   gulp.watch(['./src/webfonts/*'], ['webfonts'])

@@ -3,54 +3,59 @@
 
 {% block main %}
 <main class="main">
-  <div class="columns">
-    <div class="column">
-      <section id="desktop" class="section">
+    <section id="stencila-desktop" class="section has-background-light">
         <div class="container">
-          <div class="columns">
-            <div class="column is-two-fifths content">
-              <h1 class="title is-5">Stencila Desktop</h1>
-              <p>
-                Use Stencila on your own computer, with your own data, on- or offline. Stencila Desktop is a conventional desktop application allowing you to save and open files to and from your local file system.
-              </p>
-              <p>
-                <span class="icon"><i class="fa fa-flask"></i></span>
-                Stencila is an open source project under active development. We'd <span class="icon has-text-danger"><i class="fa fa-heart"></i></span> your <a href="/community/beta-testing.html">feedback</a> but please be patient with bugs and instabilities!
-              </p>
-              <div class="has-text-centered">
-                {{ download('desktop', '0.28.2', 'Stencila Desktop Beta') }}
-                <p class="is-size-6">
-                  See the <a href="install.html"> detailed installation instructions</a> for your operating system.
-                </p>
-              </div>
+            <div class="columns">
+                <div class="column">
+                    <header class="heading">
+                        <span class="small has-text-primary">How to use</span>
+                        <h1 class="title has-line is-1 has-text-primary">Stencila Desktop</h1>
+                    </header>
+
+                    <div class="content">
+                        <p>
+                            Use Stencila on your own computer, with your own data, on- or offline. Stencila Desktop is a conventional desktop application allowing you to save and open files to and from your local file system.
+                        </p>
+                        <p>
+                            <span class="icon"><i class="fa fa-flask"></i></span>
+                            Stencila is an open source project under active development. We'd <span class="icon has-text-danger"><i class="fa fa-heart"></i></span> your <a href="/community/beta-testing.html">feedback</a> but please be patient with
+                            bugs and instabilities!
+                        </p>
+
+                        {{ download('desktop', '0.28.2', 'Stencila Desktop Beta') }}
+
+                        <p>
+                            See the <a href="install.html"> detailed installation instructions</a> for your operating system.
+                        </p>
+                    </div>
+                </div>
+                <div class="column is-offset-1 has-text-centered">
+                    <img src="desktop.svg">
+                </div>
             </div>
-            <div class="column">
-              <img src="desktop.svg" style="width: 100%">
-            </div>
-          </div>
         </div>
-      </section>
-    </div>
-  </div>
-</div>
+    </section>
+</main>
 {% endblock %}
 
 {% block styles %}
 {{ super() }}
 <style type="text/css">
-  main .menu {
-    padding-top: 4em;
-    padding-left: 2em;
-    position: fixed;
-  }
-  @media(max-width: 1000px) {
-    #hub .columns {
-      flex-direction: column-reverse;
-      display: flex;
-    }
     main .menu {
-      position: relative;
+        padding-top: 4em;
+        padding-left: 2em;
+        position: fixed;
     }
-  }
+
+    @media(max-width: 1000px) {
+        #hub .columns {
+            flex-direction: column-reverse;
+            display: flex;
+        }
+
+        main .menu {
+            position: relative;
+        }
+    }
 </style>
 {% endblock %}

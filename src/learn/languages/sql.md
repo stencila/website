@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Use SQL with Stencila
+smalltitle: Learn/Languages
 ---
 
 ## Installation (Node.js context)

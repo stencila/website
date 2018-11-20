@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Quick start
+smalltitle: Learn
 ---
 
 This page will guide you through your first steps with Stencila using a simple example. We will show you how to use Stencila to analyse and visualise data

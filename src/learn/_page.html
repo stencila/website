@@ -1,69 +1,43 @@
 {% extends "_base.html" %}
 
 {% block title %}
-  {% if front.title %}{{front.title}}{% else %}Learn{% endif %} : Stencila
+{% if front.title %}{{front.title}}{% else %}Learn{% endif %} : Stencila
 {% endblock %}
 
 {% block main %}
 <main class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="content">
-          <h2 class="title is-2">{{ front.title }}</h2>
-          {{ content | safe }}
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <header class="heading">
+                    <span class="small has-text-primary">{{ front.smalltitle }}</span>
+                    <h1 class="title has-line is-1 has-text-primary">{{ front.title }}</h1>
+                </header>
+                <div class="content">
+                    {{ content | safe }}
+                </div>
+                <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+                    {% if front.prev %}
+                    <a class="pagination-previous pagination-previous--icon button is-outlined is-primary is-rounded" href="{{ front.prev.url }}">{{ front.prev.label }}</a>
+                    {% else %}
+                    <span></span>
+                    {% endif %}
+                    {% if front.next %}
+                    <a class="pagination-next pagination-next--icon button is-outlined is-primary is-rounded" href="{{ front.next.url }}">{{ front.next.label }} <span class="icon is-small"><i class="lnr lnr-arrow-right"></i></span></a>
+                    {% endif %}
+                </nav>
+            </div>
+            <div class="column is-one-quarter">
+                {% include "learn/_toc.html" %}
+            </div>
         </div>
-        <div class="steps">
-          {% if front.prev %}
-          <div class="prev">
-            <a href="{{ front.prev.url }}">◀ {{ front.prev.label }}</a>
-          </div>
-          {% endif %}
-          {% if front.next %}
-          <div class="next">
-            <a href="{{ front.next.url }}">{{ front.next.label }} ▶</a>
-          </div>
-          {% endif %}
-        </div>
-      </div>
-      <div class="column is-one-quarter">
-        {% include "learn/_toc.html" %}
-      </div>
     </div>
-  </div>
 </main>
 {% endblock %}
 
 {% block styles %}
 {{ super() }}
-<style type="text/css">
-  main .content {
-    min-height: 60vh;
-  }
-
-  main .menu {
-    padding-top: 4em;
-    padding-left: 2em;
-  }
-
-  main .steps {
-    margin-top: 2em;
-  }
-
-  main .prev,
-  main .next {
-    font-size: 1.2em;
-  }
-
-  main .prev {
-    float: left;
-  }
-
-  main .next {
-    float: right;
-  }
-</style>
-<link rel="stylesheet" href="/css/prism.css"/>
+<link rel="stylesheet" href="/css/prism.css" />
 {% endblock %}
 
 {% block scripts %}
