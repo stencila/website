@@ -117,6 +117,7 @@ gulp.task('clean', function () {
 gulp.task('css', function () {
   gulp.src([
     './src/css/**',
+    './node_modules/bulma-timeline/dist/css/bulma-timeline.min.css',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
     './node_modules/prismjs/themes/prism.css'
   ])
