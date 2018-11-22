@@ -6,6 +6,7 @@
 ////
 @import 'style/sass/config/colours'
 @import 'style/sass/config/variables'
+@import 'config/variables'
 @import 'node_modules/bulma/sass/utilities/initial-variables'
 @import 'node_modules/bulma/sass/utilities/functions'
 @import 'node_modules/bulma/sass/utilities/derived-variables'
@@ -13,20 +14,28 @@
 @import 'node_modules/bulma/bulma'
 
 ////
-/// Global mixins/modifiers/functions
+/// Style overrides
 ////
 @import 'style/sass/modifiers/global-modifiers'
 @import 'style/sass/modifiers/positional'
+@import 'style/sass/mixins/easing'
 @import 'style/sass/mixins/global-mixins'
 @import 'style/sass/config/functions'
 
-////
 /// atoms
-////
 @import 'style/sass/imports/atoms'
-@import 'atoms/posts'
+
+/// Bulma overrides
+@import 'style/sass/imports/bulma-overrides'
+@import 'bulma-overrides/menu'
+
 
 ////
-/// Bulma overrides
+/// Stencila Website Specific styles.
 ////
-@import 'style/sass/imports/bulma-overrides'
+
+/// atoms
+@import 'atoms/posts'
+
+/// modifiers
+@import 'modifiers/globals'

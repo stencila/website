@@ -6,54 +6,57 @@ Events : Stencila
 {% endblock %}
 
 {% block main %}
-<main class="main">
-  <div class="columns">
-    <div class="column">
-      <section class="hero">
-        <div class="hero-body">
-          <div class="container">
-            <div class="section has-text-centered">
-              <div class="content">
-              <h1 class="title is-2">Events</h1>
-                <p >
-                  <ul style="text-align:left;">
+<main class="main is-paddingless">
+    <div class="columns">
+        <div class="column">
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <div class="section has-text-centered">
+                            <div class="content">
+                                <h1 class="title is-2">Events</h1>
+                                <p>
+                                    <ul style="text-align:left;">
 
-                      {% for eve in events %}
-                        <li>
-                            <a href="{{ eve.html_url }}">{{ eve.title }}</a> {{ eve. location }}; {{ eve.humandate }}
-                        </li>
-                      {% endfor %}
-                    </ul>
-                </p>
-              </div>
-            </div>
-          </div>
+                                        {% for eve in events %}
+                                        <li>
+                                            <a href="{{ eve.html_url }}">{{ eve.title }}</a> {{ eve. location }}; {{ eve.humandate }}
+                                        </li>
+                                        {% endfor %}
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
         </div>
-      </div>
-  </div>
-{% endblock %}
+    </div>
+    {% endblock %}
 
 
 
 
-            {% block styles %}
-            {{ super() }}
-            <style type="text/css">
-              main .menu {
-                padding-top: 4em;
-                padding-left: 2em;
-                position: fixed;
-              }
-              @media(max-width: 1000px) {
-                #discuss .columns,
-                #code-of-conduct .columns,
-                #section-5 .columns {
-                  flex-direction: column-reverse;
-                  display: flex;
-                }
-                main .menu {
-                  position: relative;
-                }
-              }
-            </style>
-            {% endblock %}
+    {% block styles %}
+    {{ super() }}
+    <style type="text/css">
+        main .menu {
+            padding-top: 4em;
+            padding-left: 2em;
+            position: fixed;
+        }
+
+        @media(max-width: 1000px) {
+
+            #discuss .columns,
+            #code-of-conduct .columns,
+            #section-5 .columns {
+                flex-direction: column-reverse;
+                display: flex;
+            }
+
+            main .menu {
+                position: relative;
+            }
+        }
+    </style>
+    {% endblock %}

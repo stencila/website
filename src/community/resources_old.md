@@ -3,6 +3,8 @@ extends: _base.html
 title: Resources
 ---
 
+# Resources
+
 You will find here a selection of useful resources about Stencila.
 
 ## Cite Stencila
