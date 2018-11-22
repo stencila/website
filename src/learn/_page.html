@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block main %}
-<main class="section">
+<section class="section">
     <div class="container">
         <div class="columns">
-            <div class="column">
+            <div class="column is-9">
                 <header class="heading">
                     <span class="small has-text-primary">{{ front.smalltitle }}</span>
                     <h1 class="title has-line is-1 has-text-primary">{{ front.title }}</h1>
@@ -27,12 +27,12 @@
                     {% endif %}
                 </nav>
             </div>
-            <div class="column is-one-quarter">
+            <div class="column is-2 is-offset-1">
                 {% include "learn/_toc.html" %}
             </div>
         </div>
     </div>
-</main>
+</section>
 {% endblock %}
 
 {% block styles %}

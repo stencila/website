@@ -23,6 +23,7 @@
     "prismjs": "^1.13.0"
   },
   "devDependencies": {
+    "bulma": "^0.7.2",
     "del": "^3.0.0",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
@@ -39,6 +40,7 @@
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
+    "sass-module-importer": "^1.4.0",
     "through2": "^2.0.3",
     "vinyl-accumulate": "^1.4.1",
     "yaml-front-matter": "^4.0.0"

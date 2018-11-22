@@ -1,0 +1,8 @@
+{% macro heading(hasline, title, small = '', smallcolor = 'has-text-primary', titlecolor = 'has-text-primary', titlesize = 'is-1') %}
+<header class="heading">
+    {% if small|length %}
+    <span class="small {{ smallcolor }}">{{ small }}</span>
+    {% endif %}
+    <h1 class="title{% if hasline %} has-line{% endif %} {{ titlesize }} {{ titlecolor }}">{{ title }}</h1>
+</header>
+{% endmacro %}

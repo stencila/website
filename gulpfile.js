@@ -19,11 +19,19 @@ const yamlFront = require('yaml-front-matter')
 const accumulate = require('vinyl-accumulate')
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
+const moduleImporter = require('sass-module-importer')
 
 const root = path.join(__dirname, 'src')
 
 const autoprefixerOptions = {
     remove: false
+}
+
+const sassOptions = {
+    errLogToConsole: true,
+    outputStyle: 'expanded',
+    sourceMap: true,
+    importer: moduleImporter()
 }
 
 sass.compiler = require('node-sass')
@@ -218,18 +226,21 @@ gulp.task('community/events', function () {
 
 
 gulp.task('sass', function() {
-    return gulp.src('./src/sass/**/*.sass')
-        .pipe(sass().on('error', sass.logError))
+    return gulp.src([
+            './src/sass/**/*.sass',
+            './style/sass/**/*.sass'
+        ])
+        .pipe(sass(sassOptions).on('error', sass.logError))
         .pipe(autoprefixer())
         .pipe(gulp.dest('./src/css'))
 })
 
-gulp.task('stylesass', function() {
-    return gulp.src('./style/sass/**/*.sass')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('./src/css'))
-})
+// gulp.task('stylesass', function() {
+//     return gulp.src('./style/sass/**/*.sass')
+//         .pipe(sass(sassOptions).on('error', sass.logError))
+//         .pipe(autoprefixer())
+//         .pipe(gulp.dest('./src/css'))
+// })
 
 gulp.task('build', ['clean'], function () {
   gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
@@ -243,9 +254,9 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['./style/css/**/*.css'], ['stylesass', 'sass', 'css'])
-  gulp.watch(['./style/sass/**/*.sass'], ['stylesass', 'sass', 'css'])
-  gulp.watch(['./src/sass/**/*.sass'], ['stylesass', 'sass', 'css'])
+  gulp.watch(['./style/css/**/*.css'], ['sass', 'css'])
+  gulp.watch(['./style/sass/**/*.sass'], ['sass', 'css'])
+  gulp.watch(['./src/sass/**/*.sass'], ['sass', 'css'])
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
   gulp.watch(['./src/webfonts/*'], ['webfonts'])

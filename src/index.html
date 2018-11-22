@@ -1,15 +1,13 @@
 {% extends "_base.html" %}
 {% from "_download.html" import download %}
+{% from "_heading.html" import heading %}
 
 {% block main %}
 <section id="section-1" class="section has-background-light">
     <div class="container">
         <div class="columns">
             <div class="column">
-                <header class="heading">
-                    <span class="small has-text-primary">What is Stencila?</span>
-                    <h1 class="title has-line is-1 has-text-primary">An open source office suite for reproducible research.</h1>
-                </header>
+                {{ heading(true, "An open source office suite for reproducible research.", small = "What is Stencila?") }}
 
                 <div class="content">
                     <p>The calls for research to be transparent and reproducible have never been louder. But today's tools for reproducible research can be intimidating - especially if you're not a coder.</p>
