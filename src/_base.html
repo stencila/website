@@ -17,7 +17,7 @@
     {% endblock %}
 </head>
 
-<body class="has-navbar-fixed-top has-navbar-fixed-top-touch">
+<body class="has-navbar-fixed-top has-navbar-fixed-top-touch" id="body">
     {% block header %}{% include "_header.html" %}{% endblock %}
     {% block main %}
     <main class="main section">
@@ -31,6 +31,7 @@
     {% block footer %}{% include "_footer.html" %}{% endblock %}
     {% block scripts %}
     <script type="text/javascript" src="/js/docsearch.min.js"></script>
+    <script type="text/javascript" src="/js/noframework.waypoints.js"></script>
     <script type="text/javascript" src="/js/website.js"></script>
     {% endblock %}
 </body>

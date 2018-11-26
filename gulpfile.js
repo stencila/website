@@ -149,10 +149,11 @@ gulp.task('webfonts', function () {
 
 gulp.task('js', function () {
   gulp.src([
-    './src/js/**',
     './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js'
+    './node_modules/waypoints/lib/noframework.waypoints.js',
+    './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
+    './src/js/**'
   ])
     .pipe(gulp.dest('./build/js'))
 })

@@ -14,4 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     inputSelector: '#search'
   });
   */
+
+  /**
+   * ￼Fix top navbar on scroll
+   **/
+  var waypoint = new Waypoint({
+      element: document.getElementById('body'),
+      handler: function(direction) {
+          document.getElementById('main-navigation').classList.toggle('is-active');
+      },
+      offset: -200
+  })
 });

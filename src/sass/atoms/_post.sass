@@ -2,7 +2,8 @@
 /// Post - individual post on a posts landing page.
 ////
 .post
-    flex-basis: rem(276)
+    flex-basis: rem(442)
+    max-width: rem(442)
 
     &:hover
         hr
@@ -36,6 +37,10 @@
         img
             filter: grayscale(1.0)
             background: $white
+            max-width: 100%
+            display: block
+            margin-left: auto
+            margin-right: auto
 
     a
         color: $dark
@@ -43,12 +48,14 @@
     &-header
         display: block
         margin-bottom: 1rem
-        line-height: 1.3em
+        line-height: 1.2em
 
     &-meta
         margin: 1rem 0
         font-size: rem(12)
         display: block
+        width: 100%
+        max-width: rem(300)
 
     &-article-content
         img

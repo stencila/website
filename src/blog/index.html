@@ -25,10 +25,10 @@ Blog : Stencila
             <div class="tile post is-parent {{ cycle }}">
                 <a href="{{ post.href }}" class="tile is-child">
                     {{ image(post) }}
-                    <span class="post-header is-size-5 has-text-weight-semibold">{{ post.title }}</span>
+                    <span class="post-header is-size-3 has-text-weight-semibold">{{ post.title }}</span>
                     <p>{{ post.abstract | truncate }}</p>
-                    <span class="post-meta">{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}</span>
-                    <hr class="is-small has-background-dark">
+                    <span class="post-meta has-text-primary">{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}</span>
+                    <hr class="is-small">
                 </a>
             </div>
             {% endfor %}
