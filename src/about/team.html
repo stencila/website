@@ -1,0 +1,145 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Advisory Board : Stencila
+{% endblock %}
+
+{% block main %}
+
+
+
+<main class="main">
+    <div class="columns">
+      <div class="column">
+        <section class="hero">
+          <div class="hero-body">
+            <div class="container">
+                <div class="section has-text-justified">
+                  <div class="content">
+                  <h1 class="title is-2">Stencila Team</h1>
+                  <p> 
+                   Stencila team comprises of staff from different backgrounds. That allows us to bring different points of view
+                   to our work which results in outputs useful for diverse group of users. We share the support for open source
+                   technologies and lowering the barrier for learning how to code.
+                  </p>
+                </div>
+            </div>
+            
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+            <div class="column">
+                <figure class="image is-128x128">
+              <img class="is-rounded" src="/img/about/nokome.jpg">
+              </figure>
+            </div>
+          <div class="column-is-two-thirds">
+            <h1 class="title is-4">Nokome Bentley, Founder and CEO</h1>
+            <p>
+              Nokome is the creator and the main driving force behind Stencila. Before he launched the company, he was  a fisheries scientist
+              focusing on the development, evaluation and selection of fisheries management procedures. During his research work
+              Nokome experienced many struggles with software development, problems with lack of interoperability of the existing
+              tools and explored many ways of addressing them. One of the solutions that he came up were <em>stencils</em> which gradually
+              evolved towards Stencila suite.
+              Nokome is based in Aotearoa New Zealand.
+            </p>
+          </div>
+          
+       </div> 
+   </div> 
+    </section>
+
+
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column-is-two-thirds">
+            <h1 class="title is-4">Aleksandra Pawlik, Community Advocate</h1>
+            <p>
+              Aleksandra's work in Stencila focuses on understanding users’ needs to direct further development, 
+              building open source developer community and keeping you all updated on what goes on in Stencila.
+              She has been working in the research software area for over 6 years coordinating training for 
+              the <a href="http://software.ac.uk/">Software Sustainability Institute</a> in the UK and then for 
+              the <a href="https://www.nesi.org.nz/">New Zealand eScience Infrastructure</a>. 
+              She holds a PhD in Computing and is a <a href="https://software-carpentry.org/">Software</a> and 
+              <a href="http://datacarpentry.org/">Data Carpentry</a> certified instructor. Aleksandra  
+              has also trained other instructors in Europe, South Africa, Australia and New Zealand.
+              Aleksandra is based in Aotearoa New Zealand.
+          </p>
+          </div>
+          <div class="column">
+              <figure class="image is-128x128">
+            <img class="is-rounded" src="/img/about/aleksandra_centred.jpg">
+            </figure>
+          </div>
+       </div> 
+   </div> 
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+            <div class="column">
+                <figure class="image is-128x128">
+              <img class="is-rounded" src="/img/about/ben.jpg">
+              </figure>
+            </div>
+          <div class="column-is-two-thirds">
+            <h1 class="title is-4">Ben Shaw, Senior Software Developer</h1>
+            <p>
+              Ben is an experienced full-stack software developer.  
+              Ben is based in Aotearoa New Zealand.
+            </p>
+          </div>
+       
+       </div> 
+   </div> 
+    </section>
+
+  </div>
+
+  <div class="column is-one-quarter">
+      <aside class="menu">
+        <p class="menu-label">
+          About
+        </p>
+        <ul class="menu-list">
+          <li><a href="our-story.html">Our story</a></li>
+          <li><a href="team.html">Team</a></li>
+          <li><a href="advisory-board.html">Advisory Board</a></li>
+          <li><a href="collaborators.html">Collaborators</a></li>
+          <li><a href="contributors.html">Contributors</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block styles %}
+{{ super() }}
+<style type="text/css">
+main .menu {
+  padding-top: 4em;
+  padding-left: 2em;
+  position: fixed;
+}
+@media(max-width: 1000px) {
+  #discuss .columns,
+  #code-of-conduct .columns,
+  #section-5 .columns {
+    flex-direction: column-reverse;
+    display: flex;
+  }
+  main .menu {
+    position: relative;
+  }
+}
+</style>
+{% endblock %}
