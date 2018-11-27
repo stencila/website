@@ -16657,10 +16657,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
   display: block;
 }
 
-.footer a:hover {
-  color: #08225E;
-}
-
 .footer a:hover:after {
   width: 100%;
 }
@@ -16734,7 +16730,6 @@ a.navbar-item:hover, a.navbar-item.is-active,
 
 .footer-logo {
   position: absolute;
-  top: 0;
 }
 
 @media screen and (max-width: 768px) {
@@ -16767,6 +16762,13 @@ a.navbar-item:hover, a.navbar-item.is-active,
   margin-top: 2.5rem;
 }
 
+.number {
+  font-size: inherit;
+  height: auto;
+  padding: 0 0.5rem;
+  min-width: auto;
+}
+
 .menu-list a {
   position: relative;
   transition: background-color 0.25s 0.1s ease;
@@ -16780,7 +16782,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
   left: 0;
   top: 0;
   content: '';
-  background: #333333;
+  background: #66ff66;
   position: absolute;
 }
 
