@@ -16637,6 +16637,8 @@ a.navbar-item:hover, a.navbar-item.is-active,
 
 .footer a {
   transition: all 0.25s 0s ease;
+  font-size: 1.125rem;
+  line-height: 2em;
   color: #ffffff;
   font-weight: 700;
   position: relative;
@@ -16684,9 +16686,14 @@ a.navbar-item:hover, a.navbar-item.is-active,
   line-height: 2em;
 }
 
-.footer a {
-  font-size: 1.125rem;
-  line-height: 2em;
+.footer-buttons {
+  text-align: right;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-buttons {
+    text-align: center;
+  }
 }
 
 .footer-colophon {
@@ -16701,12 +16708,23 @@ a.navbar-item:hover, a.navbar-item.is-active,
   color: #ffffff;
 }
 
-@media screen and (max-width: 1087px) {
+.footer-colophon .button {
+  max-width: 6.25rem;
+}
+
+@media screen and (max-width: 768px) {
   .footer-colophon {
     padding-bottom: 3.75rem;
   }
-  .footer-colophon .button {
-    max-width: 12.5rem;
+}
+
+.footer-copyright {
+  padding-left: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-copyright {
+    padding-left: 0;
   }
 }
 
@@ -16715,16 +16733,26 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 
 .footer-logo {
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
   position: absolute;
-  left: 50%;
-  top: -3.125rem;
+  top: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .footer-logo {
+    position: relative;
+    padding-top: 3.75rem;
+  }
+}
+
+.footer-social {
+  padding: 0;
 }
 
 .footer-social a {
   font-size: 1.5rem;
   margin-right: 1.25rem;
+  display: inline;
+  padding-bottom: 0.5rem;
 }
 
 .footer-social a:last-child {

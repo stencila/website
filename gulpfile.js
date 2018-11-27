@@ -236,13 +236,6 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('./src/css'))
 })
 
-// gulp.task('stylesass', function() {
-//     return gulp.src('./style/sass/**/*.sass')
-//         .pipe(sass(sassOptions).on('error', sass.logError))
-//         .pipe(autoprefixer())
-//         .pipe(gulp.dest('./src/css'))
-// })
-
 gulp.task('build', ['clean'], function () {
   gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
