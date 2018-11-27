@@ -1,4 +1,5 @@
 <footer class="footer">
+    <img src="/img/logo.svg" width="60" alt="Stencila" class="footer-logo">
     <div class="container">
         <div class="columns footer-links is-centered">
             <div class="column is-2">
@@ -22,14 +23,21 @@
                 <a href="https://community.stenci.la/"> Community Forum </a> <br />
             </div>
         </div>
-        <div class="columns">
-            <div class="column">
-                <a id="edit-page" class="button is-outlined is-white is-rounded call-to-action" href="https://github.com/stencila/website/edit/master/{{ source }}" target="_blank" title="Edit this page">EDIT</a>
-            </div>
-            <div class="footer-colophon column">
-                <a class="footer-logo" href="/"><img src="/img/stencila-logo-reverse.svg" width="180" alt="Stencila"></a>
-                © 2018 Stencila <a href="https://github.com/stencila/stencila/graphs/contributors">contributors</a>
+    </div>
 
+    <div class="footer-colophon">
+        <div class="container">
+            <div class="columns align-centre">
+                <div class="column no-flex-grow has-nowrap">
+                    © 2018 Stencila <a href="https://github.com/stencila/stencila/graphs/contributors">contributors</a>
+                </div>
+                <div class="footer-social column flex-grow has-text-centered">
+                    <a href="https://github.com/stencila/stencila" target="_blank" class="fab fa-github"></a> <a href="https://gitter.im/stencila/stencila" target="_blank" class="fab fa-gitter"></a> <a href="https://twitter.com/stencila" target="_blank"
+                        class="fab fa-twitter"></a>
+                </div>
+                <div class="column is-2">
+                    <a id="edit-page" class="button is-mini is-outlined is-white is-rounded call-to-action is-full-width" href="https://github.com/stencila/website/edit/master/{{ source }}" target="_blank" title="Edit this page">Edit this page</a>
+                </div>
             </div>
         </div>
     </div>
