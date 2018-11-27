@@ -16807,8 +16807,7 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 
 .posts .post:hover .image:before {
-  mix-blend-mode: unset;
-  background-color: unset;
+  opacity: 0;
 }
 
 .posts .post:hover .image img {
@@ -16817,6 +16816,10 @@ a.navbar-item:hover, a.navbar-item.is-active,
 }
 
 .posts .post .image {
+  display: inline-block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   margin-bottom: 2.5rem;
   position: relative;
 }
@@ -16832,7 +16835,8 @@ a.navbar-item:hover, a.navbar-item.is-active,
   display: block;
   background-color: #2568ef;
   mix-blend-mode: screen;
-  transition: mix-blend-mode 0.25s ease;
+  opacity: 1.0;
+  transition: all 0.5s ease;
 }
 
 .posts .post .image img {

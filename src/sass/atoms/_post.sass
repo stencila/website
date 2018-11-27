@@ -11,13 +11,17 @@
 
         .image
             &:before
-                mix-blend-mode: unset
-                background-color: unset
+                opacity: 0
+                // mix-blend-mode: unset
+                // background-color: unset
 
             img
                 filter: none
 
     .image
+        display: inline-block
+        left: 50%
+        transform: translateX(-50%)
         margin-bottom: rem(40)
         position: relative
 
@@ -32,7 +36,8 @@
             display: block
             background-color: $primary
             mix-blend-mode: screen
-            transition: mix-blend-mode 0.25s ease
+            opacity: 1.0
+            transition: all 0.5s ease
 
         img
             filter: grayscale(1.0)
