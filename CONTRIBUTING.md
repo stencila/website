@@ -69,6 +69,19 @@ If you want to preview your changes locally:
 6. Open your browser and go to `http://127.0.0.1:8080`
 
 
+### Add contributors
+
+This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Please add contributors, including yourself, using,
+
+```bash
+# Add new contributor <username>, who made a contribution of type <contribution>
+npm run contributors:add <username> <contribution>
+# Example: See https://www.npmjs.com/package/all-contributors-cli for more codes.
+npm run contributors:add octocat code,doc
+# Regenerate the readme table
+npm run contributors:generate
+```
+
 [stencila-site]: http://stenci.la/
 [nunjucks]: https://mozilla.github.io/nunjucks/
 [stencila-website-repo]: https://github.com/stencila/website
