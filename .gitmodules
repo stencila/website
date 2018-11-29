@@ -1,4 +1,4 @@
 [submodule "style"]
     path = style
     url = https://github.com/stencila/style.git
-    branch = storybook-integration
+    branch = master

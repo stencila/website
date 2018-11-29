@@ -8,7 +8,6 @@ cache:
 
 # Build the site
 script:
-  - cd style && npm install
   - npm run build
 
 # Deploy to Github Pages
