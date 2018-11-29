@@ -4,6 +4,8 @@
   "description": "Stencila's website at https://stenci.la",
   "main": "index.js",
   "scripts": {
+    "contributors:add": "all-contributors add",
+    "contributors:generate": "all-contributors generate",
     "build": "gulp build",
     "start": "gulp"
   },
@@ -11,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/stencila/website.git"
   },
-  "author": "Stencila contributors",
+  "author": "https://github.com/stencila/website#contributors",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/stencila/website/issues"
@@ -25,6 +27,7 @@
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
+    "all-contributors-cli": "^5.4.1",
     "bulma": "^0.7.2",
     "del": "^3.0.0",
     "glob": "^7.1.2",

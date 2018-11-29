@@ -1,0 +1,103 @@
+{
+  "projectName": "website",
+  "projectOwner": "stencila",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "atilacamurca",
+      "name": "Átila Camurça Alves",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/508624?v=4",
+      "profile": "http://www.mad3linux.org",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "joehand",
+      "name": "Joe Hand",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/684965?v=4",
+      "profile": "https://jhand.space",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "forsakendaemon",
+      "name": "David Allen",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/1352651?v=4",
+      "profile": "https://github.com/forsakendaemon",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "simonwinter",
+      "name": "Simon Winter",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/1104537?v=4",
+      "profile": "https://github.com/simonwinter",
+      "contributions": [
+        "design"
+      ]
+    },
+    {
+      "login": "daniellecrobinson",
+      "name": "Danielle Robinson",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/13207169?v=4",
+      "profile": "https://github.com/daniellecrobinson",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "apawlik",
+      "name": "Aleksandra Pawlik",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/2358535?v=4",
+      "profile": "http://stenci.la",
+      "contributions": [
+        "blog", "code", "design"
+      ]
+    },
+    {
+      "login": "visika",
+      "name": "Mariano Mollo",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2254049?v=4",
+      "profile": "https://github.com/visika",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "michael",
+      "name": "Michael Aufreiter",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/2931?v=4",
+      "profile": "http://substance.io",
+      "contributions": [
+        "design", "code", "blog"
+      ]
+    },
+    {
+      "login": "oliver----",
+      "name": "Oliver Buchtala",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/284099?v=4",
+      "profile": "https://github.com/oliver----",
+      "contributions": [
+        "code", "blog"
+      ]
+    },
+    {
+      "login": "nokome",
+      "name": "Nokome Bentley",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/1152336?v=4",
+      "profile": "https://github.com/nokome",
+      "contributions": [
+        "code", "design", "blog"
+      ]
+    }
+  ]
+}
