@@ -1,0 +1,161 @@
+{% extends "_base.html" %}
+
+{% block title %}
+Advisory Board : Stencila
+{% endblock %}
+
+{% block main %}
+
+
+<main class="main">
+  <div class="columns">
+    <div class="column">
+      <section class="hero">
+        <div class="hero-body">
+          <div class="container">
+              <div class="section has-text-centered">
+                <div class="content">
+                <h1 class="title is-2">Our story</h1>
+                <p> 
+                  The idea behind Stencila started off several years ago when Nokome Bentley, then a fisheries scientist,
+                  was looking for better tools to do his research. His work in fisheries involved building complex statistical
+                  models, computational modelling of various data sets and producing reports. He would collaborate on the latter
+                  with a number of stakeholders who had different preferences regarding the tools for working on research reports. 
+                </p>
+              </div>
+          </div>
+          
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column-is-two-thirds">
+            <h1 class="title is-4">Stencils</h1>
+            <p>
+                he idea behind Stencila started off several years ago when Nokome Bentley, then a fisheries scientist,
+                was looking for better tools to do his research. His work in fisheries involved building complex statistical
+                models, computational modelling of various data sets and producing reports. He would collaborate on the latter
+                with a number of stakeholders who had different preferences regarding the tools for working on research reports. 
+            </p>
+          </div>
+          <div class="column">
+              <figure class="image is-128x128">
+            <img class="is-rounded" src="/img/favicon.png">
+            </figure>
+          </div>
+       </div> 
+   </div> 
+    </section>
+
+    <section class="section">
+        <div class="container">
+          <div class="columns">
+            <div class="column-is-two-thirds">
+              <h1 class="title is-4">First Sloan Grant</h1>
+              <p>
+                  he idea behind Stencila started off several years ago when Nokome Bentley, then a fisheries scientist,
+                  was looking for better tools to do his research. His work in fisheries involved building complex statistical
+                  models, computational modelling of various data sets and producing reports. He would collaborate on the latter
+                  with a number of stakeholders who had different preferences regarding the tools for working on research reports. 
+              </p>
+            </div>
+            <div class="column">
+                <figure class="image is-128x128">
+              <img class="is-rounded" src="/img/favicon.png">
+              </figure>
+            </div>
+         </div> 
+     </div> 
+      </section>
+
+      <section class="section">
+          <div class="container">
+            <div class="columns">
+              <div class="column-is-two-thirds">
+                <h1 class="title is-4">Major development</h1>
+                <p>
+                    he idea behind Stencila started off several years ago when Nokome Bentley, then a fisheries scientist,
+                    was looking for better tools to do his research. His work in fisheries involved building complex statistical
+                    models, computational modelling of various data sets and producing reports. He would collaborate on the latter
+                    with a number of stakeholders who had different preferences regarding the tools for working on research reports. 
+                </p>
+              </div>
+              <div class="column">
+                  <figure class="image is-128x128">
+                <img class="is-rounded" src="/img/favicon.png">
+                </figure>
+              </div>
+           </div> 
+       </div> 
+        </section>
+
+
+        <section class="section">
+            <div class="container">
+              <div class="columns">
+                <div class="column-is-two-thirds">
+                  <h1 class="title is-4">Getting focused</h1>
+                  <p>
+                      he idea behind Stencila started off several years ago when Nokome Bentley, then a fisheries scientist,
+                      was looking for better tools to do his research. His work in fisheries involved building complex statistical
+                      models, computational modelling of various data sets and producing reports. He would collaborate on the latter
+                      with a number of stakeholders who had different preferences regarding the tools for working on research reports. 
+                  </p>
+                </div>
+                <div class="column">
+                    <figure class="image is-128x128">
+                  <img class="is-rounded" src="/img/favicon.png">
+                  </figure>
+                </div>
+             </div> 
+         </div> 
+          </section>
+
+
+</div>
+
+<div class="column is-one-quarter">
+        <aside class="menu">
+          <p class="menu-label">
+            About
+          </p>
+          <ul class="menu-list">
+            <li><a href="our-story.html">Our story</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="advisory-board.html">Advisory Board</a></li>
+            <li><a href="collaborators.html">Collaborators</a></li>
+            <li><a href="contributors.html">Contributors</a></li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </div>
+  
+  {% endblock %}
+  
+  {% block styles %}
+  {{ super() }}
+  <style type="text/css">
+  main .menu {
+    padding-top: 4em;
+    padding-left: 2em;
+    position: fixed;
+  }
+  @media(max-width: 1000px) {
+    #discuss .columns,
+    #code-of-conduct .columns,
+    #section-5 .columns {
+      flex-direction: column-reverse;
+      display: flex;
+    }
+    main .menu {
+      position: relative;
+    }
+  }
+  </style>
+  {% endblock %}
+  
