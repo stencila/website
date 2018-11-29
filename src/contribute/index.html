@@ -5,133 +5,141 @@ Contribute to Stencila
 {% endblock %}
 
 {% block main %}
-<section id="section-1" class="hero">
-  <div class="hero-body">
+
+<section id="section-1" class="section has-background-primary">
     <div class="container">
-        <div class="content has-text-centered">
-          <h1 class="title is-3">Contribute to Stencila</h1>
-          <p>
-            Stencila is an open-source, community-driven project. We encourage
-            and welcome contributions from all community members. There are a number of ways you
-            can contribute. On this page we'll guide you through them.
-          </p>
+        <div class="columns">
+            <div class="column">
+                <header class="heading has-text-centered">
+                    <span class="small has-text-white">Help us improve</span>
+                    <h1 class="title has-line is-1 has-text-white">Contribute to Stencila</h1>
+                </header>
+            </div>
         </div>
 
+        <div class="columns is-centered">
+            <div class="column is-half">
+                <div class="content has-text-centered has-text-white">
+                    <p>
+                        Stencila is an open-source, community-driven project. <br>We encourage
+                        and welcome contributions from all community members. There are a number of ways you
+                        can contribute. On this page we'll guide you through them.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
-<section id="develop" class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="content">
-          <h1 class="title is-2">Develop Stencila</h1>
-          <p>
-           If you're a Javascript developer, a UX designer, or someone who just wants to help improve Stencila's users interfaces, contribute to the <a href="https://github.com/stencila/stencila">Stencila user interface repo</a>,
-           or the <a href="https://github.com/stencila/desktop">Stencila Desktop application</a>.
-          </p>
-          <p>
-            If you are interested in helping with Stencila interoperability with existing tools and file formats
-            used for data analysis, check out <a href="https://github.com/stencila/convert"> Stencila Converters</a>.
-          </p>
-          <p>
-            If you want to make Stencila available online, to support efficient sharing and
-            collaboration, have a look at <a href="(https://github.com/stencila/hub">Stencila Hub</a>
-            and <a href="https://github.com/stencila/cloud">Stencila Cloud</a>. Working on this source
-            code will be particularly interesting for those who are into cloud computing, Docker and Kubernetes.
-          </p>
-          <p>
-            If you would like to improve functionality of using Python from within Stencila,
-            check the <a href="https://github.com/stencila/py">Stencila for Python</a>.
-            And if you are an R developer, have a look at <a href="https://github.com/stencila/r">Stencila for R </a>.
-            Likewise the <a href="https://github.com/stencila/node">Stencila for Node.js</a> package for Javascript developers.
+<section id="develop" class="section border-bottom-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <div class="content">
+                    <header class="heading">
+                        <h2 class="title is-2">Develop Stencila</h2>
+                    </header>
+                    <p>
+                        If you're a Javascript developer, a UX designer, or someone who just wants to help improve Stencila's users interfaces, contribute to the <a href="https://github.com/stencila/stencila">Stencila user interface repo</a>,
+                        or the <a href="https://github.com/stencila/desktop">Stencila Desktop application</a>.
+                    </p>
+                    <p>
+                        If you are interested in helping with Stencila interoperability with existing tools and file formats
+                        used for data analysis, check out <a href="https://github.com/stencila/convert"> Stencila Converters</a>.
+                    </p>
+                    <p>
+                        If you want to make Stencila available online, to support efficient sharing and
+                        collaboration, have a look at <a href="(https://github.com/stencila/hub">Stencila Hub</a>
+                        and <a href="https://github.com/stencila/cloud">Stencila Cloud</a>. Working on this source
+                        code will be particularly interesting for those who are into cloud computing, Docker and Kubernetes.
+                    </p>
+                    <p>
+                        If you would like to improve functionality of using Python from within Stencila,
+                        check the <a href="https://github.com/stencila/py">Stencila for Python</a>.
+                        And if you are an R developer, have a look at <a href="https://github.com/stencila/r">Stencila for R </a>.
+                        Likewise the <a href="https://github.com/stencila/node">Stencila for Node.js</a> package for Javascript developers.
 
-            The usage of external languages and libraries in Stencila is enabled through
-            <a href="https://github.com/stencila/images">Stencila Docker images</a>.
-          </p>
+                        The usage of external languages and libraries in Stencila is enabled through
+                        <a href="https://github.com/stencila/images">Stencila Docker images</a>.
+                    </p>
+                    <hr class="is-small">
+                </div>
+            </div>
+
+            <div class="column is-offset-1 has-text-centered">
+                <figure>
+                    <img src="contribute-graph.png" alt="">
+                </figure>
+            </div>
         </div>
-      </div>
-
-      <div class="column">
-        <img src="contribute-graph.png">
-      </div>
     </div>
-  </div>
 </section>
 
-<section id="document" class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <img src="contribute-documentation.jpg">
-      </div>
-      <div class="column">
-        <div class="content">
-          <h1 class="title is-2">Document Stencila</h1>
-
-          <p>
-            We will be honest here. We are guilty of Stencila documentation requiring more love and attention.
-            Your help would be much appreciated! You can simply go to the <a href="../learn/intro.html">documentation pages</a>
-            and click the  <span id="edit-page" class="button" title="Edit button" style="color:white; background: #2568ef;">✎ Edit </span> button.
-          </p>
-          <p>
-            You will be taken to the the GitHub repository containing the website pages. If you don't know what it means, don't worry, just follow these steps:
-            <ol>
-              <li> Log into your GitHub account. If you don't have one, you will be given an option to create one.</li>
-              <li> If you never edited the website, you will see a note <em>You need to fork this repository to propose changes.</em> </li>
-              <li> Click the green button <em>Fork this repository to propose changes</em></li>
-               <li>In the editor, simply make the changes you think should be there. Then, in the text box at the bottom (under
-            <em>Commit changes</em>), put in a short note on what you did and click the button <em>Submit changes</em>.</li>
-          </ol>
-          <p>
-            We also welcome and very much need help documenting the source code. Please send us pull requests or simply
-            <a href="mailto:hello@stenci.la"></a> get in touch if you'd like to improve source code documentation.
-          </p>
+<section id="document" class="section border-bottom-light">
+    <div class="container">
+        <div class="columns">
+            <div class="column has-text-centered">
+                <figure>
+                    <img src="contribute-documentation.jpg">
+                </figure>
+            </div>
+            <div class="column is-offset-1">
+                <header class="heading">
+                    <h2 class="title is-2">Document Stencila</h2>
+                </header>
+                <div class="content">
+                    <p>
+                        We will be honest here. We are guilty of Stencila documentation requiring more love and attention.
+                        Your help would be much appreciated! You can simply go to the <a href="../learn/intro.html">documentation pages</a>
+                        and click the <a href="#" id="edit-page" class="button is-outlined is-primary is-rounded call-to-action" title="Edit button" style="color:white; background: #2568ef;"> Edit </a> button.
+                    </p>
+                    <p>
+                        You will be taken to the the GitHub repository containing the website pages. If you don't know what it means, don't worry, just follow these steps:
+                        <ol>
+                            <li> Log into your GitHub account. If you don't have one, you will be given an option to create one.</li>
+                            <li> If you never edited the website, you will see a note <em>You need to fork this repository to propose changes.</em> </li>
+                            <li> Click the green button <em>Fork this repository to propose changes</em></li>
+                            <li>In the editor, simply make the changes you think should be there. Then, in the text box at the bottom (under
+                                <em>Commit changes</em>), put in a short note on what you did and click the button <em>Submit changes</em>.</li>
+                        </ol>
+                        <p>
+                            We also welcome and very much need help documenting the source code. Please send us pull requests or simply
+                            <a href="mailto:hello@stenci.la"></a> get in touch if you'd like to improve source code documentation.
+                        </p>
+                        <hr class="is-small">
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section id="share" class="section">
-  <div class="container">
-    <div class="columns">
-      <div class="column">
-        <div class="content">
-          <h1 class="title is-2">Share your data manipulation code</h1>
-          <p>
-            If you develop code for data manipulation (in Python, R, and other languages), you may be interested in
-            making your data manipulation code available through <a href="">domain-specific libraries</a>.
-            Alternatively, you can help out with expanding
-             <a href="https://github.com/stencila/libcore/blob/master/CONTRIBUTING.md">Stencila Core Library</a> which
-             comes with the basic Stencila installation and is implemented in JavaScript.
-          </p>
+    <div class="container">
+        <div class="columns">
+            <div class="column">
+                <header class="heading">
+                    <h2 class="title is-2">Share your data manipulation code</h2>
+                </header>
+                <div class="content">
+                    <p>
+                        If you develop code for data manipulation (in Python, R, and other languages), you may be interested in
+                        making your data manipulation code available through <a href="">domain-specific libraries</a>.
+                        Alternatively, you can help out with expanding
+                        <a href="https://github.com/stencila/libcore/blob/master/CONTRIBUTING.md">Stencila Core Library</a> which
+                        comes with the basic Stencila installation and is implemented in JavaScript.
+                    </p>
+                    <hr class="is-small">
+                </div>
+            </div>
+            <div class="column is-offset-1">
+                <img src="contribute-share.jpg">
+            </div>
         </div>
-      </div>
-      <div class="column">
-        <img src="contribute-share.jpg">
-      </div>
     </div>
-  </div>
 </section>
 {% endblock %}
 
 
 {% block styles %}
-  {{ super() }}
-  <style type="text/css">
-    #develop,
-    #shape
-  {
-      background: #fafafa;
-    }
-    @media(max-width: 767px) {
-      #document .columns{
-        flex-direction: column-reverse;
-        display: flex;
-      }
-    }
-
-  </style>
+{{ super() }}
 {% endblock %}

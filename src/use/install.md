@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Stencila Desktop installation
+smalltitle: Use
 next_ignore:
     label: Quick start
     url: /learn/getting-started/quick-start.html

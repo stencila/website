@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Use R with Stencila
+smalltitle: Learn/Languages
 ---
 
 ![Stencila R Context](../img/r-context.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-top: 1em; float: left;" }

@@ -20,22 +20,29 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "docsearch.js": "^2.5.2",
-    "prismjs": "^1.13.0"
+    "jquery": "^3.3.1",
+    "prismjs": "^1.13.0",
+    "waypoints": "^4.0.1"
   },
   "devDependencies": {
+    "bulma": "^0.7.2",
     "del": "^3.0.0",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^6.0.0",
     "gulp-connect": "^5.6.1",
     "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.2",
     "markdown-it": "^8.4.1",
     "markdown-it-anchor": "^4.0.0",
     "markdown-it-attrs": "^1.2.1",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-table-of-contents": "^0.4.3",
+    "node-sass": "^4.10.0",
     "nunjucks": "^3.1.2",
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
+    "sass-module-importer": "^1.4.0",
     "through2": "^2.0.3",
     "vinyl-accumulate": "^1.4.1",
     "yaml-front-matter": "^4.0.0"

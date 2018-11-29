@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Introduction
+smalltitle: Learn
 next:
     label: Installation
     url: /use/install.html

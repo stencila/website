@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Use JavaScript with Stencila
+smalltitle: Learn/Languages
 ---
 
 Stencila allows you use interactive JavaScript code  within Stencila articles, notebooks and sheets. JavaScript comes with basic Stencila installation so you can

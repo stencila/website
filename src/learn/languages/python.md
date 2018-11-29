@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Use Python with Stencila
+smalltitle: Learn/Languages
 ---
 
 Stencila allows you use interactive Python code  within Stencila articles, notebooks and sheets.

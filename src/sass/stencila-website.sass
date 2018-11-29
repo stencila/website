@@ -1,0 +1,41 @@
+// Main Stencila style sheet
+@charset "utf-8"
+
+////
+/// Bluma setup & initial variables.
+////
+@import 'style/sass/config/colours'
+@import 'style/sass/config/variables'
+@import 'config/variables'
+@import 'node_modules/bulma/sass/utilities/initial-variables'
+@import 'node_modules/bulma/sass/utilities/functions'
+@import 'node_modules/bulma/sass/utilities/derived-variables'
+@import 'style/sass/config/colour-maps'
+@import 'node_modules/bulma/bulma'
+
+////
+/// Style overrides
+////
+@import 'style/sass/modifiers/global-modifiers'
+@import 'style/sass/modifiers/positional'
+@import 'style/sass/mixins/easing'
+@import 'style/sass/mixins/global-mixins'
+@import 'style/sass/config/functions'
+
+/// atoms
+@import 'style/sass/imports/atoms'
+
+/// Bulma overrides
+@import 'style/sass/imports/bulma-overrides'
+@import 'bulma-overrides/menu'
+
+
+////
+/// Stencila Website Specific styles.
+////
+
+/// atoms
+@import 'atoms/posts'
+
+/// modifiers
+@import 'modifiers/globals'

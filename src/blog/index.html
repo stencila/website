@@ -5,42 +5,41 @@ Blog : Stencila
 {% endblock %}
 
 {% macro image(post) %}
-<div class="column is-4">
-  <p class="image">
+<p class="image">
     <img src="{{ post.image }}">
-  </p>
-</div>
-{% endmacro %}              
+</p>
+{% endmacro %}
 
 {% block main %}
-  <main class="section">
+<main class="section">
     <div class="container">
-      {% set bicycler = cycler("odd", "even") %}
-      {% for post in posts %}
-        {% set cycle = bicycler.next() %}
-        <div class="post {{ cycle }}">
-          <a href="{{ post.href }}">
-            <div class="columns">
-              {% if cycle == "odd" %}{{ image(post) }}{% endif %}
-              <div class="column is-8">
-                <div class="content">
-                  <h4>{{ post.title }}</h4>
-                  <p>{{ post.abstract | truncate }}</p>
-                  <h6>{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}</h5>
-                </div>
-              </div>
-              {% if cycle == "even" %}{{ image(post) }}{% endif %}
+        <header class="heading has-text-centered">
+            <h1 class="title has-line has-text-primary is-1">Blog</h1>
+        </header>
+
+        <div class="tile is-ancestor posts">
+            {% set bicycler = cycler("odd", "even") %}
+            {% for post in posts %}
+            {% set cycle = bicycler.next() %}
+
+            <div class="tile post is-parent {{ cycle }}">
+                <a href="{{ post.href }}" class="tile is-child">
+                    {{ image(post) }}
+                    <span class="post-header is-size-3 has-text-weight-semibold">{{ post.title }}</span>
+                    <p>{{ post.abstract | truncate }}</p>
+                    <span class="post-meta has-text-primary">{{ post.author }}, {{ post.date | date('D MMMM YYYY') }}</span>
+                    <hr class="is-small">
+                </a>
             </div>
-          </a>
+            {% endfor %}
         </div>
-      {% endfor %}
     </div>
-  </main>
+</main>
 {% endblock %}
 
 {% block styles %}
-  {{ super() }}
-  <style type="text/css">
+{{ super() }}
+<!-- <style type="text/css">
     .container {
       max-width: 50em;
     }
@@ -53,5 +52,5 @@ Blog : Stencila
       max-height: 200px;
       overflow: hidden;
     }
-  </style>
+  </style> -->
 {% endblock %}

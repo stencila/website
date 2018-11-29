@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Mini programming language
+smalltitle: Learn/Languages
 next_ignore:
     label: JavaScript
     url: /learn/languages/javascript.html

@@ -1,0 +1,4 @@
+[submodule "style"]
+    path = style
+    url = https://github.com/stencila/style.git
+    branch = master

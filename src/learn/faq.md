@@ -1,6 +1,7 @@
 ---
 extends: learn/_page.html
 title: Frequently Asked Questions
+smalltitle: Learn
 ---
 **I already use RMarkdown/JupyterNotebook. How can Stencila be useful for me?**<br/>
 
