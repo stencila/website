@@ -20,6 +20,7 @@
   },
   "homepage": "https://stenci.la",
   "dependencies": {
+    "@stencila/style": "^1.0.1",
     "cheerio": "^1.0.0-rc.2",
     "docsearch.js": "^2.5.2",
     "jquery": "^3.3.1",
