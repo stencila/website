@@ -138,7 +138,6 @@ gulp.task('sass', function() {
 
 gulp.task('css', function () {
   gulp.src([
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
     './node_modules/prismjs/themes/prism.css',
     './src/css/**'
   ])
@@ -154,10 +153,9 @@ gulp.task('webfonts', function () {
 
 gulp.task('js', function () {
   gulp.src([
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/waypoints/lib/noframework.waypoints.js',
     './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
+    './node_modules/waypoints/lib/noframework.waypoints.js',
     './src/js/**'
   ])
     .pipe(gulp.dest('./build/js'))
