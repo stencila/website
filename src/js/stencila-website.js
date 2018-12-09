@@ -6,15 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
     $menu.classList.toggle('is-active');
   });
 
-  /*
-  Search temporarily disabled. See issue #2
-  docsearch({
-    apiKey: '<API_KEY>',
-    indexName: '<INDEX_NAME>',
-    inputSelector: '#search'
-  });
-  */
-
   /**
    * ￼Fix top navbar on scroll
    **/

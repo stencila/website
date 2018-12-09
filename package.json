@@ -20,15 +20,14 @@
   },
   "homepage": "https://stenci.la",
   "dependencies": {
-    "cheerio": "^1.0.0-rc.2",
-    "docsearch.js": "^2.5.2",
-    "jquery": "^3.3.1",
-    "prismjs": "^1.13.0",
+    "@stencila/style": "^1.1.1",
+    "prismjs": "^1.15.0",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
     "all-contributors-cli": "^5.4.1",
     "bulma": "^0.7.2",
+    "cheerio": "^1.0.0-rc.2",
     "del": "^3.0.0",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
@@ -37,8 +36,8 @@
     "gulp-plumber": "^1.2.0",
     "gulp-sass": "^4.0.2",
     "markdown-it": "^8.4.1",
-    "markdown-it-anchor": "^4.0.0",
-    "markdown-it-attrs": "^1.2.1",
+    "markdown-it-anchor": "^5.0.2",
+    "markdown-it-attrs": "^2.3.2",
     "markdown-it-emoji": "^1.4.0",
     "markdown-it-table-of-contents": "^0.4.3",
     "node-sass": "^4.10.0",
@@ -46,7 +45,7 @@
     "nunjucks-date-filter": "^0.1.1",
     "replace-ext": "^1.0.0",
     "sass-module-importer": "^1.4.0",
-    "through2": "^2.0.3",
+    "through2": "^3.0.0",
     "vinyl-accumulate": "^1.4.1",
     "yaml-front-matter": "^4.0.0"
   }

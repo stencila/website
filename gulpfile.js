@@ -23,10 +23,6 @@ const moduleImporter = require('sass-module-importer')
 
 const root = path.join(__dirname, 'src')
 
-const autoprefixerOptions = {
-    remove: false
-}
-
 const sassOptions = {
     errLogToConsole: true,
     outputStyle: 'expanded',
@@ -130,12 +126,20 @@ gulp.task('clean', function () {
   return del('./build')
 })
 
+gulp.task('sass', function() {
+  gulp.src([
+    './node_modules/@stencila/style/sass/**/*.sass',
+    './src/sass/**/*.sass'
+  ])
+  .pipe(sass(sassOptions).on('error', sass.logError))
+  .pipe(autoprefixer())
+  .pipe(gulp.dest('./build/css'))
+})
+
 gulp.task('css', function () {
   gulp.src([
-    './src/css/**',
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.css',
     './node_modules/prismjs/themes/prism.css',
-    './style/css/**'
+    './src/css/**'
   ])
     .pipe(gulp.dest('./build/css'))
 })
@@ -149,10 +153,9 @@ gulp.task('webfonts', function () {
 
 gulp.task('js', function () {
   gulp.src([
-    './node_modules/docsearch.js/dist/cdn/docsearch.min.js',
     './node_modules/prismjs/prism.js',
-    './node_modules/waypoints/lib/noframework.waypoints.js',
     './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
+    './node_modules/waypoints/lib/noframework.waypoints.js',
     './src/js/**'
   ])
     .pipe(gulp.dest('./build/js'))
@@ -225,17 +228,6 @@ gulp.task('community/events', function () {
     .pipe(connect.reload())
 })
 
-
-gulp.task('sass', function() {
-    return gulp.src([
-            './src/sass/**/*.sass',
-            './style/sass/**/*.sass'
-        ])
-        .pipe(sass(sassOptions).on('error', sass.logError))
-        .pipe(autoprefixer())
-        .pipe(gulp.dest('./src/css'))
-})
-
 gulp.task('build', ['clean'], function () {
   gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
 })
@@ -248,9 +240,8 @@ gulp.task('connect', function () {
 })
 
 gulp.task('watch', function () {
-  gulp.watch(['./style/css/**/*.css'], ['sass', 'css'])
-  gulp.watch(['./style/sass/**/*.sass'], ['sass', 'css'])
-  gulp.watch(['./src/sass/**/*.sass'], ['sass', 'css'])
+  gulp.watch(['./node_modules/@stencila/style/sass/**/*.sass'], ['sass'])
+  gulp.watch(['./src/sass/**/*.sass'], ['sass'])
   gulp.watch(['./src/css/*'], ['css'])
   gulp.watch(['./src/js/*'], ['js'])
   gulp.watch(['./src/webfonts/*'], ['webfonts'])
