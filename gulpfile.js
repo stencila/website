@@ -127,7 +127,7 @@ gulp.task('clean', function () {
 })
 
 gulp.task('sass', function() {
-  gulp.src([
+  return gulp.src([
     './node_modules/@stencila/style/sass/**/*.sass',
     './src/sass/**/*.sass'
   ])
@@ -137,7 +137,7 @@ gulp.task('sass', function() {
 })
 
 gulp.task('css', function () {
-  gulp.src([
+  return gulp.src([
     './node_modules/prismjs/themes/prism.css',
     './src/css/**'
   ])
@@ -145,14 +145,14 @@ gulp.task('css', function () {
 })
 
 gulp.task('webfonts', function () {
-  gulp.src([
+  return gulp.src([
     './src/webfonts/*.*'
   ])
     .pipe(gulp.dest('./build/webfonts'))
 })
 
 gulp.task('js', function () {
-  gulp.src([
+  return gulp.src([
     './node_modules/prismjs/prism.js',
     './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
     './node_modules/waypoints/lib/noframework.waypoints.js',
@@ -162,14 +162,14 @@ gulp.task('js', function () {
 })
 
 gulp.task('img', function () {
-  gulp.src([
+  return gulp.src([
     './src/**/*.{gif,jpg,png,svg}'
   ], {base: './src'})
     .pipe(gulp.dest('./build'))
 })
 
 gulp.task('nunjucks', function () {
-  gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
+  return gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
@@ -177,7 +177,7 @@ gulp.task('nunjucks', function () {
 })
 
 gulp.task('markdown', function () {
-  gulp.src(['./src/**/*.md'])
+  return gulp.src(['./src/**/*.md'])
     .pipe(plumber())
     .pipe(markdown2nunjucks())
     .pipe(nunjucks2html())
@@ -186,7 +186,7 @@ gulp.task('markdown', function () {
 })
 
 gulp.task('blog/index', function () {
-  gulp.src(['./src/blog/**/index.md'])
+  return gulp.src(['./src/blog/**/index.md'])
     .pipe(plumber())
     .pipe(accumulate('./blog/index.html'))
     .pipe(through.obj(function(all, encoding, callback) {
@@ -208,7 +208,7 @@ gulp.task('blog/index', function () {
 
 
 gulp.task('community/events', function () {
-  gulp.src(['./src/community/events/**.md'])
+  return gulp.src(['./src/community/events/**.md'])
     .pipe(plumber())
     .pipe(accumulate('./community/events.html'))
     .pipe(through.obj(function(all, encoding, callback) {
@@ -228,28 +228,39 @@ gulp.task('community/events', function () {
     .pipe(connect.reload())
 })
 
-gulp.task('build', ['clean'], function () {
-  gulp.start(['sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events'])
-})
 
-gulp.task('connect', function () {
+
+gulp.task('connect', function (done) {
   connect.server({
     root: 'build',
     livereload: true
   })
+  done()
 })
 
-gulp.task('watch', function () {
-  gulp.watch(['./node_modules/@stencila/style/sass/**/*.sass'], ['sass'])
-  gulp.watch(['./src/sass/**/*.sass'], ['sass'])
-  gulp.watch(['./src/css/*'], ['css'])
-  gulp.watch(['./src/js/*'], ['js'])
-  gulp.watch(['./src/webfonts/*'], ['webfonts'])
-  gulp.watch(['./src/**/*.{gif,jpg,png,svg}'], ['img'])
-  gulp.watch(['./src/**/*.html', './src/**/_*.html'], ['nunjucks'])
-  gulp.watch(['./src/**/*.md', './src/**/_*.html'], ['markdown'])
-  gulp.watch(['./src/blog/index.html', './src/blog/**/index.md'], ['blog/index'])
-  gulp.watch(['./src/community/events.html', './src/community/events/**.md'], ['community/events'])
-})
+gulp.task('watch', function (done) {
+    gulp.watch('./node_modules/@stencila/style/sass/**/*.sass', { ignoreInitial: false }, gulp.series('sass'))
+    gulp.watch('./src/sass/**/*.sass', { ignoreInitial: false }, gulp.series('sass'))
+    gulp.watch('./src/css/*', { ignoreInitial: false }, gulp.series('css'))
+    gulp.watch('./src/js/*', { ignoreInitial: false }, gulp.series('js'))
+    gulp.watch('./src/webfonts/*', { ignoreInitial: false }, gulp.series('webfonts'))
+    gulp.watch('./src/**/*.{gif,jpg,png,svg}', { ignoreInitial: false }, gulp.series('img'))
+    gulp.watch('./src/**/*.html', { ignoreInitial: false }, gulp.series('nunjucks'))
+    gulp.watch('./src/**/_*.html', { ignoreInitial: false }, gulp.series('nunjucks', 'markdown'))
+    gulp.watch('./src/**/*.md', { ignoreInitial: false }, gulp.series('markdown'))
+    gulp.watch('./src/blog/index.html', { ignoreInitial: false }, gulp.series('blog/index'))
+    gulp.watch('./src/blog/**/index.md', { ignoreInitial: false }, gulp.series('blog/index'))
+    gulp.watch('./src/community/events.html', { ignoreInitial: false }, gulp.series('community/events'))
+    gulp.watch('./src/community/events/**.md', { ignoreInitial: false }, gulp.series('community/events'))
+    done();
+});
 
-gulp.task('default', ['build', 'connect', 'watch'])
+gulp.task('build', function(done) {
+  gulp.series('clean', 'sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events')
+  done()
+});
+
+
+exports.build = gulp.series('build')
+exports.default = gulp.parallel('build', 'connect', 'watch');
+exports.watch = gulp.series('watch');
