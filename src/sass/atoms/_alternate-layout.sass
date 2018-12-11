@@ -1,0 +1,30 @@
+////
+/// Alternate layout:
+/// -----------------
+/// A left / right hand layout. When displayed on mobile ensures that the
+/// primary element is sorted to the top.
+///
+/// Ideally, this is used with columns:
+///
+/// <div class="columns alternate-layout">
+///   <div class="column primary-item">
+///     ...
+///   </div>
+///   <div class="column">
+///     ...
+///   </div>
+/// </div>
+///
+/// ... where primary-item is the item you wish to be displayed first at the `touch` breakpoint.
+
+.alternate-layout
+    +touch
+        display: flex
+        flex-direction: column
+
+        .column
+            flex-basis: auto
+            width: 100%
+
+        .primary-item
+            order: -1
