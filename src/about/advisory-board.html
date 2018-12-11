@@ -24,7 +24,7 @@ Advisory Board : Stencila
                 </section>
 
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
+                    <div class="columns alternate-layout">
                         <div class="column is-9">
                             <h1 class="title is-4">Josh Greenberg, <br>Alfred P. Sloan Foundation, New York, USA</h1>
                             <p>
@@ -36,7 +36,7 @@ Advisory Board : Stencila
                                 the ecosystem of digital tools that are transforming it.
                             </p>
                         </div>
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/Josh-Greenberg.png">
                             </figure>
@@ -45,8 +45,8 @@ Advisory Board : Stencila
                 </section>
 
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                    <div class="columns alternate-layout">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/ben_kepes.jpg">
                             </figure>
@@ -64,7 +64,7 @@ Advisory Board : Stencila
                     </div>
                 </section>
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
+                    <div class="columns alternate-layout">
                         <div class="column is-9">
                             <h1 class="title is-4">Kristen Ratan, <br>Collaborative Knowledge Foundation, San Francisco, USA</h1>
                             <p>
@@ -75,7 +75,7 @@ Advisory Board : Stencila
                                 talents for leadership, strategic planning, stakeholder engagement, and partnership development.
                             </p>
                         </div>
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/Kristen_Ratan.jpg">
                             </figure>
@@ -83,8 +83,8 @@ Advisory Board : Stencila
                     </div>
                 </section>
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                    <div class="columns alternate-layout">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/danielle_robinson.jpg">
                             </figure>
@@ -104,7 +104,7 @@ Advisory Board : Stencila
                     </div>
                 </section>
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
+                    <div class="columns alternate-layout">
                         <div class="column is-9">
                             <h1 class="title is-4">Finlay Thompson, <br>Dragonfly Data Science Ltd, Wellington, Aotearoa New Zealand</h1>
                             <p>
@@ -115,7 +115,7 @@ Advisory Board : Stencila
                                 that researchers face when analysing data.
                             </p>
                         </div>
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/finlay_thompson.jpg">
                             </figure>
@@ -123,8 +123,8 @@ Advisory Board : Stencila
                     </div>
                 </section>
                 <section class="section section--inner no-padding-top">
-                    <div class="columns">
-                        <div class="column is-flex is-2 align-centre flex-justify-centre">
+                    <div class="columns alternate-layout">
+                        <div class="column is-flex is-2 align-centre flex-justify-centre primary-item">
                             <figure class="image is-128x128">
                                 <img class="is-rounded" src="/img/about/greg_wilson.jpg">
                             </figure>
@@ -163,29 +163,4 @@ Advisory Board : Stencila
     </div>
 </main>
 
-{% endblock %}
-
-{% block styles %}
-{{ super() }}
-<style type="text/css">
-    main .menu {
-        padding-top: 4em;
-        padding-left: 2em;
-        position: fixed;
-    }
-
-    @media(max-width: 1000px) {
-
-        #discuss .columns,
-        #code-of-conduct .columns,
-        #section-5 .columns {
-            flex-direction: column-reverse;
-            display: flex;
-        }
-
-        main .menu {
-            position: relative;
-        }
-    }
-</style>
 {% endblock %}
