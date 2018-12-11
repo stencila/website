@@ -122,11 +122,11 @@ function nunjucks2html () {
   })
 }
 
-gulp.task('clean', function () {
-  return del('./build')
-})
+const clean = function (done) {
+  return del([ './build' ]);
+}
 
-gulp.task('sass', function() {
+const sassF = function() {
   return gulp.src([
     './node_modules/@stencila/style/sass/**/*.sass',
     './src/sass/**/*.sass'
@@ -134,58 +134,118 @@ gulp.task('sass', function() {
   .pipe(sass(sassOptions).on('error', sass.logError))
   .pipe(autoprefixer())
   .pipe(gulp.dest('./build/css'))
-})
+}
 
-gulp.task('css', function () {
+// gulp.task('sass', function(done) {
+//   gulp.src([
+//     './node_modules/@stencila/style/sass/**/*.sass',
+//     './src/sass/**/*.sass'
+//   ])
+//   .pipe(sass(sassOptions).on('error', sass.logError))
+//   .pipe(autoprefixer())
+//   .pipe(gulp.dest('./build/css'))
+//
+//   done()
+// })
+
+// gulp.task('css', function (done) {
+//   gulp.src([
+//     './node_modules/prismjs/themes/prism.css',
+//     './src/css/**'
+//   ]).pipe(gulp.dest('./build/css'))
+//   done()
+// })
+
+const css = function() {
   return gulp.src([
     './node_modules/prismjs/themes/prism.css',
     './src/css/**'
-  ])
-    .pipe(gulp.dest('./build/css'))
-})
+  ]).pipe(gulp.dest('./build/css'))
+}
 
-gulp.task('webfonts', function () {
+const webfonts = function (done) {
   return gulp.src([
     './src/webfonts/*.*'
-  ])
-    .pipe(gulp.dest('./build/webfonts'))
-})
+  ]).pipe(gulp.dest('./build/webfonts'))
+  done()
+}
 
-gulp.task('js', function () {
+// gulp.task('webfonts', function (done) {
+//   gulp.src([
+//     './src/webfonts/*.*'
+//   ]).pipe(gulp.dest('./build/webfonts'))
+//   done()
+// })
+
+const js = function() {
   return gulp.src([
     './node_modules/prismjs/prism.js',
     './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
     './node_modules/waypoints/lib/noframework.waypoints.js',
     './src/js/**'
-  ])
-    .pipe(gulp.dest('./build/js'))
-})
+  ]).pipe(gulp.dest('./build/js'))
+}
 
-gulp.task('img', function () {
+// gulp.task('js', function (done) {
+//   gulp.src([
+//     './node_modules/prismjs/prism.js',
+//     './node_modules/prismjs/components/prism-{bash,json,r,python,sql}.min.js',
+//     './node_modules/waypoints/lib/noframework.waypoints.js',
+//     './src/js/**'
+//   ]).pipe(gulp.dest('./build/js'))
+//   done()
+// })
+
+// gulp.task('img', function (done) {
+//   gulp.src([
+//     './src/**/*.{gif,jpg,png,svg}'
+//   ], {base: './src'}).pipe(gulp.dest('./build'))
+//   done()
+// })
+
+const img = function() {
   return gulp.src([
     './src/**/*.{gif,jpg,png,svg}'
-  ], {base: './src'})
-    .pipe(gulp.dest('./build'))
-})
+  ], {base: './src'}).pipe(gulp.dest('./build'))
+}
 
-gulp.task('nunjucks', function () {
+const nunjucksF = function() {
   return gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
     .pipe(plumber())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
-    .pipe(connect.reload())
-})
+    .pipe(connect.reload());
+}
 
-gulp.task('markdown', function () {
+// gulp.task('nunjucks', function (done) {
+//   gulp.src(['./src/**/*.html', '!./src/**/_*.html', '!./src/blog/index.html', '!./src/community/events.html'])
+//     .pipe(plumber())
+//     .pipe(nunjucks2html())
+//     .pipe(gulp.dest('./build'))
+//     .pipe(connect.reload())
+//   done()
+// })
+
+const markdown = function() {
   return gulp.src(['./src/**/*.md'])
     .pipe(plumber())
     .pipe(markdown2nunjucks())
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
-})
+}
 
-gulp.task('blog/index', function () {
+// gulp.task('markdown', function (done) {
+//   gulp.src(['./src/**/*.md'])
+//     .pipe(plumber())
+//     .pipe(markdown2nunjucks())
+//     .pipe(nunjucks2html())
+//     .pipe(gulp.dest('./build'))
+//     .pipe(connect.reload())
+//   done()
+// })
+
+const blogIndex = function() {
   return gulp.src(['./src/blog/**/index.md'])
     .pipe(plumber())
     .pipe(accumulate('./blog/index.html'))
@@ -204,10 +264,31 @@ gulp.task('blog/index', function () {
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
-})
+}
 
+// gulp.task('blog/index', function (done) {
+//   gulp.src(['./src/blog/**/index.md'])
+//     .pipe(plumber())
+//     .pipe(accumulate('./blog/index.html'))
+//     .pipe(through.obj(function(all, encoding, callback) {
+//       let posts = []
+//       for (let file of all.files) {
+//         let post = markdown2object(file).front
+//         posts.push(post)
+//       }
+//       posts.sort((a, b) => (a.date > b.date) ? -1 : 1)
+//       all.context = {posts}
+//       all.contents = fs.readFileSync('./src/blog/index.html')
+//       all.source = 'src/blog/index.html'
+//       callback(null, all)
+//     }))
+//     .pipe(nunjucks2html())
+//     .pipe(gulp.dest('./build'))
+//     .pipe(connect.reload())
+//   done()
+// })
 
-gulp.task('community/events', function () {
+const communityEvents = function() {
   return gulp.src(['./src/community/events/**.md'])
     .pipe(plumber())
     .pipe(accumulate('./community/events.html'))
@@ -226,41 +307,67 @@ gulp.task('community/events', function () {
     .pipe(nunjucks2html())
     .pipe(gulp.dest('./build'))
     .pipe(connect.reload())
-})
+}
+// gulp.task('community/events', function (done) {
+//   gulp.src(['./src/community/events/**.md'])
+//     .pipe(plumber())
+//     .pipe(accumulate('./community/events.html'))
+//     .pipe(through.obj(function(all, encoding, callback) {
+//       let events = []
+//       for (let file of all.files) {
+//         let eve = markdown2object(file).front
+//         events.push(eve)
+//       }
+//       events.sort((a, b) => (a.date < b.date) ? -1 : 1)
+//       all.context = {events}
+//       all.contents = fs.readFileSync('./src/community/events.html')
+//       all.source = 'src/community/events.html'
+//       callback(null, all)
+//     }))
+//     .pipe(nunjucks2html())
+//     .pipe(gulp.dest('./build'))
+//     .pipe(connect.reload())
+//
+//   done()
+// })
 
 
-
-gulp.task('connect', function (done) {
+const connectF = function(done) {
   connect.server({
     root: 'build',
     livereload: true
   })
   done()
-})
+}
+// gulp.task('connect', function (done) {
+//   connect.server({
+//     root: 'build',
+//     livereload: true
+//   })
+//   done()
+// })
 
-gulp.task('watch', function (done) {
-    gulp.watch('./node_modules/@stencila/style/sass/**/*.sass', { ignoreInitial: false }, gulp.series('sass'))
-    gulp.watch('./src/sass/**/*.sass', { ignoreInitial: false }, gulp.series('sass'))
-    gulp.watch('./src/css/*', { ignoreInitial: false }, gulp.series('css'))
-    gulp.watch('./src/js/*', { ignoreInitial: false }, gulp.series('js'))
-    gulp.watch('./src/webfonts/*', { ignoreInitial: false }, gulp.series('webfonts'))
-    gulp.watch('./src/**/*.{gif,jpg,png,svg}', { ignoreInitial: false }, gulp.series('img'))
-    gulp.watch('./src/**/*.html', { ignoreInitial: false }, gulp.series('nunjucks'))
-    gulp.watch('./src/**/_*.html', { ignoreInitial: false }, gulp.series('nunjucks', 'markdown'))
-    gulp.watch('./src/**/*.md', { ignoreInitial: false }, gulp.series('markdown'))
-    gulp.watch('./src/blog/index.html', { ignoreInitial: false }, gulp.series('blog/index'))
-    gulp.watch('./src/blog/**/index.md', { ignoreInitial: false }, gulp.series('blog/index'))
-    gulp.watch('./src/community/events.html', { ignoreInitial: false }, gulp.series('community/events'))
-    gulp.watch('./src/community/events/**.md', { ignoreInitial: false }, gulp.series('community/events'))
-    done();
-});
+const watch = function() {
+    gulp.watch('./node_modules/@stencila/style/sass/**/*.sass', { ignoreInitial: false }, gulp.series(sassF))
+    gulp.watch('./src/sass/**/*.sass', { ignoreInitial: false }, gulp.series(sassF))
+    gulp.watch('./src/css/*', { ignoreInitial: false }, gulp.series(css))
+    gulp.watch('./src/js/*', { ignoreInitial: false }, gulp.series(js))
+    gulp.watch('./src/webfonts/*', { ignoreInitial: false }, gulp.series(webfonts))
+    gulp.watch('./src/**/*.{gif,jpg,png,svg}', { ignoreInitial: false }, gulp.series(img))
+    gulp.watch('./src/**/*.html', { ignoreInitial: false }, gulp.series(nunjucksF))
+    gulp.watch('./src/**/_*.html', { ignoreInitial: false }, gulp.series(nunjucksF, markdown))
+    gulp.watch('./src/**/*.md', { ignoreInitial: false }, gulp.series(markdown))
+    gulp.watch('./src/blog/index.html', { ignoreInitial: false }, gulp.series(blogIndex))
+    gulp.watch('./src/blog/**/index.md', { ignoreInitial: false }, gulp.series(blogIndex))
+    gulp.watch('./src/community/events.html', { ignoreInitial: false }, gulp.series(communityEvents))
+    gulp.watch('./src/community/events/**.md', { ignoreInitial: false }, gulp.series(communityEvents))
+};
 
-gulp.task('build', function(done) {
-  gulp.series('clean', 'sass', 'css', 'js', 'webfonts', 'img', 'nunjucks', 'markdown', 'blog/index', 'community/events')
-  done()
-});
+const buildTask = function(done) {
+  return gulp.series(clean, gulp.series(sassF, css, js, webfonts, img, nunjucksF, markdown, blogIndex, communityEvents))
+};
 
 
-exports.build = gulp.series('build')
-exports.default = gulp.parallel('build', 'connect', 'watch');
-exports.watch = gulp.series('watch');
+exports.build = gulp.series(clean, sassF, css, js, webfonts, img, nunjucksF, markdown, blogIndex, communityEvents)
+exports.default = gulp.series(clean, gulp.parallel(connectF, watch));
+exports.watch = watch
