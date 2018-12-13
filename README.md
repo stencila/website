@@ -17,9 +17,3 @@ This project follows the [all-contributors](https://github.com/kentcdodds/all-co
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | [<img src="https://avatars1.githubusercontent.com/u/2931?v=4" width="100px;"/><br /><sub><b>Michael Aufreiter</b></sub>](http://substance.io)<br />[🎨](#design-michael "Design") [💻](https://github.com/stencila/website/commits?author=michael "Code") [📝](#blog-michael "Blogposts") | [<img src="https://avatars1.githubusercontent.com/u/284099?v=4" width="100px;"/><br /><sub><b>Oliver Buchtala</b></sub>](https://github.com/oliver----)<br />[💻](https://github.com/stencila/website/commits?author=oliver---- "Code") [📝](#blog-oliver---- "Blogposts") | [<img src="https://avatars0.githubusercontent.com/u/1152336?v=4" width="100px;"/><br /><sub><b>Nokome Bentley</b></sub>](https://github.com/nokome)<br />[💻](https://github.com/stencila/website/commits?author=nokome "Code") [🎨](#design-nokome "Design") [📝](#blog-nokome "Blogposts") | [<img src="https://avatars1.githubusercontent.com/u/292725?v=4" width="100px;"/><br /><sub><b>Ben</b></sub>](https://github.com/beneboy)<br />[💻](https://github.com/stencila/website/commits?author=beneboy "Code") |
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-
-## Development Environment
-
-Once you have checked out this repo, make sure you init & update the sub-modules.
-
-`git submodule init; git submodule update`
