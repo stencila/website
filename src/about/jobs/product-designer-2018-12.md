@@ -4,7 +4,7 @@ smalltitle: Jobs at Stencila
 title: Product designer
 ---
 
-Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We're looking for a full-time product designer to lead design of novel user interfaces for data exploration, visualization and analysis.
+Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We're looking for a full-time UX/UI designer to lead the design and testing of novel user interfaces for data exploration, visualization and analysis.
 
 ## About you
 
