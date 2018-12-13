@@ -1,0 +1,19 @@
+{% extends "_base.html" %}
+
+{% block title %}
+{% if front.title %}{{front.title}}{% else %}Jobs{% endif %} : Stencila
+{% endblock %}
+
+{% block main %}
+<section class="section">
+    <div class="container" style="max-width: 50rem">
+        <header class="heading">
+            <span class="small has-text-primary">{{ front.smalltitle }}</span>
+            <h1 class="title has-line is-1 has-text-primary">{{ front.title }}</h1>
+        </header>
+        <div class="content">
+            {{ content | safe }}
+        </div>
+    </div>
+</section>
+{% endblock %}
