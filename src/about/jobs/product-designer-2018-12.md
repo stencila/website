@@ -4,18 +4,18 @@ smalltitle: Jobs at Stencila
 title: Product designer
 ---
 
-Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We're looking for a full-time software engineer to lead development of novel user interfaces for data exploration, visualization and analysis.
+Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We're looking for a full-time product designer to lead design of novel user interfaces for data exploration, visualization and analysis.
 
 ## About you
 
 * You are passionate about understanding how our users think, what their problems are, and building engaging user experiences that solve those problems.
 * You are a designer who knows what it takes to build modern, responsive user interfaces - your thinking doesn’t stop at mock ups, it extends into build and deploy.
-* You are keen to join in-person user workshops, value user feedback and act upon it.
+* You are keen to join in-person user workshops, value user feedback, and act upon it.
 * Are committed to open-source and know from experience what it takes to grow a community around open-source software.
 * Have a strong bias towards getting it done; you choose completion over perfection. You get a buzz out of getting things shipped.
 * Take initiative, ownership and responsibility; you don’t need to wait for permission, don’t mind admitting you were wrong, and fix things when you are.
 * Want to work as part of a diverse team with complementary skills; you give support and take advice.
-* Comfortable working across time zones as part of a small, remote, geographically distributed team. You review asynchronously feedback, and get to work independently. 
+* Comfortable working across time zones as part of a small, remote, geographically distributed team. You review asynchronous feedback, and get to work independently. 
 * You are comfortable regularly communicating on wins, progress, and roadblocks.
 
 ## Your Skills & Experience
@@ -47,8 +47,8 @@ Join a team developing the next-generation of tools for data-driven scientific d
 
 ## What’s unique about this job?
 
-* Be part of a unique team working with scientists and other researchers to make data-driven research more open, effective and reproducible.
-* Opportunities to connect with a global community of people working on open source software for science and scholarship, including Code for Science & Society, Collaborative Knowledge Foundation, eLife, Substance and more!
+* Be part of a unique team working with scientists and other researchers to make data-driven research more open, effective, and reproducible.
+* Opportunities to connect with a global community of people working on open source software for science and scholarship, including Code for Science & Society, Collaborative Knowledge Foundation, eLife, Substance, and more!
 
 
 ## Compensation 
