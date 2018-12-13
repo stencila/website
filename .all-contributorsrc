@@ -60,7 +60,9 @@
       "avatar_url": "https://avatars2.githubusercontent.com/u/2358535?v=4",
       "profile": "http://stenci.la",
       "contributions": [
-        "blog", "code", "design"
+        "blog",
+        "code",
+        "design"
       ]
     },
     {
@@ -78,7 +80,9 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/2931?v=4",
       "profile": "http://substance.io",
       "contributions": [
-        "design", "code", "blog"
+        "design",
+        "code",
+        "blog"
       ]
     },
     {
@@ -87,7 +91,8 @@
       "avatar_url": "https://avatars1.githubusercontent.com/u/284099?v=4",
       "profile": "https://github.com/oliver----",
       "contributions": [
-        "code", "blog"
+        "code",
+        "blog"
       ]
     },
     {
@@ -96,7 +101,18 @@
       "avatar_url": "https://avatars0.githubusercontent.com/u/1152336?v=4",
       "profile": "https://github.com/nokome",
       "contributions": [
-        "code", "design", "blog"
+        "code",
+        "design",
+        "blog"
+      ]
+    },
+    {
+      "login": "beneboy",
+      "name": "Ben",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/292725?v=4",
+      "profile": "https://github.com/beneboy",
+      "contributions": [
+        "code"
       ]
     }
   ]
