@@ -8,21 +8,21 @@ Join a team developing the next-generation of tools for data-driven scientific d
 
 ## About you
 
-* You are passionate about understanding how our users think, what their problems are and building engaging user experiences that solve those problems.
+* You are passionate about understanding how our users think, what their problems are, and building engaging user experiences that solve those problems.
 * You are an engineer with a sense of aesthetics: you have strong technical skills and can build a beautiful interface.
-* You are keen to join in-person user workshops, value user feedback and act upon it.
+* You are keen to join in-person user workshops, value user feedback, and act upon it.
 * Are committed to open-source and know from experience what it takes to grow a community around open-source software.
 * Have a strong bias towards getting it done; you choose completion over perfection. You get a buzz out of getting things shipped.
 * Take initiative, ownership and responsibility; you don’t need to wait for permission, don’t mind admitting you were wrong, and fix things when you are.
 * Want to work as part of a diverse team with complementary skills; you give support and take advice.
-* Comfortable working across time zones as part of a small, remote, geographically distributed team. You review asynchronously feedback, and get to work independently. 
+* Comfortable working across time zones as part of a small, remote, geographically distributed team. You review asynchronous feedback, and get to work independently. 
 * You are comfortable regularly communicating on wins, progress, and roadblocks.
 
 ## Your Skills & Experience
 
-* Experienced at building, testing and deploying user interfaces in Javascript.
-* Familiar with frontend frameworks like React, Vue and Polymer and state management approaches such as Redux, Mobx and GraphQL.
-* At home with modern front-end languages e.g. ES2016, Typescript and build tools e.g. Webpack, Rollup, NPM
+* Experienced at building, testing, and deploying user interfaces in Javascript.
+* Familiar with frontend frameworks like React, Vue and Polymer and state management approaches such as Redux, Mobx, and GraphQL.
+* At home with modern front-end languages e.g. ES2016, Typescript, and build tools e.g. Webpack, Rollup, NPM
 * Experienced in test driven development and testing frameworks e.g. Jest, Puppeteer.
 * Experienced at building from mockups using modern CSS approaches and frameworks e.g Bulma, Tailwind, Semantic UI
 * It’s a nice-to-have if you have a research or science background working with data.
@@ -40,14 +40,14 @@ Join a team developing the next-generation of tools for data-driven scientific d
 ## Examples of things you’ll do
 
 * Be part of the team designing and implementing an open, extensible architecture for user interfaces for data-driven discovery.
-* Work with our product designer to design, build, test and deploy user interfaces for data analysis and visualization.
+* Work with our product designer to design, build, test, and deploy user interfaces for data analysis and visualization.
 * Be involved in user testing to understand usability problems that users are having. Then fix those problems.
 * Engage with the open-source developer community to encourage contributions. Improve documentation, merge pull requests, respond to issues.
 
 ## What’s unique about this job?
 
-* Be part of a unique team working with scientists and other researchers to make data-driven research more open, effective and reproducible.
-* Opportunities to connect with a global community of people working on open source software for science and scholarship, including Code for Science & Society, Collaborative Knowledge Foundation, eLife, Substance and more!
+* Be part of a unique team working with scientists and other researchers to make data-driven research more open, effective, and reproducible.
+* Opportunities to connect with a global community of people working on open source software for science and scholarship, including Code for Science & Society, Collaborative Knowledge Foundation, eLife, Substance, and more!
 
 
 ## Compensation 
