@@ -55,4 +55,4 @@ Join a team developing the next-generation of tools for data-driven scientific d
 
 * US $100,000 / year
 
-Please send your CV and a covering letter to [jobs@stenci.la](jobs@stenci.la) by 13 January 2019.
+Please send your CV and a covering letter to [mailto:jobs@stenci.la](jobs@stenci.la) by 13 January 2019.
