@@ -22,11 +22,11 @@ Join a team developing the next-generation of tools for data-driven scientific d
 
 * Experienced at building, testing, and deploying user interfaces in Javascript.
 * Familiar with frontend frameworks like React, Vue and Polymer and state management approaches such as Redux, Mobx, and GraphQL.
-* At home with modern front-end languages e.g. ES2016, Typescript, and build tools e.g. Webpack, Rollup, NPM
+* At home with modern front-end languages e.g. ES2016, Typescript, and build tools e.g. Webpack, Rollup, NPM.
 * Experienced in test driven development and testing frameworks e.g. Jest, Puppeteer.
-* Experienced at building from mockups using modern CSS approaches and frameworks e.g Bulma, Tailwind, Semantic UI
+* Experienced at building from mockups using modern CSS approaches and frameworks e.g Bulma, Tailwind, Semantic UI.
 * It’s a nice-to-have if you have a research or science background working with data.
-* Proficient in the English language, both written and verbal
+* Proficient in the English language, both written and verbal.
 
 ## About us
 
