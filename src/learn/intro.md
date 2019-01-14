@@ -53,7 +53,7 @@ You can convert to and from formats used by:
 * Excel (*xlsx*, *csv*, *tsv*),
 * Jupyter Notebooks (*ipynb*),
 * Markdown (*md*),
-* RMarkdown (*Rmd*,
+* RMarkdown (*Rmd*),
 * Word (*docx*),
 * LaTeX (*tex*),
 * publishing applications (*JATS*, *xml*),

@@ -22,17 +22,17 @@ Join a team developing the next-generation of tools for data-driven scientific d
 
 * Experienced at building, testing, and deploying user interfaces in Javascript.
 * Familiar with frontend frameworks like React, Vue and Polymer and state management approaches such as Redux, Mobx, and GraphQL.
-* At home with modern front-end languages e.g. ES2016, Typescript, and build tools e.g. Webpack, Rollup, NPM
+* At home with modern front-end languages e.g. ES2016, Typescript, and build tools e.g. Webpack, Rollup, NPM.
 * Experienced in test driven development and testing frameworks e.g. Jest, Puppeteer.
-* Experienced at building from mockups using modern CSS approaches and frameworks e.g Bulma, Tailwind, Semantic UI
+* Experienced at building from mockups using modern CSS approaches and frameworks e.g Bulma, Tailwind, Semantic UI.
 * It’s a nice-to-have if you have a research or science background working with data.
-* Proficient in the English language, both written and verbal
+* Proficient in the English language, both written and verbal.
 
 ## About us
 
 * [Stencila](https://stenci.la) is building a toolbox of modular, interoperable software components for researchers ranging from Stencila [Dockter](https://github.com/stencila/dockter) (a command line tool that makes it easier to create Docker images) to Stencila [Hub](https://hub.stenci.la) (a web app that integrates our tools with third party services like Github and Dropbox) - and plenty of others in between!
 * We're passionate about making data-driven discovery more accessible to more people and closing the gaps in collaboration between coders and non-coders.
-* We’re obsessed with building tools that make simple thing easy and complex things possible.
+* We’re obsessed with building tools that make simple things easy and complex things possible.
 * With funding from the Alfred P. Sloan Foundation we are building a core team to take Stencila from a prototype to production.
 * We are a small diverse, 100% remote, 100% open-source team linked to a broad open source and open science community.
 * Stencila is proud to be an equal opportunity employer. We value diversity and do not discriminate on the basis of race, religion, color, national origin, citizenship, gender identity or expression, sexual orientation, age, marital or family status, veteran status, or disability. We work hard to accommodate the needs of our team members and community. 
