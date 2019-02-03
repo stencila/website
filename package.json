@@ -4,8 +4,6 @@
   "description": "Stencila's website at https://stenci.la",
   "main": "index.js",
   "scripts": {
-    "contributors:add": "all-contributors add",
-    "contributors:generate": "all-contributors generate",
     "build": "gulp build",
     "start": "gulp"
   },

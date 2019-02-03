@@ -74,12 +74,14 @@ If you want to preview your changes locally:
 This project follows the [all-contributors](https://github.com/kentcdodds/all-contributors) specification. Please add contributors, including yourself, using,
 
 ```bash
+# Check if any Github code contributors are missing
+npx all-contributors check
 # Add new contributor <username>, who made a contribution of type <contribution>
-npm run contributors:add <username> <contribution>
+npx all-contributors add <username> <contribution>
 # Example: See https://www.npmjs.com/package/all-contributors-cli for more codes.
-npm run contributors:add octocat code,doc
+npx all-contributors add octocat code,doc
 # Regenerate the readme table
-npm run contributors:generate
+npx all-contributors generate
 ```
 
 [stencila-site]: http://stenci.la/
