@@ -1,10 +1,14 @@
 language: node_js
-node_js: 8
+node_js: "10"
 
 # Cache node_modules for faster setup
 cache:
   directories:
     - node_modules
+
+# Install node_modules
+install:
+  - npm install
 
 # Build the site
 script:
