@@ -15,8 +15,13 @@ The easiest way to install the Converters is through installing [Stencila Comman
 The installation requires two steps:
 1. Download and unpack the binary file with the [CLI for your operating system](https://github.com/stencila/cli/releases).
 2. Copy the binary file to the relevant location in your operating system so that you can easily access the tool in the command line:
-  * on Windows, create a folder in `C:\ProgramFiles\stencila` and copy the `stencila.exe` file into it; then open Windows Command Line and add
-  the folder to the `PATH`: `setx PATH "$env:path;C:\ProgramFiles\stencila"`
+  * on Windows: <br/>
+       1) create a folder in `C:\Program Files\` called `stencila`, <br/> 
+       2) copy the `stencila.exe` (which will be in the unpacked folder you just downloaded) file into it;  <br/> 
+       3) then open Windows Command Line and add the folder to the `PATH` variable : `setx path "%path%;C:\Program Files\stencila"`; <br/> 
+ > Note that the above instructions will work for Windows 7 and above. If you are using a Windows machine with an older version of the 
+ > operating system, please use this command in the command line: `set PATH=%PATH%;C:\Program Files\stencila`
+ <br/> 
   * on Linux, copy the `stencila` binary file to `/usr/local/bin/`;
   * on Mac OS X, copy the `stencila` file to the ` /usr/local/bin/` folder.
 
