@@ -1,6 +1,6 @@
 ---
 extends: blog/_post.html
-title: JSON Schema, YAML and Typescript
+title: Using JSON Schema for developing and validating executable documents
 author: Nokome Bentley
 date: 18 February 2019
 abstract: |
@@ -9,7 +9,6 @@ image: typescript-validation.png
 ---
 
 At Stencila, we're aiming to provide a framework for the next generation of executable documents. We envisage interactive spreadsheets, notebooks and articles that are highly structured (i.e. made up of a variety of fine grained document nodes) and strongly typed (i.e. only certain types of document nodes are allowed in certain places).
-
 
 To achieve this we are representing executable documents as a tree of JSON data and using [JSON Schema](https://json-schema.org/) to specify and validate how that tree can be structured. This post briefly introduces some of the development approaches we've been finding useful in developing schemas for Stencila.
 
@@ -78,7 +77,7 @@ The `$schema` property gives the URL of the schema against which a JSON document
 
 Your favourite code editor may already be smart enough to detect the `$schema` property and warn you of any issues. Here, my editor, VS Code, is warning me that I've put a number instead of a string for my schema's title:
 
-![](json-intellisense.gif)
+![](schema-validation.png)
 
 In addition, the [`stencila/schema`](https://github.com/stencila/schema) repository has got a simple script called [`validate-schema.js`](https://github.com/stencila/schema/blob/master/validate-schema.js) which uses the [`ajv`](https://github.com/epoberezkin/ajv) package to check that our type schemas are valid and give an error message if they are not:
 
@@ -95,7 +94,7 @@ One of the advantages of defining a JSON Schema is the growing ecosystem of deve
 
 Some editors take this further by providing autocompletion based on a document's `$schema` property. This can help speed up writing valid JSON by essentially importing the schema's documentation into the editor. Here, you can see that VS Code is telling me which properties I might want to add to my `Environment`'s definition:
 
-![](schema-validation.png)
+![](json-intellisense.gif)
 
 ## YAML as a more humane format for structured data
 
