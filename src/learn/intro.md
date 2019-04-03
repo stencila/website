@@ -12,7 +12,7 @@ documents containing interactive source code using the interfaces you are most f
 into existing reproducible infrastructure.
 
 ## Execution engine
-![Stencila Engine](img/engine.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
+![Stencila Engine](img/engine.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
 
 Stencila execution engine is its heart. The engine enables a spreadsheet-like, reactive programming model. It maintains a graph of the dependency between code cells.
 This means that as you change your code or data, all other parts of your document depending on them get updated as well. Stencila execution engine does not itself
@@ -21,7 +21,7 @@ execute the code embedded in the documents but instead sends it to the execution
 
 ## Execution contexts{style="clear: left;"}
 
-![Stencila Contexts](img/contexts.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
+![Stencila Contexts](img/contexts.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
 
 The execution contexts _compile_ and _execute_ code from the code cells that the execution engine passes on. This means that Stencila can
 be used for practically any programming language as the execution contexts can be developed using Stencila API. Currently we provide execution contexts
@@ -33,7 +33,7 @@ The execution contexts determine the inputs and outputs of cells which enables a
 
 ## Sheets{style="clear: right;"}
 
-![Stencila Sheets](img/UI.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-bottom: 3em; float: left;" }
+![Stencila Sheets](img/UI.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; padding-bottom: 3em; float: left;" }
 
 Stencila comes with its own simple interface, Stencila Sheet, which can be used similarly to a typical spreadsheet application. We are working on plugins
 for dominant spreadsheet applications which will add capabilities for working with:
@@ -45,7 +45,7 @@ In other words, Stencila Sheets (and in the future, the plugins) allow for execu
 
 ## Converter
 
-![Stencila Converter](img/convert.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; float: left;" }
+![Stencila Converter](img/convert.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; float: left;" }
 
 Stencila includes a set of import/export converters which allow you to convert between a range of formats commonly used for among researchers (and not only). Converters support lossless conversion of interactive source code sections and (most of the time) formatting.{style="display: block;"}
 
