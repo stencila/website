@@ -4,7 +4,7 @@ title: Beta Testing programme
 ---
  # Beta Testing programme
 
-> We are currently redesigning Stencila Beta Testing programme. A set of tools for Beta Testing will be available in the second quarter of 2019. If you would like to become a Beta Tester, please [get in touch](mailto:hello@stenci.la). We will get back to you with more information and the timeline for the planned launch of the Beta Testing programme. <br /> Thank you for your time and help!
+> We are currently redesigning Stencila Beta Testing programme. A set of tools for Beta Testing will be available in the second quarter of 2019. If you would like to become a Beta Tester, please [register your interest](https://forms.gle/1k4BKRMBXqQnVQZWA). We will get back to you with more information and the timeline for the planned launch of the Beta Testing programme. <br /> Thank you for your time and help!
 
 
 > In the meantime, please come and join us on our [Community Forum](https://community.stenci.la/)
@@ -31,4 +31,3 @@ through the new challenges.
 * You get an experience as a software tester and learn how to report issues using Git Hub (which is commonly used among open source projects).
 * You become a part of the [Stencila community](index.html), which we aim to be inclusive and diverse, helping everyone who wants to join open source movement.
 And we hope you will stay with us!
-* We do not have means to pay you for being a Stencila Beta Tester, but we can offer you [Stencila stickers](blog/2018-05-stickers)!
