@@ -161,7 +161,7 @@ const js = function() {
 
 const img = function() {
   return gulp.src([
-    './src/**/*.{gif,jpg,png,svg}'
+    './src/**/*.{gif,jpg,png,svg,jpeg}'
   ], {base: './src'}).pipe(gulp.dest('./build'))
 }
 
@@ -239,7 +239,7 @@ const watch = function(done) {
     gulp.watch('./src/css/*', { ignoreInitial: false }, gulp.series(css))
     gulp.watch('./src/js/*', { ignoreInitial: false }, gulp.series(js))
     gulp.watch('./src/webfonts/*', { ignoreInitial: false }, gulp.series(webfonts))
-    gulp.watch('./src/**/*.{gif,jpg,png,svg}', { ignoreInitial: false }, gulp.series(img))
+    gulp.watch('./src/**/*.{gif,jpg,png,svg,jpeg}', { ignoreInitial: false }, gulp.series(img))
     gulp.watch('./src/**/*.html', { ignoreInitial: false }, gulp.series(nunjucksF))
     gulp.watch('./src/**/_*.html', { ignoreInitial: false }, gulp.series(nunjucksF, markdown))
     gulp.watch('./src/**/*.md', { ignoreInitial: false }, gulp.series(markdown))
