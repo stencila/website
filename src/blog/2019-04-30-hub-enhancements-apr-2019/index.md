@@ -14,7 +14,7 @@ Stencila Hub is the web application that allows users to easily use Stencila's t
 
 Stencila's new Product Designer, Jacqueline, joined us in March, and quickly got to work on Stencila Hub. Her first task was to review and begin standardising some of its look and feel. Here's a quick before and after of the Projects List screen.
 
-![Before after GIF](before-after.gif)
+![Before after Projects List](before-after.gif)
 
 You will have noticed other improvements to the consitency of buttons and general UX. There are more changes to come as we redesign some of the interface to support upcoming features, and we will announce them as they are released. But you will also see consistent incremental improvements to the UI until then.
 
