@@ -20,7 +20,7 @@ You will have noticed other improvements to the consitency of buttons and genera
 
 ## Session Queueing
 
-When launching a Stencila Desktop session through Stencila Hub, there is a chance that an execution host is not ready and has to be started. This might take a couple of minutes – although we have work in the pipeline to reduce startup time in the future. While session queueing is not new to Stencila Hub, we have made a number of fixes and improvements to improve reliability.
+When launching a Stencila Desktop session through Stencila Hub, there is a chance that an execution host is not ready and has to be started. This might take a couple of minutes – although we have work in the pipeline to reduce startup time in the future. While session queueing is not new to Stencila Hub, we have made a number of improvements to the reliability.
 
 ![Waiting for session](waiting-spinner.png)
 
@@ -41,4 +41,6 @@ Our roadmap includes a fully enumerated list of supported browsers and we may la
 
 ## Conclusion
 
-Thank you for reading about our latest changes to Stencila Hub. We have more updates in the works focusing on more UI enhancements and integration with more third party services. See you next time!
+Thank you for reading about our latest changes to Stencila Hub. We have more updates in the works focusing on UI enhancements and integration with more third party services.
+
+If you like staying up to date with Stencila's progress you can join our monthly [Catching up with Stencila](meet.google.com/tpe-pgxz-oao) Google Meetup. They take place 8-9PM UTC on the first Monday of every month, the next one is scheduled for the 6th of May. We will be discussing both Hub and our other projects. We hope to see you there!
