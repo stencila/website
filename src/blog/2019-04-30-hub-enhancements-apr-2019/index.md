@@ -43,4 +43,4 @@ Our roadmap includes a fully enumerated list of supported browsers and we may la
 
 Thank you for reading about our latest changes to Stencila Hub. We have more updates in the works focusing on UI enhancements and integration with more third party services.
 
-If you like staying up to date with Stencila's progress you can join our monthly [Catching up with Stencila](meet.google.com/tpe-pgxz-oao) Google Meetup. They take place 8-9PM UTC on the first Monday of every month, the next one is scheduled for the 6th of May. We will be discussing both Hub and our other projects. We hope to see you there!
+If you like staying up to date with Stencila's progress you can join our monthly [Catching up with Stencila](https://meet.google.com/tpe-pgxz-oao) Google Meetup. They take place 8-9PM UTC on the first Monday of every month, the next one is scheduled for the 6th of May. We will be discussing both Hub and our other projects. We hope to see you there!
