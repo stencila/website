@@ -10,7 +10,7 @@ abstract: |
 
 The next Stencila Community Call will take place on 7th May at 8am NZT ([see the time and date for your timezone](https://www.timeanddate.com/worldclock/fixedtime.html?msg=Stencila+Community+Call+May+2019&iso=20190507T08&p1=%3A&ah=1)). This call is open to everyone and we'd love to see you joining us!
 
-We will soon post the connection details and we will be using [this collaborative document](https://docs.google.com/document/d/18gvPZb6QWy4DzGZIwuySC4KJ7UuVOtsrsHBYkVcVpkc/edit#) to take notes, ask questions and post links.
+Join the call via Zoom at [https://zoom.us/j/655391807](https://zoom.us/j/655391807). We will be using [this collaborative document](https://docs.google.com/document/d/18gvPZb6QWy4DzGZIwuySC4KJ7UuVOtsrsHBYkVcVpkc/edit#) to take notes, ask questions and post links.
 
 The topics for our May Community Call are:
 * Ben Shaw will talk about the recent enhancements to Stencila Hub;
