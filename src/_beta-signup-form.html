@@ -19,31 +19,41 @@
     <div class="columns is-centered">
         <div class="column is-half">
             <div class="content">
-                <form action="#">
+                <form>
                     <div class="field is-horizontal">
                         <div class="field-body">
                             <div class="field">
-                                <label class="label has-text-white is-size-5"
-                                    >First Name</label
+                                <label
+                                    class="label has-text-white is-size-5"
+                                    for="beta-signup-form-name"
                                 >
+                                    First Name
+                                </label>
                                 <div class="control">
                                     <input
                                         class="input is-medium"
-                                        type="text"
+                                        id="beta-signup-form-name"
+                                        name="First Name"
                                         placeholder="Your name"
+                                        type="text"
                                     />
                                 </div>
                             </div>
 
                             <div class="field">
-                                <label class="label has-text-white is-size-5"
-                                    >Last Name</label
+                                <label
+                                    class="label has-text-white is-size-5"
+                                    for="beta-signup-form-last-name"
                                 >
+                                    Last Name
+                                </label>
                                 <div class="control">
                                     <input
                                         class="input is-medium"
-                                        type="text"
+                                        id="beta-signup-form-last-name"
+                                        name="Last Name"
                                         placeholder="Your last name"
+                                        type="text"
                                     />
                                 </div>
                             </div>
@@ -51,16 +61,20 @@
                     </div>
 
                     <div class="field ">
-                        <label class="label has-text-white is-size-5"
-                            >Email</label
+                        <label
+                            class="label has-text-white is-size-5"
+                            for="beta-signup-form-email"
                         >
+                            Email
+                        </label>
                         <div class="control">
                             <input
                                 class="input is-medium"
-                                type="email"
+                                id="beta-signup-form-email"
+                                name="Email"
                                 placeholder="Your Email address"
-                                value=""
                                 required
+                                type="email"
                             />
                         </div>
                     </div>
@@ -69,8 +83,14 @@
                         <div class="control">
                             <label
                                 class="checkbox has-text-white is-block is-size-5 has-text-weight-bold"
+                                for="beta-signup-form-newsletter"
                             >
-                                <input type="checkbox" class="is-vcentered" />
+                                <input
+                                    class="is-vcentered"
+                                    id="beta-signup-form-newsletter"
+                                    name="Newsletter"
+                                    type="checkbox"
+                                />
                                 Subscribe to the monthly newsletter
                             </label>
                         </div>

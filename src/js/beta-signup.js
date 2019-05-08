@@ -5,6 +5,19 @@ document.addEventListener("DOMContentLoaded", function() {
     .getElementById("beta-signup")
     .getElementsByTagName("form")[0]
 
+  /**
+   * ￼If the form is valid and successfully submitted, replace the contents with a success message
+   **/
+  var onFormSubmitSuccess = function() {
+    $signupHeader.querySelector("h2").textContent =
+      "Thank you! We’ll be in touch shortly"
+    $signupHeader.querySelector("span").classList.add("is-hidden")
+    $signupForm.classList.add("is-hidden")
+
+    // TODO: Add follow up questions to better understand type of user and use case
+    // (research field, number of users, programming language)
+  }
+
   if ($signupForm) {
     $signupForm.addEventListener("submit", function(e) {
       e.preventDefault()
@@ -13,18 +26,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
       if (!isValid) return
 
-      // TODO: Submit the form
-
-      /**
-       * ￼If the form is valid and successfully submitted, replace the contents with a success message
-       **/
-      $signupHeader.querySelector("h2").textContent =
-        "Thank you! We’ll be in touch shortly"
-      $signupHeader.querySelector("span").classList.add("is-hidden")
-      $signupForm.classList.add("is-hidden")
-
-      // TODO: Add follow up questions to better understand type of user and use case
-      // (research field, number of users, programming language)
+      reqwest({
+        url: "https://hooks.zapier.com/hooks/catch/4858372/jzpwsa/",
+        method: "POST",
+        contentType: "application/x-www-form-urlencoded",
+        crossOrigin: true,
+        data: reqwest.serialize($signupForm),
+        success: onFormSubmitSuccess
+        // error: onFormSubmitError,
+        // complete: onFormSubmitCompletion
+      })
     })
   }
 })
