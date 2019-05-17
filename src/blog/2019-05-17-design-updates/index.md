@@ -17,14 +17,14 @@ In this post, I'll talk through some of the proposed UX changes and reasoning be
 # Stencila Hub UX explorations
 ## 1. Files view
 ![](https://i.imgur.com/Tj8FZka.gif)
-*After: set a main file, rename a file, delete a file, link/unlink a Github repository, and navigate a folder.*
+*After: Files view.*
 
 ### New feature: set a main file.
 This is a new feature, setting a main file for a Stencila project, which adds a preview of the file in the Overview screen. From user feedback, it was clear that having a visual indicator for the main file in the Files view would be helpful.
 
 ### Simplify file management.
 ![](https://i.imgur.com/vWYUWmu.png)
-*Before: files list.*
+*Before: Files view (files list).*
 
 We've made several updates to the Files view, including the layout and content of each listed file. Renaming a file was previously tucked away behind a cog icon, and the delete option was part of a trashcan icon. The new files list layout removes extraneous icons and clutter, and tucks away functions in the "more" (...) icon.
 
@@ -36,7 +36,7 @@ Linking and unlinking Github sources was originally done using two separate butt
 ## 2. Sharing view
 
 ![](https://i.imgur.com/kRFEivr.gif)
-*After: Add a collaborator, remove a collaborator, make a project public.*
+*After: Sharing view.*
 
 ### Adjust spacing, content order, and simplify copy.
 The new design removes the extra whitespace and simplifies the copy for making a project public or private.
@@ -48,7 +48,7 @@ The new design removes the extra whitespace and simplifies the copy for making a
 ## 3. Files view: "New" menu options
 
 ![](https://i.imgur.com/EcV5Wj2.gif)
-*After: create a folder, upload a file, create a new Rmd file/blank file.*
+*After: New file/folder options.*
 
 ### Creating a new folder.
 Previously, the Hub didn't have a direct way to create folders, so we added a new folder option.
@@ -57,7 +57,7 @@ Previously, the Hub didn't have a direct way to create folders, so we added a ne
 The original file uploader was a 3-step process (click "add files" to select files, then "upload files", then "done"). The updated design allows users to select their files for immediate upload, then click "done".
 
 ![](https://i.imgur.com/iyzuV4X.png)
-*Before: file uploader.*
+*Before: New file/folder options (file uploader).*
 
 ---
 ## 4. Files view: file conversion
@@ -87,6 +87,6 @@ It was really interesting to be surrounded by people passionate about metadata, 
 # Next steps
 In the coming weeks, we'll be focusing on a visual redesign of the Hub, as well as test and refine our Google Doc and Sheet Add-on designs.
 
-**Let us know if you're interested in joining our [beta testing program](https://docs.google.com/forms/d/e/1FAIpQLScmwS5YNeTv_zfgnhLjtuxgIwr6hM7J5aA7037zFTbp9gzclA/viewform)!**
+**Let us know if you're interested in joining our [beta testing program](https://stenci.la/#beta-signup)!**
 
 ![](https://i.imgur.com/8V7tZO3.jpg)
