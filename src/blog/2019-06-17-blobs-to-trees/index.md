@@ -3,7 +3,7 @@ extends: blog/_post.html
 title: 'From blobs to trees: semantic code analysis'
 author: Nokome Bentley
 date: 19 June 2019
-abstract: We do semantic analysis of code for cell dependency analysis an package requirement analysis. In this post, I take Github's Semantic, a cross-language tool for semantic analysis of code, for a test drive.
+abstract: We do semantic analysis of code for cell dependency analysis and package requirement analysis. In this post, I take Github's Semantic, a cross-language tool for semantic analysis of code, for a test drive.
 ---
 
 ## What and why?
