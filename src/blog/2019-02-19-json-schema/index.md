@@ -64,6 +64,7 @@ A JSON Schema is itself just a JSON document. The various properties of the JSON
         },
 ```
 
+You can use a online tool like [jsonschema.net](https://jsonschema.net/) or [extendsclass.com](https://extendsclass.com/json-schema-validator.html) to generate a JSON schema from a sample JSON document.
 
 ## Validating a schema
 
