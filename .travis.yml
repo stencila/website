@@ -1,16 +1,6 @@
 language: node_js
 node_js: "10"
 
-# Cache node_modules for faster setup
-cache:
-  directories:
-    - node_modules
-    - "$HOME/.npm"
-
-# Install node_modules
-install:
-  - npm ci
-
 # Build the site
 script:
   - npm run build
