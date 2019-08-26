@@ -7,14 +7,14 @@
     <div class="container">
         <div class="columns">
             <div class="column">
-                {{ heading(true, "An open source office suite for reproducible research.", small = "What is Stencila?") }}
+                {{ heading(true, "An open source platform for reproducible research.", small = "What is Stencila?") }}
 
                 <div class="content">
                     <p>The calls for research to be transparent and reproducible have never been louder. But today's tools for reproducible research can be intimidating - especially if you're not a coder.</p>
-                    <p><strong>Stencila</strong> makes reproducible research more accessible with intuitive word processor and spreadsheet interfaces that you and your colleagues are already used to.</p>
+                    <p><strong>Stencila</strong> makes reproducible research more accessible by preserving code and metadata throughout the authoring and publication process, in the word processor interfaces you and your colleagues are already used to.</p>
 
                     <p><strong><span class="icon"><i class="fa fa-flask"></i></span>
-                        Stencila</strong> is an open source project under active development. 
+                        Stencila</strong> is an open source project under active development.
                         We <span class="icon has-text-danger"><i class="fa fa-heart"></i></span> your <a href="/community/beta-testing.html">feedback</a> but please be patient
                         with bugs and instabilities!</p>
                 </div>
@@ -50,10 +50,41 @@
     <div class="container">
         <header class="heading has-text-centered">
             <span class="small">What makes it different?</span>
-            <h2 class="title has-line is-2 has-text-primary">Stencila comes with a bunch of <br>features that make it both flexible and powerful.</h2>
+            <h2 class="title has-line is-2 has-text-primary">Stencila comes with features that make it <br>both flexible and powerful.</h2>
         </header>
         <div class="card-grid-container">
             <div class="columns">
+                <div class="column is-one-third is-offset-2">
+                    <div class="card card--grid">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="img/icons/dockerfile-increment.svg">
+                            </figure>
+                        </div>
+                        <div class="card-content content">
+                            <p class="title is-4">Reproducibility from authoring through to publishing</p>
+                            <p>Stencila projects maintain reproducibility through the use of schemas, which preserve code and metadata across formats. We are working with authors and publishers on formats which extend existing publishing standards—allowing publications to embed code and making the publication process faster.</p>
+                            <hr class="is-small">
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-one-third">
+                    <div class="card card--grid">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="img/icons/stencil-multi-doc.svg">
+                            </figure>
+                        </div>
+                        <div class="card-content content">
+                            <p class="title is-4">Interoperability with existing tools and workflows</p>
+                            <p>Stencila is developed not to replace existing tools, but to complement them. We work with communities of existing open source tools to improve interoperability. Stencila also supports file formats
+                                commonly used by researchers for reproducibility such as Jupyter Notebooks, RMarkdown and more.</p>
+                            <hr class="is-small">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="columns">
                 <div class="column is-one-third">
                     <div class="card card--grid">
                         <div class="card-image">
@@ -99,39 +130,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="columns">
-                <div class="column is-one-third is-offset-2">
-                    <div class="card card--grid">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="img/icons/stencil-multi-doc.svg">
-                            </figure>
-                        </div>
-                        <div class="card-content content">
-                            <p class="title is-4">Interoperability with existing tools and workflows</p>
-                            <p>Stencila is developed not to replace existing tools, but to complement them. We are working with the communities of existing open source tools to improve interoperability. Stencila also aims to support file formats
-                                commonly used by researchers for reproducibility such as Jupyter Notebooks, RMarkdown and more.</p>
-                            <hr class="is-small">
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-one-third">
-                    <div class="card card--grid">
-                        <div class="card-image">
-                            <figure class="image is-4by3">
-                                <img src="img/icons/dockerfile-increment.svg">
-                            </figure>
-                        </div>
-                        <div class="card-content content">
-                            <p class="title is-4">Reproducibility from authoring through to publishing</p>
-                            <p>Stencila projects are self-contained archives of documents and assets. We are working with authors and publishers on formats which extend existing publishing standards - allowing your publications to embed code and
-                                making the publication process faster.</p>
-                            <hr class="is-small">
-                        </div>
-                    </div>
-                </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -206,52 +205,5 @@
 
     </div>
 </section>
-
-<!-- <section id="funders" class="section">
-    <div class="container">
-        <h1 class="title is-3 is-gray has-text-centered">Funders</h1>
-        <figure class="is-flex is-horizontal-center">
-            <img src="/img/sloan.png">
-        </figure>
-    </div>
-</section>
-
-<section id="partners" class="section">
-    <div class="container">
-        <h1 class="title is-3 is-gray has-text-centered">Partners</h1>
-        <div class="columns is-multiline is-centered">
-            <div class="column is-narrow">
-                <a href="https://codeforscience.org">
-                    <img src="/img/css.png">
-                </a>
-            </div>
-            <div class="column is-narrow">
-                <a href="http://coko.foundation">
-                    <img src="/img/coko.jpg">
-                </a>
-            </div>
-            <div class="column is-narrow">
-                <a href="https://datproject.org">
-                    <img src="/img/dat.png">
-                </a>
-            </div>
-            <div class="column is-narrow">
-                <a href="https://elifesciences.org/">
-                    <img src="/img/elife.png">
-                </a>
-            </div>
-            <div class="column is-narrow">
-                <a href="http://substance.io">
-                    <img src="/img/substance.svg">
-                </a>
-            </div>
-            <div class="column is-narrow">
-                <a href="https://opensciencemooc.eu/">
-                    <img src="/img/open-science-mooc-logo.png">
-                </a>
-            </div>
-        </div>
-    </div>
-</section> -->
 
 {% endblock %}

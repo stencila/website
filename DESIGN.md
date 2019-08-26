@@ -138,7 +138,7 @@ Links to `/contribute` page
 ##### Section `Discuss`
 
 Invitation to join discussions (mention topics) and information how to do it:
-- Gitter
+- Zulip
 - Stencila forum
 - Twitter
 - GitHub discussions in pull requests and issues

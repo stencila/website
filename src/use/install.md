@@ -26,10 +26,11 @@ Download the `.dmg` file for the latest [Stencila Desktop release]( https://gith
 
 ### Linux
 
-Or, use one of our Docker images which bundle these language packages (plus many other packages that our useful in data-driven research) in one reproducible computing environment:
+Or, use one of our Docker images which bundle these language packages (plus many other packages that are useful in data-driven research) in one reproducible computing environment:
 
-- [Stencila Docker images](#stencila-docker-images)
-Download the AppImage\* file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then double click on it and click *yes* to "Make executable and run". Or, to install from command line, navigate to the folder where the AppImage file is located and then:
+- [Use other programming languages](#use-other-programming-languages)
+  - [Stencila Docker images](#stencila-docker-images)
+Download the AppImage\* file for the latest [Stencila Desktop release]( https://github.com/stencila/desktop/releases). Then double click on it and click *yes* to "Make executable and run". Or, to install from the command line, navigate to the folder where the AppImage file is located and then:
 
 ```bash
 $ chmod a+x stencila-desktop-*.AppImage
@@ -52,7 +53,7 @@ The basic installation of Stencila Desktop  has built in support for executing c
 >! We are currently working on making Stencila's Docker images compatible with the latest Stencila Desktop. During that process, not all functionality may be available.
 
 You can also enable use of all the above programming languages in one go by using one of the [Docker](https://www.docker.com/) images that we provide.
- The Docker images bundle these language packages, plus many other packages that our useful in data-driven research, in one reproducible computing environment.
+ The Docker images bundle these language packages, plus many other packages that are useful in data-driven research, in one reproducible computing environment.
  Stencila has several Docker images available in the [`stencila/images`](https://github.com/stencila/images) repository.
 
  **Prerequisites** You need to have [Docker installed](https://docs.docker.com/install/) first before you can enable any of the images.
