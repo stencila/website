@@ -11,7 +11,7 @@ Encoda provides a collection of codecs for converting between, and composing tog
 
 ## Install
 
-The easiest way to use Encoda is to install the [`stencila` command line tool](https://github.com/stencila/stencila). Encoda powers `stencila convert`, and other commands, in that CLI. However, the version of Encoda in `stencila`, can lag behind the version in this repo. So if you want the latest functionality, install Encoda as a Node.js package:
+The easiest way to use Encoda is to install the [`stencila` command line tool](https://github.com/stencila/stencila). Encoda powers `stencila convert`, and other commands, in that CLI. However, the version of Encoda in `stencila`, can lag behind the version in [this repo](https://github.com/stencila/encoda). So if you want the latest functionality, install Encoda as a Node.js package:
 
 ```bash
 npm install @stencila/encoda --global
@@ -60,44 +60,44 @@ encoda convert paragraph.md - --to yaml
 
 ## Formats
 
-| Format                      | Codec         | Approach | Status | Issues                  | Coverage             |
-| --------------------------- | ------------- | -------- | ------ | ----------------------- | -------------------- |
+| Format                      | Codec         | Approach | Status     |
+| --------------------------- | ------------- | -------- | -----------|
 | **Text**                    |
-| Plain text                  | [txt]         | None     | β      | [⚠][txt-issues]         | ![][txt-cov]         |
-| Markdown                    | [md]          | Extens   | α      | [⚠][md-issues]          | ![][md-cov]          |
-| LaTex                       | [latex]       | -        | α      | [⚠][latex-issues]       | ![][latex-cov]       |
-| Microsoft Word              | [docx]        | rPNG     | α      | [⚠][docx-issues]        | ![][docx-cov]        |
-| Google Docs                 | [gdoc]        | rPNG     | α      | [⚠][gdoc-issues]        | ![][gdoc-cov]        |
-| Open Document Text          | [odt]         | rPNG     | α      | [⚠][odt-issues]         | ![][odt-cov]         |
-| HTML                        | [html]        | Extens   | α      | [⚠][html-issues]        | ![][html-cov]        |
-| JATS XML                    | [jats]        | Extens   | α      | [⚠][jats-issues]        | ![][jats-cov]        |
-| JATS XML (Pandoc-based)     | [jats-pandoc] | Extens   | α      | [⚠][jats-pandoc-issues] | ![][jats-pandoc-cov] |
-| Portable Document Format    | [pdf]         | rPNG     | α      | [⚠][pdf-issues]         | ![][pdf-cov]         |
+| Plain text                  | txt         | None     | β          |
+| Markdown                    | md          | Extens   | α          |
+| LaTex                       | latex       | -        | α          |
+| Microsoft Word              | docx        | rPNG     | α          |
+| Google Docs                 | gdoc        | rPNG     | α          |
+| Open Document Text          | odt         | rPNG     | α          |
+| HTML                        | html        | Extens   | α          |
+| JATS XML                    | jats        | Extens   | α          |
+| JATS XML (Pandoc-based)     | jats-pandoc | Extens   | α          |
+| Portable Document Format    | pdf         | rPNG     | α          |
 | **Notebooks**               |
-| Jupyter                     | [ipynb]       | Native   | α      | [⚠][ipynb-issues]       | ![][ipynb-cov]       |
-| RMarkdown                   | [xmd]         | Native   | α      | [⚠][xmd-issues]         | ![][xmd-cov]         |
+| Jupyter                     | ipynb       | Native   | α          |
+| RMarkdown                   | xmd         | Native   | α          |
 | **Presentations**           |
-| Microsoft Powerpoint        | [pptx]        | rPNG     | ✗      | [⚠][pptx-issues]        |
-| Demo Magic                  | [dmagic]      | Native   | β      | [⚠][dmagic-issues]      | ![][dmagic-cov]      |
+| Microsoft Powerpoint        | pptx        | rPNG     | ✗          |
+| Demo Magic                  | dmagic      | Native   | β          |
 | **Spreadsheets**            |
-| Microsoft Excel             | [xlsx]        | Formula  | β      | [⚠][xlsx-issues]        | ![][xlsx-cov]        |
-| Google Sheets               | [gsheet]      | Formula  | ✗      | [⚠][gsheet-issues]      |
-| Open Document Spreadsheet   | [ods]         | Formula  | β      | [⚠][ods-issues]         | ![][ods-cov]         |
+| Microsoft Excel             | xlsx        | Formula  | β          |
+| Google Sheets               | gsheet      | Formula  | ✗          |
+| Open Document Spreadsheet   | ods         | Formula  | β          |
 | **Tabular data**            |
-| CSV                         | [csv]         | None     | β      | [⚠][csv-issues]         | ![][csv-cov]         |
-| CSVY                        | [csvy]        | None     | ✗      | [⚠][csvy-issues]        |
-| Tabular Data Package        | [tdp]         | None     | β      | [⚠][tdp-issues]         | ![][tdp-cov]         |
+| CSV                         | csv         | None     | β          |
+| CSVY                        | csvy        | None     | ✗          |
+| Tabular Data Package        | tdp         | None     | β          |
 | **Collections**             |
-| Document Archive            | [dar]         | Extens   | ω      | [⚠][dar-issues]         | ![][dar-cov]         |
-| Filesystem Directory        | [dir]         | Extens   | ω      | [⚠][dir-issues]         | ![][dir-cov]         |
+| Document Archive            | dar         | Extens   | ω          |
+| Filesystem Directory        | dir         | Extens   | ω          |
 | **Data interchange, other** |
-| JSON                        | [json]        | Native   | ✔      | [⚠][json-issues]        | ![][json-cov]        |
-| JSON5                       | [json5]       | Native   | ✔      | [⚠][json5-issues]       | ![][json5-cov]       |
-| YAML                        | [yaml]        | Native   | ✔      | [⚠][yaml-issues]        | ![][yaml-cov]        |
-| Pandoc                      | [pandoc]      | Native   | β      | [⚠][pandoc-issues]      | ![][pandoc-cov]      |
-| Reproducible PNG            | [rpng]        | Native   | β      | [⚠][rpng-issues]        | ![][rpng-cov]        |
+| JSON                        | json        | Native   | ✔          |
+| JSON5                       | json5       | Native   | ✔          |
+| YAML                        | yaml        | Native   | ✔          |
+| Pandoc                      | pandoc      | Native   | β          |
+| Reproducible PNG            | rpng        | Native   | β          |
 | **Transport**               |
-| HTTP                        | [http]        |          | ✔      | [⚠][http-issues]        | ![][http-cov]        |
+| HTTP                        | http        |          | ✔          |
 
 **Key**
 

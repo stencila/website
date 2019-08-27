@@ -34,7 +34,7 @@ The execution contexts determine the inputs and outputs of cells which enables a
 
 ![Stencila Encoda](img/convert.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; float: left;" }
 
-Stencila includes a set of encoders/decoders which allow you to convert between a range of formats commonly used among researchers. Encoda support lossless conversion of interactive source code sections and (most of the time) formatting.{style="display: block;"}
+Stencila includes a set of encoders/decoders which allow you to convert between a range of formats commonly used among researchers. Encoda supports lossless conversion of interactive source code sections and (most of the time) formatting.{style="display: block;"}
 
 You can convert to and from formats used by:
 * Excel (*xlsx*, *csv*, *tsv*),
@@ -46,5 +46,5 @@ You can convert to and from formats used by:
 * publishing applications (*JATS*, *xml*),
 * and more...
 
-Encoda bridges formats commonly used across the workflow lifecycle, e.g.from Jupyter Notebook to RMarkdown to Word to JATS. It makes the collaboration more
+Encoda bridges formats commonly used across the workflow lifecycle, e.g. from Jupyter Notebook to RMarkdown to Word to JATS. It makes the collaboration more
 seamless and less painful.
