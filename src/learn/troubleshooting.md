@@ -83,7 +83,7 @@ If that doesn't help, it may be that what happened is  the execution context you
 * for Python or Jupyter Python context, open a terminal and type `python -m stencila`.
 
 
-# Stencila Converters
+# Stencila Encoda
 
 ### Converting files into a `dar` project results in an error  `Cannot read property 'length' of undefined`
 Most likely one of the files in the folder you are trying to convert is a `csv` file and our converter may be tripping over some

@@ -1,145 +1,131 @@
 ---
 extends: learn/_page.html
-title: Stencila Converters
+title: Stencila Encoda
 ---
 
-![Stencila Converters](/learn/img/convert.png){style="display: inline; width: 12%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
+![Stencila Encoda](/learn/img/convert.png){style="display: inline; width: 12%; margin: 0 auto; padding-right: 1em; padding-bottom: 1em; float: left;" }
 
-Stencila Converters allow you to convert between a range of formats commonly used for among researchers (and not only). The conversion of interactive source code sections of the document is lossless - you can still run the code after the conversion. This means that you can seamlessly collaborate with colleagues who prefer other than you interfaces, without yourself having to give up your tool of choice. Stencila Converters are using the awesome power of [pandoc](https://pandoc.org/) so if you are already a
-pandoc user, you should find the Converters easy to use.
+> "A codec is a device or computer program for encoding or decoding a digital data stream or signal. Codec is a portmanteau of coder-decoder. - [Wikipedia](https://en.wikipedia.org/wiki/Codec)
 
+Encoda provides a collection of codecs for converting between, and composing together, documents in various formats. The aim is not to achieve perfect lossless conversion between alternative document formats; there are already several tools for that. Instead the focus of Encoda is to use existing tools to encode and compose semantic documents in alternative formats.
 
-## Install{style="clear: left;"}
+## Install
 
-The easiest way to install the Converters is through installing [Stencila Command Line (CLI)](https://github.com/stencila/cli/releases) tool.
-The installation requires two steps:
-1. Download and unpack the binary file with the [CLI for your operating system](https://github.com/stencila/cli/releases).
-2. Copy the binary file to the relevant location in your operating system so that you can easily access the tool in the command line:
-  * on Windows: <br/>
-       1) create a folder in `C:\Program Files\` called `stencila`, <br/> 
-       2) copy the `stencila.exe` (which will be in the unpacked folder you just downloaded) file into it;  <br/> 
-       3) then open Windows Command Line and add the folder to the `PATH` variable : `setx path "%path%;C:\Program Files\stencila"`; <br/> 
- > Note that the above instructions will work for Windows 7 and above. If you are using a Windows machine with an older version of the 
- > operating system, please use this command in the command line: `set PATH=%PATH%;C:\Program Files\stencila`
- <br/> 
-  * on Linux, copy the `stencila` binary file to `/usr/local/bin/`;
-  * on Mac OS X, copy the `stencila` file to the ` /usr/local/bin/` folder.
+The easiest way to use Encoda is to install the [`stencila` command line tool](https://github.com/stencila/stencila). Encoda powers `stencila convert`, and other commands, in that CLI. However, the version of Encoda in `stencila`, can lag behind the version in [this repo](https://github.com/stencila/encoda). So if you want the latest functionality, install Encoda as a Node.js package:
+
+```bash
+npm install @stencila/encoda --global
+```
 
 ## Use
 
-The basic use of the Converter is fairly simple. Open the terminal and type `stencila convert path-to-input-file path-to-output-file`, replacing
-`path-to-input-file` and `path-to-output-file` with actual paths. So for example:
+Encoda is intended to be used primarily as a library for other applications. However, it comes with a simple command line script which allows you to use the `convert` function directly e.g.
 
 ```bash
-stencila convert Stencila/examples/hello-world/hello-world/hello-world.md Stencila/examples/hello-world/hello-world.docx
+encoda convert notebook.ipynb notebook.docx
 ```
 
-You should see the following output message:
+Encoda will determine the input and output formats based on the file extensions. You can override these using the `--from` and `--to` options. e.g.
 
 ```bash
-✓  Success converting "Stencila/examples/hello-world/hello-world/hello-world.md" to "Stencila/examples/hello-world/hello-world.docx"
+encoda convert notebook.ipynb notebook.xml --to jats
 ```
 
-You can override the file format both from and to which the Converter is meant to convert. In order to do that, use the `--from` and `--to` options.
-In the example below the output file format will actually be `comma separated values`, even thought the output file name has a different extension (`txt`).
+You can decode an entire directory into a `Collection`. Encoda will traverse the directory, including subdirectories, decoding each file matching your glob pattern. You can then encode the `Collection` using the `dir` codec into a tree of HTML files e.g.
 
 ```bash
-stencila convert hospital.xlsx --to csv hospital.txt
+encoda convert myproject myproject-published --to dir --pattern '**/*.{rmd, csv}'
 ```
 
-If you don't specify the output for the Converter, it will display on the screen (standard output) the input file converted to the intermittent internal Stencila JSON format.
+You can also read content from the first argument. In that case, you'll need to specifying the `--from` format e.g.
 
 ```bash
-stencila convert hospital.xls
+encoda convert "{type: 'Paragraph', content: ['Hello world!']}" --from json5 paragraph.md
 ```
 
-```json
-{
-  "type": "Document",
-  "front": {
-    "name": {
-      "type": "String",
-      "data": "patient"
-    }
-  },
-  "body": [
-    {
-      "type": "Table",
-      "rows": [
-        [
-          [],
-          [
-            {
-              "type": "String",
-              "data": "Day 1"
-            }
-          ],
-```
-
-To get more help on using the Converter type `stencila convert -h`.
-
-### Convert to PDF
-
-Conversion to PDF will require `pdflatex` (because this is how [pandoc works](https://pandoc.org/MANUAL.html#creating-a-pdf)). Check the [installation details here](https://www.latex-project.org/get/).
-
-### Convert spreadsheets
-
-Stencila Converters support spreadsheet conversion.
+You can send output to the console by using `-` as the second argument and specifying the `--to` format e.g.
 
 ```bash
-stencila convert hospital.xlsx hospital.md
+encoda convert paragraph.md - --to yaml
 ```
 
-Should result in:
+| Option         | Description                                                                               |
+| -------------- | ----------------------------------------------------------------------------------------- |
+| `--from`       | The format of the input content e.g. `--from md`                                          |
+| `--to`         | The format for the output content e.g. `--to html`                                        |
+| `--theme`      | The theme for the output (only applies to HTML, PDF and RPNG output) e.g. `--theme eLife` |
+| `--standalone` | Generate a standalone document, not a fragment (default `true`)                           |
+| `--bundle`     | Bundle all assets (e.g images, CSS and JS) into the document (default `false`)            |
+| `--debug`      | Print debugging information                                                               |
 
-```bash
-✓  Success converting "hospital.xlsx" to "hospital.md"
-```
+## Formats
 
-Note that conversion from `xlsx` format to `md` retains some metadata from the original spreadsheet:
+| Format                      | Codec         | Approach | Status     |
+| --------------------------- | ------------- | -------- | -----------|
+| **Text**                    |
+| Plain text                  | txt         | None     | β          |
+| Markdown                    | md          | Extens   | α          |
+| LaTex                       | latex       | -        | α          |
+| Microsoft Word              | docx        | rPNG     | α          |
+| Google Docs                 | gdoc        | rPNG     | α          |
+| Open Document Text          | odt         | rPNG     | α          |
+| HTML                        | html        | Extens   | α          |
+| JATS XML                    | jats        | Extens   | α          |
+| JATS XML (Pandoc-based)     | jats-pandoc | Extens   | α          |
+| Portable Document Format    | pdf         | rPNG     | α          |
+| **Notebooks**               |
+| Jupyter                     | ipynb       | Native   | α          |
+| RMarkdown                   | xmd         | Native   | α          |
+| **Presentations**           |
+| Microsoft Powerpoint        | pptx        | rPNG     | ✗          |
+| Demo Magic                  | dmagic      | Native   | β          |
+| **Spreadsheets**            |
+| Microsoft Excel             | xlsx        | Formula  | β          |
+| Google Sheets               | gsheet      | Formula  | ✗          |
+| Open Document Spreadsheet   | ods         | Formula  | β          |
+| **Tabular data**            |
+| CSV                         | csv         | None     | β          |
+| CSVY                        | csvy        | None     | ✗          |
+| Tabular Data Package        | tdp         | None     | β          |
+| **Collections**             |
+| Document Archive            | dar         | Extens   | ω          |
+| Filesystem Directory        | dir         | Extens   | ω          |
+| **Data interchange, other** |
+| JSON                        | json        | Native   | ✔          |
+| JSON5                       | json5       | Native   | ✔          |
+| YAML                        | yaml        | Native   | ✔          |
+| Pandoc                      | pandoc      | Native   | β          |
+| Reproducible PNG            | rpng        | Native   | β          |
+| **Transport**               |
+| HTTP                        | http        |          | ✔          |
 
-![](/learn/img/convert-xlsx-screen.png)
+**Key**
 
-![](/learn/img/convert-xlsx-md.png)
+<details>
+  <summary><b id="format-approach">Approach</b>...</summary>
+  How executable nodes (e.g. `CodeChunk` and `CodeExpr` nodes) are represented
 
+- Native: the format natively supports executable nodes
+- Extens.: executable nodes are supported via extensions to the format
+- rPNG: executable nodes are supported via reproducible PNG images
+- Formula: executable `CodeExpr` nodes are represented using formulae
 
-### Convert projects
+</details>
 
-You can convert a whole folder into a supported by Stencila `DAR` project which will contain all your articles and spreadsheets ready to work with in Stencila.
-You need to specify the output format to have the `dar` extension:
+<details>
+  <summary><b id="format-status">Status</b>...</summary>
 
-```bash
-stencila convert path-to-folder path-to-project.dar
-```  
+- ✗: Not yet implemented
+- ω: Work in progress
+- α: Alpha, initial implementation
+- β: Beta, ready for user testing
+- ✔: Ready for production use
 
-Or you can do it using `--to` flag:
+</details>
 
-```bash
-stencila convert path-to-folder --to dar path-to-project
-```
+<details>
+  <summary><b id="format-issues">Issues</b>...</summary>
+  Link to open issues and PRs for the format (please check there before submitting a new issue 🙏)
+</details>
 
-Note that if you use `--to` flag and you don't spefify the `dar` extension in the output project name, the Converter will still complete the conversion.
-
-
-## Supported formats
-Stencila Converters recognize the file extensions and use the relevant converters. Below is the list of currently recognized file extensions:
-
-| Format                        |             Extension              |
-|:------------------------------|:----------------------------------:|
-| Delimiter Separated Values    |            `csv`, `tsv`            |
-| HTML                          |               `html`               |
-| JavaScript Object Notation    |               `json`               |
-| Journal Aricle Tag Suite      |               `jats`               |
-| Jupyter Notebook              |              `ipnyb`               |
-| Latex                         |               `tex`                |
-| Markdown                      |                `md`                |
-| Microsoft Excel               |               `xlsx`               |
-| Microsoft Word                |               `docx`               |
-| Open Document Spreadsheet     |               `ods`                |
-| Open Document Text            |               `odt`                |
-| Portable Document Format      |               `pdf`                |
-| RMarkdown                     |               `Rmd`                |
-| XMarkdown\*                   |               `Xmd`                |
-| Reproducible Document Archive | `sheet.xml`, `sheetml`, `jats.xml` |
-|                               |                                    |
-\* _In XMarkdown you can use any code blocks, e.g. `py`, `js` and so on._
+If you'd like to see a converter for your favorite format, look at the [listed issues](https://github.com/stencila/encoda/issues) and comment under the relevant one. If there is no issue regarding the converter you need, [create one](https://github.com/stencila/encoda/issues/new).

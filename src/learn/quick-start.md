@@ -5,7 +5,7 @@ smalltitle: Learn
 ---
 
 This page will guide you through your first steps with Stencila using a simple example. We will show you how to use Stencila to analyse and visualise data
-using `R` programming language (based on the [Data Carpentry R for Ecology module](https://datacarpentry.org/R-ecology-lesson/i)). Using other programming languages is analogous.
+using `R` programming language (based on the [Data Carpentry R for Ecology module](https://datacarpentry.org/R-ecology-lesson/)). Using other programming languages is analogous.
 
 1. Launch Stencila Desktop on your machine (if you are one of our Stencila Hub testers, log into your account).
 2. If you are using Stencila Desktop, make sure that you enabled R execution context on your machine. If you are using Stencila Hub, you don't need to do anything.

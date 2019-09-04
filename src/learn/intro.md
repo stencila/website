@@ -28,26 +28,13 @@ be used for practically any programming language as the execution contexts can b
 for R, Python, JavaScript, SQL and Mini (Stencila's own simple language).
 
 The execution contexts determine the inputs and outputs of cells which enables automatic conversion of data between languages. In other words, you can
- combine of multiple languages in one document.
+ combine multiple languages in one document.
 
+## Encoda
 
-## Sheets{style="clear: right;"}
+![Stencila Encoda](img/convert.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; float: left;" }
 
-![Stencila Sheets](img/UI.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; padding-bottom: 3em; float: left;" }
-
-Stencila comes with its own simple interface, Stencila Sheet, which can be used similarly to a typical spreadsheet application. We are working on plugins
-for dominant spreadsheet applications which will add capabilities for working with:
-* code in open-source languages,
-* shared, custom functions
-* shared, custom types (for data validation).
-
-In other words, Stencila Sheets (and in the future, the plugins) allow for execution of R, Python, SQL (and more languages) code via special “code-snippet” functions e.g. `r`, `py`, `sql`. This feature will help researchers working in spreadsheet make their work more robust, easier to test and collaborate on. {style="clear: right;"}
-
-## Converter
-
-![Stencila Converter](img/convert.png){style="display: inline; width: 18%; margin: 0 auto; padding-right: 1em; float: left;" }
-
-Stencila includes a set of import/export converters which allow you to convert between a range of formats commonly used for among researchers (and not only). Converters support lossless conversion of interactive source code sections and (most of the time) formatting.{style="display: block;"}
+Stencila includes a set of encoders/decoders which allow you to convert between a range of formats commonly used among researchers. Encoda supports lossless conversion of interactive source code sections and (most of the time) formatting.{style="display: block;"}
 
 You can convert to and from formats used by:
 * Excel (*xlsx*, *csv*, *tsv*),
@@ -59,5 +46,5 @@ You can convert to and from formats used by:
 * publishing applications (*JATS*, *xml*),
 * and more...
 
-Converter bridges formats commonly used across the workflow lifecycle, e.g.from Jupyter Notebook to RMarkdown to Word to JATS. It makes the collaboration more
+Encoda bridges formats commonly used across the workflow lifecycle, e.g. from Jupyter Notebook to RMarkdown to Word to JATS. It makes the collaboration more
 seamless and less painful.
