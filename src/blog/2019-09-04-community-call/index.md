@@ -10,7 +10,7 @@ In our September community call, Ben demoed his work on Stencila's execution eng
 
 Jacqueline shared new themes in Thema, our semantic HTML styling library for articles converted using our Stencila CLI and Encoda. She also showed mockups for our latest project, *Stencila /open*.
 
-You can watch a recording of our community call [here](https://youtu.be/A1I_npzP0E4), and [view our accompanying slides](CommunityCall_September4_5_2019.pdf).
+You can watch a recording of our community call [here](https://youtu.be/A1I_npzP0E4), and [view our accompanying slides](https://github.com/stencila/website/raw/master/src/blog/2019-09-04-community-call/CommunityCall_September4_5_2019.pdf).
 
 ---
 
