@@ -1,0 +1,19 @@
+footer {
+  @apply py-8 mt-12 text-white bg-primary-500;
+
+  .columns {
+    @apply mx-auto;
+
+    .column {
+      @apply mb-8;
+    }
+
+    @screen tablet {
+      @apply flex justify-between;
+
+      .column {
+        @apply mb-0;
+      }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html class="mq-debug">
+  <head>
+    <meta charset="utf-8" />
+    <title>{{ block "title" . }}{{ end }}</title>
+
+    {{ $style := resources.Get "css/index.css" | resources.PostCSS (dict "inlineImports" true) }}
+    {{ $built := resources.Get "js/index.ts" | js.Build "index.js" }}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+
+    <!-- Code that all your templates share, like a header -->
+    {{ block "main" . }}
+    {{ end }}
+
+    {{ block "footer" . }}
+    {{ end }}
+
+    {{ partial "footer.html" . }}
+
+    <script src="{{ $built.RelPermalink }}"></script>
+  </body>
+</html>

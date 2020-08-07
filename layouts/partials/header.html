@@ -1,0 +1,32 @@
+<header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="/">
+      <img src="/img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <!-- prettier-ignore -->
+    <div class="navbar-menu">
+      <div class="navbar-start">
+        {{ $currentPage := . }}
+        {{ range sort .Site.Data.Menu "Weight"}}
+          <a class="nav-item{{if eq $currentPage.Permalink .URL }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+
+      <div class="navbar-end">
+        <a class="button primary outline" href="/#beta-signup">
+          Sign in
+        </a>
+
+        <a class="button primary" href="/#beta-signup">
+          Sign up
+        </a>
+      </div>
+    </div>
+  </nav>
+</header>

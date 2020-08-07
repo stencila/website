@@ -1,0 +1,20 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply mb-4 leading-none font-display;
+}
+
+p {
+  @apply font-body mb-4;
+
+  @screen tablet {
+    @apply text-lg;
+  }
+}
+
+hr {
+  @apply my-8;
+}

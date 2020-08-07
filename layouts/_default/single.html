@@ -1,0 +1,15 @@
+{{ define "title" }} {{ .Title }} · {{ .Site.Title }}
+{{ end }}
+
+{{ define "main" }}
+<main class="{{ .Type }} content entry container">
+  <article>
+    <h1 class="title" id="entryTitle">{{ .Title }}</h1>
+
+    <div class="content">
+      {{ .Content }}
+    </div>
+  </article>
+</main>
+
+{{ end }}

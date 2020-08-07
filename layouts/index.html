@@ -1,0 +1,99 @@
+{{ define "title" }} {{ .Site.Title }} {{ end }} {{ define "main" }}
+<main class="home {{ .Type }}">
+  <div class="container">
+    <section class="hero">
+      <div class="feature media-first">
+        <div class="text">
+          <h1>
+            Executable document pipelines
+          </h1>
+
+          <p>
+            Open source reproducible research project management, publication of
+            beautiful documents powered by (inc. wording re. continuous
+            delivery, collaboration)
+          </p>
+
+          <a href="#" class="button inline cta">
+            Sign up for free <i class="ri-arrow-right-line"></i>
+          </a>
+        </div>
+
+        <div class="media">
+          <div></div>
+        </div>
+      </div>
+    </section>
+
+    {{ partial "homepage/workflow-overview.html" . }}
+
+    <section class="feature">
+      <div class="text">
+        <h2>
+          Integrates with your existing workflows
+        </h2>
+
+        <p>
+          Talk about Formats, Open source reproducible research project
+          management, publication of beautiful documents powered by. Collect
+          everything needed for your project, no matter the file format
+        </p>
+      </div>
+
+      <div class="media">
+        <div></div>
+      </div>
+    </section>
+
+    <section class="feature media-first">
+      <div class="text">
+        <h2>
+          Reproducible
+        </h2>
+
+        <p>
+          Automatically generated Docker images based on source code analysis
+          for guaranteed reproducibility.
+        </p>
+      </div>
+
+      <div class="media">
+        <div></div>
+      </div>
+    </section>
+  </div>
+
+  <section class="themes">
+    <div class="text">
+      <h2>
+        Semantic themes
+      </h2>
+
+      <p>
+        Multiple themes to suit your needs in a semantic and machine readable
+        content for advanced automated workflows and improved SEO…
+      </p>
+    </div>
+
+    <div class="theme-previews">
+      <ul>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+        <li><div></div></li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="text-centered">
+    <a href="#" class="button large primary">
+      Get started for free
+    </a>
+  </div>
+
+  {{ partial "homepage/open-source-banner.html" . }}
+
+  {{ partial "homepage/funders-and-partners.html" . }}
+</main>
+{{ end }}

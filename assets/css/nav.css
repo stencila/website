@@ -1,0 +1,49 @@
+header {
+  @apply w-full py-2 bg-white border-t border-b fixed top-0 left-0 z-40;
+  border-bottom-color: var(--color-neutral-300);
+  border-bottom-width: 2px;
+  border-top-color: var(--color-primary-500);
+  border-top-width: 3px;
+
+  & + * {
+    margin-top: 3.5rem;
+  }
+}
+
+.header nav {
+  @apply flex items-center mx-auto;
+
+  a {
+    @apply block text-base text-gray-600 font-display;
+  }
+}
+
+.header .logo {
+  @apply mr-4;
+
+  img {
+    @apply w-auto;
+    height: 28px;
+  }
+}
+
+.navbar-menu {
+  @apply flex items-center justify-between flex-grow;
+}
+
+.navbar-start,
+.navbar-end {
+  @apply hidden;
+
+  @screen tablet {
+    @apply flex;
+  }
+}
+
+.navbar-start > * {
+  @apply mr-4;
+
+  &:last-child {
+    @apply mr-0;
+  }
+}

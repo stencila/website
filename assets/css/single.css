@@ -1,0 +1,11 @@
+main.entry {
+  @apply my-12;
+
+  article {
+    @apply max-w-5xl mx-auto;
+  }
+
+  .content {
+    @apply bg-white rounded media-shadow p-8;
+  }
+}

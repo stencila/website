@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@200&family=Lato&family=Montserrat:wght@700&display=swap');
+@import url('https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import './util.css';
+@import './button.css';
+@import './footer.css';
+@import './home.css';
+@import './nav.css';
+@import './typography.css';
+@import './variables.css';
+@import './blog.css';
+@import './single.css';
+@import './main.css';
