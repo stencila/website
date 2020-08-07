@@ -19,7 +19,7 @@
   "homepage": "https://stenci.la",
   "dependencies": {
     "@stencila/style": "^1.2.0",
-    "prismjs": "^1.19.0",
+    "prismjs": "^1.21.0",
     "waypoints": "^4.0.1"
   },
   "devDependencies": {
