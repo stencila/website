@@ -38,9 +38,9 @@
       transform: translateY(-100%);
       transform-origin: top left;
 
-      @screen tablet {
+      @screen desktop {
         @apply text-2xl;
-        transform: rotate(-90deg) translateX(-130%) translateY(-200%);
+        transform: rotate(-90deg) translateX(-130%) translateY(-150%);
       }
     }
   }
@@ -98,6 +98,14 @@
 .home #workflow-overview {
   @apply py-12 text-center font-display;
 
+  h2 {
+    @apply text-xl;
+
+    @screen tablet {
+      @apply text-4xl;
+    }
+  }
+
   ol {
     @apply mt-8;
     counter-reset: workflowCounter;
@@ -107,7 +115,7 @@
     }
 
     li {
-      @apply relative mb-6 text-2xl font-normal;
+      @apply relative mb-6 text-xl font-normal;
       counter-increment: workflowCounter;
 
       &:before {
@@ -340,7 +348,7 @@
   @apply min-h-0;
 
   .name {
-    @apply text-xs leading-none uppercase font-display text-neutral-600;
+    @apply text-xs font-bold leading-none uppercase font-display text-neutral-600;
 
     @screen tablet {
       @apply text-sm;

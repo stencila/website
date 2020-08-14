@@ -3,6 +3,11 @@
   URL: https://sloan.org
   Logo: /img/partners/sloan.png
 
+- Name: elife
+  Title: eLife
+  URL: https://elifesciences.org/
+  Logo: /img/partners/elife.svg
+
 - Name: css
   Title: Code for Science and Society
   URL: https://codeforscience.org
@@ -17,8 +22,3 @@
   Title: Pricing
   URL: https://datproject.org
   Logo: /img/partners/dat.png
-
-- Name: elife
-  Title: eLife
-  URL: https://elifesciences.org/
-  Logo: /img/partners/elife.svg
