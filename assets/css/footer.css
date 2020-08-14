@@ -1,5 +1,5 @@
 footer {
-  @apply py-8 mt-12 text-white bg-primary-500;
+  @apply text-white bg-primary-500;
 
   .columns {
     @apply mx-auto;
@@ -16,4 +16,48 @@ footer {
       }
     }
   }
+
+  h4 {
+    @apply mb-0;
+  }
+}
+
+.footer-links {
+  @apply py-8;
+}
+
+.footer-colophon {
+  @apply py-4 bg-primary-700;
+
+  .container {
+    @apply flex flex-row flex-wrap py-4 bg-primary-700;
+  }
+}
+
+.colophon-links {
+  @apply flex flex-row flex-wrap items-center flex-grow leading-none;
+
+  & > * {
+    @apply mb-4;
+
+    @screen tablet {
+      @apply mr-4;
+    }
+  }
+
+  .footer-copyright {
+    img {
+      @apply inline-block;
+    }
+  }
+
+  .icons a {
+    @apply mr-2 text-2xl;
+  }
+}
+
+.footer-logo {
+  @apply mr-4;
+  height: 2rem;
+  width: 2rem;
 }

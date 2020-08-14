@@ -8,16 +8,25 @@ main.blog {
   .listEntries article {
     @apply bg-white rounded mb-8 overflow-hidden media-shadow;
 
+    &:hover {
+      @apply bg-neutral-100;
+
+      h1 {
+        @apply text-primary-500;
+      }
+    }
+
+    .thumbnail {
+      @apply block overflow-hidden;
+      max-height: 50vh;
+    }
+
     img {
       @apply w-full h-auto block;
     }
 
-    .content {
-      @apply p-4;
-    }
-
-    .meta {
-      @apply text-neutral-700 font-mono text-sm;
+    .content > a {
+      @apply block p-4;
     }
   }
 
@@ -32,6 +41,14 @@ main.blog {
   }
 
   h1 {
-    @apply text-2xl leading-tight;
+    @apply text-xl leading-tight;
+
+    @screen tablet {
+      @apply text-2xl;
+    }
   }
+}
+
+.meta {
+  @apply text-neutral-700 font-mono text-sm;
 }

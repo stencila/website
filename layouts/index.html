@@ -2,7 +2,7 @@
 <main class="home {{ .Type }}">
   <div class="container">
     <section class="hero">
-      <div class="feature media-first">
+      <div class="feature twoUp media-first">
         <div class="text">
           <h1>
             Executable document pipelines
@@ -14,20 +14,27 @@
             delivery, collaboration)
           </p>
 
-          <a href="#" class="button inline cta">
+          <a href="#" class="inline button cta">
             Sign up for free <i class="ri-arrow-right-line"></i>
           </a>
         </div>
 
         <div class="media">
-          <div></div>
+          <div class="mediaElement">
+            <div class="titleBar">
+              <span class="titleBarButton"></span>
+              <span class="titleBarButton"></span>
+              <span class="titleBarButton"></span>
+            </div>
+            <iframe src="https://elife.stencila.io/article-52258/"></iframe>
+          </div>
         </div>
       </div>
     </section>
 
     {{ partial "homepage/workflow-overview.html" . }}
 
-    <section class="feature">
+    <section class="feature twoUp integrations">
       <div class="text">
         <h2>
           Integrates with your existing workflows
@@ -41,11 +48,101 @@
       </div>
 
       <div class="media">
-        <div></div>
+        <div>
+          <img src="/img/page/home/tools/R_lang.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/Python.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/GitHub.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/GoogleDocs.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/Jupyter.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/MSWord.svg" />
+        </div>
+
+        <div>
+          <img src="/img/page/home/tools/RStudio.svg" />
+        </div>
+
+        <div class="icon-only">
+          <i class="ri-links-line"></i>
+        </div>
+
+        <div class="text-only">
+          + many more
+        </div>
       </div>
     </section>
 
-    <section class="feature media-first">
+    <section class="feature twoUp media-first collaboration">
+      <div class="text">
+        <h2>
+          Collaborate
+        </h2>
+
+        <p>
+          Invite colleagues and other stakeholders to work together (author,
+          review, publish).
+        </p>
+
+        <p>
+          Use case page Comparison page with alt. products
+        </p>
+      </div>
+
+      <div class="media">
+        <div class="mediaElement">
+          <ul>
+            <li>
+              <div>
+                <div class="name">Nicole</div>
+                <div class="action">Converted R Markdown to Google Docs</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="name">Marcus</div>
+                <div class="action">Uploaded 32 files to the project</div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="name">Nicole</div>
+                <div class="action">
+                  Ran compute session for 17 minutes and 32 seconds
+                </div>
+              </div>
+            </li>
+            <li>
+              <div>
+                <div class="name">Ian</div>
+                <div class="action">Pulled 4 files from GitHub</div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <img
+          src="/img/page/home/stencilCircle.svg"
+          role="presentation"
+          class="stencil"
+        />
+      </div>
+    </section>
+
+    <section class="feature twoUp reproducibility">
       <div class="text">
         <h2>
           Reproducible
@@ -58,12 +155,12 @@
       </div>
 
       <div class="media">
-        <div></div>
+        <img src="/img/page/home/reproducible.png" />
       </div>
     </section>
   </div>
 
-  <section class="themes">
+  <section class="feature themes">
     <div class="text">
       <h2>
         Semantic themes
@@ -77,11 +174,30 @@
 
     <div class="theme-previews">
       <ul>
-        <li><div></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
-        <li><div></div></li>
+        <li>
+          <div><img src="/img/page/home/thema/stencila.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/tufte.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/elife.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/wilmore.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/bootstrap.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/latex.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/nature.png" /></div>
+        </li>
+        <li>
+          <div><img src="/img/page/home/thema/plos.png" /></div>
+        </li>
       </ul>
     </div>
   </section>
@@ -92,8 +208,8 @@
     </a>
   </div>
 
-  {{ partial "homepage/open-source-banner.html" . }}
-
   {{ partial "homepage/funders-and-partners.html" . }}
+
+  {{ partial "homepage/open-source-banner.html" . }}
 </main>
 {{ end }}

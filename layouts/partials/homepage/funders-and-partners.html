@@ -1,11 +1,13 @@
-<section class="container funders-and-partners">
-  <h2 class="text-center">
-    We wouldn’t be doing this without these visionary and generous organisations
-  </h2>
+<section class="funders-and-partners">
+  <div class="container">
+    <h3 class="text-center">
+      We wouldn’t be doing this without these visionary and generous
+      organisations
+    </h3>
 
-  <div class="partner-logos">
-    <!-- prettier-ignore -->
-    <ul>
+    <div class="partner-logos">
+      <!-- prettier-ignore -->
+      <ul>
       {{ range sort .Site.Data.Partners "Weight"}}
       <li>
         <a class="" href="{{ .URL }}" title="{{ .Title }}">
@@ -14,5 +16,6 @@
       </li>
       {{ end }}
     </ul>
+    </div>
   </div>
 </section>

@@ -8,10 +8,12 @@ sectionPagesMenu: 'main'
 permalinks:
   blog: /:section/:filename
 
-# markup:
-#   goldmark:
-#     renderer:
-#       unsafe: true
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: manni
 
 frontmatter:
   date:

@@ -1,5 +1,5 @@
 header {
-  @apply w-full py-2 bg-white border-t border-b fixed top-0 left-0 z-40;
+  @apply w-full bg-white border-t border-b fixed top-0 left-0 z-40;
   border-bottom-color: var(--color-neutral-300);
   border-bottom-width: 2px;
   border-top-color: var(--color-primary-500);
@@ -12,9 +12,16 @@ header {
 
 .header nav {
   @apply flex items-center mx-auto;
+  --nav-height: 52px;
+  min-height: var(--nav-height);
 
-  a {
-    @apply block text-base text-gray-600 font-display;
+  a.nav-item {
+    @apply block text-base text-neutral-600 font-display px-4 py-2 rounded font-bold;
+
+    &:hover,
+    &:focus {
+      @apply text-primary-500 bg-neutral-200;
+    }
   }
 }
 
@@ -27,23 +34,83 @@ header {
   }
 }
 
-.navbar-menu {
-  @apply flex items-center justify-between flex-grow;
+#navbar-menu {
+  @apply w-full;
+}
+
+.header a.mobile-toggle {
+  @apply absolute right-0 top-0 text-neutral-600 cursor-pointer;
+  height: 3.25rem;
+  width: 3.25rem;
+
+  span {
+    @apply bg-current h-px block absolute;
+    left: calc(50% - 8px);
+    transform-origin: center;
+    transition-duration: 86ms;
+    transition-property: background-color, opacity, transform;
+    transition-timing-function: ease-out;
+    width: 16px;
+    top: calc(50% - 1px);
+
+    &:first-child {
+      top: calc(50% - 6px);
+    }
+
+    &:last-child {
+      top: calc(50% + 4px);
+    }
+  }
+
+  &:focus,
+  &:hover {
+    @apply bg-neutral-200;
+  }
+
+  @screen desktop {
+    @apply hidden;
+  }
 }
 
 .navbar-start,
 .navbar-end {
+  @apply flex;
+}
+
+.navbar-content {
   @apply hidden;
 
-  @screen tablet {
-    @apply flex;
+  @screen desktop {
+    @apply items-center justify-between flex-grow flex;
   }
 }
 
-.navbar-start > * {
-  @apply mr-4;
+#navbar-menu.is-active {
+  .mobile-toggle {
+    span:nth-child(2) {
+      @apply opacity-0;
+    }
 
-  &:last-child {
-    @apply mr-0;
+    span:first-child {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    span:last-child {
+      transform: translateY(-5px) rotate(-45deg);
+    }
+  }
+
+  .navbar-content {
+    @apply block bg-white absolute z-40 w-full py-4 left-0;
+    top: var(--nav-height);
+  }
+
+  .navbar-start,
+  .navbar-end {
+    @apply block;
+  }
+
+  .navbar-end {
+    @apply px-4 mt-4;
   }
 }

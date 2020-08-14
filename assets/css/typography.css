@@ -4,7 +4,15 @@ h3,
 h4,
 h5,
 h6 {
-  @apply mb-4 leading-none font-display;
+  @apply mb-4 leading-none font-display font-bold;
+}
+
+h3 {
+  @apply text-xl;
+
+  @screen tablet {
+    @apply text-2xl;
+  }
 }
 
 p {

@@ -9,23 +9,41 @@
       <img src="/img/stencila/stencilaLogo.svg" alt="Stencila" />
     </a>
 
-    <!-- prettier-ignore -->
-    <div class="navbar-menu">
-      <div class="navbar-start">
-        {{ $currentPage := . }}
-        {{ range sort .Site.Data.Menu "Weight"}}
-          <a class="nav-item{{if eq $currentPage.Permalink .URL }} active{{end}}" href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a>
-        {{ end }}
-      </div>
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
 
-      <div class="navbar-end">
-        <a class="button primary outline" href="/#beta-signup">
-          Sign in
-        </a>
+      <div class="navbar-content">
+        <div class="navbar-start">
+          {{ $currentPage := . }}
+          {{ range sort .Site.Data.Menu "Weight"}}
+          <a
+            class="nav-item{{if eq $currentPage.Permalink .URL }} active{{end}}"
+            href="{{ .URL }}"
+            title="{{ .Title }}"
+            >{{ .Name }}</a
+          >
+          {{ end }}
+        </div>
 
-        <a class="button primary" href="/#beta-signup">
-          Sign up
-        </a>
+        <div class="navbar-end">
+          <a class="button primary outline" href="/#beta-signup">
+            Sign in
+          </a>
+
+          <a class="button primary" href="/#beta-signup">
+            Sign up
+          </a>
+        </div>
       </div>
     </div>
   </nav>

@@ -1,4 +1,7 @@
 .home {
+  @apply overflow-x-hidden;
+  counter-reset: featureCounter;
+
   h2 {
     @apply text-2xl;
 
@@ -13,16 +16,11 @@
 }
 
 .home .feature {
-  @apply py-8;
-  counter-increment: featureCounter;
-
-  @screen tablet {
-    @apply flex py-24;
-  }
+  @apply py-16;
 
   h1,
   h2 {
-    @apply text-4xl text-primary-500;
+    @apply text-3xl text-primary-500;
 
     @screen tablet {
       @apply text-5xl;
@@ -31,13 +29,19 @@
 
   h2 {
     @apply relative;
+    counter-increment: featureCounter;
 
     &:before {
-      @apply absolute left-0 font-mono text-text text-2xl font-thin;
+      @apply absolute left-0 font-mono text-xl font-thin text-text;
       list-style-type: disc;
       content: counter(featureCounter, decimal-leading-zero);
-      transform: rotate(-90deg) translateX(-125%) translateY(-125%);
+      transform: translateY(-100%);
       transform-origin: top left;
+
+      @screen tablet {
+        @apply text-2xl;
+        transform: rotate(-90deg) translateX(-130%) translateY(-200%);
+      }
     }
   }
 
@@ -49,68 +53,74 @@
     }
   }
 
+  @screen tablet {
+    @apply py-32;
+  }
+
   .text {
     @apply mb-8;
 
-    @screen tablet {
+    @screen desktop {
       @apply mb-0;
     }
   }
 
-  .media > * {
+  .mediaElement {
     @apply w-full h-full bg-white border-2 rounded border-neutral-500 media-shadow;
-    min-height: 50vh;
   }
 
-  @screen desktop {
-    @apply items-center;
+  &.twoUp {
+    @screen desktop {
+      @apply flex items-center;
 
-    .media {
-      @apply w-3/5 pl-8;
-    }
-
-    .text {
-      @apply w-2/5 pr-8;
-    }
-
-    &.media-first {
       .media {
-        @apply pr-8 pl-0;
-        order: -1;
+        @apply w-3/5 pl-8;
       }
 
       .text {
-        @apply pl-8 pr-0 order-2;
+        @apply w-2/5 pr-8;
+      }
+
+      &.media-first {
+        .media {
+          @apply pl-0 pr-8;
+          order: -1;
+        }
+
+        .text {
+          @apply order-2 pl-8 pr-0;
+        }
       }
     }
   }
 }
 
-.home .workflow-overview {
-  @apply text-center font-display my-24;
-
-  @screen tablet {
-    @apply pt-12;
-  }
+.home #workflow-overview {
+  @apply py-12 text-center font-display;
 
   ol {
     @apply mt-8;
     counter-reset: workflowCounter;
 
+    @screen tablet {
+      @apply mt-16;
+    }
+
     li {
-      @apply relative mb-4;
+      @apply relative mb-6 text-2xl font-normal;
       counter-increment: workflowCounter;
 
       &:before {
-        @apply font-display text-primary-500 block;
+        @apply block font-bold font-display text-primary-500;
         content: counter(workflowCounter);
       }
 
       @screen tablet {
-        @apply px-4 text-2xl flex-1 mb-0;
+        @apply flex-1 px-4 mb-0 text-2xl font-bold;
 
         &:after {
-          @apply block absolute bg-scondary-500 w-10/12 right-0 transform translate-x-1/2;
+          @apply absolute right-0 block w-10/12 bg-scondary-500 transform translate-x-1/2;
+          background-image: linear-gradient(90deg, #66ff66 0, #def7de 100%);
           content: '';
           height: 2px;
           top: 0.75em;
@@ -129,64 +139,99 @@
 }
 
 .home .themes {
-  @apply text-center py-8;
+  @apply py-8 mb-8 text-center;
 
   @screen tablet {
     @apply py-12;
   }
 
   .text {
-    @apply max-w-lg mx-auto mb-12;
+    @apply max-w-lg px-4 mx-auto mb-12 text-left;
+
+    @screen tablet {
+      @apply text-center;
+    }
   }
 
   .theme-previews {
     ul {
-      @apply flex max-w-full overflow-auto pl-8 py-4;
+      @apply flex max-w-full py-4 pl-4 overflow-auto;
+
+      @screen tablet {
+        @apply pl-8;
+      }
     }
 
     li {
-      @apply pr-4;
+      @apply flex-shrink-0 pr-4;
+      max-height: 80vh;
+      width: 95%;
+
+      @screen tablet {
+        width: 31%;
+        max-height: 60vh;
+      }
 
       &:last-child {
         @apply pr-8;
       }
 
       div {
-        @apply border rounded bg-white;
-        min-width: 70vw;
-        min-height: 55vh;
-
-        @screen tablet {
-          min-width: 25vw;
-          min-height: 45vh;
-        }
+        @apply w-full h-full overflow-hidden bg-white border rounded media-shadow;
       }
     }
   }
 }
 
 .open-source-banner {
-  @apply bg-key text-stock text-center pt-4 pb-2 my-24 leading-none;
+  @apply py-4 leading-none text-center bg-key text-stock;
+
+  h2 {
+    @apply m-0 text-lg;
+
+    @screen tablet {
+      @apply text-4xl;
+    }
+  }
 
   * {
-    @apply inline-block align-middle leading-none;
+    @apply inline-block leading-none align-middle;
   }
 }
 
 .funders-and-partners {
+  @apply pt-16 pb-6 mt-16 bg-white;
+
+  @screen tablet {
+    @apply pt-24 mt-24;
+  }
+
   .partner-logos ul {
-    @apply flex justify-center flex-wrap mx-auto my-24;
+    @apply flex flex-wrap justify-center mx-auto my-12;
+
+    @screen tablet {
+      @apply my-24;
+    }
 
     li {
-      @apply w-1/3 text-center;
+      @apply w-1/2 text-center;
+
+      @screen tablet {
+        @apply w-1/3;
+      }
     }
 
     a {
-      @apply inline-block my-6;
-      height: 72px;
+      @apply inline-block px-4 my-3;
+      height: 2.25rem;
+
+      @screen tablet {
+        height: 4.5rem;
+        @apply my-6;
+      }
 
       img {
-        @apply h-full w-auto;
+        @apply w-auto h-auto max-h-full;
       }
     }
   }
@@ -197,13 +242,178 @@
   @apply relative;
 
   div {
-    @apply z-10 relative;
+    @apply relative z-10;
   }
 
   &:before {
-    @apply absolute top-0 right-0 bg-scondary-500 media-shadow block rounded-full transform -translate-y-1/2 z-0;
+    @apply absolute top-0 right-0 z-0 block rounded-full bg-scondary-500 media-shadow transform -translate-y-1/2 translate-x-1/2;
     content: '';
     width: 64px;
     height: 64px;
+
+    @screen tablet {
+      @apply translate-x-0;
+    }
+  }
+
+  .mediaElement {
+    @apply flex flex-col items-start;
+    min-height: 50vh;
+  }
+
+  .titleBar {
+    @apply flex-grow-0 w-full px-2 pb-1 border-b-2 border-neutral-500;
+  }
+
+  .titleBarButton {
+    @apply inline-block mr-2 align-middle border-2 border-gray-500 rounded-full;
+    height: 13px;
+    width: 13px;
+  }
+
+  iframe {
+    @apply flex-grow w-full h-full bg-gray-600 border-0;
+  }
+}
+
+.feature.integrations {
+  .media {
+    @apply relative flex flex-wrap justify-center;
+
+    div {
+      @apply flex-grow-0 text-center rounded-full bg-stock media-shadow font-display;
+      height: 96px;
+      width: 96px;
+      line-height: 48px;
+      padding: 1rem;
+      margin: 1rem;
+
+      @screen tablet {
+        height: 128px;
+        width: 128px;
+        line-height: 64px;
+        padding: 1.5rem;
+        margin: 1rem;
+      }
+
+      &.text-only {
+        @apply text-lg font-bold leading-none;
+
+        @screen tablet {
+          @apply text-2xl;
+        }
+      }
+
+      &.icon-only {
+        font-size: 56px;
+        line-height: 56px;
+
+        @screen tablet {
+          font-size: 80px;
+          line-height: 80px;
+        }
+      }
+
+      img {
+        @apply inline-block max-w-full max-h-full align-middle;
+      }
+    }
+  }
+}
+
+.collaboration .media {
+  @apply relative;
+
+  @screen tablet {
+    @apply mr-16;
+  }
+
+  .stencil {
+    @apply absolute bottom-0 left-0;
+    transform: translateX(-25%) translateY(50%);
+    width: 30%;
+    height: 30%;
+  }
+}
+
+.collaboration .mediaElement {
+  @apply min-h-0;
+
+  .name {
+    @apply text-xs leading-none uppercase font-display text-neutral-600;
+
+    @screen tablet {
+      @apply text-sm;
+    }
+  }
+
+  .action {
+    @apply text-base leading-tight;
+
+    @screen tablet {
+      @apply text-2xl;
+    }
+  }
+
+  ul {
+    @apply p-8;
+
+    @screen tablet {
+      @apply p-16;
+    }
+  }
+
+  li {
+    @apply relative mb-8;
+
+    @screen tablet {
+      @apply mb-16;
+    }
+
+    &:nth-child(even) {
+      @apply text-right;
+    }
+
+    &:last-child {
+      @apply mb-0;
+    }
+
+    &:before {
+      @apply absolute left-0 block overflow-hidden text-center bg-white border rounded-full media-shadow border-neutral-300 text-neutral-500;
+      content: '\f264';
+      font-family: remixicon;
+      height: 32px;
+      line-height: 32px;
+      font-size: 16px;
+      top: 50%;
+      transform: translateX(-135%) translateY(-50%);
+      width: 32px;
+
+      @screen tablet {
+        height: 94px;
+        width: 94px;
+        line-height: 94px;
+        font-size: 47px;
+        transform: translateX(-125%) translateY(-50%);
+      }
+    }
+
+    &:nth-child(even):before {
+      left: auto;
+      right: 0;
+      transform: translateX(135%) translateY(-50%);
+
+      @screen tablet {
+        transform: translateX(125%) translateY(-50%);
+      }
+    }
+  }
+}
+
+.home .feature.reproducibility {
+  @apply pb-0;
+
+  .media {
+    @apply min-h-0;
   }
 }

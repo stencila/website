@@ -1,11 +1,15 @@
 main.entry {
-  @apply my-12;
+  @apply my-16;
 
   article {
     @apply max-w-5xl mx-auto;
   }
 
   .content {
-    @apply bg-white rounded media-shadow p-8;
+    @apply bg-white rounded media-shadow p-4;
+
+    @screen tablet {
+      @apply p-8;
+    }
   }
 }

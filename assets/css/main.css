@@ -1,6 +1,6 @@
 .mq-debug {
   &:before {
-    @apply fixed top-0 left-0 block p-1 text-xs tracking-widest text-gray-600 uppercase;
+    @apply fixed top-0 left-0 block p-1 text-xs tracking-widest text-gray-600 uppercase z-50;
 
     content: 'base';
 

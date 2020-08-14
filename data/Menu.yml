@@ -1,10 +1,10 @@
 - Name: Features
   Title: Features
-  URL: /feat
+  URL: '/#workflow-overview'
 
 - Name: Explore
   Title: Explore
-  URL: /explore
+  URL: https://hub.stenci.la/projects
 
 - Name: Blog
   Title: Blog
@@ -12,4 +12,4 @@
 
 - Name: Pricing
   Title: Pricing
-  URL: hub.stenci.la/pricing
+  URL: https://hub.stenci.la/pricing

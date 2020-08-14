@@ -7,7 +7,7 @@
     <li>
       <article>
         {{ if .Params.image }}
-        <a href="{{.RelPermalink}}">
+        <a href="{{.RelPermalink}}" class="thumbnail">
           <img
             src="{{ .RelPermalink }}{{ .Params.image }}"
             alt="{{ $.Title }}"
@@ -25,11 +25,11 @@
               {{ .Summary }}
               {{ end }}
             </p>
-          </a>
 
-          <div class="meta">
-            {{ .Params.author }} · {{ dateFormat "Jan 2, 2006" .PublishDate }}
-          </div>
+            <div class="meta">
+              {{ .Params.author }} · {{ dateFormat "Jan 2, 2006" .PublishDate }}
+            </div>
+          </a>
         </div>
       </article>
     </li>

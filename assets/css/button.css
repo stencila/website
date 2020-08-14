@@ -1,23 +1,45 @@
 .button {
-  @apply px-4 py-2 m-0 font-bold leading-none rounded font-display inline-block;
+  @apply inline-block px-4 py-2 m-0 font-bold leading-none border rounded font-display border-current;
 
   & + & {
     @apply ml-2;
   }
 
   &.primary {
-    @apply text-white bg-primary-500;
+    @apply text-white border bg-primary-500 border-primary-500;
+
+    &:focus,
+    &:hover {
+      @apply text-white bg-primary-700 border-primary-700;
+    }
 
     &.outline {
-      @apply bg-white border-2 text-primary-500 border-primary-500;
+      @apply bg-white text-primary-500 border-current;
+
+      &:focus,
+      &:hover {
+        @apply text-white bg-primary-500 border-primary-500;
+      }
     }
   }
 
   &.large {
-    @apply text-2xl;
+    @apply text-lg;
+
+    @screen tablet {
+      @apply text-2xl;
+    }
   }
 }
 
 .button.inline.cta {
-  @apply p-0 border-b-2 border-scondary-500 pb-1;
+  @apply p-0 pb-1 border-0 border-b-2 border-scondary-500;
+
+  i {
+    @apply inline-block transition transition-transform duration-150;
+  }
+
+  &:hover i {
+    transform: translateX(0.25em);
+  }
 }

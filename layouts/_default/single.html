@@ -4,6 +4,10 @@
 {{ define "main" }}
 <main class="{{ .Type }} content entry container">
   <article>
+    <div class="meta">
+      {{ .Params.author }} · {{ dateFormat "Jan 2, 2006" .PublishDate }}
+    </div>
+
     <h1 class="title" id="entryTitle">{{ .Title }}</h1>
 
     <div class="content">
