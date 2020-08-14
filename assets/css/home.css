@@ -386,13 +386,26 @@
       @apply mb-0;
     }
 
+    &.user-1:before {
+      background-image: url('/img/page/home/avatars/pexels-photo-1181519.jpeg');
+    }
+
+    &.user-2:before {
+      background-image: url('/img/page/home/avatars/photo-1504257432389-52343af06ae3.jpeg');
+    }
+
+    &.user-3:before {
+      background-image: url('/img/page/home/avatars/pexels-photo-1222271.jpeg');
+    }
+
     &:before {
-      @apply absolute left-0 block overflow-hidden text-center bg-white border rounded-full media-shadow border-neutral-300 text-neutral-500;
-      content: '\f264';
-      font-family: remixicon;
+      @apply absolute left-0 block overflow-hidden text-center border rounded-full media-shadow border-neutral-400;
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      content: '';
+      font-size: 16px;
       height: 32px;
       line-height: 32px;
-      font-size: 16px;
       top: 50%;
       transform: translateX(-135%) translateY(-50%);
       width: 32px;
