@@ -1,3 +1,4 @@
 ---
+title: Team
 layout: team
 ---
