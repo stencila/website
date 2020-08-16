@@ -4,7 +4,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply mb-4 leading-none font-display font-bold;
+  @apply mb-4 font-bold leading-none font-display;
 }
 
 h3 {
@@ -16,7 +16,7 @@ h3 {
 }
 
 p {
-  @apply font-body mb-4;
+  @apply mb-4 font-body;
 
   @screen tablet {
     @apply text-lg;
@@ -25,4 +25,55 @@ p {
 
 hr {
   @apply my-8;
+}
+
+.entry article .content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  ol,
+  ul,
+  p {
+    @apply mx-auto;
+    max-width: 680px;
+  }
+
+  ol,
+  ul {
+    @apply text-base;
+
+    li {
+      @apply mb-2 text-base;
+    }
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    list-style-type: circle;
+  }
+
+  a {
+    &:link,
+    &:visited {
+      @apply underline text-primary-500;
+    }
+
+    &:hover {
+      @apply no-underline text-key;
+    }
+  }
+
+  .highlight {
+    @apply my-8;
+
+    pre {
+      @apply p-4 rounded;
+    }
+  }
 }
