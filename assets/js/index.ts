@@ -18,6 +18,5 @@ const toggleMobileMenu = () => {
 }
 
 onReady(() => {
-  console.log('we goooood')
   toggleMobileMenu()
 })

@@ -222,24 +222,18 @@
     }
 
     li {
-      @apply w-1/2 text-center;
+      @apply block w-1/2 my-3 text-center;
 
       @screen tablet {
-        @apply w-1/3;
+        @apply w-1/3 my-6;
       }
     }
 
     a {
-      @apply inline-block px-4 my-3;
-      height: 2.25rem;
-
-      @screen tablet {
-        height: 4.5rem;
-        @apply my-6;
-      }
+      @apply block;
 
       img {
-        @apply w-auto h-auto max-h-full;
+        @apply w-full h-auto;
       }
     }
   }
