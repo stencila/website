@@ -264,13 +264,26 @@
   }
 
   .titleBar {
-    @apply flex-grow-0 w-full px-2 pb-1 border-b-2 border-neutral-500;
+    @apply flex items-center justify-between flex-grow-0 w-full px-2 pb-1 border-b-2 border-neutral-500;
   }
 
   .titleBarButton {
     @apply inline-block mr-2 align-middle border-2 border-gray-500 rounded-full;
     height: 13px;
     width: 13px;
+  }
+
+  .demo-link {
+    @apply pt-1 text-xs font-bold leading-none no-underline uppercase text-neutral-700;
+
+    &:hover {
+      @apply underline text-primary-500;
+    }
+
+    i,
+    span {
+      @apply align-middle;
+    }
   }
 
   iframe {
