@@ -16,13 +16,37 @@ jobs:
 
       - uses: c-hive/gha-npm-cache@v1
 
-      - name: Install JS dependencies
-        run: npm install
-      
-      - name: Build & Deploy the site
-        uses: benmatselby/hugo-deploy-gh-pages@master
+      # Based on https://github.com/victoriadrake/hugo-latest-cd
+      - name: 🔨 Set up Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+      - name: 🔧 Install tools
+        run: |
+          sudo apt install curl jq
+          npm install
+      - name: 🤵 Install Hugo
+        run: |
+          HUGO_VERSION=$(curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest | jq -r '.tag_name')
+          mkdir tmp/ && cd tmp/
+          curl -sSL https://github.com/gohugoio/hugo/releases/download/${HUGO_VERSION}/hugo_extended_${HUGO_VERSION: -6}_Linux-64bit.tar.gz | tar -xvzf-
+          sudo mv hugo /usr/local/bin/
+          cd .. && rm -rf tmp/
+          hugo version
+      - name: 🧹 Clean site
+        run: |
+          if [ -d "public" ]; then
+            rm -rf public/*
+          fi
+      - name: 🍳 Build site
+        run: hugo
+      - name: 🚀 Deploy build
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: public
+          jekyll: false
+          commit_message: 'Deploy stenci.la website'
+          fqdn: stenci.la
         env:
-          HUGO_VERSION: 0.74.3
-          TARGET_REPO: stencila/website
-          TOKEN: ${{ secrets.STENCILA_BOT_TOKEN }}
-          CNAME: stenci.la
+          GITHUB_TOKEN: ${{ secrets.STENCILA_BOT_TOKEN }}
