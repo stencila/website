@@ -1,0 +1,41 @@
+{{ define "title" }} {{ .Title }} · {{ .Site.Title }} {{ end }}
+
+{{ define "main"}}
+<main class="{{ .Type }} content entry container team">
+  <article>
+    <section class="intro">
+      <span class="preheader">About us</span>
+      <h1>Team</h1>
+
+      <p>
+        {{ .Site.Data.Team.Intro | markdownify }}
+      </p>
+    </section>
+
+    {{ range sort .Site.Data.Team.Current }}
+    <section class="team-member">
+      <img src="{{ .Avatar }}" alt="Avatar of {{ .Name }}" />
+      <div>
+        <h2>{{ .Name }}</h2>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Bio | markdownify }}</p>
+      </div>
+    </section>
+    {{ end }}
+
+    <h2 class="alumni-header">Alumni</h2>
+
+    {{ range sort .Site.Data.Team.Alumni }}
+    <section class="team-member">
+      <img src="{{ .Avatar }}" alt="Avatar of {{ .Name }}" />
+      <div>
+        <h2>{{ .Name }}</h2>
+        <h3>{{ .Title }}</h3>
+        <p>{{ .Bio | markdownify }}</p>
+      </div>
+    </section>
+    {{ end }}
+  </article>
+</main>
+
+{{ end }}

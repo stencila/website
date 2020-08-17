@@ -1,0 +1,53 @@
+.mq-debug {
+  &:before {
+    @apply fixed top-0 left-0 block p-1 text-xs tracking-widest text-gray-600 uppercase z-50;
+
+    content: 'base';
+
+    @screen mobile {
+      content: 'mobile';
+    }
+
+    @screen tablet {
+      content: 'tablet';
+    }
+
+    @screen desktop {
+      content: 'desktop';
+    }
+
+    @screen widescreen {
+      content: 'widescreen';
+    }
+
+    @screen fullhd {
+      content: 'fullhd';
+    }
+  }
+}
+
+/* https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
+html {
+  @apply font-body box-border bg-neutral-200 text-text;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  /** {
+    @apply ease-in-out duration-150;
+    transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, font-size;
+  }*/
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+.container {
+  @apply px-4;
+
+  @screen tablet {
+    @apply px-0;
+  }
+}

@@ -1,0 +1,93 @@
+# site_url: https://stenci.la
+site_url: http://localhost:1313
+
+display_url: https://stenci.la
+publish_mode: editorial_workflow
+logo_url: /img/stencila/stencilaLogo.svg
+
+media_folder: "static/img/uploads" # Media files will be stored in the repo under static/images/uploads
+public_folder: "/img/uploads" # The src attribute for uploaded media will begin with /images/uploads
+
+backend:
+  name: git-gateway
+  branch: master
+  commit_messages:
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
+
+# For local testing uncomment line below and run `npx netlify-cms-proxy-server`
+# local_backend: true
+
+collections:
+  - name: "blog" # Used in routes, e.g., /admin/collections/blog
+    label: "Blog" # Used in the UI
+    label_singular: "Article"
+    folder: "content/blog" # The path to the folder where the documents are stored
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    path: "{{slug}}/index"
+    create: true # Allow users to create new documents in this collection
+    media_folder: ''
+    public_folder: ''
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Thumbnail", name: "image", widget: "image", required: false}
+      - {label: "Abstract", name: "abstract", widget: "markdown", required: false}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - label: "Pages"
+    name: "pages"
+    editor:
+      preview: false
+    files:
+      - label: "Team"
+        name: "team"
+        file: "data/Team.yml"
+        fields:
+          # - {label: Title, name: title, widget: string}
+          - {label: Intro, name: Intro, widget: markdown}
+          - label: Team
+            name: Current
+            widget: list
+            fields:
+              - {label: Name, name: Name, widget: string}
+              - {label: Title, name: Title, widget: string}
+              - {label: Avatar, name: Avatar, widget: image}
+              - {label: Bio, name: Bio, widget: markdown}
+          - label: Alumni
+            name: Alumni
+            widget: list
+            fields:
+              - {label: Name, name: Name, widget: string}
+              - {label: Title, name: Title, widget: string}
+              - {label: Avatar, name: Avatar, widget: image}
+              - {label: Bio, name: Bio, widget: markdown}
+      - label: "Advisory Board"
+        name: "advisory-board"
+        file: "data/Advisors.yml"
+        fields:
+          # - {label: Intro, name: Intro, widget: markdown}
+          - label: Team
+            name: Current
+            widget: list
+            fields:
+              - {label: Name, name: Name, widget: string}
+              - {label: Title, name: Title, widget: string}
+              - {label: Avatar, name: Avatar, widget: image}
+              - {label: Bio, name: Bio, widget: markdown}
+          - label: Alumni
+            name: Alumni
+            widget: list
+            fields:
+              - {label: Name, name: Name, widget: string}
+              - {label: Title, name: Title, widget: string}
+              - {label: Avatar, name: Avatar, widget: image}
+              - {label: Bio, name: Bio, widget: markdown}
+
+

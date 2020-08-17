@@ -1,0 +1,24 @@
+title: 'Stencila'
+baseURL: 'https://stenci.la'
+contentDir: './content'
+enableRobotsTXT: true
+relativeURLs: true
+sectionPagesMenu: 'main'
+
+permalinks:
+  blog: /:section/:filename
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    style: manni
+
+frontmatter:
+  date:
+    - ':default'
+    - ':filename'
+  publishDate:
+    - ':default'
+    - ':filename'

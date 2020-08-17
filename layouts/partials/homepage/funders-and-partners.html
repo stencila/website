@@ -1,0 +1,21 @@
+<section class="funders-and-partners">
+  <div class="container">
+    <h3 class="text-center">
+      We wouldn’t be doing this without these visionary and generous
+      organisations
+    </h3>
+
+    <div class="partner-logos">
+      <!-- prettier-ignore -->
+      <ul>
+      {{ range sort .Site.Data.Partners "Weight"}}
+      <li>
+        <a class="" href="{{ .URL }}" title="{{ .Title }}">
+          <img src="{{ .Logo }}" alt="{{ .Title }}" />
+        </a>
+      </li>
+      {{ end }}
+    </ul>
+    </div>
+  </div>
+</section>

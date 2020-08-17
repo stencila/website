@@ -1,3 +1,9 @@
 /build
 /node_modules
 .DS_Store
+
+.cache/
+# Build directory
+public/
+static/admin/*.bundle.*
+/resources

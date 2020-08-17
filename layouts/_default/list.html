@@ -1,0 +1,41 @@
+{{ define "title" }} Blog · {{ .Site.Title }} {{ end }}
+
+{{ define "main" }}
+<main class="{{ .Type }} container">
+  <!-- prettier-ignore -->
+  <ul class="listEntries">
+    {{ range .Pages.ByPublishDate.Reverse }}
+    <li>
+      <article>
+        {{ if .Params.image }}
+        <a href="{{.RelPermalink}}" class="thumbnail">
+          <img
+            src="{{ .RelPermalink }}{{ .Params.image }}"
+            alt="{{ $.Title }}"
+            role="presentation"
+          />
+        </a>
+        {{ end }}
+
+        <div class="content">
+          <a href="{{.RelPermalink}}">
+            <h1>{{ .Title }}</h1>
+            <p>
+              {{ if .Params.abstract }}
+              {{ .Params.abstract }}
+              {{ else }}
+              {{ .Summary }}
+              {{ end }}
+            </p>
+
+            <div class="meta">
+              {{ .Params.author }} · {{ dateFormat "Jan 2, 2006" .PublishDate }}
+            </div>
+          </a>
+        </div>
+      </article>
+    </li>
+    {{ end}}
+  </ul>
+</main>
+{{ end }}

@@ -1,0 +1,10 @@
+<p class="md__image">
+  <!-- prettier-ignore -->
+  <img
+    src="{{ .Destination | safeURL }}"
+    alt="{{ .Text }}"
+    {{ with .Title}}
+    title="{{ . }}"
+    {{ end }}
+  />
+</p>
