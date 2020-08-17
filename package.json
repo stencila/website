@@ -17,7 +17,9 @@
     "url": "https://github.com/stencila/website/issues"
   },
   "homepage": "https://stenci.la",
-  "dependencies": {},
+  "dependencies": {
+    "@chiiya/haven": "^0.6.0"
+  },
   "devDependencies": {
     "@stencila/dev-config": "^1.4.60",
     "all-contributors-cli": "^5.4.1",

@@ -1,3 +1,5 @@
+import { requestConsent } from './consent'
+
 const onReady = (cb) => {
   if (document.readyState !== 'loading') {
     cb(event)
@@ -19,4 +21,5 @@ const toggleMobileMenu = () => {
 
 onReady(() => {
   toggleMobileMenu()
+  requestConsent()
 })
