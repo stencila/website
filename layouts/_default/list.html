@@ -1,5 +1,6 @@
-{{ define "main" }}
+{{ define "title" }} Blog · {{ .Site.Title }} {{ end }}
 
+{{ define "main" }}
 <main class="{{ .Type }} container">
   <!-- prettier-ignore -->
   <ul class="listEntries">
@@ -11,6 +12,7 @@
           <img
             src="{{ .RelPermalink }}{{ .Params.image }}"
             alt="{{ $.Title }}"
+            role="presentation"
           />
         </a>
         {{ end }}
