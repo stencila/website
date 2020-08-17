@@ -1,3 +1,7 @@
+Intro: Stencila's team come from different backgrounds allowing us to bring
+  different points of view to our work and create products that are useful for a
+  diverse community of users. We share a passion open source technologies and
+  lowering the barriers to learning how to code.
 Current:
   - Name: Nokome Bentley
     Title: Founder & CEO
@@ -12,46 +16,64 @@ Current:
       a platform for reproducible research that bridges the gap in
       collaboration between coders and non-coders. Nokome is based
       in Aotearoa New Zealand.
-
   - Name: Alexander Ketchakmadze
     Title: Designer & Software Engineer
     Avatar: /img/team/alex-ketch.jpg
-    Bio: |
-      Alex is a Designer and a Software Engineer determined to help make Stencila accessible and delightful for
-      researchers of all technical backgrounds. Having witnessed first-hand the often substantial efforts needed for
-      data-scientist to collaborate, he believes that streamlining this process is paramount for accommodating future
-      innovative research in a global society. Alex is currently braving the frigid parts of Canada, reminiscing about
-      the milder winters of Georgia.
+    Bio: >
+      Alex is a Designer and a Software Engineer determined to help make
+      Stencila accessible and delightful for
 
+      researchers of all technical backgrounds. Having witnessed first-hand the often substantial efforts needed for
+
+      data-scientist to collaborate, he believes that streamlining this process is paramount for accommodating future
+
+      innovative research in a global society. Alex is currently braving the frigid parts of Canada, reminiscing about
+
+      the milder winters of Georgia.
 Alumni:
   - Name: Ben Shaw
     Title: Senior Software Engineer
     Avatar: /img/team/ben-shaw.jpg
-    Bio: |
-      Ben is a Software Engineer with many years' experience across a range of fields and industries. His prior work
-      history includes startups, small businesses, creative agencies and large enterprise, as well as consulting
-      services. Ben's technical skills range from web development and design to low level programming, system design and
-      architecture and mobile development. He also brings to Stencila his experience in team leading, mentorship and
-      project planning and management. Ben is based in Aotearoa New Zealand.
+    Bio: >
+      Ben is a Software Engineer with many years' experience across a range of
+      fields and industries. His prior work
 
+      history includes startups, small businesses, creative agencies and large enterprise, as well as consulting
+
+      services. Ben's technical skills range from web development and design to low level programming, system design and
+
+      architecture and mobile development. He also brings to Stencila his experience in team leading, mentorship and
+
+      project planning and management. Ben is based in Aotearoa New Zealand.
   - Name: Jacqueline Wijaya
     Title: Product Designer
     Avatar: /img/team/jackie-wijaya.jpg
-    Bio: |
-      Jacqueline is a Product Designer with a background in full-stack development from Hawaii/Indonesia. Previously,
-      she worked for startups, consultancies, and large enterprise on various web, mobile applications and open-source
-      enterprise tools. She has experience mentoring designers and developers, and aims to bridge the gap between coders
-      and non-coders. She loves whiteboarding, synthesizing user research, developing sitemaps and task flows, and
-      refactoring lines of code. Jacqueline is currently based in Seattle, Washington.
+    Bio: >
+      Jacqueline is a Product Designer with a background in full-stack
+      development from Hawaii/Indonesia. Previously,
 
+      she worked for startups, consultancies, and large enterprise on various web, mobile applications and open-source
+
+      enterprise tools. She has experience mentoring designers and developers, and aims to bridge the gap between coders
+
+      and non-coders. She loves whiteboarding, synthesizing user research, developing sitemaps and task flows, and
+
+      refactoring lines of code. Jacqueline is currently based in Seattle, Washington.
   - Name: Aleksandra Pawlik
     Title: Community Advocate
     Avatar: /img/team/aleksandra-pawlik.jpg
-    Bio: |
-      Aleksandra's work at Stencila focussed on understanding users’ needs to direct further development, building open
+    Bio: >
+      Aleksandra's work at Stencila focussed on understanding users’ needs to
+      direct further development, building open
+
       source developer community and keeping you all updated on what's going on at Stencila. She has worked in research
+
       software for over 6 years coordinating training for the [Software Sustainability
+
       Institute](http://software.ac.uk/) in the UK and then for [New Zealand eScience
+
       Infrastructure](https://www.nesi.org.nz/). She holds a PhD in Computing and is a
+
       [Software](https://software-carpentry.org/) and [Data Carpentry](http://datacarpentry.org/) certified instructor.
+
       Aleksandra has also trained other instructors in Europe, South Africa, Australia and New Zealand.

@@ -4,8 +4,8 @@ title: Stencila at Linux Conf AU 2019
 author: Aleksandra Pawlik, Nokome Bentley
 date: 1 February 2019
 abstract: |
-  The end of January 2019 has been really busy for us. We attended the 2019 linux.conf.au conference 
-  which took place in Christchurch, Aotearoa - New Zealand. This year's theme was Linux of Things and 
+  The end of January 2019 has been really busy for us. We attended the 2019 linux.conf.au conference
+  which took place in Christchurch, Aotearoa - New Zealand. This year's theme was Linux of Things and
   we run a Stencila tutorial on one of our recently developed components called Dockter for easing the
   process of building Dockter images for reproducible research.
 forum_topic:
