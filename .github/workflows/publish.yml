@@ -1,0 +1,23 @@
+name: Publish website
+
+# Triggers the workflow only when pushing to the master branch
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout master
+        uses: actions/checkout@v1
+
+      - name: Build & Deploy the site
+        uses: benmatselby/hugo-deploy-gh-pages@master
+        env:
+          HUGO_VERSION: 0.74.3
+          TARGET_REPO: stencila/website
+          TOKEN: ${{ secrets.STENCILA_BOT_TOKEN }}
+          CNAME: stenci.la
