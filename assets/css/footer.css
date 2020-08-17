@@ -17,8 +17,8 @@ footer {
     }
   }
 
-  h4 {
-    @apply mb-0;
+  h3 {
+    @apply mb-1 text-base text-primary-900;
   }
 }
 
