@@ -8,8 +8,6 @@ abstract: "**New open-source technology developed between Stencila and eLife
   lets authors publish Executable Research Articles with live code and data
   which are beautiful and semantic.**"
 ---
-Kaikoura, New Zealand - 1am NZST, Tuesday, 18 August 2020
-
 Today Stencila launched the first stage of its open source platform for reproducible data with the scientific publisher eLife in the UK. Executable Research Articles (ERAs) allow authors to blend their traditional manuscript with live code, data, and interactive figures showcasing a new way for researchers to tell their full story. Instantaneously take a manuscript from a Jupyter Notebook, Rmd, or Word file to a readable and easy-to-share web pre-print with a customized theme.
 
 Stencila projects maintain reproducibility through the use of schemas, allowing you to preserve code, data, and metadata across the formats. The resulting new ERA publication will not replace but extend the original published paper.
@@ -18,14 +16,14 @@ The advantage to readers of these new ERA publications will be the ability to in
 
 ![](executable-document-screenshot.png)
 
-Stencila and eLife have been developing this ERA technology together for over 2 years.
-
-"Created as open-source software it encourages other publishers to offer the format to their authors. ERA's goal is to elevate code and data to the same level as the narrative and figures of a traditional research article, and present them in ways that encourage readers to learn through direct interaction and experimentation. ERA also increased the transparency of published research, letting authors share, through interactive code, the precise methods in which they are using data to generate their figures. It all adds up to a beautiful, user-friendly, and semantically structured research artifact that moves the publishing of scientific discoveries closer to a more reproducible, web-native ideal." Giuliano Maciocci, eLife Head of Product and Experience. Read the full [eLife Lab article](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing) with further information & FAQ’s.
-
 We encourage you to explore the functionalities of these two published ERA examples. Click the Run Document button at the top of the article to start a compute session. The blue “eye” icons throughout the paper indicate code blocks. Click to reveal the underlying code, which you can then edit in place. Press the white “play” icon at the top of the code block to execute your new code and see its effects.
 
 1. [“Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc”](https://elifesciences.org/articles/30274) by Lewis et al., 2018 showcases executable figures, tables and in-line numbers.
 2. [“Inter- and intra-animal variation in the integrative properties of stellate cells in the medial entorhinal cortex”](https://elifesciences.org/articles/52258/executable) by Pastoll et al. demonstrates a variety of executable plots.
+
+Stencila and eLife have been developing this ERA technology together for over 2 years.
+
+"Created as open-source software it encourages other publishers to offer the format to their authors. ERA's goal is to elevate code and data to the same level as the narrative and figures of a traditional research article, and present them in ways that encourage readers to learn through direct interaction and experimentation. ERA also increased the transparency of published research, letting authors share, through interactive code, the precise methods in which they are using data to generate their figures. It all adds up to a beautiful, user-friendly, and semantically structured research artifact that moves the publishing of scientific discoveries closer to a more reproducible, web-native ideal." Giuliano Maciocci, eLife Head of Product and Experience. Read the full [eLife Lab article](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing) with further information & FAQ’s.
 
 Authors with a published eLife paper can [express their interest](https://crm.elifesciences.org/crm/ERA-InterestForm) to create an ERA publication.
 
