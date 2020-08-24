@@ -12,5 +12,3 @@ We invite you to learn more about the process of creating an ERA by joining the 
 [REGISTER TO ATTEND](https://us02web.zoom.us/webinar/register/WN_LRphVps9SUSTUWQq5P_VBw)
 
 The webinar will follow an open agenda and will be recorded. Links to the recording and notes will be shared on this page, within a week after the webinar.
-
-We hope to see you there!
