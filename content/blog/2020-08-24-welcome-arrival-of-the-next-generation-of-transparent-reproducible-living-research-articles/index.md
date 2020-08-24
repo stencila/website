@@ -4,9 +4,9 @@ title: "Welcome arrival of the next generation of transparent &
 author: Nokome Bentley & Alexander Ketchakmadze
 date: 2020-08-24T22:22:11.360Z
 image: ""
-abstract: "**New open-source technology developed between Stencila and eLife
-  lets authors publish Executable Research Articles with live code and data
-  which are beautiful and semantic.**"
+abstract: New open-source technology developed between Stencila and eLife lets
+  authors publish Executable Research Articles with live code and data which are
+  beautiful and semantic.
 ---
 Today Stencila launched the first stage of its open source platform for reproducible data with the scientific publisher eLife in the UK. Executable Research Articles (ERAs) allow authors to blend their traditional manuscript with live code, data, and interactive figures showcasing a new way for researchers to tell their full story. Instantaneously take a manuscript from a Jupyter Notebook, Rmd, or Word file to a readable and easy-to-share web pre-print with a customized theme.
 
