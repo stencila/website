@@ -3,7 +3,7 @@ title: "Welcome arrival of the next generation of transparent &
   reproducible  living research articles "
 author: Nokome Bentley & Alexander Ketchakmadze
 date: 2020-08-24T22:22:11.360Z
-image: executable-document-screenshot.png
+image: ""
 abstract: "**New open-source technology developed between Stencila and eLife
   lets authors publish Executable Research Articles with live code and data
   which are beautiful and semantic.**"
@@ -16,11 +16,13 @@ Stencila projects maintain reproducibility through the use of schemas, allowing 
 
 The advantage to readers of these new ERA publications will be the ability to inspect the code, modify it, and re-execute it directly in the browser, enabling a better understanding of how a figure is generated. Change a plot from one format to another, alter the data range of a specific analysis, and much more. Any changes are limited to an individual’s browsing session and do not affect the published article, so anyone can experiment safely. Readers can also download the ERA publication with all embedded code and data preserved and use it as a basis for further study or derivative works.
 
+![](executable-document-screenshot.png)
+
 Stencila and eLife have been developing this ERA technology together for over 2 years.
 
-"Created as open-source software it encourages other publishers to offer the format to their authors. ERA's goal is to elevate code and data to the same level as the narrative and figures of a traditional research article, and present them in ways that encourage readers to learn through direct interaction and experimentation. ERA also increased the transparency of published research, letting authors share, through interactive code, the precise methods in which they are using data to generate their figures. It all adds up to a beautiful, user-friendly, and semantically structured research artifact that moves the publishing of scientific discoveries closer to a more reproducible, web-native ideal." Giuliano Maciocci, eLife Head of Product and Experience. Read the full eLife Lab article with further information & FAQ’s [here](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing).
+"Created as open-source software it encourages other publishers to offer the format to their authors. ERA's goal is to elevate code and data to the same level as the narrative and figures of a traditional research article, and present them in ways that encourage readers to learn through direct interaction and experimentation. ERA also increased the transparency of published research, letting authors share, through interactive code, the precise methods in which they are using data to generate their figures. It all adds up to a beautiful, user-friendly, and semantically structured research artifact that moves the publishing of scientific discoveries closer to a more reproducible, web-native ideal." Giuliano Maciocci, eLife Head of Product and Experience. Read the full [eLife Lab article](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing) with further information & FAQ’s.
 
-We encourage you to check out these two published examples to explore the functionalities. Click the Run Document button at the top of the article to start a compute session. The blue “eye” icons throughout the paper indicate code blocks. Click to reveal the underlying code, which you can then edit in place. Press the white “play” icon at the top of the code block to execute your new code and see its effects.
+We encourage you to explore the functionalities of these two published ERA examples. Click the Run Document button at the top of the article to start a compute session. The blue “eye” icons throughout the paper indicate code blocks. Click to reveal the underlying code, which you can then edit in place. Press the white “play” icon at the top of the code block to execute your new code and see its effects.
 
 1. [“Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc”](https://elifesciences.org/articles/30274) by Lewis et al., 2018 showcases executable figures, tables and in-line numbers.
 2. [“Inter- and intra-animal variation in the integrative properties of stellate cells in the medial entorhinal cortex”](https://elifesciences.org/articles/52258/executable) by Pastoll et al. demonstrates a variety of executable plots.
