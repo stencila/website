@@ -41,12 +41,19 @@ hr {
     max-width: 680px;
   }
 
+  p,
+  ol,
+  ul,
+  li {
+    @screen tablet {
+      @apply text-lg;
+    }
+  }
+
   ol,
   ul {
-    @apply text-base;
-
     li {
-      @apply mb-2 text-base;
+      @apply mb-2;
     }
   }
 

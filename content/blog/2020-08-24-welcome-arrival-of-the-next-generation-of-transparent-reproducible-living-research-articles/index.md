@@ -1,14 +1,15 @@
 ---
 title: Launch of the Executable Research Article project
-author: Nokome Bentley, Alexander Ketchakmadze and Colette Doughty
+author: Nokome Bentley, Alexander Ketchakmadze, Colette Doughty
 date: 2020-08-24T22:22:11.360Z
-image: ""
+image: ''
 abstract: In partnership with eLife, we are excited to announce the launch of
   the Executable Research Article (ERA) project. ERA allows authors to publish
   interactive, reproducible and semantic research articles from existing formats
   such as R Markdown and Jupyter Notebooks.
 ---
-Today, in partnership with the scientific publisher eLife, we launched the Executable Research Article (ERA) project. ERAs allow authors to blend their traditional manuscript with live code, data, and interactive figures showcasing a new way for researchers to deliver their findings. 
+
+Today, in partnership with the scientific publisher eLife, we launched the Executable Research Article (ERA) project. ERAs allow authors to blend their traditional manuscript with live code, data, and interactive figures showcasing a new way for researchers to deliver their findings.
 
 Authors can take a manuscript from formats such as Jupyter Notebook, RMarkdown, and Word to an easy-to-share web pre-print with customizable themes while retaining embedded code and its outputs.
 
@@ -27,7 +28,7 @@ Explore the functionalities of two published ERA examples:
 1. [“Replication Study: Transcriptional amplification in tumor cells with elevated c-Myc”](https://elifesciences.org/articles/30274) by Lewis et al., 2018 showcases executable figures, tables and in-line numbers.
 2. [“Inter- and intra-animal variation in the integrative properties of stellate cells in the medial entorhinal cortex”](https://elifesciences.org/articles/52258/executable) by Pastoll et al. demonstrates a variety of executable plots.
 
-Click the *Run Document* button at the top of the article to start a compute session. The blue “eye” icons throughout the paper indicate code blocks. Click to reveal the underlying code, which you can then edit in place. Press the white “play” icon at the top of the code block to execute your new code and see its effects.
+Click the _Run Document_ button at the top of the article to start a compute session. The blue “eye” icons throughout the paper indicate code blocks. Click to reveal the underlying code, which you can then edit in place. Press the white “play” icon at the top of the code block to execute your new code and see its effects.
 
 ## Further reading
 
