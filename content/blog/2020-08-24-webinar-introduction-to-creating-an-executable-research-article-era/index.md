@@ -2,7 +2,7 @@
 title: "Webinar: Introduction to creating an Executable Research Article (ERA)"
 author: Colette Doughty
 date: 2020-08-24T23:20:06.617Z
-image: webinar-image.jpg
+image: ""
 abstract: Join the demonstration to find out how you could enhance your paper
   published with eLife.
 ---
