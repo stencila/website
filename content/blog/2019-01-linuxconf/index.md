@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila at Linux Conf AU 2019
 author: Aleksandra Pawlik, Nokome Bentley
-date: 1 February 2019
+date: 2019-02-01T00:00:00.000Z
 abstract: |
   The end of January 2019 has been really busy for us. We attended the 2019 linux.conf.au conference
   which took place in Christchurch, Aotearoa - New Zealand. This year's theme was Linux of Things and

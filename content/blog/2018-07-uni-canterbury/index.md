@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila workshop at the University of Canterbury
 author: Aleksandra Pawlik
-date: 10 August 2018
+date: 2018-08-10T00:00:00.000Z
 abstract: |
   The series of our user workshops continued with the event organised at the University of Canterbury in New Zealand.
   Thanks to the support from the University Library Services we taught some basics of data manipulation with R on

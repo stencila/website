@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila in Portland, Oregon
 author: Nokome Bentley
-date: 14 November 2017
+date: 2017-11-14T00:00:00.000Z
 abstract: |
   Stencila's visit to Portland, Oregon began with a day at the Oregon Health and Science University (OHSU) Data Science Institute.
   We hosted out third workshop on this Roadshow at the very cool looking OHSU Collaborative Life Sciences Building. We also

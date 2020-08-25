@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila workshop at the University of Otago Medical School
 author: Aleksandra Pawlik
-date: 2 July 2018
+date: 2018-06-02T00:00:00.000Z
 abstract: |
   Last week, on 28th and 29th June, we run the first "Introduction to R using Stencila" workshop. The event was attended by the researchers from the
   University of Otago Medical School at Christchurch, New Zealand. We used Stencila Hub so that the participants did not have to install anything on

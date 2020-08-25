@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Alex Ketchakmadze joins Stencila
 author: Aleksandra Pawlik
-date: 10 April 2019
+date: 2019-04-10T00:00:00.000Z
 abstract: |
   We are happy to introduce Alex Ketchakmadze who joined Stencila in March 2019 as a Designer and a Software Engineer. Alex is determined to help make Stencila accessible and delightful for researchers of all technical backgrounds.
 forum_topic:

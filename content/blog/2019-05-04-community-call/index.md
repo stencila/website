@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Community Call, 7 May 2019
 author: Aleksandra Pawlik
-date: 4 May 2019
+date: 2019-05-04T00:00:00.000Z
 abstract: |
   We would like to invite you to Stencila Community Call on 7th May (or 6th for most time zones!) at 8am NZT (see the blog post to find out the exact time for your time zone). During the call Stencila team members will present some
   of their recent work and we are happy to answer any questions that you may have.

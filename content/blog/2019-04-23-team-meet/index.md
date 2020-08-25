@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Team Meet
 author: Aleksandra Pawlik
-date: 25 April 2019
+date: 2019-04-25T00:00:00.000Z
 abstract: |
   2 weeks, 1.3 kg of coffee beans, 1 bag of pineapple lumps and dozens of dusky dolphins. This is a short summary of the first Stencila Team Meet which took place in Aotearoa - New Zealand at the end of March and early April.
 image: kayaking.jpeg

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Funding from the Alfred P. Sloan Foundation to develop Stencila Sheets
 author: Nokome Bentley
-date: 28 April 2017
+date: 2017-04-28T00:00:00.000Z
 abstract: Stencila has received funding from the Alfred P. Sloan Foundation to develop Stencila Sheets as an open and reproducible alternative to existing spreadsheet software in research.
 image: sloan.png
 ---

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila workshop at SIGNAL ITC Grad School
 author: Aleksandra Pawlik
-date: 11 August 2018
+date: 2018-08-11T00:00:00.000Z
 abstract: |
   After runnning 3 workshops focusing on introduction to R with Stencila we switched to Python. On 6th August we run a hands-on workshop
   at SIGNAL ICT Grad School at Christchurch, New Zealand.

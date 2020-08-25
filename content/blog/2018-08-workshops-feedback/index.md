@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Bringing it together - summarising feedback from recent user workshops
 author: Aleksandra Pawlik & Nokome Bentley
-date: 13 August 2018
+date: 2018-08-13T00:00:00.000Z
 abstract: |
   Between end of June and beginning of August 2018 we ran 4 hands-on workshops to collect feedback from researchers trying out Stencila on real life tasks.
   In this blog post we present the summary of the feedback we received and the lessons learned.

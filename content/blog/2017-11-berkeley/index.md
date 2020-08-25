@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila at UC Berkeley
 author: Nokome Bentley
-date: 16 November 2017
+date: 2017-11-16T00:00:00.000Z
 abstract: |
   The University of California Berkeley (UCB) was the setting for the fourth workshop on Stencila Sheets. A big thank you to
   Amy Neeser and John Chodaki for helping us organise the event. We had a great group come along including people

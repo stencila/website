@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Thanks Coko!
 author: Nokome Bentley
-date: 2 April 2017
+date: 2017-04-02T00:00:00.000Z
 abstract: A big thank you to our friends at the Collaborative Knowledge Foundation.
 image: coko-meet.jpg
 ---

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: A spreadsheet file format for humans
 author: Nokome Bentley
-date: 24 April 2016
+date: 2016-04-24T00:00:00.000Z
 suggested:
   - ../introducing-sheets
   - ../underneath-sheets

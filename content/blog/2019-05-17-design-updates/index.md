@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Design Updates and csv,conf,v4
 author: Jacqueline Wijaya
-date: 17 May 2019
+date: 2019-05-17T00:00:00.000Z
 abstract: |
   Learn about our recent UX explorations on Stencila Hub. Also, Jacqueline was at csv,conf,v4!
 image: csv_conf_v4.jpg

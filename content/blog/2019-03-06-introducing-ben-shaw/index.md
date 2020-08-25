@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Introducing Ben Shaw
 author: Aleksandra Pawlik
-date: 7 March 2019
+date: 2019-03-07T00:00:00.000Z
 abstract: |
   We are happy to introduce Ben Shaw, Stencila's Senior Software Engineer. Ben has started working with Stencila first
   as a contractor and then he moved to the full time role. Ben's technical skills range across a number of topics  from

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Monolithic island to connected archipelago
 author: Nokome Bentley
-date: 30 November 2016
+date: 2016-11-30T00:00:00.000Z
 abstract: |
   Development update. How and why we decoupled Stencila's architecture to take it from a monolithic island to a connected archipelago.
 ---

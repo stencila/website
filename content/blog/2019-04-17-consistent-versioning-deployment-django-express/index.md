@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Consistent Versioning and Deployment of Django and Express
 author: Ben Shaw
-date: 17 April 2019
+date: 2019-04-17T00:00:00.000Z
 abstract: |
   As Stencila grows, we need to make sure our release processes scale along with it. This post discusses how we implemented a consistent versioning and tagging interface for both Django and Express, to simplify the release process for developers.
 ---

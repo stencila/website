@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Hub Enhancements for April 2019
 author: Ben Shaw
-date: 30 April 2019
+date: 2019-04-30T00:00:00.000Z
 abstract: |
   We're always working to improve the user experience on the Stencila Hub, with enhancements and new features driven by user engagement. The April 2019 update contains fixes to reliabilty and tweaked styles.
 ---

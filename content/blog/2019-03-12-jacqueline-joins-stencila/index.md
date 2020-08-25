@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Jacqueline Wijaya joins Stencila
 author: Aleksandra Pawlik
-date: 12 March 2019
+date: 2019-03-12T00:00:00.000Z
 abstract: |
   We are happy to introduce Jacqueline Wijaya who joined Stencila in March 2019 as a Product Designer. At Stencila
   Jacqueline is specifically interested in the task of developing open-source tools and growing a community around them.

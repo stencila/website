@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Learning Docker through Dockter
 author: Aleksandra Pawlik
-date: 5 March 2019
+date: 2019-03-05T00:00:00.000Z
 abstract: |
   "A short summary of my, somewhat painful, route to discovering that what I thought I knew about Docker was in fact just the tip of the iceberg. Fortunately, I was able to upgrade my understanding through testing and using a new tool we have been developing: Dockter, a container image builder for researchers."
 forum_topic:

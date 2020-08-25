@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila world tour at Mozfest, eLife and Cambridge
 author: Danielle Robinson
-date: 2 November 2017
+date: 2017-11-02T00:00:00.000Z
 abstract: |
   Stencila started its 2017 roadtrip by attending several events and meetings in the U.K.
   We joined open source, knowledge and science communities at MozFest in London. Nokome

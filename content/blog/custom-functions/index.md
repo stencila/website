@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Custom functions in Stencila
 author: Oliver Buchtala
-date: 17 May 2018
+date: 2018-05-17T00:00:00.000Z
 abstract: This post describes a solution to allow for custom user functions.
 ---
 

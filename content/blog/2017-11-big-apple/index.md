@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila in the Big Apple
 author: Danielle Robinson
-date: 7 November 2017
+date: 2017-11-07T00:00:00.000Z
 abstract: |
   Last week Stencila had some busy time in New York City. Alfred P. Sloan Foundation hosted our first user feedback sessions.
   We visited ProPublica and had a number of fruitful discussions. Here are the details.

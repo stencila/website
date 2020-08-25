@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Using JSON Schema for developing and validating executable documents
 author: Nokome Bentley
-date: 18 February 2019
+date: 2019-02-18T00:00:00.000Z
 abstract: |
   We're representing executable documents as a tree of JSON data and using [JSON Schema](https://json-schema.org/) to specify and validate their structure. In this post I introduce some of the development tools and techniques we are using based on JSON Schema and some of the other benefits that flow from this approach.
 image: typescript-validation.png

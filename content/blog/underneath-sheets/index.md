@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Getting under Stencila sheets
 author: Nokome Bentley
-date: 17 March 2016
+date: 2016-03-17T00:00:00.000Z
 abstract: |
   A follow up post to the [introduction to Stencila sheets](https://blog.stenci.la/introducing-sheets). More technical details on how they work and why they are different from traditional spreadsheets.
 ---

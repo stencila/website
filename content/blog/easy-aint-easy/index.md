@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Easy ain't easy but it's getting easier.
 author: Nokome Bentley
-date: 24 November 2016
+date: 2016-11-24T00:00:00.000Z
 abstract: |
   How do we make it easy for researchers to use tools for reproducible research?
 ---

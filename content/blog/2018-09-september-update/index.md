@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: What we've been up to
 author: Aleksandra Pawlik
-date: 21 September 2018
+date: 2018-09-21T00:00:00.000Z
 abstract: |
   It's been a quiet few weeks on our blog but very busy time at Stencila.
   We have been working on further development of Stencila Hub which allows

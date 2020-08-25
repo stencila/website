@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Hub Enhancements for February 2019
 author: Ben Shaw
-date: 25 February 2019
+date: 2019-02-25T00:00:00.000Z
 abstract: |
   We're always working to improve the user experience on the Stencila Hub, with enhancements and new features driven by user engagement. The February 2019 update contains details on changes to linked sources, project archiving and the permissions system.
 ---

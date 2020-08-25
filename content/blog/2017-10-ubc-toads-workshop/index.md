@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Toads in Vancouver - using Stencila to teach SQL and R at UBC
 author: Danielle Robinson
-date: 3 October 2017
+date: 2017-10-03T00:00:00.000Z
 abstract: |
   Earlier this year, we connected with Giulio Valentino Dalla Riva, a data scientist based at the Master of Data Science
   programme at the University of British Columbia. Giulio was interested in piloting Stencila in one of his fall courses on

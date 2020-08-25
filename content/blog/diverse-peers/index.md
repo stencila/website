@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Diverse peers
 author: Nokome Bentley
-date: 5 December 2016
+date: 2016-12-05T00:00:00.000Z
 abstract: |
   How Stencila packages act as a network of diverse peers with differing capabilities and calling on each other to provide resources.
 ---

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila at Open Neuroscience
 author: Aleksandra Pawlik
-date: 27 May 2018
+date: 2018-05-27T00:00:00.000Z
 abstract: |
   Nokome Bentley joined the Open Neuroscience meeting
   hosted at Sainsbury Wellcome Centre in London to discuss

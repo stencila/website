@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila workshop at the Bioluminescent Superbugs Lab
 author: Aleksandra Pawlik
-date: 25 July 2018
+date: 2018-07-25T00:00:00.000Z
 abstract: |
   On 12th and 13th July we run our second workshop "Introduction to R using Stencila". The participants were researchers from the
   the Bioluminescent Superbugs Lab at the University of Auckland.

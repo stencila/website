@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: eLife Stencila – an office suite for reproducible research
 author: Michael Aufreiter, Aleksandra Pawlik, Nokome Bentley
-date: 3 July 2018
+date: 2018-07-03T00:00:00.000Z
 abstract: |
   eLife Sciences published our article introducing Stencila. We are reposting it on our blog.
 forum_topic:

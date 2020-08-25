@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila in Binder
 author: Aleksandra Pawlik
-date: 11 May 2018
+date: 2018-05-11T00:00:00.000Z
 abstract: |
   At the recent eLife sprint in Cambridge Daniel Nüst and Min Ragan-Kelley had chosen to do a project
   involving Stencila. Nokome Bentley joined them remotely and as a result  you can now run Stencila projects on Binder connecting to a Jupyter kernel.

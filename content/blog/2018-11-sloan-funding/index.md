@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Further funding from the Alfred P. Sloan Foundation!
 author: Aleksandra Pawlik, Nokome Bentley and Danielle Robinson
-date: 7 November 2018
+date: 2018-11-07T00:00:00.000Z
 abstract: |
   We are pleased to announce that Stencila has received further funding from the Alfred P. Sloan Foundation. 
   The Foundation funded initial development of Stencila in 2017 and their ongoing support has enabled us

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Aleksandra Pawlik joins Stencila Team
 author: Aleksandra Pawlik
-date: 12 April 2018
+date: 2018-04-12T00:00:00.000Z
 abstract: |
   We have a new addition to our team! Aleksandra Pawlik joined Stencila in April 2018
   as the Community Advocate. Her role will focus on understanding users’ needs

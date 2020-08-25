@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Integrating Binder and Stencila
 author: Daniel Nüst, Institute for Geoinformatics at the University of Münster, Germany
-date: 20 November 2018
+date: 2018-11-20T00:00:00.000Z
 abstract: |
   Binder has now first class Stencila support. You can launch any Stencila project directly in Binder.
   This blog post tells the whole story.

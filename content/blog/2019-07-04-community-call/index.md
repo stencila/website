@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Community Call, 4 July 2019
 author: Jacqueline Wijaya
-date: 1 July 2019
+date: 2019-07-01T00:00:00.000Z
 abstract: Join the Stencila community call on July 4th (or 3rd for most time zones!) at 6am NZST (see the blog post to find out the exact time for your time zone). During the call Stencila team members will present some of their recent work, and will be happy to answer any questions you may have.
 ---
 

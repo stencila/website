@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: A feature list for Stencila Sheets
 author: Nokome Bentley
-date: 20 August 2017
+date: 2017-08-20T00:00:00.000Z
 abstract: |
   Stencila Sheets development is under way and we need you to tell us which features are the most important and useful for you.
   We have listed 8 of those that already been suggested to us and would like to hear from a wider forum about your opinions and

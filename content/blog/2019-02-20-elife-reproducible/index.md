@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila contributes to eLife’s first computationally reproducible article
 author: Giuliano Maciocci, Michael Aufreiter and Nokome Bentley
-date: 20 February 2019
+date: 2019-02-20T00:00:00.000Z
 abstract: |
   We are very excited to be a part of the  Reproducible Document Stack (RDS) project led by eLife Innovation. 
   This open-source technology enables researchers to publish reproducible manuscripts through online journals.

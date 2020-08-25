@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Shrinking Stencila’s Docker images with strace
 author: Finlay Thompson
-date: 28 July 2017
+date: 2017-07-28T00:00:00.000Z
 abstract: |
   Docker containers are a useful way to manage dependencies - especially when your application has a lot of them.
   However, the down side is that those comprehensive images can get quite large. We used the strace tool to

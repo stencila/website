@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila blog reincarnated
 author: Nokome Bentley
-date: 21 November 2016
+date: 2016-11-21T00:00:00.000Z
 abstract: |
   Your own dog food can be hard to swallow sometimes. Particularly when you have just finished the strenuous task of pulling yourself up by your own boot straps. Our new blog uses Markdown and is published on Github pages. We're still eating our own dog food by using our Node.js package and by using our new document editor to author posts. But we're hoping that with this new approach there will be less friction in getting posts written and on to the web.
 ---

@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stickers!
 author: Aleksandra Pawlik
-date: 2 May 2018
+date: 2018-05-02T00:00:00.000Z
 abstract: |
   Stencila stickers have arrived! Yes to sticker madness!
 forum_topic:

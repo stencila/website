@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila Community Call, 4 September 2019
 author: Jacqueline Wijaya
-date: 4 September 2019
+date: 2019-09-04T00:00:00.000Z
 abstract: Read a recap of our September community call.
 ---
 

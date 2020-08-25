@@ -2,7 +2,7 @@
 extends: blog/_post.html
 title: Stencila at the University of Oregon
 author: Danielle Robinson
-date: 8 November 2017
+date: 2017-11-08T00:00:00.000Z
 abstract: |
   Stencila visited the University of Oregon. We met up with the Data Services staff and had a peek look into the Research
   Library. Our workshop brought us a lot of useful feedback, with particular focus on Stencila Sheets.

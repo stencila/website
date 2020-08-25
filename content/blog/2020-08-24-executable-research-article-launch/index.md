@@ -1,5 +1,6 @@
 ---
 title: Launch of the Executable Research Article project
+slug: executable-research-article-launch
 author: Nokome Bentley, Alexander Ketchakmadze, Colette Doughty
 date: 2020-08-24T22:22:11.360Z
 image: ''

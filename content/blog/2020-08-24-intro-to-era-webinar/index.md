@@ -1,10 +1,11 @@
 ---
 title: 'Webinar: Introduction to creating an Executable Research Article (ERA)'
+slug: intro-to-ERA-webinar
 author: Colette Doughty
 date: 2020-08-24T23:20:06.617Z
 image: webinar-image.jpg
-abstract: 'Join the demonstration to find out how you could enhance your paper
-  published with eLife.'
+abstract: Join the demonstration to find out how you could enhance your paper
+  published with eLife.
 ---
 
 The option to create an [Executable Research Article (ERA)](https://elifesciences.org/labs/dc5acbde) is now available at eLife, taking published research to a new level of transparency, reproducibility and interactivity. Authors with a published eLife paper can register their interest to enhance their articles with live code blocks, programmatically-generated interactive figures, and dynamically generated in-line values.
