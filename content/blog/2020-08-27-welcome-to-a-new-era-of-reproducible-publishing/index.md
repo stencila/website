@@ -1,7 +1,7 @@
 ---
 title: Welcome to a new ERA of reproducible publishing
 slug: Article from eLife Labs
-author: "Emmy Tsang and Giuliano Maciocci "
+author: Emmy Tsang and Giuliano Maciocci from eLife
 date: 2020-08-27T01:15:06.904Z
 image: elife-logo.png
 abstract: New open-source technology lets eLife authors publish Executable
