@@ -5,7 +5,8 @@ slug: New open-source technology lets eLife authors publish Executable Research
 author: Emmy Tsang and Giuliano Maciocci from eLife
 date: 2020-08-27T01:15:06.904Z
 image: elife-logo.png
-abstract: ""
+abstract: New open-source technology lets eLife authors publish Executable
+  Research Articles that treat live code and data as first-class citizens.
 ---
 Since 2017, we have been working on the concept of computationally reproducible papers. The open-source suite of tools that started life as the [Reproducible Document Stack](https://elifesciences.org/labs/b521cf4d/reproducible-document-stack-towards-a-scalable-solution-for-reproducible-articles) is now live on eLife as ERA, the **Executable Research Article**, delivering a truly web-native format for taking published research to a new level of transparency, reproducibility and interactivity.
 
