@@ -13,7 +13,7 @@ From today, authors with a published eLife paper can register their interest to 
 
 Readers of ERA publications will be able to inspect the code, modify it, and re-execute it directly in the browser, enabling them to better understand how a figure is generated. They will be able to change a plot from one format to another, alter the data range of a specific analysis, and much more. All changes are limited to an individual’s browsing session and do not affect the published article, so anyone can experiment safely. Readers can also download the ERA publication – with all embedded code and data preserved – and use it as a basis for further study or derivative works.
 
-![Figures in ERAs can be accompanied by editable code blocks, where the code can be edited and re-executed to immediately see the effects of those edits.](2020-08-27-13_23_01-greenshot.png)
+![](2020-08-27-13_23_01-greenshot.png "Figures in ERAs can be accompanied by editable code blocks, where the code can be edited and re-executed to immediately see the effects of those edits.")
 
 Started by eLife in partnership with [Substance](https://substance.io/), and later developed by [Stencila](https://stenci.la/), ERA takes many of the important lessons learned from pioneering technologies like Jupyter and R Markdown, and folds them into a new open-source research publication format that treats code and data as first-class citizens alongside the traditional text and figures. The ERA technology stack is also designed specifically towards preprint and journal publishing, with strong XML standards, native [schema.org](https://schema.org/) compliance, and a versatile theming solution that makes it adaptable to the visual style of virtually any online publication.
 
@@ -30,4 +30,4 @@ Then, look for the blue “eye” icons throughout the paper, which indicate cod
 
 After making an edit, press the white “play” icon at the top of the code block to execute your new code and see its effects. Please note that it may take some time for the code to execute, depending on its complexity and on server load.
 
-[Read the full article](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing) to find out how to publish an article with eLife and review frequently asked questions.
+[Read full article](https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing) to find out **how to publish an article** with eLife and review **frequently asked questions**.
