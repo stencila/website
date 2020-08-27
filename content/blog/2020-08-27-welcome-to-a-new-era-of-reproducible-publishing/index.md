@@ -1,8 +1,7 @@
 ---
 title: Welcome to a new ERA of reproducible publishing
-slug: New open-source technology lets eLife authors publish Executable Research
-  Articles that treat live code and data as first-class citizens.
-author: Emmy Tsang and Giuliano Maciocci from eLife
+slug: Article from eLife Labs
+author: "Emmy Tsang and Giuliano Maciocci "
 date: 2020-08-27T01:15:06.904Z
 image: elife-logo.png
 abstract: New open-source technology lets eLife authors publish Executable
