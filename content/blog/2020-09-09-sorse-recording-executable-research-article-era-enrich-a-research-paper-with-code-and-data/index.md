@@ -6,8 +6,9 @@ author: Dr. Emmy Tang (eLife UK) and Alex Ketchakmadze (Stencila)
 date: 2020-09-09T22:22:22.650Z
 image: 2020-09-10-10_25_31-greenshot.png
 abstract: >
-  Dr. Emmy Tang and Alex Ketchakmadze contributing to the International Series
-  of Online Research Software Events (SORSE) on Wednesday 9 September 2020.
+  Watch the recording of Dr. Emmy Tang and Alex Ketchakmadze contributing to the
+  International Series of Online Research Software Events (SORSE) on Wednesday 9
+  September 2020.
 ---
  Executable Research Article (ERA): Enrich a research paper with code and data Code and data are important research output and integral to a full understanding of research findings and experimental approaches in a paper. However, traditional research articles seldom have these embedded in the manuscript’s narrative, but instead, leave them as “supplementary materials”, if they are openly available. 
 
