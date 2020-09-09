@@ -10,6 +10,8 @@ abstract: In the era of Covid-19, life science and medical preprint submission
   dynamic, evolving story of research that journal articles have failed to
   realize.
 ---
+In the era of Covid-19, life science and medical preprint submission has been rapidly rising. At the same time, more preprint sites and related services are appearing that could help preprints quickly evolve to be the dynamic, evolving story of research that journal articles have failed to realize.
+
 Preprints communicate the work at an earlier stage and there is an expectation that the research will continue to evolve and the preprint will either be updated or revised as a journal submission. This acceptance of preprints as impermanent sets them apart from how journal articles are perceived, as a static and immovable record of the research.
 
 With this increased attention to the preprint landscape, there is an opportunity to invest in preprint workflow and technologies to help realize the longstanding vision that research can be communicated rapidly and openly, with all relevant outputs such as datasets and code integrated. And that the research can be updated with new versions as the research evolves.
