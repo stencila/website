@@ -1,7 +1,7 @@
 ---
 title: Creating an Executable Research Article
 slug: intro-to-ERA-webinar
-author: Colette Doughty
+author: Emmy Tsang (eLife) & Alex Ketchakmadze (Stencila)
 date: 2020-08-24T23:20:06.617Z
 image: 2020-09-14-09_56_53-greenshot.png
 abstract: Enjoy the webinar recording to find out how you could enhance your
@@ -15,4 +15,6 @@ Chaired by: Emmy Tsang – Innovation Community Manager, eLife
 
 Alex Ketchakmadze – Designer & Software Engineer, Stencila
 
-[View the recording](https://www.youtube.com/watch?v=wpFiky3ZGYM&feature=youtu.be)
+[View the full recording](https://www.youtube.com/watch?v=wpFiky3ZGYM&feature=youtu.be).
+
+![](2020-09-14-09_56_53-greenshot.png)
