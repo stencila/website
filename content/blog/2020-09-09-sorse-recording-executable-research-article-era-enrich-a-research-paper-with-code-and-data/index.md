@@ -1,10 +1,10 @@
 ---
-title: "SORSE event - Executable Research Article (ERA): Enrich a research paper
-  with code and data"
+title: "SORSE event - Executable Research Article: Enrich a research paper with
+  code and data"
 slug: "SORSE "
 author: Dr. Emmy Tang (eLife UK) and Alex Ketchakmadze (Stencila)
 date: 2020-09-09T22:22:22.650Z
-image: 2020-09-10-10_25_31-greenshot.png
+image: 2020-09-10-11_43_30-greenshot.png
 abstract: >
   View the recording of Dr. Emmy Tang & Alex Ketchakmadze contributing to the
   International Series of Online Research Software Events (SORSE) on Wed 9 Sept
