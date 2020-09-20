@@ -8,10 +8,11 @@ image: final-webinar-banner.png
 abstract: Join Stencila this Thursday 24 September. We will be presenting, and
   getting feedback on, the Stencila Schema https://github.com/stencila/schema a
   set of extensions to schema.org in support of structured, semantic &
-  executable research documents. We welcome you to join the discussions along
-  with our panelists.
+  executable research documents.
 ---
-The next Stencila webinar will take place this Thursday 24 Sept at 12pm PDT (3pm EDT / 8pm BST / 7am on 25 Sept NZST). We will be presenting, and getting feedback on, the Stencila Schema https://github.com/stencila/schema a set of extensions to schema.org in support of structured, semantic & executable research documents. 
+The next Stencila webinar will take place this Thursday 24 Sept at 12pm PDT (3pm EDT / 8pm BST / 7am on 25 Sept NZST). 
+
+We will be presenting, and getting feedback on, the Stencila Schema <https://github.com/stencila/schema> a set of extensions to schema.org in support of structured, semantic & executable research documents. 
 
 This call is open to everyone and we'd love to have you join with our awesome panelists! 
 
