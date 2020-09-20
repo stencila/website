@@ -1,5 +1,5 @@
 ---
-title: Register now for Stencila Community Call, Thur 24 Sept 2020
+title: Stencila Open Webinar, Thur 24 Sept 2020
 slug: communitycall
 author: Colette Doughty
 date: 2020-09-20T21:27:38.220Z
@@ -12,7 +12,7 @@ The next Stencila community call will take place this Thursday 24 Sept at 12pm P
 
 ![](community-call-banner.png)
 
-Please [register](https://us02web.zoom.us/webinar/register/WN_Iw1usGOhRfanlirQA7q0Ew), and join the [Zoom webinar](https://us02web.zoom.us/j/83174497222?pwd=R0F3ZDlTWDZZNHgvcG1lOUVhRi9pZz09) later this week!
+Join the [Zoom webinar](https://us02web.zoom.us/j/83174497222?pwd=R0F3ZDlTWDZZNHgvcG1lOUVhRi9pZz09) later this week!
 
 Passcode: 257695\
 Webinar ID: 831 7449 7222
