@@ -9,8 +9,6 @@ abstract: "As we near a v1.0 release, Nokome Bentley presented and asked for
   feedback on, the current state of Stencila Schema. View the recording hosted
   on Thursday 24 September. "
 ---
-![Extensions to Schema.org for structured, semantic & executable research documents]()
-
 As we near a v1.0 release, we presented and asked for feedback on, the current state of Stencila Schema - [https://github.com/stencila/schema](https://www.youtube.com/redirect?q=https%3A%2F%2Fgithub.com%2Fstencila%2Fschema&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqa0VlZ2JERjhXdy16blNneGV1WkotM1pjMjNjUXxBQ3Jtc0trNmFuZ2ZDUFNpNjR1V0JOcHh3X1ZveXlBdjZvbEdEd29zeWVsQ0lOZ0x0NklhTnNSU1F6akJOWGZJZm1KMWhjNUNHN2JvRVJmTGMzWk1yQjVvSVRoRVo3ZHIxeFVMOTMtbE5VbGdfdlp2RFNGaEI2bw%3D%3D). For those not familiar, the project is a set of extensions for schema.org in support of structured, semantic, and executable research documents. 
 
 Chaired by Nokome Bentley, CEO of Stencila 
