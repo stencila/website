@@ -18,6 +18,6 @@ We’d like to get your feedback on the [Stencila Schema](https://stencila.inter
 
 This call is open to everyone and we’d love to have you join the conversation with our awesome panelists!
 
-Join the [Zoom webinar](https://us02web.zoom.us/j/83174497222?pwd=R0F3ZDlTWDZZNHgvcG1lOUVhRi9pZz09) (Webinar ID: `831 7449 7222`).
+Join the [Zoom webinar](https://us02web.zoom.us/j/83174497222) (Webinar ID: `831 7449 7222`).
 
 Looking forward to seeing you there!
