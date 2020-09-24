@@ -1,23 +1,36 @@
 ---
-title: Webinar, Thur 24 Sept 2020 - Extensions to Schema.org for structured,
-  semantic & executable research documents
+title: Extensions to Schema.org for structured, semantic & executable research
+  documents
 slug: webinar
 author: Colette Doughty
 date: 2020-09-20T21:27:38.220Z
 image: final-webinar-banner.png
-abstract: Join Stencila this Thursday 24 September. We will be presenting, and
-  getting feedback on, the Stencila Schema. A set of extensions to schema.org in
-  support of structured, semantic & executable research documents.
+abstract: "As we near a v1.0 release, Nokome Bentley presented and asked for
+  feedback on, the current state of Stencila Schema. View the recording hosted
+  on Thursday 24 September. "
 ---
-![Webinar: Extensions to Schema.org for structured, semantic & executable research documents](final-webinar-banner.png)
+![Extensions to Schema.org for structured, semantic & executable research documents]()
 
-We’d like to get your feedback on the [Stencila Schema](https://stencila.intercom-clicks.com/via/e?ob=eege3L1TVsgHwx71fLee7Fzl68nhkkmANnFzNIZb4xeItv%2Bu%2FYuqZIwRNiq1TUDV&h=cf3bde05b187d2c6d640acd89ebbaf5095338d0b-y554dhej_12267800003451&l=aaec0c25b8a714dfdfb6efc513579bb1d5171d91-4552252), a set of extensions for [schema.org](https://stencila.intercom-clicks.com/via/e?ob=eAAAUdPcjTr28qS4PRGJNiF7a3URjZaEbHqTRm2a8SE%3D&h=5cf163ae4e8bc218e4f227c2785b78fe421008dc-y554dhej_12267800003451&l=6ad7b13a93dbc6258bcf8dd1237d9cb2ab4b3fce-4552253) in support of structured, semantic, and executable research documents. The Schema is at the core of much of our software and we're having this call ahead of a v1.0 release in the coming weeks.
+As we near a v1.0 release, we presented and asked for feedback on, the current state of Stencila Schema - [https://github.com/stencila/schema](https://www.youtube.com/redirect?q=https%3A%2F%2Fgithub.com%2Fstencila%2Fschema&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqa0VlZ2JERjhXdy16blNneGV1WkotM1pjMjNjUXxBQ3Jtc0trNmFuZ2ZDUFNpNjR1V0JOcHh3X1ZveXlBdjZvbEdEd29zeWVsQ0lOZ0x0NklhTnNSU1F6akJOWGZJZm1KMWhjNUNHN2JvRVJmTGMzWk1yQjVvSVRoRVo3ZHIxeFVMOTMtbE5VbGdfdlp2RFNGaEI2bw%3D%3D). For those not familiar, the project is a set of extensions for schema.org in support of structured, semantic, and executable research documents. 
 
-**Thursday, September 24, 2020**\
-12pm PDT · 3pm EDT · 8pm BST · 7am NZST (*September 25, 2020*)
+Chaired by Nokome Bentley, CEO of Stencila 
 
-This call is open to everyone and we’d love to have you join the conversation with our awesome panelists!
+Panelists: Thad Guidry, Arfon Smith, Vanessa Sochat, Dan Katz, Paul Shannon 
 
-Join the [Zoom webinar](https://us02web.zoom.us/j/83174497222) (Webinar ID: `831 7449 7222`).
+[View the recording](https://www.youtube.com/watch?v=DrsApxfUE6M)
 
-Looking forward to seeing you there!
+![](nokome.png)
+
+Contribute to the [questions and suggestions](https://docs.google.com/document/d/1C0I-4ic0MLSPJR9xC58XColjOiUJDzdmUySzGu4Q2B4/edit#) from the panelists and attendees.
+
+Useful links:
+
+[https://schema.stenci.la/](https://www.youtube.com/redirect?q=https%3A%2F%2Fschema.stenci.la%2F&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqblJnNVB2Ym9kUFdTWXYtQVlsNDZwTTdKZ1dtd3xBQ3Jtc0tsZ0IzX0Qxb2lfQ1dlYUhNWW1vWFZMdWpqdGppVVZsT3MxMGRFakYwWmItcklnZElOb09JcjU3LUxYcG1JVjlwZkE1SmtkWnU2X180LXBiNlVaZ2xKZjlvT0ZlaFFHNjNEMHVqZVZQNE0wX3Qxb3Mwdw%3D%3D) 
+
+[https://github.com/stencila/schema](https://www.youtube.com/redirect?q=https%3A%2F%2Fgithub.com%2Fstencila%2Fschema&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqa0JBR2hTaURpOWpGTVM4WWVRLWgwbWczZkdXd3xBQ3Jtc0trdWtWV3FHb3QwMEVDNnZkT0FETlF6NTFBTWIyRi1FaHp4LTZYbG5pclRkcWtrRk9UWTBPcDNCMHJ2TXE3TlZ4dHJXWEUybjJ5Tl9NNDE2SjJHQllsREpjRXNiZ0RQWEVremYyeWRiSEVLMkVTelFlNA%3D%3D) 
+
+[https://schema.org/](https://www.youtube.com/redirect?q=https%3A%2F%2Fschema.org%2F&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqbWxVblVlNVlNTlVfbjNEenE4YVZWZ2o0S3NPQXxBQ3Jtc0ttUW1yRFNRVk0xZlU0NzNOZHZCX0ttbDBDWGg5NURtblpkaVY0a2xWSE1UNXc3cWJzSy1EaVVzdFhHcHpJZXJsNkZpZUVpTTFEOG9xM0NyYlgyNFFMbWQ5U1MtRnpLTE5xUVUzdFFGQ182MXVUYjM4Yw%3D%3D) 
+
+[https://codemeta.github.io/](https://www.youtube.com/redirect?q=https%3A%2F%2Fcodemeta.github.io%2F&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqbVgxV2U2TkNvVGFMRHpIV1cxT0ZIRG13QndMQXxBQ3Jtc0tsbTRZc0d2cjZiZk5Ud3ZJTGNmbjRfdzFHTnp5VFpaX1htSml4QlRjZnRCRk1kVFBUbGkzamFfdlNCR0dqVjF0R0dfbFlfSUthSUlFODJuNnNGSVJTSHkwS05WRVBxSXd6NDMwR0pnNU5qNEVkSHA0VQ%3D%3D) 
+
+[https://bioschemas.org/](https://www.youtube.com/redirect?q=https%3A%2F%2Fbioschemas.org%2F&event=video_description&v=DrsApxfUE6M&redir_token=QUFFLUhqbGsxeW94bkdIWmxwZktxWFhLdDlKZEI2aV9ad3xBQ3Jtc0ttR040b3pKQlI0RmFTTUJlUU5OWjVaZFVGSjNrU0dyeXZDWVBkNGRwdmQ1c2htRzQ0WUFrRkhBNUZSQnB2bXZMTVF4S0ZWMFNKMjktRVNxV1pQQ2xGTjZfTHI1VS1qdWVSWnZ5ZzlSd3VHVWpaV1NMTQ%3D%3D)
