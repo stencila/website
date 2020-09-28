@@ -9,9 +9,7 @@ abstract: We welcome you to contribute to Stencila's multiple open-source
 ---
 The leaves are changing colours, spooky decorations are sprouting up all over the place, and the cafes are offering seasonal drinks. This can only mean one thing… it’s time for [Hacktoberfest](https://hacktoberfest.digitalocean.com)!
 
-Hacktoberfest is a month long event where you can contribute to open source projects you care about, and get rewarded in the process! This year the organizers of the event allow you to choose from receiving a limited edition T-Shirt, or plant a tree to help the enviornment. As all of our projects are open source, any pull requests (PRs) you contribute which gets merged will get you closer to receiving a reward.
-
-To help get you started we've [created a list](https://github.com/stencila/stencila/issues/798) of approachable issues which we need help with.
+Hacktoberfest is a month long event where you can contribute to open source projects you care about, and get rewarded in the process. This year the organizers of the event allow you to choose from receiving a limited edition T-Shirt, or planting a tree to help the environment. As all of our projects are open source, any pull requests (PRs) you contribute which gets merged will get you closer to receiving a reward.
 
 ## How to participate:
 
@@ -23,7 +21,7 @@ To help get you started we've [created a list](https://github.com/stencila/stenc
 
 ## Good first issues:
 
-We’ve highlighted some good first issues and have several projects to choose from. If you have questions, or need guidance at any time, please feel free to comment on an individual issue or join us on our [Discord channel](https://discord.gg/uFtQtk9).
+To help get you started we've [created a list](https://github.com/stencila/stencila/issues/798) of approachable issues which we'd love some help with. If you have questions, or need guidance at any time, please feel free to comment on the GitHub issue or join us on our [Discord channel](https://discord.gg/uFtQtk9) for a chat.
 
 * [↔️ **Encoda**](https://github.com/stencila/encoda/labels/good%20first%20issue) (TypeScript): Codecs for executable documents
 * [☸️ **Hub**](https://github.com/stencila/hub/issues?q=label%3A%22good+first+issue%22+is%3Aissue+is%3Aopen) (Python, TypeScript, CSS): Hub for executable documents
