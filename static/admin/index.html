@@ -1,24 +1,71 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Content Manager</title>
-  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-</head>
-<body>
-  <!-- Include the script that builds the page and powers Netlify CMS -->
-  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
-  <script>
-    if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", user => {
-        if (!user) {
-          window.netlifyIdentity.on("login", () => {
-            document.location.href = "/admin/";
-          });
-        }
-      });
-    }
-  </script>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Content Manager</title>
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  </head>
+  <body>
+    <!-- Include the script that builds the page and powers Netlify CMS -->
+    <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+    <script>
+      if (CMS) {
+        var PostPreview = createClass({
+          render: function () {
+            var entry = this.props.entry
+            var meta = this.props.fieldsMetaData
+            var date = entry.getIn(['data', 'date'])
+            var authors = entry.getIn(['data', 'author'])
+
+            // console.log(entry.getIn(['data', 'date']))
+            // console.log(entry.getIn(['data', 'author']))
+            // console.log(meta.getIn(['authors', data.author]))
+            console.log(meta)
+
+            return h(
+              'main',
+              { className: 'blog content entry container' },
+              h(
+                'article',
+                {},
+                h(
+                  'div',
+                  { className: 'meta' },
+                  authors +
+                    ' · ' +
+                    date.toLocaleString('en-US', {
+                      timeZone: 'UTC',
+                      month: 'short',
+                      day: '2-digit',
+                      year: 'numeric',
+                    })
+                ),
+                h(
+                  'h1',
+                  { className: 'title', id: 'entryTitle' },
+                  entry.getIn(['data', 'title'])
+                ),
+                h('div', { className: 'content' }, this.props.widgetFor('body'))
+              )
+            )
+          },
+        })
+
+        CMS.registerPreviewTemplate('blog', PostPreview)
+
+        CMS.registerPreviewStyle('/css/index.css')
+      }
+
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on('init', (user) => {
+          if (!user) {
+            window.netlifyIdentity.on('login', () => {
+              document.location.href = '/admin/'
+            })
+          }
+        })
+      }
+    </script>
   </body>
 </html>
