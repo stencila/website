@@ -21,6 +21,11 @@ p {
   @screen tablet {
     @apply text-lg;
   }
+
+  code {
+    font-size: 0.9em;
+    @apply bg-neutral-200 p-px rounded-sm;
+  }
 }
 
 hr {
@@ -37,8 +42,14 @@ hr {
   ol,
   ul,
   p {
-    @apply mx-auto;
-    max-width: 680px;
+    @apply mx-auto max-w-2xl;
+  }
+
+  h1,
+  h2 {
+    &:not(:first-child) {
+      @apply mt-8 mb-2;
+    }
   }
 
   p,
@@ -76,11 +87,14 @@ hr {
     }
   }
 
+  pre,
   .highlight {
     @apply my-8;
+  }
 
+  .highlight {
     pre {
-      @apply p-4 rounded;
+      @apply p-4 rounded text-sm;
     }
   }
 }

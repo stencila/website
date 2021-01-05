@@ -2,7 +2,7 @@ main.entry {
   @apply my-16;
 
   article {
-    @apply max-w-5xl mx-auto;
+    @apply max-w-3xl mx-auto;
   }
 
   .content {
