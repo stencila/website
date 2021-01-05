@@ -4,8 +4,8 @@
   "description": "Stencila's website at https://stenci.la",
   "main": "index.js",
   "scripts": {
-    "build": "gulp build",
-    "start": "gulp"
+    "build": "hugo",
+    "start": "hugo serve"
   },
   "repository": {
     "type": "git",
