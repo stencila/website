@@ -88,8 +88,8 @@ hr {
   }
 
   pre,
-  .highlight {
-    @apply my-8;
+  pre .highlight {
+    @apply my-8 overflow-auto;
   }
 
   .highlight {
