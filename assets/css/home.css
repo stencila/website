@@ -96,7 +96,20 @@
 }
 
 .home #workflow-overview {
-  @apply py-12 text-center font-display;
+  @apply py-12 text-center font-display relative;
+
+  &:before {
+    @apply absolute top-0 right-0 bg-no-repeat bg-contain bg-center;
+    background-image: url('/img/page/home/stencilCircleOutline.svg');
+    height: 200px;
+    width: 278px;
+    transform: translateY(-65%);
+    z-index: -1;
+
+    @screen tablet {
+      content: '';
+    }
+  }
 
   h2 {
     @apply text-xl;
