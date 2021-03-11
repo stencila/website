@@ -14,7 +14,8 @@ image: ben_shaw.jpg
 Ben is Auckland born and bred. He’s been into computing from a young age which led him to study Electrical and Electronic Engineering at the University of Auckland. After graduating with a BE in in 2008
 Ben started work writing documentation for a web hosting company and then moved into software development. Soon he discovered Python and Django which sounded cool enough to pursue. Since then he’s performed contract development for a number of companies: from web agencies and startups to large enterprises, including some of New Zealand’s biggest companies.
 
-![Ben Shaw](ben_shaw.jpg){style="display: inline; width: 40%; margin: 0 auto; padding-right: 1em; float: left;" }
+![Ben Shaw](ben_shaw.jpg)
+{style="display: inline; width: 40%; margin: 0 auto; padding-right: 1em; float: left;" }
 
 Ben joined Stencila as a Senior Software Engineer. He got drawn into Stencila because he wanted to learn more about data science and machine learning, plus he enjoys the challenge of a startup environment that allows him to be more hands on with different areas of the business.
 

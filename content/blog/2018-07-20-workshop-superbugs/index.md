@@ -16,7 +16,8 @@ having to set up the machines as the Hub comes with all currently supported exec
 The contents of the material was based on [Data Carpentry R module for ecology](http://www.datacarpentry.org/R-ecology-lesson/) focusing on
 filtering and visualising data with the popular R package `tidyverse`.
 
-![Workshop at Bioluminescent Superbugs](superbugs_workshop.jpg){style="width: 40%; padding-right: 1em; float:left;" }
+![Workshop at Bioluminescent Superbugs](superbugs_workshop.jpg)
+{style="width: 40%; padding-right: 1em; float:left;" }
 
 The Stencila Hub is still undergoing the development and so we encountered a few glitches during the workshop. We are incredibly grateful to the
 participants for their patience and understanding. The Hub provides a lot of convenience in terms of easy setup but there are several improvements that

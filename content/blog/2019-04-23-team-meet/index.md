@@ -12,13 +12,13 @@ The Team Meet was an opportunity for the whole team to meet face-to-face. Jacque
 
 The first week was an introduction to the delicacies of Kiwi cuisine for Jacqueline and Alex. Ben, Stencila’s Software Engineer, stepped in with his expert knowledge of the topic, making sure that the overseas guests would not miss out on specialities such as pineapple lumps and L&P. He however did not manage to deliver his signature dish, a roasted kiwi. Alas! There will always be next time.
 
-![Hiking in Arthur's Pass](hiking.jpeg){style="display: block; width: 80%; margin: 0 auto; padding: 1em; " }
+![Hiking in Arthur's Pass](hiking.jpeg)
 
 After an intensive 5 days of work, we shifted to the South Island. The weekend helped us all to decompress and charge the batteries. Jacqueline, Alex and Aleksandra explored the Great Outdoors for a day doing some bouldering in Castle Hill and [tramping](https://en.wikipedia.org/wiki/Tramping_in_New_Zealand) in Arthur’s Pass.
 
 We kicked off the second week with a day filled up with meetings with Stencila users who provided us with a lot of valuable feedback. We spent whole Monday at the University of Canterbury campus talking to students and tutors from the [The Trustworthy Data Scientist](<https://www.canterbury.ac.nz/courseinfo/GetCourseDetails.aspx?course=DATA471&occurrence=19S1(C)&year=2019>) course which uses Stencila Hub for its practical classes.
 
-![Stencila Planning](stickies.jpg){style="display: block; width: 80%; margin: 0 auto; padding: 1em; " }
+![Stencila Planning](stickies.jpg)
 
 The rest of the week we spent working together in Kaikoura (where Stencila is originally from!). We focused further on the plans for the coming months, including:
 
@@ -30,10 +30,10 @@ The rest of the week we spent working together in Kaikoura (where Stencila is or
 
 These were 2 very exciting weeks but perhaps the highlight was a very close encounter with friendly dusky dolphins! Each year for a very short period of about 2 weeks, pods of dolphins show up in Kaikoura’s South Bay.
 
-![Kayaking](wetsuit.jpeg){style="display: block; width: 80%; margin: 0 auto; padding: 1em; " }
+![Kayaking](wetsuit.jpeg)
 
 Thanks to Nokome, Stencila’s founder, we were all able to get on kayaks on a Thursday morning and see these beautiful sea mammals from the close up.
 
-![Kayaking](kayaking.jpeg){style="display: block; width: 80%; margin: 0 auto; padding: 1em; " }
+![Kayaking](kayaking.jpeg)
 
 Everyone in Stencila works remotely but we want to make sure that we keep these Team Meets a regular event helping us all maintain the great team atmosphere. Till next time!

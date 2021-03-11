@@ -9,7 +9,8 @@ forum_topic:
 image: alex-ketch.jpg
 ---
 
-![Alex Ketch](alex-ketch.jpg){style="display: inline; width: 40%; margin: 0 auto; padding-right: 1em; float: left;" }
+![Alex Ketch](alex-ketch.jpg)
+{style="display: inline; width: 40%; margin: 0 auto; padding-right: 1em; float: left;" }
 
 Alex joined Stencila in March 2019 as a Designer and a Software Engineer. He is determined to help make Stencila accessible and delightful for researchers of all technical backgrounds. Having witnessed first-hand the often substantial efforts needed for data-scientist to collaborate, he believes that streamlining this process is paramount for accommodating future innovative research in a global society.
 

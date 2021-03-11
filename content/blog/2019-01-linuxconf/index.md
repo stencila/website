@@ -17,7 +17,8 @@ This years theme was Linux of Things and we run a Stencila tutorial on one of ou
 [_Dockter_](https://stencila.github.io/dockter/) for easing the process of building Docker images for reproducible research.
 Our ["Building reproducible computing environments: a workshop for non-experts"](https://2019.linux.conf.au/schedule/presentation/185/) session was fully hands-on
 
-![linuxconfau.png](linuxconfau.png){style="width: 80%;" }
+![linuxconfau.png](linuxconfau.png)
+{style="width: 80%;" }
 
 We demonstrated the key features of Dockter such as:
 

@@ -10,7 +10,8 @@ title: Beta Testing programme
 > In the meantime, please come and join us on our [Community Forum](https://community.stenci.la/)
 > or on our [Zulip chat channel](https://stencila.zulipchat.com/#narrow/stream/202396-community).
 
-![Testing tools](testing-tools.jpg){style="display: inline; width: 30%; margin: 0 auto; padding-right: 1em; float: left;" }
+![Testing tools](testing-tools.jpg)
+{style="display: inline; width: 30%; margin: 0 auto; padding-right: 1em; float: left;" }
 
 # Why Beta Testing
 

@@ -52,7 +52,8 @@ For all of these "conventional" features, we plan on sticking close to existing 
 
 The initial idea that sparked Stencila Sheets was to take the model of the computational notebook - code cells embedded within a document - and apply it to the spreadsheet interface. Here's an example of the first prototype of Stencila Sheets with cell expressions written in R:
 
-![Stencila Sheets using R in cells](sheets-r.gif){style="width: 300px;" }
+![Stencila Sheets using R in cells](sheets-r.gif)
+{style="width: 300px;" }
 
 We have overhauled the architecture of Stencila so that there is greater decoupling between the user interfaces and the code execution contexts. We also have a useful abstraction layer for passing data between execution contexts. These changes now allow us to have Sheets with cells in a variety of languages.
 
@@ -102,7 +103,8 @@ One often cited criticism of spreadsheets is that they are not testable. In our 
 
 These cells would have an expression which represented a test assertion e.g. `= B1 >= 0 && B1 <= 100` to test that the percentage calculated in cell B1 is valid. In our initial prototype we indicated test cells using a `?` mark and a tick or cross for pass/fail:
 
-![Stencila Sheets test cells](sheet-test-cell.png){style="width: 300px;" }
+![Stencila Sheets test cells](sheet-test-cell.png)
+{style="width: 300px;" }
 
 We also were able to generate test coverage statistics for the sheet.
 

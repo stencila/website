@@ -13,7 +13,8 @@ image: sc-io.png
 
 We were invited to give a short presentation about Stencila and open science workflows at the [Open Neuroscience meeting](https://kampff-lab.github.io/sc.io/) hosted at [Sainsbury Wellcome Centre at the University College London, UK](http://www.ucl.ac.uk/swc).
 
-![Open Science](sc-io.png){style="width: 80%;" }
+![Open Science](sc-io.png)
+{style="width: 80%;" }
 
 One of the organisers, Gonçalo Lopes of [the Kampff Lab](http://www.kampff-lab.org/) described the aims of the event:
 

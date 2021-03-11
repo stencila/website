@@ -97,4 +97,8 @@ hr {
       @apply p-4 rounded text-sm;
     }
   }
+
+  .caption {
+    @apply text-neutral-700 text-center text-sm italic;
+  }
 }

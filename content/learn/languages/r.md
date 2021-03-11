@@ -4,7 +4,8 @@ title: Use R with Stencila
 smalltitle: Learn/Languages
 ---
 
-![Stencila R Context](../img/r-context.png){style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-top: 1em; float: left;" }
+![Stencila R Context](../img/r-context.png)
+{style="display: inline; width: 25%; margin: 0 auto; padding-right: 1em; padding-top: 1em; float: left;" }
 
 Stencila allows you use interactive R code within Stencila articles, notebooks and sheets.
 In order to be able to use R within Stencila documents you need to

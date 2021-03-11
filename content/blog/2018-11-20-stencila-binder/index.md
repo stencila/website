@@ -19,7 +19,8 @@ This article reports on the project's inception, building blocks, achievements a
 **Today, Binder has first class Stencila support.**
 You can open Stencila documents from any online code repository on [mybinder.org](https://mybinder.org/) with the click of a single button. Just try out the example below:
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 ## The idea and the sprint team
 
@@ -119,7 +120,8 @@ Nokome showed everything works with the obligatory screenshot:
 
 Since you can run any commit in a Binder, you can also try out that particular state [from the repository](https://github.com/minrk/nbstencilaproxy/tree/d0df78cb4c37b53fd90088db8e36531a813898c1) yourself:
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d0df78cb4c37b53fd90088db8e36531a813898c1?urlpath=%2Fstencila%2F)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d0df78cb4c37b53fd90088db8e36531a813898c1?urlpath=%2Fstencila%2F)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 **The second day of the sprint** involved many iterations of improvements, including changes to `repo2docker`.
 These updates could not simply be thrown upon mybinder.org, so Min set up a test server for the demonstrations at the sprint's final day.
@@ -137,7 +139,8 @@ The code is re-run on the server and the figure updated.
 
 [[Watch video on YouTube](https://www.youtube.com/watch?v=nK27j5DA5k0)]
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d3271fe66951f15caf30a0cd90ca9dce9f626921)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d3271fe66951f15caf30a0cd90ca9dce9f626921)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/nK27j5DA5k0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 
@@ -181,19 +184,22 @@ The following repositories contain single or multiple Stencila documents with co
 
 **[https://github.com/binder-examples/stencila-py](https://github.com/binder-examples/stencila-py)** contains Python code cells, using both the Jupyter and plain Python execution contexts:
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 ![Binder + Stencila screenshot: Python](2018-11_nbstencilaproxy-example-stencila-py.png)
 
 **[https://github.com/binder-examples/stencila-r](https://github.com/binder-examples/stencila-r)** contains R code cells and two plots:
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/binder-examples/stencila-r/master?urlpath=stencila)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/binder-examples/stencila-r/master?urlpath=stencila)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 ![Binder + Stencila screenshot: R](2018-11_nbstencilaproxy-example-stencila-r.png)
 
 **[https://github.com/binder-examples/stencila-multi](https://github.com/binder-examples/stencila-multi)** demonstrates how to access specific Dar projects if multiple are found within a repository.
 
-[![Binder](https://mybinder.org/badge_logo.svg){style="width: 30%; padding-right: 1em; float:center;" }](https://mybinder.org/v2/gh/binder-examples/stencila-multi/master?urlpath=stencila)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/binder-examples/stencila-multi/master?urlpath=stencila)
+{style="width: 30%; padding-right: 1em; float:center;" }
 
 In each case you can see the available execution environments by clicking on the icon in the bottom right corner.
 

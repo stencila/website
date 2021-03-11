@@ -17,7 +17,8 @@ The Alfred P. Sloan Foundation was founded in 1934 by Alfred P. Sloan Jr. The Fo
 
 Stencila has been funded as part of the Foundations's [Data & Computational Research sub-program](https://sloan.org/programs/digital-technology/data-and-computational-research). We would like to thank Josh Greenberg, director of the Digital Information Technology program, for his encouragement, support and advice. But mostly we're grateful to Josh for simply giving us the opportunity. This type of backing is invaluable for fledgling open-source projects and without it, it can be hard to get off the ground.
 
-![Sloan Foundation logo](sloan.png){style="width: 50%;" }
+![Sloan Foundation logo](sloan.png)
+{style="width: 50%;" }
 
 We are also really pleased to announced that [Code for Science and Society (CSS)](https://codeforscience.org/), a 501(c)(3) not-for-profit organization committed to improving access to data for the public good, will be our fiscal sponsor for the grant. The goal of CSS is to help science, journalism and government make better use of technology to accomplish their goals and help create more openness, transparency and collaboration. They host the awesome [Dat](https://datproject.org/) project which we plan to integrate with Stencila. A big thank you to Max Ogden and Keith Chreston from CSS for their work in making everything happen.
 

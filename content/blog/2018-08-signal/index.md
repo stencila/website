@@ -14,7 +14,8 @@ The workshop at [SIGNAL ICT](https://signal.ac.nz) was the last one in this seri
 for the Data Carpentry materials but this time we used the [Python module for data manipulation and visualisation](https://datacarpentry.org/python-ecology-lesson/).
 SIGNAL ICT is a New Zealand government-supported programme equipping professionals with skills so essential nowadays in tech industry.
 
-![SINGNAL ICT logo](signal-logo.png){style="width: 40%; padding-right: 1em; float:left;" }
+![SINGNAL ICT logo](signal-logo.png)
+{style="width: 40%; padding-right: 1em; float:left;" }
 
 We run the workshop for the new cohort which started their programme recently. Since the students have already been using Python as their primary
 programming language we switch from using R. This was also an opportunity for us to test out the [Python execution context](https://github.com/stencila/py)

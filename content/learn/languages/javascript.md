@@ -9,7 +9,8 @@ manipulate and visualise data using JavaScript straight from the start.
 
 If you want the code in the code cell be interpreted as JavaScript, you need to select the `JS` context:
 
-![JavaScript in Stencila Cell](../img/js-context.png){style="align:center; width:100%" }
+![JavaScript in Stencila Cell](../img/js-context.png)
+{style="align:center; width:100%" }
 
 ## Code execution
 

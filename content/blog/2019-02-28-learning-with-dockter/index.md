@@ -14,7 +14,8 @@ This is a short summary of my, somewhat painful, route to discovering that what 
 I used Docker for the first time several years ago when it entered the world of computational research. Working with computational research communities I was well aware of the problems with reproducibility due to dependency hell. Docker images appeared to be (and are!) a great solution. However, not actually doing
 computational research myself, I only used Docker a couple of times following a tutorial to build an image just to see how it would go. It all went fine, as usually well prepared tutorials present the user with a typical and uncomplicated case. I have run several Docker images that I pulled from the Docker hub. That has also worked fine for me. And that was it, as far as it came to my hands-on experience with Docker.
 
-![docker-error.png](docker-error.png){style="width: 80%;" }
+![docker-error.png](docker-error.png)
+{style="width: 80%;" }
 
 Hence I was convinced that Docker is the silver bullet for the reproducibility problems in computational research. I happily recommended Docker to a number of researchers that I talked to and even to some developers who were struggling with dependency hell. It was only after I started helping with Stencila's Dockter that I understood how naive I was.
 
