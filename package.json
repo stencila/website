@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "hugo",
+    "clean": "hugo --cleanDestinationDir",
     "start": "hugo serve"
   },
   "repository": {
