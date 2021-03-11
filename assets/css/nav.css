@@ -12,11 +12,11 @@ header {
 
 .header nav {
   @apply flex items-center mx-auto;
-  --nav-height: 52px;
+  --nav-height: 56px;
   min-height: var(--nav-height);
 
   a.nav-item {
-    @apply block text-base text-neutral-600 font-display px-4 py-2 rounded font-bold;
+    @apply block text-base text-neutral-600 font-body px-4 py-2 rounded font-bold;
 
     &:hover,
     &:focus {

@@ -1,5 +1,6 @@
 .button {
-  @apply inline-block px-4 py-2 m-0 font-bold leading-none border rounded font-display border-current;
+  @apply inline-block px-4 py-0 m-0 font-bold leading-none border rounded font-body border-current align-middle;
+  line-height: 38px;
 
   & + & {
     @apply ml-2;
@@ -24,7 +25,7 @@
   }
 
   &.large {
-    @apply text-lg;
+    @apply text-lg py-2 leading-none;
 
     @screen tablet {
       @apply text-2xl;
