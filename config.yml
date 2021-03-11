@@ -4,6 +4,7 @@ contentDir: './content'
 enableRobotsTXT: true
 relativeURLs: true
 sectionPagesMenu: 'main'
+enableEmoji: true
 
 permalinks:
   blog: /:section/:filename
