@@ -1,0 +1,37 @@
+<section class="testimonials">
+  <h2>What others have to say about Stencila</h2>
+
+  <div class="quotes">
+    {{ range.Site.Data.Testimonials }}
+    <figure>
+      <blockquote>
+        <p>
+          {{ .Quote }}
+        </p>
+
+        <svg
+          width="29"
+          height="17"
+          viewBox="0 0 29 17"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          style="filter: drop-shadow(rgba(0, 0, 0, 0.1) 0px 1px 1px);"
+        >
+          <path
+            d="M0.358032 0C0.468455 0.0955733 0.586019 0.187371 0.710871 0.274929L22.5407 15.5841C25.1914 17.4431 28.8374 15.5469 28.8374 12.3092V0H0.358032Z"
+            fill="white"
+          />
+          <path
+            d="M0.358032 0C0.468455 0.0955733 0.586019 0.187371 0.710871 0.274929L22.5407 15.5841C25.1914 17.4431 28.8374 15.5469 28.8374 12.3092V0H27.8374V12.3092C27.8374 14.7375 25.1029 16.1596 23.1148 14.7654L2.06047 0H0.358032Z"
+            fill="#F1F1F2"
+          />
+        </svg>
+      </blockquote>
+
+      <figcaption>
+        <span class="title">{{ .Title }}</span> {{ .Name}}
+      </figcaption>
+    </figure>
+    {{ end }}
+  </div>
+</section>
