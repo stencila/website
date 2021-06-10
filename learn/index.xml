@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Learns on Stencila</title>
+    <link>https://stenci.la/learn/</link>
+    <description>Recent content in Learns on Stencila</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://stenci.la/learn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/architecture/readme/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/architecture/readme/</guid>
+      <description>Stencila architecture Main components Execution engines - contexts </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/contexts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/contexts/</guid>
+      <description>Contexts   analyse - analyse code in the native language of the context and return a list of input and output names
+  run - run some code
+  execute - execute a command
+  </description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/data-2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/data-2/</guid>
+      <description>Data At the heart of computation in Stencila are data values of different types. Data values are passed to, and returned from, function calls. Some functions are strongly typed, meaning that they will only accept data values of a particular type. This section introduces the various data types in Stencila.
+Data types There are several fundamental data types built-in to, and used internally within, Stencila. These fundamental types are the same as in JSON  , a commonly used, lightweight, data-interchange format.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/data/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/data/</guid>
+      <description>Data Computation is done on data. Data values are of different types.
+Fundamental data types The fundamental value types are built-in to Stencila and used internally. The fundamental types are the same as in JSON  , a commonly used, lightweight, data-interchange format. In this section, we use JSON to represent values of each fundamental data type. But as is shown later, these values may have alternative representations in different languages.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/engine/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/engine/</guid>
+      <description>Engine The Engine is resposible for deciding when (i.e. in which order) and where (i.e. in which execution Context) cells are executed. It can be thought of as a meta-Context, that orchestrates other Contexts.
+The Engine takes the code from a cell and converts it into an operation which it then passes to the execute method of the Context which executes the operation and returns.
+Cells With Stencila you have full control over the sequence in which your code cells are executed.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/functions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/functions/</guid>
+      <description>Functions Functions are one of the primary plugin mechanisms for Stencila. Stencila provides a seamless interface for using functions written in different programming languages (R, Python, Javascript and more) for anyone, without the need to write the code in the given language. The developers can make their fuctions available to the users via simple API (Application Programming Interface). The users can discover the available functions through the common documentation and apply them to their data.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/hosts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/hosts/</guid>
+      <description>Hosts In Stencila, a Host provides execution Environments and, within those environments, execution Contexts. There are several implementations of Hosts including in the individual language packages (e.g. stencila/r, stencila/py) and stencila/hub.
+/environs The /environs endpoint lists the execution Environments supported by the host. When the Stencila client (e.g Stencila Desktop) connects to a host if first visits this endpoint to see what environments are available to execute a project within.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/learn/computation/operations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/computation/operations/</guid>
+      <description>Operations ✨  ✨ Currently, the operations in Stencila are still under development and many of the described here features may work only in the development version. We welcome any help with Stencila development  !
+ Stencila performs computations on data using operations. Operations are objects encapsulating what should be done to what.
+There are
+ set get call function  Commands are just values. Homoiconic - code is data</description>
+    </item>
+    
+    <item>
+      <title>Dockter</title>
+      <link>https://stenci.la/learn/integrations/dockter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/integrations/dockter/</guid>
+      <description>Docker is a useful tool for creating reproducible computing environments. But creating truly reproducible Docker images can be difficult - even if you already know how to write a Dockerfile.
+Dockter makes it easier for researchers to create Docker images for their research projects. Dockter generates a Dockerfile and builds a image, for your project, based on your source code.
+ Dockter is an open source project under active development. We  your feedback but please be patient with bugs and instabilities!</description>
+    </item>
+    
+    <item>
+      <title>Frequently Asked Questions</title>
+      <link>https://stenci.la/learn/faq/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/faq/</guid>
+      <description>I already use RMarkdown/JupyterNotebook. How can Stencila be useful for me?
+Stencila allows you collaborate with colleagues who use tools other than RMarkdown and Jupyter Notebook, without you having to give up your favourite tool. Stencila Encoda  makes it possible to open documents in various formats (RMarkdown - Rmd, Jupyter Notebook - ipynb and so on) in Stencila. The conversion is lossless for all interactive parts (such as code cells), and support conversion back to the original document.</description>
+    </item>
+    
+    <item>
+      <title>Introduction</title>
+      <link>https://stenci.la/learn/intro/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/intro/</guid>
+      <description>Stencila provides a set of open-source software components enabling reproducible research within the tool of your choice. Stencila allows you to write reproducible documents containing interactive source code using the interfaces you are most familiar with. Stencila components can be combined in various ways and plugged into existing reproducible infrastructure.
+Execution engine Stencila execution engine is its heart. The engine enables a spreadsheet-like, reactive programming model. It maintains a graph of the dependency between code cells.</description>
+    </item>
+    
+    <item>
+      <title>Jupyter</title>
+      <link>https://stenci.la/learn/integrations/jupyter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/integrations/jupyter/</guid>
+      <description>Jupyter  Project Jupyter  provides software and standards for interactive computing across many programming languages. The Jupyter Notebook is an open-source web application which allows you to create and share documents that contain live code, equations, visualizations and narrative text.
+This integration guide is intended for Jupyter users who are interested in using Stencila to edit Jupyter Notebook files, or want to connect to Jupyter kernels from within Stencila. We&amp;rsquo;ll start with an introduction on the similarities and differences of the two tools, discuss why you might want to use both of them, and describe how to do it.</description>
+    </item>
+    
+    <item>
+      <title>Mini programming language</title>
+      <link>https://stenci.la/learn/languages/mini/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/languages/mini/</guid>
+      <description>This section contains detailed documentation for Stencila built-in language Mini.
+ Stencila comes with its own simple expression language called Mini. We developed it so that When you install Stencila you can immediately try it out without having to install and configure additional packages and programming languages.
+Mini is implemented in JavaScript and is only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet.</description>
+    </item>
+    
+    <item>
+      <title>Quick start</title>
+      <link>https://stenci.la/learn/quick-start/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/quick-start/</guid>
+      <description>This page will guide you through your first steps with Stencila using a simple example. We will show you how to use Stencila to analyse and visualise data using R programming language (based on the Data Carpentry R for Ecology module  ). Using other programming languages is analogous.
+ Launch Stencila Desktop on your machine (if you are one of our Stencila Hub testers, log into your account). If you are using Stencila Desktop, make sure that you enabled R execution context on your machine.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Encoda</title>
+      <link>https://stenci.la/learn/integrations/converters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/integrations/converters/</guid>
+      <description>Encoda provides a collection of codecs for converting between, and composing together, documents in various formats. The aim is not to achieve perfect lossless conversion between alternative document formats; there are already several tools for that. Instead the focus of Encoda is to use existing tools to encode and compose semantic documents in alternative formats.
+Install The easiest way to use Encoda is to install the stencila command line tool  .</description>
+    </item>
+    
+    <item>
+      <title>Troubleshooting</title>
+      <link>https://stenci.la/learn/troubleshooting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/troubleshooting/</guid>
+      <description>This page provides some advice on dealing with commonly reported problems you may encounter. Stencila and its various components are still in development phase and so you may find that there are some glitches. We are working on fixing them but in the meantime we ask you for patience and hope that the advice below will be helpful. Thank you for your understanding!
+Stencila Execution Contexts Can&amp;rsquo;t see if execution contexts are working Stencila execution contexts, so the &amp;ldquo;engines&amp;rdquo; that allow you to run the code (R, Python and so on) within Stencila documents, run as hosts either on your local machine (if you are using the Desktop version) or on the cloud (that usually be the case, if you use Stencila Hub).</description>
+    </item>
+    
+    <item>
+      <title>Use JavaScript with Stencila</title>
+      <link>https://stenci.la/learn/languages/javascript/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/languages/javascript/</guid>
+      <description>Stencila allows you use interactive JavaScript code within Stencila articles, notebooks and sheets. JavaScript comes with basic Stencila installation so you can manipulate and visualise data using JavaScript straight from the start.
+If you want the code in the code cell be interpreted as JavaScript, you need to select the JS context:
+Code execution Stencila keeps track of the code dependecies between the code cells. It supports reactive programming which means that the code and the respective outputs will get updated, when you change a piece of code they depend on.</description>
+    </item>
+    
+    <item>
+      <title>Use Python with Stencila</title>
+      <link>https://stenci.la/learn/languages/python/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/languages/python/</guid>
+      <description>Stencila allows you use interactive Python code within Stencila articles, notebooks and sheets. In order to be able to use Python within Stencila documents you need to enable the execution context  .
+You can write Python code just like you would in any other editor or reproducible notebook. You can install Python packages and import them, create and embed plots, and so on.
+Installation  ! We are currently working on making the Stencila Python package compatible with the latest Stencila Desktop.</description>
+    </item>
+    
+    <item>
+      <title>Use R with Stencila</title>
+      <link>https://stenci.la/learn/languages/r/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/languages/r/</guid>
+      <description>Stencila allows you use interactive R code within Stencila articles, notebooks and sheets. In order to be able to use R within Stencila documents you need to enable the execution context  .
+You can write R code just like you would in any other editor or reproducible notebook. You can install R packages and import them, create and embed plots, and so on.
+You can write the contents of Stencila cells in R as well as make your existing R functions available in Stencila through function libraries  .</description>
+    </item>
+    
+    <item>
+      <title>Use SQL with Stencila</title>
+      <link>https://stenci.la/learn/languages/sql/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/learn/languages/sql/</guid>
+      <description>Installation (Node.js context) The Stencila Node.js package  provides the NodeContext with the SQLiteContext for executing SQL (Structured Query Language) code from within Stencila documents.
+This package comes bundled with Stencila Desktop so it does not need to be installed separately. But, for completeness, and because you may want to use it from another client application, we include these installation instructions here.
+ i You may need to install npm first.</description>
+    </item>
+    
+  </channel>
+</rss>

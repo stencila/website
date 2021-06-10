@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Jupyter · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle">Jupyter</h1>
+
+    <div class="content">
+      <h1 id="jupyter">Jupyter</h1>
+<p>
+<a href="http://jupyter.org/" target="_blank" rel="noopener">
+  Project Jupyter
+</a>
+ provides software and standards for interactive computing across many programming languages. The Jupyter Notebook is an open-source web application which allows you to create and share documents that contain live code, equations, visualizations and narrative text.</p>
+<p>This integration guide is intended for Jupyter users who are interested in using Stencila to edit Jupyter Notebook files, or want to connect to Jupyter kernels from within Stencila. We&rsquo;ll start with an introduction on the similarities and differences of the two tools, discuss why you might want to use both of them, and describe how to do it.</p>
+<blockquote>
+<p>! The integrations between Stencila and Jupyter are preliminary and under development. To some extent, we&rsquo;re using documention driven design here: not everything described is fully implemented, and if it is, it could be buggy 🐛! The aim is to provide concrete examples of what these integrations could look like to get feeback for ongoing refinement. Please send as a pull request (click the Edit button below) if you have suggestions.</p>
+</blockquote>
+<h2 id="similarities-and-differences">Similarities and differences</h2>
+<p>On the surface, Jupyter Notebooks and Stencila Articles are very similar. But there</p>
+<p>&hellip;differences:</p>
+<h3 id="wysiwyg-v-markdown-for-prose">WYSIWYG v Markdown for prose</h3>
+<h3 id="graph-based-execution">Graph based execution</h3>
+<h3 id="dependency-analysis">Dependency analysis</h3>
+<h3 id="local-execution">Local execution</h3>
+<p>In the following sections we&rsquo;ll look at four integrations between Stencila and Project Jupyter:</p>
+<ul>
+<li>
+<a href="#using-kernels">
+  using Jupyter kernels within Stencila documents
+</a>
+</li>
+<li>
+<a href="#converting-notebooks">
+  converting Jupyter Notebooks to Stencila documents
+</a>
+</li>
+<li>
+<a href="#using-binder">
+  using Binder to run Stencila execution hosts
+</a>
+</li>
+</ul>
+<h2 id="using-kernels">Using Jupyter kernels within Stencila documents</h2>
+<h3 id="why">Why?</h3>
+<ul>
+<li>Use a kernel that you don&rsquo;t yet have installed</li>
+<li>Using a language that Stencila does not yet support Julia, Haskell</li>
+</ul>
+<h3 id="how">How?</h3>
+<h2 id="converting-notebooks">Converting Jupyter notebooks to Stencila documents</h2>
+<h3 id="why-1">Why?</h3>
+<h3 id="how-1">How?</h3>
+<h2 id="heading"></h2>
+<p>Currently when a Jupyter notebook is imported into Stencila it is not reactive. That is because the <code>JupyterContext</code> does not do any dependency analysis (because the Jupyter kernel it bridges to does not) and so it&rsquo;s <code>compile()</code> method returns an empty <code>inputs</code> array for the cell.</p>
+<p>But we could allow users to manually specify inputs and outputs in comment tags like this:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#09f;font-style:italic"># inputs: x, y</span>
+<span style="color:#09f;font-style:italic"># outputs: z</span>
+z <span style="color:#555">=</span> x <span style="color:#555">*</span> y
+</code></pre></div><p>Indeed, it may a good approach to provide this sort of override for all cells, regardless of context.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

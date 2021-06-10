@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Development update: Javascript execution contexts and Markdown extensions for interactive documents · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Nokome Bentley · Jan 13, 2017
+    </div>
+
+    <h1 class="title" id="entryTitle">Development update: Javascript execution contexts and Markdown extensions for interactive documents</h1>
+
+    <div class="content">
+      <h1 id="blog-posts-are-stencila-documents">Blog posts are Stencila Documents</h1>
+<p>First, a reminder that this blog post, like all our other blog posts, is a Stencila Document. That is, it is a document that resides in the memory of your browser, not as a 
+<a href="https://en.wikipedia.org/wiki/Document_Object_Model" target="_blank" rel="noopener">
+  DOM tree
+</a>
+ but as a 
+<a href="http://substance.io" target="_blank" rel="noopener">
+  Substance
+</a>
+-based data structure. It got there by Javascript from the 
+<a href="https://github.com/stencila/web" target="_blank" rel="noopener">
+  <code>stencila/web</code>
+</a>
+ package which parsed 
+<a href="https://github.com/stencila/blog/blob/master/dev-update-2017-01-13/index.html" target="_blank" rel="noopener">
+  this HTML
+</a>
+ (statically hosted on Github pages). That HTML was generated from 
+<a href="https://github.com/stencila/blog/blob/master/dev-update-2017-01-13/post.md" target="_blank" rel="noopener">
+  this Markdown
+</a>
+ using the 
+<a href="https://github.com/stencila/node" target="_blank" rel="noopener">
+  <code>stencila/node</code>
+</a>
+ package (which uses Pandoc for Markdown parsing).</p>
+<p>We&rsquo;ve set some document options that befit a blog post: <code>edit=0</code> so you can&rsquo;t edit it, and <code>naked=1</code> so that document menus don&rsquo;t show (you can override those by appending <code>?edit=1&amp;naked=0</code> to the URL). But apart from that, as you will see below, it&rsquo;s a dynamic, interactive document.</p>
+<h1 id="javascript-execution-context">Javascript execution context</h1>
+<p>The 
+<a href="https://github.com/stencila/js" target="_blank" rel="noopener">
+  <code>stencila/js</code>
+</a>
+ package was established a few weeks ago. It contains code that is shared amongst other Stencila Javascript-based packages: <code>node</code> (the package for Node.js) and <code>web</code> (the package for web browsers). Currently, the most interesting thing in the package is the <code>JsSession</code> class. It&rsquo;s a Javascript execution context which fits the model for data driven content 
+<a href="../../blog/chunks-n-funcs/">
+  described here
+</a>
+. It can be used in either Node.js or the browser to execute chunks of Javascript code - basically, it&rsquo;s a fancy <code>eval</code>. This week I added some added features to it to allow a Node.js-like experience in the browser:</p>
+<ul>
+<li>transpilation to 
+<a href="https://en.wikipedia.org/wiki/ECMAScript#6th_Edition_-_ECMAScript_2015" target="_blank" rel="noopener">
+  ES2015
+</a>
+ using 
+<a href="https://buble.surge.sh/guide/" target="_blank" rel="noopener">
+  Bublé
+</a>
+</li>
+<li>a <code>require</code> for the browser using 
+<a href="https://wzrd.in/" target="_blank" rel="noopener">
+  wzrd.in
+</a>
+ the &lsquo;browserify-as-a-service&rsquo; service</li>
+</ul>
+<p>Both Bublé and wzrd.in reminded me how awesome the open source software ecosystem is at making it so easy to implement stuff like this. Big thanks to Rich Harris, Max Ogden, Joshua Holbrook, James Halliday and all the others who contributed to those projects.</p>
+<p>So, without further ado&hellip;here&rsquo;s an execute directive in ES2015 Javascript that uses the NPM package 
+<a href="http://simplestatistics.org/" target="_blank" rel="noopener">
+  <code>simple-statistics</code>
+</a>
+ to perform a linear regression in your browser and display the result in your document. You should be able to edit that code (e.g. change some of the numbers), click the play button, and see the results change.</p>
+<pre><code class="language-js(){show=true}" data-lang="js(){show=true}">// Dynamically fetch and import a NPM package
+const stats = require('simple-statistics')
+
+// Define some data points (pairs of x and y)
+let data = [
+  [1, 0.9],
+  [2, 2.3],
+  [3, 2.9],
+  [4, 4.2],
+  [5, 5.8],
+  [6, 6.2],
+  // Some randomness just so the result changes each time
+  [7, Math.random()],
+]
+// Fit a linear regression to it to get the slope (m) and intercept (b)
+stats.linearRegression(data)
+</code></pre><p>Some notes:</p>
+<ul>
+<li>you can see that execute directive because it has the option <code>show=true</code>; normally directives are not visible until you enter reveal mode (e.g. add <code>?reveal=1</code> to the URL)</li>
+<li>this execute directive inserts the value of the last line into the document; if you don&rsquo;t want that either (a) end with a comment or two blank lines, or (b) assign the output to a variable e.g. <code>result=js()</code> in the &ldquo;call&rdquo; at the top; in other words, the last line is the &ldquo;return&rdquo; value, you can either display it in the document, or you can assign it to a variable to use later.</li>
+<li>if you run Stencila locally, then you&rsquo;ll be able to run execute directives using other languages e.g. R, Python etc; in the future you&rsquo;ll be able to do that here as well.</li>
+</ul>
+<h1 id="markdown-extension-for-execute-directives">Markdown extension for execute directives</h1>
+<p>Markdown is one of the formats you can use to write and store a Stencila Document (you can also use HTML or Latex, but Markdown is the focus of development for now). Most Markdown parsers don&rsquo;t support the notion of an executable chunk of code - what we call in Stencila an &ldquo;execute directive&rdquo;. So, we&rsquo;ve got to come up with a Markdown extension to handle them.</p>
+<p>Markdown has indented code blocks. Github Flavored Markdown (GFM) takes this further with fenced code blocks which allow you to specify the language for the code. For example, in GFM you can indicate a block of &ldquo;static&rdquo; R code like this:</p>
+<pre><code>```r
+plot(x,y)
+```
+</code></pre>
+<p>For a block of code which is &ldquo;dynamic&rdquo; (i.e it will get executed), RMarkdown uses the slightly different, &ldquo;braced r&rdquo; format to indicate a &ldquo;code chunk&rdquo;, potentially with some options:</p>
+<pre><code>```{r fig.width=10, echo=FALSE}
+plot(x,y)
+```
+</code></pre>
+<p>In Stencila, because the 
+<a href="../../blog/chunks-n-funcs/">
+  execution model
+</a>
+ is more similar to the traditional function call of a programming language, it feels appropriate to use the traditional function call syntax with parentheses&hellip;</p>
+<p>Execute with no input variables (as above but the parentheses indicate this will get executed),</p>
+<pre><code>```r()
+plot(x,y)
+```
+</code></pre>
+<p>Execute with a input variable,</p>
+<pre><code>```r(data)
+plot(x~y, data=data)
+```
+</code></pre>
+<p>Execute with input and output variables,</p>
+<pre><code>```dataSummary=r(data)
+summary(data)
+```
+</code></pre>
+<p>Options controlling execution or display can be specified within braces,</p>
+<pre><code>```r(){width=10, show=false}
+plot(x,y)
+```
+</code></pre>
+<p>When Pandoc parses a fenced code block it put&rsquo;s everything into a class attribute e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">class</span><span style="color:#555">=</span><span style="color:#c30">&#34;a=r(b,c)&#34;</span>&gt;&lt;<span style="color:#309;font-weight:bold">code</span>&gt;...&lt;/<span style="color:#309;font-weight:bold">code</span>&gt;&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+</code></pre></div><p>To implement the desired sytax extension, all I had to do was write some code in 
+<a href="https://github.com/stencila/node/blob/master/src/document/DocumentMarkdownConverter.js" target="_blank" rel="noopener">
+  <code>DocumentMarkdownConverter</code>
+</a>
+ which transforms that HTML into a Stencila HTML execute directive,</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;r&#34;</span> <span style="color:#309">data-output</span><span style="color:#555">=</span><span style="color:#c30">&#34;a&#34;</span> <span style="color:#309">data-input</span><span style="color:#555">=</span><span style="color:#c30">&#34;b,c&#34;</span>&gt;...&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+</code></pre></div><h1 id="markdown-extension-for-setting-document-variables">Markdown extension for setting document variables</h1>
+<p>The other aspect of the execution model that I discussed in that previous post is having HTML <code>&lt;input&gt;</code> elements for setting the value of document variables (values that we can then pass as inputs to execute directives like <code>b</code> and <code>c</code> in the above example). How best to represent them in Markdown? I&rsquo;m not aware of any extensions which do that.</p>
+<p>HTML input elements are inline so it seemed to be important to have a Markdown syntax that was inline-able (e.g. you might want to have an input variable that could be represented as &ldquo;slide-able&rdquo; number within text ala Brett Victor&rsquo;s 
+<a href="http://worrydream.com/Tangle/" target="_blank" rel="noopener">
+  Tangle
+</a>
+ library).</p>
+<p>Pandoc recently introduced a 
+<a href="http://pandoc.org/MANUAL.html#extension-bracketed_spans" target="_blank" rel="noopener">
+  <code>bracketed_spans</code>
+</a>
+ extension which allows attributes to be attached to <code>&lt;span&gt;</code> elements. I decided to use them as a Markdown shortcut to both <code>&lt;input&gt;</code> and <code>&lt;select&gt;</code> elements with the rule that if a span has a name attribute then it becomes an input or select. Some examples with Markdown first, corresponding HTML second, and rendered result, here in the document, third&hellip;</p>
+<h3 id="a-plain-old-text-input">A plain old text input</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Cookie type: [Oatmeal]{name=cookieRecipe}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">p</span>&gt;Cookie type: &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;cookieRecipe&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;Oatmeal&#34;</span> /&gt;&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</code></pre></div><p>Cookie type: [Oatmeal]{name=cookieRecipe}</p>
+<h3 id="a-number-input">A number input</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">When you eat [3]{name=cookies type=number} cookies, you consume ...
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">p</span>&gt;
+  When you eat &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;cookies&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;number&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;3&#34;</span> /&gt; cookies, you
+  consume ...
+&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</code></pre></div><p>When you eat [3]{name=cookies type=number} cookies, you consume &hellip;</p>
+<h3 id="a-number-input-as-a-slider">A number input as a slider</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Number of cookies I&#39;d like to eat today: [10]{name=cookies type=range min=0 max=1000}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">p</span>&gt;
+  Number of cookies I&#39;d like to eat today:
+  &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;cookies&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;range&#34;</span> <span style="color:#309">min</span><span style="color:#555">=</span><span style="color:#c30">&#34;0&#34;</span> <span style="color:#309">max</span><span style="color:#555">=</span><span style="color:#c30">&#34;1000&#34;</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;10&#34;</span> /&gt;
+&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</code></pre></div><p>Number of cookies I&rsquo;d like to eat today: [10]{name=cookies type=range min=0 max=1000}</p>
+<h3 id="a-booleancheckbox-input">A boolean/checkbox input</h3>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">Eat cookies today? []{name=eatCookies type=checkbox}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">p</span>&gt;Apply correction: &lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;eatCookies&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;checkbox&#34;</span> /&gt;&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</code></pre></div><p>Eat cookies today? []{name=eatCookies type=checkbox}</p>
+<h3 id="an-option-selector">An option selector</h3>
+<p>For <code>&lt;select&gt;</code> elements, you set <code>type=select</code>, provide options as attributes, and put the current/default value in the square brackets:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-md" data-lang="md">My favourite type of cookie is [peanut]{name=a type=select fortune=Fortune peanut=&#34;Peanut butter&#34; oatmeal=Oatmeal}
+</code></pre></div><div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">p</span>&gt;
+  My favourite cookie is
+  &lt;<span style="color:#309;font-weight:bold">select</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;a&#34;</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;fortune&#34;</span>&gt;Fortune&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;peanut&#34;</span> <span style="color:#309">selected</span><span style="color:#555">=</span><span style="color:#c30">&#34;true&#34;</span>&gt;Peanut butter&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">option</span> <span style="color:#309">value</span><span style="color:#555">=</span><span style="color:#c30">&#34;oatmeal&#34;</span>&gt;Oatmeal&lt;/<span style="color:#309;font-weight:bold">option</span>&gt;
+  &lt;/<span style="color:#309;font-weight:bold">select</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">p</span>&gt;
+</code></pre></div><p>My favourite cookie is [peanut]{name=a type=select fortune=Fortune peanut=&ldquo;Peanut butter&rdquo; oatmeal=Oatmeal}</p>
+<p>OK, so the UI/UX for those inputs can be improved. But the focus at this stage is to define a Markdown extension syntax for defining inputs, have those converted into semantic HTML5 <code>&lt;input&gt;</code> and <code>&lt;select&gt;</code> elements, and finally rendered in dynamic documents.</p>
+<h1 id="markdown-extension-for-displaying-document-variables">Markdown extension for displaying document variables</h1>
+<p>The corollary of having <code>&lt;input&gt;</code> elements to set document variables is to have <code>&lt;output&gt;</code> elements to display them. I&rsquo;ve taken the same approach as with inputs - using <code>bracketed_spans</code> - but using the <code>value</code> attribute to indicate it&rsquo;s an output. You can also define a <code>format</code> attribute for <code>sprintf</code> formatting of the value. Here&rsquo;s some Markdown for an input followed by a formatted output,</p>
+<pre><code>*How many cookies do you eat per day?* [1]{name=cookiesPerDay type=number}.
+Your daily cookie consumption is []{value=cookiesPerDay format=&quot;%s cookies&quot;}.
+</code></pre>
+<p>And here&rsquo;s what it looks, and behaves, like (try altering the input),</p>
+<p><em>How many cookies do you eat per day?</em> [1]{name=cookiesPerDay type=number}.
+Your daily cookie consumption is []{value=cookiesPerDay format=&quot;%.1f cookies&quot;}.</p>
+<h1 id="putting-it-together-in-a-reactive-document">Putting it together in a reactive document</h1>
+<p>I&rsquo;ll finish off this update by putting all this together in a very simple demo of this new execution model I&rsquo;ve been talking about. Here&rsquo;s some Markdown for a mini-document about cookies and calories inspired by one of Brett Victor&rsquo;s examples:</p>
+<pre><code>### Calorific impact of alternative cookie consumptions profiles
+
+If I eat [0]{name=number type=number} extra []{name=type type=select fortune=fortune peanut=&quot;peanut butter&quot; oatmeal=oatmeal} cookies ([]{value=calories} calories each) every day for the next [52]{name=weeks type=number} weeks that will be [0]{value=calories_total format=&quot;%.2f&quot;} extra calories in total.
+
+```calories=js(type)
+let values = {
+  'fortune': 30.2,
+  'peanut': 71.6,
+  'oatmeal': 65.3
+}
+values[type]
+```
+
+```calories_total=js(number,calories,weeks)
+number*calories*weeks
+```
+</code></pre>
+<p>What&rsquo;s going on there? There&rsquo;s a paragraph which has several inputs that the user can change and a couple of outputs for calculated variables, including one with some formatting. Then there are two Javascript execute directives, the first takes the <code>type</code> of cookie as input and outputs the variable <code>calories</code>. The second, takes the variables <code>number</code>, <code>calories</code> and <code>weeks</code> as inputs and outputs the variable <code>calories_total</code>. We could have calculated the total calories in one execute directive but by splitting it up we get to display the calories per cookie in the paragraph.</p>
+<p>When you change an input, the document updates all the execute directives and outputs that are dependent, either directly or indirectly, upon it.</p>
+<p>So, here&rsquo;s what that Markdown looks like when it&rsquo;s actually included in this post and rendered (try playing around with the inputs; if you add the <code>?reveal=1</code> option to the end of the URL you&rsquo;ll also get to see the executed code chunks):</p>
+<hr>
+<h3 id="calorific-impact-of-alternative-cookie-consumptions-profiles">Calorific impact of alternative cookie consumptions profiles</h3>
+<p>If I eat [1]{name=number type=number} extra []{name=type type=select fortune=fortune peanut=&ldquo;peanut butter&rdquo; oatmeal=oatmeal} cookies ([]{value=calories} calories each) every day for the next [52]{name=weeks type=number} weeks that will be [0]{value=calories_total format=&quot;%.2f&quot;} extra calories in total.</p>
+<pre><code class="language-calories=js(type)" data-lang="calories=js(type)">let values = {
+  'fortune': 30.2,
+  'peanut': 71.6,
+  'oatmeal': 65.3
+}
+values[type]
+</code></pre><pre><code class="language-calories_total=js(number,calories,weeks)" data-lang="calories_total=js(number,calories,weeks)">number*calories*weeks
+</code></pre><hr>
+<p>That&rsquo;s a very simple introductory demo based on a trivial example. As things progress I&rsquo;ll be providing more compelling examples using real datasets, a mix of programming languages and data visualization eye candy :).</p>
+<p>Comments gratefully received&hellip;here using Hypothes.is (there should be a menu for that in the top-right), on 
+<a href="https://gitter.im/stencila/stencila" target="_blank" rel="noopener">
+  Gitter
+</a>
+ or by 
+<a href="mailto://nokome@stenci.la">
+  email
+</a>
+.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

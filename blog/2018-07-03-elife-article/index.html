@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> eLife Stencila – an office suite for reproducible research · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Michael Aufreiter, Aleksandra Pawlik, Nokome Bentley · Jul 3, 2018
+    </div>
+
+    <h1 class="title" id="entryTitle">eLife Stencila – an office suite for reproducible research</h1>
+
+    <div class="content">
+      <blockquote>
+<p><em>This blog post was originally published on the 
+<a href="https://elifesciences.org/labs/c496b8bb/stencila-an-office-suite-for-reproducible-research" target="_blank" rel="noopener">
+  eLife Sciences website
+</a>
+.</em></p>
+</blockquote>
+<p>Stencila is an open source office suite designed for researchers. It allows the authoring of interactive, data-driven publications in visual interfaces, similar to those in conventional office suites, but is built from the ground up for reproducibility.</p>
+<p><img src="stencila-view.png" alt="Stencila article and sheet"></p>
+<p>Stencila aims to make it easier for researchers with differing levels of computational skills to collaborate on the same research article. Researchers used to tools like Microsoft Word and Excel will find Stencila’s interfaces intuitive and familiar. And those who use tools such as Jupyter Notebook or R Markdown are still able to embed code for data analysis within their research articles. Once published, Stencila documents are self-contained, interactive and reusable, containing all the text, media, code and data needed to fully support the narrative of research discovery.</p>
+<p>The Stencila project aims to be part of the wider vision to enable the next generation of research article – all the way from authoring through to publication as a reproducible, self-contained webpage. A key limitation of the current research publishing process is that conventional document formats (e.g. Word, PDF and LaTeX) do not support the inclusion of reproducible research elements, nor do they produce content in the structured format used for science publishing and dissemination (XML). Stencila aims to remove the need for manual conversion of content from source documents to XML and web (HTML) publishing formats, whilst enabling the inclusion of source data and computational methods within the manuscript. We hope that establishing a digital-first, reproducible archive format for publications will facilitate research communication that is faster and more open, and which lowers the barrier for collaboration and reuse. The development of Stencila is driven by community needs and in coordination with the goals of the 
+<a href="https://elifesciences.org/labs/7dbeb390/reproducible-document-stack-supporting-the-next-generation-research-article" target="_blank" rel="noopener">
+  Reproducible Document Stack
+</a>
+, an initiative started by eLife, Substance and Stencila.</p>
+<h2 id="a-word-processor-for-creating-journal-ready-scientific-manuscripts">A word processor for creating journal-ready scientific manuscripts</h2>
+<p>Stencila’s article editor builds on 
+<a href="http://substance.io/texture/" target="_blank" rel="noopener">
+  Texture
+</a>
+, an open source editor built for visually editing JATS XML documents (a standard widely used by scientific journals). Supporting all elements of a standardised research article, the editor features semantic content-oriented editing that allows the user to focus on the research without worrying about layout information, which is normally stripped during the publishing process. While Texture implements all static elements (abstract, figures, references, citations and so on), Stencila extends Texture with code cells which enable computed, data-driven figures.</p>
+<h2 id="spreadsheets-for-source-data-and-analysis">Spreadsheets for source data and analysis</h2>
+<p>In Stencila, datasets are an integral part of the publication. They live as individual spreadsheet documents holding structured data. This data can then be referenced from the research article to drive analysis and plots. As within Excel, cells can contain formulas and function calls to run computations directly in a spreadsheet. But not only can users enter simple expressions, they can also add and execute code in a variety of supported programming languages (at the moment R, Python, SQL and Javascript).</p>
+<div >
+    <iframe src="https://www.youtube.com/embed/EzrR96PDnO8" allowfullscreen style="width:60%; height:400px; margin: 0 auto; display: block; padding-bottom:5%; "></iframe>
+</div>
+<p class="paragraph">A walk-through of some of the features of Stencila, using <a href="http://builds.stenci.la/stencila/fix-regressions-2018-06-01-142af5d/example.html?archive=introduction">this Stencila Article</a>. Source: <a href="https://youtu.be/EzrR96PDnO8">YouTube</a>; video <a href="https://creativecommons.org/licenses/by/3.0/legalcode">CC-BY</a> Stencila.</p>
+<h2 id="code-evaluation-in-the-browser-and-beyond">Code evaluation in the browser and beyond</h2>
+<p>Stencila’s user interfaces build on modern web technology and run entirely in the browser – making them available on all major operating systems. The predefined functions available in Stencila use Javascript for execution so they can be run directly in the editor. For example, the plotly() function generates powerful, interactive visualizations solely using Plotly’s Javascript library.</p>
+<p><img src="interactive-map.png" alt="Interactive map in Stencila"></p>
+<p>Stencila can also connect to R, Python and SQL sessions, allowing more advanced data analysis and visualization capabilities. Stencila’s execution engine keeps a track of the dependency between code cells, enabling a reactive, spreadsheet-like programming experience both in Stencila Articles and Sheets.</p>
+<div >
+    <iframe src="https://www.youtube.com/embed/d1U-hBT4TrM" allowfullscreen style="width:60%; height:300px; margin: 0 auto; display: block; padding-bottom:5%; "></iframe>
+</div>
+<p >An example of using R within a Stencila Sheet. Source: <a href="https://youtu.be/d1U-hBT4TrM">YouTube</a>; video <a href="https://creativecommons.org/licenses/by/3.0/legalcode">CC-BY</a> Stencila.</p>
+<h2 id="reproducible-document-archive-dar">Reproducible Document Archive (Dar)</h2>
+<p>Stencila stores projects in an open file archive format called Dar. A Dar is essentially a folder with a number of files encompassing the manuscript itself (usually one XML per document) and all associated media.</p>
+<p><img src="dar-repo.png" alt="DAR project repository">
+_The Dar format is open source: inspect it and provide feedback at <a href="https://github.com/substance/dar_">https://github.com/substance/dar_</a></p>
+<p>Dar uses existing standards when possible. For instance, articles are represented as JATS XML, the standard preferred by a number of major publishers. The Dar format is a separate effort from Stencila, and aims to establish a strict standard for representing self-contained reproducible publications, which can be submitted directly to publishers. Any other tool should be able to easily read and write such archives, either by supporting it directly or by implementing converters.</p>
+<h2 id="interoperability-with-existing-tools-and-workflows">Interoperability with existing tools and workflows</h2>
+<p>Stencila is developed not to replace existing tools, but to complement them. Interoperability is at the heart of the project, with the goal of supporting seamless collaboration between users of Jupyter Notebooks, R Markdown and spreadsheet applications. We are working closely with the communities of existing open source tools to improve interoperability. For instance, we are 
+<a href="https://github.com/minrk/jupyter-dar" target="_blank" rel="noopener">
+  working with the Jupyter team
+</a>
+ on tools to turn notebooks into journal submissions. We are also evaluating whether the Stencila editor could be used as another interface to edit Jupyter Notebooks or R Markdown files: we hope this could help researchers who use existing tools to collaborate with peers who are used to other office tools, such as Word and Excel, and thus encourage wider adoption of reproducible computational research practises.</p>
+<h2 id="state-of-development">State of development</h2>
+<p>Over the past two years, we’ve built Stencila from the ground up as a set of modular components that support community-driven open standards for publishing and computation. Stencila Desktop is our prototype of a ‘researcher’s office suite’, built by combining these components into an integrated application. During this beta phase of the project, we are working to address bugs and add missing features, and welcome your feedback and suggestions (see below).</p>
+<p>One of our next priorities will be to develop a toolset for generating a web page from a reproducible article in the Dar format. Using 
+<a href="https://elifesciences.org/labs/e5737fd5/designing-progressive-enhancement-into-the-academic-manuscript" target="_blank" rel="noopener">
+  progressive enhancement
+</a>
+, the reader should be able to reproduce a scientific article right from the journal’s website in various forms, ranging from a traditional static representation of the manuscript and its figures to a fully interactive, executable publication.</p>
+<p>We will continue working on Stencila’s various software components, such as the 
+<a href="https://github.com/stencila/convert" target="_blank" rel="noopener">
+  converter module
+</a>
+ and execution contexts for 
+<a href="https://github.com/stencila/r" target="_blank" rel="noopener">
+  R
+</a>
+ and 
+<a href="https://github.com/stencila/py" target="_blank" rel="noopener">
+  Python
+</a>
+, towards improved integration and interoperability with other tools in the open science toolbox (e.g. Jupyter, RStudio and Binder).</p>
+<h2 id="get-involved">Get involved</h2>
+<p>We’d love to get your input to help shape Stencila. Download 
+<a href="http://stenci.la/" target="_blank" rel="noopener">
+  Stencila Desktop
+</a>
+ and take it for a test drive. You could also try porting an existing manuscript over to Stencila using the 
+<a href="https://github.com/stencila/cli#readme" target="_blank" rel="noopener">
+  Stencila command line tool
+</a>
+. Give us your feedback and contribute ideas on our 
+<a href="http://stenci.la/community/" target="_blank" rel="noopener">
+  community forum
+</a>
+ or in our 
+<a href="https://gitter.im/stencila/stencila" target="_blank" rel="noopener">
+  chat channel
+</a>
+, or drop us an email at
+
+<a href="mailto:aleksandra@stenci.la">
+  aleksandra@stenci.la
+</a>
+ or 
+<a href="mailto:nokome@stenci.la">
+  nokome@stenci.la
+</a>
+.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

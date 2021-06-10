@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="data">Data</h1>
+<p>At the heart of computation in Stencila are data <em>values</em> of different <em>types</em>. Data values are passed to, and returned from, function calls. Some functions are strongly typed, meaning that they will only accept data values of a particular type. This section introduces the various data types in Stencila.</p>
+<h2 id="data-types">Data types</h2>
+<p>There are several fundamental data types built-in to, and used internally within, Stencila. These fundamental types are the same as in 
+<a href="https://www.json.org/" target="_blank" rel="noopener">
+  JSON
+</a>
+, a commonly used, lightweight, data-interchange format. In this section, we use JSON to represent values of each fundamental data type. But as is shown later, these values may have alternative representations in different languages (e.g. Mini, R).</p>
+<h3 id="fundamental-data-types">Fundamental data types</h3>
+<p>There are two categories of fundamental types: <em>atomics</em>, and <em>compounds</em>. The <em>atomic</em> value types are the smallest kind of value, they can not be broken into smaller parts. There are four atomic types: <code>boolean</code>, <code>number</code>, <code>integer</code>, and <code>string</code>. There are two <em>compound</em> fundamental types, <code>array</code> and <code>object</code>, that consist of combinations of atomic types.</p>
+<h4 id="null">Null</h4>
+<p>A <code>null</code> value is used to represent missing or empty data values:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">null</span>
+</code></pre></div><h4 id="boolean">Boolean</h4>
+<p>A <code>boolean</code> can only have one of two values:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">true</span>
+</code></pre></div><p>or</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">false</span>
+</code></pre></div><h4 id="number">Number</h4>
+<p>The <code>number</code> type represents 
+<a href="https://en.wikipedia.org/wiki/Real_number" target="_blank" rel="noopener">
+  real numbers
+</a>
+ e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f60">3.14159265358979323846264338327950288419716</span>
+</code></pre></div><h4 id="integer">Integer</h4>
+<p>The <code>integer</code> type represents 
+<a href="https://en.wikipedia.org/wiki/Integer" target="_blank" rel="noopener">
+  integers
+</a>
+ e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f60">42</span>
+</code></pre></div><p>The <code>integer</code> type is a child type of <code>number</code>, so any function having a <code>number</code> as a parameter can also take an <code>integer</code>.</p>
+<h4 id="string">String</h4>
+<p>Strings are sequences of characters. e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#c30">&#34;hello world&#34;</span>
+</code></pre></div><h4 id="array">Array</h4>
+<p>An <code>array</code> is an ordered collection of values e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>]
+</code></pre></div><p>This example value is of type <code>array[integer]</code> because the values in the array are all of the same type <code>integer</code>.</p>
+<p>The values in an array can have different types e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#c30">&#34;hello world&#34;</span>, [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>], {}]
+</code></pre></div><p>This example value is of type <code>array</code>, a synonym for <code>array[any]</code>.</p>
+<h4 id="object">Object</h4>
+<p>An <code>object</code> is a collection of values in which each value has a <em>name</em> e.g.</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ <span style="color:#309;font-weight:bold">&#34;height&#34;</span>: <span style="color:#f60">1.1</span>, <span style="color:#309;font-weight:bold">&#34;width&#34;</span>: <span style="color:#f60">4.5</span> }
+</code></pre></div><p>This <code>object</code> has two <em>properties</em>: <code>height</code> and <code>width</code>.</p>
+<h3 id="extended-data-types">Extended data types</h3>
+<p>Extended types are child types of <code>object</code> with a <code>string</code> property with the name <code>type</code>. For example, an extended type representing a position on the earths surface could be written as:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;position&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;latitude&#34;</span>: <span style="color:#f60">-42.4</span>,
+  <span style="color:#309;font-weight:bold">&#34;longitude&#34;</span>: <span style="color:#f60">173.7</span>
+}
+</code></pre></div><p>The <code>table</code> type is a commonly used extended type for tabular data which is similar to a <code>data.frame</code> in R. It stores values in columns:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;height&#34;</span>: [<span style="color:#f60">1.1</span>, <span style="color:#f60">1.0</span>, <span style="color:#f60">1.3</span>],
+    <span style="color:#309;font-weight:bold">&#34;width&#34;</span>: [<span style="color:#f60">4.3</span>, <span style="color:#f60">3.9</span>, <span style="color:#f60">3.7</span>]
+  }
+}
+</code></pre></div><h2 id="data-packets">Data packets</h2>
+<p>Stencila provides a mechanism for data to be exchanged between documents and execution contexts and among execution contexts. When passing data to/from execution <code>Contexts</code>, values are marshaled into a data <em>package</em> which specify the type and value of the data. For example, an array of integers is exchanged in a data packet like this:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;array[integer]&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>]
+}
+</code></pre></div><p>Note that for extended data types, such as a <code>table</code> the data packet, somewhat confusingly, has nested structure:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: {
+      <span style="color:#309;font-weight:bold">&#34;height&#34;</span>: [<span style="color:#f60">1.1</span>, <span style="color:#f60">1.0</span>, <span style="color:#f60">1.3</span>],
+      <span style="color:#309;font-weight:bold">&#34;width&#34;</span>: [<span style="color:#f60">4.3</span>, <span style="color:#f60">3.9</span>, <span style="color:#f60">3.7</span>]
+    }
+  }
+}
+</code></pre></div><p>The data packets are converted by each execution <code>Context</code> into a native data type. For example, when a <code>table</code> value is passed to a <code>RContext</code> it is converted to a 
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/data.frame.html" target="_blank" rel="noopener">
+  <code>data.frame</code>
+</a>
+, and when it is passed to a <code>PythonContext</code> it is converted to a 
+<a href="https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html" target="_blank" rel="noopener">
+  <code>pandas.DataFrame</code>
+</a>
+. For more details on the protocols for translating Stencila data types to native data types, see the tables in each language section.</p>
+<h2 id="data-pointers">Data pointers</h2>
+<blockquote>
+<p>✨ Data pointers are yet to be implemented.</p>
+</blockquote>
+<p>Exchanging data using data packets is fine for small data, but it quickly becomes inefficient for large data values such as a large R data frame or a database table. That&rsquo;s because the data packet gets passed, in it entirety, from the execution context to the client user interface and then back to the same execution context or onwards to another execution context.</p>
+<p>This is where data <em>pointers</em> come in. Instead of encapsulating the entire data value, a data pointer just stores information on where the data resides.</p>
+<p>For example, let&rsquo;s say that you were using the Star Wars example database, and had a SQL cell in a document with the code,</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">low_gravity_planets<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#555">*</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">FROM</span><span style="color:#bbb"> </span>planets<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>gravity<span style="color:#bbb"> </span><span style="color:#555">&lt;=</span><span style="color:#bbb"> </span><span style="color:#f60">1</span><span style="color:#bbb">
+</span></code></pre></div><p>This would create a temporary table in the database called <code>low_gravity_planets</code>, and instead of returning the cell value as a data packet with all the data would return the cell value as a data pointer:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;context&#34;</span>: <span style="color:#c30">&#34;http://127.0.0.1:2010/sqlContext1&#34;</span>
+  <span style="color:#c30">&#34;name&#34;</span>: <span style="color:#c30">&#34;low_gravity_planets&#34;</span>
+}
+</code></pre></div><p>From this information, the Stencila user interface, and other execution contexts, can access the actual data value only when they need to by calling the <code>fetch</code> method of the execution context (e.g <code>PUT http://127.0.0.1:2010/sqlContext1!fetch</code> with <code>{&quot;name&quot;: &quot;low_gravity_planets&quot;, &quot;firstRow&quot;: 0, &quot;lastRow&quot;: 100}</code> as the request body).</p>
+<p>Data pointers allow Stencila&rsquo;s execution <code>Engine</code> to perform dependency analysis, and update cells when their dependencies change, without wasteful and slow data transfer. Documents will often use a single language and a single execution context. For example, consider a document with two R cells, one which creates a large data frame called <code>data</code></p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">data <span style="color:#555">&lt;-</span> <span style="color:#c0f">data.frame</span>(x<span style="color:#555">=</span><span style="color:#f60">1</span><span style="color:#555">:</span><span style="color:#f60">100000</span>, y<span style="color:#555">=</span><span style="color:#c0f">rnorm</span>(<span style="color:#f60">100000</span>))
+</code></pre></div><p>an one which plots that data frame:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#c0f">plot</span>(data)
+</code></pre></div><p>If the <code>RContext</code> always returned the value of <code>data</code> as a data packet, the entire ten thousand rows of <code>data</code> would be transferred from the context, to the client and then back again to the context. But with data pointers, when executing the second cell, the R context is able to recognize from the <code>context</code> property of the pointer that <code>data</code> resides within itself and therefore no data transfer is necessary.</p>
+<p>It is left to implementation of the execution context to decide when to return a data value as a data packet or a data pointer. Generally execution context&rsquo;s will return data packets for small data values e.g. an <code>integer</code> or a short <code>array[string]</code> and a data pointer for larger data e.g. a 100000 row table.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

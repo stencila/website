@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Troubleshooting · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle">Troubleshooting</h1>
+
+    <div class="content">
+      <p>This page provides some advice on dealing with commonly reported problems you may encounter. Stencila and its various components
+are still in development phase and so you may find
+that there are some glitches. We are working on fixing them but in the meantime we ask you for patience and hope that the advice below will be helpful.
+Thank you for your understanding!</p>
+<h1 id="stencila-execution-contexts">Stencila Execution Contexts</h1>
+<h3 id="cant-see-if-execution-contexts-are-working">Can&rsquo;t see if execution contexts are working</h3>
+<p>Stencila execution contexts, so the &ldquo;engines&rdquo; that allow you to run the code (R, Python and so on) within Stencila documents, run
+as hosts either on your local machine (if you are using the Desktop version) or on the cloud (that usually be the case, if you
+use Stencila Hub). <br/>
+If you are using Stencila Desktop and would like to check if the execution contexts are running correctly, you can do that through
+the command line. <br/>
+If you are running Linux or Mac OS, open a terminal and type:</p>
+<pre><code>ls /tmp/stencila/hosts -lt
+</code></pre><p>This should result in an output similar to the one below:</p>
+<pre><code>total 16
+-rw------- 1 nokome nokome  514 Feb 22 12:36 r-host-293d576d-5e56-4dde-9196-dc67aea40a55.json
+-rw------- 1 nokome nokome   64 Feb 22 12:36 r-host-293d576d-5e56-4dde-9196-dc67aea40a55.key
+-rw------- 1 nokome nokome 1281 Feb 22 12:36 node-host-a2163786-8d50-4fe2-a64f-b942ff165cea.json
+-rw------- 1 nokome nokome   64 Feb 22 12:36 node-host-a2163786-8d50-4fe2-a64f-b942ff165cea.key
+</code></pre><p>The <code>node-host</code> is the one embedded in Stencila Desktop. It starts as soon as you launch the application. The <code>r-host</code> starts as soon
+as you create an <code>R</code> cell within Stencila document. You can see more details of the <code>r-host</code> by looking at its JSON file, in
+the example above it is <code>r-host-293d576d-5e56-4dde-9196-dc67aea40a55.json</code>.</p>
+<pre><code>cat /tmp/stencila/hosts/r-host-293d576d-5e56-4dde-9196-dc67aea40a55.json
+{
+   &quot;stencila&quot;: {
+     &quot;package&quot;: &quot;r&quot;,&lt;br/&gt;
+     &quot;version&quot;: &quot;0.28.3&quot;
+   },
+   &quot;id&quot;: &quot;r-host-293d576d-5e56-4dde-9196-dc67aea40a55&quot;,
+   &quot;spawn&quot;: [&quot;/usr/bin/Rscript&quot;, &quot;-e&quot;, &quot;stencila:::spawn()&quot;],
+   &quot;environs&quot;: [
+     {
+       &quot;id&quot;: &quot;local&quot;,
+       &quot;name&quot;: &quot;local&quot;,
+       &quot;version&quot;: &quot;&quot;
+     }
+   ],
+   &quot;types&quot;: {
+     &quot;RContext&quot;: {
+       &quot;name&quot;: &quot;RContext&quot;,
+       &quot;client&quot;: &quot;ContextHttpClient&quot;
+     }
+   },
+   &quot;machine&quot;: [],
+   &quot;process&quot;: {
+     &quot;pid&quot;: 4142
+   },
+   &quot;servers&quot;: {
+     &quot;http&quot;: {
+       &quot;url&quot;: &quot;http://127.0.0.1:2010&quot;
+     }
+   }
+ }
+</code></pre><p>You can confirm that the <code>r-host</code> is running by pinging it&rsquo;s IP: <code>curl http://127.0.0.1:2010</code> or by using its <code>pid</code>. For the example above it would be <code>ps 4142</code>.
+Stencila Desktop uses the information in that JSON file to connect to an execution context. If the process running the context has died for some reason, it could be that the Desktop is still trying to connect to it and hence you are experiencing problems such as the code
+not being excecuted in a cell.</p>
+<h1 id="stencila-desktop">Stencila Desktop</h1>
+<h3 id="code-output-doesnt-change-and-no-error-is-displayed">Code output doesn&rsquo;t change and no error is displayed</h3>
+<p>First, try to delete the whole cell that became inactive and then create a new cell, re-entering the code.
+If that doesn&rsquo;t help, it may be that what happened is the execution context you are using to run the code in the code cell became unavailable for Stencila Desktop to communicate with. Depending on which context you are using, R, Python or Jupyter, you may need to restart the context on your machine. <br/></p>
+<ul>
+<li>for R context, open an R session (either in an R shell or R Studio) and type <code>stencila::start()</code>;</li>
+<li>for Python or Jupyter Python context, open a terminal and type <code>python -m stencila</code>.</li>
+</ul>
+<h1 id="stencila-encoda">Stencila Encoda</h1>
+<h3 id="converting-files-into-a-dar-project-results-in-an-error-cannot-read-property-length-of-undefined">Converting files into a <code>dar</code> project results in an error <code>Cannot read property 'length' of undefined</code></h3>
+<p>Most likely one of the files in the folder you are trying to convert is a <code>csv</code> file and our converter may be tripping over some
+empty cells. One of the solutions is not to convert the <code>csv</code> files into <code>dar</code>. You will still be able to manipulate them from
+within Stencila Desktop using your programming language of choice, just like you would in any other code editor. Another solution would be editing your <code>csv</code> files trying to find the empty cells and filling them in with a relevant information (such as <code>NA</code>) and
+then trying the conversion step once again.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> A web-native approach to open source scientific publishing · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Opensource.com, Giuliano Maciocci, Nokome Bentley · Nov 7, 2020
+    </div>
+
+    <h1 class="title" id="entryTitle">A web-native approach to open source scientific publishing</h1>
+
+    <div class="content">
+      <p>This summer, <em>eLife</em> was pleased to launch Executable Research Articles (ERAs) in partnership with Stencila, allowing authors to post computationally reproducible versions of their published papers in the open-access journal.</p>
+<p>The open source ERA technology stack delivers a truly web-native format that treats live, interactive code as a first-class asset. It was developed to address current challenges around reproducing and reusing published results—challenges mostly caused by the lack of infrastructure for publishers to showcase the richness and sophistication of the computational methods used by researchers in their work.</p>
+<p>As part of its mission to transform research communication, <em>eLife</em> invests in open source technology innovation to modernize the infrastructure for science publishing and improve online tools for sharing, using, and interacting with new results. The organization began work on the concept of computationally reproducible papers in 2017, first in partnership with Substance and later, with Stencila, and announced a number of milestones along the road to delivering ERA:</p>
+<ul>
+<li>September 2017 marked 
+<a href="https://elifesciences.org/for-the-press/e6038800/elife-supports-development-of-open-technology-stack-for-publishing-reproducible-manuscripts-online" target="_blank" rel="noopener">
+  our commitment to supporting
+</a>
+ the development of an open technology stack for publishing reproducible manuscripts online.</li>
+<li>In February 2019, <em>eLife</em> 
+<a href="https://elifesciences.org/labs/ad58f08d/introducing-elife-s-first-computationally-reproducible-article" target="_blank" rel="noopener">
+  showcased the demo
+</a>
+ of its first computationally reproducible article;</li>
+<li>In May 2019, we presented 
+<a href="https://elifesciences.org/labs/b521cf4d/reproducible-document-stack-towards-a-scalable-solution-for-reproducible-articles" target="_blank" rel="noopener">
+  our roadmap
+</a>
+ toward an open, scalable infrastructure for publishing computationally reproducible articles;</li>
+<li>Finally, in August 2020, eLife and Stencila announced 
+<a href="https://elifesciences.org/for-the-press/eb096af1/elife-launches-executable-research-articles-for-publishing-computationally-reproducible-results" target="_blank" rel="noopener">
+  the launch of ERA
+</a>
+, giving authors broader opportunities to publish enriched versions of their papers.</li>
+</ul>
+<p>The summer of 2020 has, of course, been a strange time for everyone due to COVID-19. But rather than hindering ERA&rsquo;s development, the pandemic emphasized the importance of making this article type more widely available. After all, to develop new medical treatments for COVID-19 and other illnesses, scientists need to be able to validate and build on existing data. The fundamental idea behind ERA was to help improve the replication and reuse of new results.</p>
+<h2 id="what-does-the-new-era-mean-for-authors-and-readers">What does the new ERA mean for authors and readers?</h2>
+<p><em>eLife</em> authors with a published paper can now register their interest in enriching their published work with live code blocks, programmatically generated interactive figures, and dynamically generated in-line values. This involves the use of familiar tools such as 
+<a href="https://opensource.com/article/19/8/markdown-beginners-cheat-sheet" target="_blank" rel="noopener">
+  R Markdown
+</a>
+ and 
+<a href="https://opensource.com/article/20/10/jupyter-cheat-sheet" target="_blank" rel="noopener">
+  Jupyter
+</a>
+ in combination with Stencila Hub&rsquo;s intuitive asset management and format conversion interface. The resulting new ERA publication will then be presented as a complement to the original published paper.</p>
+<p>Readers of an ERA publication can then inspect its code, modify it, and re-execute it directly in their browser, allowing them to better understand how a figure is generated. They can change a plot from one format to another, alter the data range of a specific analysis, and more. All changes are limited to an individual&rsquo;s browsing session and do not affect the published article, so anyone can experiment safely. Readers can also download the ERA publication—with all embedded code and data preserved—and use it as a basis for further study or derivative works.</p>
+<p><em>eLife</em> authors are already taking advantage of the new ERA, with articles published by Tim Errington, Director of Research at the Center for Open Science, US, and Matthew Nolan, Professor of Neural Circuits and Computation at the University of Edinburgh, UK. Readers can view 
+<a href="https://elifesciences.org/articles/30274/executable" target="_blank" rel="noopener">
+  Errington&rsquo;s ERA
+</a>
+ and 
+<a href="https://elifesciences.org/articles/52258/executable" target="_blank" rel="noopener">
+  Nolan&rsquo;s ERA
+</a>
+.</p>
+<h2 id="what-about-other-publishers-and-their-users">What about other publishers and their users?</h2>
+<p>We would like to emphasize here that ERA is not an <em>eLife</em>-exclusive feature. <em>eLife</em> and Stencila developed the ERA technology stack as open source software to encourage other publishers to offer this article format to their own authors. ERA is designed specifically for pre-print and journal publishing, with strong XML standards, native 
+<a href="https://schema.org/" target="_blank" rel="noopener">
+  schema.org
+</a>
+ compliance, and a versatile theming solution that makes it adaptable to the visual style of virtually any online publication.</p>
+<p>And of course, the open source nature of ERA means there are opportunities for other publishers and developers to contribute to the project. Anyone interested can 
+<a href="https://elifesci.org/ERAupdates" target="_blank" rel="noopener">
+  sign up for our ERA community update
+</a>
+ for the latest news and opportunities to contribute and/or 
+<a href="https://github.com/stencila" target="_blank" rel="noopener">
+  explore Stencila&rsquo;s repositories on GitHub
+</a>
+. And if you see opportunities to collaborate, we invite you to 
+<a href="mailto:%20innovation@elifesciences.org">
+  email 
+</a>
+eLife.</p>
+<p><strong>This 
+<a href="https://opensource.com/article/20/11/open-source-scientific-publishing" target="_blank" rel="noopener">
+  article
+</a>
+ was published by Opensource.com on Friday 6th November 2020. 
+<a href="https://opensource.com/" target="_blank" rel="noopener">
+  Opensource.com
+</a>
+ is a premier, daily publication focused on open source and Linux tutorials, stories, and resources.</strong></p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

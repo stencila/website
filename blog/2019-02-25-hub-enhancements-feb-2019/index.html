@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Stencila Hub Enhancements for February 2019 · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Ben Shaw · Feb 25, 2019
+    </div>
+
+    <h1 class="title" id="entryTitle">Stencila Hub Enhancements for February 2019</h1>
+
+    <div class="content">
+      <p>The Stencila Hub is the web application that allows users to easily use Stencila&rsquo;s tools for executable documents without having to install them on their own machine. In addition, the Hub allows users use to manage projects, accounts, teams, execution sessions and remote code and data sources. To support Stencila Hub&rsquo;s use in a Data Ethics course at the University of Canterbury, we added a few new features and enhancements, which I will talk about in this post.</p>
+<h2 id="linked-sources">Linked Sources</h2>
+<p>We have completely revamped how file sources work in Stencila Hub, allowing flexibility to how source and other files fit together, no matter where they come from.</p>
+<p>For example, a directory can be mapped from a GitHub repository into your <code>Project</code>&rsquo;s workspace. Then, you can create a file that is hosted inside the Stencila Hub but <em>appears</em> to be inside the GitHub repository without actually being hosted on GitHub. These screenshots illustrate an example.</p>
+<p><img src="1-github-source-screenshot.png" alt="A GitHub linked source"></p>
+<p>Here a GitHub repository has been mapped into the <em>github</em> directory of the Project. Navigating inside we see two files.</p>
+<p><img src="2-github-files-screenshot.png" alt="Files inside a GitHub linked source"></p>
+<ul>
+<li><code>from_github.py</code> - this is stored in GitHub</li>
+<li><code>on_stencila.py</code> - this is stored in the Stencila Hub file storage</li>
+</ul>
+<p>Either of these files can be edited with an essentially identical code editor (also new – we have now integrated 
+<a href="https://microsoft.github.io/monaco-editor/index.html" target="_blank" rel="noopener">
+  Monaco Editor
+</a>
+). The only difference is that editing the GitHub file allows the setting of a commit message when saving and automatically creates a commit back to GitHub.</p>
+<p>On doing a <code>Project</code> pull, the files are cloned to the local disk and the &ldquo;virtual&rdquo; directory structure is mirrored as real files and directories on the file system:</p>
+<pre><code>$ ls
+github
+$ ls github
+from_github.py on_stencila.py
+$
+</code></pre><p>Hub directories can also contain other linked sources, and sources can even be nested inside each other (including sources from different providers [although only GitHub is supported at present, we plan to integrate with DropBox and Google Drive soon]). All content can be edited through the Hub, and if your script generates new files on disk they will be browseable and editable through the Hub too.</p>
+<h2 id="project-archiving">Project Archiving</h2>
+<p>One of the requirements of the Data Ethics course was to be able to archive a project at a point in time, so students were able to prove when a particular lab or assignment was completed. This is also a common use case for other educators.</p>
+<p>Stencila Hub now has Project Archiving. This will create a zip archive of the entire <code>Project</code> file contents. First it pulls all the linked sources and combines with the files already on disk, and then zips up this folder. The zip archive name contains the date it was created so students are not able to fake this to pretend an assignment was completed earlier than it was. Optionally, students may add a tag which is prepended to the archive name to help identify it.</p>
+<p><code>Project</code> access rights (covered in more detail in the next section) are applied so only users who have access to the <code>Project</code> can download the Archive.</p>
+<h2 id="accounts-teams-project-permissions">Accounts, Teams, Project Permissions</h2>
+<p>Also new to the Stencila Hub is an enhanced, flexible permissions system.</p>
+<ul>
+<li>
+<p><code>Accounts</code> can have multiple <code>Users</code> assigned to them with different levels of permission.</p>
+</li>
+<li>
+<p><code>Teams</code> can have multiple <code>Users</code>, and <code>Users</code> can be in any number of <code>Teams</code>. Access to <code>Projects</code> can be given on a <code>Team</code> or <code>User</code> basis.</p>
+</li>
+<li>
+<p>A <code>User</code>&rsquo;s access is based on the highest level available – if a <code>User</code> itself has only read access but is in a <code>Team</code> with modify access the <code>User</code> will be able to modify the Project and its files.</p>
+</li>
+</ul>
+<p>All this additional flexibility is useful in an education environment. A <code>Team</code> can be created to contain all the students in a class and given read access to a reference <code>Project</code>, either before a lab or after its completion to be able to compare solutions.</p>
+<p>A course instructor or tutor can be given read access to the studen&rsquo;t project in order to view archives to verify solutions, or write access to assist with code changes or data fixes.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>These are just a few of the changes that we&rsquo;ve made to Stencila Hub in order to meet the needs of the University of Canterbury, other educational institutes, and the Stencila Community as a whole.</p>
+<p>We&rsquo;re looking for beta testers of the Stencila Hub: you can find out more on our 
+<a href="https://stenci.la/community/beta-testing.html" target="_blank" rel="noopener">
+  Beta Testing Program Page
+</a>
+. If you want to use Stencila to teach your students but it doesn&rsquo;t quite meet your needs yet, please 
+<a href="mailto:hello@stenci.la">
+  contact Stencila
+</a>
+ and we&rsquo;ll discuss what we can do to help.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

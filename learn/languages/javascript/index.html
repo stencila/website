@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Use JavaScript with Stencila · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle">Use JavaScript with Stencila</h1>
+
+    <div class="content">
+      <p>Stencila allows you use interactive JavaScript code within Stencila articles, notebooks and sheets. JavaScript comes with basic Stencila installation so you can
+manipulate and visualise data using JavaScript straight from the start.</p>
+<p>If you want the code in the code cell be interpreted as JavaScript, you need to select the <code>JS</code> context:</p>
+<p style="align:center; width:100%"><img src="../img/js-context.png" alt="JavaScript in Stencila Cell"></p>
+<h2 id="code-execution">Code execution</h2>
+<p>Stencila keeps track of the code dependecies between the code cells. It supports reactive programming which means that the code and the respective outputs
+will get updated, when you change a piece of code they depend on. It is a similar principle as behind the behavior of spreadsheet applications.
+You can refer to specific outputs from any code cell in any part of your Stencila document. Stencila does all this using its 
+<a href="">
+  execution engine
+</a>
+.</p>
+<p>What inputs and outputs of a code cell are vary slightly between programming languages that you use in Stencila. For cells written in Javascript,
+if you want to capture the output of the cell so that you can refer to it throughout the document, you need to create a variable and assign (<code>=</code>) the output. To be more precise, you are capturing the <em>result of the evaluation of the cell</em>.
+Note that, the variables in Stencila are non-mutable.</p>
+<p>For example:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">var</span> x <span style="color:#555">=</span> <span style="color:#f60">4</span>
+<span style="color:#069;font-weight:bold">var</span> y <span style="color:#555">=</span> <span style="color:#366">Math</span>.sqrt(x)
+</code></pre></div><p>Now you can refer to the output of the cell using the variable <code>y</code>.</p>
+<p>If you do not capture the output explicitly, you will not be able to refer to it later on. For example:</p>
+<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">var</span> x <span style="color:#555">=</span> <span style="color:#f60">4</span>
+<span style="color:#366">Math</span>.sqrt(x)
+</code></pre></div><p>The result of the <code>Math.sqrt(x)</code> is <code>2</code> but you will not be able to refer to it since it has not been captured explicitly in a variable.
+Summarizing: the output of this cell is not captured and the result of evaluating this cell is 2 (<code>Math.sqrt(4)</code>).</p>
+<h2 id="data-interchange">Data interchange</h2>
+<p>Stencila provides you with ability to use multiple programming languages to write interactive code within
+one document, working on the same data. In other words, you can manipulate the same data switching between different programming
+languages. This capability is achieved through <code>data interchange</code> feature.</p>
+<p>When you pass data between cells Stencila temporarily converts it into its internal schema representation.
+The table below shows (roughly) how data interchange between the schema and JavaScript is implemented.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Schema representation</th>
+<th style="text-align:left">JavaScript</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Boolean</td>
+<td style="text-align:left">boolean</td>
+</tr>
+<tr>
+<td style="text-align:left">Integer</td>
+<td style="text-align:left">number</td>
+</tr>
+<tr>
+<td style="text-align:left">Float</td>
+<td style="text-align:left">number</td>
+</tr>
+<tr>
+<td style="text-align:left">String</td>
+<td style="text-align:left">string</td>
+</tr>
+<tr>
+<td style="text-align:left">Array</td>
+<td style="text-align:left">array</td>
+</tr>
+<tr>
+<td style="text-align:left">Object</td>
+<td style="text-align:left">object*</td>
+</tr>
+<tr>
+<td style="text-align:left">Table</td>
+<td style="text-align:left">table</td>
+</tr>
+</tbody>
+</table>
+<p>*The object fields and methods are saved within the schema-defined object/array and converted accordingly.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

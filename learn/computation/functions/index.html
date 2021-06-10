@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="functions">Functions</h1>
+<p>Functions are one of the primary plugin mechanisms for Stencila. Stencila provides a seamless interface for using functions written in different programming languages (R, Python, Javascript and more) for anyone, without the need to write the code in the given language. The developers can make their fuctions available to the users via simple API (Application Programming Interface). The users can discover the available functions through the common documentation and apply them to their data.</p>
+<p>Stencila function libraries make it easy for users to expand their analysis with an array of methods developed by different research communities.</p>
+<h2 id="stencila-function-libraries">Stencila function libraries</h2>
+<p>Stencila function libraries are collections of functions for data manipulation, analysis and plotting. These collections are grouped per research discipline and programming language. For example, an &ldquo;R Metagenomics Stencila Library&rdquo; will contain functions written in R developed and used within the metagenomics research community.</p>
+<p>Stencila uses its own simple <em>glue-like</em> language 
+<a href="languages/mini/README.md">
+  Mini
+</a>
+ which enables the communication between functions written in different programming lanaguages. On its own Mini cannot perform sophisticated calculations but that is not its main purpose. Mini is used for wrapping functions in other languages making them interoperable. Behnid the scenes Stencila uses Mini to call the relevant language context in order to execute the wrapped function.</p>
+<h3 id="why-are-stencila-function-libraries-useful">Why are Stencila function libraries useful?</h3>
+<p>Users primarily using spreadsheets for analysing and storing their data have access to a much wider selection of functions than those available in standard spreadsheet applications. By using Stencila functions they can easily keep the record of their workflow aligning their work with the principle of reproducible research.</p>
+<p>Developers can make their functions easily available and versatile which results in expanded userbase.</p>
+<h3 id="stencila-core-library">Stencila Core Library</h3>
+<p>
+<a href="https://github.com/stencila/libcore" target="_blank" rel="noopener">
+  Stencila Core Library
+</a>
+ (LibCore) is a library of functions that are built into Stencila&rsquo;s Mini language. The default implementation of Mini is done in 
+<a href="https://github.com/stencila/libcore/tree/master/js" target="_blank" rel="noopener">
+  Javascript
+</a>
+. That is, in fact, Mini calls upon Javascript operations. The default implementation in Javascript allows for performing work in Stencila only by the means of a browser. Users who do not have access to other execution contexts (R, Python and so forth) are still able to manipulate their data.</p>
+<p>However, CoreLib has also implementation in other languages (for example, 
+<a href="https://github.com/stencila/libcore/tree/master/r" target="_blank" rel="noopener">
+  R
+</a>
+ and 
+<a href="https://github.com/stencila/libcore/tree/master/py" target="_blank" rel="noopener">
+  Python
+</a>
+).</p>
+<p>The scope of the Stencila Core Library is corresponding with:</p>
+<ul>
+<li>a standard set of functions available in most popular spreadsheet applications (for example, in 
+<a href="%28https://support.office.com/en-us/article/Excel-functions-alphabetical-b3944572-255d-4efb-bb96-c6d90033e188%29">
+  Excel
+</a>
+;</li>
+<li>
+<a href="https://docs.python.org/3/library/index.html" target="_blank" rel="noopener">
+  Python Standard Library
+</a>
+;</li>
+<li>
+<a href="https://stat.ethz.ch/R-manual/R-devel/library/base/html/00Index.html" target="_blank" rel="noopener">
+  R Base Package
+</a>
+.</li>
+</ul>
+<p>See the 
+<a href="https://stencila.github.io/libcore/#/" target="_blank" rel="noopener">
+  list of functions currently implemented
+</a>
+ in Stencila Core Library..</p>
+<p>See detailed guidelines on how to 
+<a href="https://github.com/stencila/libcore/blob/master/docs/CONTRIBUTING.md" target="_blank" rel="noopener">
+  contriubute to the LibCore
+</a>
+.</p>
+<h3 id="domain-specific-libraries">Domain-specific libraries</h3>
+<p>Domain-specific libraries are collections of functions developed and used within research communities. Using the simple API (by wrapping their functions in a Mini template) anyone can make their code for data analysis, management and plotting available for a wide audience.</p>
+<p>Domain-specific libraries are particularily useful for making various tools for data analysis fully interoperable. Researchers who tend to do most of their work in spreadsheets are then able to extend their data analysis by a whole new array of functions in R, Python or other languages.</p>
+<h2 id="add-new-functions-">Add new functions ✨</h2>
+<p>Adding functions to Stencila function libraries is fairly straightforward. We provided a 
+<a href="https://github.com/stencila/libtemplate" target="_blank" rel="noopener">
+  template
+</a>
+ which should help contributors wrap their functions in Mini and write docstrings. As mentioned, Mini is intentionally simple to minimise the effort of adding new functions to the libraries.</p>
+<p>We recommend that each library is located in its own separate directory, structured as in this 
+<a href="https://github.com/stencila/libtemplate" target="_blank" rel="noopener">
+  template
+</a>
+.
+You can either decide to download the template and create the library locally, or you can upload it to GitHub or
+BitBucket (in any case, we recommend keeping it under version control!).</p>
+<p>The structure of the new library repository should be simple:</p>
+<pre><code>docs/
+funcs/
+    func1.R
+    func1.js
+    func1.py
+    ....
+tests/test_func1.R
+README.md
+LICENSE
+</code></pre><p>Your functions should be implemented in the <code>funcs</code> directory. There should be just one function per file (i.e. do not implement two functions in the same file).
+Follow the templates for each language for writing the documentation strings. When you register a function, the documentation strings will be automatically converted
+into documentation files which will be placed in the <code>docs</code> folder.</p>
+<h3 id="register-">Register ✨</h3>
+<p>Once you finished implementing and testing your function, you need to register it to make it available from within Stencila. In order to do
+that select <code>Register function</code> from the menu and point to the main directory (for example, <code>libgenomics</code>) where the the file with the function is located. Stencila will automatically
+create the documentation from the docstring. You can then use the function within Stencila.</p>
+<p>If you want to make the function available for someone else using Stencila on a different machine, select <code>Create function package</code>, then point
+to the man directory with function file. Once the function package is created, select where you want to save it. You can then share the package (which
+essentially is a <code>zip</code> file). If the main directory with the function exists as a GitHub or BitBucket repository (see 
+<a href="https://github.com/stencila/libtemplate" target="_blank" rel="noopener">
+  these guidelines
+</a>
+),
+then you can simply point users to the repository (which needs to be public).</p>
+<p>To register the function from the package, use the <code>Register function</code> option from the menu, as described above. If you are registering from a GitHub or BitBucket repository,
+just copy and paste the link to it.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

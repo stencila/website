@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Toads in Vancouver - using Stencila to teach SQL and R at UBC · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Danielle Robinson · Oct 3, 2017
+    </div>
+
+    <h1 class="title" id="entryTitle">Toads in Vancouver - using Stencila to teach SQL and R at UBC</h1>
+
+    <div class="content">
+      <p><em>This post is cross-posted at the 
+<a href="https://software-carpentry.org/blog/2017/09/stencila-wkshp.html" target="_blank" rel="noopener">
+  Software and Data Carpentry blog
+</a>
+!
+Thanks to Giulio and his students for beta-testing!</em></p>
+<p>One of 
+<a href="https://stenci.la/" target="_blank" rel="noopener">
+  Stencila’s
+</a>
+ goals is to create an easy way for people who don’t yet code to learn data science and statistics skills,
+and to feel comfortable trying out powerful scientific computing languages like R, Python and Julia.
+We’re doing that by providing interfaces that are similar to the word processors and spreadsheets that they already use.
+It’s a way for people to “dip their toe” into code - without having to dive into the daunting ocean of IDEs, text editors, packages, version control etc.</p>
+<p>Earlier this year, we connected with Giulio Valentino Dalla Riva (
+<a href="https://github.com/gvdr" target="_blank" rel="noopener">
+  @gvdr
+</a>
+ 
+<a href="https://twitter.com/ipnosimmia" target="_blank" rel="noopener">
+  @ipnosimmia
+</a>
+)
+a data scientist based at the 
+<a href="https://masterdatascience.science.ubc.ca" target="_blank" rel="noopener">
+  Master of Data Science
+</a>
+ programme at the University of British Columbia.
+Giulio is a Postdoctoral Teaching Fellow who teaches courses in statistics and data science for a broad range of students, many with no prior
+exposure to programming. More about Giulio 
+<a href="http://gvdallariva.net/about/" target="_blank" rel="noopener">
+  here
+</a>
+.</p>
+<p>Giulio was interested in piloting Stencila in one of his fall courses on Data Management for Business Analytics: a course for Master’s
+level business students at the UBC’s Sauder School of Business. These students need to develop data science skills, but many had never
+used languages like R and SQL before. The intuitive Word- and Excel-like visual interfaces in Stencila are a powerful tool for data
+science education for students familiar with those environments. So we jumped at this opportunity to beta test Stencila and get the
+feedback we need to improve the platform for this use case.</p>
+<p>Over the last two weeks, we watched from afar as Giulio introduced his students to data analysis concepts, R, SQL, and
+even delivered homework assignments and quizzes with the help of Stencila.</p>
+<p><img src="ubc-workshop-toads.jpg" alt="Stencila TOADS workshop at UBC"></p>
+<p>Stencila can be used in a number of ways but our initial focus has been on providing beta-testers with the downloadable 
+<a href="https://github.com/stencila/desktop#readme" target="_blank" rel="noopener">
+  Stencila Desktop
+</a>
+. But Giulio knew from previous experience that when students are
+required to download a new program debugging installation issues can take up half the class time. So he was keen to try o
+ut our experimental, cloud deployment which runs Stencila inside Docker containers on a Kubernetes cluster.</p>
+<p>For this course, Giulio summoned the toads! They’re our new favorite thing - 
+<a href="https://github.com/gvdr/toads" target="_blank" rel="noopener">
+  Tiny Open Access Data Samples
+</a>
+!
+These small samples, available on Github, bundle awesome open datasets with tutorial style Stencila notebooks written in markdown. With the
+cloud version, students were able to use Giulio’s TOADS to learn how to write SQL queries and plot the results in R, all in the browser,
+just by clicking a link. Students were able to focus on learning data analysis methods and code and not worry about how to clone repositories, connect to databases or pass data between languages.</p>
+<blockquote>
+<p>&ldquo;Being able to get right to the code, thinking about the logic behind a query or the way in which data is organised is great!&rdquo; - Giulio Valentino Dalla Riva</p>
+</blockquote>
+<p>This was a definitely an early beta test for us and we had a few hiccups! But we learned how to handle 40 people all working on
+reproducible documents at once! (Thank you to the students for being our beta testers.)</p>
+<p>The UBC students also tested our new 
+<a href="https://github.com/stencila/r/blob/master/getting-started.md" target="_blank" rel="noopener">
+  RStudio integration
+</a>
+. This
+integration makes it possible to view, edit, and save Markdown based documents using Stencila locally in the browser. Giulio used
+this to assign homework. Students were able to open .md files in the browser, and edit them, and save the changes.</p>
+<p><img src="workshop-ubc-toads.jpg" alt="Workshop at the University of British Columbia"></p>
+<blockquote>
+<p>“For students without a prior exposition to programming, it is important to reduce the cognitive overhead as much as possible.
+RStudio is wonderful, but it may scare some. Being able to work in a browser, in a slick clean interface, and interface smoothly
+SQLite and R boosted the students confidence.” -Giulio Valentino Dalla Riva, PhD</p>
+</blockquote>
+<p>We are happy to report a successful test case of Stencila as a basic data science educational tool for students with no coding experience.
+We learned that students without coding experience were able to jump right into R with the Stencila interface.
+We also learned that the cloud deployment is a valuable tool for beginners, there’s nothing to install (though it’s not quite ready for wide use now).</p>
+<blockquote>
+<p>“There were some hiccups, and students did find some bug. But they were aware of operating on a bleeding edge technology,
+and that was part of the experience. Overall, I think they were very excited.” - Giulio Valentino Dalla Riva, PhD</p>
+</blockquote>
+<p>As with any good beta test, new feature requests came up and we uncovered a few bugs. For example, some students were confused about
+the syntax for inserting code cells in external languages like R and SQL (e.g. <code>sql()</code>) and said they would prefer a dropdown menu to choose the language.</p>
+<p>Do you want to make a toad? Tiny Open Access Data Samples are fun for all. We are happy to help you work with Giulio’s toads
+or check out one you’ve created! Join the conversation and share your
+thoughts 
+<a href="https://community.stenci.la/t/a-feature-list-for-stencila-sheets/57/1" target="_blank" rel="noopener">
+  Stencila&rsquo;s features
+</a>
+, toads, and reproducible documents on our community forum 
+<a href="https://community.stenci.la/" target="_blank" rel="noopener">
+  community.stenci.la/
+</a>
+</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

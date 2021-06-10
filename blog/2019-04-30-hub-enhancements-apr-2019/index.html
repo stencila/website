@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Stencila Hub Enhancements for April 2019 · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Ben Shaw · Apr 30, 2019
+    </div>
+
+    <h1 class="title" id="entryTitle">Stencila Hub Enhancements for April 2019</h1>
+
+    <div class="content">
+      <p>Stencila Hub is the web application that allows users to easily use Stencila&rsquo;s tools for executable documents without having to install them on their own machine. In addition, the Hub allows users to manage projects, accounts, teams, execution sessions and remote code and data sources. Since February we have mostly been working on invisible changes to improve reliability, but there have also been a few small but important style updates.</p>
+<h2 id="style-updates">Style Updates</h2>
+<p>Stencila&rsquo;s new Product Designer, Jacqueline, joined us in March, and quickly got to work on Stencila Hub. Her first task was to review and begin standardising some of its look and feel. Here&rsquo;s a quick before and after of the Projects List screen.</p>
+<p><img src="before-after.gif" alt="Before after Projects List"></p>
+<p>You will have noticed other improvements to the consitency of buttons and general UX. There are more changes to come as we redesign some of the interface to support upcoming features, and we will announce them as they are released. But you will also see consistent incremental improvements to the UI until then.</p>
+<h2 id="session-queueing">Session Queueing</h2>
+<p>When launching a Stencila Desktop session through Stencila Hub, there is a chance that an execution host is not ready and has to be started. This might take a couple of minutes – although we have work in the pipeline to reduce startup time in the future. While session queueing is not new to Stencila Hub, we have made a number of improvements to the reliability.</p>
+<p><img src="waiting-spinner.png" alt="Waiting for session"></p>
+<p>The above spinner is probably something you have seen before when launching Stencila Desktop. It might take a minute or two to get a session but with the improvements we have done there shouldn&rsquo;t be any timeouts or errors – it will launch eventually.</p>
+<h2 id="deployment">Deployment</h2>
+<p>As well as the improvements to the deployment process (explained in the 
+<a href="../../blog/2019-04-17-consistent-versioning-deployment-django-express/">
+  New Deployment Process blog post
+</a>
+) there have also been a few Hub specific changes. The load balancer uses the <code>system-status</code> endpoint to check if a deployment instance is ready to receive connections. It now returns an error if there are unapplied Django migrations. This means that connections will continue to be served by an existing instance until the database is in sync with the application code. Once the migration occurs requests will automatically be sent to the new instance.</p>
+<p>We&rsquo;ve also updated the Kubernetes deployment script to use rolling updates. We can now roll out updates and because the load balancer and Kubernetes checks the <code>system-status</code> endpoint, it waits until the new deployment is ready before switching over. Once it&rsquo;s ready the switch is instantaneous so we can deploy Hub (or Stencila Cloud) with no downtime.</p>
+<h2 id="internet-explorer-deprecation">Internet Explorer Deprecation</h2>
+<p>Due to the use of some advanced JavaScript features, Stencila Hub has never really supported Internet Explorer. In the past, there was no notification of this to Internet Explorer users. Now, Internet Explorer users get their own special screen to let them know they are on an unsupported browser, instead of things just failing for no reason.</p>
+<p>Our roadmap includes a fully enumerated list of supported browsers and we may later down-compile ES2015+ to JavaScript using Babel (or similar) to add Internet Explorer support, but there are no concrete plans surrounding that yet.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Thank you for reading about our latest changes to Stencila Hub. We have more updates in the works focusing on UI enhancements and integration with more third party services.</p>
+<p>If you like staying up to date with Stencila&rsquo;s progress you can join our monthly 
+<a href="https://meet.google.com/tpe-pgxz-oao" target="_blank" rel="noopener">
+  Catching up with Stencila
+</a>
+ Google Meetup. They take place 8-9PM UTC on the first Monday of every month, the next one is scheduled for the 6th of May. We will be discussing both Hub and our other projects. We hope to see you there!</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>
