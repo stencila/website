@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Integrating Binder and Stencila · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Daniel Nüst, Institute for Geoinformatics at the University of Münster, Germany · Nov 20, 2018
+    </div>
+
+    <h1 class="title" id="entryTitle">Integrating Binder and Stencila</h1>
+
+    <div class="content">
+      <p><em>This article reports on a project, integrating Stencila and Binder, which started at the eLife Innovation Sprint 2018. It has been cross-posted on multiple blogs such as 
+<a href="https://elifesciences.org/labs/d42fe2b9/integrating-binder-and-stencila-the-building-blocks-to-increased-open-communication-and-transparency" target="_blank" rel="noopener">
+  eLife Labs
+</a>
+. We welcome comments and feedback on any of them!</em></p>
+<p>
+<a href="https://elifesciences.org/" target="_blank" rel="noopener">
+  eLife
+</a>
+, an open science journal published by the non-profit organisation eLife Sciences Publications from the UK, hosted the first 
+<a href="https://elifesciences.org/labs/bdd4c9aa/elife-innovation-sprint-2018-project-roundup" target="_blank" rel="noopener">
+  eLife Innovation Sprint 2018
+</a>
+ as part of their 
+<a href="https://elifesciences.org/about/innovation" target="_blank" rel="noopener">
+  Innovation Initiative
+</a>
+ in Cambridge, UK:
+<em>&quot;[..] a two-day gathering of 62 researchers, designers, developers, technologists, science communicators and more, with the goal of developing prototypes of innovations that bring cutting-edge technology to open research communication.&quot;</em>
+One of the 
+<a href="https://elifesciences.org/labs/bdd4c9aa/elife-innovation-sprint-2018-project-roundup" target="_blank" rel="noopener">
+  13
+</a>
+ projects at the 
+<a href="https://elifesciences.org/inside-elife/b4ed92e1/innovation-collaboration-and-creativity-at-the-heart-of-the-elife-innovation-sprint-2018" target="_blank" rel="noopener">
+  excellently organised event
+</a>
+ was an <strong>integration of 
+<a href="https://mybinder.readthedocs.io/" target="_blank" rel="noopener">
+  Binder
+</a>
+ and 
+<a href="https://stenci.la/" target="_blank" rel="noopener">
+  Stencila
+</a>
+</strong>.</p>
+<p>This article reports on the project&rsquo;s inception, building blocks, achievements at the sprint weekend, and work conducted in the months following the sprint.
+<strong>Today, Binder has first class Stencila support.</strong>
+You can open Stencila documents from any online code repository on 
+<a href="https://mybinder.org/" target="_blank" rel="noopener">
+  mybinder.org
+</a>
+ with the click of a single button. Just try out the example below:</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<h2 id="the-idea-and-the-sprint-team">The idea and the sprint team</h2>
+<p>The eLife Innovation Sprint started with brief 
+<a href="https://docs.google.com/presentation/d/1gvyoGW-__7k41KFN4PLhZtpapHNr-4IoeMTIXMiFHDs/edit#" target="_blank" rel="noopener">
+  introductions by all participants
+</a>
+.
+Some of them prepared pitches for projects ideas, which quickly got little group discussions going.
+One table at the sprint attracted a few people with an interest in 
+<a href="https://en.wikipedia.org/wiki/Operating-system-level_virtualization" target="_blank" rel="noopener">
+  containerisation technology
+</a>
+ for research applications.
+Many ideas were floated and a helpful exchange around existing solutions and tools took place.
+When it was time to find a concrete task, two of the sprinters identified a worthwhile technological problem as their challenge for the next 1.5 days and the project &ldquo;Jupyter+DAR compatibility exploration&rdquo; started.
+
+<a href="https://github.com/minrk" target="_blank" rel="noopener">
+  Min
+</a>
+ from the 
+<a href="https://www.simula.no/people/benjaminrk" target="_blank" rel="noopener">
+  Simula Research Laboratory
+</a>
+, Norway, is a core developer of 
+<a href="https://mybinder.readthedocs.io/en/latest/" target="_blank" rel="noopener">
+  Binder
+</a>
+ and related tools.
+He was interested to get to know the Stencila project and explore the possibilities of having alternative user interfaces on Jupyter Hub.
+
+<a href="https://github.com/nuest" target="_blank" rel="noopener">
+  Daniel
+</a>
+ from the 
+<a href="https://o2r.info" target="_blank" rel="noopener">
+  o2r
+</a>
+ project at the 
+<a href="https://www.uni-muenster.de/Geoinformatics/" target="_blank" rel="noopener">
+  Institute for Geoinformatics
+</a>
+, Germany, works on reproducible computations in the geosciences and had a keen interest in learning more about the Binder platform.
+They were joined remotely by 
+<a href="https://github.com/nokome" target="_blank" rel="noopener">
+  Nokome
+</a>
+, the initiator and one of the developers of Stencila.</p>
+<h2 id="the-building-blocks">The building blocks</h2>
+<p><strong>Stencila Desktop</strong> is an 
+<a href="https://elifesciences.org/labs/c496b8bb/stencila-an-office-suite-for-reproducible-research" target="_blank" rel="noopener">
+  office suite for reproducible research documents
+</a>
+.
+It allows scientists to use languages like R and Python within familiar and intuitive word processor and spreadsheet user interfaces.
+By doing so, it aims to lower the barriers to reproducible research for those with little or no software development skills.
+At the same time, Stencila aims to make it easy for researchers versed in software development to collaborate with their colleagues without having to switch from R or Python.
+Stencila Desktop is built upon 
+<a href="https://github.com/substance/texture/" target="_blank" rel="noopener">
+  Texture
+</a>
+, an editor for scientific content, which uses the 
+<a href="https://github.com/substance/dar" target="_blank" rel="noopener">
+  Dar
+</a>
+ file format. Dar is an extension of the JATS publishing format which has been designed for 
+<a href="https://elifesciences.org/labs/7dbeb390/reproducible-document-stack-supporting-the-next-generation-research-article" target="_blank" rel="noopener">
+  reproducible research publications
+</a>
+. It aims to serve researchers using computational methods for data, and publishers using digital workflows for publication and preservation of scholarly journals.</p>
+<p><strong>Binder</strong> makes it simple to generate reproducible computing environments from code repositories.
+The online service 
+<a href="https://mybinder.org/" target="_blank" rel="noopener">
+  mybinder.org
+</a>
+ is he most prominent example for a platform based on the Binder project, a part of 
+<a href="https://jupyter.org/" target="_blank" rel="noopener">
+  Project Jupyter
+</a>
+.
+A user can run a 
+<a href="https://en.wikipedia.org/wiki/Project_Jupyter#Jupyter_Notebook" target="_blank" rel="noopener">
+  Jupyter Notebook
+</a>
+ and other environments for their research projects, which are published in online repositories (e.g. GitHub or GitLab, see 
+<a href="https://github.com/binder-examples/" target="_blank" rel="noopener">
+  binder examples
+</a>
+).
+In the 
+<a href="https://en.wikipedia.org/wiki/Unix_philosophy" target="_blank" rel="noopener">
+  spirit of the Unix philosophy
+</a>
+, Binder combines several Open Source tools to achieve this goal: 
+<a href="https://repo2docker.readthedocs.io/" target="_blank" rel="noopener">
+  repo2docker
+</a>
+, for generating <code>Dockerfile</code>s and building Docker images from a software projects, 
+<a href="https://z2jh.jupyter.org/" target="_blank" rel="noopener">
+  JupyterHub
+</a>
+ for executing a Docker image and user-facing web portal in a cloud environment, and 
+<a href="https://binderhub.readthedocs.org/" target="_blank" rel="noopener">
+  BinderHub
+</a>
+ for gluing the above together.</p>
+<p>A <strong><code>Dockerfile</code></strong> is a human- and machine-readable recipe for setting up a computational environment, which is just fancy words for saying &ldquo;installing and configuring software&rdquo;.
+<code>Dockerfile</code>s are used by the popular 
+<a href="https://en.wikipedia.org/wiki/Docker_%28software%29" target="_blank" rel="noopener">
+  Docker
+</a>
+ container software.
+They can be built into an executable image, which is portable between host computers.
+These properties make containers 
+<a href="https://duckduckgo.com/?q=docker&#43;reproducible&#43;research" target="_blank" rel="noopener">
+  very interesting
+</a>
+ for capturing and sharing research involving data and software.</p>
+<p>While containers have become a commodity for developers, researchers still struggle to grasp and control the complexity of computational environments.
+This is where the two building blocks join:
+<strong>Running Stencila as part of a Binder helps researchers to communicate their work openly, to collaborate effectively with other scientists, and to ensure a high quality and transparency of their workflow and findings.</strong></p>
+<h2 id="the-challenge">The challenge</h2>
+<p>As Min and Daniel 
+<a href="https://docs.google.com/document/d/1WPMY-Al7WMdjlepKvvLiIxFrQPHFbADMNuwszs8xMHk/edit" target="_blank" rel="noopener">
+  formulated their goals in the sprint project form
+</a>
+, the project was heavy with software titles:</p>
+<p><em>&ldquo;Compatibility between Jupyter Notebooks / Binder and DAR / Texture / Stencila</em></p>
+<p>Their goal was <em>&quot;[..] to connect them so that users can edit reproducible documents (DAR files) as part of a Binder project&rdquo;</em> with the following objectives: (i) understanding DAR [Dar Format], (ii) launching Stencila Editor on Binder (potentially not launching anything else, i.e. w/o the Jupyter Notebook start page), and (iii) repo2docker support for DAR files.
+The project was also part of the 
+<a href="https://mozilla.github.io/global-sprint/" target="_blank" rel="noopener">
+  Mozilla Global Sprint 2018
+</a>
+, see 
+<a href="https://github.com/mozilla/global-sprint/issues/317" target="_blank" rel="noopener">
+  mozilla/global-sprint#317
+</a>
+.</p>
+<h2 id="the-solution">The solution</h2>
+<p>It took more than just the 1.5 days in Cambridge to really fulfil this challenge.
+First we describe the crucial breakthroughs that were actually made at the sprint, then the updates that happened until today.</p>
+<h3 id="sprint-breakthrough">Sprint breakthrough</h3>
+<p>Min and Daniel started by taking a close look at an existing solution, namely the integration of RStudio based on 
+<a href="https://github.com/jupyterhub/nbrsessionproxy" target="_blank" rel="noopener">
+  <code>nbrsessionproxy</code>
+</a>
+, i.e. the &ldquo;Notebook R session proxy&rdquo;.
+They learned two things:</p>
+<ol>
+<li>a Jupyter notebook extension can be used to add a menu item to the Jupyter UI</li>
+<li>a component is needed to route the traffic between the browser-based user interface and the server-side software</li>
+</ol>
+<p>The first attempts utilised Binder&rsquo;s feature of manually defining a bespoke <code>Dockerfile</code> (see 
+<a href="https://github.com/minrk/nbstencilaproxy/commit/535900a934685bcfaf940956ba2571dddbb19009" target="_blank" rel="noopener">
+  a first attempt
+</a>
+) and later also a 
+<a href="https://repo2docker.readthedocs.io/en/latest/config_files.html#postbuild-run-code-after-installing-the-environment" target="_blank" rel="noopener">
+  <code>postBuild</code> script
+</a>
+ to install and configure all software.
+It was Daniel&rsquo;s first task to transfer the first finding for Stencila.
+After setting up a local development environment and learning Jupyter/Binder, it just needed small adjustments to selected files from <code>nbrsessionproxy</code> to achieve this (see 
+<a href="https://github.com/minrk/nbstencilaproxy/commit/8e8f3676cd6b4616c4b5cd1bca7a40c6fe399613" target="_blank" rel="noopener">
+  commit
+</a>
+ from the second day):</p>
+<p>
+<a href="https://github.com/mozilla/global-sprint/issues/317#issuecomment-388363617" target="_blank" rel="noopener">
+  <img src="2018-11_nbstencilaproxy-screenshot-button.png" alt="">
+</a>
+</p>
+<p>Min took on the second task while at the same time figuring out what parts of Stencila we really needed, and how to glue them together.
+He wrote a hard-wired proxy using 
+<a href="https://github.com/minrk/nbstencilaproxy/commit/af8749b96188d0caada80cc3c35fdae9c53de613" target="_blank" rel="noopener">
+  Python
+</a>
+ and added some 
+<a href="https://github.com/minrk/nbstencilaproxy/commit/0bcbf63a6f47b5f67aace7f15d7bce89c9eff6d3" target="_blank" rel="noopener">
+  JavaScript/HTML files
+</a>
+ to serve Dar files and the Stencila UI itself.</p>
+<h4 id="connecting-stencila-to-jupyter-kernels">Connecting Stencila to Jupyter kernels</h4>
+<p>Stencila has &ldquo;execution contexts&rdquo; (the equivalent of Jupyter&rsquo;s &ldquo;kernels&rdquo;) for R, Python, SQL, Javascript (in the browser), and Node.js. Execution contexts differ from kernels in a number of ways including code dependency analysis and returning execution results as data values. Both of these are necessary for the reactive, functional execution model of Stencila.</p>
+<p>We could install these execution contexts in the Docker image.
+However, Stencila also has a <code>JupyterContext</code> which acts as a bridge between Stencila&rsquo;s API and Jupyter kernels.
+So, since the base <code>jupyter/minimal-notebook</code> image already has a Jupyter kernel for Python installed, we decided to use that.
+This did mean however, that some of the reactive aspects of the Stencila UI won&rsquo;t work as expected.</p>
+<p>We included the 
+<a href="https://www.npmjs.com/package/stencila-node" target="_blank" rel="noopener">
+  <code>stencila-node</code>
+</a>
+ Node.js package in the Docker image which provides the <code>JupyterContext</code> as well as a <code>NodeContext</code> (for executing Javascript) and a <code>SqliteContext</code> (for executing SQL) .</p>
+<p>We first used Stencila&rsquo;s development build to run the JavaScript app using <code>node make -w -s -d /our/own/dir</code>, but struggled a bit to configure the file storage, i.e. the <code>dar-server</code>, to use the directory we want to, and to run it in a full path configured by us instead of <code>make.js</code> starting the <code>dar-server</code> relative to <code>__dirname</code>.
+<em>Eventually</em> we ended up implementing our own minimal JavaScript module (i.e. an 
+<a href="%28https://npmjs.com/%29">
+  npm
+</a>
+ package) that run (i) the <code>dar-server</code> and (ii) a static file server for the app using the distribution files (i.e. the <code>dist</code> directory).
+This gave us control of the paths and let us get rid of complex development features (e.g. <code>substance-bundler</code>).</p>
+<p>We also made our own version of <code>app.js</code>, removing the virtual file storage (<code>vfs</code>, used to seamlessly integrate examples) and instead defaulting to a file system (<code>fs</code>) storage, because that is what is needed for Jupyter.
+In the same line, we built or own <code>index.html</code> (based on <code>example.html</code>) to serve as the entry page.
+This allowed us to directly render a single Dar document instead of a listing of examples and to use our own <code>app.js</code>.
+Relevant path configurations comprised the local storage path <em>as well as</em> the URLs used by the client, accessing the <code>dar-server</code> through the <code>nbserverproxy</code>.</p>
+<p><strong>At the end of the first day</strong>, the wiring was all there so we could open a repository and the Stencila document was shown!
+But the interactive execution of code cells did not work yet :-/.</p>
+<p>Thanks to an international time-zone-difference-powered &ldquo;overnight&rdquo; contribution, Min and Daniel got a big surprise on Friday morning:
+Nokome 
+<a href="https://github.com/minrk/nbstencilaproxy/pull/5" target="_blank" rel="noopener">
+  added the Stencila Node.js host for Jupyter execution context support
+</a>
+, so that Python cells could be executed by connecting to the Jupyter Kernel (which of course was already there in the container).
+In doing so, he returned the &ldquo;surprise&rdquo; he had 
+<a href="https://community.stenci.la/t/stencila-in-binder/142" target="_blank" rel="noopener">
+  when learning about the project
+</a>
+.
+The added &ldquo;host&rdquo; provides the single gateway for code cell contents to be forwarded to the respective execution contexts.
+Nokome showed everything works with the obligatory screenshot:</p>
+<p>
+<a href="https://github.com/minrk/nbstencilaproxy/pull/5" target="_blank" rel="noopener">
+  <img src="2018-11_nbstencilaproxy-screenshot-pr5.png" alt="">
+</a>
+</p>
+<p>Since you can run any commit in a Binder, you can also try out that particular state 
+<a href="https://github.com/minrk/nbstencilaproxy/tree/d0df78cb4c37b53fd90088db8e36531a813898c1" target="_blank" rel="noopener">
+  from the repository
+</a>
+ yourself:</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d0df78cb4c37b53fd90088db8e36531a813898c1?urlpath=%2Fstencila%2F" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<p><strong>The second day of the sprint</strong> involved many iterations of improvements, including changes to <code>repo2docker</code>.
+These updates could not simply be thrown upon mybinder.org, so Min set up a test server for the demonstrations at the sprint&rsquo;s final day.
+Daniel continued his work on supporting R code cells, but albeit 
+<a href="https://github.com/stencila/r/pull/22" target="_blank" rel="noopener">
+  small contributions
+</a>
+ to the Stencila codebase, he could not complete this task in time.</p>
+<p>The sprint ended with 
+<a href="https://bit.ly/sprint-time-to-shine" target="_blank" rel="noopener">
+  presentations by all projects
+</a>
+, some of which are still continuing today, for example 
+<a href="https://appstract.pub/" target="_blank" rel="noopener">
+  Appstract
+</a>
+, 
+<a href="http://citationgecko.com/" target="_blank" rel="noopener">
+  Citation Gecko
+</a>
+, 
+<a href="https://www.prereview.org/" target="_blank" rel="noopener">
+  PREreview
+</a>
+, or 
+<a href="http://sciencepublishing.online/" target="_blank" rel="noopener">
+  Octopus
+</a>
+.
+The results were truly awesome, ranging from ambitious concepts, case studies, design concepts, completely new tools with great UX design, to technical demonstrators.
+It&rsquo;s an easy guess where on the spectrum our project can be placed&hellip;
+You&rsquo;re invited to catch a glimpse of the sprint, its results, and the people behind all of it on Twitter under the hashtag 
+<a href="https://twitter.com/hashtag/eLifeSprint?src=hash" target="_blank" rel="noopener">
+  <code>#eLifeSprint</code>
+</a>
+ and read the 
+<a href="https://elifesciences.org/labs/bdd4c9aa/elife-innovation-sprint-2018-project-roundup" target="_blank" rel="noopener">
+  project roundup
+</a>
+.</p>
+<p>The following screencast and Binder link show the <strong>status at the end of the sprint</strong>: a Stencila document could be opened on a bespoke Binder deployment and the contained Python code could be interactively edited.
+The code is re-run on the server and the figure updated.</p>
+<p><img src="2018-11_nbstencilaproxy-end-of-sprint-video.gif" alt="End of sprint"></p>
+<p>[
+<a href="https://www.youtube.com/watch?v=nK27j5DA5k0" target="_blank" rel="noopener">
+  Watch video on YouTube
+</a>
+]</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/minrk/nbstencilaproxy/d3271fe66951f15caf30a0cd90ca9dce9f626921" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/nK27j5DA5k0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+<p>You can view the Python example document by appending <code>?archive=py-jupyter</code> to the URL of Stencila in the Binder, e.g. <code>https://hub.mybinder.org/.../stencila/?archive=py-jupyter</code>.</p>
+<h3 id="consolidation">Consolidation</h3>
+<p>A couple of weeks after the sprint, a second less intensive development period started. Daniel continued his work on adding support for the R context, and also managed to get plain Python cells running (see pull requests 
+<a href="https://github.com/minrk/nbstencilaproxy/pull/15" target="_blank" rel="noopener">
+  #15
+</a>
+ and 
+<a href="https://github.com/minrk/nbstencilaproxy/pull/16" target="_blank" rel="noopener">
+  #16
+</a>
+).
+Min restructured the whole project and gave it the name it still bears: <code>nbstencilaproxy</code> - a Jupyter notebook server extension and proxy for Stencila.</p>
+<p>The projects GitHub repository holds a <strong>Python module</strong> with the Jupyter notebook server and &ldquo;non-server&rdquo; extensions of the same name, and a 
+<a href="https://github.com/minrk/nbstencilaproxy/commit/93dabbd890397aaad0d8efb316f7e1f2129e52f3" target="_blank" rel="noopener">
+  bundled
+</a>
+ <strong>JavaScript module</strong> (of the same name).</p>
+<p>The Python module allows proper versioned installation, dependency management, and installation from an established software repository.
+It takes care of the plumbing between the user interface and the services in the background, so that the binder is viewable over one port in the browser, while the many different background components run on their own ports.
+The &ldquo;no server&rdquo; extension adds the &ldquo;Stencila session&rdquo; menu entry and conveniently lives in the same directory structure as the server extension.</p>
+<p>The JavaScript module manages the required JavaScript dependencies and provides an well-defined structure for the code files.
+It serves the Dar document and provides access to the Stencila host (see above).</p>
+<p>While complex at first sight, this modularity hopefully makes maintenance for future developments and new collaborators easier.
+For now, the JavaScript module and its installation are bundled with the Python module instead of being published independently, because the code and configuration is very much specific to the Jupyter integration.</p>
+<p>Min also extended <code>repo2docker</code> with 
+<a href="https://github.com/jupyter/repo2docker/pull/309/commits/eaa29ef3343442419df8cdd022f3e91ae9262926" target="_blank" rel="noopener">
+  automatic detection of Dar documents
+</a>
+ (as part of a &ldquo;build pack&rdquo;), so that no configuration is required for most common use cases.
+As with most Binder repositories, a user could simply open a Dar document on Binder and trust the required environment to provide all required software.</p>
+<p>On July 20th the <code>nbstencilaproxy</code> 
+<a href="https://pypi.org/project/nbstencilaproxy/#history" target="_blank" rel="noopener">
+  was published on PyPI
+</a>
+ and on August 1st, the new developments 
+<a href="https://github.com/jupyter/repo2docker/pull/309" target="_blank" rel="noopener">
+  made it into <code>repo2docker</code>
+</a>
+.
+Soon after Stencila was available for all users on mybinder.org, which was a great achievement for a little project started at a community sprint.
+However, the big announcement was still not made, since some things were still hard-wired and, for example, to use R, the author of a repository 
+<a href="https://repo2docker.readthedocs.io/en/latest/config_files.html" target="_blank" rel="noopener">
+  had to manually add a configuration file
+</a>
+ although the information that R is needed is already part of the Stencila document.</p>
+<h3 id="the-last-mile">The last mile</h3>
+<p>In October, Daniel took on the final tasks of writing this blog post and fixing the R installation, including the automatic detection of the required execution contexts of a given Dar document.
+This included some 
+<a href="https://github.com/minrk/nbstencilaproxy/pull/18" target="_blank" rel="noopener">
+  housekeeping
+</a>
+ in <code>nbstencilaproxy</code> and more importantly new 
+<a href="https://github.com/jupyter/repo2docker/pull/457" target="_blank" rel="noopener">
+  contributions to <code>repo2docker</code>
+</a>
+ (thanks to 
+<a href="https://github.com/betatim" target="_blank" rel="noopener">
+  Tim
+</a>
+ for review and help) to (i) properly detect the languages used in a Stencila document, (ii) extend the R build pack to install R if it is used in a Stencila document, and (iii) add documentation and tests.
+<code>repo2docker</code> now detects Dar documents based on their <code>manifest.xml</code> files and uses the location of the first discovered one as the base directory to start Stencila.
+If a Dar manifest is found, then <code>nbstencilaproxy</code> is installed and the languages are extracted from code cells from the document.
+Authors can install extra dependencies using the 
+<a href="https://repo2docker.readthedocs.io/en/latest/config_files.html" target="_blank" rel="noopener">
+  repo2docker&rsquo;s existing mechanisms
+</a>
+.</p>
+<p>Daniel also created a few <strong>example repositories</strong> to provide a starting point for users.
+Thankfully the binder team generously welcomed 
+<a href="">
+  the changes to mybinder.org
+</a>
+ and and the examples to the 
+<a href="https://github.com/binder-examples/" target="_blank" rel="noopener">
+  binder examples organisation
+</a>
+ on GitHub.
+The following repositories contain single or multiple Stencila documents with code chunks in different programming languages.</p>
+<p><strong>
+<a href="https://github.com/binder-examples/stencila-py" target="_blank" rel="noopener">
+  https://github.com/binder-examples/stencila-py
+</a>
+</strong> contains Python code cells, using both the Jupyter and plain Python execution contexts:</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/binder-examples/stencila-py/master?urlpath=stencila" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<p><img src="2018-11_nbstencilaproxy-example-stencila-py.png" alt="Binder + Stencila screenshot: Python"></p>
+<p><strong>
+<a href="https://github.com/binder-examples/stencila-r" target="_blank" rel="noopener">
+  https://github.com/binder-examples/stencila-r
+</a>
+</strong> contains R code cells and two plots:</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/binder-examples/stencila-r/master?urlpath=stencila" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<p><img src="2018-11_nbstencilaproxy-example-stencila-r.png" alt="Binder + Stencila screenshot: R"></p>
+<p><strong>
+<a href="https://github.com/binder-examples/stencila-multi" target="_blank" rel="noopener">
+  https://github.com/binder-examples/stencila-multi
+</a>
+</strong> demonstrates how to access specific Dar projects if multiple are found within a repository.</p>
+<p style="width: 30%; padding-right: 1em; float:center;">
+<a href="https://mybinder.org/v2/gh/binder-examples/stencila-multi/master?urlpath=stencila" target="_blank" rel="noopener">
+  <img src="https://mybinder.org/badge_logo.svg" alt="Binder">
+</a>
+</p>
+<p>In each case you can see the available execution environments by clicking on the icon in the bottom right corner.</p>
+<p>One of the cool features of Stencila are the reactive cells, as demonstrated in a tweet following the feature release:</p>
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr">Thanks to <a href="https://twitter.com/nordholmen?ref_src=twsrc%5Etfw">@nordholmen</a> working on <a href="https://twitter.com/stencila?ref_src=twsrc%5Etfw">@stencila</a> support for <a href="https://t.co/Zlj6FrYgBw">https://t.co/Zlj6FrYgBw</a> you now have reactive cells with Python code on <a href="https://twitter.com/mybinderteam?ref_src=twsrc%5Etfw">@mybinderteam</a>! Give it a go <a href="https://t.co/ToIuQPq0Fy">https://t.co/ToIuQPq0Fy</a> <a href="https://t.co/Wjyf1kiH9B">pic.twitter.com/Wjyf1kiH9B</a></p>&mdash; Tim Head (@betatim) <a href="https://twitter.com/betatim/status/1062004432806785024?ref_src=twsrc%5Etfw">12. November 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<h2 id="summary-and-outlook">Summary and outlook</h2>
+<p><em>Thanks for reading so far!</em>
+This blog post is a 
+<a href="https://github.com/minrk/nbstencilaproxy/issues/12" target="_blank" rel="noopener">
+  long planned
+</a>
+ write-up of the history of the tool and decisions mostly relevant to developers, but also an demonstration of the power that the Open Source and Open Science community can foster.
+Many people are working together on the (technological) challenges of science today towards full research transparency and reproducibility, even if we use computers to an unprecedented level.
+Many small contributions on &ldquo;side projects&rdquo; such as these can make a difference, and connecting these two great projects hopefully helps to solve some problem in science down the road.</p>
+<p><em>What&rsquo;s next?</em>
+While there are no concrete plans, there are of course some ideas listed on the 
+<a href="https://github.com/minrk/nbstencilaproxy/issues/" target="_blank" rel="noopener">
+  project&rsquo;s issue tracker
+</a>
+, such as an automatic Jupyter notebook to Dar conversion when there is no Dar archive in a repository.
+In any case you can keep an eye out on GitHub for projects being 
+<a href="https://github.com/search?q=topic%3Abinder&#43;topic%3Astencila&#43;org&amp;type=Repositories" target="_blank" rel="noopener">
+  tagged <code>stencila</code> and <code>binder</code>
+</a>
+ and join the public 
+<a href="https://gitter.im/stencila/stencila" target="_blank" rel="noopener">
+  Stencila
+</a>
+ and 
+<a href="https://gitter.im/jupyterhub/binder" target="_blank" rel="noopener">
+  binder
+</a>
+ chats to stay in touch or get help.
+We look forward to see scientists using <code>nbstencilaproxy</code> for communicating their work and new challenges that come with it.</p>
+<blockquote class="twitter-tweet" data-lang="de"><p lang="en" dir="ltr"><a href="https://twitter.com/hashtag/eLifeSprint?src=hash&amp;ref_src=twsrc%5Etfw">#eLifeSprint</a>-ers <a href="https://twitter.com/minrk?ref_src=twsrc%5Etfw">@minrk</a> and <a href="https://twitter.com/nordholmen?ref_src=twsrc%5Etfw">@nordholmen</a> are working to connect <a href="https://twitter.com/hashtag/JupyterNotebooks?src=hash&amp;ref_src=twsrc%5Etfw">#JupyterNotebooks</a> / <a href="https://twitter.com/hashtag/Binder?src=hash&amp;ref_src=twsrc%5Etfw">#Binder</a> with DAR / <a href="https://twitter.com/hashtag/Texture?src=hash&amp;ref_src=twsrc%5Etfw">#Texture</a> / <a href="https://twitter.com/stencila?ref_src=twsrc%5Etfw">@Stencila</a>, so that users can edit reproducible documents as part of a Binder project <a href="https://t.co/2GoGNydsmX">https://t.co/2GoGNydsmX</a> (<a href="https://twitter.com/mybinderteam?ref_src=twsrc%5Etfw">@mybinderteam</a> <a href="https://twitter.com/ProjectJupyter?ref_src=twsrc%5Etfw">@ProjectJupyter</a> <a href="https://twitter.com/_substance?ref_src=twsrc%5Etfw">@_substance</a>) <a href="https://t.co/sZ8bbE9SsM">pic.twitter.com/sZ8bbE9SsM</a></p>&mdash; eLife Innovation (@eLifeInnovation) <a href="https://twitter.com/eLifeInnovation/status/994583390895697920?ref_src=twsrc%5Etfw">10. Mai 2018</a></blockquote>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

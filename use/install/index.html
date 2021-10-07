@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Stencila Desktop installation · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="use content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle">Stencila Desktop installation</h1>
+
+    <div class="content">
+      <p>Stencila Desktop is an application that allows you to use Stencila on your local machine. You can write reproducible documents with executable
+code cells and leverage the power of Stencila Sheets. Below are detailed instructions on installing Stencila Desktop for Windows, Mac OS X and Linux.</p>
+<h3 id="windows">Windows</h3>
+<p>Download the <code>.exe</code> file for the latest 
+<a href="https://github.com/stencila/desktop/releases" target="_blank" rel="noopener">
+  Stencila Desktop release
+</a>
+. Then just double click the downloaded file to install the application.</p>
+<h3 id="mac-os-x">Mac OS X</h3>
+<p>Download the <code>.dmg</code> file for the latest 
+<a href="https://github.com/stencila/desktop/releases" target="_blank" rel="noopener">
+  Stencila Desktop release
+</a>
+. Then:</p>
+<ul>
+<li>double click the <code>.dmg</code> to make its content available (the name will show up in the Finder sidebar, at the bottom), a pop-up window will open;</li>
+<li>drag the application from the <code>.dmg</code> window into /Applications to launch install (you may need an administrator password);</li>
+<li>wait for the copy process to finish;</li>
+<li>eject the <code>.dmg</code> file by clicking the eject button in the Finder sidebar.</li>
+</ul>
+<p>(Thanks to 
+<a href="https://apple.stackexchange.com/a/64848" target="_blank" rel="noopener">
+  patrix
+</a>
+ for these instructions.)</p>
+<h3 id="linux">Linux</h3>
+<p>Or, use one of our Docker images which bundle these language packages (plus many other packages that are useful in data-driven research) in one reproducible computing environment:</p>
+<ul>
+<li>
+<a href="#use-other-programming-languages">
+  Use other programming languages
+</a>
+
+<ul>
+<li>
+<a href="#stencila-docker-images">
+  Stencila Docker images
+</a>
+
+Download the AppImage* file for the latest 
+<a href="https://github.com/stencila/desktop/releases" target="_blank" rel="noopener">
+  Stencila Desktop release
+</a>
+. Then double click on it and click <em>yes</em> to &ldquo;Make executable and run&rdquo;. Or, to install from the command line, navigate to the folder where the AppImage file is located and then:</li>
+</ul>
+</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ chmod a+x stencila-desktop-*.AppImage
+$ ./stencila-desktop-*.AppImage
+</code></pre></div><p>*
+<a href="http://appimage.org/" target="_blank" rel="noopener">
+  AppImage
+</a>
+ is a format for distributing applications for Linux and, on most distributions, will not require the installation of any dependencies.</p>
+<h2 id="use-other-programming-languages">Use other programming languages</h2>
+<p>The basic installation of Stencila Desktop has built in support for executing code using Mini (our small, built-in language) and JavaScript. To execute code in other languages, you will need to install one of our language packages:</p>
+<ul>
+<li>
+<a href="../../learn/languages/python.html">
+  Stencila Python package
+</a>
+</li>
+<li>
+<a href="../../learn/languages/r.html">
+  Stencila R package
+</a>
+</li>
+<li>
+<a href="../../learn/languages/sql.html">
+  SQL (Stencila Node.js package)
+</a>
+</li>
+</ul>
+<h3 id="stencila-docker-images">Stencila Docker images</h3>
+<blockquote>
+<p>! We are currently working on making Stencila&rsquo;s Docker images compatible with the latest Stencila Desktop. During that process, not all functionality may be available.</p>
+</blockquote>
+<p>You can also enable use of all the above programming languages in one go by using one of the 
+<a href="https://www.docker.com/" target="_blank" rel="noopener">
+  Docker
+</a>
+ images that we provide.
+The Docker images bundle these language packages, plus many other packages that are useful in data-driven research, in one reproducible computing environment.
+Stencila has several Docker images available in the 
+<a href="https://github.com/stencila/images" target="_blank" rel="noopener">
+  <code>stencila/images</code>
+</a>
+ repository.</p>
+<p><strong>Prerequisites</strong> You need to have 
+<a href="https://docs.docker.com/install/" target="_blank" rel="noopener">
+  Docker installed
+</a>
+ first before you can enable any of the images.</p>
+<p>Once you have Docker installed, download the desired Docker image using <code>docker pull &lt;image-name&gt;</code>. For example, to download the <code>stencila/core</code> image:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker pull stencila/core
+</code></pre></div>
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

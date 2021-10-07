@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Mini programming language · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle">Mini programming language</h1>
+
+    <div class="content">
+      <blockquote>
+<p>This section contains detailed documentation for Stencila built-in language Mini.</p>
+</blockquote>
+<p>Stencila comes with its own simple expression language called Mini. We developed it so that When you install Stencila you can immediately
+try it out without having to install and configure additional packages and programming languages.</p>
+<p>Mini is implemented in JavaScript and is only slightly more advanced than the expressions that you write in your calculator or into the cell of a spreadsheet.
+It is intended to be easy to write code in and easy to understand.</p>
+<p>Note that since you can use multiple languages in one Stencila document, you can use these languages to manipulate variables created using Mini.</p>
+<p><strong>Learn about Mini&rsquo;s :</strong></p>
+<ul>
+<li>
+<a href="#data-types">
+  Data types
+</a>
+</li>
+<li>
+<a href="#functions">
+  Functions
+</a>
+</li>
+<li>
+<a href="#libcore">
+  LibCore
+</a>
+</li>
+<li>
+<a href="#operators">
+  Operators
+</a>
+</li>
+</ul>
+<h2 id="data-types">Data types</h2>
+<p>Mini comes with a set of built-in data types which is similar to most high level programming languages.
+Each type can be constructed using literals - Mini will interpret it as relevant data type.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Type</th>
+<th style="text-align:center">Literal</th>
+<th style="text-align:left">Usage example</th>
+<th style="text-align:left">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">boolean</td>
+<td style="text-align:center">true / false</td>
+<td style="text-align:left">full = true</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">float</td>
+<td style="text-align:center">3.141592654</td>
+<td style="text-align:left">pi = 3.141592654</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">integer</td>
+<td style="text-align:center">42</td>
+<td style="text-align:left">x = 42</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">string</td>
+<td style="text-align:center">&lsquo;hello&rsquo; <br /> &ldquo;hello&rdquo;</td>
+<td style="text-align:left">name = &ldquo;hello&rdquo;</td>
+<td style="text-align:left">Strings are sequences of characters. <br/> String literals can use either single <br/> or double quotation marks.</td>
+</tr>
+<tr>
+<td style="text-align:left">array</td>
+<td style="text-align:center">[1, 2, 3]</td>
+<td style="text-align:left">num = [1, 2, 3] <br/> [&lsquo;hello world&rsquo;, [1, 2], {}]</td>
+<td style="text-align:left">An array is a sequence <br/> of values. The values in an array <br/> can have different types</td>
+</tr>
+</tbody>
+</table>
+<h3 id="objects">Objects</h3>
+<p>A more complex built-in data type in Mini is an object. Objects are collections
+of <em>key</em> and <em>value</em> pairs. In the example below, the keys are <code>a</code> and <code>b</code> while values are <code>1</code> and <code>2</code>:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">{a: 1, b: 2}
+</code></pre><p>The values and keys can be of different basic Mini types. You can list the keys and values of the object using JavaScript syntax:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">my_object = {a: 1, b: 2}
+Object.keys(my_object)
+</code></pre><p>You can refer to the values in the object using the keys in the following way:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">my_object[&quot;a&quot;]
+</code></pre><h3 id="tables">Tables</h3>
+<p>Tables are a special kind of objects in Mini. Having tables as built-in objects in Mini allows
+for better 
+<a href="">
+  data and object conversions
+</a>
+ between languages. An example of
+a table in Mini:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">{
+  type: &quot;table&quot;,
+  data: {
+      &quot;col1&quot;: [A1, A2, A3],
+      &quot;col2&quot;: [B1, B2, B3],
+      &quot;col3&quot;: [C1, C2, C3]
+  }
+}
+</code></pre><p>To access an element of the table, you need to use the 
+<a href="#dot-operator">
+  dot operator
+</a>
+.
+For example:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">  my_table = {
+    type: &quot;table&quot;,
+    data: {
+        &quot;col1&quot;: [A1, A2, A3],
+        &quot;col2&quot;: [B1, B2, B3],
+        &quot;col3&quot;: [C1, C2, C3]
+    }
+  }
+
+  my_table.col3[2]
+</code></pre><p>In the above example the value of <code>my_table.col3[2]</code> would be <code>C3</code> as Mini indexes from zero (0).</p>
+<h3 id="function-calls">Function calls</h3>
+<p>Functions are called using parentheses containing arguments: e.g</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">add(1, 2)
+</code></pre><p>Named arguments can be used, but only after unnamed arguments. e.g.</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">add(1, other=2)
+</code></pre><p>Mini comes with a set of built-in functions which are defined in its standard library, 
+<a href="https://github.com/stencila/libcore/tree/master/funcs" target="_blank" rel="noopener">
+  LibCore
+</a>
+. You can use
+these functions in Stencila without having to install any additional packages. Calling the functions is done like described above.</p>
+<h2 id="operators">Operators</h2>
+<p>Most operators in Mini are simply shortcuts to writing function calls. For example, the forward slash operator <code>/</code> is a short cut for the <code>divide</code> function, so the expression <code>4/5</code>, is equivalent to the function call expression <code>divide(4, 5)</code>.</p>
+<p>This allows you to write shorter, more readable and comprehensible expressions. For example, instead of writing a nested set of calls like:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">and(less(add(a, b), 10), equal(c, 1))
+</code></pre><p>You can write:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">a + b &lt; 10 &amp;&amp; c == 4
+</code></pre><p>However, there are two operators, the dot (<code>.</code>) and the (<code>|</code>) pipe which behave differently.</p>
+<h3 id="dot-operator">Dot operator</h3>
+<p>The dot operator, <code>.</code>, is used to select members from an object or table. For example, to get a column <code>age</code> from a table named <code>data</code> you use <code>data.age</code> which is equivalent to <code>select(data, 'age')</code>. When used in this way, the dot operator acts like a function call shortcut just like the other operators.</p>
+<p>But the dot operator can also be used to define a <em>symbol</em> within a syntax expression. A syntax expression is a partially evaluated expression that can be used as an argument in a function call so that it&rsquo;s evaluation can be completed within an alternative scope. For example, the second parameter of the <code>filter</code> function is a syntax expression e.g.</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">filter(data, .age &lt; 40)
+</code></pre><p>For more see 
+<a href="#lambdas">
+  lambdas
+</a>
+.</p>
+<h3 id="pipe-operator">Pipe operator</h3>
+<p>The pipe operator, <code>|</code>, allows for several function calls to be combined in a &ldquo;pipeline&rdquo;. It passes the expression on the left as the first argument of the function call on the right. So a set of nested function calls like:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">sum(select(filter(data, 'row.age &lt;= 40'), 'weight'))
+</code></pre><p>can be written in a more readable pipeline as:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">data | filter('row.age &lt;= 40') | select('weight') | sum()
+</code></pre><h3 id="operator-precedence">Operator precedence</h3>
+<p>Operators have differing levels of precedence. Precedence determines the order in which operators are parsed with respect to each other. Operators with higher precedence become the operands of operators with lower precedence. Operator precedence in Mini is very similar to that in other languages.</p>
+<p>The following table list the operators in Mini in order of decreasing precedence (in groups of equal precedence) along with their function call equivalents. See 
+<a href="https://github.com/stencila/libcore" target="_blank" rel="noopener">
+  <code>stencila/libcore</code>
+</a>
+ for implementation and documentation for these functions.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Precedence</th>
+<th style="text-align:center">Operator</th>
+<th style="text-align:left">Usage example</th>
+<th style="text-align:left">Function call equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center"><code>.</code></td>
+<td style="text-align:left"><code>value.member</code></td>
+<td style="text-align:left"><code>select(value, member)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">1</td>
+<td style="text-align:center"><code>[]</code></td>
+<td style="text-align:left"><code>value[member]</code></td>
+<td style="text-align:left"><code>select(value, member)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center"><code>!</code></td>
+<td style="text-align:left"><code>!value</code></td>
+<td style="text-align:left"><code>not(value)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:left"><code>+value</code></td>
+<td style="text-align:left"><code>positive(value)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">2</td>
+<td style="text-align:center"><code>-</code></td>
+<td style="text-align:left"><code>-value</code></td>
+<td style="text-align:left"><code>negative(value)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">3</td>
+<td style="text-align:center"><code>^</code></td>
+<td style="text-align:left"><code>value ^ expon</code></td>
+<td style="text-align:left"><code>pow(value, expon)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center"><code>*</code></td>
+<td style="text-align:left"><code>value * other</code></td>
+<td style="text-align:left"><code>multiply(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center"><code>/</code></td>
+<td style="text-align:left"><code>value / other</code></td>
+<td style="text-align:left"><code>divide(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">4</td>
+<td style="text-align:center"><code>%</code></td>
+<td style="text-align:left"><code>value % other</code></td>
+<td style="text-align:left"><code>remainder(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:center"><code>+</code></td>
+<td style="text-align:left"><code>value + other</code></td>
+<td style="text-align:left"><code>add(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:center"><code>-</code></td>
+<td style="text-align:left"><code>value - other</code></td>
+<td style="text-align:left"><code>subtract(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center"><code>&lt;</code></td>
+<td style="text-align:left"><code>value &lt; other</code></td>
+<td style="text-align:left"><code>less(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center"><code>&lt;=</code></td>
+<td style="text-align:left"><code>value &lt;= other</code></td>
+<td style="text-align:left"><code>less_or_equal(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center"><code>&gt;</code></td>
+<td style="text-align:left"><code>value &gt; other</code></td>
+<td style="text-align:left"><code>greater(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">6</td>
+<td style="text-align:center"><code>&gt;=</code></td>
+<td style="text-align:left"><code>value &gt;= other</code></td>
+<td style="text-align:left"><code>greater_or_equal(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:center"><code>==</code></td>
+<td style="text-align:left"><code>value == other</code></td>
+<td style="text-align:left"><code>equal(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">7</td>
+<td style="text-align:center"><code>!=</code></td>
+<td style="text-align:left"><code>value != other</code></td>
+<td style="text-align:left"><code>not_equal(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">8</td>
+<td style="text-align:center"><code>&amp;&amp;</code></td>
+<td style="text-align:left"><code>value &amp;&amp; other</code></td>
+<td style="text-align:left"><code>and(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">9</td>
+<td style="text-align:center">||</td>
+<td style="text-align:left"><code>value</code>||<code>other</code></td>
+<td style="text-align:left"><code>or(value, other)</code></td>
+</tr>
+<tr>
+<td style="text-align:left">10</td>
+<td style="text-align:center">|</td>
+<td style="text-align:left"><code>value</code>|<code>cos()</code></td>
+<td style="text-align:left"><code>cos(value)</code></td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

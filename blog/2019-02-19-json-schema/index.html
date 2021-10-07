@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Using JSON Schema for developing and validating executable documents · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Nokome Bentley · Feb 18, 2019
+    </div>
+
+    <h1 class="title" id="entryTitle">Using JSON Schema for developing and validating executable documents</h1>
+
+    <div class="content">
+      <p>At Stencila, we&rsquo;re aiming to provide a framework for the next generation of executable documents. We envisage interactive spreadsheets, notebooks and articles that are highly structured (i.e. made up of a variety of fine grained document nodes) and strongly typed (i.e. only certain types of document nodes are allowed in certain places).</p>
+<p>To achieve this we are representing executable documents as a tree of JSON data and using 
+<a href="https://json-schema.org/" target="_blank" rel="noopener">
+  JSON Schema
+</a>
+ to specify and validate how that tree can be structured. This post briefly introduces some of the development approaches we&rsquo;ve been finding useful in developing schemas for Stencila.</p>
+<h2 id="defining-a-schema">Defining a schema</h2>
+<p>We plan to eventually define JSON Schemas for all the nodes that make up an executable document. However, currently we&rsquo;re focussing on the the &ldquo;executable&rdquo; nodes - those parts of the document that perform computation. This includes types like:</p>
+<ul>
+<li><code>Package</code> a software package e.g. the R package <code>tidyverse</code> or the Python package <code>matplotlib</code></li>
+<li><code>Environment</code> a computational environment made up of <code>Packages</code></li>
+<li><code>Session</code> a run time process such as an R or Python session</li>
+<li><code>Function</code> a function in some language with parameters, return type etc</li>
+<li><code>Expression</code> a simple expression in some language</li>
+<li><code>Chunk</code> a set of statements in some language</li>
+</ul>
+<p>Although these are not the types of nodes you&rsquo;d normally expect to see in a static document produced by, say, Word, they are necessary for a <strong>reproducible</strong>, executable document.</p>
+<p>In this post, I&rsquo;ll be using, as an example, the schema that we are in the process of defining for <code>Environment</code> nodes. An executable document will probably only have one <code>Environment</code> node – to define which packages, and versions of those packages, are necessary to execute the document.</p>
+<p>A JSON Schema is itself just a JSON document. The various properties of the JSON describe the schema providing both documentation and defining validation constraints. Below is the current draft of the <code>Environment</code> schema. This post is mostly about how we develop and use these schema so we won&rsquo;t go into more details here about it, but check out the json-schema.org site if you want to understand how to interpret this schema snippet.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+    <span style="color:#309;font-weight:bold">&#34;$id&#34;</span>: <span style="color:#c30">&#34;https://stencila.github.com/schema/01-draft/Environment.schema.json&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;$schema&#34;</span>: <span style="color:#c30">&#34;https://json-schema.org/draft-07/schema&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;title&#34;</span>: <span style="color:#c30">&#34;Environment&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;A computational environment.&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;@id&#34;</span>: <span style="color:#c30">&#34;stencila:Environment&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;object&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;properties&#34;</span>: {
+        <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;The type of document&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;const&#34;</span>: <span style="color:#c30">&#34;Environment&#34;</span>
+        },
+        <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;The name of the environment.&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;@id&#34;</span>: <span style="color:#c30">&#34;schema:name&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;allOf&#34;</span>: [{ <span style="color:#309;font-weight:bold">&#34;$ref&#34;</span>: <span style="color:#c30">&#34;name.schema.json&#34;</span> }]
+        },
+        <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Description of the environment.&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;@id&#34;</span>: <span style="color:#c30">&#34;schema:description&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;allOf&#34;</span>: [{ <span style="color:#309;font-weight:bold">&#34;$ref&#34;</span>: <span style="color:#c30">&#34;#/definitions/description&#34;</span> }]
+        },
+        <span style="color:#309;font-weight:bold">&#34;extends&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;Other environments that this environment extends by adding or removing packages.&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;@id&#34;</span>: <span style="color:#c30">&#34;stencila:extends&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;allOf&#34;</span>: [{ <span style="color:#309;font-weight:bold">&#34;$ref&#34;</span>: <span style="color:#c30">&#34;#/definitions/environments&#34;</span> }]
+        },
+        <span style="color:#309;font-weight:bold">&#34;adds&#34;</span>: {
+            <span style="color:#309;font-weight:bold">&#34;description&#34;</span>: <span style="color:#c30">&#34;The packages that this environment adds to the base environments listed under `extends` (if any).&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;@id&#34;</span>: <span style="color:#c30">&#34;stencila:adds&#34;</span>,
+            <span style="color:#309;font-weight:bold">&#34;allOf&#34;</span>: [{ <span style="color:#309;font-weight:bold">&#34;$ref&#34;</span>: <span style="color:#c30">&#34;#/definitions/packages&#34;</span> }]
+        },
+</code></pre></div><h2 id="validating-a-schema">Validating a schema</h2>
+<p>Having written, or made changes to, a schema definition, how do we check that it&rsquo;s correct? The answer is to use the schema&rsquo;s own <code>$schema</code> property:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#c30">&#34;$schema&#34;</span><span style="color:#a00;background-color:#faa">:</span> <span style="color:#c30">&#34;https://json-schema.org/draft-07/schema&#34;</span>
+</code></pre></div><p>The <code>$schema</code> property gives the URL of the schema against which a JSON document should be validated. For a JSON-Schema document, its <code>$schema</code> is a &ldquo;meta-schema&rdquo; i.e. the schema for schemas.</p>
+<p>Your favourite code editor may already be smart enough to detect the <code>$schema</code> property and warn you of any issues. Here, my editor, VS Code, is warning me that I&rsquo;ve put a number instead of a string for my schema&rsquo;s title:</p>
+<p><img src="schema-validation.png" alt=""></p>
+<p>In addition, the 
+<a href="https://github.com/stencila/schema" target="_blank" rel="noopener">
+  <code>stencila/schema</code>
+</a>
+ repository has got a simple script called 
+<a href="https://github.com/stencila/schema/blob/master/validate-schema.js" target="_blank" rel="noopener">
+  <code>validate-schema.js</code>
+</a>
+ which uses the 
+<a href="https://github.com/epoberezkin/ajv" target="_blank" rel="noopener">
+  <code>ajv</code>
+</a>
+ package to check that our type schemas are valid and give an error message if they are not:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; node validate-schema.js
+schema/Environment.schema.json: .title should be string. Details: <span style="color:#555">{</span><span style="color:#c30">&#34;keyword&#34;</span>:<span style="color:#c30">&#34;type&#34;</span>,<span style="color:#c30">&#34;dataPath&#34;</span>:<span style="color:#c30">&#34;.title&#34;</span>,<span style="color:#c30">&#34;schemaPath&#34;</span>:<span style="color:#c30">&#34;#/properties/title/type&#34;</span>,<span style="color:#c30">&#34;params&#34;</span>:<span style="color:#555">{</span><span style="color:#c30">&#34;type&#34;</span>:<span style="color:#c30">&#34;string&#34;</span><span style="color:#555">}</span>,<span style="color:#c30">&#34;message&#34;</span>:<span style="color:#c30">&#34;should be string&#34;</span><span style="color:#555">}</span>
+</code></pre></div><p>This script is run as part of the continuous integration job for the repository to continuously check that the schema definitions are correct.</p>
+<h2 id="using-a-schema-to-assist-with-authoring-json">Using a schema to assist with authoring JSON</h2>
+<p>One of the advantages of defining a JSON Schema is the growing ecosystem of developer tools that can make use of them. As we saw above, some editors like VS Code have built in support for JSON Schema to provide you with warnings if your JSON document does not validate against its <code>$schema</code>.</p>
+<p>Some editors take this further by providing autocompletion based on a document&rsquo;s <code>$schema</code> property. This can help speed up writing valid JSON by essentially importing the schema&rsquo;s documentation into the editor. Here, you can see that VS Code is telling me which properties I might want to add to my <code>Environment</code>&rsquo;s definition:</p>
+<p><img src="json-intellisense.gif" alt=""></p>
+<h2 id="yaml-as-a-more-humane-format-for-structured-data">YAML as a more humane format for structured data</h2>
+<p>JSON is quite a verbose format for creating structured data. An alternative is 
+<a href="https://en.wikipedia.org/wiki/YAML" target="_blank" rel="noopener">
+  YAML
+</a>
+. YAML is a superset of JSON, meaning that any JSON document is also valid YAML. Because of its better readability, YAML is an increasingly popular format for configuration files.</p>
+<p>There are developer tools available, which take advantage of the relationship between JSON and YAML, to allow you to use a JSON Schema to validate a YAML document. For example, in your VS Code <code>settings.json</code> file you can tell the 
+<a href="https://marketplace.visualstudio.com/items?itemName=redhat.vscode-yaml" target="_blank" rel="noopener">
+  <code>vscode-yaml</code>
+</a>
+ extension how to associate a schema with file name extensions:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">    <span style="color:#c30">&#34;yaml.schemas&#34;</span><span style="color:#a00;background-color:#faa">:</span> {
+        <span style="color:#309;font-weight:bold">&#34;./schema/Environment.schema.json&#34;</span>: <span style="color:#c30">&#34;*.environ.yaml&#34;</span>
+    }
+</code></pre></div><p>That brings the same schema-based autocompletion and warnings to YAML simply by using the <code>.environ.yaml</code> file name extension:</p>
+<p><img src="yaml-autocomplete.gif" alt=""></p>
+<p>We have been finding that writing example documents in this way has been useful for checking that the schemas we are defining are useful for both machines and humans!</p>
+<h2 id="generating-typescript-interfaces-from-json-schema">Generating Typescript interfaces from JSON Schema</h2>
+<p>Some of our recent projects are written using Typescript, a superset of JavaScript which adds optional static typing. For example,
+<a href="https://github.com/stencila/dockter" target="_blank" rel="noopener">
+  Dockter
+</a>
+ and 
+<a href="https://github.com/stencila/nixster" target="_blank" rel="noopener">
+  Nixster
+</a>
+ build a Docker image, or a Nix environment, respectively, using a definition of a computational <code>Environment</code> like the examples above. We want to ensure that the internal model of an environment in these projects is the same as the that defined in <code>Environment.schema.json</code>.</p>
+<p>For this purpose, the schema repository has a script 
+<a href="https://github.com/stencila/schema/blob/master/schema-to-typescript.js" target="_blank" rel="noopener">
+  <code>schema-to-typescript.js</code>
+</a>
+ which translates JSON Schema into Typescript using the 
+<a href="https://github.com/bcherny/json-schema-to-typescript" target="_blank" rel="noopener">
+  <code>json-schema-to-typescript</code>
+</a>
+ package.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">&gt; node schema-to-typescript.js
+</code></pre></div><p>This generates a Typescript declaration file (<code>*.d.ts</code>) for each type&rsquo;s schema. Typescript declaration files do not contain any Javascript, they simply declare the &lsquo;shape&rsquo; (i.e structure) of types. The generated file looks something like this, exploring an <code>Environment</code> interface complete with type constraints and code comments matching those in our JSON Schema:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-typescript" data-lang="typescript"><span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic"> * A computational environment.
+</span><span style="color:#09f;font-style:italic"> */</span>
+<span style="color:#069;font-weight:bold">export</span> <span style="color:#069;font-weight:bold">interface</span> Environment {
+  <span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">   * The name of the environment.
+</span><span style="color:#09f;font-style:italic">   */</span>
+  name: <span style="color:#078;font-weight:bold">Name</span>;
+  <span style="color:#09f;font-style:italic">/**
+</span><span style="color:#09f;font-style:italic">   * Description of the environment.
+</span><span style="color:#09f;font-style:italic">   */</span>
+  description?: <span style="color:#078;font-weight:bold">Description</span>;
+...
+</code></pre></div><p>We can then use that definition from within our Typescript project to get all the benefits to developers of documentation, autocompletion and warnings within code editors:</p>
+<p><img src="typescript-validation.png" alt=""></p>
+<h2 id="next-steps">Next steps</h2>
+<p>JSON Schemas are a powerful approach gaining increasing adoption. We are looking forward to using them to build tools for rich, composable and reproducible, executable documents.</p>
+<p>We&rsquo;ll be continuing to define and refine our schema definitions. Get involved by the joining the discussion at our 
+<a href="https://github.com/stencila/schema" target="_blank" rel="noopener">
+  Github repo
+</a>
+, in our 
+<a href="https://gitter.im/stencila/stencila" target="_blank" rel="noopener">
+  Gitter chat
+</a>
+, or in our community 
+<a href="https://community.stenci.la" target="_blank" rel="noopener">
+  forum
+</a>
+.</p>
+<p>For more on JSON Schema and using it with Typescript check out:</p>
+<ul>
+<li>
+<a href="https://json-schema.org/understanding-json-schema/" target="_blank" rel="noopener">
+  Understanding JSON Schema
+</a>
+</li>
+<li>
+<a href="https://spin.atomicobject.com/2018/03/26/typescript-data-validation/" target="_blank" rel="noopener">
+  Statically Typed Data Validation with JSON Schema and TypeScript
+</a>
+ by Drew Colthorp</li>
+<li>
+<a href="https://blog.enriched.io/using-json-schema/" target="_blank" rel="noopener">
+  Using Json-Schema in TypeScript
+</a>
+ by Rich Adams</li>
+</ul>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> On chunks, cells, beakers and functions: models for data driven content · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Nokome Bentley · Dec 20, 2016
+    </div>
+
+    <h1 class="title" id="entryTitle">On chunks, cells, beakers and functions: models for data driven content</h1>
+
+    <div class="content">
+      <p>Recently, I&rsquo;ve written about 
+<a href="../../blog/geheimhaven/">
+  breaking up Stencila
+</a>
+ into several packages that can act as a 
+<a href="../../blog/diverse-peers/">
+  network of diverse peers
+</a>
+. Each of those packages bring its own capabilities to the network, most notably as execution contexts for a one or more languages. We call those execution contexts <em>Sessions</em> (in the past we&rsquo;ve called them <em>Contexts</em> and I&rsquo;m thinking that may be a better name to revert to!). They&rsquo;re analogous to Jupyter&rsquo;s 
+<a href="https://github.com/ipython/ipython/wiki/IPython-kernels-for-other-languages" target="_blank" rel="noopener">
+  <em>Kernels</em>
+</a>
+, allowing you to execute a snippet of code in your favorite programming language, and then insert the resulting content into your Document or Sheet.</p>
+<p>I&rsquo;ve been implementing several Session classes over the last few weeks. The 
+<a href="https://github.com/stencila/r" target="_blank" rel="noopener">
+  R package
+</a>
+ has a 
+<a href="https://github.com/stencila/r/blob/master/R/r-session.R" target="_blank" rel="noopener">
+  RSession
+</a>
+ for executing R code and a 
+<a href="https://github.com/stencila/r/blob/master/R/sqlite-session.R" target="_blank" rel="noopener">
+  SqliteSession
+</a>
+ for executing SQL code within an SQLite database. The 
+<a href="https://github.com/stencila/py" target="_blank" rel="noopener">
+  Python package
+</a>
+ has a 
+<a href="https://github.com/stencila/py/blob/master/stencila/py_session.py" target="_blank" rel="noopener">
+  PySession
+</a>
+ and the 
+<a href="https://github.com/stencila/node" target="_blank" rel="noopener">
+  Node.js package
+</a>
+ has a 
+<a href="https://github.com/stencila/node/blob/master/src/js-session/JavascriptSession.js" target="_blank" rel="noopener">
+  JavascriptSession
+</a>
+ and a 
+<a href="https://github.com/stencila/node/blob/master/src/bash-session/BashSession.js" target="_blank" rel="noopener">
+  BashSession
+</a>
+.</p>
+<p>Despite being implemented in different languages, these Session classes share a common API which allow Documents and Sheets to interact with them. The most important method in this API is <code>execute()</code>. It is what takes a snippet of code, executes that code and returns some content. As such the <code>execute()</code> method is a small but critically important part of Stencila as a platform. It&rsquo;s what put the &ldquo;data driven&rdquo; into &ldquo;data driven content&rdquo;. So getting it right from the start is crucial.</p>
+<p>In this post, I&rsquo;m going to look at the models for data driven content used in popular tools for reproducible documents, RMarkdown and Jupyter. We&rsquo;ll then look at how to extend those models to documents that generate content in more than one execution context. I&rsquo;ll then wrap up with an explanation of the model that I&rsquo;ve arrived at as being the best fit for Stencila. This discussion is centered around Stencila Documents, but most, if not all, of it applies to Sheets just as much.</p>
+<h1 id="chunks">Chunks</h1>
+<p>The model for code execution in 
+<a href="http://rmarkdown.rstudio.com/authoring_quick_tour.html" target="_blank" rel="noopener">
+  RMarkdown
+</a>
+ is code &ldquo;chunks&rdquo;. A chunk is a fenced code block with the <code>{r}</code> tag and 
+<a href="http://yihui.name/knitr/options/" target="_blank" rel="noopener">
+  options
+</a>
+ which control things like output format, code evaluation and caching.</p>
+<p>When a chunk is evaluated the content returned is almost exactly the same as what you would get if you typed that code into a R console. For example, if you used the 
+<a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/head.html" target="_blank" rel="noopener">
+  <code>head</code>
+</a>
+ function on the <code>cars</code> dataset,</p>
+<pre><code>``` {r}
+head(cars)
+```
+</code></pre>
+<p>You get something which looks very similar to the output you would get on the R command line as a HTML <code>&lt;pre&gt;</code> element,</p>
+<p><img src="rmarkdown-chunk-head.png" alt=""></p>
+<p>To get a nicer looking table you have to use the <code>kable</code> function of the <code>knitr</code> package to generate a Markdown table from the data and then specify the <code>results='asis'</code> option to ensure that Markdown is inserted into the document, ummm, as is,</p>
+<pre><code>``` {r, results='asis'}
+knitr::kable(head(cars))
+```
+</code></pre>
+<p>The Markdown in turn is then converted into a HTML <code>&lt;table&gt;</code> element,</p>
+<p><img src="rmarkdown-chunk-kable.png" alt=""></p>
+<p>If you used the 
+<a href="http://stat.ethz.ch/R-manual/R-devel/library/base/html/plot.html" target="_blank" rel="noopener">
+  <code>plot</code>
+</a>
+ function in a chunk,</p>
+<pre><code>``` {r}
+plot(cars)
+```
+</code></pre>
+<p>Then, similarly to as if you entered it in the console, the rendering engine detects that a graphic has been generated and inserts a HTML <code>&lt;img&gt;</code> element:</p>
+<p><img src="rmarkdown-chunk-plot.png" alt=""></p>
+<p>So, the code chunk model in RMarkdown closely mimics the behavior of the read-evaluate-print-loop of a R console: what gets printed out gets inserted as content into the document.</p>
+<h1 id="cells">Cells</h1>
+<p>The model for code execution in Jupyter Notebooks is 
+<a href="https://nbformat.readthedocs.io/en/latest/format_description.html#code-cells" target="_blank" rel="noopener">
+  &ldquo;code cells&rdquo;
+</a>
+. Code cells are similar to RMarkdown&rsquo;s chunks but are represented in JSON:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;cell_type&#34;</span> : <span style="color:#c30">&#34;code&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;execution_count&#34;</span>: <span style="color:#f60">1</span>,
+  <span style="color:#309;font-weight:bold">&#34;metadata&#34;</span> : {
+      <span style="color:#309;font-weight:bold">&#34;collapsed&#34;</span> : <span style="color:#069;font-weight:bold">true</span>,
+      <span style="color:#309;font-weight:bold">&#34;autoscroll&#34;</span>: <span style="color:#069;font-weight:bold">false</span>,
+  },
+  <span style="color:#309;font-weight:bold">&#34;source&#34;</span> : <span style="color:#c30">&#34;[some code]&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;outputs&#34;</span>: [{
+      <span style="color:#309;font-weight:bold">&#34;output_type&#34;</span>: <span style="color:#c30">&#34;stream&#34;</span>,
+      <span style="color:#a00;background-color:#faa">...</span>
+  }],
+}
+</code></pre></div><p>Jupyter&rsquo;s code cells explicitly allow for different types of content. The <code>output_type</code> can be <code>stream</code> (for standard output and error streams, <code>stdout</code> and <code>stderr</code>) and <code>display_data</code> for &ldquo;mime-bundles&rdquo; of data driven content (e.g. <code>text/plain</code>, <code>image/png</code>). The nice thing about that is that if a code cell returns some tabular data then Jupyter automatically converts it to a HTML table so you don&rsquo;t have to use conversion functions like <code>kable</code>,</p>
+<p><img src="jupyter-head.png" alt=""></p>
+<p>So, Jupyter&rsquo;s code cell model is similar to RMarkdown in that it mimics the read-evaluate-print-loop of a console but extends that with some automagic MIME-based conversion of resulting content.</p>
+<h1 id="beakers">Beakers</h1>
+<p>One of the exciting side effects of decoupling Stencila&rsquo;s architecture is that is allows for polyglot data-driven documents - documents that embed code for more than one language. Why would you want to do that? To use the right tool for the job. For example, you might use SQL to extract some data from a large database, analyze that data using R, and then produce interactive visualizations of the results using D3 in Javascript. There are already ways to glue languages together but polyglot documents potentially provide an easier alternative by stripping away the inter-language scaffolding cruft. That would be beneficial for authors of data-driven documents and for readers wanting to work out how they did the analysis.</p>
+<p>
+<a href="http://beakernotebook.com/" target="_blank" rel="noopener">
+  Beaker Notebooks
+</a>
+ are very similar to Jupyter notebooks except that they are polyplot. A key challenge in creating polyglot notebooks is the transfer of data between languages. Beaker approach this using the model of a laboratory beaker. The <code>beaker</code> is a notebook namespace - a collection of variables and their values that are stored within the notebook. You put data into the <code>beaker</code> using either the <code>set</code> method or a setter (depending upon the language) within a code cell e.g. in R</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r">beaker<span style="color:#555">::</span><span style="color:#c0f">set</span>(<span style="color:#c30">&#39;car_summary&#39;</span>, <span style="color:#c0f">summary</span>(cars))
+</code></pre></div><p>Then later in the notebook you can take the same data out of the beaker using the <code>get</code> method or a getter e.g. in Python</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py">beaker<span style="color:#555">.</span>car_summary
+</code></pre></div><p>This transfer of data between languages is done via 
+<a href="https://pub.beakernotebook.com/publications/04ced174-fba9-11e5-b8c1-df4d629d60e2" target="_blank" rel="noopener">
+  &ldquo;autotranslation&rdquo;
+</a>
+ of data types including primitives (e.g. integers, floats, booleans, strings) and tabular data (e.g. data frames). It&rsquo;s an elegant approach that removes the cognitive overhead when trying to work with multiple languages withing one document.</p>
+<h1 id="variables-and-functions">Variables and Functions</h1>
+<p>In redesigning the API for Stencila Sessions I drew inspiration from these various predecessors. But, I also wanted an execution model that could be extended to another use case: interactive documents. Bret Victor&rsquo;s 
+<a href="http://worrydream.com/ExplorableExplanations/" target="_blank" rel="noopener">
+  &ldquo;explorable explanations&rdquo;
+</a>
+ are great examples. Today many people are using 
+<a href="http://rmarkdown.rstudio.com/authoring_shiny.html" target="_blank" rel="noopener">
+  Shiny
+</a>
+ to create interactive documents in R.</p>
+<p>To support interactivity in documents we need to support some specification of <strong>dependencies</strong>. Shiny allows you to define those dependencies <em>within</em> the R code contained in code chunks. Ideally, we want to be able to define those dependencies <em>across</em> code chunks. That would allow us to have polyglot and distributed, interactive documents.</p>
+<p>To allow for dependencies within a document but across code chunks we can use Beaker Notebook&rsquo;s idea of having a document namespace - a collection of variables i.e. a mapping of names to data values - and automatic conversion of data between languages. Each code chunk can declare which variables it uses as inputs (if any) and which variable it outputs (if any). From those declarations, we can determine the dependencies between code chunks.</p>
+<p>With the dependency graph in hand we can then implement reactive documents. This is of course similar to the 
+<a href="../../blog/introducing-sheets/">
+  live, reactive programming of spreadsheets
+</a>
+ which we have 
+<a href="../../blog/underneath-sheets/">
+  implemented in Stencila sheets
+</a>
+. A case of 
+<a href="https://en.wikipedia.org/wiki/Convergent_evolution" target="_blank" rel="noopener">
+  convergent evolution
+</a>
+?</p>
+<p>So, what does this actually look like? We&rsquo;re still working on all of this, and in particular the user interfaces still need a lot of work. So, in lieu of nice screenshots I&rsquo;m going to show you pieces of HTML. Stencila Documents use HTML as their canonical format. You can author them using a Google Docs-like WYSIWYG interface or using a markup language like Markdown or Latex. You never have to touch HTML. But internally they&rsquo;re HTML documents and until those other authoring interfaces are more polished, it&rsquo;s easier to show you what they look like using HTML.</p>
+<p>In Stencila Documents the equivalent of a code chunk or code cell is call an &ldquo;execute directive&rdquo; and it&rsquo;s represented in HTML like this,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;r&#34;</span>&gt;
+head(cars)
+&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+</code></pre></div><p>That directive gets refreshed by calling the <code>execute</code> method (via a HTTP-JSON API) of an R session: <code>execute(&quot;head(cars)&quot;)</code>. The execute method returns a language independent representation of the last values in the code. The code <code>head(cars)</code> evaluates to an R data frame and the session automatically converts that to a JSON &ldquo;data package&rdquo;:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;errors&#34;</span>: <span style="color:#069;font-weight:bold">null</span>,
+  <span style="color:#309;font-weight:bold">&#34;output&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;format&#34;</span>: <span style="color:#c30">&#34;csv&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;tab&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;value&#34;</span>: <span style="color:#c30">&#34;speed,dist\n4,2\n4,10\n7,4\n7,22\n8,16\n9,10&#34;</span>
+  }
+}
+</code></pre></div><p>Note that what we&rsquo;re doing here is quite different to RMarkdown and Jupyter - instead of returning some representation of the data we&rsquo;re actually returning <em>the</em> data. In this case, that data will get converted into a HTML representation and inserted into the document,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;r&#34;</span>&gt;
+head(cars)
+&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+&lt;<span style="color:#309;font-weight:bold">output</span>&gt;
+  &lt;<span style="color:#309;font-weight:bold">table</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">thead</span>&gt;
+      &lt;<span style="color:#309;font-weight:bold">tr</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">th</span>&gt;speed&lt;/<span style="color:#309;font-weight:bold">th</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">th</span>&gt;dist&lt;/<span style="color:#309;font-weight:bold">th</span>&gt;
+      &lt;/<span style="color:#309;font-weight:bold">tr</span>&gt;
+    &lt;/<span style="color:#309;font-weight:bold">thead</span>&gt;
+    &lt;<span style="color:#309;font-weight:bold">tbody</span>&gt;
+      &lt;<span style="color:#309;font-weight:bold">tr</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">td</span>&gt;4&lt;/<span style="color:#309;font-weight:bold">td</span>&gt;
+        &lt;<span style="color:#309;font-weight:bold">td</span>&gt;2&lt;/<span style="color:#309;font-weight:bold">td</span>&gt;
+      &lt;/<span style="color:#309;font-weight:bold">tr</span>&gt;
+      ...
+    &lt;/<span style="color:#309;font-weight:bold">tbody</span>&gt;
+  &lt;/<span style="color:#309;font-weight:bold">table</span>&gt;
+&lt;/<span style="color:#309;font-weight:bold">output</span>&gt;
+</code></pre></div><p>But, instead we could declare the data as an output variable of the execute directive and then use it as an input into another execute directive. Here for example, within a <code>SqliteSession</code> we calculate the total sales by region, assign it to the document variable <code>sales_by_region</code> and then use that data as an input into some R code to plot the data,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;sqlite(&#39;sales-data.db3&#39;)&#34;</span> <span style="color:#309">data-output</span><span style="color:#555">=</span><span style="color:#c30">&#34;sales_by_region&#34;</span>&gt;
+	SELECT region, sum(sales) AS total FROM sales GROUP BY region
+&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+
+&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;r&#34;</span> <span style="color:#309">data-input</span><span style="color:#555">=</span><span style="color:#c30">&#34;sales_by_region&#34;</span>&gt;
+	plot(total~region,data=sales_by_region)
+&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+&lt;<span style="color:#309;font-weight:bold">output</span>&gt;
+  &lt;<span style="color:#309;font-weight:bold">img</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;data:image/png;base64,iVBORw0KG....&#34;</span> /&gt;
+&lt;/<span style="color:#309;font-weight:bold">output</span>&gt;
+</code></pre></div><p>As in Beaker Notebooks, there is no need to do any explicit data conversion. But in addition, by moving the declaration of the variable out of the code chunk, the document is able to &ldquo;know&rdquo; the dependency between chunks. It knows that if I refresh the first execute directive, or change its SQL code, that the second execute directive in R will also have to be refreshed.</p>
+<p>What about user interactivity? We include that idea by using the HTML <code>input</code> tag to define a document variable. When a user changes the input (e.g. entering a new number, or sliding a slider), the document variable is changed, which in turn triggers any execute directive that depend upon that variable. In this example, the document variable <code>breaks</code> is declared as a number. When its value is changed, the R chunk generates a new histogram having the desired number of breaks:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-html" data-lang="html">&lt;<span style="color:#309;font-weight:bold">input</span> <span style="color:#309">name</span><span style="color:#555">=</span><span style="color:#c30">&#34;breaks&#34;</span> <span style="color:#309">type</span><span style="color:#555">=</span><span style="color:#c30">&#34;number&#34;</span> /&gt;
+&lt;<span style="color:#309;font-weight:bold">pre</span> <span style="color:#309">data-execute</span><span style="color:#555">=</span><span style="color:#c30">&#34;r&#34;</span> <span style="color:#309">data-input</span><span style="color:#555">=</span><span style="color:#c30">&#34;breaks&#34;</span>&gt;
+	hist(faithful$eruptions, breaks=breaks)
+&lt;/<span style="color:#309;font-weight:bold">pre</span>&gt;
+&lt;<span style="color:#309;font-weight:bold">output</span>&gt;
+  &lt;<span style="color:#309;font-weight:bold">img</span> <span style="color:#309">src</span><span style="color:#555">=</span><span style="color:#c30">&#34;data:image/png;base64,iVBORw0KG....&#34;</span> /&gt;
+&lt;/<span style="color:#309;font-weight:bold">output</span>&gt;
+</code></pre></div><p>This model at is actually very similar to the familiar concepts of variables and functions in most high-level languages. Here, document variables can be declared using <code>&lt;input&gt;</code> elements and execute directives are like function calls optionally taking inputs and returning outputs which can be assigned to a new, or existing variable.</p>
+<p>There are some interesting follow-ons from moving to this model. But that&rsquo;s for another post. As always, comments are much appreciated!</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

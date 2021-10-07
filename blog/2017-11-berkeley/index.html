@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Stencila at UC Berkeley · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Nokome Bentley · Nov 16, 2017
+    </div>
+
+    <h1 class="title" id="entryTitle">Stencila at UC Berkeley</h1>
+
+    <div class="content">
+      <p>The University of California Berkeley (UCB) was the setting for the fourth workshop on Stencila Sheets. UCB needs little introduction. It&rsquo;s one of the world&rsquo;s most prestigious universities and home to an impressive number of Nobel laureates. It&rsquo;s also home to several leading open source projects for open science including 
+<a href="http://jupyter.org/" target="_blank" rel="noopener">
+  Jupyter
+</a>
+, 
+<a href="https://pandoc.org/" target="_blank" rel="noopener">
+  Pandoc
+</a>
+ and 
+<a href="https://ropensci.org/" target="_blank" rel="noopener">
+  ROpenSci
+</a>
+.</p>
+<p>A big thank you to Amy Neeser and John Chodaki for helping us organise the event. We had a great group come along including people from 
+<a href="http://www.bitss.org/" target="_blank" rel="noopener">
+  Berkeley Initiative for
+Transparency in the Social Sciences
+</a>
+, 
+<a href="http://www.cdlib.org/" target="_blank" rel="noopener">
+  California Digital Library
+</a>
+, 
+<a href="http://dlab.berkeley.edu/" target="_blank" rel="noopener">
+  D-lab
+</a>
+, 
+<a href="https://www.ucpress.edu/" target="_blank" rel="noopener">
+  University of California Press
+</a>
+ and 
+<a href="https://www.openhumans.org/" target="_blank" rel="noopener">
+  Open Humans
+</a>
+. As usual, we started with our &ldquo;When did you last use a spreadsheet?&rdquo; icebreaker&hellip;</p>
+<p style="width: 70%;"><img src="lineup.jpg" alt="UC Berkeley lineup"></p>
+<p><em>The &ldquo;When did you last use a spreadsheet?&rdquo; &ldquo;lineup&rdquo; (These suspects did report having used a spreadsheet recently but are not under suspicion for any other crimes)</em> 🙂</p>
+<h3 id="killer-spreadsheet-feature-competition">Killer spreadsheet feature competition</h3>
+<p>After some discussion about the goods and bads of spreadsheets (and a pizza lunch) we got into the &ldquo;Killer spreadsheet feature competition&rdquo; in which three teams came up with a killer feature for spreadsheets and pitched them to the rest of the group (and were then given pretty much random, meaningless, scores)&hellip;</p>
+<p style="width: 70%;"><img src="stickies.jpg" alt="Stickies discussion"></p>
+<p><em>Team Versioning pitched better version control for spreadsheets. Something more sophisticated than in Google Sheets (e.g. commit messages, diffing etc) but easier to use than Git. They got a score of 6 (the percentage of Enron emails that attached a spreadsheet and which included the words &ldquo;error&rdquo; or &ldquo;fault&rdquo;)</em></p>
+<p style="width: 70%;"><img src="incelltion.jpg" alt="In-cell-tion"></p>
+<p><em>Team In-cell-tion (
+<a href="https://en.wikipedia.org/wiki/Inception" target="_blank" rel="noopener">
+  table within a table
+</a>
+) pitched a 3d layered spreadsheet that allowed different versions of the data to be seen in different layers. They scored 60 (the estimated number of copies of Microsoft Office sold every minute).</em></p>
+<p style="width: 70%;"><img src="pitching.jpg" alt="Pitching ideas"></p>
+<p><em>Team Translate&rsquo;s idea was to do automatic translation of a spreadsheet into a Python or R script. They were the eventual winners with a score of 750, 000, 000 (the estimated number of Excel users worldwide)!</em></p>
+<h3 id="other-ideas">Other ideas</h3>
+<p>There were lots of other ideas that came up during the workshop including Bastion&rsquo;s wish for better emoji support:</p>
+<p>
+<a href="https://twitter.com/gedankenstuecke/status/930616561248829440" target="_blank" rel="noopener">
+  <img src="spreadsheet-tween.png" alt="Stencila feature tweet">
+</a>
+</p>
+<p>I thought that was a great idea, so after the workshop was pleased (and a little surprised) that Stencila Sheets already supports UTF8 emoji cell values:</p>
+<p style="width: 50%;"><img src="emoji.png" alt="Emoji"></p>
+<p>Oh, and for &ldquo;Team In-cell-tion&rdquo; (❤️ the name!) I couldn&rsquo;t help but give you a screenshot of a &ldquo;table-within-a-table&rdquo;. In this Stencila Sheet (shown in &ldquo;maximal&rdquo; view mode so you can see the code and the result), cell <code>A1</code> is an R expression which uses the package <code>dplyr</code> to create a summary table within a cell. The cell A2, then plots that summary.</p>
+<p style="width: 50%;"><img src="incelltion-screenshot.png" alt="Incelltion Screenshot"></p>
+<h3 id="thank-you">Thank you</h3>
+<p>A big, big thank you to all those who took time out of your day to come along. We really value your input and will use your feedback as we iterate toward a release of Stencila Sheets early next year.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

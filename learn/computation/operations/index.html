@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="operations-">Operations ✨</h1>
+<blockquote>
+<p>✨ Currently, the operations in Stencila are still under development and
+many of the described here features may work only in the development version. We
+welcome any 
+<a href="CONTRIBUTING.md">
+  help with Stencila development
+</a>
+!</p>
+</blockquote>
+<p>Stencila performs computations on data using <em>operations</em>.
+Operations are objects encapsulating what should be done to what.</p>
+<p>There are</p>
+<ul>
+<li><code>set</code></li>
+<li><code>get</code></li>
+<li><code>call</code></li>
+<li><code>function</code></li>
+</ul>
+<p>Commands are just values. Homoiconic - code is data</p>
+<h2 id="set">Set</h2>
+<h2 id="get">Get</h2>
+<h2 id="call">Call</h2>
+<h2 id="function">Function</h2>
+<p>A function is an <code>object</code> of type <code>function</code> with properties:</p>
+<ul>
+<li><code>pars</code> : an array of the function&rsquo;s parameters</li>
+<li><code>body</code> : a value representing the function body</li>
+</ul>
+<p>For example here is a function, which has no parameters and returns the value of <em>pi</em>:</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">{
+  type: 'function',
+  body: 3.14159265359
+}
+</code></pre><p>A function call is an <code>object</code> of type <code>call</code> with properties:</p>
+<ul>
+<li><code>name</code> : the name of the object being called</li>
+<li><code>args</code> : an array of values to be used as the functions parameters</li>
+</ul>
+<p>For example, the simple multiplication of two values,</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">3 * 4
+</code></pre><p>is equivalent to executing a <code>call</code> of function <code>multiply</code> like this,</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">execute {
+  type: 'call',
+  func: {type: 'get', name: 'multiply'},
+  args: [ 3, 4 ]
+}
+</code></pre><p>An here&rsquo;s a slightly more complex example of a function which multiplies a number by it&rsquo;s self (i.e. squares it):</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">{
+  type: 'function',
+  pars: [{
+    name: 'x',
+    type: 'number'
+  }],
+  body: [{
+    type: 'call',
+    name: {type: 'get', name: 'multiply'},
+    args: [
+      {type: 'get', 'x'},
+      {type: 'get', 'x'}
+    ]
+  }]
+}
+</code></pre><h2 id="defining-external-functions">Defining external functions</h2>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">{
+  type: 'function',
+  pars: [{
+    name: 'x',
+    type: 'number'
+  }],
+  body: [{
+    type: 'external',
+    lang: 'r',
+    code: 'x * x'
+  }]
+}
+</code></pre><p>External functions can be in Mini</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">
+function (*) r &gt;&gt;&gt;
+  x * x
+&lt;&lt;&lt;
+</code></pre>
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

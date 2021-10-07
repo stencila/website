@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Welcome to a new ERA of reproducible publishing · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Emmy Tsang and Giuliano Maciocci from eLife · Aug 27, 2020
+    </div>
+
+    <h1 class="title" id="entryTitle">Welcome to a new ERA of reproducible publishing</h1>
+
+    <div class="content">
+      <p>Since 2017, we have been working on the concept of computationally reproducible papers. The open-source suite of tools that started life as the 
+<a href="https://elifesciences.org/labs/b521cf4d/reproducible-document-stack-towards-a-scalable-solution-for-reproducible-articles" target="_blank" rel="noopener">
+  Reproducible Document Stack
+</a>
+ is now live on eLife as ERA, the <strong>Executable Research Article</strong>, delivering a truly web-native format for taking published research to a new level of transparency, reproducibility and interactivity.</p>
+<p>From today, authors with a published eLife paper can register their interest to enrich their published work with the addition of live code blocks, programmatically-generated interactive figures, and dynamically generated in-line values, using familiar tools like R Markdown and Jupyter in combination with Stencila Hub’s intuitive asset management and format conversion interface. The resulting new ERA publication will be presented as a complement to the original published paper. Very soon, a Google Docs plugin will also be made available to let authors insert executable code and data blocks into their documents using the cloud service.</p>
+<p>Readers of ERA publications will be able to inspect the code, modify it, and re-execute it directly in the browser, enabling them to better understand how a figure is generated. They will be able to change a plot from one format to another, alter the data range of a specific analysis, and much more. All changes are limited to an individual’s browsing session and do not affect the published article, so anyone can experiment safely. Readers can also download the ERA publication – with all embedded code and data preserved – and use it as a basis for further study or derivative works.</p>
+<p><img src="2020-08-27-13_23_01-greenshot.png" alt="" title="Figures in ERAs can be accompanied by editable code blocks, where the code can be edited and re-executed to immediately see the effects of those edits."></p>
+<p>Started by eLife in partnership with 
+<a href="https://substance.io/" target="_blank" rel="noopener">
+  Substance
+</a>
+, and later developed by 
+<a href="https://stenci.la/" target="_blank" rel="noopener">
+  Stencila
+</a>
+, ERA takes many of the important lessons learned from pioneering technologies like Jupyter and R Markdown, and folds them into a new open-source research publication format that treats code and data as first-class citizens alongside the traditional text and figures. The ERA technology stack is also designed specifically towards preprint and journal publishing, with strong XML standards, native 
+<a href="https://schema.org/" target="_blank" rel="noopener">
+  schema.org
+</a>
+ compliance, and a versatile theming solution that makes it adaptable to the visual style of virtually any online publication.</p>
+<h3 id="getting-started-with-era">Getting started with ERA</h3>
+<p>Explore some of the functionalities that ERA offers with two published examples:</p>
+<ul>
+<li>
+<a href="https://elifesciences.org/articles/30274/executable" target="_blank" rel="noopener">
+  This ERA complement
+</a>
+ of Lewis et al., 2018 (
+<a href="https://elifesciences.org/articles/30274" target="_blank" rel="noopener">
+  original article
+</a>
+) showcases executable figures, tables and in-line numbers.</li>
+<li>
+<a href="https://elifesciences.org/articles/52258/executable" target="_blank" rel="noopener">
+  This ERA complement
+</a>
+ of “Inter- and intra-animal variation in the integrative properties of stellate cells in the medial entorhinal cortex” by Pastoll et al. (
+<a href="https://elifesciences.org/articles/52258" target="_blank" rel="noopener">
+  original article
+</a>
+) demonstrates a variety of executable plots.</li>
+</ul>
+<p>Start by clicking the Run Document button at the top of the article. This will start a compute session. Be patient, as it may take a moment. When you see the “<em>Ready to run document</em>” message, you’re good to go.</p>
+<p>Then, look for the blue “eye” icons throughout the paper, which indicate code blocks. Clicking on those icons will reveal the underlying code, which can then be edited in place.</p>
+<p>After making an edit, press the white “play” icon at the top of the code block to execute your new code and see its effects. Please note that it may take some time for the code to execute, depending on its complexity and on server load.</p>
+<p>
+<a href="https://elifesciences.org/labs/dc5acbde/welcome-to-a-new-era-of-reproducible-publishing" target="_blank" rel="noopener">
+  Read full article
+</a>
+ to find out <strong>how to publish an article</strong> with eLife and review <strong>frequently asked questions</strong>.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Learning Docker through Dockter · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Aleksandra Pawlik · Mar 5, 2019
+    </div>
+
+    <h1 class="title" id="entryTitle">Learning Docker through Dockter</h1>
+
+    <div class="content">
+      <p>This is a short summary of my, somewhat painful, route to discovering that what I thought I knew about Docker was in fact just the tip of the iceberg. Fortunately, I was able to upgrade my understanding through testing and using a new tool we have been developing: 
+<a href="https://stencila.github.io/dockter/" target="_blank" rel="noopener">
+  Dockter
+</a>
+, a container image builder for researchers.</p>
+<p>I used Docker for the first time several years ago when it entered the world of computational research. Working with computational research communities I was well aware of the problems with reproducibility due to dependency hell. Docker images appeared to be (and are!) a great solution. However, not actually doing
+computational research myself, I only used Docker a couple of times following a tutorial to build an image just to see how it would go. It all went fine, as usually well prepared tutorials present the user with a typical and uncomplicated case. I have run several Docker images that I pulled from the Docker hub. That has also worked fine for me. And that was it, as far as it came to my hands-on experience with Docker.</p>
+<p style="width: 80%;"><img src="docker-error.png" alt="docker-error.png"></p>
+<p>Hence I was convinced that Docker is the silver bullet for the reproducibility problems in computational research. I happily recommended Docker to a number of researchers that I talked to and even to some developers who were struggling with dependency hell. It was only after I started helping with Stencila&rsquo;s Dockter that I understood how naive I was.</p>
+<p>Firstly, I didn&rsquo;t realize that rebuilding images with Docker can take a long time even if you only changed a tiny bit in your Dockerfile. In most cases, it is a recommended practice to create Docker images with as few layers as possible. That means that making even small changes in the list of required packages in a Dockerfile can results in Docker reinstalling all the packages.</p>
+<p>Really excited about a feature in Dockter which helps deal with that, I started trying it out with a few examples that I was hoping to publish as a part of a Stencila Dockter tutorial. Everything was working fine until one morning my Linux just refused to boot up. After a frustrating few hours of trying to fix the problem using <code>fdisk</code> (suspecting segmentation fault), I booted into Windows on my dual-boot machine to do actual work. The following day using Ubuntu Live USB I got into the Linux partition and discovered that it was pretty much full. My experiments with fast rebuilding Docker images with Dockter resulted in a massive pile of Docker images that filled up the disk and stopped it being able to boot.</p>
+<p>That&rsquo;s the second lesson I learnt about Docker. Clean up your images regularly. They can take a lot of space. While obviously I suppose it wasn&rsquo;t much of an issue when I was trying out Docker writing Dockerfiles manually. Rebuilding images involved more effort and it made me think about deleting the old image before I built the new one. However, Dockter &ldquo;exacerbated&rdquo; the problem as all I had to do to rebuild images was to change the example code in R or Python and mindlessly re-run <code>dockter build</code>, resulting in even more Docker images.</p>
+<p>Conscious of the problem I nuked all Docker images which I created with Dockter and successfully logged back into Linux. Still working on the Dockter tutorial, I wanted to be smarter and sometimes would just halt the building process through the ever convenient &ldquo;Ctrl+C&rdquo;. Due to the previous image disaster, I was monitoring how much the free space on my drive was shrinking and rather nervously listing the images on the disk. That&rsquo;s how I discovered <em>Docker dangling images</em>. I&rsquo;m not sure if it was me hitting &ldquo;Ctrl+C&rdquo; too much that caused but now I know how to 
+<a href="https://docs.docker.com/engine/reference/commandline/system_prune/" target="_blank" rel="noopener">
+  purge all Docker images effectively
+</a>
+. It will bite me back one day but so far so good.</p>
+<p>Would I still recommend Docker for reproducible research? Yes.</p>
+<p>Docker makes reproducibility a lot easier if you can get the hang of installing the right packages. Using Dockter makes this a lot easier by automatically detecting the right packages to use, eliminating dependency hell. Just make sure to keep track of your disk space if you&rsquo;re building a lot of images!</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

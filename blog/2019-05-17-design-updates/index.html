@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Stencila Design Updates and csv,conf,v4 · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Jacqueline Wijaya · May 17, 2019
+    </div>
+
+    <h1 class="title" id="entryTitle">Stencila Design Updates and csv,conf,v4</h1>
+
+    <div class="content">
+      <p>Since our team meet in April, we&rsquo;ve been busy developing our Stencila 
+<a href="https://github.com/stencila/schema" target="_blank" rel="noopener">
+  schemas
+</a>
+ and 
+<a href="https://github.com/stencila/convert" target="_blank" rel="noopener">
+  file converters
+</a>
+ (to be integrated into Google Add-ons for Google Docs and Sheets).</p>
+<p>Based on user research in New Zealand (interviews and concept tests), as well as internal design critiques, we&rsquo;ve been exploring updates to the Stencila Hub user experience in preparation for integration with our converters and Google Add-ons.</p>
+<p>In this post, I&rsquo;ll talk through some of the proposed UX changes and reasoning behind those changes.</p>
+<h1 id="stencila-hub-ux-explorations">Stencila Hub UX explorations</h1>
+<h2 id="1-files-view">1. Files view</h2>
+<p><img src="https://i.imgur.com/Tj8FZka.gif" alt="">
+<em>After: Files view.</em></p>
+<h3 id="new-feature-set-a-main-file">New feature: set a main file.</h3>
+<p>This is a new feature, setting a main file for a Stencila project, which adds a preview of the file in the Overview screen. From user feedback, it was clear that having a visual indicator for the main file in the Files view would be helpful.</p>
+<h3 id="simplify-file-management">Simplify file management.</h3>
+<p><img src="https://i.imgur.com/vWYUWmu.png" alt="">
+<em>Before: Files view (files list).</em></p>
+<p>We&rsquo;ve made several updates to the Files view, including the layout and content of each listed file. Renaming a file was previously tucked away behind a cog icon, and the delete option was part of a trashcan icon. The new files list layout removes extraneous icons and clutter, and tucks away functions in the &ldquo;more&rdquo; (&hellip;) icon.</p>
+<p>Additionally, instead of listing file types in text format, an icon is used to save horizontal space.</p>
+<p>Linking and unlinking Github sources was originally done using two separate buttons. To simplify the interface, we tucked away the option to unlink repositories under the &ldquo;Link&rdquo; button. Also, instead of requiring the user to specify the folder (within the Stencila project) to add the Github repository contents, the updated UI would use the current working directory (which can be changed through folder navigation).</p>
+<hr>
+<h2 id="2-sharing-view">2. Sharing view</h2>
+<p><img src="https://i.imgur.com/kRFEivr.gif" alt="">
+<em>After: Sharing view.</em></p>
+<h3 id="adjust-spacing-content-order-and-simplify-copy">Adjust spacing, content order, and simplify copy.</h3>
+<p>The new design removes the extra whitespace and simplifies the copy for making a project public or private.</p>
+<p><img src="https://i.imgur.com/N1ZLpHm.png" alt="">
+<em>Before: Sharing view.</em></p>
+<hr>
+<h2 id="3-files-view-new-menu-options">3. Files view: &ldquo;New&rdquo; menu options</h2>
+<p><img src="https://i.imgur.com/EcV5Wj2.gif" alt="">
+<em>After: New file/folder options.</em></p>
+<h3 id="creating-a-new-folder">Creating a new folder.</h3>
+<p>Previously, the Hub didn&rsquo;t have a direct way to create folders, so we added a new folder option.</p>
+<h3 id="simplify-file-upload-and-file-creation-flows">Simplify file upload and file creation flows.</h3>
+<p>The original file uploader was a 3-step process (click &ldquo;add files&rdquo; to select files, then &ldquo;upload files&rdquo;, then &ldquo;done&rdquo;). The updated design allows users to select their files for immediate upload, then click &ldquo;done&rdquo;.</p>
+<p><img src="https://i.imgur.com/iyzuV4X.png" alt="">
+<em>Before: New file/folder options (file uploader).</em></p>
+<hr>
+<h2 id="4-files-view-file-conversion">4. Files view: file conversion</h2>
+<p><img src="https://i.imgur.com/uNu29ND.gif" alt="">
+<em>After: converting an Rmd file to a Google Doc, and back to an Rmd file.</em></p>
+<h3 id="new-feature-converting-an-rmd-file-to-a-google-doc">New feature: converting an Rmd file to a Google Doc.</h3>
+<p>Something we&rsquo;re currently experimenting with is a new feature, to convert Rmd files into Google Docs that can preserve (and easily view) the code used to generate figures and tables based on data files.</p>
+<p>We tested the display of file lineage for converted files, and made adjustments to the Hub designs based on user feedback.</p>
+<hr>
+<h1 id="csvconfv4">csv,conf,v4</h1>
+<p><img src="https://i.imgur.com/BNzs7t7.jpg" alt=""></p>
+<p>Last week I had the privilege of attending 
+<a href="https://csvconf.com/" target="_blank" rel="noopener">
+  csv,conf,v4
+</a>
+ in Portland, Oregon, and had loads of fun meeting librarians, open source project organizers/contributors, and researchers in various fields.</p>
+<p>It was really interesting to be surrounded by people passionate about metadata, open science, statistics, and 
+<a href="https://csvconf.com/speakers/#melissa-santos" target="_blank" rel="noopener">
+  box plots
+</a>
+. As an outsider to a lot of these topics, I feel inspired to learn more, and contribute to the wider open data and open science community.</p>
+<p><img src="https://i.imgur.com/dnKaOS4.jpg" alt="">
+<em>Also, there was a llama, Rojo, at the conference. Sadly, he&rsquo;s retiring this year. Thank you for your service, Rojo!</em></p>
+<hr>
+<h1 id="next-steps">Next steps</h1>
+<p>In the coming weeks, we&rsquo;ll be focusing on a visual redesign of the Hub, as well as test and refine our Google Doc and Sheet Add-on designs.</p>
+<p><strong>Let us know if you&rsquo;re interested in joining our 
+<a href="https://stenci.la/#beta-signup" target="_blank" rel="noopener">
+  beta testing program
+</a>
+!</strong></p>
+<p><img src="https://i.imgur.com/8V7tZO3.jpg" alt=""></p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

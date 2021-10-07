@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="engine">Engine</h1>
+<p>The <code>Engine</code> is resposible for deciding <em>when</em> (i.e. in which order) and <em>where</em> (i.e. in which execution <code>Context</code>) cells are executed.
+It can be thought of as a meta-<code>Context</code>, that orchestrates other <code>Contexts</code>.</p>
+<p>The <code>Engine</code> takes the code from a cell and converts it into an operation which it then passes
+to the <code>execute</code> method of the <code>Context</code> which executes the operation and returns.</p>
+<h2 id="cells">Cells</h2>
+<p>With Stencila you have full control over the sequence in which your code cells are executed. You can run the code in asynchronous order.
+You can refer to specific outputs and inputs from the given cell in any part of your Stencila document. Depending
+on the programming language which you use in the cell, you may need to capture the output explicitly, in order to be able to
+refer to it. For more details see the documentation for using different programming languages in Stencila.</p>
+<p>If you do not capture the output explicitly, you will not be able to refer to it later on. But the input of the cell
+will still be available.</p>
+<h2 id="pointers">Pointers</h2>
+<p>The engine has an array of <code>Pointers</code> to data values which it knows about. The data values themselves reside inside an execution context but the array needs to</p>
+<p>For example, let&rsquo;s say that you were using the Star Wars example database, and had a SQL cell with the code,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sql" data-lang="sql">low_gravity_planets<span style="color:#bbb"> </span><span style="color:#555">=</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">SELECT</span><span style="color:#bbb"> </span><span style="color:#555">*</span><span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">FROM</span><span style="color:#bbb"> </span>planets<span style="color:#bbb"> </span><span style="color:#069;font-weight:bold">WHERE</span><span style="color:#bbb"> </span>gravity<span style="color:#bbb"> </span><span style="color:#555">&lt;=</span><span style="color:#bbb"> </span><span style="color:#a00;background-color:#faa">${</span>max_gravity<span style="color:#a00;background-color:#faa">}</span><span style="color:#bbb">
+</span></code></pre></div><p>The <code>Engine</code> would send this code the <code>analyse</code> method of the <code>SqliteContext</code> which would return a JSON response like the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;inputs&#34;</span>: [<span style="color:#c30">&#34;max_gravity&#34;</span>],
+  <span style="color:#309;font-weight:bold">&#34;output&#34;</span>: <span style="color:#c30">&#34;low_gravity_planets&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;messages&#34;</span>: []
+}
+</code></pre></div><p>That tells the <code>Engine</code> that this cell requires the variable <code>max_gravity</code> as an input and produces <code>low_gravity_planets</code> as an output. With that information the engine constructs a call operation:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;call&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;func&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;source&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;lang&#34;</span>: <span style="color:#c30">&#34;sql&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;pars&#34;</span>: [
+      {
+        <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;par&#34;</span>,
+        <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;max_gravity&#34;</span>
+      }
+    ],
+    <span style="color:#309;font-weight:bold">&#34;body&#34;</span>: <span style="color:#c30">&#34;low_gravity_planets = SELECT * FROM planets WHERE gravity &lt;= ${max_gravity}&#34;</span>
+  },
+  <span style="color:#309;font-weight:bold">&#34;args&#34;</span>: [<span style="color:#f60">1.5</span>]
+}
+</code></pre></div><div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;inputs&#34;</span>: [<span style="color:#c30">&#34;max_gravity&#34;</span>],
+  <span style="color:#309;font-weight:bold">&#34;output&#34;</span>: <span style="color:#c30">&#34;low_gravity_planets&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;messages&#34;</span>: []
+}
+</code></pre></div><p>The engine then inserts the</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#c30">&#39;low_gravity_planets&#39;</span> <span style="color:#555">:</span> {
+  type<span style="color:#555">:</span> <span style="color:#c30">&#39;table&#39;</span>,
+  context<span style="color:#555">:</span> <span style="color:#c30">&#39;http://127.0.0.1:2010&#39;</span>
+  name<span style="color:#555">:</span> <span style="color:#c30">&#39;low_gravity_planets&#39;</span>
+}
+</code></pre></div><p>Later in the document you might want to use an internal language, such as a data flow diagram or Mini to summarise the <code>low_gravity_planets</code> table e.g.</p>
+<pre tabindex="0"><code class="language-mini" data-lang="mini">mean(low_gravity_planets.surface_water)
+</code></pre><p>When compiled, this Mini code produces an operation:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;call&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;func&#34;</span>: { <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;get&#34;</span>, <span style="color:#309;font-weight:bold">&#34;name:&#34;</span>: <span style="color:#c30">&#34;mean&#34;</span> },
+  <span style="color:#309;font-weight:bold">&#34;args&#34;</span>: [{ <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;get&#34;</span>, <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;low_gravity_planets&#34;</span> }]
+}
+</code></pre></div><p>The <code>Engine</code> scans this call operation for any global <code>get</code> operations (i.e. a <code>get</code> not within a function), finds the <code>get</code> for <code>low_gravity_planets</code> and thus schedules this call to be run in the <code>SqliteContext</code>.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

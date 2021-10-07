@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Communities on Stencila</title>
+    <link>https://stenci.la/community/</link>
+    <description>Recent content in Communities on Stencila</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 06 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="https://stenci.la/community/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction to data analysis and visualisation in Python using Stencila</title>
+      <link>https://stenci.la/community/events/2018-08-06-signal/</link>
+      <pubDate>Mon, 06 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/events/2018-08-06-signal/</guid>
+      <description>This hands-on workshop will introduce you to data analysis and visualisation in Stencila. If you use or would like to start using Python for your work, this event is for you! If you already use tools like Jupyter Notebook, RStudio, LaTeX yet your collaborators use different tools, this workshop is for you!
+We will use Stencila and Stencila Sheets which comes with interface familiar to that of word processor and spreadsheet application.</description>
+    </item>
+    
+    <item>
+      <title>Stencila demo and discussion</title>
+      <link>https://stenci.la/community/events/2018-07-31-harvard/</link>
+      <pubDate>Tue, 31 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/events/2018-07-31-harvard/</guid>
+      <description>This session will present Stencila which comes with interface familiar to that of word processor and spreadsheet application. At the same time, Stencila is interoperable with the existing tools for reproducible research. Nokome Bentley the original creator of the tool will give the overview of Stencila, walk the participants through a demo of the software, and lead into a discussion around potential future directions.
+This video is a short demonstration of a simple example using R in Stencila Sheets:</description>
+    </item>
+    
+    <item>
+      <title>Introduction to data analysis in R using Stencila</title>
+      <link>https://stenci.la/community/events/2018-07-24-uc/</link>
+      <pubDate>Tue, 24 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/events/2018-07-24-uc/</guid>
+      <description>This workshop will help you start using R for data analysis. We will use Stencila and Stencila Sheets which comes with interface familiar to that of word processor and spreadsheet application. You will be able to use some advanced R functions working in the environment that you are comfortable using. This video is a short demonstration of a simple example using R in Stencila Sheets:
+   Stencila is an open source project funded by a grant from the Sloan Foundation  .</description>
+    </item>
+    
+    <item>
+      <title>Introduction to data analysis in R using Stencila</title>
+      <link>https://stenci.la/community/events/2018-07-12-superbugs/</link>
+      <pubDate>Thu, 12 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/events/2018-07-12-superbugs/</guid>
+      <description>This workshop will help you start using R for data analysis. We will use Stencila and Stencila Sheets which comes with interface familiar to that of word processor and spreadsheet application. You will be able to use some advanced R functions working in the environment that you are comfortable using. This video is a short demonstration of a simple example using R in Stencila Sheets:
+ Stencila is an open source project funded by a grant from the Sloan Foundation  .</description>
+    </item>
+    
+    <item>
+      <title>Introduction to data analysis in R using Stencila</title>
+      <link>https://stenci.la/community/events/2018-06-28-otago-med-school/</link>
+      <pubDate>Thu, 28 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/events/2018-06-28-otago-med-school/</guid>
+      <description>This workshop will help you start using R for data analysis. We will use Stencila and Stencila Sheets which comes with interface familiar to that of word processor and spreadsheet application. You will be able to use some advanced R functions working in the environment that you are comfortable using. This video is a short demonstration of a simple example using R in Stencila Sheets:
+ Stencila is an open source project funded by a grant from the Sloan Foundation  .</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://stenci.la/community/resources/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/resources/</guid>
+      <description>Resources You will find here a selection of useful resources about Stencila.
+ Cite Stencila If you mention Stencila in your publications, we would be very grateful to include the following in the references:
+ Stencila Development Core Team (2016). Stencila [Computer software]. Version 0.28. Available from https://stenci.la    Stencila Logo Logo   Icon    Slide about Stencila If you would like to mention Stencila in your talk, please feel free to use the following slide:</description>
+    </item>
+    
+    <item>
+      <title>Beta Testing programme</title>
+      <link>https://stenci.la/community/beta-testing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/beta-testing/</guid>
+      <description>Beta Testing programme  We are currently redesigning the Stencila Beta Testing programme. A set of tools for Beta Testing will be available in the second quarter of 2019. If you would like to become a Beta Tester, please register your interest  . We will get back to you with more information and the timeline for the planned launch of the Beta Testing programme. Thank you for your time and help!</description>
+    </item>
+    
+    <item>
+      <title>Code of Conduct</title>
+      <link>https://stenci.la/community/code-of-conduct/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/code-of-conduct/</guid>
+      <description>Code of Conduct Our Pledge In the interest of fostering an open and welcoming environment, we as contributors and maintainers pledge to making participation in our project and our community a harassment-free experience for everyone, regardless of age, body size, disability, ethnicity, gender identity and expression, level of experience, nationality, personal appearance, race, religion, or sexual identity and orientation.
+Our Standards Examples of behavior that contributes to creating a positive environment include:</description>
+    </item>
+    
+    <item>
+      <title>Resources</title>
+      <link>https://stenci.la/community/resources_old/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/community/resources_old/</guid>
+      <description>Resources You will find here a selection of useful resources about Stencila.
+Cite Stencila If you mention Stencila in your publications, we would be very grateful to include the following in the references:
+ Stencila Development Core Team (2016). Stencila [Computer software]. Version 0.28. Available from http://stenci.la   Stencila logo  in svg format : 
+ in png format :   Slide about Stencila If you would like to mention Stencila in your talk, please feel free to use the following slide:</description>
+    </item>
+    
+  </channel>
+</rss>

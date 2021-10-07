@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title> Diverse peers · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../">
+      <img src="../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="blog content entry container">
+  <article>
+    <div class="meta">
+      Nokome Bentley · Dec 5, 2016
+    </div>
+
+    <h1 class="title" id="entryTitle">Diverse peers</h1>
+
+    <div class="content">
+      <p>In my 
+<a href="../../blog/geheimhaven">
+  last post
+</a>
+ I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform&rsquo;s architecture was monolithic because it was based on a foundational C++ implementation which was then exposed to various host languages like R and Python. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.g. complex builds, intimidating for contributors). In the new approach, the various packages that make up the Stencila platform have been decoupled from each other and there is more of a focus on a standard set of APIs and communication protocols, rather than a single implementation. In this development update I&rsquo;m going to give you a taste of what that actually looks like.</p>
+<p>The core repository for Stencila was 
+<a href="http://github.com/stencila/stencila" target="_blank" rel="noopener">
+  <code>stencila/stencila</code>
+</a>
+. That repo is still there, but now, instead of being the place where all the code resides, it&rsquo;s an umbrella repo which points to the other repos in the platform and will hold overarching documentation. Previously, the monolithc <code>stencila/stencila</code> repo had a mix of C++ code for the foundations, R and Python code for wrapper packages for those languages, and Javascript and CSS for web based interfaces. This could be confusing and for some intimidating - if you&rsquo;re a Python coder you want the Python package to look like a Python package with <code>setup.py</code> and all the other things you are used to seeing. Ditto if your a R or Node.js coder. Ditto if your a developer of browser based user interfaces.</p>
+<p>So, now there are three separate repos for the R, Python and Node.js packages:</p>
+<ul>
+<li>
+<a href="http://github.com/stencila/r" target="_blank" rel="noopener">
+  <code>stencila/r</code>
+</a>
+</li>
+<li>
+<a href="http://github.com/stencila/py" target="_blank" rel="noopener">
+  <code>stencila/py</code>
+</a>
+</li>
+<li>
+<a href="http://github.com/stencila/node" target="_blank" rel="noopener">
+  <code>stencila/node</code>
+</a>
+</li>
+</ul>
+<p>These will be your entry point to the platform if you&rsquo;re used to writing code in those languages. As I&rsquo;ll show you, when you use these packages you&rsquo;re not limited to using the command line - each of these package has a Stencila &lsquo;host&rsquo; which will serve up the browser based user interfaces. Those live in their own repo:</p>
+<ul>
+<li>
+<a href="http://github.com/stencila/web" target="_blank" rel="noopener">
+  <code>stencila/web</code>
+</a>
+</li>
+</ul>
+<p>They are also provided by the desktop application which is based on Github&rsquo;s 
+<a href="http://electron.atom.io/" target="_blank" rel="noopener">
+  Electron
+</a>
+ and which lives at:</p>
+<ul>
+<li>
+<a href="http://github.com/stencila/electron" target="_blank" rel="noopener">
+  <code>stencila/electron</code>
+</a>
+</li>
+</ul>
+<p>In this post I&rsquo;m going to illustrate how <code>stencila/r</code>, <code>stencila/py</code> and <code>stencila/node</code> can behave as a network of diverse peers. Peers in that each package is both a supplier and consumer of resources. Diverse in that each package bring different types of resources to the network.</p>
+<p>So, lets start off with Node.js package. All the packages are in initial stages of development but the Node.js package has had more work done on it at this stage (mainly because it provides an easy pathway to desktop deployment via Electron).</p>
+<p>You can install the package using NPM,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ npm install stencila/node -g
+</code></pre></div><p>Then start Node, import the package and get the host in that package to start serving,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#09f;font-style:italic">// Import the Stencila package
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">const</span> stencila <span style="color:#555">=</span> require(<span style="color:#c30">&#39;stencila&#39;</span>)
+
+<span style="color:#09f;font-style:italic">// The package has a host object
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">let</span> host <span style="color:#555">=</span> stencila.host
+
+<span style="color:#09f;font-style:italic">// Serve the host so it is available to other hosts as a peer
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> host.serve()
+</code></pre></div><p>That starts an embedded HTTP server listening on port 2000 at localhost. You can check that it&rsquo;s running using Curl, or my favorite tool for the job, httpie,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">$ http --json :2000
+HTTP/1.1 <span style="color:#f60">200</span> OK
+Connection: keep-alive
+Content-Length: <span style="color:#f60">583</span>
+Content-Type: application/json
+Date: Mon, <span style="color:#f60">05</span> Dec <span style="color:#f60">2016</span> 04:31:00 GMT
+
+<span style="color:#555">{</span>
+    <span style="color:#c30">&#34;address&#34;</span>: <span style="color:#c30">&#34;name://local-2000-nodejs-host&#34;</span>,
+    <span style="color:#c30">&#34;components&#34;</span>: <span style="color:#555">[]</span>,
+    <span style="color:#c30">&#34;id&#34;</span>: <span style="color:#c30">&#34;0652ede4c50877da6db78a7803d2b988a14d5e545f149647f4c0030a712d6858&#34;</span>,
+    <span style="color:#c30">&#34;kind&#34;</span>: <span style="color:#c30">&#34;host&#34;</span>,
+    <span style="color:#c30">&#34;package&#34;</span>: <span style="color:#c30">&#34;node&#34;</span>,
+    <span style="color:#c30">&#34;peers&#34;</span>: <span style="color:#555">[]</span>,
+    <span style="color:#c30">&#34;schemes&#34;</span>: <span style="color:#555">{</span>
+        <span style="color:#c30">&#34;dat&#34;</span>: <span style="color:#555">{</span>
+            <span style="color:#c30">&#34;enabled&#34;</span>: <span style="color:#366">false</span>
+        <span style="color:#555">}</span>,
+        ...
+    <span style="color:#555">}</span>,
+    <span style="color:#c30">&#34;short&#34;</span>: <span style="color:#c30">&#34;*local-2000-nodejs-host&#34;</span>,
+    <span style="color:#c30">&#34;type&#34;</span>: <span style="color:#c30">&#34;nodejs-host&#34;</span>,
+    <span style="color:#c30">&#34;types&#34;</span>: <span style="color:#555">{</span>
+        <span style="color:#c30">&#34;bash-session&#34;</span>: <span style="color:#555">{</span>
+            <span style="color:#c30">&#34;formats&#34;</span>: <span style="color:#555">[]</span>
+        <span style="color:#555">}</span>,
+        <span style="color:#c30">&#34;document&#34;</span>: <span style="color:#555">{</span>
+            <span style="color:#c30">&#34;formats&#34;</span>: <span style="color:#555">[</span>
+                <span style="color:#c30">&#34;html&#34;</span>
+            <span style="color:#555">]</span>
+        <span style="color:#555">}</span>,
+        ...
+    <span style="color:#555">}</span>,
+    <span style="color:#c30">&#34;url&#34;</span>: <span style="color:#c30">&#34;http://127.0.0.1:2000&#34;</span>
+<span style="color:#555">}</span>
+</code></pre></div><p>Because this is the only Stencila host, it&rsquo;s list of peers is empty,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#555">&gt;</span> host.peers
+[]
+</code></pre></div><p>So, let&rsquo;s start Stencila hosts in both R and Python.</p>
+<p>You can install the R package from within R using <code>devtools</code>,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-r" data-lang="r"><span style="color:#09f;font-style:italic"># Install the Stencila package</span>
+<span style="color:#555">&gt;</span> devtools<span style="color:#555">::</span><span style="color:#c0f">install_github</span>(<span style="color:#c30">&#34;stencila/r&#34;</span>)
+
+<span style="color:#09f;font-style:italic"># Import it</span>
+<span style="color:#555">&gt;</span> <span style="color:#c0f">library</span>(stencila)
+
+<span style="color:#09f;font-style:italic"># Serve the host so it is available to other hosts as a peer</span>
+<span style="color:#555">&gt;</span> host<span style="color:#555">$</span><span style="color:#c0f">serve</span>()
+[1] <span style="color:#c30">&#34;http://127.0.0.1:2010&#34;</span>
+</code></pre></div><p>Let&rsquo;s also get a Python host going by installing the Python package using PIP,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-sh" data-lang="sh">pip install --user https://github.com/stencila/py/archive/master.zip
+</code></pre></div><p>and then serving it from within Python,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-py" data-lang="py"><span style="color:#09f;font-style:italic"># Import the Stencila package</span>
+<span style="color:#555">&gt;&gt;&gt;</span> <span style="color:#069;font-weight:bold">from</span> <span style="color:#0cf;font-weight:bold">stencila</span> <span style="color:#069;font-weight:bold">import</span> host
+
+<span style="color:#09f;font-style:italic"># Serve the host</span>
+<span style="color:#555">&gt;&gt;&gt;</span> host<span style="color:#555">.</span>serve()
+<span style="color:#c30">&#39;http://127.0.0.1:2020&#39;</span>
+</code></pre></div><p>Let&rsquo;s now go back to the Node.js host and see what it&rsquo;s <code>peers</code> property looks like now,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#09f;font-style:italic">// Discover peers on localhost
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> host.discover()
+
+<span style="color:#09f;font-style:italic">// Get list of peers
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> host.peers
+[ { stencila<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+    <span style="color:#069;font-weight:bold">package</span><span style="color:#555">:</span> <span style="color:#c30">&#39;r&#39;</span>,
+    version<span style="color:#555">:</span> <span style="color:#c30">&#39;0.1.0&#39;</span>,
+    id<span style="color:#555">:</span> <span style="color:#c30">&#39;cc7b797258a0b981f94cf6358a84ab8b55cbdd9d4944f486d9cfff6e35e74&#39;</span>,
+    url<span style="color:#555">:</span> <span style="color:#c30">&#39;http://127.0.0.1:2010&#39;</span>,
+    schemes<span style="color:#555">:</span> [ <span style="color:#c30">&#39;new&#39;</span>, <span style="color:#c30">&#39;id&#39;</span>, <span style="color:#c30">&#39;file&#39;</span> ],
+    types<span style="color:#555">:</span> [ <span style="color:#c30">&#39;r-session&#39;</span>, <span style="color:#c30">&#39;&#39;</span> ],
+    formats<span style="color:#555">:</span> [ <span style="color:#c30">&#39;&#39;</span>, <span style="color:#c30">&#39;&#39;</span> ] },
+  { schemes<span style="color:#555">:</span> [ <span style="color:#c30">&#39;new&#39;</span> ],
+    stencila<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">true</span>,
+    <span style="color:#069;font-weight:bold">package</span><span style="color:#555">:</span> <span style="color:#c30">&#39;py&#39;</span>,
+    url<span style="color:#555">:</span> <span style="color:#c30">&#39;http://127.0.0.1:2020&#39;</span>,
+    formats<span style="color:#555">:</span> [ <span style="color:#c30">&#39;md&#39;</span> ],
+    id<span style="color:#555">:</span> <span style="color:#f60">0</span>,
+    types<span style="color:#555">:</span> [ <span style="color:#c30">&#39;document&#39;</span>, <span style="color:#c30">&#39;py-session&#39;</span> ] } ]
+</code></pre></div><p>So, the Stencila host in the Node.js now recognizes the hosts in R and Python as it&rsquo;s peers and can request resources from them. In Stencila we call these resources <em>components</em>. Components include <em>documents</em>, <em>sheets</em>, and <em>sessions</em> and hosts have an <code>open</code> method that can be called to get a component and load it into memory. If a host does not know how to open a particular component then it will ask it&rsquo;s peers to open it on it&rsquo;s behalf. To illustrate this we&rsquo;ll open and R session from within Node.js,</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#09f;font-style:italic">// Open a R session from within Node.js
+</span><span style="color:#09f;font-style:italic">// (behind the scenes the R session is actually created by the R host)
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> <span style="color:#069;font-weight:bold">let</span> r
+<span style="color:#555">&gt;</span> host.open(<span style="color:#c30">&#39;new://r-session&#39;</span>).then(session =&gt; r <span style="color:#555">=</span> session)
+
+<span style="color:#09f;font-style:italic">// Do some silly stuff with it like calculate the
+</span><span style="color:#09f;font-style:italic">// correlation between random numbers
+</span><span style="color:#09f;font-style:italic"></span><span style="color:#555">&gt;</span> r.execute(<span style="color:#c30">`
+</span><span style="color:#c30">	x &lt;- rnorm(1e4)
+</span><span style="color:#c30">	y &lt;- x + rnorm(1e4, 0, 0.2)
+</span><span style="color:#c30">`</span>)
+<span style="color:#555">&gt;</span> r.print(<span style="color:#c30">&#39;cor(x,y)&#39;</span>).then(console.log)
+</code></pre></div><p>The object <code>r</code> is actually a proxy for the <code>RSession</code> instance which is hosted by the R host. When you call it&rsquo;s methods <code>execute</code> and <code>print</code> those calls are serialised and sent as a remote method calls to that instance.</p>
+<p>You don&rsquo;t need to do all this at the command line. Instead you can use the browser-based user interfaces. The easiest way to do that is to launch a browser window using the <code>view</code> method:</p>
+<pre tabindex="0"><code>host.view()
+</code></pre><p>That will open a browser window at the URL that the host is serving on. It shows a list of components that this host is currently hosting (currently just that R session we created above) as well as list of it&rsquo;s peers:</p>
+<p><img src="screenshot-1.png" alt="Screenshot of the browser-based interface for the Node.js host showing the R and Python hosts and it&rsquo;s peers"></p>
+<p>Each Stencila component has a browser-based interface, so if we click on that link to the R session, we get an interactive command line where we can do something like plot those random series <code>x</code> and <code>y</code> which we previously generated within the session:</p>
+<p><img src="screenshot-2.png" alt="Screenshot of the browser-based interface for the R session"></p>
+<p>Or, we can click on the link to the R peer, get the interface for the host residing in R, and ask for components that the Node.js host knows about, like <em>documents</em> and <em>Javascript session</em> from there:</p>
+<p><img src="screenshot-3.png" alt="Screenshot of the browser-based interface for the R host"></p>
+<p>That&rsquo;s a very quick introduction on how the various Stencila packages can work together as a network of diverse peers with differing capabilities. Over time the capabilities of all these packages will increase. But in the meantime, if there is something missing in the package for you favorite language, you can always run a host from a different language and pull resources from there.</p>
+<p>We&rsquo;ve moved from a traditional client-server architecture and instead each Stencila package acts as both a client and a server - both a consumer and provider of resources. Right now we have a <em>very</em> simple peer discovery mechanism which only works locally. But the plan is to extend that so that peers will be able to reside on different machines.</p>
+<p>That was also a pretty low level, building-block type overview of the new architecture. In the next development update, I&rsquo;ll show how we can do something interesting with those building blocks by combining the <em>document</em> and <em>session</em> components into a dynamic, data driven document.</p>
+
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../about/team">Team</a></li>
+        <li><a href="../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../index.js"></script>
+  </body>
+</html>

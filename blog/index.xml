@@ -1,0 +1,630 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Stencila</title>
+    <link>https://stenci.la/blog/</link>
+    <description>Recent content in Blogs on Stencila</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Sat, 07 Nov 2020 00:08:21 +0000</lastBuildDate><atom:link href="https://stenci.la/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A web-native approach to open source scientific publishing</title>
+      <link>https://stenci.la/blog/2020-11-08-a-web-native-approach-to-open-source-scientific-publishing/</link>
+      <pubDate>Sat, 07 Nov 2020 00:08:21 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-11-08-a-web-native-approach-to-open-source-scientific-publishing/</guid>
+      <description>This summer, eLife was pleased to launch Executable Research Articles (ERAs) in partnership with Stencila, allowing authors to post computationally reproducible versions of their published papers in the open-access journal.
+The open source ERA technology stack delivers a truly web-native format that treats live, interactive code as a first-class asset. It was developed to address current challenges around reproducing and reusing published results—challenges mostly caused by the lack of infrastructure for publishers to showcase the richness and sophistication of the computational methods used by researchers in their work.</description>
+    </item>
+    
+    <item>
+      <title>Contribute to Stencila during Hacktoberfest 2020</title>
+      <link>https://stenci.la/blog/2020-09-27-contribute-to-stencila-during-hacktober-fest-2020/</link>
+      <pubDate>Sun, 27 Sep 2020 01:09:04 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-09-27-contribute-to-stencila-during-hacktober-fest-2020/</guid>
+      <description>The leaves are changing colours, spooky decorations are sprouting up all over the place, and the cafes are offering seasonal drinks. This can only mean one thing… it’s time for Hacktoberfest  !
+Hacktoberfest is a month long event where you can contribute to open source projects you care about, and get rewarded in the process. This year the organizers of the event allow you to choose from receiving a limited edition T-Shirt, or planting a tree to help the environment.</description>
+    </item>
+    
+    <item>
+      <title>Extensions to Schema.org for structured, semantic &amp; executable research documents</title>
+      <link>https://stenci.la/blog/2020-09-20-register-now-for-stencila-community-call-thur-24-sept-2020/</link>
+      <pubDate>Sun, 20 Sep 2020 21:27:38 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-09-20-register-now-for-stencila-community-call-thur-24-sept-2020/</guid>
+      <description>As we near a v1.0 release, we presented and asked for feedback on, the current state of Stencila Schema - https://github.com/stencila/schema  . For those not familiar, the project is a set of extensions for schema.org in support of structured, semantic, and executable research documents.
+Chaired by Nokome Bentley, CEO of Stencila
+Panelists: Thad Guidry, Arfon Smith, Vanessa Sochat, Dan Katz, Paul Shannon
+ View the recording  Contribute to the questions and suggestions  from the panelists and attendees.</description>
+    </item>
+    
+    <item>
+      <title>The new age of preprints: enhanced, reproducible, and reusable</title>
+      <link>https://stenci.la/blog/2020-09-09-the-new-age-of-preprints-enhanced-reproducible-and-reusable/</link>
+      <pubDate>Wed, 09 Sep 2020 22:47:45 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-09-09-the-new-age-of-preprints-enhanced-reproducible-and-reusable/</guid>
+      <description>In the era of Covid-19, life science and medical preprint submission has been rapidly rising. At the same time, more preprint sites and related services are appearing that could help preprints quickly evolve to be the dynamic, evolving story of research that journal articles have failed to realize.
+Preprints communicate the work at an earlier stage and there is an expectation that the research will continue to evolve and the preprint will either be updated or revised as a journal submission.</description>
+    </item>
+    
+    <item>
+      <title>SORSE event - Executable Research Article: Enrich a research paper with code and data</title>
+      <link>https://stenci.la/blog/2020-09-09-sorse-recording-executable-research-article-era-enrich-a-research-paper-with-code-and-data/</link>
+      <pubDate>Wed, 09 Sep 2020 22:22:22 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-09-09-sorse-recording-executable-research-article-era-enrich-a-research-paper-with-code-and-data/</guid>
+      <description>At the recent SORSE  event on September 09, 2020 Dr. Emmy Tang from eLife and Alex Ketchakmadze from Stencila shared their current vision of how ERAs will be integrated into eLife&amp;rsquo;s production workflow.
+Executable Research Article (ERA): Enrich a research paper with code and data Code and data are important research output and integral to a full understanding of research findings and experimental approaches in a paper. However, traditional research articles seldom have these embedded in the manuscript’s narrative, but instead, leave them as “supplementary materials”, if they are openly available.</description>
+    </item>
+    
+    <item>
+      <title>Welcome to a new ERA of reproducible publishing</title>
+      <link>https://stenci.la/blog/2020-08-27-welcome-to-a-new-era-of-reproducible-publishing/</link>
+      <pubDate>Thu, 27 Aug 2020 01:15:06 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-08-27-welcome-to-a-new-era-of-reproducible-publishing/</guid>
+      <description>Since 2017, we have been working on the concept of computationally reproducible papers. The open-source suite of tools that started life as the Reproducible Document Stack  is now live on eLife as ERA, the Executable Research Article, delivering a truly web-native format for taking published research to a new level of transparency, reproducibility and interactivity.
+From today, authors with a published eLife paper can register their interest to enrich their published work with the addition of live code blocks, programmatically-generated interactive figures, and dynamically generated in-line values, using familiar tools like R Markdown and Jupyter in combination with Stencila Hub’s intuitive asset management and format conversion interface.</description>
+    </item>
+    
+    <item>
+      <title>Creating an Executable Research Article</title>
+      <link>https://stenci.la/blog/2020-08-24-intro-to-era-webinar/</link>
+      <pubDate>Mon, 24 Aug 2020 23:20:06 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-08-24-intro-to-era-webinar/</guid>
+      <description>The option to create an Executable Research Article (ERA)  is now available at eLife, taking published research to a new level of transparency, reproducibility and interactivity. Authors with a published eLife paper can register their interest to enhance their articles with live code blocks, programmatically-generated interactive figures, and dynamically generated in-line values.
+This webinar includes a demonstration of the author workflow to create an ERA followed by a Q&amp;amp;A session where the attendees could directly ask the speakers their questions.</description>
+    </item>
+    
+    <item>
+      <title>Launch of the Executable Research Article project</title>
+      <link>https://stenci.la/blog/2020-08-24-executable-research-article-launch/</link>
+      <pubDate>Mon, 24 Aug 2020 22:22:11 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2020-08-24-executable-research-article-launch/</guid>
+      <description>Today, in partnership with the scientific publisher eLife, we launched the Executable Research Article (ERA) project. ERAs allow authors to blend their traditional manuscript with live code, data, and interactive figures showcasing a new way for researchers to deliver their findings.
+Authors can take a manuscript from formats such as Jupyter Notebook, RMarkdown, and Word to an easy-to-share web pre-print with customizable themes while retaining embedded code and its outputs.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Community Call, 4 September 2019</title>
+      <link>https://stenci.la/blog/2019-09-04-community-call/</link>
+      <pubDate>Wed, 04 Sep 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-09-04-community-call/</guid>
+      <description>In our September community call, Ben demoed his work on Stencila&amp;rsquo;s execution engines, which allow us to process reproducible documents and enable collaboration between researchers working in different software, languages, and document formats.
+Jacqueline shared new themes in Thema, our semantic HTML styling library for articles converted using our Stencila CLI and Encoda. She also showed mockups for our latest project, Stencila /open.
+You can watch a recording of our community call here  , and view our accompanying slides  .</description>
+    </item>
+    
+    <item>
+      <title>Stencila Community Call, 4 July 2019</title>
+      <link>https://stenci.la/blog/2019-07-04-community-call/</link>
+      <pubDate>Mon, 01 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-07-04-community-call/</guid>
+      <description>The next Stencila community call will take place on July 4th at 6am NZST ( see the time and date for your timezone  ). This call is open to everyone and we&amp;rsquo;d love to have you join us!
+Ben will be showing us Logga  a new library for the under-appreciated art of logging 🌲. Alex will tell us about improving start-up performance in Encoda  🚗💨. Jacqueline will give us a preview of new designs for the Hub 🎨 and Nokome will update us on Encoda and Thema progress and roadmaps 📝.</description>
+    </item>
+    
+    <item>
+      <title>From blobs to trees: semantic code analysis</title>
+      <link>https://stenci.la/blog/2019-06-17-blobs-to-trees/</link>
+      <pubDate>Wed, 19 Jun 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-06-17-blobs-to-trees/</guid>
+      <description>What and why? Semantic analysis of code aims to determine its meaning i.e. what the code does, as opposed to what its shape is (which is syntactic analysis). Within Stencila we do semantic analysis of code for two main purposes (1) code cell dependency analysis, and (2) package requirements analysis.
+We do code cell dependency analysis to enable a reactive programming model. This model, familiar to any user of a spreadsheet, requires a graph of the dependency between code cells.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Community Call, 4 June 2019</title>
+      <link>https://stenci.la/blog/2019-06-04-community-call/</link>
+      <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-06-04-community-call/</guid>
+      <description>The next Stencila community call will take place on June 4th at 8am NZST ( see the time and date for your timezone  ). This call is open to everyone and we&amp;rsquo;d love to have you join us!
+Please register for the community call  , and join the Zoom conference  next week!
+The topics for our June community call are:
+ Hub enhancements and integrations with Stencila Encoda (previously Stencila Converter); Stencila Encoda updates; Style repo updates; Stencila GSuite Add-on designs.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Design Updates and csv,conf,v4</title>
+      <link>https://stenci.la/blog/2019-05-17-design-updates/</link>
+      <pubDate>Fri, 17 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-05-17-design-updates/</guid>
+      <description>Since our team meet in April, we&amp;rsquo;ve been busy developing our Stencila schemas  and file converters  (to be integrated into Google Add-ons for Google Docs and Sheets).
+Based on user research in New Zealand (interviews and concept tests), as well as internal design critiques, we&amp;rsquo;ve been exploring updates to the Stencila Hub user experience in preparation for integration with our converters and Google Add-ons.
+In this post, I&amp;rsquo;ll talk through some of the proposed UX changes and reasoning behind those changes.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Community Call, 7 May 2019</title>
+      <link>https://stenci.la/blog/2019-05-04-community-call/</link>
+      <pubDate>Sat, 04 May 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-05-04-community-call/</guid>
+      <description>The next Stencila Community Call will take place on 7th May at 8am NZT ( see the time and date for your timezone  ). This call is open to everyone and we&amp;rsquo;d love to see you joining us!
+Join the call via Zoom at https://zoom.us/j/655391807  . We will be using this collaborative document  to take notes, ask questions and post links.
+The topics for our May Community Call are:</description>
+    </item>
+    
+    <item>
+      <title>Stencila Hub Enhancements for April 2019</title>
+      <link>https://stenci.la/blog/2019-04-30-hub-enhancements-apr-2019/</link>
+      <pubDate>Tue, 30 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-04-30-hub-enhancements-apr-2019/</guid>
+      <description>Stencila Hub is the web application that allows users to easily use Stencila&amp;rsquo;s tools for executable documents without having to install them on their own machine. In addition, the Hub allows users to manage projects, accounts, teams, execution sessions and remote code and data sources. Since February we have mostly been working on invisible changes to improve reliability, but there have also been a few small but important style updates.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Team Meet</title>
+      <link>https://stenci.la/blog/2019-04-23-team-meet/</link>
+      <pubDate>Thu, 25 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-04-23-team-meet/</guid>
+      <description>The Team Meet was an opportunity for the whole team to meet face-to-face. Jacqueline, who recently joined Stencila as the Product Designer and Alex, who is Stencila’s new Software Engineer travelled all the way down from North America to Auckland where we started our 2 week event. For the first few days we focused on planning and discussing our work over the upcoming months. We did a short sprint on Stencila Schema  building a good base for further refinement.</description>
+    </item>
+    
+    <item>
+      <title>Consistent Versioning and Deployment of Django and Express</title>
+      <link>https://stenci.la/blog/2019-04-17-consistent-versioning-deployment-django-express/</link>
+      <pubDate>Wed, 17 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-04-17-consistent-versioning-deployment-django-express/</guid>
+      <description>We have a number of open source repositories on GitHub  . Most of these are libraries written in JavaScript/TypeScript and are versioned, packed and deployed automatically to NPM. There are only two &amp;ldquo;freestanding&amp;rdquo; applications that are deployed: Stencila Hub  and Stencila Cloud  . This post discusses the deployment process we used to have, and the changes made to create a more robust and replicable deployment environment, including a consistent interface for use by developers.</description>
+    </item>
+    
+    <item>
+      <title>Alex Ketchakmadze joins Stencila</title>
+      <link>https://stenci.la/blog/2019-04-10-alex-joins-stencila/</link>
+      <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-04-10-alex-joins-stencila/</guid>
+      <description>Alex joined Stencila in March 2019 as a Designer and a Software Engineer. He is determined to help make Stencila accessible and delightful for researchers of all technical backgrounds. Having witnessed first-hand the often substantial efforts needed for data-scientist to collaborate, he believes that streamlining this process is paramount for accommodating future innovative research in a global society.
+Alex has extensive experience in all aspects of Product UX/UI design. He is also a skilled Frontend Engineer and large part of his previous work experience included facilitating collaboration across Engineering, Product, Business, and Machine Learning teams based across four time zones.</description>
+    </item>
+    
+    <item>
+      <title>Jacqueline Wijaya joins Stencila</title>
+      <link>https://stenci.la/blog/2019-03-12-jacqueline-joins-stencila/</link>
+      <pubDate>Tue, 12 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-03-12-jacqueline-joins-stencila/</guid>
+      <description>Jacqueline joined Stencila in March 2019 as a Product Designer. Her background is in full-stack development. Previously, she worked for startups, consultancies, and large enterprise on various web, mobile applications and open-source enterprise tools. She has experience mentoring designers and developers, and aims to bridge the gap between coders and non-coders. She loves whiteboarding, synthesizing user research, developing sitemaps and task flows, and refactoring lines of code.
+At Stencila Jacqueline is specifically interested in the task of developing open-source tools and growing a community around them.</description>
+    </item>
+    
+    <item>
+      <title>Introducing Ben Shaw</title>
+      <link>https://stenci.la/blog/2019-03-06-introducing-ben-shaw/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-03-06-introducing-ben-shaw/</guid>
+      <description>Ben is Auckland born and bred. He’s been into computing from a young age which led him to study Electrical and Electronic Engineering at the University of Auckland. After graduating with a BE in in 2008 Ben started work writing documentation for a web hosting company and then moved into software development. Soon he discovered Python and Django which sounded cool enough to pursue. Since then he’s performed contract development for a number of companies: from web agencies and startups to large enterprises, including some of New Zealand’s biggest companies.</description>
+    </item>
+    
+    <item>
+      <title>Learning Docker through Dockter</title>
+      <link>https://stenci.la/blog/2019-02-28-learning-with-dockter/</link>
+      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-02-28-learning-with-dockter/</guid>
+      <description>This is a short summary of my, somewhat painful, route to discovering that what I thought I knew about Docker was in fact just the tip of the iceberg. Fortunately, I was able to upgrade my understanding through testing and using a new tool we have been developing: Dockter  , a container image builder for researchers.
+I used Docker for the first time several years ago when it entered the world of computational research.</description>
+    </item>
+    
+    <item>
+      <title>Stencila Hub Enhancements for February 2019</title>
+      <link>https://stenci.la/blog/2019-02-25-hub-enhancements-feb-2019/</link>
+      <pubDate>Mon, 25 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-02-25-hub-enhancements-feb-2019/</guid>
+      <description>The Stencila Hub is the web application that allows users to easily use Stencila&amp;rsquo;s tools for executable documents without having to install them on their own machine. In addition, the Hub allows users use to manage projects, accounts, teams, execution sessions and remote code and data sources. To support Stencila Hub&amp;rsquo;s use in a Data Ethics course at the University of Canterbury, we added a few new features and enhancements, which I will talk about in this post.</description>
+    </item>
+    
+    <item>
+      <title>Stencila contributes to eLife’s first computationally reproducible article</title>
+      <link>https://stenci.la/blog/2019-02-20-elife-reproducible/</link>
+      <pubDate>Wed, 20 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-02-20-elife-reproducible/</guid>
+      <description>We are very excited to be a part of the Reproducible Document Stack (RDS) project led by eLife Innovation. eLife just published an article on one of the main outputs, computationally reproducible manuscripts.
+ In September 2017 eLife announced the start of the Reproducible Document Stack (RDS) project, a collaboration between Substance, Stencila and eLife to support the development of an open-source technology stack aimed at enabling researchers to publish reproducible manuscripts through online journals.</description>
+    </item>
+    
+    <item>
+      <title>Using JSON Schema for developing and validating executable documents</title>
+      <link>https://stenci.la/blog/2019-02-19-json-schema/</link>
+      <pubDate>Mon, 18 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-02-19-json-schema/</guid>
+      <description>At Stencila, we&amp;rsquo;re aiming to provide a framework for the next generation of executable documents. We envisage interactive spreadsheets, notebooks and articles that are highly structured (i.e. made up of a variety of fine grained document nodes) and strongly typed (i.e. only certain types of document nodes are allowed in certain places).
+To achieve this we are representing executable documents as a tree of JSON data and using JSON Schema  to specify and validate how that tree can be structured.</description>
+    </item>
+    
+    <item>
+      <title>Stencila at Linux Conf AU 2019</title>
+      <link>https://stenci.la/blog/2019-01-linuxconf/</link>
+      <pubDate>Fri, 01 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2019-01-linuxconf/</guid>
+      <description>The end of January 2019 has been really busy for us. We attended the 2019 linux.conf.au  conference which took place in Christchurch. This years theme was Linux of Things and we run a Stencila tutorial on one of our recently developed components called Dockter  for easing the process of building Docker images for reproducible research. Our &amp;ldquo;Building reproducible computing environments: a workshop for non-experts&amp;rdquo;  session was fully hands-on</description>
+    </item>
+    
+    <item>
+      <title>Integrating Binder and Stencila</title>
+      <link>https://stenci.la/blog/2018-11-20-stencila-binder/</link>
+      <pubDate>Tue, 20 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-11-20-stencila-binder/</guid>
+      <description>This article reports on a project, integrating Stencila and Binder, which started at the eLife Innovation Sprint 2018. It has been cross-posted on multiple blogs such as eLife Labs  . We welcome comments and feedback on any of them!
+ eLife  , an open science journal published by the non-profit organisation eLife Sciences Publications from the UK, hosted the first eLife Innovation Sprint 2018  as part of their Innovation Initiative  in Cambridge, UK: &amp;quot;[.</description>
+    </item>
+    
+    <item>
+      <title>Further funding from the Alfred P. Sloan Foundation!</title>
+      <link>https://stenci.la/blog/2018-11-sloan-funding/</link>
+      <pubDate>Wed, 07 Nov 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-11-sloan-funding/</guid>
+      <description>We are pleased to announce that Stencila has received further funding from the Alfred P. Sloan Foundation  . The Foundation funded initial development of Stencila in 2017 and their ongoing support has enabled us to develop the underlying architecture, implement and user test initial versions, engage with research communities, and develop strategies for long-term sustainability.
+Stencila aims to bridge the gap between code-based reproducible research and research that relies on spreadsheets and other point-and-click software.</description>
+    </item>
+    
+    <item>
+      <title>What we&#39;ve been up to</title>
+      <link>https://stenci.la/blog/2018-09-september-update/</link>
+      <pubDate>Fri, 21 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-09-september-update/</guid>
+      <description>It&amp;rsquo;s been a quiet few weeks on our blog but very busy time at Stencila. We have been working on further development of Stencila Hub which allows for easy collaboration and sharing of Stencila projects. Since the Hub runs on the cloud, it also takes away the overhead of having to install and maintain language- and domain-specific packages.
+We are building the Hub using Django  framework. We went with Django because it has been out there for a while, it has a reasonably large community and is well documented.</description>
+    </item>
+    
+    <item>
+      <title>Bringing it together - summarising feedback from recent user workshops</title>
+      <link>https://stenci.la/blog/2018-08-workshops-feedback/</link>
+      <pubDate>Mon, 13 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-08-workshops-feedback/</guid>
+      <description>Between end of June and beginning of August 2018 we ran 4 hands-on workshops to collect feedback from researchers trying out Stencila on real life tasks. In this blog post we present the summary of the feedback we received and the lessons learned. It&amp;rsquo;s been incredibly useful for us to get users&#39; comments in this context. The workshop participants found a number of bugs (which was inevitable given that Stencila is still under development) and that in turn allowed us to improve our software as well as prioritize the next development steps.</description>
+    </item>
+    
+    <item>
+      <title>Stencila workshop at SIGNAL ITC Grad School</title>
+      <link>https://stenci.la/blog/2018-08-signal/</link>
+      <pubDate>Sat, 11 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-08-signal/</guid>
+      <description>The workshop at SIGNAL ICT  was the last one in this series of events focusing on user feedback and outreach. We again reached for the Data Carpentry materials but this time we used the Python module for data manipulation and visualisation  . SIGNAL ICT is a New Zealand government-supported programme equipping professionals with skills so essential nowadays in tech industry.
+We run the workshop for the new cohort which started their programme recently.</description>
+    </item>
+    
+    <item>
+      <title>Stencila workshop at the University of Canterbury</title>
+      <link>https://stenci.la/blog/2018-07-uni-canterbury/</link>
+      <pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-07-uni-canterbury/</guid>
+      <description>The workshop at the University of Canterbury was based on the Data Carpentry materials for data analysis and visualisation with R. Whilst the original materials use RStudio, we used Stencila Articles and Sheets to teach how to find the required data and create plots. We took the similar approach to the previous 2 workshops that we already have run. However, this time the participants of the workshop used the production version of the Stencila Hub (the previous workshops used the test version).</description>
+    </item>
+    
+    <item>
+      <title>Stencila workshop at the Bioluminescent Superbugs Lab</title>
+      <link>https://stenci.la/blog/2018-07-20-workshop-superbugs/</link>
+      <pubDate>Wed, 25 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-07-20-workshop-superbugs/</guid>
+      <description>&amp;ldquo;Introduction to R using Stencila&amp;rdquo; with the Bioluminescent Superbugs  Lab at the University of Auckland was the second one after the workshop at the University of Otago Medical School  . We again used the Stencila Hub which saved the participants having to set up the machines as the Hub comes with all currently supported execution contexts and Stencila Article and Sheet interfaces. The contents of the material was based on Data Carpentry R module for ecology  focusing on filtering and visualising data with the popular R package tidyverse.</description>
+    </item>
+    
+    <item>
+      <title>eLife Stencila – an office suite for reproducible research</title>
+      <link>https://stenci.la/blog/2018-07-03-elife-article/</link>
+      <pubDate>Tue, 03 Jul 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-07-03-elife-article/</guid>
+      <description>This blog post was originally published on the eLife Sciences website  .
+ Stencila is an open source office suite designed for researchers. It allows the authoring of interactive, data-driven publications in visual interfaces, similar to those in conventional office suites, but is built from the ground up for reproducibility.
+Stencila aims to make it easier for researchers with differing levels of computational skills to collaborate on the same research article.</description>
+    </item>
+    
+    <item>
+      <title>Stencila workshop at the University of Otago Medical School</title>
+      <link>https://stenci.la/blog/2018-07-02-workshop-otago-university/</link>
+      <pubDate>Sat, 02 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-07-02-workshop-otago-university/</guid>
+      <description>Last week, on 28th and 29th June, we run the first &amp;ldquo;Introduction to R using Stencila&amp;rdquo; workshop. The event was attended by the researchers from the University of Otago Medical School at Christchurch, New Zealand. We used Stencila Hub so that the participants did not have to install anything on their machines. Guided by the Data Carpentry materials  we taught filtering and visualising data with the popular R package tidyverse</description>
+    </item>
+    
+    <item>
+      <title>Stencila at Open Neuroscience</title>
+      <link>https://stenci.la/blog/2017-05-open-neuroscience/</link>
+      <pubDate>Sun, 27 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-05-open-neuroscience/</guid>
+      <description>We were invited to give a short presentation about Stencila and open science workflows at the Open Neuroscience meeting  hosted at Sainsbury Wellcome Centre at the University College London, UK  .
+One of the organisers, Gonçalo Lopes of the Kampff Lab  described the aims of the event:
+ For this event we are bringing together several individual researchers and groups from the London area that want to collaborate and share their science openly.</description>
+    </item>
+    
+    <item>
+      <title>Custom functions in Stencila</title>
+      <link>https://stenci.la/blog/custom-functions/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/custom-functions/</guid>
+      <description>Nokome Bentley and Oliver Buchtala have investigated options to write custom functions in Stencila and found a very simple and generic solution.
+Cells can return a special value of type function. This does not differ very much from other return values, such as a number. Returned functions are however special, they are passed around just as the information necessary to ask the Stencila execution context to actually run the function. This approach introduces only a rather tiny concept, but has a huge impact: for example a cell executed in R can register a function, which can be executed in every other context, e.</description>
+    </item>
+    
+    <item>
+      <title>Stencila in Binder</title>
+      <link>https://stenci.la/blog/2018-05-stencila-in-binder/</link>
+      <pubDate>Fri, 11 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-05-stencila-in-binder/</guid>
+      <description>At the recent eLife sprint in Cambridge Daniel Nüst  and Min Ragan-Kelley  of Project Jupyter had chosen to do a project involving Stencila. Nokome Bentley joined them remotely and as a result you can now run Stencila projects on Binder connecting to a Jupyter kernel.
+  The project is putting the Stencila editor into a Docker container that can be launch with Binder  enabling editing of Dar archives  .</description>
+    </item>
+    
+    <item>
+      <title>Stickers!</title>
+      <link>https://stenci.la/blog/2018-05-stickers/</link>
+      <pubDate>Wed, 02 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-05-stickers/</guid>
+      <description>We are proud to present the first batch of Stencila stickers!
+No open source project is complete without stickers. We ordered our first batch of stickers and will definitely follow up with more. As you can see we have a new logo or, in fact, a whole set of logos to represent Stencila Article and Stencila Sheets. With this different shapes and colours we will pursue more sticker designs.
+We will be giving out Stencila stickers to our beta testers.</description>
+    </item>
+    
+    <item>
+      <title>Aleksandra Pawlik joins Stencila Team</title>
+      <link>https://stenci.la/blog/2018-04-aleksandra-joins-stencila/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-04-aleksandra-joins-stencila/</guid>
+      <description>We have a new addition to our team! Aleksandra Pawlik joined Stencila in April 2018 as our Community Advocate. Her role will focus on understanding users’ needs to direct further Stencila development, building open source developer community and keeping you all updated on what goes on in Stencila.
+Aleksandra has been working in the research software area for over 6 years coordinating training for the Software Sustainability Institute  in the UK and then for the New Zealand eScience Infrastructure  .</description>
+    </item>
+    
+    <item>
+      <title>Reproducible Document Stack: development update community call</title>
+      <link>https://stenci.la/blog/2018-01-rds-community-call/</link>
+      <pubDate>Thu, 25 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2018-01-rds-community-call/</guid>
+      <description>Get a demo of the latest developments with Stencila from Michael Aufreiter  and Oliver Buchtala  during today&amp;rsquo;s Reproducible Document Stack community call on Thursday, Jan 25, 2018 at 3pm UTC
+  Update
+The recording of the Reproducible Document Stack community call is now available online  </description>
+    </item>
+    
+    <item>
+      <title>Roadtrip Roundup! What we learned from 5 weeks on the Roadtrip</title>
+      <link>https://stenci.la/blog/2017-12-roadtrip-roundup/</link>
+      <pubDate>Fri, 01 Dec 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-12-roadtrip-roundup/</guid>
+      <description>After five weeks of travel, including multiple user workshops, conferences and meetups we’ve been synthesizing all the ideas and feedback generated by the community. We held six workshops on features for Stencila Sheets (links at the end of this post). At each workshop we discussed the pros and cons of spreadsheets for research. We then asked participants to jot down on Post-it notes ideas for features that would make spreadsheets better for reproducible research.</description>
+    </item>
+    
+    <item>
+      <title>Stencila at UC Berkeley</title>
+      <link>https://stenci.la/blog/2017-11-berkeley/</link>
+      <pubDate>Thu, 16 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-11-berkeley/</guid>
+      <description>The University of California Berkeley (UCB) was the setting for the fourth workshop on Stencila Sheets. UCB needs little introduction. It&amp;rsquo;s one of the world&amp;rsquo;s most prestigious universities and home to an impressive number of Nobel laureates. It&amp;rsquo;s also home to several leading open source projects for open science including Jupyter  , Pandoc  and ROpenSci  .
+A big thank you to Amy Neeser and John Chodaki for helping us organise the event.</description>
+    </item>
+    
+    <item>
+      <title>Stencila in Portland, Oregon</title>
+      <link>https://stenci.la/blog/2017-11-portland/</link>
+      <pubDate>Tue, 14 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-11-portland/</guid>
+      <description>Our week in Portland, Oregon began with a day at the Oregon Health and Science University (OHSU) Data Science Institute  . Slides from our presentation are available here  . Thanks to the facilitators Nicole Vasilevsky, Jackie Wirz, Robin Champieux, Letisha Wyatt and Laura Zeigen for organising a great event and for hosting us!
+On Friday, the very cool looking OHSU Collaborative Life Sciences Building (CLSB)  was the venue for the third workshop on our current road trip  .</description>
+    </item>
+    
+    <item>
+      <title>Stencila at the University of Oregon</title>
+      <link>https://stenci.la/blog/2017-11-oregon/</link>
+      <pubDate>Wed, 08 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-11-oregon/</guid>
+      <description>Today we drove from Portland down to the college town of Eugene, Oregon where we were hosted by the University of Oregon Data Services Librarian Jonathan Cain  and Digital Metadata Collections Librarian Sarah Seymore  .
+Sarah showed us around the Alan Price Science Commons and Research Library  .
+Including a stop at the seismometer!
+We set up for our workshop, which included a pizza party!
+And kicked things off on the BIG SCREEN.</description>
+    </item>
+    
+    <item>
+      <title>Stencila in the Big Apple</title>
+      <link>https://stenci.la/blog/2017-11-big-apple/</link>
+      <pubDate>Tue, 07 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-11-big-apple/</guid>
+      <description>Last week Nokome Bentely and April Clyburne-Sherin from the Centre for Open Science hosted events in New York City including a visit to ProPublica  and the first of six (6!) user feedback sessions - graciously hosted by the Alfred P. Sloan Foundation  . Feedback session participants included librarians, researchers, data journalists, data educators, data scientists, and more. As an icebreaker, April had everyone row up according to the last time they&amp;rsquo;d used a spreadsheet.</description>
+    </item>
+    
+    <item>
+      <title>Stencila world tour at Mozfest, eLife and Cambridge</title>
+      <link>https://stenci.la/blog/2017-11-mozfest-uk/</link>
+      <pubDate>Thu, 02 Nov 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-11-mozfest-uk/</guid>
+      <description>Mozfest  is a unique experience. Hard to describe and even harder to plan for, it&amp;rsquo;s a 3 day wild ride of open source/science/access/education/web/politics communities coming together. Nokome and myself jumped in to join the scrum to learn about new projects, connect with old friends, and meet new colleagues.
+Photo by Erik Westra / Westra &amp;amp; Co under CC BY-NC 2.0
+We joined eLife Innovation&amp;rsquo;s Open Science Soapbox session  , a lively session of lightning talks by open projects that focus on the scientific and scholarly research space.</description>
+    </item>
+    
+    <item>
+      <title>Toads in Vancouver - using Stencila to teach SQL and R at UBC</title>
+      <link>https://stenci.la/blog/2017-10-ubc-toads-workshop/</link>
+      <pubDate>Tue, 03 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-10-ubc-toads-workshop/</guid>
+      <description>This post is cross-posted at the Software and Data Carpentry blog  ! Thanks to Giulio and his students for beta-testing!
+One of Stencila’s  goals is to create an easy way for people who don’t yet code to learn data science and statistics skills, and to feel comfortable trying out powerful scientific computing languages like R, Python and Julia. We’re doing that by providing interfaces that are similar to the word processors and spreadsheets that they already use.</description>
+    </item>
+    
+    <item>
+      <title>A feature list for Stencila Sheets</title>
+      <link>https://stenci.la/blog/2017-08-features-stencila-sheets/</link>
+      <pubDate>Sun, 20 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-08-features-stencila-sheets/</guid>
+      <description>Michael  , Oliver  and I have been planning the next six months of development and user testing on Stencila Sheets. We&amp;rsquo;re keen to get input from the community on which features should put in, and which we should leave out, and the relative priority for each.
+The plan is to implement initial versions of these features over the coming months, ready for a first round of user testing in early November.</description>
+    </item>
+    
+    <item>
+      <title>Shrinking Stencila’s Docker images with strace</title>
+      <link>https://stenci.la/blog/2017-07-docker-with-strace/</link>
+      <pubDate>Fri, 28 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-07-docker-with-strace/</guid>
+      <description>Docker containers are a useful way to manage dependencies - especially when your application has a lot of them. Stencila&amp;rsquo;s image repository  has comprehensive Docker images that include many of the R and Python packages that commonly used for research. That&amp;rsquo;s really useful because it means that you don&amp;rsquo;t need to specify all those dependencies yourself. However, the down side is that those comprehensive images can get quite large - for example the stencila/alpha image is currently around 2.</description>
+    </item>
+    
+    <item>
+      <title>We’re sponsoring C4RR!</title>
+      <link>https://stenci.la/blog/2017-07-sponsoring-c4rr/</link>
+      <pubDate>Sat, 01 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/2017-07-sponsoring-c4rr/</guid>
+      <description>We are very happy to announce our sponsorship for C4RRR! The topic of containers for Reproducible Research has been a focus for many community members. Here is what the Software Sustainability Institute is saying about the event:
+ Containers, specially Docker and Singularity, is the hottest topics at the moment for reproducible research. What impact does the use of containers have on research, how can researchers benefit from them and make their research more reproducible?</description>
+    </item>
+    
+    <item>
+      <title>Funding from the Alfred P. Sloan Foundation to develop Stencila Sheets</title>
+      <link>https://stenci.la/blog/sloan-grant/</link>
+      <pubDate>Fri, 28 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/sloan-grant/</guid>
+      <description>We&amp;rsquo;re excited to announce a grant from the Alfred P. Sloan Foundation to develop Stencila Sheets. This funding will enable us to take our spreadsheet software for reproducible research from a prototype to a fully usable desktop and web application.
+Spreadsheets are still one of the most widely used environments for data analysis in science. But existing spreadsheet software, like Microsoft Excel or Google Sheets, have interfaces which can be opaque and error prone and file formats which are not well suited to a reproducible workflow.</description>
+    </item>
+    
+    <item>
+      <title>Thanks Coko!</title>
+      <link>https://stenci.la/blog/thanks-coko/</link>
+      <pubDate>Sun, 02 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/thanks-coko/</guid>
+      <description>We&amp;rsquo;re about to announce Stencila&amp;rsquo;s first major round of funding. It&amp;rsquo;s really exciting to at last have the opportunity to give this project the resourcing it needs and to launch into the next phase of this journey.
+More on that funding soon. But first, I want to acknowledge and thank some friends. Friends, without who&amp;rsquo;s support I almost certainly wouldn&amp;rsquo;t have got this funding, and possibly might have given up all together.</description>
+    </item>
+    
+    <item>
+      <title>Development update: a fresh start for Stencila Documents</title>
+      <link>https://stenci.la/blog/dev-update-2017-03-06/</link>
+      <pubDate>Mon, 06 Mar 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/dev-update-2017-03-06/</guid>
+      <description>Michael and Oliver from Substance  are in New Zealand working with Nokome for a few weeks. Last week we started on the new minimal, editing experience for Stencila Documents. At this stage, it still only allows for the usual static content that you find in most word processors - but with an interface more like that of Medium. But we&amp;rsquo;ve also started working on reimplementing dynamic code cells and are looking forward to sharing that with you next week!</description>
+    </item>
+    
+    <item>
+      <title>Development update: Javascript execution contexts and Markdown extensions for interactive documents</title>
+      <link>https://stenci.la/blog/dev-update-2017-01-13/</link>
+      <pubDate>Fri, 13 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/dev-update-2017-01-13/</guid>
+      <description>Blog posts are Stencila Documents First, a reminder that this blog post, like all our other blog posts, is a Stencila Document. That is, it is a document that resides in the memory of your browser, not as a DOM tree  but as a Substance  -based data structure. It got there by Javascript from the stencila/web  package which parsed this HTML  (statically hosted on Github pages). That HTML was generated from this Markdown  using the stencila/node  package (which uses Pandoc for Markdown parsing).</description>
+    </item>
+    
+    <item>
+      <title>On chunks, cells, beakers and functions: models for data driven content</title>
+      <link>https://stenci.la/blog/chunks-n-funcs/</link>
+      <pubDate>Tue, 20 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/chunks-n-funcs/</guid>
+      <description>Recently, I&amp;rsquo;ve written about breaking up Stencila  into several packages that can act as a network of diverse peers  . Each of those packages bring its own capabilities to the network, most notably as execution contexts for a one or more languages. We call those execution contexts Sessions (in the past we&amp;rsquo;ve called them Contexts and I&amp;rsquo;m thinking that may be a better name to revert to!). They&amp;rsquo;re analogous to Jupyter&amp;rsquo;s Kernels  , allowing you to execute a snippet of code in your favorite programming language, and then insert the resulting content into your Document or Sheet.</description>
+    </item>
+    
+    <item>
+      <title>Diverse peers</title>
+      <link>https://stenci.la/blog/diverse-peers/</link>
+      <pubDate>Mon, 05 Dec 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/diverse-peers/</guid>
+      <description>In my last post  I talked about breaking up the architecture of Stencila to take it from a monolithic island to more of a connected archipelago. The platform&amp;rsquo;s architecture was monolithic because it was based on a foundational C++ implementation which was then exposed to various host languages like R and Python. While that approach had several advantages (e.g. implement once, distribute often) it also had some down sides (e.</description>
+    </item>
+    
+    <item>
+      <title>Monolithic island to connected archipelago</title>
+      <link>https://stenci.la/blog/geheimhaven/</link>
+      <pubDate>Wed, 30 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/geheimhaven/</guid>
+      <description>This is the first in a new series of posts providing updates on Stencila development. We&amp;rsquo;ll be updating you on progress and plans every 1-2 weeks with a short video accompanying each post. But, to begin, some history&amp;hellip;
+The story so far I&amp;rsquo;ve been working on Stencila for more than four years. The project grew out of my own frustrations with the traditional copy-and-paste workflow for creating, and collaborating on, data-driven, scientific documents.</description>
+    </item>
+    
+    <item>
+      <title>Easy ain&#39;t easy but it&#39;s getting easier.</title>
+      <link>https://stenci.la/blog/easy-aint-easy/</link>
+      <pubDate>Thu, 24 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/easy-aint-easy/</guid>
+      <description>It isn&amp;rsquo;t easy being easy I recently had a conversation about how difficult it can be to make things easy. Specifically, how do we make it easy for researchers to use tools for reproducible research?
+Making software interfaces &amp;ldquo;user friendly&amp;rdquo;, &amp;ldquo;frictionless&amp;rdquo; and with a low &amp;ldquo;cognitive load&amp;rdquo; has been a focus since before software was a word. So why is it so difficult?
+Well, maybe it isn&amp;rsquo;t difficult. Maybe it just takes time.</description>
+    </item>
+    
+    <item>
+      <title>Stencila blog reincarnated</title>
+      <link>https://stenci.la/blog/blog-reincarnate/</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/blog-reincarnate/</guid>
+      <description>Welcome to the new incarnation of the Stencila blog!
+The previous version of the blog was published on the Stencila hub  . Over there, each blog post is a document, written using our markup language Cila  and with it&amp;rsquo;s own Git repository. We were trying to do our best to pull ourselves up by the boot straps and eat our own dog food!
+But dog food can be hard to eat.</description>
+    </item>
+    
+    <item>
+      <title>A spreadsheet file format for humans</title>
+      <link>https://stenci.la/blog/humane-sheets/</link>
+      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/humane-sheets/</guid>
+      <description>Why? A spreadsheet&amp;rsquo;s primary user interface is the familiar two dimensional grid of cells. By entering formulas into those cells, humans get to tell the computer what calculations to do on what data. The spreadsheet&amp;rsquo;s grid is it&amp;rsquo;s programming interface. It&amp;rsquo;s a particular kind of programming interface - a live, reactive one - but it&amp;rsquo;s still a programming interface.
+Spreadsheets have another interface - the spreadsheet file - but it&amp;rsquo;s been mostly designed for computers, not humans.</description>
+    </item>
+    
+    <item>
+      <title>Getting under Stencila sheets</title>
+      <link>https://stenci.la/blog/underneath-sheets/</link>
+      <pubDate>Thu, 17 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/underneath-sheets/</guid>
+      <description>This is a follow up post to the introduction to Stencila sheets  . I&amp;rsquo;m going to go into more technical details to explain how they work and some of the things you can do with them.
+Getting started Stencila sheets are designed to be used on your own computer or in the cloud (i.e. &amp;ldquo;someone else&amp;rsquo;s computer&amp;rdquo;). In this post I&amp;rsquo;m going to use a local R session to create and play around with a simple sheet.</description>
+    </item>
+    
+    <item>
+      <title>Spreadsheets are dead, long live reactive programming environments!</title>
+      <link>https://stenci.la/blog/introducing-sheets/</link>
+      <pubDate>Tue, 15 Mar 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/blog/introducing-sheets/</guid>
+      <description>Birth &amp;hellip; In 1979, Dan Bricklin and Bob Frankston created VisiCalc the world&amp;rsquo;s first spreadsheet software. VisiCalc was an immediate success, became the Apple II&amp;rsquo;s &amp;ldquo;killer app&amp;rdquo; and was credited by Steve Jobs with propelling the first explosion in personal computing. Ted Nelson, an internet pioneer, described the paradigm shift that the spreadsheet interface created,
+ VisiCalc represented a new idea of a way to use a computer and a new way of thinking about the world.</description>
+    </item>
+    
+  </channel>
+</rss>

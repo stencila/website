@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="hosts">Hosts</h1>
+<p>In Stencila, a <code>Host</code> provides execution <code>Environments</code> and, within those environments, execution <code>Contexts</code>. There are several implementations of <code>Hosts</code> including in the individual language packages (e.g. <code>stencila/r</code>, <code>stencila/py</code>) and <code>stencila/hub</code>.</p>
+<h2 id="environs"><code>/environs</code></h2>
+<p>The <code>/environs</code> endpoint lists the execution <code>Environments</code> supported by the host. When the Stencila client (e.g Stencila Desktop) connects to a host if first visits this endpoint to see what environments are available to execute a project within.</p>
+<p>When you run a Stencila <code>Host</code> locally, it returns a single &ldquo;local&rdquo; environment. For example, you can run the <code>Host</code> in the <code>stencila/node</code> package:</p>
+<pre tabindex="0"><code>npm install stencila/node -g
+stencila-node
+</code></pre><p>and then visit <code>http://localhost:2000/environs</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#a00;background-color:#faa">$</span> <span style="color:#a00;background-color:#faa">http</span> <span style="color:#a00;background-color:#faa">localhost:</span><span style="color:#f60">2000</span><span style="color:#a00;background-color:#faa">/environs</span>
+[
+  {
+    <span style="color:#309;font-weight:bold">&#34;id&#34;</span>: <span style="color:#c30">&#34;local&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;name&#34;</span>: <span style="color:#c30">&#34;local&#34;</span>,
+    <span style="color:#309;font-weight:bold">&#34;version&#34;</span>: <span style="color:#069;font-weight:bold">null</span>,
+    <span style="color:#309;font-weight:bold">&#34;servers&#34;</span>: {
+      <span style="color:#309;font-weight:bold">&#34;http&#34;</span>: {
+        <span style="color:#309;font-weight:bold">&#34;path&#34;</span>: <span style="color:#c30">&#34;/&#34;</span>
+      }
+    }
+  }
+]
+</code></pre></div><p>The property <code>id</code> is an environment identifier, made up of components <code>name</code> and <code>version</code>. The <code>servers</code> property indicates the ways that you can connect to the environment . Currently only a <code>http</code> protocol is available, but in the future other, additional, protocols e.g. Websocket may be implemented. The <code>path</code> property indicates the relative path to connect to the environment - in this case it&rsquo;s <code>/</code> because we&rsquo;ll be connecting o the <em>same</em> environment.</p>
+<p>The <code>local</code> environment <code>id</code> just signifies that you will be executing the code within your project within your local machine environment - which has whatever packages and libraries you have installed. That&rsquo;s not easily reproducible, so let&rsquo;s run a host within a better defined execution environment. The <code>stencila/images</code> repository defines several execution environments using the Nix package manager. These environments are available as Docker images which you can run on your own machine:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">docker run --rm -it -p 2100:2000 stencila/core:0.28
+</code></pre></div><p>and then visit <code>http://localhost:2100/environs</code>:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ http localhost:2100/environs
+<span style="color:#555">[</span>
+  <span style="color:#555">{</span>
+    <span style="color:#c30">&#34;id&#34;</span>: <span style="color:#c30">&#34;stencila/core@0.28&#34;</span>,
+    <span style="color:#c30">&#34;name&#34;</span>: <span style="color:#c30">&#34;stencila/core&#34;</span>,
+    <span style="color:#c30">&#34;version&#34;</span>: <span style="color:#c30">&#34;0.28&#34;</span>,
+    <span style="color:#c30">&#34;servers&#34;</span>: <span style="color:#555">{</span>
+      <span style="color:#c30">&#34;http&#34;</span>: <span style="color:#555">{</span>
+        <span style="color:#c30">&#34;path&#34;</span>: <span style="color:#c30">&#34;/&#34;</span>
+      <span style="color:#555">}</span>
+    <span style="color:#555">}</span>
+  <span style="color:#555">}</span>
+<span style="color:#555">]</span>
+
+</code></pre></div><p>There is only one environment in the list, but it&rsquo;s <code>id</code> is <code>stencila/core@0.28</code>, instead of <code>local</code>.</p>
+<blockquote>
+<p>The <code>stencila/core</code> Docker image has several Stencila language packages installed (currently <code>stencila/node</code>, <code>stencila/py</code> and <code>stencila/r</code>). The <code>stencila/node</code> <code>Host</code> acts as the &lsquo;gateway&rsquo; into the image and passes on requests for certain execution contexts e.g. <code>RContext</code>, <code>PythonContext</code> to the other hosts. The <code>stencila/node</code> <code>Host</code> &lsquo;knows&rsquo; that it is within the <code>stencila/core</code> environment because the <code>STENCILA_ENVIRON</code> environment variable is set to <code>stencila/core@0.28</code> in that image.</p>
+</blockquote>
+<blockquote>
+<p>This example also illustrates why some <code>Hosts</code> provide a <code>server.http.path</code>: the host inside the Docker container does not &ldquo;know&rdquo; that it is only accessible at <code>http://localhost:2100</code>.</p>
+</blockquote>
+<p>Some <code>Hosts</code> provide more than one environment. For example, <code>stencila/cloud</code> provides access to several execution environments including <code>stencila/core</code>, <code>stencila/mega</code> etc. <code>Hosts</code> can also redirect you to environments located at other URLs and provide the access tokens needed to connect to them e.g.</p>
+<pre tabindex="0"><code>[
+  {
+    &quot;id&quot;: &quot;stencila/core@0.28&quot;,
+    &quot;name&quot;: &quot;stencila/core&quot;,
+    &quot;version&quot;: &quot;0.28&quot;,
+    &quot;servers&quot;: {
+      &quot;http&quot;: {
+        &quot;url&quot;: &quot;https://cluster1.my-uni.edu/core@0.28&quot;
+        &quot;token&quot;: &quot;518f4781d9a9b139d6999557eb0&quot;
+      }
+    }
+  },{
+    &quot;id&quot;: &quot;stencila/mega@0.28&quot;,
+    &quot;name&quot;: &quot;stencila/mega&quot;,
+    ...
+]
+
+</code></pre><h2 id="authentication">Authentication</h2>
+<p>The <code>/environs</code> endpoint can be accessed freely but all other endpoints of the host usually require authentication. This prevents a malicious user from executing arbitrary code in the execution context.</p>
+<h2 id="manifest"><code>/manifest</code></h2>
+<p>The <code>/manifest</code> endpoint provides a manifest for the host detailing aspect such as types of execution contexts that it supports. e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">$ http :2000/manifest
+<span style="color:#555">{</span>
+  <span style="color:#c30">&#34;id&#34;</span>: <span style="color:#c30">&#34;node-8536c01a9f271bca4b8e85c06b77738c4cca54ee7f45ba06&#34;</span>,
+  <span style="color:#c30">&#34;stencila&#34;</span>: <span style="color:#555">{</span>
+    <span style="color:#c30">&#34;package&#34;</span>: <span style="color:#c30">&#34;node&#34;</span>,
+    <span style="color:#c30">&#34;version&#34;</span>: <span style="color:#c30">&#34;0.28.4&#34;</span>
+  <span style="color:#555">}</span>,
+  <span style="color:#c30">&#34;process&#34;</span>: <span style="color:#555">{</span>
+    <span style="color:#c30">&#34;arch&#34;</span>: <span style="color:#c30">&#34;x64&#34;</span>,
+    <span style="color:#c30">&#34;name&#34;</span>: <span style="color:#c30">&#34;node&#34;</span>,
+    <span style="color:#c30">&#34;pid&#34;</span>: 18741,
+    <span style="color:#c30">&#34;platform&#34;</span>: <span style="color:#c30">&#34;linux&#34;</span>,
+    <span style="color:#c30">&#34;version&#34;</span>: <span style="color:#c30">&#34;v8.9.1&#34;</span>
+  <span style="color:#555">}</span>,
+  <span style="color:#c30">&#34;run&#34;</span>: <span style="color:#555">[</span>
+    <span style="color:#c30">&#34;/usr/bin/node&#34;</span>,
+    <span style="color:#c30">&#34;-e&#34;</span>,
+    <span style="color:#c30">&#34;require(&#39;stencila-node&#39;).run()&#34;</span>
+  <span style="color:#555">]</span>,
+  <span style="color:#c30">&#34;servers&#34;</span>: <span style="color:#555">{</span>
+    <span style="color:#c30">&#34;http&#34;</span>: <span style="color:#555">{</span>
+      <span style="color:#c30">&#34;token&#34;</span>: <span style="color:#c30">&#34;02398102d6c1c8d6294bab43&#34;</span>,
+      <span style="color:#c30">&#34;url&#34;</span>: <span style="color:#c30">&#34;http://127.0.0.1:2000&#34;</span>
+    <span style="color:#555">}</span>
+  <span style="color:#555">}</span>,
+  <span style="color:#c30">&#34;types&#34;</span>: <span style="color:#555">{</span>
+      <span style="color:#c30">&#34;NodeContext&#34;</span>: <span style="color:#555">{</span>
+          <span style="color:#c30">&#34;client&#34;</span>: <span style="color:#c30">&#34;ContextHttpClient&#34;</span>,
+          <span style="color:#c30">&#34;name&#34;</span>: <span style="color:#c30">&#34;NodeContext&#34;</span>
+      <span style="color:#555">}</span>
+  <span style="color:#555">}</span>,
+  ....
+
+</code></pre></div>
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

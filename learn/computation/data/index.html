@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en" class="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>  · Stencila
+</title>
+
+    
+    
+    <link rel="stylesheet" href="../../../css/index.css" />
+  </head>
+  <body>
+    <header class="header">
+  <nav
+    role="navigation"
+    aria-label="main navigation"
+    id="main-navigation"
+    class="container"
+  >
+    <a class="logo" href="../../../">
+      <img src="../../../img/stencila/stencilaLogo.svg" alt="Stencila" />
+    </a>
+
+    <div id="navbar-menu">
+      <a
+        role="button"
+        class="mobile-toggle"
+        aria-label="menu"
+        aria-expanded="false"
+        id="mobile-menu-toggle"
+      >
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+
+      <div class="navbar-content">
+        <div class="navbar-start">
+          
+          
+          <a
+            class="nav-item"
+            href="../../../#workflow-overview"
+            title="Features"
+            >Features</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/projects"
+            title="Explore"
+            >Explore</a
+          >
+          
+          <a
+            class="nav-item"
+            href="../../../blog"
+            title="Blog"
+            >Blog</a
+          >
+          
+          <a
+            class="nav-item"
+            href="https://hub.stenci.la/pricing"
+            title="Pricing"
+            >Pricing</a
+          >
+          
+        </div>
+
+        <div class="navbar-end">
+          <a class="button primary outline" href="https://hub.stenci.la/me/signin/">
+            Sign in
+          </a>
+
+          <a class="button primary" href="https://hub.stenci.la/me/signup/">
+            Sign up
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+    
+    
+<main class="learn content entry container">
+  <article>
+    <div class="meta">
+       · Jan 1, 0001
+    </div>
+
+    <h1 class="title" id="entryTitle"></h1>
+
+    <div class="content">
+      <h1 id="data">Data</h1>
+<p>Computation is done on <em>data</em>. Data values are of different <em>types</em>.</p>
+<h2 id="fundamental-data-types">Fundamental data types</h2>
+<p>The fundamental value types are built-in to Stencila and used internally. The fundamental types are the same as in 
+<a href="https://www.json.org/" target="_blank" rel="noopener">
+  JSON
+</a>
+, a commonly used, lightweight, data-interchange format. In this section, we use JSON to represent values of each fundamental data type. But as is shown later, these values may have alternative representations in different languages.</p>
+<p>There are two categories of fundamental types: <em>atomics</em>, and <em>compounds</em>.</p>
+<h3 id="atomics">Atomics</h3>
+<p>The <em>atomic</em> value types are the smallest kind of value, they can not be broken into smaller parts. There are four atomic types: <code>boolean</code>, <code>number</code>, <code>integer</code>, and <code>string</code>.</p>
+<h4 id="null">Null</h4>
+<p>A <code>null</code> value is used to represent missing values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">null</span>
+</code></pre></div><h4 id="boolean">Boolean</h4>
+<p>A <code>boolean</code> can only have one of two values:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">true</span>
+</code></pre></div><p>or</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#069;font-weight:bold">false</span>
+</code></pre></div><h4 id="number">Number</h4>
+<p>The <code>number</code> type represents 
+<a href="https://en.wikipedia.org/wiki/Real_number" target="_blank" rel="noopener">
+  real numbers
+</a>
+ e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f60">3.14159265358979323846264338327950288419716</span>
+</code></pre></div><h4 id="integer">Integer</h4>
+<p>The <code>integer</code> type represents 
+<a href="https://en.wikipedia.org/wiki/Integer" target="_blank" rel="noopener">
+  integers
+</a>
+ e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#f60">42</span>
+</code></pre></div><p><code>integer</code> is a child type of <code>number</code>, so any function having a <code>number</code> as a parameter can also take an <code>integer</code>.</p>
+<h4 id="string">String</h4>
+<p>Strings are sequences of characters. e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json"><span style="color:#c30">&#34;hello world&#34;</span>
+</code></pre></div><h3 id="compounds">Compounds</h3>
+<p>There are two <em>compound</em> fundamental types, <code>array</code> and <code>object</code>, that consist of combinations of atomic types.</p>
+<h4 id="array">Array</h4>
+<p>An <code>array</code> is an ordered collection of values e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#f60">1</span>, <span style="color:#f60">2</span>, <span style="color:#f60">3</span>]
+</code></pre></div><p>This example value is of type <code>array[integer]</code> because the values in the array are all of the same type <code>integer</code>.</p>
+<p>The values in an array can have different types e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">[<span style="color:#c30">&#34;hello world&#34;</span>, [<span style="color:#f60">1</span>, <span style="color:#f60">2</span>], {}]
+</code></pre></div><p>This example value is of type <code>array</code>, a synonym for <code>array[any]</code>.</p>
+<h4 id="object">Object</h4>
+<p>An <code>object</code> is a collection of values in which each value has a <em>name</em> e.g.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{ <span style="color:#309;font-weight:bold">&#34;height&#34;</span>: <span style="color:#f60">1.1</span>, <span style="color:#309;font-weight:bold">&#34;width&#34;</span>: <span style="color:#f60">4.5</span> }
+</code></pre></div><p>This <code>object</code> has two <em>properties</em>: <code>height</code> and <code>width</code>.</p>
+<h2 id="extended-data-types">Extended data types</h2>
+<p>Extended types are child types of <code>object</code> with a <code>string</code> property with the name <code>type</code>. For example, an extended type representing a position on the earths surface could be written as:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;position&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;latitude&#34;</span>: <span style="color:#f60">-42.4</span>,
+  <span style="color:#309;font-weight:bold">&#34;longitude&#34;</span>: <span style="color:#f60">173.7</span>
+}
+</code></pre></div><p>The <code>table</code> type is a commonly used extended type for tabular data which is similar to a <code>data.frame</code> in R. It stores values in columns:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#309;font-weight:bold">&#34;type&#34;</span>: <span style="color:#c30">&#34;table&#34;</span>,
+  <span style="color:#309;font-weight:bold">&#34;data&#34;</span>: {
+    <span style="color:#309;font-weight:bold">&#34;height&#34;</span>: [<span style="color:#f60">1.1</span>, <span style="color:#f60">1.0</span>, <span style="color:#f60">1.3</span>],
+    <span style="color:#309;font-weight:bold">&#34;width&#34;</span>: [<span style="color:#f60">4.3</span>, <span style="color:#f60">3.9</span>, <span style="color:#f60">3.7</span>]
+  }
+}
+</code></pre></div>
+    </div>
+  </article>
+</main>
+
+
+
+    
+    
+
+    <footer class="footer">
+  <div class="container columns footer-links">
+    <div class="column is-2">
+      <h3 class="title">Resources</h3>
+      <ul>
+        <li>
+          <a href="http://help.stenci.la" target="_blank" rel="noreferrer"
+            >Documentation</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            >Discord chat</a
+          >
+        </li>
+        <li>
+          <a href="../../../blog">Blog</a>
+        </li>
+        <li>
+          <a href="../../../community/resources">Press package</a>
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-3">
+      <h3 class="title">About</h3>
+      <ul>
+        <li><a href="../../../about/team">Team</a></li>
+        <li><a href="../../../about/advisory-board">Advisors</a></li>
+        
+        <li>
+          <a
+            href="https://policies.stenci.la/privacy"
+            target="_blank"
+            rel="noreferrer"
+            >Privacy Policy</a
+          >
+        </li>
+        <li>
+          <a
+            href="https://policies.stenci.la/terms"
+            target="_blank"
+            rel="noreferrer"
+            >Terms &amp; Conditions</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <div class="column is-2">
+      <h3 class="title">Contact</h3>
+      <ul>
+        <li><a href="mailto:hello@stenci.la">Email</a></li>
+        <li>
+          <a
+            href="https://twitter.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            >Twitter</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-colophon">
+    <div class="container">
+      <div class="colophon-links">
+        <div class="footer-copyright">
+          <img
+            src="../../../img/stencila-icon-reverse.svg"
+            alt="Stencila"
+            class="footer-logo"
+          />
+
+          &copy; 2018-2021 Stencila
+          <a
+            href="https://github.com/stencila/website#contributors"
+            target="_blank"
+            rel="noreferrer"
+            >contributors</a
+          >
+        </div>
+
+        <div class="icons">
+          <a
+            href="https://github.com/stencila"
+            target="_blank"
+            rel="noreferrer"
+            title="GitHub profile page"
+            target="_blank"
+          >
+            <i class="ri-github-fill"></i>
+          </a>
+          <a
+            href="https://discord.gg/XMNrcWqykZ"
+            target="_blank"
+            rel="noreferrer"
+            title="Discord chat server"
+            target="_blank"
+          >
+            <i class="ri-discord-fill"></i>
+          </a>
+          <a
+            href="https://twitter.com/stencila"
+            rel="noreferrer"
+            title="Twitter account"
+            target="_blank"
+          >
+            <i class="ri-twitter-fill"></i>
+          </a>
+          <a
+            href="https://stenci.la/blog/index.xml"
+            title="Blog RSS feed"
+            target="_blank"
+          >
+            <i class="ri-rss-fill"></i>
+          </a>
+        </div>
+      </div>
+
+      <div>
+        <a
+          class="button"
+          href="https://github.com/stencila/website"
+          rel="noreferrer"
+          target="_blank"
+          title="Edit this page"
+          >Edit</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    <script src="../../../index.js"></script>
+  </body>
+</html>

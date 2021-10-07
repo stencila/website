@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Abouts on Stencila</title>
+    <link>https://stenci.la/about/</link>
+    <description>Recent content in Abouts on Stencila</description>
+    <generator>Hugo -- gohugo.io</generator><atom:link href="https://stenci.la/about/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Advisory Board</title>
+      <link>https://stenci.la/about/advisory-board/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/about/advisory-board/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Product designer</title>
+      <link>https://stenci.la/about/jobs/product-designer-2018-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/about/jobs/product-designer-2018-12/</guid>
+      <description>Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We&amp;rsquo;re looking for a full-time UX/UI designer to lead the design and testing of novel user interfaces for data exploration, visualization and analysis.
+About you  You are passionate about understanding how our users think, what their problems are, and building engaging user experiences that solve those problems.</description>
+    </item>
+    
+    <item>
+      <title>Software Engineer (Frontend)</title>
+      <link>https://stenci.la/about/jobs/software-engineer-2018-12/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/about/jobs/software-engineer-2018-12/</guid>
+      <description>Join a team developing the next-generation of tools for data-driven scientific discovery. Stencila aims to lower the barriers to reproducible research and enable collaboration between researchers with different levels of technical expertise. We&amp;rsquo;re looking for a full-time software engineer to lead development of novel user interfaces for data exploration, visualization and analysis.
+About you  You are passionate about understanding how our users think, what their problems are, and building engaging user experiences that solve those problems.</description>
+    </item>
+    
+    <item>
+      <title>Team</title>
+      <link>https://stenci.la/about/team/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://stenci.la/about/team/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
