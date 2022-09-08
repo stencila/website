@@ -98,7 +98,7 @@ export function Header() {
         <nav className="relative z-50 flex justify-between">
           <div className="flex items-center md:gap-x-12">
             <Link href="#" aria-label="Home">
-              <Logo className="h-10 w-auto" />
+              <Logo className="h-10 sm:h-8 w-auto" />
             </Link>
             {/*
             <div className="hidden md:flex md:gap-x-6">
@@ -117,9 +117,11 @@ export function Header() {
             <Button href="#get-started" color="blue">
               <span>Try Stencila</span>
             </Button>
+            {/*
             <div className="-mr-1 md:hidden">
               <MobileNavigation />
             </div>
+            */}
           </div>
         </nav>
       </Container>
