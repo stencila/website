@@ -47,11 +47,11 @@ export function Hero() {
           src={googleDocsAddOnScreenshot}
           alt="Stencila Google Docs addon"
         />
-        <div class="mt-5 text-center">
-          <span class="rounded bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
+        <div className="mt-5 text-center">
+          <span className="rounded bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
             Coming soon
           </span>
-          <span class="ml-2 text-xs font-light">
+          <span className="ml-2 text-xs font-light">
             Stencila addon for Google Docs
           </span>
         </div>
