@@ -19,6 +19,15 @@ export default function Document(props) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Roboto&family=Cabin&display=swap"
         />
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="apple-touch-icon" href="/favicon-180.png"></link>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/favicon-32.png"
+        />
+        <link rel="manifest" href="/manifest.json" />
       </Head>
       <body className="flex h-full flex-col">
         <Main />
