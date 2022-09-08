@@ -1,5 +1,8 @@
+import Image from 'next/future/image'
+
 import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
+import googleDocsAddOnScreenshot from '@/images/screenshots/google-docs-addon.png'
 
 export function Hero() {
   return (
@@ -9,20 +12,21 @@ export function Hero() {
         <span className="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
           made easier
         </span>{' '}
-        for you and {' '}
+        for you and{' '}
         <span className="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
-        your clients
+          your clients
         </span>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Stop wasting time on software deployment and maintenance and asking your clients to use new tools.
-        Stencila makes it easier for you, your colleagues, and your clients to create
-        beautiful, interactive web pages and applications for data.
+        Stop asking your colleagues and clients to use new tools, and wasting time wrestling with complex software
+        deployments. We make it easier to collaborate on data-driven documents and create beautiful, interactive web pages
+        and applications from them.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
-        <Button href="#download" color="blue">
+        <Button href="#get-started" color="blue">
           Download Stencila
         </Button>
+        {/*
         <Button
           href="https://www.youtube.com/channel/UCIpc9W6FFBjb4XB1KXevqvA"
           variant="outline"
@@ -35,6 +39,22 @@ export function Hero() {
           </svg>
           <span className="ml-3">Watch demo</span>
         </Button>
+        */}
+      </div>
+      <div className="pt-10">
+        <Image
+          className="mt-2 rounded-lg shadow-lg ring-1 ring-black ring-opacity-5"
+          src={googleDocsAddOnScreenshot}
+          alt="Stencila Google Docs addon"
+        />
+        <div class="mt-5 text-center">
+          <span class="rounded bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
+            Coming soon
+          </span>
+          <span class="ml-2 text-xs font-light">
+            Stencila addon for Google Docs
+          </span>
+        </div>
       </div>
     </Container>
   )
