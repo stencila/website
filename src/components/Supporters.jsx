@@ -19,12 +19,28 @@ export function Supporters() {
       >
         {[
           [
-            { name: 'Coko Foundation', logo: logoCoko },
-            { name: 'Sloan Foundation', logo: logoSloan },
+            {
+              name: 'Coko Foundation',
+              url: 'https://coko.foundation/',
+              logo: logoCoko,
+            },
+            {
+              name: 'Sloan Foundation',
+              url: 'https://sloan.org/',
+              logo: logoSloan,
+            },
           ],
           [
-            { name: 'Code for Science and Society', logo: logoCss },
-            { name: 'eLife', logo: logoElife },
+            {
+              name: 'Code for Science and Society',
+              url: 'https://codeforscience.org/',
+              logo: logoCss,
+            },
+            {
+              name: 'eLife',
+              url: 'https://elifesciences.org/',
+              logo: logoElife,
+            },
           ],
         ].map((group, groupIndex) => (
           <li key={groupIndex}>
@@ -32,13 +48,15 @@ export function Supporters() {
               role="list"
               className="flex flex-col items-center gap-y-8 sm:flex-row sm:gap-x-12 sm:gap-y-0"
             >
-              {group.map((company) => (
-                <li key={company.name} className="flex">
-                  <Image
-                    className="h-12 w-auto md:h-16"
-                    src={company.logo}
-                    alt={company.name}
-                  />
+              {group.map((org) => (
+                <li key={org.name} className="flex">
+                  <a href={org.url} target="_blank">
+                    <Image
+                      className="h-12 w-auto md:h-16"
+                      src={org.logo}
+                      alt={org.name}
+                    />
+                  </a>
                 </li>
               ))}
             </ul>
