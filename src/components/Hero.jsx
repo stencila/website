@@ -8,25 +8,25 @@ export function Hero() {
   return (
     <Container className="pt-10 pb-20 text-center lg:pt-32">
       <h1 className="mx-auto max-w-4xl font-display text-4xl font-medium tracking-tight text-slate-900 sm:text-7xl">
-        Dynamic documents{' '}
+        Data-driven, interactive documents{' '}
         <span className="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
           made easier
         </span>{' '}
-        for you and{' '}
+        for you and your{' '}
         <span className="bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
-          your clients
+          collaborators
         </span>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        Stop asking your colleagues and clients to use new tools, and wasting time wrestling with complex software
-        deployments. We make it easier to collaborate on data-driven documents and create beautiful, interactive web pages
+        We make it easier to collaborate on data-driven documents and to create beautiful, interactive articles, web pages
         and applications from them.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
+        
+        {/*
         <Button href="#get-started" color="blue">
           Download Stencila
         </Button>
-        {/*
         <Button
           href="https://www.youtube.com/channel/UCIpc9W6FFBjb4XB1KXevqvA"
           variant="outline"
@@ -49,7 +49,7 @@ export function Hero() {
         />
         <div className="mt-5 text-center">
           <span className="rounded bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
-            Coming soon
+            In progress
           </span>
           <span className="ml-2 text-xs font-light">
             Stencila addon for Google Docs

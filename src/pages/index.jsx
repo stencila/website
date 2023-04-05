@@ -33,8 +33,8 @@ export default function Home() {
         <Supporters />
         {/*
         <Faqs />
-        */}
         <GetStarted />
+        */}
       </main>
       <Footer />
     </>
