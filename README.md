@@ -22,6 +22,10 @@ npm run dev
 
 Then open [http://localhost:3000](http://localhost:3000) in your browser to view the website. You can modify the files in the `/src` folder and the site will auto-update.
 
+## Deployment
+
+Currently deployed on pushes using Cloudflare Pages.
+
 ## License
 
 The original site template is a commercial product and is licensed under the [Tailwind UI license](https://tailwindui.com/license). We may open source this repo in the future.
