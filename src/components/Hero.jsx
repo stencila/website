@@ -18,7 +18,7 @@ export function Hero() {
         </span>
       </h1>
       <p className="mx-auto mt-6 max-w-2xl text-lg tracking-tight text-slate-700">
-        We make it easier to collaborate on data-driven documents and to create beautiful, interactive articles, web pages
+        We make it easier to collaborate on data-driven, programmable documents and to publish beautiful, interactive articles, web pages
         and applications from them.
       </p>
       <div className="mt-10 flex justify-center gap-x-6">
@@ -48,9 +48,6 @@ export function Hero() {
           alt="Stencila Google Docs addon"
         />
         <div className="mt-5 text-center">
-          <span className="rounded bg-blue-50 px-2.5 py-1 text-xs font-semibold uppercase tracking-wide text-blue-600">
-            In progress
-          </span>
           <span className="ml-2 text-xs font-light">
             Stencila addon for Google Docs
           </span>

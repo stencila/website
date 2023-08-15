@@ -1,8 +1,10 @@
 import Image from 'next/future/image'
 
+import logoCallaghan from '@/images/logos/callaghan.png'
 import logoCoko from '@/images/logos/coko.png'
 import logoCss from '@/images/logos/css.png'
 import logoElife from '@/images/logos/elife.svg'
+import logoMbie from '@/images/logos/mbie.jpeg'
 import logoSloan from '@/images/logos/sloan.png'
 import { Container } from './Container'
 
@@ -10,8 +12,7 @@ export function Supporters() {
   return (
     <Container className="pt-16 pb-16 text-center">
       <p className="font-display text-base text-slate-900">
-        We wouldn’t be doing this without the support of these generous
-        organizations
+        We wouldn’t be doing this without the support of these organizations
       </p>
       <ul
         role="list"
@@ -20,27 +21,37 @@ export function Supporters() {
         {[
           [
             {
-              name: 'Coko Foundation',
-              url: 'https://coko.foundation/',
-              logo: logoCoko,
-            },
-            {
               name: 'Sloan Foundation',
               url: 'https://sloan.org/',
               logo: logoSloan,
-            },
-          ],
-          [
-            {
-              name: 'Code for Science and Society',
-              url: 'https://codeforscience.org/',
-              logo: logoCss,
             },
             {
               name: 'eLife',
               url: 'https://elifesciences.org/',
               logo: logoElife,
             },
+            {
+              name: 'NZ MBIE',
+              url: 'https://www.mbie.govt.nz/',
+              logo: logoMbie,
+            },
+          ],
+          [
+            {
+              name: 'Coko Foundation',
+              url: 'https://coko.foundation/',
+              logo: logoCoko,
+            },
+            {
+              name: 'Code for Science and Society',
+              url: 'https://codeforscience.org/',
+              logo: logoCss,
+            },
+            {
+              name: 'Callaghan',
+              url: 'https://www.callaghaninnovation.govt.nz/',
+              logo: logoCallaghan,
+            }
           ],
         ].map((group, groupIndex) => (
           <li key={groupIndex}>

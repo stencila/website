@@ -24,6 +24,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <GetStarted />
         {/* 
         <PrimaryFeatures />
         <SecondaryFeatures />
@@ -33,7 +34,6 @@ export default function Home() {
         <Supporters />
         {/*
         <Faqs />
-        <GetStarted />
         */}
       </main>
       <Footer />

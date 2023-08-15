@@ -1,8 +1,6 @@
 import Image from 'next/future/image'
 
-import { Button } from '@/components/Button'
 import { Container } from '@/components/Container'
-import backgroundImage from '@/images/background-call-to-action.jpg'
 
 export function GetStarted() {
   return (
@@ -12,7 +10,6 @@ export function GetStarted() {
     >
       <Image
         className="absolute top-1/2 left-1/2 max-w-none -translate-x-1/2 -translate-y-1/2"
-        src={backgroundImage}
         alt=""
         width={2347}
         height={1244}
@@ -21,15 +18,22 @@ export function GetStarted() {
       <Container className="relative">
         <div className="mx-auto max-w-lg text-center">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl">
-            Get started
+            Get involved
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            We are busy finishing version 2 of Stencila! It's not quite ready (or fully documented) but if you
-            are an early adopter and want to give it a try, we'd love to get your feedback 💖.
+            We are busy working on Stencila v2 using Rust and and built on top
+            of CRDTs. We'd love your feedback, ideas, and contributions over on
+            Github!
           </p>
-          <Button href="https://github.com/stencila/stencila/releases/latest" color="white" className="mt-10">
-            Download latest release
-          </Button>
+          <p className="text-bold mt-4 text-2xl text-white">
+            <a
+              href="https://github.com/stencila/stencila"
+              target="_blank"
+              aria-label="Stencila on GitHub"
+            >
+              <code>stencila/stencila</code>
+            </a>
+          </p>
         </div>
       </Container>
     </section>
