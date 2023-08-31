@@ -21,8 +21,7 @@ export function GetStarted() {
             Get involved
           </h2>
           <p className="mt-4 text-lg tracking-tight text-white">
-            We are busy working on Stencila v2 using Rust and and built on top
-            of CRDTs. We'd love your feedback, ideas, and contributions over on
+            We are busy working on Stencila v2. We'd love your feedback, ideas, and contributions over on
             Github!
           </p>
           <p className="text-bold mt-4 text-2xl text-white">
