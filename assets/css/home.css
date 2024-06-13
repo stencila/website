@@ -15,6 +15,88 @@
   }
 }
 
+.home .testimonials {
+  @apply py-16 relative;
+
+  &:before {
+    @apply absolute top-0 right-0 bg-no-repeat bg-contain bg-center;
+    background-image: url('/img/page/home/stencilCircleOutline.svg');
+    height: 200px;
+    width: 278px;
+    transform: translateY(-65%);
+    z-index: -1;
+
+    @screen tablet {
+      content: '';
+    }
+  }
+
+  h2 {
+    @apply text-center text-lg mb-12;
+  }
+
+  .quotes {
+    @apply flex items-center flex-wrap;
+
+    @screen desktop {
+      @apply flex-no-wrap;
+    }
+  }
+
+  figure {
+    @apply mb-12;
+
+    @screen desktop {
+      @apply flex-1 mb-0 mx-4;
+
+      &:first-child {
+        @apply ml-0;
+      }
+
+      &:last-child {
+        @apply mr-0;
+      }
+    }
+  }
+
+  blockquote {
+    @apply bg-white p-6 rounded shadow relative text-center;
+
+    &:before {
+      @apply absolute font-display text-neutral-300 text-6xl;
+      line-height: 24px;
+      content: '“';
+      top: 1.5rem;
+      left: 0.5rem;
+    }
+
+    &:after {
+      @apply absolute font-display text-neutral-300 text-6xl;
+      line-height: 24px;
+      content: '”';
+      bottom: -0.25rem;
+      right: 0.5rem;
+    }
+  }
+
+  svg {
+    @apply absolute bottom-0 transform translate-y-full;
+    left: 1.5rem;
+  }
+
+  p {
+    @apply font-bold text-xl text-primary-500 mb-0;
+  }
+
+  figcaption {
+    @apply text-base ml-16 mt-1 font-display;
+
+    .title {
+      @apply font-bold mr-1;
+    }
+  }
+}
+
 .home .feature {
   @apply py-16;
 
@@ -97,19 +179,6 @@
 
 .home #workflow-overview {
   @apply py-12 text-center font-display relative;
-
-  &:before {
-    @apply absolute top-0 right-0 bg-no-repeat bg-contain bg-center;
-    background-image: url('/img/page/home/stencilCircleOutline.svg');
-    height: 200px;
-    width: 278px;
-    transform: translateY(-65%);
-    z-index: -1;
-
-    @screen tablet {
-      content: '';
-    }
-  }
 
   h2 {
     @apply text-xl;
