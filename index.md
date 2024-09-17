@@ -1,0 +1,124 @@
+::: include assets/includes/header.md
+
+# Stencila
+**Documents with intelligence.**
+
+Stencila makes it easy to build, rebuild, and publish data-driven, programmable documents.
+
+```html raw
+<div class="bg-black mt-8 p-8">
+    <div class="flex gap-8 items-center">
+        <div>
+            <h2 class="pb-4 text-white" style="margin:0;">Introducing Stencila<sup>n</sup></h2>
+            <div class="text-white">Stencila<sup>n</sup> adds rigorous AI tooling, automated web publishing, and online editing to our rich authoring environment.</div>
+        </div>
+        <div class="bg-white p-4 text-black text-center">Join the Stencila<sup>n</sup> waitlist.</div>
+    </div>
+</div>
+```
+
+## Make authoring easier
+```html raw
+<div class="flex gap-8">
+    <div class="w-full">
+        <ul class="text-sm">
+            <li>Use Stencila’s modern tooling to stop wrestling with content and format and spend more time on the work that matters.</li>
+            <li>Bring together structured text, data, code, and media to make rich, programmable articles, reports, webpages, and applications.</li>
+            <li>Regenerate and reproduce complex documents easily with updated data, code, and content — and the right AI tools where you need them.</li>
+            <li>Maintain a consistent scholarly record across all versions of your work.</li>
+        </ul>
+    </div>
+    <div class="w-full">
+        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+    </div>
+</div>
+```
+
+## Use AI with rigor
+```html raw
+<div class="flex gap-8">
+    <div class="w-full">
+        <ul class="text-sm">
+            <li>Use AI as a tool, guided and reviewed by humans, not a wizard.</li>
+            <li>No more cut and paste: Embed context-relevant, reproducible, validated responses from AI, tracking every contribution and prompt.</li>
+            <li>Pay one low fee for all AI models without the hassle of maintaining your own accounts with different services.</li>
+            <li>Enrich AI contributions with context from your content, your data, and related works in the wider scholarly record.</li>
+            <li>Draw from a library of AI prompts, each benchmarked on quality, cost, and speed to use the best model for the task at hand — or customize your own reusable prompts to use with your preferred models.</li>
+        </ul>
+    </div>
+    <div class="w-full">
+        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+    </div>
+</div>
+```
+
+## Publish without the hassle
+```html raw
+<div class="flex gap-8">
+    <div class="w-full">
+        <ul class="text-sm">
+            <li>Push rich documents to the web with no messy exports to other platforms.</li>
+            <li>Enable full public access or private access with just your collaborators.</li>
+            <li>Publish revisions in one easy step.</li>
+            <li>Automatically attach metadata about every element of your document, including authorship, licensing, and more.</li>
+        </ul>
+    </div>
+    <div class="w-full">
+        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+    </div>
+</div>
+```
+
+## Customize your experience
+```html raw
+<div class="flex gap-8">
+    <div class="w-full">
+        <ul class="text-sm">
+            <li>Compose in rich extended Stencila Markdown, or your favorite authoring format, now including Jupyter, MyST, and more coming soon.</li>
+            <li>Extend Stencila with plugins, prompts, and kernels written in the language of your choice.</li>
+            <li>Connect Stencila to your code or app with our CLI and API.</li>
+            <li>Deploy our modern, open-source codebase in your own environment for offline use, customization, local AI models, and more.</li>
+        </ul>
+    </div>
+    <div class="w-full">
+        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+    </div>
+</div>
+```
+
+## Join the community
+```html raw
+<div class="flex gap-8">
+    <div class="w-full">
+        <ul class="text-sm">
+            <li>Collaborate with data-driven scholars and scientists from around the world.</li>
+            <li>Get help when you need it.</li>
+        </ul>
+    </div>
+    <div class="w-full">
+        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/discord.png">
+    </div>
+</div>
+```
+
+# Get Stencila
+Use Stencila wherever it works best for you.
+
+```html raw
+<div class="flex gap-x-6">
+    <div>
+        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/noun-cloud-2310085-5BFF54.svg" alt="cloud icon"></div>
+        <div class="text-center">Join the Stencila<sup>n</sup> waitlist to edit online with no download or install.</div>
+    </div>
+    <div>
+        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/noun-7209896-5BFF54.svg" alt="cloud icon"></div>
+        <div class="text-center">Download the Stencila desktop app.</div>
+    </div>
+    <div>
+        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/VSCode.svg" alt="VS Code logo"></div>
+        <div class="text-center">Add the Stencila extension to Visual Studio Code.</div>
+    </div>
+</div>
+```
+
+::: include assets/includes/footer.md

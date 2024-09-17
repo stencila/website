@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800px" height="450px" viewBox="0 0 800 450" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>stencila</title>
+    <g id="stencila" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect fill="#616161" x="0" y="0" width="800" height="450"></rect>
+        <text id="Stencila-screenshot/" font-family="OpenSans-Bold, Open Sans" font-size="72" font-weight="bold" fill="#FFFFFF">
+            <tspan x="257.388672" y="155">Stencila </tspan>
+            <tspan x="186.707031" y="253">screenshot/</tspan>
+            <tspan x="207.273438" y="351">screencast</tspan>
+        </text>
+    </g>
+</svg>
