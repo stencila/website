@@ -109,18 +109,18 @@ Use Stencila wherever it works best for you.
 :::
 
 ```html raw
-<div class="flex font-sans gap-x-6">
-    <div>
-        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/noun-cloud-2310085-5BFF54.svg" alt="cloud icon"></div>
-        <div class="text-center">Join the Stencila<sup>n</sup> waitlist to edit online with no download or install.</div>
+<div class="flex font-sans gap-x-8 mt-10">
+    <div class="w-full">
+        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/stencila-cloud.svg" alt="cloud icon"></div>
+        <div class="text-center text-sm">Join the Stencila<sup>n</sup> waitlist to edit online with no download/install.</div>
     </div>
-    <div>
-        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/noun-7209896-5BFF54.svg" alt="cloud icon"></div>
-        <div class="text-center">Download the Stencila desktop app.</div>
+    <div class="w-full">
+        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/stencila-laptop.svg" alt="cloud icon"></div>
+        <div class="text-center text-sm">Download the<br />Stencila desktop app.</div>
     </div>
-    <div>
+    <div class="w-full">
         <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/VSCode.svg" alt="VS Code logo"></div>
-        <div class="text-center">Add the Stencila extension to Visual Studio Code.</div>
+        <div class="text-center text-sm">Add the Stencila extension to Visual Studio Code.</div>
     </div>
 </div>
 ```
