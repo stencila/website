@@ -1,4 +1,6 @@
-::: include assets/includes/header.md
+::: include assets/includes/header.smd
+
+::: style font-sans
 
 # Stencila
 **Documents with intelligence.**
@@ -9,7 +11,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
 <div class="bg-black mt-8 p-8">
     <div class="flex gap-8 items-center">
         <div>
-            <h2 class="pb-4 text-white" style="margin:0;">Introducing Stencila<sup>n</sup></h2>
+            <h2 class="m-0 pb-4 text-white" style="margin:0;">Introducing Stencila<sup>n</sup></h2>
             <div class="text-white">Stencila<sup>n</sup> adds rigorous AI tooling, automated web publishing, and online editing to our rich authoring environment.</div>
         </div>
         <div class="bg-white p-4 text-black text-center">Join the Stencila<sup>n</sup> waitlist.</div>
@@ -104,8 +106,10 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
 # Get Stencila
 Use Stencila wherever it works best for you.
 
+:::
+
 ```html raw
-<div class="flex gap-x-6">
+<div class="flex font-sans gap-x-6">
     <div>
         <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/noun-cloud-2310085-5BFF54.svg" alt="cloud icon"></div>
         <div class="text-center">Join the Stencila<sup>n</sup> waitlist to edit online with no download or install.</div>
@@ -121,4 +125,4 @@ Use Stencila wherever it works best for you.
 </div>
 ```
 
-::: include assets/includes/footer.md
+::: include assets/includes/footer.smd
