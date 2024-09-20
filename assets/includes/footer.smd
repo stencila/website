@@ -1,6 +1,7 @@
-::: style font-sans
-
-# Footer
-TBD
-
-:::
+```html raw
+<div class="flex font-sans gap-8 mt-10" style="justify-content:center;">
+    <div><a href="#">Footer link A</a></div>
+    <div><a href="#">Footer link B</a></div>
+    <div><a href="#">Footer link C</a></div>
+</div>
+```

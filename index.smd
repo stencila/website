@@ -3,19 +3,16 @@
 ::: style font-sans
 
 # Stencila
-**Documents with intelligence.**
+**Documents with scientific intelligence.**
 
 Stencila makes it easy to build, rebuild, and publish data-driven, programmable documents.
 
+## Introducing Stencila Cloud
 ```html raw
-<div class="bg-black mt-8 p-8">
-    <div class="flex gap-8 items-center">
-        <div>
-            <h2 class="m-0 pb-4 text-white" style="margin:0;">Introducing Stencila<sup>n</sup></h2>
-            <div class="text-white">Stencila<sup>n</sup> adds rigorous AI tooling, automated web publishing, and online editing to our rich authoring environment.</div>
-        </div>
-        <div class="bg-white p-4 text-black text-center">Join the Stencila<sup>n</sup> waitlist.</div>
-    </div>
+<div class="font-bold items-center flex gap-8 m-10 text-sm">
+    <div><a href="#"><img alt="Stencila cloud icon" class="m-0 w-full" src="assets/media/stencila-cloud.svg"></a></div>
+    <div>Stencila Cloud adds rigorous AI tooling, automated web publishing, and online editing to our rich authoring environment.</div>
+    <a style="text-decoration:none;" href="#"><div class="text-center" style="background:#66FF66; border-radius:0.5rem; color:#2568EF; font-weight:bold; padding:1em;">Join the Stencila Cloud waitlist ></div></a>
 </div>
 ```
 
@@ -31,7 +28,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
         </ul>
     </div>
     <div class="w-full">
-        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+        <img alt="image placeholder" class="mt-5 w-full" src="assets/media/stencila.svg">
     </div>
 </div>
 ```
@@ -49,7 +46,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
         </ul>
     </div>
     <div class="w-full">
-        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+        <img alt="image placeholder" class="mt-5 w-full" src="assets/media/stencila.svg">
     </div>
 </div>
 ```
@@ -66,7 +63,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
         </ul>
     </div>
     <div class="w-full">
-        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+        <img alt="image placeholder" class="mt-5 w-full" src="assets/media/stencila.svg">
     </div>
 </div>
 ```
@@ -83,7 +80,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
         </ul>
     </div>
     <div class="w-full">
-        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/stencila.svg">
+        <img alt="image placeholder" class="mt-5 w-full" src="assets/media/stencila.svg">
     </div>
 </div>
 ```
@@ -98,7 +95,7 @@ Stencila makes it easy to build, rebuild, and publish data-driven, programmable 
         </ul>
     </div>
     <div class="w-full">
-        <img alt="Discord" class="mt-5 w-full" src="http://127.0.0.1:9000/assets/media/discord.png">
+        <img alt="Discord" class="mt-5 w-full" src="assets/media/discord.png">
     </div>
 </div>
 ```
@@ -109,18 +106,18 @@ Use Stencila wherever it works best for you.
 :::
 
 ```html raw
-<div class="flex font-sans gap-x-8 mt-10">
+<div class="flex font-bold font-sans gap-x-8 mt-10 text-center text-sm">
     <div class="w-full">
-        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/stencila-cloud.svg" alt="cloud icon"></div>
-        <div class="text-center text-sm">Join the Stencila<sup>n</sup> waitlist to edit online with no download/install.</div>
+        <div><img alt="Stencila cloud icon" class="m-0 w-full" src="assets/media/stencila-cloud.svg"></div>
+        <div>Join the Stencila Cloud waitlist to edit online with no download/install.</div>
     </div>
     <div class="w-full">
-        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/stencila-laptop.svg" alt="cloud icon"></div>
-        <div class="text-center text-sm">Download the<br />Stencila desktop app.</div>
+        <div><img alt="Stencila laptop icon" class="m-0 w-full" src="assets/media/stencila-laptop.svg"></div>
+        <div>Download the<br />Stencila desktop app.</div>
     </div>
     <div class="w-full">
-        <div><img class="m-0 w-full" src="http://127.0.0.1:9000/assets/media/VSCode.svg" alt="VS Code logo"></div>
-        <div class="text-center text-sm">Add the Stencila extension to Visual Studio Code.</div>
+        <div><img alt="VS Code logo" class="m-0 w-full" src="assets/media/VSCode.svg"></div>
+        <div>Add the Stencila extension to Visual Studio Code.</div>
     </div>
 </div>
 ```
