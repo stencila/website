@@ -1,0 +1,35 @@
+---
+title: Stencila
+description: Documents with scientific intelligence
+---
+
+::: style text-center text-3xl font-sans mb-8
+
+![](images/stencila.png)
+
+Documents with scientific intelligence
+
+:::
+
+Large language models and other generative AI have the potential to greatly improve scientific productivity. But to fully realize this potential, the way that scientists interact with these tools will need to move beyond simple chat interfaces and copy-paste workflows.
+
+We're working on the next version of Stencila. It brings generative AI to scientific authoring in ways that improve usability, reliability, and transparency. This includes providing LLMs with contextual information (including from the document, data, and the literature) to improve accuracy and relevance, a library of task-specific prompts, and routing tasks to the LLM that performs best.
+
+::: style text-center text-sm my-8
+
+![](images/screenshot.png)
+
+Stencila's VS Code extension in development (editing this document). Coming to the VS Code Marketplace soon!
+
+:::
+
+Keep up to date and contribute to part of the next generation of scientific authoring tools at https://github.com/stencila/stencila.
+
+> [!note] This web page is a Stencila document
+> We're eating our own dog food 🐕 and have authored and published this web page using Stencila. Hover over blocks to see details how they we authored including whether and which LLMs were used, and who accepted and verified suggested additions and edits.
+
+::: style text-center text-2xl mt-8
+
+More coming soon!
+
+:::
