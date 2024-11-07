@@ -3,7 +3,46 @@ title: Stencila
 description: Documents with scientific intelligence
 ---
 
-::: style text-center text-3xl font-sans mb-8
+::: style fixed h-28 top-0 left-0 bg-white w-full z-20
+
+```css raw
+.header-link {
+  display: flex;
+  align-items: center;
+  color: inherit;
+  text-decoration: none;
+}
+```
+
+:::: style container h-28 grid grid-cols-3 mx-auto items-center
+
+::::: style w-64
+
+![](./images/stencila.png)
+
+:::::
+
+```html raw
+<div class="flex justify-center gap-4">
+  <a href="#" class="header-link">Docs</a>
+  <a href="#" class="header-link">Plans</a>
+  <a href="#" class="header-link">About</a>
+</div>
+```
+
+```html raw
+<div class="flex items-center justify-end gap-x-2">
+  <a href="#" class="header-link"><img  src="./images/github.svg" alt="github"/></a>
+  <a href="#" class="header-link"><img  src="./images/discord.svg" alt="discord"/></a>
+  <a href="#" class="header-link">Login</a>
+</div>
+```
+
+::::
+
+:::
+
+::: style text-center text-3xl font-sans mb-8 mt-28
 
 ![](images/stencila.png)
 
@@ -31,5 +70,64 @@ Keep up to date and contribute to part of the next generation of scientific auth
 ::: style text-center text-2xl mt-8
 
 More coming soon!
+
+:::
+
+::: style w-full bg-gray-100 h-96 border-0 border-t border-solid border-gray-400
+
+:::: style container mt-16 mx-auto grid grid-cols-2 h-full
+
+
+::::: style flex flex-col justify-between h-full
+
+:::::: style w-64
+
+![](./images/stencila.png)
+
+
+Documenents with scientific intelligence.
+
+::::::
+
+© 2024 Stencila ltd.
+
+:::::
+
+
+::::: style flex justify-between
+
+:::::: style
+
+### About
+
+plans
+
+::::::
+
+:::::: style
+
+### Community
+
+Join us on Discord
+
+Follow us on X
+
+Discuss on Github
+
+```html raw
+<div class="flex gap-x-2">
+  <a href="#"><img  src="./images/github.svg" alt="github"/></a>
+  <a href="#"><img  src="./images/discord.svg" alt="discord"/></a>
+  <a href="#"><img  src="./images/twitter-x.svg" alt="twitter/X "/></a>
+  <a href="#"><img  src="./images/youtube.svg" alt="youtube" /></a>
+</div>
+```
+
+::::::
+
+
+:::::
+
+::::
 
 :::
