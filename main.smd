@@ -3,7 +3,7 @@ title: Stencila
 description: Documents with scientific intelligence
 ---
 
-::: style fixed h-28 top-0 left-0 bg-white w-full z-20
+::: style fixed h-28 top-0 left-0 bg-white w-full z-20 border-0 border-solid border-b border-gray-200
 
 ```css raw
 .header-link {
@@ -42,7 +42,9 @@ description: Documents with scientific intelligence
 
 :::
 
-::: style text-center text-3xl font-sans mb-8 mt-28
+::: section
+
+::: style text-center text-3xl font-sans mb-8 mt-28 pt-4
 
 ![](images/stencila.png)
 
@@ -73,9 +75,11 @@ More coming soon!
 
 :::
 
-::: style w-full bg-gray-100 h-96 border-0 border-t border-solid border-gray-400
+:::
 
-:::: style container mt-16 mx-auto grid grid-cols-2 h-full
+::: style w-full pt-16 bg-gray-100 h-80 border-0 border-t border-solid border-gray-400
+
+:::: style container mx-auto grid grid-cols-2 h-full
 
 
 ::::: style flex flex-col justify-between h-full
