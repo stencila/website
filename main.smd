@@ -14,13 +14,15 @@ description: Documents with scientific intelligence
 }
 ```
 
-:::: style container h-28 grid grid-cols-3 mx-auto items-center
+:::: style container px-2 h-28 grid grid-cols-3 mx-auto items-center
 
-::::: style w-64
-
-![](./images/stencila.png)
-
-:::::
+```html raw
+<div style="max-width: 190px;">
+  <a href="/">
+    <img width="100%" src="./images/stencila" alt="stencila icon" />
+  </a>
+</div>
+```
 
 ```html raw
 <div class="flex justify-center gap-4">
@@ -49,6 +51,47 @@ description: Documents with scientific intelligence
 ![](images/stencila.png)
 
 Documents with scientific intelligence
+
+:::
+
+```py exec
+class_list = [
+  'h-full',
+  'p-4',
+  'rounded',
+  'shadow'
+]
+
+card_classes = " ".join(class_list)
+```
+
+## Make your documents work for you
+
+::: style grid grid-cols-3 gap-10 mb-12
+
+:::: style rounded shadow h-full p-4 text-xs
+
+#### AI assisstance with transparency
+
+Enhance scientific authoring with AI tools that provide context-aware support while maintaining clear provenance records for transparent collaboration.
+
+::::
+
+:::: style rounded shadow h-full p-4 text-xs
+
+#### Reproducible reasearch
+
+Combine code, data, and text in dynamic documents. Regenerate reports and content with the latest data without recreating entire documents.
+
+::::
+
+:::: style rounded shadow h-full p-4 text-xs
+
+#### Open source and interoperability
+
+Supports multiple languages and file formats. Stencila is highly interoperable with other tools and workflows commonly used in research and data science.
+
+::::
 
 :::
 
