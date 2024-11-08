@@ -46,30 +46,29 @@ description: Documents with scientific intelligence
 
 ::: section
 
-::: style text-center text-3xl font-sans mb-8 mt-28 pt-4
+::: style text-center text-7xl font-sans mb-8 mt-28 pt-4
 
-![](images/stencila.png)
+Documents 
 
-Documents with scientific intelligence
+:::: style text-3xl
+
+with 
+
+::::
+
+Scientific intelligence
 
 :::
-
-```py exec
-class_list = [
-  'h-full',
-  'p-4',
-  'rounded',
-  'shadow'
-]
-
-card_classes = " ".join(class_list)
-```
 
 ## Make your documents work for you
 
 ::: style grid grid-cols-3 gap-10 mb-12
 
-:::: style rounded shadow h-full p-4 text-xs
+:::: style rounded shadow-lg h-full p-4 text-xs
+
+```html raw
+<img src="./images/logo-circle-left.svg"/>
+```
 
 #### AI assisstance with transparency
 
@@ -77,7 +76,11 @@ Enhance scientific authoring with AI tools that provide context-aware support wh
 
 ::::
 
-:::: style rounded shadow h-full p-4 text-xs
+:::: style rounded shadow-lg h-full p-4 text-xs
+
+```html raw
+<img src="./images/logo-circle-middle.svg"/>
+```
 
 #### Reproducible reasearch
 
@@ -85,7 +88,11 @@ Combine code, data, and text in dynamic documents. Regenerate reports and conten
 
 ::::
 
-:::: style rounded shadow h-full p-4 text-xs
+:::: style rounded shadow-lg h-full p-4 text-xs
+
+```html raw
+<img src="./images/logo-circle-right.svg"/>
+```
 
 #### Open source and interoperability
 
@@ -95,9 +102,13 @@ Supports multiple languages and file formats. Stencila is highly interoperable w
 
 :::
 
-Large language models and other generative AI have the potential to greatly improve scientific productivity. But to fully realize this potential, the way that scientists interact with these tools will need to move beyond simple chat interfaces and copy-paste workflows.
 
-We're working on the next version of Stencila. It brings generative AI to scientific authoring in ways that improve usability, reliability, and transparency. This includes providing LLMs with contextual information (including from the document, data, and the literature) to improve accuracy and relevance, a library of task-specific prompts, and routing tasks to the LLM that performs best.
+## Language model agnostic
+
+Stencila uses the best agent for the job, for every job
+
+In the fast-paced world of AI, keeping up with the latest and greatest models can be a daunting task. Stencila removes this complexity by regularly benchmarking a variety of AI models to ensure optimal performance. For every task you undertake, Stencila automatically selects the best-suited model, saving you time and effort. Focus on your scientific writing and research—we'll handle the heavy lifting of choosing the right AI tool to enhance your work.
+
 
 ::: style text-center text-sm my-8
 
