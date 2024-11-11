@@ -1,260 +1,307 @@
 ---
-title: Stencila
+config:
+  type: Config
+  theme: stencila
 description: Documents with scientific intelligence
+title: Stencila
 ---
 
-::: style fixed h-28 top-0 left-0 bg-white w-full z-20 border-0 border-solid border-b border-gray-200
+::: style fixed h-28 top-0 left-0 bg-white w-full z-20
 
-```css raw
-.header-link {
-  display: flex;
-  align-items: center;
-  color: inherit;
-  text-decoration: none;
-}
-```
 
-:::: style container px-2 h-28 grid grid-cols-2 mx-24 items-center
 
-```html raw
+::::: style container px-2 h-28 grid grid-cols-2 mx-24 items-center
+
+````html raw
 <div style="max-width: 190px;">
   <a href="/">
     <img height="48px" src="./images/stencila-logo.svg" alt="stencila icon" />
   </a>
 </div>
-```
+````
 
-
-
-```html raw
-<div class="flex items-center justify-end gap-x-2">
-  <a href="#" class="header-link"><img  src="./images/github.svg" alt="github"/></a>
-  <a href="#" class="header-link"><img  src="./images/discord.svg" alt="discord"/></a>
+````html raw
+<div class="flex items-center justify-end gap-x-4">
+  <a href="https://github.com/stencila/stencila?tab=readme-ov-file" class="header-link"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
 </div>
-```
+````
 
-::::
+:::::
 
 :::
 
 ::: section
 
-::: style text-center text-7xl font-sans mb-8 mt-28 pt-4
+::::: style text-center text-7xl font-sans mt-48 pt-4
 
-```html raw
-<div class="text-center">
-    <p class="text-5xl font-light text-gray-900">Documents</p>
-    <p class="text-2xl font-light text-gray-500">with</p>
-    <p class="text-5xl font-light text-gray-900">Scientific Intelligence</p>
+````html raw
+<div class="text-center pt-24">
+    <h1 class="text-5xl font-light pb-4">Documents</h1>
+    <h3 class="text-2xl font-light text-teal-700 pb-2">With</h3>
+    <h1 class="text-5xl font-light pb-4">Scientific Intelligence</h1>
 </div>
-<div class="flex justify-center space-x-4 mt-6 h-16 text-center">
-      <a href="#" class="bg-blue-500 text-white text-base no-underline font-semibold px-4 py-2 mx-4 rounded w-full flex items-center space-x-2 hover:bg-blue-600">
+<div class="flex justify-center space-x-4 mt-16 h-12 text-center mb-96">
+      <a href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila" class="bg-blue-500 w-fit flex text-white text-base no-underline mx-4 font-semibold px-4 py-2 rounded flex items-center space-x-2 hover:bg-blue-600">
         <img src="images/vscode-white.svg" alt="Open VSX" class="h-5 w-5">
         <span class="w-full px-2">VS Code Extension</span>
       </a>
-      <a href="#" class="bg-green-500 text-white text-base no-underline font-semibold px-4 py-2  mx-4 rounded w-full flex items-center space-x-2 hover:bg-green-600">
-        <img src="images/github-white.svg" alt="Open VSX" class="h-5 w-5">
-        <span class="w-full px-2">Github Codespaces</span>
-      </a>
-      <a href="#" class="bg-purple-500 text-white text-base no-underline w-full text-center font-semibold px-4 py-2 mx-4 rounded flex items-center space-x-2 hover:bg-purple-600">
+      <a href="https://open-vsx.org/extension/stencila/stencila" class="bg-purple-500 text-white w-fit text-base no-underline text-center font-semibold px-4 py-2 mx-4 rounded flex items-center space-x-2 hover:bg-purple-600">
         <img src="images/vsx-white.svg" alt="Open VSX" class="h-5 w-5">
         <span class="w-full px-2">Open VSX</span>
       </a>
+      <a href="https://github.com/stencila/demo-codespace" class="bg-green-500 text-white text-base w-fit no-underline font-semibold px-4 py-2  mx-4 rounded flex items-center space-x-2 hover:bg-green-600">
+        <img src="images/github-white.svg" alt="Open VSX" class="h-5 w-5">
+        <span class="w-full px-2">Github Codespaces</span>
+      </a>
   </div>
-```
+````
 
-:::
+:::::
 
-## Make your documents work for you
+## Documents That Work For You
 
-::: style grid grid-cols-3 gap-10 mb-12
 
-:::: style rounded shadow-lg h-full p-4 text-xs
+::::: style grid grid-cols-3 gap-10 mb-64 mt-4
 
-```html raw
+::::::: style rounded shadow-lg h-full p-4 text-xs
+
+````html raw
 <img src="./images/logo-circle-left.svg"/>
-```
+````
+:::::::: style mt-4
 
 #### AI assisstance with transparency
 
-Enhance scientific authoring with AI tools that provide context-aware support while maintaining clear provenance records for transparent collaboration.
-
-::::
-
-:::: style rounded shadow-lg h-full p-4 text-xs
+::::::::
 
 ```html raw
-<img src="./images/logo-circle-middle.svg"/>
+<p1 class="leading-5">
+Enhance scientific authoring with AI tools that provide context-aware support while maintaining clear provenance records for transparent collaboration.
+</p1>
 ```
+:::::::
+
+::::::: style rounded shadow-lg h-full p-4 text-xs
+
+````html raw
+<img src="./images/logo-circle-middle.svg"/>
+````
+
+:::::::: style mt-4 
 
 #### Reproducible reasearch
 
-Combine code, data, and text in dynamic documents. Regenerate reports and content with the latest data without recreating entire documents.
-
-::::
-
-:::: style rounded shadow-lg h-full p-4 text-xs
+::::::::
 
 ```html raw
-<img src="./images/logo-circle-right.svg"/>
+<p1 class="leading-5">
+Combine code, data, and text in dynamic documents. Regenerate reports and content with the latest data without recreating entire documents.
+</p1>
 ```
+
+:::::::
+
+::::::: style rounded shadow-lg h-full p-4 text-xs
+
+````html raw
+<img src="./images/logo-circle-right.svg"/>
+````
+
+:::::::: style mt-4
 
 #### Open source and interoperability
 
+::::::::
+
+```html raw
+<p1 class="leading-5">
 Supports multiple languages and file formats. Stencila is highly interoperable with other tools and workflows commonly used in research and data science.
+</p1>
+```
 
-::::
+:::::::
 
-:::
+:::::
 
 ## See Stencila in Action
 
-::: style text-center text-sm
+::::: style text-center text-sm
 
-
-```html raw
-<div class="justify-center w-full">
-  <img src="images/video.png" alt="Image of Stencila" class="w-full">
-  <div class="h-24 w-full bg-blue-100 flex rounded-md items-center">
+````html raw
+<div class="justify-center w-full mb-64">
+  <div class="h-24 w-full bg-blue-100 flex absolute rounded-md items-center mt-56 opacity-60">
     <img src="images/video-thumb.png" alt="Thumbnail of Stencila" class="h-12 my-8 ml-8"/>
-    <div class="flow-root"> 
-      <span class="relative text-lg ml-9 text-neutral-700">Watch our demo soon</span>
+    <div class="flow-root text-left ml-8"> 
+      <span class="relative text-lg text-neutral-700">Demo coming soon</span>
       <br/>
       <span class="relative text-neutral-500">5 minutes 33 seconds</span>
     </div>
   </div>
+  <img src="images/video.png" alt="Image of Stencila" class="w-full">
 </div>
-```
+````
 
+:::::
 
+## Language Model Agnostic
 
-:::
-
-
-## Language model agnostic
-
-Stencila uses the best agent for the job, for every job
+#### Stencila uses the best agent for the job, for every job
 
 In the fast-paced world of AI, keeping up with the latest and greatest models can be a daunting task. Stencila removes this complexity by regularly benchmarking a variety of AI models to ensure optimal performance. For every task you undertake, Stencila automatically selects the best-suited model, saving you time and effort. Focus on your scientific writing and research—we'll handle the heavy lifting of choosing the right AI tool to enhance your work.
 
+````html raw
+<div class="justify-center w-full mt-12 mb-64">
+  <img src="images/routing.svg" alt="Image of Stencilas routing" class="w-full">
+</div>
+````
+## Unified AI Access or Use Your Own
 
-![](./images/routing.svg)
-
-
-## Unified AI Access or Bring Your Own
 #### One platform, multiple options
 
+### Try Our Model Router
 
-### Use Our Model Router
-Opt for one of our subscription plans to unlock a wide array of top-performing AI models under a single, convenient umbrella. No more juggling multiple subscriptions or worrying about which model to choose—we handle the updates and benchmarking to ensure you're always using the best tool for the job.
+````html raw
+<div class="w-full flex items-center mb-12">
+  <p class="mr-12 w-96"> 
+    Opt for one of our subscription plans to unlock a wide array of top-performing AI models under a single, convenient umbrella. No more juggling multiple subscriptions or worrying about which model to choose—we handle the updates and benchmarking to ensure you're always using the best tool for the job.
+  </p>
+  <img class="w-64" src="./images/modelRouter.svg"/>
+</div>
+````
 
 ### Bring Your Own API Keys
-Prefer to use your own resources? You're welcome to bring your own API keys for your favorite AI services. You can even run models locally using tools like Ollama, and Stencila will automatically detect and integrate them into your workflow.
+
+
+````html raw
+<div class="w-full flex items-center mb-12">
+  <p class="mr-12 w-96"> 
+    Prefer to use your own resources? You're welcome to bring your own API keys for your favorite AI services.
+  </p>
+  <img class="w-64" src="./images/keys.png"/>
+</div>
+````
 
 ### Use Your Own Local Models
-Prefer to use your own resources? You're welcome to bring your own API keys for your favorite AI services. You can even run models locally using tools like Ollama, and Stencila will automatically detect and integrate them into your workflow.
-
-
-
-```html raw
-<div class="justify-center w-full">
-  <div class="h-full absolute flow-root rounded-md items-center ml-56 ">
-      <h3>Your Language, Your Workflow</h3>
-      <h4>Harness the power of multiple programming languages in one platform.</h4>
-      <span class="relative text-lg ml-9 text-neutral-700">Stencila supports Python, R, Julia, and more—code in your preferred language. Seamlessly integrate analyses, visualizations, and functions into your documents. Enhance your scientific writing without limitations.</span>
-  </div>
-  <img src="images/kernels.png" alt="Image of Stencila" class="w-full opacity-50">
+````html raw
+<div class="w-full flex  items-center">
+  <p class="mr-36 w-96"> 
+    You can even run models locally using tools like Ollama, and Stencila will automatically detect and integrate them into your workflow.
+  </p>
+  <img src="./images/ollama.svg"/>
 </div>
-```
+````
 
-```html raw
-<div class="flex justify-center space-x-48 my-12 text-center">
+````html raw
+<div class="justify-center w-full my-64">
+  <h2>Your Language, Your Workflow</h2>
+  <div class="h-full absolute flow-root rounded-md items-center ml-56 mt-20 m-8">
+      <h4>Harness the power of multiple programming languages in one platform.</h4>
+      <p class="relative text-lg  text-neutral-700">Stencila supports Python, R, Julia, and more—code in your preferred language. Seamlessly integrate analyses, visualizations, and functions into your documents. Enhance your scientific writing without limitations.</p>
+  </div>
+  <img src="images/kernels.png" alt="Image of Stencila" class="w-full rounded-lg">
+</div>
+````
+
+````html raw
+<div class="flex justify-center space-x-48 text-center">
 
   <div class="w-32 items-center mx-12">
-      <img src="images/vsc.svg" alt="Image of vs code" class="w-32">
+      <img src="images/vsc.svg" alt="Image of vs code" class="w-32 mb-4">
       <span>Try it in VS Code</span> 
       <br/>
-      <a class="text-blue-700">Install now<img src="images/external.svg" alt="Image of vs code" class="w-4"></a> 
+      <a class="text-blue-700" href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila">Install now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
   </div>
     <div class="w-32 items-center mx-12">
-      <img src="images/gh.svg" alt="Image of vs code" class="w-32">
-      <span>Try in Github Codespaces</span> 
+      <img src="images/github.svg" alt="Image of vs code" class="w-32 mb-4">
+      <span class="w-fit">Try in Github Codespaces</span> 
       <br/>
-      <a class="text-blue-700">Launch now<img src="images/external.svg" alt="Image of vs code" class="w-4"></a> 
+      <a class="text-blue-700" href="https://github.com/stencila/demo-codespace">Launch now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
   </div>
     <div class="w-32 items-center mx-12">
-      <img src="images/ovsx.svg" alt="Image of vs code" class="w-32">
+      <img src="images/ovsx.svg" alt="Image of vs code" class="w-32 mb-4">
       <span>Try it with Open VSX</span> 
       <br/>
-      <a class="text-blue-700">Install now <img src="images/external.svg" alt="Image of vs code" class="w-4"></a> 
+      <a class="text-blue-700" href="https://open-vsx.org/extension/stencila/stencila">Install now <img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
   </div>
 </div>
-```
+````
 
+:::: style bg-green-50 rounded-md p-4 mt-24
 
+#### This web page is a Stencila document
 
-> [!note] This web page is a Stencila document
-> We're eating our own dog food 🐕 and have authored and published this web page using Stencila. Hover over blocks to see details how they we authored including whether and which LLMs were used, and who accepted and verified suggested additions and edits.
+We're eating our own dog food 🐕 and have authored and published this web page using Stencila. Hover over blocks to see details how they we authored including whether and which LLMs were used, and who accepted and verified suggested additions and edits.
 
-
+::::
 
 :::
 
+
 ::: style w-full pt-16 bg-gray-100 h-80 border-0 border-t border-solid border-gray-400 mt-24
 
-:::: style container mx-auto grid grid-cols-2 h-full
+::::: style container mx-auto grid grid-cols-2 h-full
 
+::::::: style flex flex-col justify-between h-full text-neutral-500
 
-::::: style flex flex-col justify-between h-full
-
-:::::: style w-64
+::::::::: style w-64
 
 ![](./images/stencila.png)
 
-
 Documenents with scientific intelligence.
 
-::::::
+:::::::::: style mt-12
 
 © 2024 Stencila ltd.
 
-:::::
+::::::::::
+
+:::::::::
 
 
-::::: style flex justify-between
+:::::::
 
-:::::: style
+::::::: style flex justify-between
+
+::::::::: style 
 
 ### About
 
-plans
+````html raw
+<div class="gap-x-2 mb-12">
+  <a href="https://stencila.cloud/subscription/plans"  class="text-neutral-600 no-underline">Plans</a>
+</div>
+````
 
-::::::
+:::::::::
 
-:::::: style
+::::::::: style 
 
 ### Community
 
-Join us on Discord
-
-Follow us on X
-
-Discuss on Github
-
-```html raw
-<div class="flex gap-x-2">
-  <a href="#"><img  src="./images/github.svg" alt="github"/></a>
-  <a href="#"><img  src="./images/discord.svg" alt="discord"/></a>
-  <a href="#"><img  src="./images/twitter-x.svg" alt="twitter/X "/></a>
-  <a href="#"><img  src="./images/youtube.svg" alt="youtube" /></a>
+````html raw
+<div class="gap-y-4 mb-12 grid">
+  <a href="https://github.com/stencila/stencila?tab=readme-ov-file" class="text-neutral-600 no-underline">Discuss on Github</a>
+  <a href="https://discord.gg/GADr6Jv"  class="text-neutral-600 no-underline">Join us on Discord</a>
+  <a href="https://x.com/stencila?lang=en" class="text-neutral-600 no-underline">Follow us on X</a>
 </div>
-```
+````
 
-::::::
+````html raw
+<div class="flex gap-x-4 ">
+  <a href="https://github.com/stencila/stencila?tab=readme-ov-file"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
+  <a href="https://x.com/stencila?lang=en"><img  src="./images/twitter-x.svg" alt="twitter/X " class="w-6"/></a>
+</div>
+````
+
+
+:::::::::
+
+:::::::
 
 
 :::::
 
-::::
 
 :::
