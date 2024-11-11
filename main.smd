@@ -77,11 +77,11 @@ Combine code, data, and text in dynamic documents. Regenerate reports and conten
 
 :::::::
 
-::::::: style rounded shadow-lg h-full p-4 text-xs
+::::::: style rounded shadow-lg h-full p-4 text-sm
 
 ![](images/logo-circle-right.svg)
 
-#### Open and interoperable
+#### Open and Interoperable
 
 Supports multiple languages and file formats. Stencila is highly interoperable with other tools and workflows commonly used in research and data science.
 
