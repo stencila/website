@@ -12,15 +12,15 @@ title: Stencila
 ````html raw
 <div style="max-width: 190px;">
   <a href="/">
-    <img height="48px" src="./images/stencila-logo.svg" alt="stencila icon" />
+    <img height="48px" src="images/stencila-logo.svg" alt="Stencila" />
   </a>
 </div>
 ````
 
 ````html raw
 <div class="flex items-center justify-end gap-x-4">
-  <a href="https://github.com/stencila/stencila#readme" class="header-link"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
-  <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
+  <a href="https://github.com/stencila/stencila#readme" class="header-link"><img  src="images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="images/discord.svg" alt="discord" class="w-6"/></a>
 </div>
 ````
 
@@ -39,7 +39,7 @@ title: Stencila
 
 <div class="flex justify-center space-x-4 mt-16 h-12 text-center mb-64">
       <a href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila" class="bg-blue-500 w-fit flex text-white text-base no-underline mx-4 font-semibold px-4 py-2 rounded flex items-center space-x-2 hover:bg-blue-600">
-        <img src="images/vscode-white.svg" alt="Open VSX" class="h-5 w-5">
+        <img src="images/vscode-white.svg" alt="VSCode" class="h-5 w-5">
         <span class="w-full px-2">VS Code Extension</span>
       </a>
       <a href="https://open-vsx.org/extension/stencila/stencila" class="bg-purple-500 text-white w-fit text-base no-underline text-center font-semibold px-4 py-2 mx-4 rounded flex items-center space-x-2 hover:bg-purple-600">
@@ -47,7 +47,7 @@ title: Stencila
         <span class="w-full px-2">Open VSX</span>
       </a>
       <a href="https://codespaces.new/stencila/demo-codespace?quickstart=1" class="bg-green-500 text-white text-base w-fit no-underline font-semibold px-4 py-2  mx-4 rounded flex items-center space-x-2 hover:bg-green-600">
-        <img src="images/github-white.svg" alt="Open VSX" class="h-5 w-5">
+        <img src="images/github-white.svg" alt="GitHub" class="h-5 w-5">
         <span class="w-full px-2">Github Codespaces</span>
       </a>
   </div>
@@ -59,7 +59,7 @@ title: Stencila
 
 ::::::: style rounded shadow-lg h-full p-4 text-sm
 
-![](./images/logo-circle-left.svg)
+![](images/logo-circle-left.svg)
 
 #### AI with transparency
 
@@ -69,7 +69,7 @@ Enhance scientific authoring with AI tools that provide context-aware support wh
 
 ::::::: style rounded shadow-lg h-full p-4 text-sm
 
-![](./images/logo-circle-middle.svg)
+![](images/logo-circle-middle.svg)
 
 #### Reproducible research
 
@@ -79,7 +79,7 @@ Combine code, data, and text in dynamic documents. Regenerate reports and conten
 
 ::::::: style rounded shadow-lg h-full p-4 text-xs
 
-![](/images/logo-circle-right.svg)
+![](images/logo-circle-right.svg)
 
 #### Open and interoperable
 
@@ -121,7 +121,7 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
 
 ````html raw
 <div class="justify-center w-full mt-12 mb-64">
-  <img src="images/routing.svg" alt="Image of Stencilas routing" class="w-full">
+  <img src="images/routing.svg" alt="Stencila's model routing" class="w-full">
 </div>
 ````
 
@@ -136,7 +136,7 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
   <p class="mr-12 w-96"> 
     Opt for one of our subscription plans to unlock a wide array of top-performing AI models under a single, convenient umbrella. No more juggling multiple subscriptions or worrying about which model to choose—we handle the updates and benchmarking to ensure you're always using the best tool for the job.
   </p>
-  <img class="w-64" src="./images/modelRouter.svg"/>
+  <img class="w-64" src="images/model-router.svg"/>
 </div>
 ````
 
@@ -147,7 +147,7 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
   <p class="mr-12 w-96"> 
     Prefer to use your own resources? You're welcome to bring your own API keys for your favorite AI services.
   </p>
-  <img class="w-64" src="./images/keys.png"/>
+  <img class="w-64" src="images/keys.png"/>
 </div>
 ````
 
@@ -158,7 +158,7 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
   <p class="mr-36 w-96"> 
     You can even run models locally using tools like Ollama, and Stencila will automatically detect and integrate them into your workflow.
   </p>
-  <img src="./images/ollama.svg"/>
+  <img src="images/ollama.svg"/>
 </div>
 ````
 
@@ -257,9 +257,9 @@ Documents with Scientific Intelligence.
 
 ````html raw
 <div class="flex gap-x-4 ">
-  <a href="https://github.com/stencila/stencila#readme"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
-  <a href="https://discord.gg/GADr6Jv"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
-  <a href="https://x.com/stencila?lang=en"><img  src="./images/twitter-x.svg" alt="twitter/X " class="w-6"/></a>
+  <a href="https://github.com/stencila/stencila#readme"><img  src="images/github.svg" alt="GitHub" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv"><img  src="images/discord.svg" alt="Discord" class="w-6"/></a>
+  <a href="https://x.com/stencila?lang=en"><img  src="images/twitter-x.svg" alt="X " class="w-6"/></a>
 </div>
 ````
 
