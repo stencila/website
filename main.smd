@@ -50,7 +50,7 @@ title: Stencila
         <img src="images/vsx-white.svg" alt="Open VSX" class="h-5 w-5">
         <span class="w-full px-2">Open VSX</span>
       </a>
-      <a href="https://github.com/stencila/demo-codespace" class="bg-green-500 text-white text-base w-fit no-underline font-semibold px-4 py-2  mx-4 rounded flex items-center space-x-2 hover:bg-green-600">
+      <a href="https://codespaces.new/stencila/demo-codespace?quickstart=1" class="bg-green-500 text-white text-base w-fit no-underline font-semibold px-4 py-2  mx-4 rounded flex items-center space-x-2 hover:bg-green-600">
         <img src="images/github-white.svg" alt="Open VSX" class="h-5 w-5">
         <span class="w-full px-2">Github Codespaces</span>
       </a>
@@ -213,16 +213,16 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
       <a class="text-blue-700" href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila">Install now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
   </div>
     <div class="w-32 items-center mx-12">
-      <img src="images/github.svg" alt="Image of vs code" class="w-32 mb-4">
-      <span class="w-fit">Try in Github Codespaces</span> 
-      <br/>
-      <a class="text-blue-700" href="https://github.com/stencila/demo-codespace">Launch now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
-  </div>
-    <div class="w-32 items-center mx-12">
       <img src="images/ovsx.svg" alt="Image of vs code" class="w-32 mb-4">
       <span>Try it with Open VSX</span> 
       <br/>
       <a class="text-blue-700" href="https://open-vsx.org/extension/stencila/stencila">Install now <img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
+  </div>
+  <div class="w-32 items-center mx-12">
+    <img src="images/github.svg" alt="Image of vs code" class="w-32 mb-4">
+    <span class="w-fit">Try in Github Codespaces</span> 
+    <br/>
+    <a class="text-blue-700" href="https://codespaces.new/stencila/demo-codespace?quickstart=1">Launch now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
   </div>
 </div>
 ````
