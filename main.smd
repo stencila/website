@@ -1,6 +1,5 @@
 ---
 config:
-  type: Config
   theme: stencila
 description: Documents with scientific intelligence
 title: Stencila
@@ -22,7 +21,7 @@ title: Stencila
 
 ````html raw
 <div class="flex items-center justify-end gap-x-4">
-  <a href="https://github.com/stencila/stencila?tab=readme-ov-file" class="header-link"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://github.com/stencila/stencila#readme" class="header-link"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
   <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
 </div>
 ````
@@ -71,7 +70,7 @@ title: Stencila
 ````
 :::::::: style mt-4
 
-#### AI assisstance with transparency
+#### AI assistance with transparency
 
 ::::::::
 
@@ -90,7 +89,7 @@ Enhance scientific authoring with AI tools that provide context-aware support wh
 
 :::::::: style mt-4 
 
-#### Reproducible reasearch
+#### Reproducible research
 
 ::::::::
 
@@ -110,7 +109,7 @@ Combine code, data, and text in dynamic documents. Regenerate reports and conten
 
 :::::::: style mt-4
 
-#### Open source and interoperability
+#### Open source and interoperable
 
 ::::::::
 
@@ -248,11 +247,11 @@ We're eating our own dog food 🐕 and have authored and published this web page
 
 ![](./images/stencila.png)
 
-Documenents with scientific intelligence.
+Documents with Scientific Intelligence.
 
 :::::::::: style mt-12
 
-© 2024 Stencila ltd.
+© 2024 Stencila Ltd.
 
 ::::::::::
 
@@ -281,7 +280,7 @@ Documenents with scientific intelligence.
 
 ````html raw
 <div class="gap-y-4 mb-12 grid">
-  <a href="https://github.com/stencila/stencila?tab=readme-ov-file" class="text-neutral-600 no-underline">Discuss on Github</a>
+  <a href="https://github.com/stencila/stencila#readme" class="text-neutral-600 no-underline">Discuss on Github</a>
   <a href="https://discord.gg/GADr6Jv"  class="text-neutral-600 no-underline">Join us on Discord</a>
   <a href="https://x.com/stencila?lang=en" class="text-neutral-600 no-underline">Follow us on X</a>
 </div>
@@ -289,7 +288,7 @@ Documenents with scientific intelligence.
 
 ````html raw
 <div class="flex gap-x-4 ">
-  <a href="https://github.com/stencila/stencila?tab=readme-ov-file"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://github.com/stencila/stencila#readme"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
   <a href="https://discord.gg/GADr6Jv"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
   <a href="https://x.com/stencila?lang=en"><img  src="./images/twitter-x.svg" alt="twitter/X " class="w-6"/></a>
 </div>
