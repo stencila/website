@@ -1,35 +1,272 @@
 ---
-title: Stencila
+config:
+  theme: stencila
 description: Documents with scientific intelligence
+title: Stencila
 ---
 
-::: style text-center text-3xl font-sans mb-8
+::: style w-full fixed h-28 top-0 left-0 bg-white z-20
 
-![](images/stencila.png)
+::::: style w-full container px-2 h-28 grid grid-cols-2 mx-auto items-center
 
-Documents with scientific intelligence
+````html raw
+<div style="max-width: 190px;">
+  <a href="/">
+    <img height="48px" src="./images/stencila-logo.svg" alt="stencila icon" />
+  </a>
+</div>
+````
+
+````html raw
+<div class="flex items-center justify-end gap-x-4">
+  <a href="https://github.com/stencila/stencila#readme" class="header-link"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
+</div>
+````
+
+:::::
 
 :::
 
-Large language models and other generative AI have the potential to greatly improve scientific productivity. But to fully realize this potential, the way that scientists interact with these tools will need to move beyond simple chat interfaces and copy-paste workflows.
+::: section
 
-We're working on the next version of Stencila. It brings generative AI to scientific authoring in ways that improve usability, reliability, and transparency. This includes providing LLMs with contextual information (including from the document, data, and the literature) to improve accuracy and relevance, a library of task-specific prompts, and routing tasks to the LLM that performs best.
+````html raw
+<div class="text-center mt-48">
+    <h1 class="my-8 text-5xl font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">Documents</h1>
+    <h3 class="my-0 text-2xl text-teal-700">with</h3>
+    <h1 class="my-8 text-5xl font-bold pb-2 bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text">Scientific Intelligence</h1>
+</div>
 
-::: style text-center text-sm my-8
+<div class="flex justify-center space-x-4 mt-16 h-12 text-center mb-64">
+      <a href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila" class="bg-blue-500 w-fit flex text-white text-base no-underline mx-4 font-semibold px-4 py-2 rounded flex items-center space-x-2 hover:bg-blue-600">
+        <img src="images/vscode-white.svg" alt="Open VSX" class="h-5 w-5">
+        <span class="w-full px-2">VS Code Extension</span>
+      </a>
+      <a href="https://open-vsx.org/extension/stencila/stencila" class="bg-purple-500 text-white w-fit text-base no-underline text-center font-semibold px-4 py-2 mx-4 rounded flex items-center space-x-2 hover:bg-purple-600">
+        <img src="images/vsx-white.svg" alt="Open VSX" class="h-5 w-5">
+        <span class="w-full px-2">Open VSX</span>
+      </a>
+      <a href="https://codespaces.new/stencila/demo-codespace?quickstart=1" class="bg-green-500 text-white text-base w-fit no-underline font-semibold px-4 py-2  mx-4 rounded flex items-center space-x-2 hover:bg-green-600">
+        <img src="images/github-white.svg" alt="Open VSX" class="h-5 w-5">
+        <span class="w-full px-2">Github Codespaces</span>
+      </a>
+  </div>
+````
 
-![](images/screenshot.png)
+## Documents That Work For You
 
-Stencila's VS Code extension in development (editing this document). Coming to the VS Code Marketplace soon!
+::::: style grid grid-cols-3 gap-10 my-10
+
+::::::: style rounded shadow-lg h-full p-4 text-sm
+
+![](./images/logo-circle-left.svg)
+
+#### AI with transparency
+
+Enhance scientific authoring with AI tools that provide context-aware support while maintaining clear provenance records for transparent collaboration.
+
+:::::::
+
+::::::: style rounded shadow-lg h-full p-4 text-sm
+
+![](./images/logo-circle-middle.svg)
+
+#### Reproducible research
+
+Combine code, data, and text in dynamic documents. Regenerate reports and content with the latest data without recreating entire documents.
+
+:::::::
+
+::::::: style rounded shadow-lg h-full p-4 text-xs
+
+![](/images/logo-circle-right.svg)
+
+#### Open and interoperable
+
+Supports multiple languages and file formats. Stencila is highly interoperable with other tools and workflows commonly used in research and data science.
+
+:::::::
+
+:::::
+
+::::: style my-64
+
+## Stencila in Action
+
+::::::: style text-center text-sm
+
+````html raw
+<div class="justify-center w-full mb-64">
+  <div class="h-24 w-full bg-blue-100 flex absolute rounded-md items-center mt-56 opacity-60">
+    <img src="images/video-thumb.png" alt="Thumbnail of Stencila" class="h-12 my-8 ml-8"/>
+    <div class="flow-root text-left ml-8"> 
+      <span class="relative text-lg text-neutral-700">Demo coming soon</span>
+      <br/>
+      <span class="relative text-neutral-500">5 minutes 33 seconds</span>
+    </div>
+  </div>
+  <img src="images/video.png" alt="Image of Stencila" class="w-full">
+</div>
+````
+
+:::::::
+
+:::::
+
+## Language Model Agnostic
+
+#### Stencila uses the best agent for the job, for every job
+
+In the fast-paced world of AI, keeping up with the latest and greatest models can be a daunting task. Stencila removes this complexity by regularly benchmarking a variety of AI models to ensure optimal performance. For every task you undertake, Stencila automatically selects the best-suited model, saving you time and effort. Focus on your scientific writing and research—we'll handle the heavy lifting of choosing the right AI tool to enhance your work.
+
+````html raw
+<div class="justify-center w-full mt-12 mb-64">
+  <img src="images/routing.svg" alt="Image of Stencilas routing" class="w-full">
+</div>
+````
+
+## Unified AI Access or Use Your Own
+
+#### One platform, multiple options
+
+### Use Our Model Router
+
+````html raw
+<div class="w-full flex items-center mb-12">
+  <p class="mr-12 w-96"> 
+    Opt for one of our subscription plans to unlock a wide array of top-performing AI models under a single, convenient umbrella. No more juggling multiple subscriptions or worrying about which model to choose—we handle the updates and benchmarking to ensure you're always using the best tool for the job.
+  </p>
+  <img class="w-64" src="./images/modelRouter.svg"/>
+</div>
+````
+
+### Bring Your Own API Keys
+
+````html raw
+<div class="w-full flex items-center mb-12">
+  <p class="mr-12 w-96"> 
+    Prefer to use your own resources? You're welcome to bring your own API keys for your favorite AI services.
+  </p>
+  <img class="w-64" src="./images/keys.png"/>
+</div>
+````
+
+### Use Your Own Local Models
+
+````html raw
+<div class="w-full flex  items-center">
+  <p class="mr-36 w-96"> 
+    You can even run models locally using tools like Ollama, and Stencila will automatically detect and integrate them into your workflow.
+  </p>
+  <img src="./images/ollama.svg"/>
+</div>
+````
+
+````html raw
+<div class="justify-center w-full my-64">
+  <h2>Your Language, Your Workflow</h2>
+  <div class="h-full absolute flow-root rounded-md items-center ml-56 mt-20 m-8">
+      <h4>Harness the power of multiple programming languages in one platform.</h4>
+      <p class="relative text-lg  text-neutral-700">Stencila supports Python, R, Julia, and more—code in your preferred language. Seamlessly integrate analyses, visualizations, and functions into your documents. Enhance your scientific writing without limitations.</p>
+  </div>
+  <img src="images/kernels.png" alt="Image of Stencila" class="w-full rounded-lg">
+</div>
+````
+
+````html raw
+<div class="flex justify-center space-x-48 text-center">
+
+  <div class="w-32 items-center mx-12">
+      <img src="images/vsc.svg" alt="Image of vs code" class="w-32 mb-4">
+      <span>Try it in VS Code</span> 
+      <br/>
+      <a class="text-blue-700" href="https://marketplace.visualstudio.com/items?itemName=stencila.stencila">Install now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
+  </div>
+    <div class="w-32 items-center mx-12">
+      <img src="images/ovsx.svg" alt="Image of vs code" class="w-32 mb-4">
+      <span>Try it with Open VSX</span> 
+      <br/>
+      <a class="text-blue-700" href="https://open-vsx.org/extension/stencila/stencila">Install now <img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
+  </div>
+  <div class="w-32 items-center mx-12">
+    <img src="images/github.svg" alt="Image of vs code" class="w-32 mb-4">
+    <span class="w-fit">Try in Github Codespaces</span> 
+    <br/>
+    <a class="text-blue-700" href="https://codespaces.new/stencila/demo-codespace?quickstart=1">Launch now<img src="images/external.svg" alt="Image of vs code" class="w-4 mt-2"></a> 
+  </div>
+</div>
+````
+
+::::: style bg-green-50 rounded-md p-4 mt-24
+
+#### This web page is a Stencila document
+
+We're eating our own dog food 🐕 and have authored and published this web page using Stencila. Hover over blocks to see details how they we authored including whether and which LLMs were used, and who accepted and verified suggested additions and edits.
+
+:::::
 
 :::
 
-Keep up to date and contribute to part of the next generation of scientific authoring tools at https://github.com/stencila/stencila.
+::: style w-full pt-16 bg-gray-100 h-80 border-0 border-t border-solid border-gray-400 mt-24
 
-> [!note] This web page is a Stencila document
-> We're eating our own dog food 🐕 and have authored and published this web page using Stencila. Hover over blocks to see details how they we authored including whether and which LLMs were used, and who accepted and verified suggested additions and edits.
+::::: style container mx-auto grid grid-cols-2 h-full
 
-::: style text-center text-2xl mt-8
+::::::: style flex flex-col justify-between h-full text-neutral-500
 
-More coming soon!
+::::::::: style w-64
+
+![](./images/stencila.png)
+
+Documents with Scientific Intelligence.
+
+::::::::::: style mt-12
+
+© 2024 Stencila Ltd.
+
+:::::::::::
+
+:::::::::
+
+:::::::
+
+::::::: style flex justify-between
+
+::::::::: style 
+
+#### About
+
+````html raw
+<div class="gap-x-2 mb-12">
+  <a href="https://stencila.cloud/subscription/plans"  class="text-neutral-600 no-underline">Plans</a>
+</div>
+````
+
+:::::::::
+
+::::::::: style 
+
+#### Community
+
+````html raw
+<div class="gap-y-4 mb-12 grid">
+  <a href="https://github.com/stencila/stencila#readme" class="text-neutral-600 no-underline">Discuss on Github</a>
+  <a href="https://discord.gg/GADr6Jv"  class="text-neutral-600 no-underline">Join us on Discord</a>
+  <a href="https://x.com/stencila?lang=en" class="text-neutral-600 no-underline">Follow us on X</a>
+</div>
+````
+
+````html raw
+<div class="flex gap-x-4 ">
+  <a href="https://github.com/stencila/stencila#readme"><img  src="./images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv"><img  src="./images/discord.svg" alt="discord" class="w-6"/></a>
+  <a href="https://x.com/stencila?lang=en"><img  src="./images/twitter-x.svg" alt="twitter/X " class="w-6"/></a>
+</div>
+````
+
+:::::::::
+
+:::::::
+
+:::::
 
 :::
