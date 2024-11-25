@@ -6,8 +6,13 @@ title: Stencila
 ---
 
 ```` css raw
- 
-
+  section section {
+    @apply min-w-80 w-full mx-auto;
+    @apply px-12 sm:w-4/5 md:mx-auto;
+    max-width: 72ch;
+    width: 80%;
+    justify-content: center;
+  }
 
 ````
 
@@ -25,8 +30,8 @@ title: Stencila
 
 ````html raw
 <div class="flex items-center justify-end gap-x-4 pr-12">
-  <a href="https://github.com/stencila/stencila#readme" class="header-link"><img  src="images/github.svg" alt="github" class="w-6"/></a>
-  <a href="https://discord.gg/GADr6Jv" class="header-link"><img  src="images/discord.svg" alt="discord" class="w-6"/></a>
+  <a href="https://github.com/stencila/stencila#readme"><img  src="images/github.svg" alt="github" class="w-6"/></a>
+  <a href="https://discord.gg/GADr6Jv"><img  src="images/discord.svg" alt="discord" class="w-6"/></a>
 </div>
 ````
 
@@ -39,6 +44,7 @@ title: Stencila
 
 
 ````html raw
+
 <div class="text-center mt-48">
     <h1 class="my-8 font-bold bg-gradient-to-r from-blue-500 to-green-500 text-transparent bg-clip-text pr-8">Documents</h1>
     <h3 class="my-0 text-teal-700">with</h3>
@@ -59,6 +65,7 @@ title: Stencila
         <span class="w-full px-2">Github Codespaces</span>
       </a>
   </div>
+
 ````
 
 
@@ -190,7 +197,7 @@ In the fast-paced world of AI, keeping up with the latest and greatest models ca
 ````
 
 ````html raw
-<div class="block md:flex justify-center text-center max-auto w-full space-y-16">
+<div class="block md:flex justify-center text-center mx-auto w-full space-y-16">
 
   <div class="w-32 items-center mx-auto mt-16">
       <img src="images/vsc.svg" alt="Image of vs code" class="w-32 mb-4">
@@ -247,7 +254,7 @@ Documents with Scientific Intelligence.
 
 ::::::: style flex justify-between
 
-::::::::: style 
+::::::::: style hidden sm:block
 
 #### About
 
