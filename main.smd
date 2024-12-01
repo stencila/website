@@ -5,6 +5,7 @@ description: Documents with scientific intelligence
 title: Stencila
 ---
 
+
 ```` css raw
   section section {
     @apply min-w-80 w-full mx-auto;
@@ -14,6 +15,29 @@ title: Stencila
     justify-content: center;
   }
 
+````
+
+````html raw
+<head>
+  <!-- Primary Open Graph Meta Tags -->
+  <meta property="og:title" content="Stencila">
+  <meta property="og:description" content="Documents with Scientific Intelligence">
+  <meta property="og:url" content="https://stencila.io">
+  <meta property="og:image" content="https://stencila.io/images/web-preview.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stencila">
+  <meta name="twitter:description" content="Documents with Scientific Intelligence">
+  <meta name="twitter:image" content="https://stencila.io/images/web-preview.jpg">
+  <meta name="twitter:site" content="@stencila">
+
+  <!-- Fallback Basic Meta Tags -->
+  <meta name="title" content="Stencila">
+  <meta name="description" content="Documents with Scientific Intelligence">
+</head>
 ````
 
 ::: style w-full fixed h-28 top-0 left-0 bg-white z-20 border-b border-gray-100 border-solid
