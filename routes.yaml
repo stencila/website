@@ -1,0 +1,46 @@
+# Custom routes for the Stencila Ghost-hosted website
+#
+# For docs see https://ghost.org/docs/themes/routing/
+#
+# For changes to take effect, this file must be uploaded to the Ghost Ghost admin panel under Settings » Labs » Routes
+# at https://stencila.ghost.io/ghost/#/settings/labs (there is currently no Ghost admin API endpoint for doing this)
+
+routes:
+  /:
+    permalink: /
+    template: home
+    data: page.home
+
+collections:
+  /docs/formats/:
+    permalink: /docs/formats/{slug}/
+    template: index
+    data: page.docs
+    filter: "tag:hash-docs+tag:formats"
+
+  /schema/:
+    permalink: /schema/{slug}/
+    template: index
+    data: page.schema
+    filter: "tag:hash-schema"
+
+  /changelog/:
+    permalink: /changelog/{slug}/
+    template: changelog
+    data: tag.changelog
+    filter: tag:changelog
+
+  /news/:
+    permalink: /news/{slug}/
+    template: tag
+    data: tag.news
+    filter: tag:news
+  
+  /:
+    permalink: /{slug}/
+    template: post
+    filter: "tag:-hash-docs+tag:-hash-schema"
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
